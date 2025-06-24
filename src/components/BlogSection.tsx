@@ -1,4 +1,6 @@
 
+import { Button } from "@/components/ui/button";
+
 export const BlogSection = () => {
   const blogPosts = [
     {
