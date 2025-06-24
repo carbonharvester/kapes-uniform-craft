@@ -12,7 +12,7 @@ export const CaseStudies = () => {
           <div className="text-center">
             <div className="aspect-square bg-white/10 rounded-lg mb-6 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop" 
+                src="/shopify/shop_images/Untitled_design_49.png" 
                 alt="The Arbor School" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -29,7 +29,7 @@ export const CaseStudies = () => {
           <div className="text-center">
             <div className="aspect-square bg-white/10 rounded-lg mb-6 flex items-center justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop" 
+                src="/shopify/shop_images/Untitled_design_50.png" 
                 alt="Fairgreen International" 
                 className="w-full h-full object-cover rounded-lg"
               />

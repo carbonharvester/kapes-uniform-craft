@@ -6,7 +6,7 @@ export const WhyKapes = () => {
         <div className="grid md:grid-cols-2">
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop" 
+              src="/shopify/shop_images/why-kapes.png" 
               alt="Why Kapes" 
               className="w-full h-full object-cover"
             />
@@ -31,7 +31,7 @@ export const WhyKapes = () => {
           </div>
           <div className="relative">
             <img 
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop" 
+              src="/shopify/shop_images/good-places.png" 
               alt="Sustainability" 
               className="w-full h-full object-cover"
             />

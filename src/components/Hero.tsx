@@ -2,7 +2,7 @@
 export const Hero = () => {
   return (
     <section className="relative min-h-[80vh] flex items-end bg-cover bg-center" 
-             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=1200&h=800&fit=crop')` }}>
+             style={{ backgroundImage: `url('/shopify/shop_images/home-banner.png')` }}>
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="relative z-10 container mx-auto px-4 pb-16">
         <div className="max-w-2xl">
