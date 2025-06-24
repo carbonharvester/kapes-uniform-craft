@@ -1,5 +1,4 @@
 
-
 export const Hero = () => {
   return (
     <section className="relative min-h-[80vh] flex items-end bg-cover bg-center font-inter" 
@@ -8,7 +7,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 pb-16">
         <div className="max-w-2xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Sustainable Uniforms for Forward-Thinking Schools
+            Uniforms That Change Lives & Save the Planet
           </h1>
           <p className="text-lg text-white/90 max-w-xl font-medium">
             Kapes empower schools to reach their sustainability targets, while educating students 
@@ -19,4 +18,3 @@ export const Hero = () => {
     </section>
   );
 };
-
