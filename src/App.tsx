@@ -28,6 +28,7 @@ import StudentGovernance from "./pages/StudentGovernance";
 import { UniformSolutions } from "./pages/UniformSolutions";
 import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
 import { KapesImpactPlatform } from "./pages/KapesImpactPlatform";
+import { DeliveryPackaging } from "./pages/DeliveryPackaging";
 import { Header } from "@/components/Header";
 
 const queryClient = new QueryClient();
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="/uniform-solutions" element={<UniformSolutions />} />
           <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
           <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
+          <Route path="/delivery-packaging" element={<DeliveryPackaging />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
