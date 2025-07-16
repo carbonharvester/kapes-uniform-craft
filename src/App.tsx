@@ -5,11 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import WhyKapes from "./pages/WhyKapes";
-import Materials from "./pages/Materials";
-import CaseStudies from "./pages/CaseStudies";
-import OurMission from "./pages/OurMission";
-import PartnerWithUs from "./pages/PartnerWithUs";
+import About from "./pages/About";
+import Offers from "./pages/Offers";
+import Impact from "./pages/Impact";
+import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { Header } from "@/components/Header";
 
@@ -24,11 +24,11 @@ const App = () => (
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/why-kapes" element={<WhyKapes />} />
-          <Route path="/materials" element={<Materials />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
-          <Route path="/our-mission" element={<OurMission />} />
-          <Route path="/partner-with-us" element={<PartnerWithUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/impact" element={<Impact />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

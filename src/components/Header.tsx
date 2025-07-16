@@ -10,11 +10,11 @@ export const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Why Kapes", path: "/why-kapes" },
-    { name: "Materials", path: "/materials" },
-    { name: "Case Studies", path: "/case-studies" },
-    { name: "Our Mission", path: "/our-mission" },
-    { name: "Partner With Us", path: "/partner-with-us" }
+    { name: "About", path: "/about" },
+    { name: "Offers", path: "/offers" },
+    { name: "Impact", path: "/impact" },
+    { name: "Resources", path: "/resources" },
+    { name: "Contact", path: "/contact" }
   ];
 
   const isActive = (path: string) => location.pathname === path;
