@@ -17,6 +17,7 @@ import EssentialsTier from "./pages/EssentialsTier";
 import CoreTier from "./pages/CoreTier";
 import ImpactTier from "./pages/ImpactTier";
 import EducationalResources from "./pages/EducationalResources";
+import PartnershipTiers from "./pages/PartnershipTiers";
 import FactoryVisits from "./pages/FactoryVisits";
 import StudentGovernance from "./pages/StudentGovernance";
 import { Header } from "@/components/Header";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/implementation-timeline" element={<ImplementationTimeline />} />
           
           {/* Partnership Tier Routes */}
+          <Route path="/partnership-tiers" element={<PartnershipTiers />} />
           <Route path="/essentials-tier" element={<EssentialsTier />} />
           <Route path="/core-tier" element={<CoreTier />} />
           <Route path="/impact-tier" element={<ImpactTier />} />
