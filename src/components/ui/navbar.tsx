@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award } from "lucide-react";
 
 import {
   Accordion,
@@ -74,22 +74,28 @@ const Navbar = ({
           url: "/our-mission",
         },
         {
-          title: "Materials",
-          description: "Discover our sustainable fabric choices",
+          title: "Sustainability & Ethics",
+          description: "Our commitment to ethical and sustainable practices",
           icon: <Trees className="size-5 shrink-0" />,
-          url: "/materials",
+          url: "/sustainability-ethics",
         },
         {
-          title: "Our Factories",
-          description: "Transparency in our manufacturing process",
-          icon: <Building className="size-5 shrink-0" />,
-          url: "/our-factories",
+          title: "Circular Economy & Takeback",
+          description: "Our circular economy and product takeback programs",
+          icon: <Recycle className="size-5 shrink-0" />,
+          url: "/circular-economy-takeback",
         },
         {
-          title: "What's in a Footprint",
-          description: "Understanding our environmental impact",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "/whats-in-a-footprint",
+          title: "Social Impact in Africa",
+          description: "Our positive impact on African communities",
+          icon: <Heart className="size-5 shrink-0" />,
+          url: "/social-impact-africa",
+        },
+        {
+          title: "Testimonials & Case Studies",
+          description: "Success stories and customer testimonials",
+          icon: <Award className="size-5 shrink-0" />,
+          url: "/testimonials-case-studies",
         },
       ],
     },
