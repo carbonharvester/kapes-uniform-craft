@@ -87,19 +87,19 @@ export const Header = () => {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               {navigationItems.map((section) => (
-                <NavigationMenuItem key={section.title}>
+                <NavigationMenuItem key={section.title} value={section.title}>
                   <NavigationMenuTrigger className="text-sm font-medium">
                     {section.title}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid w-[200px] gap-3 p-4">
+                    <div className="grid w-[200px] gap-1 p-2">
                       {section.items.map((item) => (
                         <NavigationMenuLink key={item.name} asChild>
                           <Link
                             to={item.path}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                            className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
                           >
-                            <div className="text-sm font-medium leading-none">{item.name}</div>
+                            {item.name}
                           </Link>
                         </NavigationMenuLink>
                       ))}
