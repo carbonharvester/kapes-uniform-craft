@@ -26,6 +26,7 @@ import PartnershipTiers from "./pages/PartnershipTiers";
 import FactoryVisits from "./pages/FactoryVisits";
 import StudentGovernance from "./pages/StudentGovernance";
 import { UniformSolutions } from "./pages/UniformSolutions";
+import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
 import { Header } from "@/components/Header";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/our-factories" element={<OurFactories />} />
           <Route path="/whats-in-a-footprint" element={<WhatsInAFootprint />} />
           <Route path="/uniform-solutions" element={<UniformSolutions />} />
+          <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
