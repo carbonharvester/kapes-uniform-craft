@@ -8,7 +8,7 @@ import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
 import { BonusesAndCTA } from "@/components/BonusesAndCTA";
-import { ContactForm } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -23,7 +23,7 @@ const Index = () => {
       <FreeAuditTool />
       <Testimonials />
       <BonusesAndCTA />
-      <ContactForm />
+      <Footer />
     </div>
   );
 };
