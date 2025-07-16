@@ -17,6 +17,7 @@ import EssentialsTier from "./pages/EssentialsTier";
 import CoreTier from "./pages/CoreTier";
 import ImpactTier from "./pages/ImpactTier";
 import EducationalResources from "./pages/EducationalResources";
+import OurMission from "./pages/OurMission";
 import PartnershipTiers from "./pages/PartnershipTiers";
 import FactoryVisits from "./pages/FactoryVisits";
 import StudentGovernance from "./pages/StudentGovernance";
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/educational-resources" element={<EducationalResources />} />
           <Route path="/factory-visits" element={<FactoryVisits />} />
           <Route path="/student-governance" element={<StudentGovernance />} />
+          <Route path="/our-mission" element={<OurMission />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

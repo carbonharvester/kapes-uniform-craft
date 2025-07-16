@@ -1,86 +1,112 @@
-
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
 
 const OurMission = () => {
+  const values = [
+    {
+      icon: Heart,
+      title: "Ethical First",
+      description: "Every decision we make puts people and planet before profit"
+    },
+    {
+      icon: Globe,
+      title: "Global Impact", 
+      description: "Creating positive change that reaches communities worldwide"
+    },
+    {
+      icon: Users,
+      title: "Student Voice",
+      description: "Empowering young people to be co-creators of their future"
+    },
+    {
+      icon: TreePine,
+      title: "Regenerative",
+      description: "Going beyond sustainability to actively heal our planet"
+    },
+    {
+      icon: Recycle,
+      title: "Circular",
+      description: "Designing out waste through innovative takeback programs"
+    },
+    {
+      icon: GraduationCap,
+      title: "Educational",
+      description: "Every uniform becomes a tool for learning and empowerment"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-background font-inter">
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center">
-            Our <span className="text-primary">Mission</span>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <Badge className="mb-4 bg-green-100 text-green-800">Our Mission</Badge>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Reimagining School Uniforms for a Better World
           </h1>
-          
-          <div className="text-center mb-12">
-            <p className="text-xl text-gray-600 font-medium mb-8">
-              To revolutionize school uniforms through sustainable practices, 
-              creating a better future for students and our planet.
-            </p>
-          </div>
+          <p className="text-xl text-muted-foreground mb-8">
+            We believe that what students wear should reflect the values we want them to live by — sustainability, ethics, empowerment, and global citizenship.
+          </p>
+        </div>
+      </section>
 
-          <div className="bg-white p-8 rounded-lg shadow-sm border mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-center">What Drives Us</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌱</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Environmental Impact</h3>
-                <p className="text-gray-600">
-                  Reducing the fashion industry's environmental footprint through sustainable materials and processes.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">📚</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Education</h3>
-                <p className="text-gray-600">
-                  Teaching students about sustainability through their daily clothing choices and lifestyle.
-                </p>
-              </div>
-              
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🤝</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Partnership</h3>
-                <p className="text-gray-600">
-                  Collaborating with schools to achieve their sustainability goals and create lasting change.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* Mission Statement */}
+      <section className="py-16 px-4 bg-gradient-to-r from-green-50 to-blue-50">
+        <div className="container mx-auto max-w-4xl text-center">
+          <blockquote className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+            "To transform school uniforms from a necessity into a force for positive change — empowering students, supporting communities, and healing our planet."
+          </blockquote>
+          <p className="text-lg text-muted-foreground">
+            Every uniform tells a story. We're making sure it's a story worth telling.
+          </p>
+        </div>
+      </section>
 
-          <div className="bg-gray-50 p-8 rounded-lg mb-12">
-            <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
-            <ul className="space-y-4 text-gray-700">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Carbon Neutral Operations:</strong> We offset 100% of our carbon emissions through verified environmental projects.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Ethical Manufacturing:</strong> All our products are made in facilities with fair labor practices and safe working conditions.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Circular Economy:</strong> We design for durability and offer take-back programs for end-of-life uniforms.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span><strong>Transparency:</strong> We provide detailed information about our supply chain and environmental impact.</span>
-              </li>
-            </ul>
+      {/* Our Values */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {values.map((value, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <value.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg">{value.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 font-semibold">
-              Join Our Mission
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            Join the Movement
+          </h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Be part of a global community of schools creating positive change through ethical uniform programs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg">
+              Start Your Journey
+            </Button>
+            <Button variant="outline" size="lg">
+              Learn About Our Impact
             </Button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
