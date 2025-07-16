@@ -38,12 +38,6 @@ function Pricing() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">Free</span>
-                    <span className="text-sm text-muted-foreground">
-                      setup & materials
-                    </span>
-                  </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
@@ -92,12 +86,6 @@ function Pricing() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">£5</span>
-                    <span className="text-sm text-muted-foreground">
-                      per student/year
-                    </span>
-                  </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
@@ -146,12 +134,6 @@ function Pricing() {
               </CardHeader>
               <CardContent>
                 <div className="flex flex-col gap-8 justify-start">
-                  <p className="flex flex-row items-center gap-2 text-xl">
-                    <span className="text-4xl">Custom</span>
-                    <span className="text-sm text-muted-foreground">
-                      pricing
-                    </span>
-                  </p>
                   <div className="flex flex-col gap-4 justify-start">
                     <div className="flex flex-row gap-4">
                       <Check className="w-4 h-4 mt-2 text-primary" />
