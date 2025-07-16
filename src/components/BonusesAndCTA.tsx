@@ -24,5 +24,45 @@ export const BonusesAndCTA = () => {
     description: "Educational trips for students and staff",
     value: "Exclusive Access"
   }];
-  return;
+
+  return (
+    <section className="py-24 bg-gradient-to-b from-background to-muted/20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Exclusive Partnership Bonuses
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Additional value when you join the Kapes family
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {bonuses.map((bonus, index) => {
+            const IconComponent = bonus.icon;
+            return (
+              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="mx-auto mb-4 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">{bonus.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-3">{bonus.description}</p>
+                  <Badge variant="secondary">{bonus.value}</Badge>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        <div className="text-center">
+          <Button size="lg" className="bg-primary hover:bg-primary/90">
+            Start Your Partnership
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
 };
