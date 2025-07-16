@@ -113,7 +113,7 @@ export const Header = () => {
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
             <Button size="sm" className="bg-primary hover:bg-primary/90 font-semibold">
-              Get Started
+              Shop
             </Button>
           </div>
 
@@ -152,7 +152,7 @@ export const Header = () => {
               ))}
               <div className="pt-4">
                 <Button size="sm" className="w-full bg-primary hover:bg-primary/90 font-semibold">
-                  Get Started
+                  Shop
                 </Button>
               </div>
             </nav>
