@@ -1,0 +1,396 @@
+import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone } from "lucide-react";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+interface MenuItem {
+  title: string;
+  url: string;
+  description?: string;
+  icon?: JSX.Element;
+  items?: MenuItem[];
+}
+
+interface NavbarProps {
+  logo?: {
+    url: string;
+    src?: string;
+    alt: string;
+    title: string;
+  };
+  menu?: MenuItem[];
+  mobileExtraLinks?: {
+    name: string;
+    url: string;
+  }[];
+  auth?: {
+    login: {
+      text: string;
+      url: string;
+    };
+    signup: {
+      text: string;
+      url: string;
+    };
+  };
+}
+
+const Navbar = ({
+  logo = {
+    url: "/",
+    alt: "Kapes",
+    title: "Kapes",
+  },
+  menu = [
+    {
+      title: "Why Kapes",
+      url: "#",
+      items: [
+        {
+          title: "Our Mission",
+          description: "Learn about our commitment to sustainability",
+          icon: <GraduationCap className="size-5 shrink-0" />,
+          url: "/our-mission",
+        },
+        {
+          title: "Materials",
+          description: "Discover our sustainable fabric choices",
+          icon: <Trees className="size-5 shrink-0" />,
+          url: "/materials",
+        },
+        {
+          title: "Our Factories",
+          description: "Transparency in our manufacturing process",
+          icon: <Building className="size-5 shrink-0" />,
+          url: "/our-factories",
+        },
+        {
+          title: "What's in a Footprint",
+          description: "Understanding our environmental impact",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "/whats-in-a-footprint",
+        },
+      ],
+    },
+    {
+      title: "Solutions",
+      url: "#",
+      items: [
+        {
+          title: "Uniform Solutions",
+          description: "Complete uniform programs for schools",
+          icon: <Package className="size-5 shrink-0" />,
+          url: "/uniform-solutions",
+        },
+        {
+          title: "KapesImpact™ Platform",
+          description: "Track your sustainability impact",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "/kapes-impact-platform",
+        },
+        {
+          title: "School Shops & Lockers",
+          description: "Convenient on-campus uniform access",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/school-shops-lockers",
+        },
+        {
+          title: "Delivery & Packaging",
+          description: "Sustainable delivery and packaging solutions",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "/delivery-packaging",
+        },
+      ],
+    },
+    {
+      title: "How It Works",
+      url: "#",
+      items: [
+        {
+          title: "Our Process",
+          description: "Step-by-step guide to working with Kapes",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "/our-process",
+        },
+        {
+          title: "Implementation Timeline",
+          description: "From onboarding to full implementation",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "/implementation-timeline",
+        },
+        {
+          title: "FAQs",
+          description: "Frequently asked questions",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/faqs",
+        },
+      ],
+    },
+    {
+      title: "Partnerships",
+      url: "#",
+      items: [
+        {
+          title: "Partnership Tiers",
+          description: "Choose the right partnership level",
+          icon: <Users className="size-5 shrink-0" />,
+          url: "/partnership-tiers",
+        },
+        {
+          title: "Essentials Tier",
+          description: "Basic sustainable uniform solutions",
+          icon: <Package className="size-5 shrink-0" />,
+          url: "/essentials-tier",
+        },
+        {
+          title: "Core Tier",
+          description: "Enhanced sustainability features",
+          icon: <Trees className="size-5 shrink-0" />,
+          url: "/core-tier",
+        },
+        {
+          title: "Impact Tier",
+          description: "Full flagship sustainability program",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "/impact-tier",
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      url: "#",
+      items: [
+        {
+          title: "Educational Resources",
+          description: "Teaching materials about sustainability",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/educational-resources",
+        },
+        {
+          title: "Factory Visits",
+          description: "Tour our manufacturing facilities",
+          icon: <Building className="size-5 shrink-0" />,
+          url: "/factory-visits",
+        },
+        {
+          title: "Student Governance",
+          description: "Student involvement in sustainability",
+          icon: <Users className="size-5 shrink-0" />,
+          url: "/student-governance",
+        },
+        {
+          title: "Blog & Articles",
+          description: "Latest insights and updates",
+          icon: <Sunset className="size-5 shrink-0" />,
+          url: "/blog",
+        },
+      ],
+    },
+    {
+      title: "Contact",
+      url: "/contact",
+    },
+  ],
+  mobileExtraLinks = [
+    { name: "About", url: "/about" },
+    { name: "Impact", url: "/impact" },
+    { name: "Offers", url: "/offers" },
+    { name: "Resources", url: "/resources" },
+  ],
+  auth = {
+    login: { text: "Partner Portal", url: "/login" },
+    signup: { text: "Get Started", url: "/contact" },
+  },
+}: NavbarProps) => {
+  return (
+    <section className="py-4">
+      <div className="container">
+        <nav className="hidden justify-between lg:flex">
+          <div className="flex items-center gap-6">
+            <a href={logo.url} className="flex items-center gap-2">
+              {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
+              <span className="text-lg font-semibold">{logo.title}</span>
+            </a>
+            <div className="flex items-center">
+              <NavigationMenu>
+                <NavigationMenuList>
+                  {menu.map((item) => renderMenuItem(item))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <Button asChild variant="outline" size="sm">
+              <a href={auth.login.url}>{auth.login.text}</a>
+            </Button>
+            <Button asChild size="sm">
+              <a href={auth.signup.url}>{auth.signup.text}</a>
+            </Button>
+          </div>
+        </nav>
+        <div className="block lg:hidden">
+          <div className="flex items-center justify-between">
+            <a href={logo.url} className="flex items-center gap-2">
+              {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
+              <span className="text-lg font-semibold">{logo.title}</span>
+            </a>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="size-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="overflow-y-auto">
+                <SheetHeader>
+                  <SheetTitle>
+                    <a href={logo.url} className="flex items-center gap-2">
+                      {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
+                      <span className="text-lg font-semibold">
+                        {logo.title}
+                      </span>
+                    </a>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="my-6 flex flex-col gap-6">
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="flex w-full flex-col gap-4"
+                  >
+                    {menu.map((item) => renderMobileMenuItem(item))}
+                  </Accordion>
+                  <div className="border-t py-4">
+                    <div className="grid grid-cols-2 justify-start">
+                      {mobileExtraLinks.map((link, idx) => (
+                        <a
+                          key={idx}
+                          className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+                          href={link.url}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <Button asChild variant="outline">
+                      <a href={auth.login.url}>{auth.login.text}</a>
+                    </Button>
+                    <Button asChild>
+                      <a href={auth.signup.url}>{auth.signup.text}</a>
+                    </Button>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const renderMenuItem = (item: MenuItem) => {
+  if (item.items) {
+    return (
+      <NavigationMenuItem key={item.title} className="text-muted-foreground">
+        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <ul className="w-80 p-3">
+            <NavigationMenuLink>
+              {item.items.map((subItem) => (
+                <li key={subItem.title}>
+                  <a
+                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                    href={subItem.url}
+                  >
+                    {subItem.icon}
+                    <div>
+                      <div className="text-sm font-semibold">
+                        {subItem.title}
+                      </div>
+                      {subItem.description && (
+                        <p className="text-sm leading-snug text-muted-foreground">
+                          {subItem.description}
+                        </p>
+                      )}
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </NavigationMenuLink>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    );
+  }
+
+  return (
+    <a
+      key={item.title}
+      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+      href={item.url}
+    >
+      {item.title}
+    </a>
+  );
+};
+
+const renderMobileMenuItem = (item: MenuItem) => {
+  if (item.items) {
+    return (
+      <AccordionItem key={item.title} value={item.title} className="border-b-0">
+        <AccordionTrigger className="py-0 font-semibold hover:no-underline">
+          {item.title}
+        </AccordionTrigger>
+        <AccordionContent className="mt-2">
+          {item.items.map((subItem) => (
+            <a
+              key={subItem.title}
+              className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+              href={subItem.url}
+            >
+              {subItem.icon}
+              <div>
+                <div className="text-sm font-semibold">{subItem.title}</div>
+                {subItem.description && (
+                  <p className="text-sm leading-snug text-muted-foreground">
+                    {subItem.description}
+                  </p>
+                )}
+              </div>
+            </a>
+          ))}
+        </AccordionContent>
+      </AccordionItem>
+    );
+  }
+
+  return (
+    <a key={item.title} href={item.url} className="font-semibold">
+      {item.title}
+    </a>
+  );
+};
+
+export { Navbar };
