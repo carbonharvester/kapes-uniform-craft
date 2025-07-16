@@ -14,7 +14,7 @@ export const Header = () => {
     { name: "Offers", path: "/offers" },
     { name: "Impact", path: "/impact" },
     { name: "Resources", path: "/resources" },
-    { name: "Contact", path: "/contact" }
+    { name: "Shop", path: "/shop" }
   ];
 
   const isActive = (path: string) => location.pathname === path;
