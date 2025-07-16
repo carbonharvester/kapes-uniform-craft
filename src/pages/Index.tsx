@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
+import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { PartnershipTiers } from "@/components/PartnershipTiers";
 import { DifferentiationTimeline } from "@/components/DifferentiationTimeline";
@@ -14,6 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Hero />
       <SchoolCodeEntry />
+      <WhatMakesKapesDifferent />
       <ValueCalculator />
       <PartnershipTiers />
       <DifferentiationTimeline />
