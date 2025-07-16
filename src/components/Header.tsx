@@ -91,15 +91,15 @@ export const Header = () => {
                   <NavigationMenuTrigger className="text-sm font-medium">
                     {section.title}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="absolute left-0 top-full mt-1 min-w-[200px] bg-white border rounded-md shadow-lg p-1 z-50">
-                    <div className="grid gap-1">
+                  <NavigationMenuContent>
+                    <div className="grid w-[200px] gap-3 p-4">
                       {section.items.map((item) => (
                         <NavigationMenuLink key={item.name} asChild>
                           <Link
                             to={item.path}
-                            className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            {item.name}
+                            <div className="text-sm font-medium leading-none">{item.name}</div>
                           </Link>
                         </NavigationMenuLink>
                       ))}
