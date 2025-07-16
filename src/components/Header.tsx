@@ -91,13 +91,13 @@ export const Header = () => {
                   <NavigationMenuTrigger className="text-sm font-medium">
                     {section.title}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid w-48 p-2">
+                  <NavigationMenuContent className="absolute left-0 top-full mt-1 min-w-[200px] bg-white border rounded-md shadow-lg p-1 z-50">
+                    <div className="grid gap-1">
                       {section.items.map((item) => (
                         <NavigationMenuLink key={item.name} asChild>
                           <Link
                             to={item.path}
-                            className="block px-3 py-2 text-sm rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                            className="block px-3 py-2 text-sm rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors"
                           >
                             {item.name}
                           </Link>
