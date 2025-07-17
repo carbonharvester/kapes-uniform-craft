@@ -180,6 +180,17 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center text-sm blur-sm">Available</TableCell>
                 </TableRow>
                 <TableRow>
+                  <TableCell className="font-medium">School Locker Collection</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Available</TableCell>
+                </TableRow>
+                <TableRow>
                   <TableCell className="font-medium">Packaging</TableCell>
                   <TableCell className="text-center text-sm">Standard</TableCell>
                   <TableCell className="text-center text-sm">Recycled Plastic</TableCell>
@@ -210,7 +221,7 @@ const PartnershipTiers = () => {
                     <X className="h-5 w-5 text-red-500 mx-auto" />
                   </TableCell>
                   <TableCell className="text-center">
-                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
