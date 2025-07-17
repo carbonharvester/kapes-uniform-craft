@@ -3,7 +3,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero background image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: 'url(/lovable-uploads/d3e3aec2-02e3-4230-a22f-71c9cf0f0250.png)' }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)' }}>
         <div className="absolute inset-0 bg-black/60 z-10"></div>
       </div>
       
