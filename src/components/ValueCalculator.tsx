@@ -85,38 +85,38 @@ export const ValueCalculator = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-background/95 to-muted/20">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+    <section className="py-12 bg-gradient-to-b from-background via-background/95 to-muted/20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 space-y-6">
-            <h2 className="text-4xl md:text-6xl font-light tracking-tight leading-tight">
+          <div className="text-center mb-12 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">
               Value Calculator:{" "}
               <span className="font-medium bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
                 Unlock Your Impact
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
               Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
             </p>
           </div>
 
           {/* Calculator Card */}
-          <div className="relative mb-16">
+          <div className="relative mb-12">
             {/* Background gradient decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl transform rotate-1"></div>
             <div className="absolute inset-0 bg-gradient-to-tl from-secondary/10 via-transparent to-muted/10 rounded-2xl transform -rotate-1"></div>
             
             {/* Main calculator container */}
-            <div className="relative glass rounded-2xl p-8 md:p-12 shadow-glass border border-border/30 backdrop-blur-xl bg-background/80">
+            <div className="relative glass rounded-2xl p-6 md:p-8 shadow-glass border border-border/30 backdrop-blur-xl bg-background/80">
               {/* Decorative elements */}
-              <div className="absolute top-6 left-6 w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
-              <div className="absolute bottom-6 right-6 w-12 h-12 bg-gradient-to-tl from-secondary/10 to-muted/10 rounded-full blur-xl"></div>
+              <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 right-4 w-10 h-10 bg-gradient-to-tl from-secondary/10 to-muted/10 rounded-full blur-xl"></div>
               
-              <div className="max-w-lg mx-auto relative z-10">
-                <div className="space-y-8">
-                  <div className="space-y-3">
-                    <Label htmlFor="students" className="text-lg font-medium text-foreground/90">
+              <div className="max-w-md mx-auto relative z-10">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="students" className="text-base font-medium text-foreground/90">
                       Number of Students
                     </Label>
                     <Input
@@ -126,32 +126,32 @@ export const ValueCalculator = () => {
                       placeholder="Enter number of students"
                       value={students}
                       onChange={(e) => setStudents(e.target.value)}
-                      className="h-12 text-lg border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm"
+                      className="h-11 text-base border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm"
                       required
                     />
                   </div>
 
-                  <div className="space-y-3">
-                    <Label htmlFor="location" className="text-lg font-medium text-foreground/90">
+                  <div className="space-y-2">
+                    <Label htmlFor="location" className="text-base font-medium text-foreground/90">
                       School Location (Region)
                     </Label>
                     <Select value={location} onValueChange={setLocation}>
-                      <SelectTrigger className="h-12 text-lg border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm">
+                      <SelectTrigger className="h-11 text-base border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm">
                         <SelectValue placeholder="Select region..." />
                       </SelectTrigger>
                       <SelectContent className="rounded-xl border-border/40 bg-background/95 backdrop-blur-xl">
-                        <SelectItem value="europe" className="text-base py-3 rounded-lg">Europe (High Regulatory Savings)</SelectItem>
-                        <SelectItem value="north-america" className="text-base py-3 rounded-lg">North America</SelectItem>
-                        <SelectItem value="asia" className="text-base py-3 rounded-lg">Asia</SelectItem>
-                        <SelectItem value="africa" className="text-base py-3 rounded-lg">Africa</SelectItem>
-                        <SelectItem value="other" className="text-base py-3 rounded-lg">Other</SelectItem>
+                        <SelectItem value="europe" className="text-sm py-2 rounded-lg">Europe (High Regulatory Savings)</SelectItem>
+                        <SelectItem value="north-america" className="text-sm py-2 rounded-lg">North America</SelectItem>
+                        <SelectItem value="asia" className="text-sm py-2 rounded-lg">Asia</SelectItem>
+                        <SelectItem value="africa" className="text-sm py-2 rounded-lg">Africa</SelectItem>
+                        <SelectItem value="other" className="text-sm py-2 rounded-lg">Other</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
 
                   {error && (
-                    <div className="p-4 bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/20 rounded-xl backdrop-blur-sm">
-                      <p className="text-destructive text-center font-medium">
+                    <div className="p-3 bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/20 rounded-xl backdrop-blur-sm">
+                      <p className="text-destructive text-center font-medium text-sm">
                         Please fill in all fields to calculate your impact.
                       </p>
                     </div>
@@ -159,7 +159,7 @@ export const ValueCalculator = () => {
 
                   <Button 
                     onClick={calculateValue} 
-                    className="w-full h-12 text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
+                    className="w-full h-11 text-base font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
                   >
                     Calculate Your Grand Slam Impact
                   </Button>
@@ -171,7 +171,7 @@ export const ValueCalculator = () => {
           {/* Results section */}
           {results && (
             <div className="animate-in fade-in duration-700 slide-in-from-bottom-8">
-              <div className="text-center mb-12">
+              <div className="text-center mb-10">
                 <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-4">
                   Your School's{" "}
                   <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -181,7 +181,7 @@ export const ValueCalculator = () => {
                 <div className="w-20 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 <div className="group glass rounded-xl p-6 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
                   <div className="text-4xl mb-3">🌍</div>
                   <h4 className="font-semibold text-lg mb-2 text-foreground">CO2 Conquest</h4>
