@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapes - School Uniforms That Make the World Better</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            background-image: url('/shopify/shop_images/home-banner.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: end;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            padding-bottom: 4rem;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 6vw, 3.75rem);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            max-width: 32rem;
+        }
+        
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 36rem;
+            font-weight: 500;
+        }
+        
+        /* School Code Entry */
+        .school-code {
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+        
+        .school-code-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .school-code-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .school-code h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .form-container {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        
+        .input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        
+        .button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        /* School Logos */
+        .school-logos {
+            padding: 4rem 0;
+            background: #ffffff;
+        }
+        
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 3rem 0 5rem;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .features h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-subtitle {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .feature-item {
+            padding: 3rem;
+            border-right: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-item h3 {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .feature-item p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        /* Value Calculator */
+        .value-calculator {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+        }
+        
+        .calculator-container {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-header h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Partnership Tiers */
+        .partnership-tiers {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .tier-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .tier-popular {
+            border-color: #3b82f6;
+            transform: scale(1.05);
+        }
+        
+        /* Impact Dashboard */
+        .impact-dashboard {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(243, 244, 246, 0.2) 100%);
+        }
+        
+        .impact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .impact-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+            background: linear-gradient(to right, #3b82f6, #8b5cf6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Free Audit Tool */
+        .free-audit {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .audit-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .audit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 4rem 0;
+            background: rgba(243, 244, 246, 0.5);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Bonuses and CTA */
+        .bonuses-cta {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #ffffff 0%, rgba(243, 244, 246, 0.2) 100%);
+        }
+        
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .bonus-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            background: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>School Uniforms That Make the World Better</h1>
+                <p>Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Code Entry -->
+    <section class="school-code">
+        <div class="container">
+            <div class="school-code-grid">
+                <div>
+                    <h2>I am a <span style="color: #3b82f6;">parent</span> shopping for uniforms</h2>
+                </div>
+                <div class="form-container">
+                    <form>
+                        <input type="text" class="input" placeholder="Enter school code" required>
+                        <button type="submit" class="button">Enter Store</button>
+                    </form>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>❓</span> Need Help
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Logos -->
+    <section class="school-logos">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 1.875rem; font-weight: bold;">Trusted by Leading Schools</h2>
+            <div class="logos-grid">
+                <div style="text-align: center; padding: 1rem;">
+                    <img src="https://via.placeholder.com/150x80/f3f4f6/6b7280?text=School+Logo" alt="School Logo" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="text-align: center; padding: 1rem;">
+                    <img src="https://via.placeholder.com/150x80/f3f4f6/6b7280?text=School+Logo" alt="School Logo" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="text-align: center; padding: 1rem;">
+                    <img src="https://via.placeholder.com/150x80/f3f4f6/6b7280?text=School+Logo" alt="School Logo" style="max-width: 100%; height: auto;">
+                </div>
+                <div style="text-align: center; padding: 1rem;">
+                    <img src="https://via.placeholder.com/150x80/f3f4f6/6b7280?text=School+Logo" alt="School Logo" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Makes Kapes Different -->
+    <section class="features">
+        <div class="container">
+            <div class="features-header">
+                <h2>What Makes Kapes Different</h2>
+                <p class="features-subtitle">We're Not Just a Uniform Supplier — We're Your Sustainability & Social Impact Partner</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>♻️</span>
+                        <h3>Natural, Sustainable Materials</h3>
+                    </div>
+                    <p>From regenerative cotton to biodegradable tech-fabrics</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>👥</span>
+                        <h3>Ethical Manufacturing</h3>
+                    </div>
+                    <p>No shortcuts. No child labour. Just safe jobs and fair pay.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>📊</span>
+                        <h3>Real-Time Sustainability Dashboard</h3>
+                    </div>
+                    <p>Track your environmental and social impact across the year</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>🔄</span>
+                        <h3>Fully Managed Takeback Scheme</h3>
+                    </div>
+                    <p>Old uniforms = new meals for children in need across Africa</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>🎓</span>
+                        <h3>Student Governance Board</h3>
+                    </div>
+                    <p>Give your students a voice in the sustainability mission</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>❤️</span>
+                        <h3>Free Uniforms & School Meals in Africa</h3>
+                    </div>
+                    <p>Every sale funds uniforms and meals for children in need</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>🏪</span>
+                        <h3>On-Campus School Shops</h3>
+                    </div>
+                    <p>Beautifully designed, fully managed by Kapes</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>📦</span>
+                        <h3>E-Commerce Lockers</h3>
+                    </div>
+                    <p>Let parents collect orders directly from school</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-header">
+                        <span>🚚</span>
+                        <h3>Next-Day Home Delivery</h3>
+                    </div>
+                    <p>For ultimate parent convenience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Calculator -->
+    <section class="value-calculator">
+        <div class="container">
+            <div class="calculator-container" style="max-width: 64rem; margin: 0 auto;">
+                <div class="calculator-header">
+                    <h1>Value Calculator: Unlock Your School's Epic Sustainability Wins</h1>
+                    <p style="color: #6b7280; max-width: 48rem; margin: 0 auto;">
+                        Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
+                    </p>
+                </div>
+
+                <div style="max-width: 28rem; margin: 0 auto 2rem;">
+                    <form>
+                        <div class="form-group">
+                            <label class="label">Number of Students:</label>
+                            <input type="number" class="input" placeholder="Enter number of students" min="1" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="label">School Location (Region):</label>
+                            <select class="input" required>
+                                <option value="">Select region...</option>
+                                <option value="europe">Europe (High Regulatory Savings)</option>
+                                <option value="north-america">North America</option>
+                                <option value="asia">Asia</option>
+                                <option value="africa">Africa</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="button" style="font-size: 1.125rem; padding: 1rem;">
+                            Calculate Your Grand Slam Impact
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Results placeholder -->
+                <div style="text-align: center; padding: 2rem; background: #f9fafb; border-radius: 0.5rem; margin-top: 2rem;">
+                    <p style="color: #6b7280;">Results will appear here after calculation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Tiers -->
+    <section class="partnership-tiers">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem;">Partnership Tiers</h2>
+                <p style="color: #6b7280;">Choose the level of impact that's right for your school<br>All tiers include sustainable, ethical uniforms and dedicated support.</p>
+            </div>
+            
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">ESSENTIALS</h3>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;">For schools who want sustainable, ethical uniforms without the complexity</p>
+                    <ul style="text-align: left; margin-bottom: 2rem; list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">✓ 100% Sustainable Uniforms</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Ethical Manufacturing</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Custom Design & Sampling</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Fully Managed Online Shop</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Full Delivery Options</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Plastic-Free Packaging</li>
+                    </ul>
+                    <button class="button">Learn More</button>
+                </div>
+                
+                <div class="tier-card tier-popular">
+                    <div style="background: #3b82f6; color: white; padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 1rem; font-weight: 600;">MOST POPULAR</div>
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">IMPACT</h3>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;">Our highest level of partnership for values-driven schools</p>
+                    <ul style="text-align: left; margin-bottom: 2rem; list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">✓ Everything in Core</li>
+                        <li style="margin-bottom: 0.5rem;">✓ QR Codes on Every Garment</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Student Governance Opportunity</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Custom PR & CSR Toolkit</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Dedicated Account Manager</li>
+                    </ul>
+                    <button class="button">Learn More</button>
+                </div>
+                
+                <div class="tier-card">
+                    <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">CORE</h3>
+                    <p style="color: #6b7280; margin-bottom: 1.5rem;">For schools who want to create positive change with impact tracking</p>
+                    <ul style="text-align: left; margin-bottom: 2rem; list-style: none;">
+                        <li style="margin-bottom: 0.5rem;">✓ Everything in Essentials</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Fully Managed Takeback Scheme</li>
+                        <li style="margin-bottom: 0.5rem;">✓ KapesImpact™ Dashboard</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Free Meals & Uniforms Donated</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Factory Visits & Teaching Materials</li>
+                    </ul>
+                    <button class="button">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kapes Impact Dashboard -->
+    <section class="impact-dashboard">
+        <div class="container" style="max-width: 88rem;">
+            <div class="impact-header">
+                <h2>Kapes Impact Platform</h2>
+                <p style="font-size: 1.25rem; color: #6b7280; max-width: 48rem; margin: 0 auto;">
+                    Transform your sustainability data into compelling stories. Track, measure, and showcase your school's environmental impact with our comprehensive dashboard.
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem;">
+                <div style="position: relative;">
+                    <div style="border: 2px solid #e5e7eb; border-radius: 0.5rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                        <div style="aspect-ratio: 16/9; background: #f3f4f6; display: flex; align-items: center; justify-content: center;">
+                            <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop" alt="Dashboard screenshot" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center;">
+                    <h3 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">Transform Your Impact Story</h3>
+                    <p style="font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem;">
+                        Turn complex sustainability data into clear, compelling narratives that inspire action and demonstrate real environmental progress.
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 32rem; margin: 0 auto;">
+                        <button class="button" style="height: 3rem;">Book Demo</button>
+                        <button style="height: 3rem; background: white; color: #3b82f6; border: 1px solid #3b82f6; border-radius: 0.375rem; font-weight: 500; cursor: pointer;">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Audit Tool -->
+    <section class="free-audit">
+        <div class="container">
+            <div style="max-width: 64rem; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">Free Uniform Program Audit</h2>
+                    <p style="color: #6b7280;">
+                        Get a comprehensive analysis of your current uniform program with actionable recommendations
+                    </p>
+                </div>
+                
+                <div class="audit-grid">
+                    <div>
+                        <h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">What You'll Receive:</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: #3b82f6; margin-top: 0.125rem;">✓</span>
+                                <div>
+                                    <h4 style="font-weight: 600;">Sustainability Assessment</h4>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">Current environmental impact analysis</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: #3b82f6; margin-top: 0.125rem;">✓</span>
+                                <div>
+                                    <h4 style="font-weight: 600;">Cost Optimization Report</h4>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">Identify potential savings and efficiencies</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: #3b82f6; margin-top: 0.125rem;">✓</span>
+                                <div>
+                                    <h4 style="font-weight: 600;">Impact Projections</h4>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">See your potential positive impact with Kapes</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: #3b82f6; margin-top: 0.125rem;">✓</span>
+                                <div>
+                                    <h4 style="font-weight: 600;">Custom Recommendations</h4>
+                                    <p style="color: #6b7280; font-size: 0.875rem;">Tailored action plan for your school</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 2rem; background: white;">
+                        <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            📄 Start Your Free Audit
+                        </h3>
+                        <form>
+                            <div class="form-group">
+                                <label class="label">School Name</label>
+                                <input type="text" class="input" placeholder="Your school name">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Contact Email</label>
+                                <input type="email" class="input" placeholder="your.email@school.edu">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Number of Students</label>
+                                <input type="number" class="input" placeholder="e.g., 500">
+                            </div>
+                            <div class="form-group">
+                                <label class="label">Current Annual Uniform Budget</label>
+                                <input type="number" class="input" placeholder="e.g., £25,000">
+                            </div>
+                            <button type="submit" class="button">
+                                Get My Free Audit Report
+                            </button>
+                            <p style="font-size: 0.75rem; color: #6b7280; text-align: center; margin-top: 1rem;">
+                                No commitment required • Report delivered within 2 business days
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div style="max-width: 96rem; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.875rem; font-weight: bold; margin-bottom: 1rem;">What Schools Are Saying</h2>
+                    <p style="color: #6b7280;">
+                        Real feedback from schools making a real impact
+                    </p>
+                </div>
+                
+                <div style="max-width: 64rem; margin: 0 auto;">
+                    <div class="video-container">
+                        <iframe
+                            src="https://player.vimeo.com/video/720191939?h=0&title=1&byline=1&portrait=1"
+                            width="100%"
+                            height="100%"
+                            style="position: absolute; top: 0; left: 0;"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen
+                            title="What Schools Are Saying">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses and CTA -->
+    <section class="bonuses-cta">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: clamp(1.875rem, 4vw, 2.25rem); font-weight: bold; margin-bottom: 1rem;">
+                    Exclusive Partnership Bonuses
+                </h2>
+                <p style="font-size: 1.125rem; color: #6b7280; max-width: 32rem; margin: 0 auto;">
+                    Additional value when you join the Kapes family
+                </p>
+            </div>
+
+            <div class="bonuses-grid">
+                <div class="bonus-card">
+                    <div style="margin: 0 auto 1rem; width: 3rem; height: 3rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                        🎁
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: bold; margin-bottom: 0.5rem;">Free Setup & Transition</h3>
+                    <p style="color: #6b7280; margin-bottom: 0.75rem; font-size: 0.875rem;">Complete program setup with zero transition costs</p>
+                    <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Worth £5,000</span>
+                </div>
+                <div class="bonus-card">
+                    <div style="margin: 0 auto 1rem; width: 3rem; height: 3rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                        👥
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: bold; margin-bottom: 0.5rem;">Dedicated Account Manager</h3>
+                    <p style="color: #6b7280; margin-bottom: 0.75rem; font-size: 0.875rem;">Personal support throughout your partnership</p>
+                    <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Included</span>
+                </div>
+                <div class="bonus-card">
+                    <div style="margin: 0 auto 1rem; width: 3rem; height: 3rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                        📚
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: bold; margin-bottom: 0.5rem;">Educational Resource Package</h3>
+                    <p style="color: #6b7280; margin-bottom: 0.75rem; font-size: 0.875rem;">Curriculum materials and sustainability guides</p>
+                    <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Worth £2,000</span>
+                </div>
+                <div class="bonus-card">
+                    <div style="margin: 0 auto 1rem; width: 3rem; height: 3rem; background: rgba(59, 130, 246, 0.1); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                        ✈️
+                    </div>
+                    <h3 style="font-size: 1.125rem; font-weight: bold; margin-bottom: 0.5rem;">Factory Visit Program</h3>
+                    <p style="color: #6b7280; margin-bottom: 0.75rem; font-size: 0.875rem;">Educational trips for students and staff</p>
+                    <span style="background: #f3f4f6; color: #374151; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500;">Exclusive Access</span>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="button" style="font-size: 1.125rem; padding: 1rem 2rem; background: #3b82f6;">
+                    Start Your Partnership
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=32&h=32&fit=crop&crop=center" alt="Kapes Logo" style="width: 2rem; height: 2rem; border-radius: 0.25rem;">
+                        <span style="font-size: 1.25rem; font-weight: bold;">Kapes</span>
+                    </div>
+                    <p style="color: #d1d5db; margin-bottom: 1rem;">Sustainable school uniforms that don't compromise on quality, comfort, or style. Leading the fashion revolution in education.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" style="color: #d1d5db;">📘</a>
+                        <a href="#" style="color: #d1d5db;">📷</a>
+                        <a href="#" style="color: #d1d5db;">🐦</a>
+                        <a href="#" style="color: #d1d5db;">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="/uniform-solutions">Uniform Solutions</a></li>
+                        <li><a href="/partnership-tiers">Partnership Tiers</a></li>
+                        <li><a href="/kapes-impact-platform">Impact Dashboard</a></li>
+                        <li><a href="/school-shops-lockers">School Shop Lockers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/our-mission">Our Mission</a></li>
+                        <li><a href="/our-factories">Our Factories</a></li>
+                        <li><a href="/case-studies">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/materials">Materials</a></li>
+                        <li><a href="/educational-resources">Educational Resources</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/partner-with-us">Partner With Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Kapes. All rights reserved.</p>
+                <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 0.5rem;">
+                    <a href="/privacy-policy" style="color: #9ca3af; text-decoration: none;">Privacy Policy</a>
+                    <a href="/terms-of-service" style="color: #9ca3af; text-decoration: none;">Terms of Service</a>
+                    <a href="/cookies" style="color: #9ca3af; text-decoration: none;">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
