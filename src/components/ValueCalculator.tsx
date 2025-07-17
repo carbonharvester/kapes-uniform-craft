@@ -85,84 +85,100 @@ export const ValueCalculator = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+    <section className="py-32 bg-gradient-to-b from-background via-background/95 to-muted/20">
+      <div className="container mx-auto px-6">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 space-y-6">
-            <h2 className="text-4xl md:text-6xl font-light tracking-tight">
+          <div className="text-center mb-20 space-y-8">
+            <h2 className="text-5xl md:text-7xl font-light tracking-tight leading-tight">
               Value Calculator:{" "}
-              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <span className="font-medium bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
                 Unlock Your Impact
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto font-light leading-relaxed">
               Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
             </p>
           </div>
 
-          {/* Calculator Card */}
-          <div className="glass rounded-3xl p-12 shadow-glass border border-border/50">
-            <div className="max-w-md mx-auto mb-12">{/* ... keep existing code */}
-
-              <div className="space-y-8">
-                <div className="space-y-3">
-                  <Label htmlFor="students" className="text-lg font-medium">Number of Students</Label>
-                  <Input
-                    id="students"
-                    type="number"
-                    min="1"
-                    placeholder="Enter number of students"
-                    value={students}
-                    onChange={(e) => setStudents(e.target.value)}
-                    className="h-14 text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                    required
-                  />
-                </div>
-
-                <div className="space-y-3">
-                  <Label htmlFor="location" className="text-lg font-medium">School Location (Region)</Label>
-                  <Select value={location} onValueChange={setLocation}>
-                    <SelectTrigger className="h-14 text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300">
-                      <SelectValue placeholder="Select region..." />
-                    </SelectTrigger>
-                    <SelectContent className="rounded-xl border-border/50">
-                      <SelectItem value="europe">Europe (High Regulatory Savings)</SelectItem>
-                      <SelectItem value="north-america">North America</SelectItem>
-                      <SelectItem value="asia">Asia</SelectItem>
-                      <SelectItem value="africa">Africa</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                {error && (
-                  <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-xl">
-                    <p className="text-destructive text-center font-medium">
-                      Please fill in all fields to calculate.
-                    </p>
+          {/* Enhanced Calculator Card */}
+          <div className="relative mb-20">
+            {/* Background gradient decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-3xl transform rotate-1"></div>
+            <div className="absolute inset-0 bg-gradient-to-tl from-secondary/10 via-transparent to-muted/10 rounded-3xl transform -rotate-1"></div>
+            
+            {/* Main calculator container */}
+            <div className="relative glass rounded-3xl p-16 shadow-glass border border-border/30 backdrop-blur-xl bg-background/80">
+              {/* Decorative elements */}
+              <div className="absolute top-8 left-8 w-20 h-20 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-8 right-8 w-16 h-16 bg-gradient-to-tl from-secondary/10 to-muted/10 rounded-full blur-xl"></div>
+              
+              <div className="max-w-xl mx-auto relative z-10">
+                <div className="space-y-10">
+                  <div className="space-y-4">
+                    <Label htmlFor="students" className="text-xl font-medium text-foreground/90">
+                      Number of Students
+                    </Label>
+                    <Input
+                      id="students"
+                      type="number"
+                      min="1"
+                      placeholder="Enter number of students"
+                      value={students}
+                      onChange={(e) => setStudents(e.target.value)}
+                      className="h-16 text-xl border-border/40 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm shadow-sm hover:shadow-md"
+                      required
+                    />
                   </div>
-                )}
 
-                <Button 
-                  onClick={calculateValue} 
-                  className="w-full h-14 text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl"
-                >
-                  Calculate Your Grand Slam Impact
-                </Button>
+                  <div className="space-y-4">
+                    <Label htmlFor="location" className="text-xl font-medium text-foreground/90">
+                      School Location (Region)
+                    </Label>
+                    <Select value={location} onValueChange={setLocation}>
+                      <SelectTrigger className="h-16 text-xl border-border/40 rounded-2xl focus:ring-4 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm shadow-sm hover:shadow-md">
+                        <SelectValue placeholder="Select region..." />
+                      </SelectTrigger>
+                      <SelectContent className="rounded-2xl border-border/40 bg-background/95 backdrop-blur-xl shadow-2xl">
+                        <SelectItem value="europe" className="text-lg py-4 rounded-xl">Europe (High Regulatory Savings)</SelectItem>
+                        <SelectItem value="north-america" className="text-lg py-4 rounded-xl">North America</SelectItem>
+                        <SelectItem value="asia" className="text-lg py-4 rounded-xl">Asia</SelectItem>
+                        <SelectItem value="africa" className="text-lg py-4 rounded-xl">Africa</SelectItem>
+                        <SelectItem value="other" className="text-lg py-4 rounded-xl">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {error && (
+                    <div className="p-6 bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/20 rounded-2xl backdrop-blur-sm">
+                      <p className="text-destructive text-center font-medium text-lg">
+                        Please fill in all fields to calculate your impact.
+                      </p>
+                    </div>
+                  )}
+
+                  <Button 
+                    onClick={calculateValue} 
+                    className="w-full h-16 text-xl font-medium rounded-2xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
+                  >
+                    Calculate Your Grand Slam Impact
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Results section */}
           {results && (
-            <div className="mt-16 animate-in fade-in duration-500">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-4">
+            <div className="animate-in fade-in duration-700 slide-in-from-bottom-8">
+              <div className="text-center mb-16">
+                <h3 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
                   Your School's{" "}
                   <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                     Impact Projection
                   </span>
                 </h3>
+                <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -223,7 +239,7 @@ export const ValueCalculator = () => {
                 <Button 
                   onClick={resetCalculator} 
                   variant="outline" 
-                  className="px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
+                  className="px-10 py-4 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-105 border-border/40 hover:border-primary/40 hover:bg-primary/5"
                 >
                   Recalculate Impact
                 </Button>
