@@ -14,10 +14,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
-      <div id="parent-section">
+      <div id="parent-section" className="scroll-mt-20">
         <SchoolCodeEntry />
       </div>
-      <div id="school-section">
+      <div id="school-section" className="scroll-mt-20">
         <WhatMakesKapesDifferent />
       </div>
       <ValueCalculator />
