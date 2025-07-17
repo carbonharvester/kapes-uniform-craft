@@ -11,10 +11,8 @@ interface DifferenceCard {
   title: string;
   subtitle: string;
   description: string;
-  color: string;
-  textColor: string;
+  image: string;
   icon: React.ReactNode;
-  image?: string;
   details: {
     title: string;
     content: string;
@@ -28,8 +26,7 @@ const differences: DifferenceCard[] = [
     title: "Natural, Sustainable Materials",
     subtitle: "Every thread matters for our planet's future.",
     description: "100% organic and recycled fabrics",
-    color: "bg-gradient-to-br from-green-400 to-emerald-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=400&h=600&fit=crop",
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Natural, Sustainable Materials",
@@ -48,8 +45,7 @@ const differences: DifferenceCard[] = [
     title: "Ethical Manufacturing",
     subtitle: "Fair wages and safe working conditions.",
     description: "Responsible production practices",
-    color: "bg-gradient-to-br from-blue-500 to-purple-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=600&fit=crop",
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "Ethical Manufacturing",
@@ -68,8 +64,7 @@ const differences: DifferenceCard[] = [
     title: "Real-Time Sustainability Dashboard",
     subtitle: "Track your environmental impact live.",
     description: "Complete transparency on impact",
-    color: "bg-gradient-to-br from-teal-400 to-cyan-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
     icon: <BarChart3 className="w-6 h-6" />,
     details: {
       title: "Real-Time Sustainability Dashboard",
@@ -88,8 +83,7 @@ const differences: DifferenceCard[] = [
     title: "Fully Managed Takeback Scheme",
     subtitle: "Complete circular lifecycle management.",
     description: "End-to-end uniform recycling",
-    color: "bg-gradient-to-br from-orange-400 to-red-500",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=400&h=600&fit=crop",
     icon: <Recycle className="w-6 h-6" />,
     details: {
       title: "Fully Managed Takeback Scheme",
@@ -108,8 +102,7 @@ const differences: DifferenceCard[] = [
     title: "Student Governance Board",
     subtitle: "Empowering students to lead change.",
     description: "Student-led sustainability initiatives",
-    color: "bg-gradient-to-br from-purple-500 to-pink-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=600&fit=crop",
     icon: <Users className="w-6 h-6" />,
     details: {
       title: "Student Governance Board",
@@ -128,8 +121,7 @@ const differences: DifferenceCard[] = [
     title: "Free Uniforms & School Meals in Africa",
     subtitle: "Creating global educational equity.",
     description: "Supporting education worldwide",
-    color: "bg-gradient-to-br from-amber-500 to-orange-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&h=600&fit=crop",
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free Uniforms & School Meals in Africa",
@@ -148,8 +140,7 @@ const differences: DifferenceCard[] = [
     title: "On-Campus School Shops",
     subtitle: "Convenient access to quality uniforms.",
     description: "Physical retail presence at schools",
-    color: "bg-gradient-to-br from-indigo-500 to-purple-700",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=600&fit=crop",
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "On-Campus School Shops",
@@ -168,8 +159,7 @@ const differences: DifferenceCard[] = [
     title: "E-Commerce Lockers",
     subtitle: "Smart collection points for busy families.",
     description: "Automated pickup and delivery",
-    color: "bg-gradient-to-br from-gray-700 to-gray-900",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=600&fit=crop",
     icon: <Package className="w-6 h-6" />,
     details: {
       title: "E-Commerce Lockers",
@@ -188,8 +178,7 @@ const differences: DifferenceCard[] = [
     title: "Next-Day Home Delivery",
     subtitle: "Fast, reliable delivery to your door.",
     description: "Premium logistics service",
-    color: "bg-gradient-to-br from-pink-500 to-rose-600",
-    textColor: "text-white",
+    image: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=400&h=600&fit=crop",
     icon: <Truck className="w-6 h-6" />,
     details: {
       title: "Next-Day Home Delivery",
@@ -220,54 +209,42 @@ export const KapesDifferentCarousel = () => {
         <CarouselContent className="-ml-2 md:-ml-4">
           {differences.map((difference) => (
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-              <Card className={cn(
-                "h-96 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl",
-                difference.color
-              )}>
-                <CardContent className="p-8 h-full flex flex-col justify-between relative">
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-6 right-6">
-                      {difference.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Image placeholder area */}
-                  <div className="relative z-10 flex-1 mb-6">
-                    <div className="w-full h-32 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 mb-6 flex items-center justify-center">
-                      {React.cloneElement(difference.icon as React.ReactElement, {
-                        className: "w-12 h-12 text-white/80"
-                      })}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <span className="text-sm font-medium opacity-80 uppercase tracking-wide">
-                        {difference.description}
-                      </span>
-                      <h3 className={cn("text-2xl font-semibold leading-tight", difference.textColor)}>
-                        {difference.title}
-                      </h3>
-                      <p className={cn("text-base opacity-90 leading-relaxed", difference.textColor)}>
-                        {difference.subtitle}
-                      </p>
-                    </div>
+              <Card className="h-96 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{ backgroundImage: `url(${difference.image})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                
+                <CardContent className="p-6 h-full flex flex-col justify-end relative z-10">
+                  {/* Text content at bottom */}
+                  <div className="space-y-2 mb-4">
+                    <span className="text-xs font-medium text-white/80 uppercase tracking-wide">
+                      {difference.description}
+                    </span>
+                    <h3 className="text-xl font-semibold leading-tight text-white">
+                      {difference.title}
+                    </h3>
+                    <p className="text-sm text-white/90 leading-relaxed">
+                      {difference.subtitle}
+                    </p>
                   </div>
 
                   {/* Plus Button */}
-                  <div className="relative z-10 flex justify-end">
+                  <div className="flex justify-end">
                     <Popover 
                       open={openPopover === difference.id} 
                       onOpenChange={(open) => setOpenPopover(open ? difference.id : null)}
                     >
                       <PopoverTrigger asChild>
                         <button
-                          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
                           onClick={(e) => {
                             e.stopPropagation();
                             setOpenPopover(openPopover === difference.id ? null : difference.id);
                           }}
                         >
-                          <Plus className="w-5 h-5 text-white" />
+                          <Plus className="w-4 h-4 text-white" />
                         </button>
                       </PopoverTrigger>
                       <PopoverContent 
@@ -278,7 +255,7 @@ export const KapesDifferentCarousel = () => {
                       >
                         <div className="p-8">
                           <div className="flex items-center space-x-4 mb-6">
-                            <div className={cn("p-3 rounded-xl", difference.color)}>
+                            <div className="p-3 rounded-xl bg-primary">
                               {React.cloneElement(difference.icon as React.ReactElement, {
                                 className: "w-6 h-6 text-white"
                               })}
