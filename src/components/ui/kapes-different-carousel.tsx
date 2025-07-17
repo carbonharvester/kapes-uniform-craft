@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin } from "lucide-react";
+import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
@@ -212,6 +212,25 @@ const differences: DifferenceCard[] = [
         "Flexible delivery time slots",
         "Safe place delivery options",
         "Carbon-neutral shipping"
+      ]
+    }
+  },
+  {
+    id: "ai-forecasting",
+    title: "AI Powered Forecasting & Customer Support",
+    subtitle: "Smart predictions and instant assistance.",
+    description: "Intelligent planning and support",
+    image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=600&fit=crop",
+    icon: <Brain className="w-6 h-6" />,
+    details: {
+      title: "AI Powered Forecasting & Customer Support",
+      content: "Our advanced AI technology predicts your uniform needs and provides instant, intelligent customer support 24/7.",
+      features: [
+        "Predictive sizing and demand forecasting",
+        "AI-powered inventory management",
+        "24/7 intelligent chatbot support",
+        "Automated reorder suggestions",
+        "Smart size recommendations based on growth patterns"
       ]
     }
   }
