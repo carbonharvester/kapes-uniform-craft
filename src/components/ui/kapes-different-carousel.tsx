@@ -2,7 +2,11 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
@@ -237,7 +241,7 @@ const differences: DifferenceCard[] = [
 ];
 
 export const KapesDifferentCarousel = () => {
-  const [openPopover, setOpenPopover] = useState<string | null>(null);
+  const [openDialog, setOpenDialog] = useState<string | null>(null);
 
   return (
     <div className="relative">
@@ -266,57 +270,55 @@ export const KapesDifferentCarousel = () => {
                     </h3>
                   </div>
 
-                  {/* Plus Button at bottom right */}
-                  <div className="flex justify-end">
-                    <Popover 
-                      open={openPopover === difference.id} 
-                      onOpenChange={(open) => setOpenPopover(open ? difference.id : null)}
-                    >
-                      <PopoverTrigger asChild>
-                        <button
-                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setOpenPopover(openPopover === difference.id ? null : difference.id);
-                          }}
-                        >
-                          <Plus className="w-4 h-4 text-white" />
-                        </button>
-                      </PopoverTrigger>
-                      <PopoverContent 
-                        className="w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm !fixed !top-1/2 !left-1/2 !-translate-x-1/2 !-translate-y-1/2 !z-[9999]"
-                      >
-                        <div className="p-8">
-                          <div className="flex items-center space-x-4 mb-6">
-                            <div className="p-3 rounded-xl bg-primary">
-                              {React.cloneElement(difference.icon as React.ReactElement, {
-                                className: "w-6 h-6 text-white"
-                              })}
-                            </div>
-                            <h4 className="text-xl font-semibold text-foreground">
-                              {difference.details.title}
-                            </h4>
-                          </div>
-                          
-                          <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-                            {difference.details.content}
-                          </p>
-                          
-                          <div className="space-y-3">
-                            <h5 className="text-base font-medium text-foreground">Key Features:</h5>
-                            <ul className="space-y-2">
-                              {difference.details.features.map((feature, index) => (
-                                <li key={index} className="text-sm text-muted-foreground flex items-center space-x-3">
-                                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </PopoverContent>
-                    </Popover>
-                  </div>
+                   {/* Plus Button at bottom right */}
+                   <div className="flex justify-end">
+                     <Dialog 
+                       open={openDialog === difference.id} 
+                       onOpenChange={(open) => setOpenDialog(open ? difference.id : null)}
+                     >
+                       <DialogTrigger asChild>
+                         <button
+                           className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                           onClick={(e) => {
+                             e.stopPropagation();
+                             setOpenDialog(openDialog === difference.id ? null : difference.id);
+                           }}
+                         >
+                           <Plus className="w-4 h-4 text-white" />
+                         </button>
+                       </DialogTrigger>
+                       <DialogContent className="w-[480px] max-w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm">
+                         <div className="p-8">
+                           <div className="flex items-center space-x-4 mb-6">
+                             <div className="p-3 rounded-xl bg-primary">
+                               {React.cloneElement(difference.icon as React.ReactElement, {
+                                 className: "w-6 h-6 text-white"
+                               })}
+                             </div>
+                             <h4 className="text-xl font-semibold text-foreground">
+                               {difference.details.title}
+                             </h4>
+                           </div>
+                           
+                           <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                             {difference.details.content}
+                           </p>
+                           
+                           <div className="space-y-3">
+                             <h5 className="text-base font-medium text-foreground">Key Features:</h5>
+                             <ul className="space-y-2">
+                               {difference.details.features.map((feature, index) => (
+                                 <li key={index} className="text-sm text-muted-foreground flex items-center space-x-3">
+                                   <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+                                   <span>{feature}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                           </div>
+                         </div>
+                       </DialogContent>
+                     </Dialog>
+                   </div>
                 </CardContent>
               </Card>
             </CarouselItem>
