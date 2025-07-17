@@ -262,22 +262,22 @@ const CircularEconomyTakeback = () => {
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-items-center">
             {impactResults.map((result, index) => {
               const IconComponent = result.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
+                <Card key={index} className="hover:shadow-lg transition-shadow text-center w-full max-w-sm">
+                  <CardHeader className="text-center">
                     <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
                       <IconComponent className="w-6 h-6 text-orange-600" />
                     </div>
-                    <Badge variant="outline" className="mb-2">
+                    <Badge variant="outline" className="mb-2 mx-auto">
                       {result.metric}
                     </Badge>
-                    <CardTitle className="text-lg">{result.title}</CardTitle>
+                    <CardTitle className="text-lg text-center">{result.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{result.description}</p>
+                  <CardContent className="text-center">
+                    <p className="text-muted-foreground text-center">{result.description}</p>
                   </CardContent>
                 </Card>
               );
