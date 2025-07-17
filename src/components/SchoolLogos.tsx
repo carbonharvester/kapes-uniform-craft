@@ -54,7 +54,7 @@ export const SchoolLogos = () => {
 
   return (
     <Logos3 
-      heading="Trusted by Leading Schools Across the UK"
+      heading="Trusted by Leading International Schools"
       logos={schoolLogos}
     />
   );
