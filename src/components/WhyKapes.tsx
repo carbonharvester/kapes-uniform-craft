@@ -1,7 +1,7 @@
 
 export const WhyKapes = () => {
   return (
-    <section className="py-0 bg-primary text-white">
+    <section className="py-0 bg-background-warm text-heading">
       <div className="container mx-auto px-4">
         <div className="grid gap-16">
           <div className="text-center">
