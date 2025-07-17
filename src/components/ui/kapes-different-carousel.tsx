@@ -6,6 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
+import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -85,7 +86,7 @@ const differences: DifferenceCard[] = [
     title: "Fully Managed Takeback Scheme",
     subtitle: "Complete circular lifecycle management.",
     description: "End-to-end uniform recycling",
-    image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=400&h=600&fit=crop",
+    image: takebackSchemeImage,
     icon: <Recycle className="w-6 h-6" />,
     details: {
       title: "Fully Managed Takeback Scheme",
