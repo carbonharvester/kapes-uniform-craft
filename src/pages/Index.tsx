@@ -3,7 +3,7 @@ import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { PartnershipTiers } from "@/components/PartnershipTiers";
-import { DifferentiationTimeline } from "@/components/DifferentiationTimeline";
+
 import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
@@ -20,7 +20,7 @@ const Index = () => {
       <WhatMakesKapesDifferent />
       <ValueCalculator />
       <PartnershipTiers />
-      <DifferentiationTimeline />
+      
       <KapesImpactDashboard />
       <FreeAuditTool />
       <Testimonials />
