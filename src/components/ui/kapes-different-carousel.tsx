@@ -161,21 +161,21 @@ export const KapesDifferentCarousel = () => {
           {differences.map((difference) => (
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
               <Card className={cn(
-                "h-80 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105",
+                "h-64 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105",
                 difference.color
               )}>
-                <CardContent className="p-6 h-full flex flex-col justify-between relative">
+                <CardContent className="p-8 h-full flex flex-col justify-between relative">
                   {/* Background Pattern */}
                   <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-4 right-4">
+                    <div className="absolute top-6 right-6">
                       {difference.icon}
                     </div>
                   </div>
                   
                   {/* Content */}
-                  <div className="relative z-10">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center space-x-2">
+                  <div className="relative z-10 flex-1">
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-center space-x-3">
                         {difference.icon}
                         <span className="text-sm font-medium opacity-80">
                           {difference.description}
@@ -183,11 +183,11 @@ export const KapesDifferentCarousel = () => {
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <h3 className={cn("text-2xl font-semibold", difference.textColor)}>
+                    <div className="space-y-3">
+                      <h3 className={cn("text-3xl font-semibold leading-tight", difference.textColor)}>
                         {difference.title}
                       </h3>
-                      <p className={cn("text-base opacity-90", difference.textColor)}>
+                      <p className={cn("text-lg opacity-90 leading-relaxed", difference.textColor)}>
                         {difference.subtitle}
                       </p>
                     </div>
@@ -201,42 +201,43 @@ export const KapesDifferentCarousel = () => {
                     >
                       <PopoverTrigger asChild>
                         <button
-                          className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                          className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
                           onClick={(e) => {
                             e.stopPropagation();
                             setOpenPopover(openPopover === difference.id ? null : difference.id);
                           }}
                         >
-                          <Plus className="w-4 h-4 text-white" />
+                          <Plus className="w-5 h-5 text-white" />
                         </button>
                       </PopoverTrigger>
                       <PopoverContent 
-                        className="w-80 p-0 border-0 shadow-xl bg-white/95 backdrop-blur-sm"
+                        className="w-96 p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm"
                         side="top"
-                        align="end"
+                        align="center"
+                        sideOffset={20}
                       >
-                        <div className="p-6">
-                          <div className="flex items-center space-x-3 mb-4">
-                            <div className={cn("p-2 rounded-lg", difference.color)}>
+                        <div className="p-8">
+                          <div className="flex items-center space-x-4 mb-6">
+                            <div className={cn("p-3 rounded-xl", difference.color)}>
                               {React.cloneElement(difference.icon as React.ReactElement, {
-                                className: "w-5 h-5 text-white"
+                                className: "w-6 h-6 text-white"
                               })}
                             </div>
-                            <h4 className="text-lg font-semibold text-foreground">
+                            <h4 className="text-xl font-semibold text-foreground">
                               {difference.details.title}
                             </h4>
                           </div>
                           
-                          <p className="text-sm text-muted-foreground mb-4">
+                          <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                             {difference.details.content}
                           </p>
                           
-                          <div className="space-y-2">
-                            <h5 className="text-sm font-medium text-foreground">Key Features:</h5>
-                            <ul className="space-y-1">
+                          <div className="space-y-3">
+                            <h5 className="text-base font-medium text-foreground">Key Features:</h5>
+                            <ul className="space-y-2">
                               {difference.details.features.map((feature, index) => (
-                                <li key={index} className="text-xs text-muted-foreground flex items-center space-x-2">
-                                  <div className="w-1 h-1 rounded-full bg-primary"></div>
+                                <li key={index} className="text-sm text-muted-foreground flex items-center space-x-3">
+                                  <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
                                   <span>{feature}</span>
                                 </li>
                               ))}
@@ -251,11 +252,13 @@ export const KapesDifferentCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
-        {/* Navigation */}
-        <CarouselPrevious className="left-0 -translate-x-12 hover:bg-primary hover:text-primary-foreground" />
-        <CarouselNext className="right-0 translate-x-12 hover:bg-primary hover:text-primary-foreground" />
       </Carousel>
+      
+      {/* Navigation arrows positioned below and centered */}
+      <div className="flex justify-center items-center mt-8 space-x-4">
+        <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
+        <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
+      </div>
     </div>
   );
 };
