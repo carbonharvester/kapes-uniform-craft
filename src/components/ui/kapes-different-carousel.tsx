@@ -103,7 +103,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "governance",
-    title: "Student Governance Board",
+    title: "Student Board",
     subtitle: "Empowering students to lead change.",
     description: "Student-led sustainability initiatives",
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=600&fit=crop",
