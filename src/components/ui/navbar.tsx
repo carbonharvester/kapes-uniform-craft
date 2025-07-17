@@ -225,7 +225,7 @@ const Navbar = ({
     { name: "Resources", url: "/resources" },
   ],
   auth = {
-    login: { text: "Partner Portal", url: "/login" },
+    login: { text: "KapesImpact", url: "/login" },
     signup: { text: "Get Started", url: "/contact" },
   },
 }: NavbarProps) => {
