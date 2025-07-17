@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -87,9 +88,9 @@ export const ValueCalculator = () => {
   return (
     <section className="py-12 bg-gradient-to-b from-background via-background/95 to-muted/20">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12 space-y-4">
+          <div className="text-center mb-8 space-y-4">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">
               Value Calculator:{" "}
               <span className="font-medium bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent">
@@ -101,69 +102,58 @@ export const ValueCalculator = () => {
             </p>
           </div>
 
-          {/* Calculator Card */}
-          <div className="relative mb-12">
-            {/* Background gradient decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 rounded-2xl transform rotate-1"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-secondary/10 via-transparent to-muted/10 rounded-2xl transform -rotate-1"></div>
-            
-            {/* Main calculator container */}
-            <div className="relative glass rounded-2xl p-6 md:p-8 shadow-glass border border-border/30 backdrop-blur-xl bg-background/80">
-              {/* Decorative elements */}
-              <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
-              <div className="absolute bottom-4 right-4 w-10 h-10 bg-gradient-to-tl from-secondary/10 to-muted/10 rounded-full blur-xl"></div>
-              
-              <div className="max-w-md mx-auto relative z-10">
-                <div className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="students" className="text-base font-medium text-foreground/90">
-                      Number of Students
-                    </Label>
-                    <Input
-                      id="students"
-                      type="number"
-                      min="1"
-                      placeholder="Enter number of students"
-                      value={students}
-                      onChange={(e) => setStudents(e.target.value)}
-                      className="h-11 text-base border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm"
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="location" className="text-base font-medium text-foreground/90">
-                      School Location (Region)
-                    </Label>
-                    <Select value={location} onValueChange={setLocation}>
-                      <SelectTrigger className="h-11 text-base border-border/40 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm">
-                        <SelectValue placeholder="Select region..." />
-                      </SelectTrigger>
-                      <SelectContent className="rounded-xl border-border/40 bg-background/95 backdrop-blur-xl">
-                        <SelectItem value="europe" className="text-sm py-2 rounded-lg">Europe (High Regulatory Savings)</SelectItem>
-                        <SelectItem value="north-america" className="text-sm py-2 rounded-lg">North America</SelectItem>
-                        <SelectItem value="asia" className="text-sm py-2 rounded-lg">Asia</SelectItem>
-                        <SelectItem value="africa" className="text-sm py-2 rounded-lg">Africa</SelectItem>
-                        <SelectItem value="other" className="text-sm py-2 rounded-lg">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  {error && (
-                    <div className="p-3 bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/20 rounded-xl backdrop-blur-sm">
-                      <p className="text-destructive text-center font-medium text-sm">
-                        Please fill in all fields to calculate your impact.
-                      </p>
-                    </div>
-                  )}
-
-                  <Button 
-                    onClick={calculateValue} 
-                    className="w-full h-11 text-base font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
-                  >
-                    Calculate Your Grand Slam Impact
-                  </Button>
+          {/* Calculator Card - Compact */}
+          <div className="max-w-md mx-auto mb-8">
+            <div className="glass rounded-xl p-6 shadow-glass border border-border/30 backdrop-blur-xl bg-background/80">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="students" className="text-sm font-medium text-foreground/90">
+                    Number of Students
+                  </Label>
+                  <Input
+                    id="students"
+                    type="number"
+                    min="1"
+                    placeholder="Enter number of students"
+                    value={students}
+                    onChange={(e) => setStudents(e.target.value)}
+                    className="h-10 text-sm border-border/40 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm"
+                    required
+                  />
                 </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="location" className="text-sm font-medium text-foreground/90">
+                    School Location (Region)
+                  </Label>
+                  <Select value={location} onValueChange={setLocation}>
+                    <SelectTrigger className="h-10 text-sm border-border/40 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition-all duration-300 bg-background/60 backdrop-blur-sm">
+                      <SelectValue placeholder="Select region..." />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-lg border-border/40 bg-background/95 backdrop-blur-xl">
+                      <SelectItem value="europe" className="text-sm py-2 rounded-md">Europe (High Regulatory Savings)</SelectItem>
+                      <SelectItem value="north-america" className="text-sm py-2 rounded-md">North America</SelectItem>
+                      <SelectItem value="asia" className="text-sm py-2 rounded-md">Asia</SelectItem>
+                      <SelectItem value="africa" className="text-sm py-2 rounded-md">Africa</SelectItem>
+                      <SelectItem value="other" className="text-sm py-2 rounded-md">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {error && (
+                  <div className="p-3 bg-gradient-to-r from-destructive/10 to-destructive/5 border border-destructive/20 rounded-lg backdrop-blur-sm">
+                    <p className="text-destructive text-center font-medium text-sm">
+                      Please fill in all fields to calculate your impact.
+                    </p>
+                  </div>
+                )}
+
+                <Button 
+                  onClick={calculateValue} 
+                  className="w-full h-10 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
+                >
+                  Calculate Your Grand Slam Impact
+                </Button>
               </div>
             </div>
           </div>
