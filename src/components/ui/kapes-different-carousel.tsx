@@ -49,7 +49,7 @@ const differences: DifferenceCard[] = [
     title: "Ethical Manufacturing",
     subtitle: "Fair wages and safe working conditions.",
     description: "Responsible production practices",
-    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=600&fit=crop",
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752783100/2_215_w1s3nv.jpg",
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "Ethical Manufacturing",
