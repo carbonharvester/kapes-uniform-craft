@@ -15,8 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 9%;
     
-    /* Primary - Deep charcoal with blue undertones */
-    --primary: 220 27% 18%;
+    /* Primary - Kapes Brand Coral */
+    --primary: 8 92% 70%;
     --primary-foreground: 0 0% 100%;
     
     /* Secondary - Soft neutral */
@@ -37,7 +37,7 @@
     /* Borders - Ultra-light */
     --border: 0 0% 93%;
     --input: 0 0% 93%;
-    --ring: 220 27% 18%;
+    --ring: 8 92% 70%;
     
     /* Apple-inspired radius */
     --radius: 0.75rem;
@@ -68,9 +68,9 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 95%;
     
-    /* Primary - Bright for dark mode */
-    --primary: 0 0% 98%;
-    --primary-foreground: 220 27% 18%;
+    /* Primary - Kapes Brand Coral (darker for dark mode) */
+    --primary: 8 92% 65%;
+    --primary-foreground: 0 0% 100%;
     
     /* Secondary - Dark neutral */
     --secondary: 0 0% 14%;
@@ -90,7 +90,7 @@
     /* Borders - Subtle in dark */
     --border: 0 0% 18%;
     --input: 0 0% 18%;
-    --ring: 0 0% 95%;
+    --ring: 8 92% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
