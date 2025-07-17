@@ -1,10 +1,30 @@
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Calculator, Leaf, Users } from "lucide-react";
 
 export const ValueCalculator = () => {
+  const [students, setStudents] = useState("");
+  const [budget, setBudget] = useState("");
+  const [items, setItems] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!students || !budget || !items) {
+      setError("Please fill in all fields to calculate.");
+      return;
+    }
+    
+    setError("");
+    
+    // Here you would implement the calculation logic
+    // For now, just clear the error
+    console.log("Calculating impact for:", { students, budget, items });
+  };
   return (
     <section className="py-16 bg-muted/50 relative">
       <div className="container mx-auto px-4 relative z-10">
@@ -57,19 +77,43 @@ export const ValueCalculator = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label className="block text-sm font-medium mb-2">Number of Students</label>
-                    <Input type="number" placeholder="e.g., 500" />
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., 500" 
+                      value={students}
+                      onChange={(e) => setStudents(e.target.value)}
+                      min="1"
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Current Annual Uniform Budget</label>
-                    <Input type="number" placeholder="e.g., £25,000" />
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., £25,000" 
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                      min="0"
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Uniform Items per Student/Year</label>
-                    <Input type="number" placeholder="e.g., 8" />
+                    <Input 
+                      type="number" 
+                      placeholder="e.g., 8" 
+                      value={items}
+                      onChange={(e) => setItems(e.target.value)}
+                      min="1"
+                      required
+                    />
                   </div>
+                  {error && (
+                    <div className="text-destructive text-sm text-center">{error}</div>
+                  )}
                   <Button type="submit" className="w-full">
                     Calculate My Impact
                   </Button>
