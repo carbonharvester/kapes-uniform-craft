@@ -7,15 +7,6 @@ import { Calculator, Leaf, Users } from "lucide-react";
 export const ValueCalculator = () => {
   return (
     <section className="py-16 bg-muted/50 relative">
-      {/* Background image */}
-      <div className="absolute inset-0 opacity-5">
-        <img 
-          src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1920&h=1080&fit=crop&crop=center" 
-          alt="Innovation and sustainability" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

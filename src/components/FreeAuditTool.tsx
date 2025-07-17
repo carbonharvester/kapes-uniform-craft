@@ -7,15 +7,6 @@ import { CheckCircle, FileText } from "lucide-react";
 export const FreeAuditTool = () => {
   return (
     <section className="py-16 bg-background relative">
-      {/* Background image */}
-      <div className="absolute inset-0 opacity-5">
-        <img 
-          src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop&crop=center" 
-          alt="Audit and analysis" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
