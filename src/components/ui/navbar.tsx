@@ -59,8 +59,9 @@ interface NavbarProps {
 const Navbar = ({
   logo = {
     url: "/",
+    src: "/lovable-uploads/9ac843b9-dfa5-4ffa-9138-fba60284a971.png",
     alt: "Kapes",
-    title: "Kapes",
+    title: "",
   },
   menu = [
     {
@@ -227,8 +228,8 @@ const Navbar = ({
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-8">
             <a href={logo.url} className="flex items-center gap-2 group transition-all duration-300">
-              {logo.src && <img src={logo.src} className="w-8 group-hover:scale-110 transition-transform duration-300" alt={logo.alt} />}
-              <span className="text-xl font-semibold tracking-tight">{logo.title}</span>
+              {logo.src && <img src={logo.src} className="h-8 group-hover:scale-110 transition-transform duration-300" alt={logo.alt} />}
+              {logo.title && <span className="text-xl font-semibold tracking-tight">{logo.title}</span>}
             </a>
             <div className="flex items-center">
               <NavigationMenu>
@@ -250,8 +251,8 @@ const Navbar = ({
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
-              {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
-              <span className="text-lg font-semibold">{logo.title}</span>
+              {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
+              {logo.title && <span className="text-lg font-semibold">{logo.title}</span>}
             </a>
             <Sheet>
               <SheetTrigger asChild>
@@ -263,10 +264,12 @@ const Navbar = ({
                 <SheetHeader>
                   <SheetTitle>
                     <a href={logo.url} className="flex items-center gap-2">
-                      {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
-                      <span className="text-lg font-semibold">
-                        {logo.title}
-                      </span>
+                      {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
+                      {logo.title && (
+                        <span className="text-lg font-semibold">
+                          {logo.title}
+                        </span>
+                      )}
                     </a>
                   </SheetTitle>
                 </SheetHeader>
