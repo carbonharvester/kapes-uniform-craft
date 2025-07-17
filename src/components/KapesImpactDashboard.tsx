@@ -35,7 +35,7 @@ export const KapesImpactDashboard = () => {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
               KapesImpact™{" "}
               <span className="text-primary">Dashboard</span>
             </h2>
