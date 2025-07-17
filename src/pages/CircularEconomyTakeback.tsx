@@ -53,7 +53,7 @@ const CircularEconomyTakeback = () => {
       icon: Users
     },
     {
-      title: "Tracked in KapesImpact™ Dashboard",
+      title: "Tracked in KapesImpact™",
       description: "Your community can see the impact in real time",
       icon: BarChart3
     }
