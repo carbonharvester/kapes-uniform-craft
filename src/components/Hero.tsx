@@ -19,7 +19,7 @@ export const Hero = () => {
           </h1>
           
           {/* Subtitle with perfect spacing */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
             Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
           </p>
           
