@@ -340,7 +340,7 @@ const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
       <NavigationMenuItem key={item.title}>
-        <NavigationMenuTrigger className="text-muted-foreground font-medium hover:text-foreground transition-colors duration-300 rounded-xl">
+        <NavigationMenuTrigger className="text-foreground font-medium hover:text-primary transition-colors duration-300 rounded-xl">
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent>
@@ -378,7 +378,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-muted-foreground transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground"
+      className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-foreground transition-all duration-300 hover:bg-accent/50 hover:text-primary"
       href={item.url}
     >
       {item.title}
