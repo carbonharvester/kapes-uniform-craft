@@ -7,6 +7,7 @@ import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, 
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
+import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -124,7 +125,7 @@ const differences: DifferenceCard[] = [
     title: "Free Uniforms & School Meals in Africa",
     subtitle: "Creating global educational equity.",
     description: "Supporting education worldwide",
-    image: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=400&h=600&fit=crop",
+    image: freeUniformsMealsImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free Uniforms & School Meals in Africa",
