@@ -157,10 +157,18 @@ const PartnershipTiers = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Home Delivery</TableCell>
-                  <TableCell className="text-center text-sm">Home (standard)</TableCell>
-                  <TableCell className="text-center text-sm">Home + Lockers + School Shop</TableCell>
-                  <TableCell className="text-center text-sm">Same as Core</TableCell>
-                  <TableCell className="text-center text-sm blur-sm">All options</TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center blur-sm">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">School Shop</TableCell>
