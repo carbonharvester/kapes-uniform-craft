@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Star, Zap, Crown } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { CheckCircle, ArrowRight, Star, Zap, Crown, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PartnershipTiers = () => {
@@ -110,6 +111,143 @@ const PartnershipTiers = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Comparison Table */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">
+              Detailed Feature Comparison
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Compare all features across our partnership tiers
+            </p>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-1/3">Feature</TableHead>
+                  <TableHead className="text-center">Essentials</TableHead>
+                  <TableHead className="text-center">Core</TableHead>
+                  <TableHead className="text-center">Impact</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">3-Year Contract</TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Sustainable Materials</TableCell>
+                  <TableCell className="text-center text-sm">Standard only</TableCell>
+                  <TableCell className="text-center text-sm">Mix available</TableCell>
+                  <TableCell className="text-center text-sm">100% only</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Commission Option</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Up to 20%</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Takeback Scheme</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Delivery Options</TableCell>
+                  <TableCell className="text-center text-sm">Home (standard)</TableCell>
+                  <TableCell className="text-center text-sm">Home + Lockers + School Shop</TableCell>
+                  <TableCell className="text-center text-sm">Same as Core</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Packaging</TableCell>
+                  <TableCell className="text-center text-sm">Standard</TableCell>
+                  <TableCell className="text-center text-sm">Recycled Plastic</TableCell>
+                  <TableCell className="text-center text-sm">Plastic-Free (Glassine)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">KapesImpact™</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Dashboard Access</TableCell>
+                  <TableCell className="text-center text-sm">QR Code + Dashboard</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Free Uniforms & Meals in Africa</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center text-sm">Included</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Student Board Member</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Factory Visits & Education</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Kapes Adventures Discount</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Marketing Support</TableCell>
+                  <TableCell className="text-center text-sm">Minimal</TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center text-sm">Custom PR Kit</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </div>
         </div>
       </section>
