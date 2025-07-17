@@ -252,13 +252,13 @@ export const KapesDifferentCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        
+        {/* Navigation arrows positioned below and centered - moved inside Carousel */}
+        <div className="flex justify-center items-center mt-8 space-x-4">
+          <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
+          <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
+        </div>
       </Carousel>
-      
-      {/* Navigation arrows positioned below and centered */}
-      <div className="flex justify-center items-center mt-8 space-x-4">
-        <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-        <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-      </div>
     </div>
   );
 };
