@@ -129,7 +129,7 @@ export const ValueCalculator = () => {
             
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center justify-center gap-2">
                   <Calculator className="h-5 w-5" />
                   Calculate Your Impact
                 </CardTitle>
