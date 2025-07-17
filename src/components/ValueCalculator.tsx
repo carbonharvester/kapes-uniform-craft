@@ -86,10 +86,10 @@ export const ValueCalculator = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-inter font-light tracking-tight leading-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
               Impact Value Calculator: Unlock Your School's Epic Sustainability Wins
             </h2>
-            <p className="text-muted-foreground font-inter">
+            <p className="text-muted-foreground">
               Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
             </p>
           </div>
@@ -101,8 +101,8 @@ export const ValueCalculator = () => {
                   <Leaf className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-inter font-semibold mb-2">Environmental Impact</h3>
-                  <p className="text-muted-foreground font-inter">Calculate your carbon footprint reduction, water savings, and waste elimination with our sustainable uniform program.</p>
+                  <h3 className="text-xl font-semibold mb-2">Environmental Impact</h3>
+                  <p className="text-muted-foreground">Calculate your carbon footprint reduction, water savings, and waste elimination with our sustainable uniform program.</p>
                 </div>
               </div>
               
@@ -111,8 +111,8 @@ export const ValueCalculator = () => {
                   <Calculator className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-inter font-semibold mb-2">Cost Savings</h3>
-                  <p className="text-muted-foreground font-inter">Discover potential budget optimizations and long-term savings through our efficient supply chain.</p>
+                  <h3 className="text-xl font-semibold mb-2">Cost Savings</h3>
+                  <p className="text-muted-foreground">Discover potential budget optimizations and long-term savings through our efficient supply chain.</p>
                 </div>
               </div>
               
@@ -121,8 +121,8 @@ export const ValueCalculator = () => {
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-inter font-semibold mb-2">Social Impact</h3>
-                  <p className="text-muted-foreground font-inter">Measure the positive change your partnership creates in African communities through fair trade practices.</p>
+                  <h3 className="text-xl font-semibold mb-2">Social Impact</h3>
+                  <p className="text-muted-foreground">Measure the positive change your partnership creates in African communities through fair trade practices.</p>
                 </div>
               </div>
             </div>
@@ -175,7 +175,7 @@ export const ValueCalculator = () => {
 
           {showResults && results && (
             <div className="mt-12">
-              <h2 className="text-3xl font-inter font-bold text-center mb-8 text-foreground">
+              <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
                 Your School's Projected Value Equation Boost
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
