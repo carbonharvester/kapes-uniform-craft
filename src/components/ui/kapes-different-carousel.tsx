@@ -4,6 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin } from "lucide-react";
+import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -178,7 +179,7 @@ const differences: DifferenceCard[] = [
     title: "Farm & Factory Visits",
     subtitle: "See sustainability in action firsthand.",
     description: "Transparent supply chain access",
-    image: "/src/assets/factory-visits.jpg",
+    image: factoryVisitsImage,
     icon: <MapPin className="w-6 h-6" />,
     details: {
       title: "Farm & Factory Visits",
