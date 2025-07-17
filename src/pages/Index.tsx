@@ -2,6 +2,8 @@
 import { Hero } from "@/components/Hero";
 import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
+import { ValueCalculator } from "@/components/ValueCalculator";
+import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
 import { PartnershipTiers } from "@/components/PartnershipTiers";
 import { Footer } from "@/components/Footer";
@@ -12,6 +14,8 @@ const Index = () => {
       <Hero />
       <SchoolCodeEntry />
       <WhatMakesKapesDifferent />
+      <ValueCalculator />
+      <FreeAuditTool />
       <Testimonials />
       <PartnershipTiers />
       <Footer />
