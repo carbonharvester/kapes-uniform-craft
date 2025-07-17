@@ -219,15 +219,9 @@ export const KapesDifferentCarousel = () => {
                 <CardContent className="p-6 h-full flex flex-col justify-end relative z-10">
                   {/* Text content at bottom */}
                   <div className="space-y-2 mb-4">
-                    <span className="text-xs font-medium text-white/80 uppercase tracking-wide">
-                      {difference.description}
-                    </span>
                     <h3 className="text-xl font-semibold leading-tight text-white">
                       {difference.title}
                     </h3>
-                    <p className="text-sm text-white/90 leading-relaxed">
-                      {difference.subtitle}
-                    </p>
                   </div>
 
                   {/* Plus Button */}
