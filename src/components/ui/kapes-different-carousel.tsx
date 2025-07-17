@@ -178,7 +178,7 @@ const differences: DifferenceCard[] = [
     title: "Farm & Factory Visits",
     subtitle: "See sustainability in action firsthand.",
     description: "Transparent supply chain access",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=600&fit=crop",
+    image: "/src/assets/factory-visits.jpg",
     icon: <MapPin className="w-6 h-6" />,
     details: {
       title: "Farm & Factory Visits",
