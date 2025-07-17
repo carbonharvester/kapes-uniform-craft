@@ -23,10 +23,22 @@ export const Hero = () => {
             Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
           </p>
           
-          {/* CTA with consistent button styling */}
-          <div className="pt-4">
-            <button className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl">
-              Get Started Today
+          {/* CTA buttons */}
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button 
+              onClick={() => document.getElementById('parent-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              I'm a Parent
+              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button 
+              onClick={() => document.getElementById('school-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm"
+            >
+              I'm a School
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
