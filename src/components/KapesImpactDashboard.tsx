@@ -105,7 +105,7 @@ export const KapesImpactDashboard = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="flex-1 h-12">
-                View Live Demo
+                Book Demo
               </Button>
               <Button variant="outline" size="lg" className="flex-1 h-12">
                 Learn More
