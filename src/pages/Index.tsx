@@ -9,7 +9,6 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
 import { InTheNews } from "@/components/InTheNews";
-import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
@@ -21,7 +20,6 @@ const Index = () => {
       <ValueCalculator />
       <PartnershipTiers />
       <InTheNews />
-      <CaseStudies />
       <FreeAuditTool />
       <Testimonials />
       <Footer />
