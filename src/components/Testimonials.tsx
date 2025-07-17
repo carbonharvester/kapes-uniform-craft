@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
@@ -8,7 +9,7 @@ export const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What Schools Are Saying</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">What Schools Are Saying</h2>
             <p className="text-muted-foreground">
               Real feedback from schools making a real impact
             </p>

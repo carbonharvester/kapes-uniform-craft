@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,7 +10,7 @@ export const FreeAuditTool = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Free Uniform Program Audit</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Uniform Program Audit</h2>
             <p className="text-muted-foreground">
               Get a comprehensive analysis of your current uniform program with actionable recommendations
             </p>

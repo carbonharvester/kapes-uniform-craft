@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +28,7 @@ export function PartnershipTiersDisplay({
 }: TiersProps) {
   return <div className="container py-20">
       <div className="text-center space-y-4 mb-12">
-        <h2 className="text-3xl font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
           {title}
         </h2>
         <p className="text-muted-foreground text-lg whitespace-pre-line">
