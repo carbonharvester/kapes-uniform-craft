@@ -206,9 +206,9 @@ export const KapesDifferentCarousel = () => {
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="-ml-2 md:-ml-4 py-4">
           {differences.map((difference) => (
-            <CarouselItem key={difference.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={difference.id} className="pl-2 md:pl-4 px-2 basis-full sm:basis-1/2 lg:basis-1/3">
               <Card className="h-96 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
