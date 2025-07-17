@@ -39,6 +39,9 @@
     --input: 0 0% 93%;
     --ring: 8 92% 70%;
     
+    /* Heading color - Deep navy blue */
+    --heading: 240 95% 20%;
+    
     /* Apple-inspired radius */
     --radius: 0.75rem;
 
@@ -91,6 +94,10 @@
     --border: 0 0% 18%;
     --input: 0 0% 18%;
     --ring: 8 92% 65%;
+    
+    /* Heading color - Lighter for dark mode */
+    --heading: 240 85% 75%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -112,6 +119,11 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading;
   }
 }
 
@@ -150,4 +162,12 @@ html {
 
 .hover-scale:hover {
   transform: scale(1.02);
+}
+
+/* Heading gradient utility */
+.heading-gradient {
+  background: linear-gradient(135deg, hsl(var(--heading)), hsl(var(--heading) / 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
