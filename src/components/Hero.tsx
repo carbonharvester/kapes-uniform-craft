@@ -11,7 +11,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Main headline with consistent typography */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-academy font-light tracking-tight text-foreground">
             School Uniforms That{" "}
             <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Make the World Better
