@@ -87,7 +87,7 @@ export const ValueCalculator = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
-              Value Calculator: Unlock Your School's Epic Sustainability Wins
+              Impact Value Calculator: Unlock Your School's Epic Sustainability Wins
             </h2>
             <p className="text-muted-foreground">
               Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
