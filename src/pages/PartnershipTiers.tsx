@@ -4,62 +4,36 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle, ArrowRight, Star, Zap, Crown, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const PartnershipTiers = () => {
-  const tiers = [
-    {
-      name: "Essentials",
-      badge: "🟢 Essentials Tier",
-      tagline: "Ethical Uniforms, Simplified",
-      description: "For schools who want sustainable, ethical uniforms without the complexity",
-      icon: Star,
-      color: "green",
-      route: "/essentials-tier",
-      features: [
-        "100% Sustainable Uniforms",
-        "Ethical Manufacturing", 
-        "Custom Design & Sampling",
-        "Fully Managed Online Shop",
-        "Full Delivery Options",
-        "Plastic-Free Packaging"
-      ]
-    },
-    {
-      name: "Core",
-      badge: "🔵 Core Tier", 
-      tagline: "Sustainable Uniforms + Real Impact",
-      description: "For schools who want to create positive change with impact tracking",
-      icon: Zap,
-      color: "blue",
-      route: "/core-tier",
-      features: [
-        "Everything in Essentials",
-        "Fully Managed Takeback Scheme",
-        "KapesImpact™ Dashboard",
-        "Free Meals & Uniforms Donated",
-        "Factory Visits & Teaching Materials"
-      ]
-    },
-    {
-      name: "Impact",
-      badge: "🟣 Impact Tier: Flagship Program",
-      tagline: "For Schools Who Want to Lead — Not Follow", 
-      description: "Our highest level of partnership for values-driven schools",
-      icon: Crown,
-      color: "purple",
-      route: "/impact-tier",
-      features: [
-        "Everything in Core",
-        "QR Codes on Every Garment",
-        "Student Governance Opportunity", 
-        "Custom PR & CSR Toolkit",
-        "Dedicated Account Manager"
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const tiers = [{
+    name: "Essentials",
+    badge: "🟢 Essentials Tier",
+    tagline: "Ethical Uniforms, Simplified",
+    description: "For schools who want sustainable, ethical uniforms without the complexity",
+    icon: Star,
+    color: "green",
+    route: "/essentials-tier",
+    features: ["100% Sustainable Uniforms", "Ethical Manufacturing", "Custom Design & Sampling", "Fully Managed Online Shop", "Full Delivery Options", "Plastic-Free Packaging"]
+  }, {
+    name: "Core",
+    badge: "🔵 Core Tier",
+    tagline: "Sustainable Uniforms + Real Impact",
+    description: "For schools who want to create positive change with impact tracking",
+    icon: Zap,
+    color: "blue",
+    route: "/core-tier",
+    features: ["Everything in Essentials", "Fully Managed Takeback Scheme", "KapesImpact™ Dashboard", "Free Meals & Uniforms Donated", "Factory Visits & Teaching Materials"]
+  }, {
+    name: "Impact",
+    badge: "🟣 Impact Tier: Flagship Program",
+    tagline: "For Schools Who Want to Lead — Not Follow",
+    description: "Our highest level of partnership for values-driven schools",
+    icon: Crown,
+    color: "purple",
+    route: "/impact-tier",
+    features: ["Everything in Core", "QR Codes on Every Garment", "Student Governance Opportunity", "Custom PR & CSR Toolkit", "Dedicated Account Manager"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
@@ -76,13 +50,10 @@ const PartnershipTiers = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid gap-8 lg:grid-cols-3">
-            {tiers.map((tier, index) => (
-              <Card key={index} className={`relative ${tier.color === 'blue' ? 'ring-2 ring-blue-500' : ''}`}>
-                {tier.color === 'blue' && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600">
+            {tiers.map((tier, index) => <Card key={index} className={`relative ${tier.color === 'blue' ? 'ring-2 ring-blue-500' : ''}`}>
+                {tier.color === 'blue' && <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600">
                     Most Popular
-                  </Badge>
-                )}
+                  </Badge>}
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
                     <tier.icon className={`h-6 w-6 text-${tier.color}-600`} />
@@ -95,12 +66,10 @@ const PartnershipTiers = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3 mb-6">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start gap-2">
+                    {tier.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <Link to={tier.route}>
                     <Button className="w-full" variant={tier.color === 'blue' ? 'default' : 'outline'}>
@@ -109,8 +78,7 @@ const PartnershipTiers = () => {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -188,7 +156,7 @@ const PartnershipTiers = () => {
                   </TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="font-medium">Delivery Options</TableCell>
+                  <TableCell className="font-medium">Home Delivery</TableCell>
                   <TableCell className="text-center text-sm">Home (standard)</TableCell>
                   <TableCell className="text-center text-sm">Home + Lockers + School Shop</TableCell>
                   <TableCell className="text-center text-sm">Same as Core</TableCell>
@@ -306,8 +274,6 @@ const PartnershipTiers = () => {
           </Button>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default PartnershipTiers;
