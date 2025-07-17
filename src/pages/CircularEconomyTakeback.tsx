@@ -106,19 +106,26 @@ const CircularEconomyTakeback = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-background dark:from-blue-950/20">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
-            <Recycle className="w-4 h-4 mr-2" />
-            Circular Economy & Takeback
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Because school uniforms shouldn't end up in landfill.
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            At Kapes, we believe school uniforms should be part of a circular system — not the waste stream. That's why we've built a fully managed takeback scheme that gives old uniforms a new life, and creates real-world impact with every item returned.
-          </p>
+      {/* Enhanced Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative">
+          <div className="animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
+              <Recycle className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Circular Economy & Takeback</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
+              Because school uniforms shouldn't end up in landfill.
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+              At Kapes, we believe school uniforms should be part of a circular system — not the waste stream. That's why we've built a fully managed takeback scheme that gives old uniforms a new life, and creates real-world impact with every item returned.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -285,22 +292,28 @@ const CircularEconomyTakeback = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Because impact shouldn't require effort — just better systems.
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Ready to make your school uniforms part of the circular economy?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Learn About Partnership Tiers
-            </Button>
-            <Button size="lg" variant="outline">
-              See Impact Dashboard Demo
-            </Button>
+      {/* Enhanced CTA Section */}
+      <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative">
+          <div className="animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+              Because impact shouldn't require effort — just better systems.
+            </h2>
+            <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+              Ready to make your school uniforms part of the circular economy?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
+                Learn About Partnership Tiers
+              </Button>
+              <Button size="lg" variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-primary hover-scale transition-smooth">
+                See Impact Dashboard Demo
+              </Button>
+            </div>
           </div>
         </div>
       </section>

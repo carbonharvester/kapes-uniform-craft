@@ -103,22 +103,29 @@ const SocialImpactAfrica = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-orange-50 to-background dark:from-orange-950/20">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-orange-100 text-orange-800 hover:bg-orange-100">
-            <Heart className="w-4 h-4 mr-2" />
-            Social Impact in Africa
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            Every uniform sold helps another child go to school.
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            At Kapes, we believe access to education should never be determined by poverty — and that uniforms can unlock opportunity.
-          </p>
-          <p className="text-lg text-muted-foreground">
-            That's why every school we partner with contributes directly to improving the lives of children in need across Africa.
-          </p>
+      {/* Enhanced Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative">
+          <div className="animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
+              <Heart className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Social Impact in Africa</span>
+            </div>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
+              Every uniform sold helps another child go to school.
+            </h1>
+            <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
+              At Kapes, we believe access to education should never be determined by poverty — and that uniforms can unlock opportunity.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              That's why every school we partner with contributes directly to improving the lives of children in need across Africa.
+            </p>
+          </div>
         </div>
       </section>
 
