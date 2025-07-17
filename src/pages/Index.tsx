@@ -8,7 +8,6 @@ import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
-import { InTheNews } from "@/components/InTheNews";
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
       <WhatMakesKapesDifferent />
       <ValueCalculator />
       <PartnershipTiers />
-      <InTheNews />
       <FreeAuditTool />
       <Testimonials />
       <Footer />
