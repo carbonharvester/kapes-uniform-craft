@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Download, Calculator, HelpCircle } from "lucide-react";
+import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { BookOpen, Download, Calculator } from "lucide-react";
 
 const Resources = () => {
   const blogPosts = [
@@ -147,23 +148,8 @@ const Resources = () => {
           </section>
 
           {/* FAQ Section */}
-          <section>
-            <h2 className="text-3xl font-bold mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <HelpCircle className="h-5 w-5 text-primary" />
-                      {faq.question}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          <section className="flex justify-center">
+            <FAQAccordion />
           </section>
         </div>
       </div>
