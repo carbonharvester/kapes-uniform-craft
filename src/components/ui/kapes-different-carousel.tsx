@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
+import organicCottonImage from "@/assets/organic-cotton.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -27,7 +28,7 @@ const differences: DifferenceCard[] = [
     title: "Natural, Sustainable Materials",
     subtitle: "Every thread matters for our planet's future.",
     description: "100% organic and recycled fabrics",
-    image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=400&h=600&fit=crop",
+    image: organicCottonImage,
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Natural, Sustainable Materials",
