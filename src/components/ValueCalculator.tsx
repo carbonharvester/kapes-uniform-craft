@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calculator, Leaf, Users, Globe, Zap, Droplet, Trash2, Shirt, UtensilsCrossed } from "lucide-react";
+import { Calculator, Leaf, Users } from "lucide-react";
 
 export const ValueCalculator = () => {
   const [students, setStudents] = useState("");
@@ -174,137 +174,72 @@ export const ValueCalculator = () => {
           </div>
 
           {showResults && results && (
-            <div className="mt-16 animate-fade-in">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-purple-500 to-blue-500 bg-clip-text text-transparent mb-4">
-                  Your School's Projected Value Equation Boost
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-primary to-purple-500 mx-auto rounded-full"></div>
+            <div className="mt-12 p-8 bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg">
+              <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+                Your School's Projected Value Equation Boost
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">🌍</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">CO2 Conquest (Emissions Saved)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.co2} kg CO2e</div>
+                    <div className="text-sm text-muted-foreground italic">{results.co2Analogy}</div>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">⚡</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">Energy Empire Built (Energy Saved)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.energy} MJ</div>
+                    <div className="text-sm text-muted-foreground italic">{results.energyAnalogy}</div>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">💧</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">Water Warrior Win (Water Saved)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.water} liters</div>
+                    <div className="text-sm text-muted-foreground italic">{results.waterAnalogy}</div>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">🗑️</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">Waste Annihilation (Waste Diverted)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.waste} kg</div>
+                    <div className="text-sm text-muted-foreground italic">Keeping landfills empty!</div>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">👕</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">Uniform Uplift (Free Uniforms Provided)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.uniforms} uniforms</div>
+                    <div className="text-sm text-muted-foreground italic">Matching your student body!</div>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center transform hover:-translate-y-1 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="text-4xl mb-3">🍲</div>
+                    <h3 className="font-bold text-primary text-lg mb-2">Meal Miracle (Free Meals Funded)</h3>
+                    <div className="text-2xl font-bold mb-2">{results.meals} meals</div>
+                    <div className="text-sm text-muted-foreground italic">Nourishing futures in Africa!</div>
+                  </CardContent>
+                </Card>
               </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {/* CO2 Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-950/50 dark:to-emerald-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-green-500/20 rounded-2xl group-hover:bg-green-500/30 transition-colors">
-                      <Globe className="h-8 w-8 text-green-600 dark:text-green-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-green-800 dark:text-green-200">
-                      CO2 Conquest
-                      <span className="block text-sm font-normal text-green-600 dark:text-green-400">(Emissions Saved)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-green-900 dark:text-green-100 mb-2">{results.co2} kg CO2e</div>
-                      <div className="text-sm text-green-700 dark:text-green-300 italic">{results.co2Analogy}</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Energy Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-50 to-orange-100 dark:from-yellow-950/50 dark:to-orange-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-yellow-500/20 rounded-2xl group-hover:bg-yellow-500/30 transition-colors">
-                      <Zap className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-yellow-800 dark:text-yellow-200">
-                      Energy Empire Built
-                      <span className="block text-sm font-normal text-yellow-600 dark:text-yellow-400">(Energy Saved)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-yellow-900 dark:text-yellow-100 mb-2">{results.energy} MJ</div>
-                      <div className="text-sm text-yellow-700 dark:text-yellow-300 italic">{results.energyAnalogy}</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Water Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-100 dark:from-blue-950/50 dark:to-cyan-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-blue-500/20 rounded-2xl group-hover:bg-blue-500/30 transition-colors">
-                      <Droplet className="h-8 w-8 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-blue-800 dark:text-blue-200">
-                      Water Warrior Win
-                      <span className="block text-sm font-normal text-blue-600 dark:text-blue-400">(Water Saved)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-900 dark:text-blue-100 mb-2">{results.water} liters</div>
-                      <div className="text-sm text-blue-700 dark:text-blue-300 italic">{results.waterAnalogy}</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Waste Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-purple-950/50 dark:to-indigo-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-purple-500/20 rounded-2xl group-hover:bg-purple-500/30 transition-colors">
-                      <Trash2 className="h-8 w-8 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-purple-800 dark:text-purple-200">
-                      Waste Annihilation
-                      <span className="block text-sm font-normal text-purple-600 dark:text-purple-400">(Waste Diverted)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-purple-900 dark:text-purple-100 mb-2">{results.waste} kg</div>
-                      <div className="text-sm text-purple-700 dark:text-purple-300 italic">Keeping landfills empty!</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Uniforms Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-50 to-rose-100 dark:from-pink-950/50 dark:to-rose-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-pink-500/20 rounded-2xl group-hover:bg-pink-500/30 transition-colors">
-                      <Shirt className="h-8 w-8 text-pink-600 dark:text-pink-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-pink-800 dark:text-pink-200">
-                      Uniform Uplift
-                      <span className="block text-sm font-normal text-pink-600 dark:text-pink-400">(Free Uniforms Provided)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-pink-900 dark:text-pink-100 mb-2">{results.uniforms} uniforms</div>
-                      <div className="text-sm text-pink-700 dark:text-pink-300 italic">Matching your student body!</div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Meals Card */}
-                <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-50 to-red-100 dark:from-orange-950/50 dark:to-red-900/50 p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-orange-500/20 rounded-2xl group-hover:bg-orange-500/30 transition-colors">
-                      <UtensilsCrossed className="h-8 w-8 text-orange-600 dark:text-orange-400" />
-                    </div>
-                    <h3 className="text-lg font-bold text-center mb-3 text-orange-800 dark:text-orange-200">
-                      Meal Miracle
-                      <span className="block text-sm font-normal text-orange-600 dark:text-orange-400">(Free Meals Funded)</span>
-                    </h3>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-orange-900 dark:text-orange-100 mb-2">{results.meals} meals</div>
-                      <div className="text-sm text-orange-700 dark:text-orange-300 italic">Nourishing futures in Africa!</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-12 text-center">
-                <div className="inline-block p-8 bg-gradient-to-br from-muted/30 to-muted/10 rounded-2xl border border-border/50 backdrop-blur-sm">
-                  <p className="text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                    These estimates amplify your dream outcome of becoming a sustainability legend, with high likelihood based on real partner data, minimal time delay (setup in weeks), and zero effort (we manage it all).
-                  </p>
-                  <Button 
-                    onClick={resetCalculator} 
-                    variant="outline" 
-                    className="mt-6 hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105"
-                  >
-                    Recalculate
-                  </Button>
-                </div>
+              <p className="text-center text-muted-foreground mt-8">
+                These estimates amplify your dream outcome of becoming a sustainability legend, with high likelihood based on real partner data, minimal time delay (setup in weeks), and zero effort (we manage it all).
+              </p>
+              <div className="text-center mt-6">
+                <Button onClick={resetCalculator} variant="outline">
+                  Recalculate
+                </Button>
               </div>
             </div>
           )}
