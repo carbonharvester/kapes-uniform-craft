@@ -1,7 +1,11 @@
+
 export const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero background image */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/lovable-uploads/d3e3aec2-02e3-4230-a22f-71c9cf0f0250.png)' }}>
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -9,7 +13,7 @@ export const Hero = () => {
           {/* Main headline with consistent typography */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
             School Uniforms That{" "}
-            <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-white">
+            <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
               Make the World Better
             </span>
           </h1>
@@ -33,8 +37,7 @@ export const Hero = () => {
       
       {/* Floating elements for visual interest */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-      animationDelay: '1s'
-    }}></div>
-    </section>;
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    </section>
+  );
 };
