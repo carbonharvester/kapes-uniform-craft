@@ -216,15 +216,15 @@ export const KapesDifferentCarousel = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 
-                <CardContent className="p-6 h-full flex flex-col justify-end relative z-10">
-                  {/* Text content at bottom */}
-                  <div className="space-y-2 mb-4">
+                <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
+                  {/* Text content at top left */}
+                  <div>
                     <h3 className="text-xl font-semibold leading-tight text-white">
                       {difference.title}
                     </h3>
                   </div>
 
-                  {/* Plus Button */}
+                  {/* Plus Button at bottom right */}
                   <div className="flex justify-end">
                     <Popover 
                       open={openPopover === difference.id} 
