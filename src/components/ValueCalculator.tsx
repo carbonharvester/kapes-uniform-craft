@@ -85,119 +85,149 @@ export const ValueCalculator = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-background to-muted/30">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto bg-background rounded-xl p-8 shadow-xl border">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-primary mb-4">
-              Value Calculator: Unlock Your School's Epic Sustainability Wins
-            </h1>
-            <p className="text-muted-foreground max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16 space-y-6">
+            <h2 className="text-4xl md:text-6xl font-light tracking-tight">
+              Value Calculator:{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Unlock Your Impact
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
               Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
             </p>
           </div>
 
-          <div className="max-w-md mx-auto mb-8">
-            <div className="space-y-6">
-              <div>
-                <Label htmlFor="students">Number of Students:</Label>
-                <Input
-                  id="students"
-                  type="number"
-                  min="1"
-                  placeholder="Enter number of students"
-                  value={students}
-                  onChange={(e) => setStudents(e.target.value)}
-                  className="mt-2"
-                  required
-                />
-              </div>
+          {/* Calculator Card */}
+          <div className="glass rounded-3xl p-12 shadow-glass border border-border/50">
+            <div className="max-w-md mx-auto mb-12">{/* ... keep existing code */}
 
-              <div>
-                <Label htmlFor="location">School Location (Region):</Label>
-                <Select value={location} onValueChange={setLocation}>
-                  <SelectTrigger className="mt-2">
-                    <SelectValue placeholder="Select region..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="europe">Europe (High Regulatory Savings)</SelectItem>
-                    <SelectItem value="north-america">North America</SelectItem>
-                    <SelectItem value="asia">Asia</SelectItem>
-                    <SelectItem value="africa">Africa</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {error && (
-                <div className="text-destructive text-center text-sm">
-                  Please fill in all fields to calculate.
+              <div className="space-y-8">
+                <div className="space-y-3">
+                  <Label htmlFor="students" className="text-lg font-medium">Number of Students</Label>
+                  <Input
+                    id="students"
+                    type="number"
+                    min="1"
+                    placeholder="Enter number of students"
+                    value={students}
+                    onChange={(e) => setStudents(e.target.value)}
+                    className="h-14 text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    required
+                  />
                 </div>
-              )}
 
-              <Button onClick={calculateValue} className="w-full" size="lg">
-                Calculate Your Grand Slam Impact
-              </Button>
+                <div className="space-y-3">
+                  <Label htmlFor="location" className="text-lg font-medium">School Location (Region)</Label>
+                  <Select value={location} onValueChange={setLocation}>
+                    <SelectTrigger className="h-14 text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300">
+                      <SelectValue placeholder="Select region..." />
+                    </SelectTrigger>
+                    <SelectContent className="rounded-xl border-border/50">
+                      <SelectItem value="europe">Europe (High Regulatory Savings)</SelectItem>
+                      <SelectItem value="north-america">North America</SelectItem>
+                      <SelectItem value="asia">Asia</SelectItem>
+                      <SelectItem value="africa">Africa</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {error && (
+                  <div className="p-4 bg-destructive/10 border border-destructive/20 rounded-xl">
+                    <p className="text-destructive text-center font-medium">
+                      Please fill in all fields to calculate.
+                    </p>
+                  </div>
+                )}
+
+                <Button 
+                  onClick={calculateValue} 
+                  className="w-full h-14 text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-xl"
+                >
+                  Calculate Your Grand Slam Impact
+                </Button>
+              </div>
             </div>
           </div>
 
           {results && (
-            <div className="animate-in fade-in duration-500">
-              <h2 className="text-3xl font-bold text-center text-primary mb-8">
-                Your School's Projected Value Equation Boost
-              </h2>
+            <div className="mt-16 animate-in fade-in duration-500">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-4">
+                  Your School's{" "}
+                  <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                    Impact Projection
+                  </span>
+                </h3>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">🌍</div>
-                  <div className="font-bold text-green-700 dark:text-green-300 text-lg mb-2">CO2 Conquest (Emissions Saved)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.co2.toLocaleString()} kg CO2e</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">🌍</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">CO2 Conquest</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.co2.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground mb-2">kg CO2e saved</div>
                   <div className="text-sm text-muted-foreground italic">{results.co2Analogy}</div>
                 </div>
 
-                <div className="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950 dark:to-yellow-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">⚡</div>
-                  <div className="font-bold text-yellow-700 dark:text-yellow-300 text-lg mb-2">Energy Empire Built (Energy Saved)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.energy.toLocaleString()} MJ</div>
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">⚡</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">Energy Empire</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.energy.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground mb-2">MJ energy saved</div>
                   <div className="text-sm text-muted-foreground italic">{results.energyAnalogy}</div>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">💧</div>
-                  <div className="font-bold text-blue-700 dark:text-blue-300 text-lg mb-2">Water Warrior Win (Water Saved)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.water.toLocaleString()} liters</div>
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">💧</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">Water Warrior</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.water.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground mb-2">liters saved</div>
                   <div className="text-sm text-muted-foreground italic">{results.waterAnalogy}</div>
                 </div>
 
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">🗑️</div>
-                  <div className="font-bold text-purple-700 dark:text-purple-300 text-lg mb-2">Waste Annihilation (Waste Diverted)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.waste} kg</div>
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">🗑️</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">Waste Annihilation</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.waste}</div>
+                  <div className="text-sm text-muted-foreground mb-2">kg waste diverted</div>
                   <div className="text-sm text-muted-foreground italic">Keeping landfills empty!</div>
                 </div>
 
-                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-950 dark:to-indigo-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">👕</div>
-                  <div className="font-bold text-indigo-700 dark:text-indigo-300 text-lg mb-2">Uniform Uplift (Free Uniforms Provided)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.uniforms.toLocaleString()} uniforms</div>
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">👕</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">Uniform Uplift</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.uniforms.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground mb-2">free uniforms provided</div>
                   <div className="text-sm text-muted-foreground italic">Matching your student body!</div>
                 </div>
 
-                <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-950 dark:to-orange-900 p-6 rounded-lg shadow-lg hover:transform hover:-translate-y-1 transition-transform duration-300">
-                  <div className="text-4xl mb-3">🍲</div>
-                  <div className="font-bold text-orange-700 dark:text-orange-300 text-lg mb-2">Meal Miracle (Free Meals Funded)</div>
-                  <div className="text-2xl font-bold text-foreground mb-2">{results.meals.toLocaleString()} meals</div>
+                <div className="group glass rounded-2xl p-8 border border-border/50 hover-lift transition-smooth hover:shadow-glass">
+                  <div className="text-5xl mb-4">🍲</div>
+                  <h4 className="font-semibold text-xl mb-3 text-foreground">Meal Miracle</h4>
+                  <div className="text-3xl font-light mb-2 text-foreground">{results.meals.toLocaleString()}</div>
+                  <div className="text-sm text-muted-foreground mb-2">free meals funded</div>
                   <div className="text-sm text-muted-foreground italic">Nourishing futures in Africa!</div>
                 </div>
               </div>
 
-              <p className="text-center text-muted-foreground mb-6">
-                These estimates amplify your dream outcome of becoming a sustainability legend, with high likelihood based on real partner data, minimal time delay (setup in weeks), and zero effort (we manage it all).
-              </p>
-              
-              <Button onClick={resetCalculator} variant="outline" className="mx-auto block">
-                Recalculate
-              </Button>
+              <div className="text-center">
+                <p className="text-lg text-muted-foreground mb-8 max-w-4xl mx-auto">
+                  These estimates amplify your dream outcome of becoming a sustainability legend, with high likelihood based on real partner data, minimal time delay (setup in weeks), and zero effort (we manage it all).
+                </p>
+                
+                <Button 
+                  onClick={resetCalculator} 
+                  variant="outline" 
+                  className="px-8 py-3 rounded-xl font-medium transition-all duration-300 hover:scale-105"
+                >
+                  Recalculate Impact
+                </Button>
+              </div>
             </div>
           )}
         </div>

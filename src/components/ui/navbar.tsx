@@ -230,27 +230,27 @@ const Navbar = ({
   },
 }: NavbarProps) => {
   return (
-    <section className="py-4">
+    <section className="py-6 sticky top-0 z-50 glass border-b border-border/50">
       <div className="container">
         <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-6">
-            <a href={logo.url} className="flex items-center gap-2">
-              {logo.src && <img src={logo.src} className="w-8" alt={logo.alt} />}
-              <span className="text-lg font-semibold">{logo.title}</span>
+          <div className="flex items-center gap-8">
+            <a href={logo.url} className="flex items-center gap-2 group transition-all duration-300">
+              {logo.src && <img src={logo.src} className="w-8 group-hover:scale-110 transition-transform duration-300" alt={logo.alt} />}
+              <span className="text-xl font-semibold tracking-tight">{logo.title}</span>
             </a>
             <div className="flex items-center">
               <NavigationMenu>
-                <NavigationMenuList>
+                <NavigationMenuList className="gap-2">
                   {menu.map((item) => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
+          <div className="flex gap-3">
+            <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
               <a href={auth.login.url}>{auth.login.text}</a>
             </Button>
-            <Button asChild size="sm">
+            <Button asChild size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
               <a href={auth.signup.url}>{auth.signup.text}</a>
             </Button>
           </div>
@@ -320,24 +320,28 @@ const Navbar = ({
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <NavigationMenuItem key={item.title} className="text-muted-foreground">
-        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+      <NavigationMenuItem key={item.title}>
+        <NavigationMenuTrigger className="text-muted-foreground font-medium hover:text-foreground transition-colors duration-300 rounded-xl">
+          {item.title}
+        </NavigationMenuTrigger>
         <NavigationMenuContent>
-          <ul className="w-80 p-3">
+          <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass">
             <NavigationMenuLink>
               {item.items.map((subItem) => (
                 <li key={subItem.title}>
                   <a
-                    className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                    className="flex select-none gap-4 rounded-xl p-4 leading-none no-underline outline-none transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground group"
                     href={subItem.url}
                   >
-                    {subItem.icon}
-                    <div>
-                      <div className="text-sm font-semibold">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      {subItem.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-semibold text-foreground mb-1">
                         {subItem.title}
                       </div>
                       {subItem.description && (
-                        <p className="text-sm leading-snug text-muted-foreground">
+                        <p className="text-sm leading-relaxed text-muted-foreground">
                           {subItem.description}
                         </p>
                       )}
@@ -355,7 +359,7 @@ const renderMenuItem = (item: MenuItem) => {
   return (
     <a
       key={item.title}
-      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+      className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-muted-foreground transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground"
       href={item.url}
     >
       {item.title}

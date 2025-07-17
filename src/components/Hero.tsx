@@ -1,13 +1,40 @@
 export const Hero = () => {
-  return <section className="relative min-h-[80vh] flex items-end bg-cover bg-center font-inter" style={{
-    backgroundImage: `url('/shopify/shop_images/home-banner.png')`
-  }}>
-      <div className="absolute inset-0 bg-black/20"></div>
-      <div className="relative z-10 container mx-auto px-4 pb-16">
-        <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">School Uniforms That Make the World Better</h1>
-          <p className="text-lg text-white/90 max-w-xl font-medium">Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school</p>
+  return (
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Main headline with Apple-style typography */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
+            School Uniforms That{" "}
+            <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              Make the World Better
+            </span>
+          </h1>
+          
+          {/* Subtitle with perfect spacing */}
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
+          </p>
+          
+          {/* CTA with Apple-style button */}
+          <div className="pt-4">
+            <button className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl">
+              Get Started Today
+              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </section>;
+      
+      {/* Floating elements for visual interest */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    </section>
+  );
 };
