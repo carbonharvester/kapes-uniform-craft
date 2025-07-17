@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck } from "lucide-react";
+import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -170,6 +170,25 @@ const differences: DifferenceCard[] = [
         "SMS and email notifications",
         "Temperature-controlled storage",
         "Returns and exchanges capability"
+      ]
+    }
+  },
+  {
+    id: "visits",
+    title: "Farm & Factory Visits",
+    subtitle: "See sustainability in action firsthand.",
+    description: "Transparent supply chain access",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=600&fit=crop",
+    icon: <MapPin className="w-6 h-6" />,
+    details: {
+      title: "Farm & Factory Visits",
+      content: "Experience complete transparency with guided visits to our partner farms and factories, seeing sustainable practices firsthand.",
+      features: [
+        "Guided farm and factory tours",
+        "Meet the people behind your uniforms",
+        "See sustainable practices in action",
+        "Educational opportunities for students",
+        "Complete supply chain transparency"
       ]
     }
   },
