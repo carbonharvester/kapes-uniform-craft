@@ -58,6 +58,7 @@ export default {
 				},
 				heading: 'hsl(var(--heading))',
 				'background-warm': 'hsl(var(--background-warm))',
+				'background-cool': 'hsl(var(--background-cool))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

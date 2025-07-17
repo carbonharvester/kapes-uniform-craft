@@ -45,6 +45,9 @@
     /* Warm background - Cream/beige */
     --background-warm: 46 67% 93%;
     
+    /* Cool background - Light blue */
+    --background-cool: 205 100% 91%;
+    
     /* Apple-inspired radius */
     --radius: 0.75rem;
 
@@ -103,6 +106,9 @@
     
     /* Warm background - Darker for dark mode */
     --background-warm: 40 40% 15%;
+    
+    /* Cool background - Darker for dark mode */
+    --background-cool: 205 60% 25%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -189,4 +195,21 @@ html {
 
 .bg-gradient-navy {
   background: linear-gradient(135deg, hsl(var(--heading) / 0.1), hsl(var(--heading) / 0.05));
+}
+
+/* New three-color background gradients */
+.bg-gradient-warm-cool {
+  background: linear-gradient(135deg, hsl(var(--background-warm)), hsl(var(--background)), hsl(var(--background-cool)));
+}
+
+.bg-gradient-cool-warm {
+  background: linear-gradient(135deg, hsl(var(--background-cool)), hsl(var(--background)), hsl(var(--background-warm)));
+}
+
+.bg-gradient-tri-soft {
+  background: linear-gradient(45deg, hsl(var(--background-warm) / 0.3), hsl(var(--background)), hsl(var(--background-cool) / 0.3));
+}
+
+.bg-gradient-tri-sections {
+  background: linear-gradient(180deg, hsl(var(--background-cool) / 0.2) 0%, hsl(var(--background)) 50%, hsl(var(--background-warm) / 0.2) 100%);
 }
