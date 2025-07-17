@@ -61,7 +61,7 @@ const Navbar = ({
     url: "/",
     src: "/lovable-uploads/9ac843b9-dfa5-4ffa-9138-fba60284a971.png",
     alt: "Kapes",
-    title: "Kapes",
+    title: "",
   },
   menu = [
     {
