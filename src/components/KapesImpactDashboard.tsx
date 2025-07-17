@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -12,13 +13,34 @@ const impactMetrics = [
 ];
 
 const dashboardFeatures = [
-  { icon: Leaf, title: "Environmental Impact", description: "Track carbon footprint, waste reduction, and energy savings in real-time" },
-  { icon: BarChart3, title: "Data Visualization", description: "Beautiful charts and graphs that make complex sustainability data easy to understand" },
-  { icon: Target, title: "Goal Management", description: "Set, track, and achieve sustainability targets with automated progress monitoring" },
-  { icon: Award, title: "Achievement Sharing", description: "Celebrate milestones and share your school's success story with the community" },
+  { 
+    icon: Leaf, 
+    title: "Environmental Impact", 
+    description: "Track carbon footprint, waste reduction, and energy savings in real-time",
+    screenshot: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop"
+  },
+  { 
+    icon: BarChart3, 
+    title: "Data Visualization", 
+    description: "Beautiful charts and graphs that make complex sustainability data easy to understand",
+    screenshot: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop"
+  },
+  { 
+    icon: Target, 
+    title: "Goal Management", 
+    description: "Set, track, and achieve sustainability targets with automated progress monitoring",
+    screenshot: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop"
+  },
+  { 
+    icon: Award, 
+    title: "Achievement Sharing", 
+    description: "Celebrate milestones and share your school's success story with the community",
+    screenshot: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=600&fit=crop"
+  },
 ];
 
 export const KapesImpactDashboard = () => {
+  const [selectedFeature, setSelectedFeature] = useState(0);
   return (
     <section className="py-24 px-4 bg-gradient-to-br from-background to-muted/20">
       <div className="max-w-7xl mx-auto">
@@ -35,60 +57,13 @@ export const KapesImpactDashboard = () => {
           <div className="relative">
             <Card className="relative overflow-hidden border-2 shadow-2xl">
               <BorderBeam size={300} duration={12} delay={9} />
-              <CardHeader className="pb-4">
-                <CardTitle className="flex items-center gap-2 text-2xl">
-                  <BarChart3 className="h-6 w-6 text-primary" />
-                  Impact Dashboard
-                </CardTitle>
-                <CardDescription className="text-base">
-                  Real-time sustainability metrics for your school
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Tabs defaultValue="overview" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="overview">Overview</TabsTrigger>
-                    <TabsTrigger value="details">Details</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="overview" className="mt-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      {impactMetrics.map((metric, index) => (
-                        <div key={index} className="p-4 bg-muted/30 rounded-lg border">
-                          <div className="flex items-center gap-2 mb-2">
-                            <metric.icon className="h-4 w-4 text-primary" />
-                            <span className="text-sm font-medium text-muted-foreground">{metric.label}</span>
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <span className="text-lg font-bold">{metric.value}</span>
-                            <span className="text-xs text-green-600 font-medium">{metric.change}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="details" className="mt-6">
-                    <div className="space-y-4">
-                      <div className="p-4 bg-muted/30 rounded-lg border">
-                        <h4 className="font-semibold mb-2">Monthly Progress</h4>
-                        <div className="space-y-2">
-                          <div className="flex justify-between text-sm">
-                            <span>Carbon Reduction</span>
-                            <span className="font-medium">78%</span>
-                          </div>
-                          <div className="w-full bg-muted rounded-full h-2">
-                            <div className="bg-green-500 h-2 rounded-full w-3/4"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="p-4 bg-muted/30 rounded-lg border">
-                        <h4 className="font-semibold mb-2">Student Engagement</h4>
-                        <div className="text-2xl font-bold text-primary">1,247</div>
-                        <p className="text-sm text-muted-foreground">Active participants this month</p>
-                      </div>
-                    </div>
-                  </TabsContent>
-                </Tabs>
-              </CardContent>
+              <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                <img 
+                  src={dashboardFeatures[selectedFeature].screenshot}
+                  alt={`${dashboardFeatures[selectedFeature].title} screenshot`}
+                  className="w-full h-full object-cover transition-all duration-500"
+                />
+              </div>
             </Card>
           </div>
           
@@ -102,17 +77,29 @@ export const KapesImpactDashboard = () => {
             
             <div className="grid gap-6">
               {dashboardFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-4 p-4 rounded-lg border bg-card/50 hover:bg-card transition-colors">
+                <button
+                  key={index}
+                  onClick={() => setSelectedFeature(index)}
+                  className={`flex gap-4 p-4 rounded-lg border transition-all text-left w-full ${
+                    selectedFeature === index 
+                      ? 'bg-primary/10 border-primary/30 shadow-lg' 
+                      : 'bg-card/50 hover:bg-card'
+                  }`}
+                >
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <feature.icon className="h-5 w-5 text-primary" />
+                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                      selectedFeature === index ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                    }`}>
+                      <feature.icon className={`h-5 w-5 ${
+                        selectedFeature === index ? 'text-primary-foreground' : 'text-primary'
+                      }`} />
                     </div>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">{feature.title}</h4>
                     <p className="text-sm text-muted-foreground">{feature.description}</p>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
             
