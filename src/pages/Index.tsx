@@ -21,8 +21,8 @@ const Index = () => {
         <WhatMakesKapesDifferent />
       </div>
       <ValueCalculator />
-      <PartnershipTiers />
       <SchoolLogos />
+      <PartnershipTiers />
       <KapesImpactDashboard />
       <FreeAuditTool />
       <Testimonials />
