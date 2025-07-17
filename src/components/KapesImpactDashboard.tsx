@@ -30,7 +30,7 @@ export const KapesImpactDashboard = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background-cool">
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}

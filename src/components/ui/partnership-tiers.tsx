@@ -26,7 +26,7 @@ export function PartnershipTiersDisplay({
   title = "Partnership Tiers",
   description = "Choose the level of impact that's right for your school\nAll tiers include sustainable, ethical uniforms and dedicated support."
 }: TiersProps) {
-  return <div className="container py-20">
+  return <div className="container py-20 bg-background-warm">
       <div className="text-center space-y-4 mb-12">
         <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
           {title}
