@@ -166,7 +166,7 @@ export const ValueCalculator = () => {
                     <div className="text-destructive text-sm text-center">{error}</div>
                   )}
                   <Button type="submit" className="w-full">
-                    Calculate Your Grand Slam Impact
+                    Calculate Your Impact
                   </Button>
                 </form>
               </CardContent>
