@@ -258,25 +258,25 @@ const SocialImpactAfrica = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-items-center">
             {trackingMetrics.map((metric, index) => {
               const IconComponent = metric.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
+                <Card key={index} className="hover:shadow-lg transition-shadow text-center w-full max-w-sm">
+                  <CardHeader className="text-center">
                     <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
                       <IconComponent className="w-6 h-6 text-orange-600" />
                     </div>
                     <Badge 
                       variant="outline" 
-                      className={`mb-2 ${metric.tier === 'Impact Only' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}
+                      className={`mb-2 mx-auto ${metric.tier === 'Impact Only' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}
                     >
                       {metric.tier}
                     </Badge>
-                    <CardTitle className="text-lg">{metric.title}</CardTitle>
+                    <CardTitle className="text-lg text-center">{metric.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{metric.description}</p>
+                  <CardContent className="text-center">
+                    <p className="text-muted-foreground text-center">{metric.description}</p>
                   </CardContent>
                 </Card>
               );
