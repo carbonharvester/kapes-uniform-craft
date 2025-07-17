@@ -30,8 +30,8 @@ export const FreeAuditTool = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Cost Optimization Report</h4>
-                    <p className="text-muted-foreground text-sm">Identify potential savings and efficiencies</p>
+                    <h4 className="font-semibold">School Benchmarking</h4>
+                    <p className="text-muted-foreground text-sm">Compare your sustainability performance against other schools</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -71,10 +71,6 @@ export const FreeAuditTool = () => {
                   <div>
                     <label className="block text-sm font-medium mb-2">Number of Students</label>
                     <Input type="number" placeholder="e.g., 500" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Current Annual Uniform Budget</label>
-                    <Input type="number" placeholder="e.g., £25,000" />
                   </div>
                   <Button type="submit" className="w-full">
                     Get My Free Audit Report
