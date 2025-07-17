@@ -57,6 +57,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				heading: 'hsl(var(--heading))',
+				'background-warm': 'hsl(var(--background-warm))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
