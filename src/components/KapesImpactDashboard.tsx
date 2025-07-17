@@ -1,30 +1,8 @@
 
 import { useState } from "react";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BarChart3, TrendingUp, Target, Users, Leaf, Award, ArrowRight } from "lucide-react";
-
-const impactMetrics = [{
-  icon: BarChart3,
-  label: "Carbon Tracking",
-  value: "12.5t CO2",
-  change: "+15%"
-}, {
-  icon: TrendingUp,
-  label: "Waste Reduction",
-  value: "87%",
-  change: "+23%"
-}, {
-  icon: Target,
-  label: "Goals Achieved",
-  value: "9/12",
-  change: "+3"
-}, {
-  icon: Users,
-  label: "Students Engaged",
-  value: "1,247",
-  change: "+89"
-}];
+import { BarChart3, TrendingUp, Target, Leaf, Award, ArrowRight } from "lucide-react";
 
 const dashboardFeatures = [{
   icon: Leaf,
@@ -52,34 +30,18 @@ export const KapesImpactDashboard = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               KapesImpact™{" "}
               <span className="text-primary">Dashboard</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Transform your sustainability data into compelling stories. Track, measure, and showcase your school's environmental impact with our comprehensive platform.
             </p>
-          </div>
-
-          {/* Impact Metrics */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
-            {impactMetrics.map((metric, index) => (
-              <Card key={index} className="text-center bg-card border-border hover:shadow-md transition-all duration-200">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <metric.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="text-2xl font-semibold mb-1 text-foreground">{metric.value}</div>
-                  <div className="text-sm text-muted-foreground mb-2">{metric.label}</div>
-                  <div className="text-xs text-primary font-medium">{metric.change}</div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
           
           {/* Feature Navigation - Horizontal Layout */}
