@@ -3,23 +3,23 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero background image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/lovable-uploads/d3e3aec2-02e3-4230-a22f-71c9cf0f0250.png)' }}>
-        <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{ backgroundImage: 'url(/lovable-uploads/d3e3aec2-02e3-4230-a22f-71c9cf0f0250.png)' }}>
+        <div className="absolute inset-0 bg-black/60 z-10"></div>
       </div>
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Main headline with consistent typography */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white drop-shadow-lg">
             School Uniforms That{" "}
-            <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            <span className="font-medium text-white drop-shadow-lg">
               Make the World Better
             </span>
           </h1>
           
           {/* Subtitle with perfect spacing */}
-          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg">
             Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
           </p>
           
