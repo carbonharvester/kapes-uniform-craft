@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
+
 interface TierPlan {
   name: string;
   features: string[];
@@ -12,11 +13,13 @@ interface TierPlan {
   href: string;
   isPopular: boolean;
 }
+
 interface TiersProps {
   plans: TierPlan[];
   title?: string;
   description?: string;
 }
+
 export function PartnershipTiersDisplay({
   plans,
   title = "Partnership Tiers",
@@ -24,7 +27,7 @@ export function PartnershipTiersDisplay({
 }: TiersProps) {
   return <div className="container py-20">
       <div className="text-center space-y-4 mb-12">
-        <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+        <h2 className="text-3xl font-bold mb-4">
           {title}
         </h2>
         <p className="text-muted-foreground text-lg whitespace-pre-line">
