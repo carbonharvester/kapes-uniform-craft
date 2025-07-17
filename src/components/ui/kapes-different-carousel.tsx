@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Plus, Leaf, Shield, Recycle, Users, Heart, Globe } from "lucide-react";
+import { Plus, Leaf, Shield, Recycle, Users, Heart, Globe, Truck, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -140,6 +140,66 @@ const differences: DifferenceCard[] = [
         "Regional fulfillment centers",
         "Cultural adaptation services",
         "Multi-language support"
+      ]
+    }
+  },
+  {
+    id: "delivery",
+    title: "Fast Delivery",
+    subtitle: "When you need it, where you need it.",
+    description: "Reliable and efficient logistics",
+    color: "bg-gradient-to-br from-pink-500 to-rose-600",
+    textColor: "text-white",
+    icon: <Truck className="w-6 h-6" />,
+    details: {
+      title: "Lightning-Fast Delivery",
+      content: "Our advanced logistics network ensures your uniforms arrive exactly when you need them.",
+      features: [
+        "Next-day delivery available",
+        "Real-time tracking system",
+        "Flexible delivery options",
+        "Emergency rush orders",
+        "Worldwide shipping network"
+      ]
+    }
+  },
+  {
+    id: "customization",
+    title: "Complete Customization",
+    subtitle: "Your vision, perfectly realized.",
+    description: "Tailored solutions for every school",
+    color: "bg-gradient-to-br from-amber-500 to-orange-600",
+    textColor: "text-white",
+    icon: <Award className="w-6 h-6" />,
+    details: {
+      title: "Unlimited Customization",
+      content: "Every uniform is crafted to reflect your school's unique identity and requirements.",
+      features: [
+        "Custom colors and designs",
+        "Embroidered logos and crests",
+        "Size-inclusive options",
+        "Adaptive uniform solutions",
+        "Brand guideline compliance"
+      ]
+    }
+  },
+  {
+    id: "technology",
+    title: "Smart Technology",
+    subtitle: "Innovation in every fiber.",
+    description: "Advanced fabric technology",
+    color: "bg-gradient-to-br from-violet-500 to-purple-600",
+    textColor: "text-white",
+    icon: <Shield className="w-6 h-6" />,
+    details: {
+      title: "Cutting-Edge Technology",
+      content: "Our uniforms incorporate the latest innovations in textile technology for enhanced performance.",
+      features: [
+        "Moisture-wicking fabrics",
+        "Stain-resistant treatments",
+        "Temperature regulation",
+        "Antimicrobial properties",
+        "Wrinkle-free technology"
       ]
     }
   }
