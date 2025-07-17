@@ -91,12 +91,6 @@ const Navbar = ({
           icon: <Heart className="size-5 shrink-0" />,
           url: "/social-impact-africa",
         },
-        {
-          title: "Impact",
-          description: "See our positive impact on communities",
-          icon: <Award className="size-5 shrink-0" />,
-          url: "/impact",
-        },
       ],
     },
     {
@@ -220,8 +214,6 @@ const Navbar = ({
   ],
   mobileExtraLinks = [
     { name: "About", url: "/about" },
-    { name: "Impact", url: "/impact" },
-    { name: "Offers", url: "/offers" },
     { name: "Resources", url: "/resources" },
   ],
   auth = {
