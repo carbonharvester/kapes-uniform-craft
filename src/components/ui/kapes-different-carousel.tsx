@@ -284,17 +284,7 @@ export const KapesDifferentCarousel = () => {
                         </button>
                       </PopoverTrigger>
                       <PopoverContent 
-                        className="w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm z-50"
-                        side="top"
-                        align="center"
-                        sideOffset={0}
-                        alignOffset={0}
-                        style={{
-                          position: 'fixed',
-                          top: '50%',
-                          left: '50%',
-                          transform: 'translate(-50%, -50%)',
-                        }}
+                        className="w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm !fixed !top-1/2 !left-1/2 !-translate-x-1/2 !-translate-y-1/2 !z-[9999]"
                       >
                         <div className="p-8">
                           <div className="flex items-center space-x-4 mb-6">
