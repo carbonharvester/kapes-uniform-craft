@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -39,24 +40,51 @@ const Resources = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background py-12">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Resources & Tools</h1>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <Badge className="mb-4">Resources & Tools</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Everything You Need to{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Get Started
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              Guides, tools, and insights to help you build a more sustainable future for your school.
+            </p>
+          </div>
+        </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </section>
+
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Blog Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Latest Articles</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+          <section>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Latest Articles</h2>
+              <p className="text-muted-foreground text-lg">Insights and guidance for sustainable education</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
               {blogPosts.map((post) => (
-                <Card key={post.title}>
+                <Card key={post.title} className="border-0 shadow-glass hover-lift transition-smooth">
                   <CardHeader>
-                    <Badge className="w-fit mb-2">{post.category}</Badge>
-                    <CardTitle className="text-lg">{post.title}</CardTitle>
+                    <Badge className="w-fit mb-4 bg-primary/10 text-primary">{post.category}</Badge>
+                    <CardTitle className="text-xl font-medium leading-tight">{post.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                    <Button variant="outline" size="sm">Read More</Button>
+                    <p className="text-muted-foreground mb-6 leading-relaxed">{post.excerpt}</p>
+                    <Button variant="outline" size="sm" className="rounded-xl hover:scale-105 transition-smooth">
+                      Read More
+                    </Button>
                   </CardContent>
                 </Card>
               ))}
@@ -64,34 +92,46 @@ const Resources = () => {
           </section>
 
           {/* Educational Tools */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Free Educational Tools</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Educational Tools</h2>
+              <p className="text-muted-foreground text-lg">Resources to empower your sustainability journey</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    Sustainability Guides
-                  </CardTitle>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl font-medium">Sustainability Guides</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-4">Comprehensive guides for implementing sustainability practices in schools.</p>
-                  <Button variant="outline" className="flex items-center gap-2">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Comprehensive guides for implementing sustainability practices in schools.
+                  </p>
+                  <Button variant="outline" className="flex items-center gap-2 rounded-xl hover:scale-105 transition-smooth">
                     <Download className="h-4 w-4" />
                     Download Guides
                   </Button>
                 </CardContent>
               </Card>
-              <Card>
+              
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    Lesson Plans
-                  </CardTitle>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <BookOpen className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl font-medium">Lesson Plans</CardTitle>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-4">Ready-to-use lesson plans on sustainability, ethics, and global citizenship.</p>
-                  <Button variant="outline" className="flex items-center gap-2">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    Ready-to-use lesson plans on sustainability, ethics, and global citizenship.
+                  </p>
+                  <Button variant="outline" className="flex items-center gap-2 rounded-xl hover:scale-105 transition-smooth">
                     <Download className="h-4 w-4" />
                     Download Plans
                   </Button>
@@ -101,14 +141,19 @@ const Resources = () => {
           </section>
 
           {/* Free Audit Tool */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">Free Uniform Program Audit</h2>
-            <Card>
-              <CardContent className="p-8">
+          <section>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Uniform Program Audit</h2>
+              <p className="text-muted-foreground text-lg">Get personalized insights for your school</p>
+            </div>
+            <Card className="border-0 shadow-glass max-w-4xl mx-auto">
+              <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-8">
-                  <Calculator className="h-12 w-12 mx-auto mb-4 text-primary" />
-                  <h3 className="text-2xl font-bold mb-4">Diagnostic Tool with Report Generation</h3>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Calculator className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-medium mb-4">Diagnostic Tool with Report Generation</h3>
+                  <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                     Get a comprehensive analysis of your current uniform program with personalized recommendations for improvement.
                   </p>
                 </div>
@@ -116,17 +161,19 @@ const Resources = () => {
                   <form className="space-y-6">
                     <div>
                       <label className="block text-sm font-medium mb-2">School Name</label>
-                      <input type="text" className="w-full p-3 border rounded-lg" />
+                      <input type="text" className="w-full p-3 border rounded-xl bg-background" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Current Uniform Supplier</label>
-                      <input type="text" className="w-full p-3 border rounded-lg" />
+                      <input type="text" className="w-full p-3 border rounded-xl bg-background" />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Annual Uniform Budget</label>
-                      <input type="number" className="w-full p-3 border rounded-lg" />
+                      <input type="number" className="w-full p-3 border rounded-xl bg-background" />
                     </div>
-                    <Button type="submit" className="w-full">Start Free Audit</Button>
+                    <Button type="submit" className="w-full rounded-xl font-medium text-lg py-4 hover:scale-105 transition-smooth">
+                      Start Free Audit
+                    </Button>
                   </form>
                 </div>
               </CardContent>
@@ -134,22 +181,29 @@ const Resources = () => {
           </section>
 
           {/* School Matcher Quiz */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold mb-8">School Matcher Quiz</h2>
-            <Card>
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-4">Find Your Perfect Partnership Tier</h3>
-                <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <Card className="border-0 shadow-glass max-w-4xl mx-auto">
+              <CardContent className="p-8 md:p-12 text-center">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Find Your Perfect Partnership Tier</h3>
+                <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
                   Take our interactive quiz to discover which Kapes partnership tier aligns best with your school's values and goals.
                 </p>
-                <Button size="lg">Take the Quiz</Button>
+                <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                  Take the Quiz
+                </Button>
               </CardContent>
             </Card>
           </section>
 
           {/* FAQ Section */}
-          <section className="flex justify-center">
-            <FAQAccordion />
+          <section>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Frequently Asked Questions</h2>
+              <p className="text-muted-foreground text-lg">Quick answers to common questions</p>
+            </div>
+            <div className="flex justify-center">
+              <FAQAccordion />
+            </div>
           </section>
         </div>
       </div>

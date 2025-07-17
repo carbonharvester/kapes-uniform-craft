@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -25,141 +26,170 @@ const EssentialsTier = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-green-100 text-green-800">Essentials Tier</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Ethical Uniforms, Simplified
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            For schools who want sustainable, ethical uniforms without the complexity — get beautiful, responsible clothing that aligns with your values.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
-            <Star className="h-4 w-4 text-yellow-500" />
-            <span>Perfect for schools starting their sustainability journey</span>
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <Badge className="mb-4 bg-green-100 text-green-800">Essentials Tier</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Ethical Uniforms,{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Simplified
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              For schools who want sustainable, ethical uniforms without the complexity — get beautiful, responsible clothing that aligns with your values.
+            </p>
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <Star className="h-4 w-4 text-yellow-500" />
+              <span>Perfect for schools starting their sustainability journey</span>
+            </div>
           </div>
         </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      {/* What's Included */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle className="text-2xl text-green-600">✅ What's Included</CardTitle>
-              <CardDescription>Everything you need for ethical, sustainable uniforms</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                {included.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold">{item}</h3>
-                      {item === "100% Sustainable Uniforms" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Every item is made from regenerative, recycled, or biodegradable materials — always safe, always ethical.
-                        </p>
-                      )}
-                      {item === "Ethical Manufacturing" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Verified, safe, child-labour-free production with full transparency.
-                        </p>
-                      )}
-                      {item === "Custom Uniform Design & Sampling" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Designed to reflect your identity, values, and student feedback.
-                        </p>
-                      )}
-                      {item === "Online Shop (Fully Managed)" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Built, maintained, and supported by Kapes — complete with AI-powered sizing and easy ordering.
-                        </p>
-                      )}
-                      {item === "Full Delivery Options" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Next-day home delivery, e-commerce locker pickup, or Kapes-managed school shop.
-                        </p>
-                      )}
-                      {item === "Plastic-Free Packaging" && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          All uniforms delivered in glassine paper — 100% biodegradable and beautiful to unbox.
-                        </p>
-                      )}
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto space-y-20">
+          
+          {/* What's Included */}
+          <section>
+            <Card className="border-0 shadow-glass mb-8">
+              <CardHeader>
+                <CardTitle className="text-2xl md:text-3xl font-medium text-green-600 flex items-center gap-2">
+                  <CheckCircle className="h-6 w-6" />
+                  What's Included
+                </CardTitle>
+                <CardDescription className="text-lg">Everything you need for ethical, sustainable uniforms</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {included.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <CheckCircle className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h3 className="font-medium text-lg mb-1">{item}</h3>
+                        {item === "100% Sustainable Uniforms" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Every item is made from regenerative, recycled, or biodegradable materials — always safe, always ethical.
+                          </p>
+                        )}
+                        {item === "Ethical Manufacturing" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Verified, safe, child-labour-free production with full transparency.
+                          </p>
+                        )}
+                        {item === "Custom Uniform Design & Sampling" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Designed to reflect your identity, values, and student feedback.
+                          </p>
+                        )}
+                        {item === "Online Shop (Fully Managed)" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Built, maintained, and supported by Kapes — complete with AI-powered sizing and easy ordering.
+                          </p>
+                        )}
+                        {item === "Full Delivery Options" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            Next-day home delivery, e-commerce locker pickup, or Kapes-managed school shop.
+                          </p>
+                        )}
+                        {item === "Plastic-Free Packaging" && (
+                          <p className="text-sm text-muted-foreground leading-relaxed">
+                            All uniforms delivered in glassine paper — 100% biodegradable and beautiful to unbox.
+                          </p>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-600">❌ What's Not Included</CardTitle>
-              <CardDescription>Features available in higher tiers</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-3 md:grid-cols-2">
-                {notIncluded.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <X className="h-4 w-4 text-red-500 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+            <Card className="border-0 shadow-glass">
+              <CardHeader>
+                <CardTitle className="text-2xl md:text-3xl font-medium text-red-600 flex items-center gap-2">
+                  <X className="h-6 w-6" />
+                  What's Not Included
+                </CardTitle>
+                <CardDescription className="text-lg">Features available in higher tiers</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-3 md:grid-cols-2">
+                  {notIncluded.map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <X className="h-5 w-5 text-red-500 flex-shrink-0" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
 
-      {/* Best For */}
-      <section className="py-16 px-4 bg-muted/50">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🏆 Best For</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools wanting ethical uniforms without extra complexity</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools starting their sustainability journey</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools prioritizing quality and ethics over impact programs</p>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools wanting a streamlined, low-maintenance solution</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+          {/* Best For */}
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Perfect For</h2>
+              <p className="text-muted-foreground text-lg">Schools that align with this approach</p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+              <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+                <CardContent className="p-8">
+                  <h3 className="text-lg font-medium mb-2">Starting Your Journey</h3>
+                  <p className="text-muted-foreground">Schools beginning their sustainability journey</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+                <CardContent className="p-8">
+                  <h3 className="text-lg font-medium mb-2">Simplicity First</h3>
+                  <p className="text-muted-foreground">Schools wanting ethical uniforms without extra complexity</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+                <CardContent className="p-8">
+                  <h3 className="text-lg font-medium mb-2">Quality Focus</h3>
+                  <p className="text-muted-foreground">Schools prioritizing quality and ethics over impact programs</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+                <CardContent className="p-8">
+                  <h3 className="text-lg font-medium mb-2">Low Maintenance</h3>
+                  <p className="text-muted-foreground">Schools wanting a streamlined, hands-off solution</p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Simple. Ethical. Beautiful.
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            The Essentials Tier delivers sustainable uniforms that align with your values — without the complexity.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              Compare All Tiers
-            </Button>
-            <Button variant="outline" size="lg">
-              Book Your Free Uniform & Sustainability Audit
-            </Button>
-          </div>
+          {/* Value Proposition */}
+          <section>
+            <Card className="border-0 shadow-glass">
+              <CardContent className="p-8 md:p-12 text-center">
+                <h2 className="text-2xl md:text-3xl font-medium mb-6">Simple. Ethical. Beautiful.</h2>
+                <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                  The Essentials Tier delivers sustainable uniforms that align with your values — without the complexity. 
+                  Every item is ethically made, environmentally responsible, and designed to make students feel confident and proud.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                    Compare All Tiers
+                  </Button>
+                  <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                    Book Your Free Audit
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+          
         </div>
-      </section>
+      </div>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -40,73 +41,218 @@ const OurMission = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-green-100 text-green-800">Our Mission</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Reimagining School Uniforms for a Better World
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            We believe that what students wear should reflect the values we want them to live by — sustainability, ethics, empowerment, and global citizenship.
-          </p>
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <Badge className="mb-4">Our Mission</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Reimagining School Uniforms for a{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Better World
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              We believe that what students wear should reflect the values we want them to live by — sustainability, ethics, empowerment, and global citizenship.
+            </p>
+          </div>
         </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-50 to-blue-50">
-        <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-            "To transform school uniforms from a necessity into a force for positive change — empowering students, supporting communities, and healing our planet."
-          </blockquote>
-          <p className="text-lg text-muted-foreground">
-            Every uniform tells a story. We're making sure it's a story worth telling.
-          </p>
-        </div>
-      </section>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto space-y-20">
+          
+          {/* Mission Statement */}
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <blockquote className="text-2xl md:text-4xl font-light text-foreground mb-8 leading-relaxed">
+                "To transform school uniforms from a necessity into a force for positive change — empowering students, supporting communities, and healing our planet."
+              </blockquote>
+              <p className="text-lg text-muted-foreground">
+                Every uniform tells a story. We're making sure it's a story worth telling.
+              </p>
+            </div>
+          </section>
 
-      {/* Our Values */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {values.map((value, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <value.icon className="h-6 w-6 text-primary" />
+          {/* Our Values */}
+          <section>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Values</h2>
+              <p className="text-muted-foreground text-lg">The principles that guide everything we do</p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {values.map((value, index) => (
+                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                  <CardHeader>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <value.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <CardTitle className="text-xl font-medium">{value.title}</CardTitle>
                     </div>
-                    <CardTitle className="text-lg">{value.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* The Challenge */}
+          <section>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">The Challenge We're Solving</h2>
+              <p className="text-muted-foreground text-lg">Why the world needs better school uniforms</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="border-0 shadow-glass text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-light text-primary mb-4">2.8B</div>
+                  <h3 className="text-xl font-medium mb-4">Students Worldwide</h3>
+                  <p className="text-muted-foreground">
+                    Millions of students wear uniforms made in poor conditions with environmental harm
+                  </p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+              
+              <Card className="border-0 shadow-glass text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-light text-primary mb-4">92M</div>
+                  <h3 className="text-xl font-medium mb-4">Tons of Textile Waste</h3>
+                  <p className="text-muted-foreground">
+                    Annual fashion waste, much from fast fashion and disposable clothing
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass text-center">
+                <CardContent className="p-8">
+                  <div className="text-4xl font-light text-primary mb-4">75M</div>
+                  <h3 className="text-xl font-medium mb-4">Garment Workers</h3>
+                  <p className="text-muted-foreground">
+                    Many working in unsafe conditions without fair wages or representation
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
-            Join the Movement
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Be part of a global community of schools creating positive change through ethical uniform programs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
-              Start Your Journey
-            </Button>
-            <Button variant="outline" size="lg">
-              Learn About Our Impact
-            </Button>
-          </div>
+          {/* Our Solution */}
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Solution</h2>
+              <p className="text-muted-foreground text-lg">How we're creating positive change</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-4">For Students</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      High-quality, comfortable uniforms they're proud to wear
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Educational opportunities about sustainability and ethics
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Agency in creating positive change in their world
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-4">For Schools</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Zero administrative burden with full-service management
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Measurable impact data to share with stakeholders
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Alignment with sustainability and values-based education
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-4">For Communities</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Fair trade partnerships creating sustainable livelihoods
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Community development programs and education initiatives
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Environmental restoration and regenerative practices
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-medium mb-4">For Planet</h3>
+                  <ul className="space-y-3 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Regenerative materials that actively improve ecosystems
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Circular design eliminating waste through takeback programs
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2"></div>
+                      Carbon negative supply chains with measurable impact
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="text-center py-16">
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Join the Movement
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Be part of a global community of schools creating positive change through ethical uniform programs.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                Start Your Journey
+              </Button>
+              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                Learn About Our Impact
+              </Button>
+            </div>
+          </section>
+          
         </div>
-      </section>
+      </div>
     </div>
   );
 };
