@@ -175,7 +175,7 @@ export const ValueCalculator = () => {
 
           {showResults && results && (
             <div className="mt-12">
-              <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
+              <h2 className="text-3xl font-light tracking-tight leading-tight text-center mb-8 text-foreground">
                 Your School's Projected Value Equation Boost
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
