@@ -25,7 +25,7 @@ import FactoryVisits from "./pages/FactoryVisits";
 import StudentGovernance from "./pages/StudentGovernance";
 import { UniformSolutions } from "./pages/UniformSolutions";
 import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
-import { KapesImpactPlatform } from "./pages/KapesImpactPlatform";
+import KapesImpactPlatform from "./pages/KapesImpactPlatform";
 import { DeliveryPackaging } from "./pages/DeliveryPackaging";
 import SustainabilityEthics from "./pages/SustainabilityEthics";
 import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
@@ -67,7 +67,7 @@ const App = () => (
           <Route path="/whats-in-a-footprint" element={<WhatsInAFootprint />} />
           <Route path="/uniform-solutions" element={<UniformSolutions />} />
           <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
-          <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
+           <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
           <Route path="/delivery-packaging" element={<DeliveryPackaging />} />
           <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
           <Route path="/circular-economy-takeback" element={<CircularEconomyTakeback />} />
