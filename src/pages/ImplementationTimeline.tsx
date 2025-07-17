@@ -98,51 +98,66 @@ const ImplementationTimeline = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Implementation Timeline
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Your journey from consultation to launch — typically 13-21 weeks from start to finish
-          </p>
-          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
-            <Clock className="h-4 w-4" />
-            <span>Total timeline: 3-5 months</span>
+      <section className="relative py-16 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">
+              Implementation Journey
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Implementation{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Timeline
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              Your journey from consultation to launch — typically 13-21 weeks from start to finish
+            </p>
+            <div className="flex items-center justify-center gap-4 text-lg text-muted-foreground">
+              <Clock className="h-5 w-5" />
+              <span>Total timeline: 3-5 months</span>
+            </div>
           </div>
         </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Timeline */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8">
+          <div className="space-y-12">
             {phases.map((phase, index) => (
-              <Card key={index} className="relative">
-                <CardHeader>
+              <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader className="p-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="flex items-center gap-3 mb-2">
-                        <Badge variant="outline" className={getStatusColor(phase.status)}>
+                      <div className="flex items-center gap-4 mb-4">
+                        <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-4 py-2">
                           {phase.phase}
                         </Badge>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          <span>{phase.duration}</span>
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                          <Calendar className="h-5 w-5" />
+                          <span className="text-lg">{phase.duration}</span>
                         </div>
                       </div>
-                      <CardTitle className="text-xl">{phase.title}</CardTitle>
+                      <CardTitle className="text-2xl font-semibold leading-none tracking-tight">{phase.title}</CardTitle>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
+                <CardContent className="px-8 pb-8">
+                  <ul className="space-y-3">
                     {phase.activities.map((activity, activityIndex) => (
-                      <li key={activityIndex} className="flex items-start gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{activity}</span>
+                      <li key={activityIndex} className="flex items-start gap-3">
+                        <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-muted-foreground leading-relaxed">{activity}</span>
                       </li>
                     ))}
                   </ul>
@@ -154,37 +169,37 @@ const ImplementationTimeline = () => {
       </section>
 
       {/* Key Milestones */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Milestones</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Design Approval</CardTitle>
-                <CardDescription>End of Phase 2</CardDescription>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Key Milestones</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Design Approval</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground">End of Phase 2</CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Final uniform designs approved by school leadership and student representatives.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Final uniform designs approved by school leadership and student representatives.</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Soft Launch</CardTitle>
-                <CardDescription>End of Phase 4</CardDescription>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Soft Launch</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground">End of Phase 4</CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Limited rollout with select families to test systems and processes.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Limited rollout with select families to test systems and processes.</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Full Launch</CardTitle>
-                <CardDescription>End of Phase 5</CardDescription>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Full Launch</CardTitle>
+                <CardDescription className="text-lg text-muted-foreground">End of Phase 5</CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Complete rollout to all students with full support systems active.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Complete rollout to all students with full support systems active.</p>
               </CardContent>
             </Card>
           </div>
@@ -192,20 +207,22 @@ const ImplementationTimeline = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
             Book your free consultation to discuss your timeline and requirements.
           </p>
-          <Button size="lg" className="mr-4">
-            Book Free Consultation
-          </Button>
-          <Button variant="outline" size="lg">
-            Download Timeline PDF
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+              Book Free Consultation
+            </Button>
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+              Download Timeline PDF
+            </Button>
+          </div>
         </div>
       </section>
     </div>

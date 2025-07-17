@@ -26,56 +26,71 @@ const CoreTier = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800">Core Tier</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Sustainable Uniforms + Real Impact
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            For schools who want to create positive change — get all the sustainability benefits plus meaningful impact tracking and global contributions.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
-            <Zap className="h-4 w-4 text-blue-500" />
-            <span>Most popular choice for purpose-driven schools</span>
+      <section className="relative py-16 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">Core Tier</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Sustainable Uniforms +{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Real Impact
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              For schools who want to create positive change — get all the sustainability benefits plus meaningful impact tracking and global contributions.
+            </p>
+            <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground">
+              <Zap className="h-5 w-5 text-primary" />
+              <span>Most popular choice for purpose-driven schools</span>
+            </div>
           </div>
         </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* What's Included */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Card className="mb-8">
-            <CardHeader>
-              <CardTitle className="text-2xl text-green-600">✅ What's Included</CardTitle>
-              <CardDescription>Everything from Essentials plus meaningful impact features</CardDescription>
+          <Card className="mb-12 border-0 shadow-glass">
+            <CardHeader className="p-8">
+              <CardTitle className="text-2xl md:text-3xl font-medium text-primary flex items-center gap-3">
+                <CheckCircle className="h-6 w-6" />
+                What's Included
+              </CardTitle>
+              <CardDescription className="text-lg">Everything from Essentials plus meaningful impact features</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-1">
+            <CardContent className="px-8 pb-8">
+              <div className="grid gap-6 md:grid-cols-1">
                 {included.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <div key={index} className="flex items-start gap-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">{item}</h3>
+                      <h3 className="font-semibold text-lg mb-1">{item}</h3>
                       {item === "Fully Managed Takeback Scheme" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Return worn uniforms → we recycle them → we donate meals. All tracked and reported.
                         </p>
                       )}
                       {item === "KapesImpact™ Dashboard" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Real-time tracking of your school's environmental and social impact with detailed reporting.
                         </p>
                       )}
                       {item === "Free School Meals & Uniforms Donated" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           A portion of every sale funds school meals for children in need across Africa and free uniforms made locally.
                         </p>
                       )}
                       {item === "Factory Visits & Teaching Materials" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Access to school trips, factory tours, and classroom resources focused on sustainability and ethics.
                         </p>
                       )}
@@ -86,17 +101,20 @@ const CoreTier = () => {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl text-red-600">❌ What's Not Included</CardTitle>
-              <CardDescription>Premium features available in Impact Tier</CardDescription>
+          <Card className="border-0 shadow-glass">
+            <CardHeader className="p-8">
+              <CardTitle className="text-2xl md:text-3xl font-medium text-red-600 flex items-center gap-3">
+                <X className="h-6 w-6" />
+                What's Not Included
+              </CardTitle>
+              <CardDescription className="text-lg">Premium features available in Impact Tier</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-3 md:grid-cols-1">
+            <CardContent className="px-8 pb-8">
+              <div className="grid gap-4 md:grid-cols-1">
                 {notIncluded.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <X className="h-4 w-4 text-red-500 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{item}</span>
+                    <X className="h-5 w-5 text-red-500 flex-shrink-0" />
+                    <span className="text-muted-foreground leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -106,26 +124,26 @@ const CoreTier = () => {
       </section>
 
       {/* Impact Highlights */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Your Impact at a Glance</h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl text-blue-600">12,000+</CardTitle>
-                <CardDescription>School meals funded</CardDescription>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Your Impact at a Glance</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-4xl font-light tracking-tight text-primary mb-2">12,000+</CardTitle>
+                <CardDescription className="text-lg">School meals funded</CardDescription>
               </CardHeader>
             </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl text-green-600">85%</CardTitle>
-                <CardDescription>Reduction in uniform waste</CardDescription>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-4xl font-light tracking-tight text-primary mb-2">85%</CardTitle>
+                <CardDescription className="text-lg">Reduction in uniform waste</CardDescription>
               </CardHeader>
             </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl text-purple-600">500+</CardTitle>
-                <CardDescription>Uniforms donated globally</CardDescription>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CardTitle className="text-4xl font-light tracking-tight text-primary mb-2">500+</CardTitle>
+                <CardDescription className="text-lg">Uniforms donated globally</CardDescription>
               </CardHeader>
             </Card>
           </div>
@@ -133,28 +151,28 @@ const CoreTier = () => {
       </section>
 
       {/* Best For */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🏆 Best For</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools committed to measurable social and environmental impact</p>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Perfect For</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools committed to measurable social and environmental impact</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools wanting to engage students in sustainability education</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools wanting to engage students in sustainability education</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools that value transparency and circular economy practices</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools that value transparency and circular economy practices</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools ready to showcase their positive global contributions</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools ready to showcase their positive global contributions</p>
               </CardContent>
             </Card>
           </div>
@@ -162,19 +180,19 @@ const CoreTier = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Make an Impact Beyond Your Classroom
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
             The Core Tier connects your school to a global movement of positive change — with every uniform making a difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Compare All Tiers
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book Your Free Uniform & Sustainability Audit
             </Button>
           </div>

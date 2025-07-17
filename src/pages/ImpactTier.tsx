@@ -22,55 +22,67 @@ const ImpactTier = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-purple-100 text-purple-800">Impact Tier: Flagship Program</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            For Schools Who Want to Lead — Not Follow
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            The Impact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-8">
-            <Crown className="h-4 w-4 text-purple-500" />
-            <span>Our complete, flagship experience — with every feature included</span>
+      <section className="relative py-16 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">Impact Tier: Flagship Program</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              For Schools Who Want to{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Lead — Not Follow
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              The Impact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
+            </p>
+            <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground">
+              <Crown className="h-5 w-5 text-primary" />
+              <span>Our complete, flagship experience — with every feature included</span>
+            </div>
           </div>
         </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Key Highlights */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl">
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card className="border-purple-200">
-              <CardHeader>
-                <QrCode className="h-8 w-8 text-purple-600 mb-2" />
-                <CardTitle className="text-lg">QR-Coded Garments</CardTitle>
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <QrCode className="h-10 w-10 text-primary mb-4" />
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">QR-Coded Garments</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Every item tells its story — scan to see impact per garment, carbon saved, and factory transparency.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Every item tells its story — scan to see impact per garment, carbon saved, and factory transparency.</p>
               </CardContent>
             </Card>
             
-            <Card className="border-blue-200">
-              <CardHeader>
-                <Crown className="h-8 w-8 text-blue-600 mb-2" />
-                <CardTitle className="text-lg">Student Board Member</CardTitle>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <Crown className="h-10 w-10 text-primary mb-4" />
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Student Board Member</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Your school nominates a student to join the Kapes Student Board — real governance, real impact.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Your school nominates a student to join the Kapes Student Board — real governance, real impact.</p>
               </CardContent>
             </Card>
             
-            <Card className="border-green-200">
-              <CardHeader>
-                <CheckCircle className="h-8 w-8 text-green-600 mb-2" />
-                <CardTitle className="text-lg">Dedicated Support</CardTitle>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardHeader className="p-8">
+                <CheckCircle className="h-10 w-10 text-primary mb-4" />
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Dedicated Support</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm">Your dedicated account manager provides strategy, planning, and ongoing support whenever you need it.</p>
+              <CardContent className="px-8 pb-8">
+                <p className="text-muted-foreground leading-relaxed">Your dedicated account manager provides strategy, planning, and ongoing support whenever you need it.</p>
               </CardContent>
             </Card>
           </div>
@@ -78,37 +90,40 @@ const ImpactTier = () => {
       </section>
 
       {/* What's Included */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl text-green-600">✅ What's Included</CardTitle>
-              <CardDescription>Absolutely everything — this is our complete, flagship experience</CardDescription>
+          <Card className="border-0 shadow-glass">
+            <CardHeader className="p-8">
+              <CardTitle className="text-2xl md:text-3xl font-medium text-primary flex items-center gap-3">
+                <CheckCircle className="h-6 w-6" />
+                What's Included
+              </CardTitle>
+              <CardDescription className="text-lg">Absolutely everything — this is our complete, flagship experience</CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 md:grid-cols-1">
+            <CardContent className="px-8 pb-8">
+              <div className="grid gap-6 md:grid-cols-1">
                 {included.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <div key={index} className="flex items-start gap-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-semibold">{item}</h3>
+                      <h3 className="font-semibold text-lg mb-1">{item}</h3>
                       {item === "KapesImpact™ Dashboard + QR Codes" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Get school-wide reporting PLUS QR codes printed on every garment. Scan to see impact per item, use in lessons and PR.
                         </p>
                       )}
                       {item === "Student Governance Opportunity" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Your school nominates one student to join the Kapes Student Board — contributing to real decisions and campaigns.
                         </p>
                       )}
                       {item === "Custom PR & CSR Toolkit" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           Media-ready visuals, reports, templates, and guidance to showcase your impact across newsletters, social media, and press.
                         </p>
                       )}
                       {item === "Dedicated Account Manager" && (
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <p className="text-muted-foreground leading-relaxed">
                           For ongoing strategy, planning, support, and reporting — whenever you need it.
                         </p>
                       )}
@@ -122,15 +137,18 @@ const ImpactTier = () => {
       </section>
 
       {/* What's Not Included */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl text-center">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">❌ What's Not Included</CardTitle>
+          <Card className="border-0 shadow-glass">
+            <CardHeader className="p-8">
+              <CardTitle className="text-2xl md:text-3xl font-medium text-primary flex items-center justify-center gap-3">
+                <CheckCircle className="h-6 w-6" />
+                What's Not Included
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-lg font-semibold">Absolutely nothing.</p>
-              <p className="text-muted-foreground mt-2">
+            <CardContent className="px-8 pb-8">
+              <p className="text-xl font-semibold mb-4">Absolutely nothing.</p>
+              <p className="text-muted-foreground leading-relaxed">
                 This is our complete, flagship experience — with every feature and every level of impact included.
               </p>
             </CardContent>
@@ -139,28 +157,28 @@ const ImpactTier = () => {
       </section>
 
       {/* Best For */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🏆 Best For</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools leading the way in sustainability and social responsibility</p>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Perfect For</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools leading the way in sustainability and social responsibility</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools that want to give students a voice in their uniform program</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools that want to give students a voice in their uniform program</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools that value community, transparency, and education</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools that value community, transparency, and education</p>
               </CardContent>
             </Card>
-            <Card>
-              <CardContent className="pt-6">
-                <p className="text-center">Schools ready to turn their uniform into a global impact engine</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <p className="text-lg leading-relaxed">Schools ready to turn their uniform into a global impact engine</p>
               </CardContent>
             </Card>
           </div>
@@ -168,31 +186,31 @@ const ImpactTier = () => {
       </section>
 
       {/* Quote */}
-      <section className="py-16 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-2xl font-semibold text-gray-900 mb-4">
+          <blockquote className="text-3xl md:text-4xl font-light tracking-tight mb-6">
             "Uniforms shouldn't just cover students — they should empower them."
           </blockquote>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-xl text-muted-foreground font-light leading-relaxed">
             The Impact Tier turns your school into a model for what ethical education looks like.
           </p>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Lead the Future of Education
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
             Join the most comprehensive ethical uniform program available — where every detail drives positive change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Compare All Tiers
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book Your Free Uniform & Sustainability Audit
             </Button>
           </div>

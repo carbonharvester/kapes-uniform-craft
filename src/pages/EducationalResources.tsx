@@ -52,42 +52,54 @@ const EducationalResources = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-blue-100 text-blue-800">📚 Educational Resources</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Because Uniforms Can Teach More Than Just Dress Code
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            At Kapes, we believe sustainability and ethics shouldn't be hidden in the background — they should be part of how students learn and grow.
-          </p>
+      <section className="relative py-16 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">Educational Resources</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+              Because Uniforms Can{" "}
+              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                Teach More
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+              At Kapes, we believe sustainability and ethics shouldn't be hidden in the background — they should be part of how students learn and grow.
+            </p>
+          </div>
         </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Resources Grid */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🎓 What's Included</h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">What's Included</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {resources.map((resource, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-primary/10">
+              <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader className="p-8">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                       <resource.icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="text-xl">{resource.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold leading-none tracking-tight">{resource.title}</CardTitle>
                   </div>
-                  <CardDescription>{resource.description}</CardDescription>
+                  <CardDescription className="text-lg">{resource.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
+                <CardContent className="px-8 pb-8">
+                  <ul className="space-y-3">
                     {resource.topics.map((topic, topicIndex) => (
-                      <li key={topicIndex} className="text-sm flex items-start gap-2">
-                        <span className="text-primary font-bold">•</span>
-                        <span>{topic}</span>
+                      <li key={topicIndex} className="flex items-start gap-3">
+                        <span className="text-primary font-bold text-lg">•</span>
+                        <span className="text-muted-foreground leading-relaxed">{topic}</span>
                       </li>
                     ))}
                   </ul>
@@ -99,44 +111,44 @@ const EducationalResources = () => {
       </section>
 
       {/* Plug and Play Section */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🛠️ Plug-and-Play Resources for Teachers</h2>
-          <div className="text-center mb-8">
-            <p className="text-lg text-muted-foreground">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
+          <div className="text-center mb-12">
+            <p className="text-xl text-muted-foreground font-light leading-relaxed">
               We know teachers are busy. That's why we make it easy:
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-4">
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Download className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Ready-to-Use Slides</h3>
-                <p className="text-sm text-muted-foreground">Download and present immediately</p>
+          <div className="grid gap-8 md:grid-cols-4">
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <Download className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Ready-to-Use Slides</h3>
+                <p className="text-muted-foreground leading-relaxed">Download and present immediately</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <BookOpen className="h-8 w-8 text-green-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Printable Worksheets</h3>
-                <p className="text-sm text-muted-foreground">Student activities and reflection sheets</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <BookOpen className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Printable Worksheets</h3>
+                <p className="text-muted-foreground leading-relaxed">Student activities and reflection sheets</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Eye className="h-8 w-8 text-purple-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">Interactive Tools</h3>
-                <p className="text-sm text-muted-foreground">Engaging digital experiences</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <Eye className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Interactive Tools</h3>
+                <p className="text-muted-foreground leading-relaxed">Engaging digital experiences</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6 text-center">
-                <Factory className="h-8 w-8 text-orange-600 mx-auto mb-3" />
-                <h3 className="font-semibold mb-2">QR-Linked Experiences</h3>
-                <p className="text-sm text-muted-foreground">Tied to real garment data</p>
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <Factory className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">QR-Linked Experiences</h3>
+                <p className="text-muted-foreground leading-relaxed">Tied to real garment data</p>
               </CardContent>
             </Card>
           </div>
@@ -144,35 +156,35 @@ const EducationalResources = () => {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-16 px-4">
+      <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">🎒 Why It Matters</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Builds Connection</h3>
-                <p className="text-sm text-muted-foreground">Creates a deeper connection between students and what they wear</p>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Why It Matters</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <h3 className="font-semibold text-lg mb-4">Builds Connection</h3>
+                <p className="text-muted-foreground leading-relaxed">Creates a deeper connection between students and what they wear</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Promotes Awareness</h3>
-                <p className="text-sm text-muted-foreground">Develops understanding of ethical production and circular economy</p>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <h3 className="font-semibold text-lg mb-4">Promotes Awareness</h3>
+                <p className="text-muted-foreground leading-relaxed">Develops understanding of ethical production and circular economy</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Strengthens Curriculum</h3>
-                <p className="text-sm text-muted-foreground">Enhances sustainability curriculum and ESG reporting</p>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <h3 className="font-semibold text-lg mb-4">Strengthens Curriculum</h3>
+                <p className="text-muted-foreground leading-relaxed">Enhances sustainability curriculum and ESG reporting</p>
               </CardContent>
             </Card>
             
-            <Card>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold mb-2">Shows Values</h3>
-                <p className="text-sm text-muted-foreground">Demonstrates to families that your values are lived, not just stated</p>
+            <Card className="border-0 shadow-glass hover-lift transition-smooth">
+              <CardContent className="p-8">
+                <h3 className="font-semibold text-lg mb-4">Shows Values</h3>
+                <p className="text-muted-foreground leading-relaxed">Demonstrates to families that your values are lived, not just stated</p>
               </CardContent>
             </Card>
           </div>
@@ -180,28 +192,28 @@ const EducationalResources = () => {
       </section>
 
       {/* Quote */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-green-50">
+      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-2xl font-semibold text-gray-900 mb-4">
+          <blockquote className="text-3xl md:text-4xl font-light tracking-tight mb-6">
             "Education doesn't stop at the classroom. With Kapes, every uniform is a learning opportunity."
           </blockquote>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Transform Your Uniforms Into Teaching Tools
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
             Engage your students with meaningful content that connects their daily uniform to global impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Download a Sample Lesson
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book a Demo of Our Resources
             </Button>
           </div>
