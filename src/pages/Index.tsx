@@ -8,6 +8,7 @@ import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
+import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <ValueCalculator />
       <PartnershipTiers />
       <SchoolLogos />
+      <KapesImpactDashboard />
       <FreeAuditTool />
       <Testimonials />
       <Footer />
