@@ -1,11 +1,8 @@
 import React from "react";
-import { Pricing } from "@/components/ui/pricing";
+import { PartnershipTiersDisplay } from "@/components/ui/partnership-tiers";
 
-interface PricingPlan {
+interface TierPlan {
   name: string;
-  price: string;
-  yearlyPrice: string;
-  period: string;
   features: string[];
   description: string;
   buttonText: string;
@@ -15,12 +12,9 @@ interface PricingPlan {
 
 export const PartnershipTiers = () => {
   // Reordered tiers with Impact in the middle
-  const plans: PricingPlan[] = [
+  const plans: TierPlan[] = [
     {
       name: "ESSENTIALS",
-      price: "0",
-      yearlyPrice: "0",
-      period: "month",
       features: [
         "100% Sustainable Uniforms",
         "Ethical Manufacturing",
@@ -36,9 +30,6 @@ export const PartnershipTiers = () => {
     },
     {
       name: "IMPACT",
-      price: "0", 
-      yearlyPrice: "0",
-      period: "month",
       features: [
         "Everything in Core",
         "QR Codes on Every Garment",
@@ -53,9 +44,6 @@ export const PartnershipTiers = () => {
     },
     {
       name: "CORE",
-      price: "0",
-      yearlyPrice: "0", 
-      period: "month",
       features: [
         "Everything in Essentials",
         "Fully Managed Takeback Scheme",
@@ -71,7 +59,7 @@ export const PartnershipTiers = () => {
   ];
 
   return (
-    <Pricing 
+    <PartnershipTiersDisplay 
       plans={plans}
       title="Partnership Tiers"
       description="Choose the level of impact that's right for your school\nAll tiers include sustainable, ethical uniforms and dedicated support."
