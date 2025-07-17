@@ -7,15 +7,21 @@ import { PartnershipTiers } from "@/components/PartnershipTiers";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
+import { SchoolLogos } from "@/components/SchoolLogos";
+import { InTheNews } from "@/components/InTheNews";
+import { CaseStudies } from "@/components/CaseStudies";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Hero />
+      <SchoolLogos />
       <SchoolCodeEntry />
       <WhatMakesKapesDifferent />
       <ValueCalculator />
       <PartnershipTiers />
+      <InTheNews />
+      <CaseStudies />
       <FreeAuditTool />
       <Testimonials />
       <Footer />
