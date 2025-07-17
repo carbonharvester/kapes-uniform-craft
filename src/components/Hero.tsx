@@ -8,7 +8,7 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Main headline with Apple-style typography */}
+          {/* Main headline with consistent typography */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-foreground">
             School Uniforms That{" "}
             <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -21,7 +21,7 @@ export const Hero = () => {
             Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
           </p>
           
-          {/* CTA with Apple-style button */}
+          {/* CTA with consistent button styling */}
           <div className="pt-4">
             <button className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl">
               Get Started Today

@@ -1,10 +1,9 @@
 
-
 import { Button } from "@/components/ui/button";
 
 export const Superpowers = () => {
   return (
-    <section className="py-32 bg-white font-inter">
+    <section className="py-32 bg-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-8">
           Uniforms With <span className="text-primary">Superpowers</span>
@@ -20,4 +19,3 @@ export const Superpowers = () => {
     </section>
   );
 };
-
