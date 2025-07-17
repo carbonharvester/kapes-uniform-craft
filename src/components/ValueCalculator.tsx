@@ -174,61 +174,67 @@ export const ValueCalculator = () => {
           </div>
 
           {showResults && results && (
-            <div className="mt-12 p-8 bg-gradient-to-br from-muted/50 to-muted/30 rounded-lg">
-              <h2 className="text-3xl font-bold text-center mb-8 text-primary">
+            <div className="mt-12">
+              <h2 className="text-3xl font-bold text-center mb-8 text-foreground">
                 Your School's Projected Value Equation Boost
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">🌍</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">CO2 Conquest (Emissions Saved)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.co2} kg CO2e</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">🌍</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">CO2 Conquest</h3>
+                    <p className="text-muted-foreground text-sm mb-4">(Emissions Saved)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.co2} kg CO2e</div>
                     <div className="text-sm text-muted-foreground italic">{results.co2Analogy}</div>
                   </CardContent>
                 </Card>
 
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">⚡</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Energy Empire Built (Energy Saved)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.energy} MJ</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">⚡</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">Energy Empire Built</h3>
+                    <p className="text-muted-foreground text-sm mb-4">(Energy Saved)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.energy} MJ</div>
                     <div className="text-sm text-muted-foreground italic">{results.energyAnalogy}</div>
                   </CardContent>
                 </Card>
 
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">💧</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Water Warrior Win (Water Saved)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.water} liters</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">💧</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">Water Warrior Win</h3>
+                    <p className="text-muted-foreground text-sm mb-4">(Water Saved)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.water} liters</div>
                     <div className="text-sm text-muted-foreground italic">{results.waterAnalogy}</div>
                   </CardContent>
                 </Card>
 
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">🗑️</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Waste Annihilation (Waste Diverted)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.waste} kg</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">🗑️</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">Waste Annihilation</h3>
+                    <p className="text-muted-foreground text-sm mb-4">(Waste Diverted)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.waste} kg</div>
                     <div className="text-sm text-muted-foreground italic">Keeping landfills empty!</div>
                   </CardContent>
                 </Card>
 
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">👕</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Uniform Uplift (Free Uniforms Provided)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.uniforms} uniforms</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">👕</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">Uniform Uplift (Free</h3>
+                    <p className="text-muted-foreground text-sm mb-4">Uniforms Provided)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.uniforms} uniforms</div>
                     <div className="text-sm text-muted-foreground italic">Matching your student body!</div>
                   </CardContent>
                 </Card>
 
-                <Card className="text-center transform hover:-translate-y-1 transition-transform">
-                  <CardContent className="p-6">
-                    <div className="text-4xl mb-3">🍲</div>
-                    <h3 className="font-bold text-primary text-lg mb-2">Meal Miracle (Free Meals Funded)</h3>
-                    <div className="text-2xl font-bold mb-2">{results.meals} meals</div>
+                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                  <CardContent className="p-8">
+                    <div className="text-5xl mb-4">🍲</div>
+                    <h3 className="font-bold text-foreground text-lg mb-1">Meal Miracle (Free</h3>
+                    <p className="text-muted-foreground text-sm mb-4">Meals Funded)</p>
+                    <div className="text-3xl font-bold mb-3 text-foreground">{results.meals} meals</div>
                     <div className="text-sm text-muted-foreground italic">Nourishing futures in Africa!</div>
                   </CardContent>
                 </Card>
