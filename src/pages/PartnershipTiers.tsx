@@ -131,10 +131,11 @@ const PartnershipTiers = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-1/3">Feature</TableHead>
+                  <TableHead className="w-1/4">Feature</TableHead>
                   <TableHead className="text-center">Essentials</TableHead>
                   <TableHead className="text-center">Core</TableHead>
                   <TableHead className="text-center">Impact</TableHead>
+                  <TableHead className="text-center">Custom</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -149,12 +150,16 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center blur-sm">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Sustainable Materials</TableCell>
                   <TableCell className="text-center text-sm">Standard only</TableCell>
                   <TableCell className="text-center text-sm">Mix available</TableCell>
                   <TableCell className="text-center text-sm">100% only</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Premium blend</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Commission Option</TableCell>
@@ -165,6 +170,7 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <X className="h-5 w-5 text-red-500 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Flexible</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Takeback Scheme</TableCell>
@@ -177,18 +183,32 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center blur-sm">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Delivery Options</TableCell>
                   <TableCell className="text-center text-sm">Home (standard)</TableCell>
                   <TableCell className="text-center text-sm">Home + Lockers + School Shop</TableCell>
                   <TableCell className="text-center text-sm">Same as Core</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">All options</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">School Shop</TableCell>
+                  <TableCell className="text-center">
+                    <X className="h-5 w-5 text-red-500 mx-auto" />
+                  </TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center text-sm">Optional</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Available</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Packaging</TableCell>
                   <TableCell className="text-center text-sm">Standard</TableCell>
                   <TableCell className="text-center text-sm">Recycled Plastic</TableCell>
                   <TableCell className="text-center text-sm">Plastic-Free (Glassine)</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Premium eco</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">KapesImpact™</TableCell>
@@ -197,6 +217,7 @@ const PartnershipTiers = () => {
                   </TableCell>
                   <TableCell className="text-center text-sm">Dashboard Access</TableCell>
                   <TableCell className="text-center text-sm">QR Code + Dashboard</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Advanced analytics</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Free Uniforms & Meals in Africa</TableCell>
@@ -205,6 +226,7 @@ const PartnershipTiers = () => {
                   </TableCell>
                   <TableCell className="text-center text-sm">Optional</TableCell>
                   <TableCell className="text-center text-sm">Included</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Enhanced program</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Student Board Member</TableCell>
@@ -217,6 +239,9 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center blur-sm">
+                    <Check className="h-5 w-5 text-green-600 mx-auto" />
+                  </TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Factory Visits & Education</TableCell>
@@ -227,6 +252,7 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Priority access</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Kapes Adventures Discount</TableCell>
@@ -239,15 +265,29 @@ const PartnershipTiers = () => {
                   <TableCell className="text-center">
                     <Check className="h-5 w-5 text-green-600 mx-auto" />
                   </TableCell>
+                  <TableCell className="text-center text-sm blur-sm">VIP access</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="font-medium">Marketing Support</TableCell>
                   <TableCell className="text-center text-sm">Minimal</TableCell>
                   <TableCell className="text-center text-sm">Optional</TableCell>
                   <TableCell className="text-center text-sm">Custom PR Kit</TableCell>
+                  <TableCell className="text-center text-sm blur-sm">Full service</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <div className="bg-muted/50 rounded-lg p-6 max-w-md mx-auto">
+              <h3 className="font-semibold mb-2">Interested in Custom Tier?</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Contact us to discuss bespoke partnership options tailored to your school's specific needs.
+              </p>
+              <Button variant="outline">
+                Contact Us for Details
+              </Button>
+            </div>
           </div>
         </div>
       </section>
