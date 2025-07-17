@@ -29,6 +29,7 @@ import { UniformSolutions } from "./pages/UniformSolutions";
 import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
 import { KapesImpactPlatform } from "./pages/KapesImpactPlatform";
 import { DeliveryPackaging } from "./pages/DeliveryPackaging";
+import SustainabilityEthics from "./pages/SustainabilityEthics";
 import { Header } from "@/components/Header";
 
 const queryClient = new QueryClient();
@@ -70,6 +71,7 @@ const App = () => (
           <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
           <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
           <Route path="/delivery-packaging" element={<DeliveryPackaging />} />
+          <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

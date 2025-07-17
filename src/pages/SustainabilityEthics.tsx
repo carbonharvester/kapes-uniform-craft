@@ -1,0 +1,291 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { 
+  Leaf, 
+  Recycle, 
+  Shield, 
+  Users, 
+  BarChart3, 
+  QrCode, 
+  Package, 
+  Truck,
+  CheckCircle,
+  Heart,
+  Globe
+} from "lucide-react";
+
+const SustainabilityEthics = () => {
+  const sustainableMaterials = [
+    {
+      title: "Regenerative Organic Cotton",
+      description: "Improves soil health, biodiversity, and farmer livelihoods",
+      icon: Leaf
+    },
+    {
+      title: "Recycled Materials", 
+      description: "Reduces reliance on virgin resources and cuts plastic waste",
+      icon: Recycle
+    },
+    {
+      title: "Biodegradable Alternatives to Polyester",
+      description: "High-performance fabrics that safely return to nature at end of life",
+      icon: Globe
+    },
+    {
+      title: "Zero Toxins, Zero Greenwashing",
+      description: "Every fabric is safe, breathable, and built to last",
+      icon: Shield
+    }
+  ];
+
+  const ethicalStandards = [
+    {
+      title: "No Child Labour",
+      description: "Ever",
+      icon: Shield
+    },
+    {
+      title: "Fair Wages & Safe Working Conditions", 
+      description: "Protecting worker rights and wellbeing",
+      icon: Heart
+    },
+    {
+      title: "Independent Audits & Full Transparency",
+      description: "Open books, verified practices",
+      icon: CheckCircle
+    },
+    {
+      title: "Respect for Workers & Their Communities",
+      description: "Supporting local communities and economies",
+      icon: Users
+    }
+  ];
+
+  const sustainabilityFeatures = [
+    {
+      title: "KapesImpact™ Dashboard",
+      description: "Every Core and Impact school receives access to track their sustainability metrics",
+      icon: BarChart3
+    },
+    {
+      title: "Real-Time Impact Tracking",
+      description: "Track your school's carbon savings, recycled garments, and meals donated",
+      icon: BarChart3
+    },
+    {
+      title: "QR Code Transparency",
+      description: "Impact tier uniforms come with QR codes showing real-time garment impact",
+      icon: QrCode
+    }
+  ];
+
+  const logisticsFeatures = [
+    {
+      title: "Glassine Paper Packaging",
+      description: "Impact tier gets fully plastic-free experience",
+      icon: Package
+    },
+    {
+      title: "Recycled Polybags", 
+      description: "Core tier protection with purpose",
+      icon: Recycle
+    },
+    {
+      title: "Smart Delivery Options",
+      description: "Next-day delivery for convenience with reduced waste",
+      icon: Truck
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-green-50 to-background dark:from-green-950/20">
+        <div className="container mx-auto max-w-4xl text-center">
+          <Badge className="mb-4 bg-green-100 text-green-800 hover:bg-green-100">
+            <Leaf className="w-4 h-4 mr-2" />
+            Sustainability & Ethics
+          </Badge>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+            Built from the ground up to do what's right — for people and planet.
+          </h1>
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            At Kapes, sustainability and ethics aren't an afterthought. They are the foundation of everything we do — from the fabric we choose to the factories we partner with, the packaging we use to the promises we make.
+          </p>
+        </div>
+      </section>
+
+      {/* Sustainable Materials Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+              🌱 Sustainable Materials
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We use the safest, most sustainable materials available for children and the planet
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {sustainableMaterials.map((material, index) => {
+              const IconComponent = material.icon;
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-green-100 rounded-lg dark:bg-green-900/20">
+                        <IconComponent className="w-6 h-6 text-green-600" />
+                      </div>
+                      <CardTitle className="text-lg">{material.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{material.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg font-medium text-foreground">
+              Our uniforms aren't just sustainable — they're comfortable, durable, and parent-approved.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ethical Manufacturing Section */}
+      <section className="py-16 px-4 bg-muted/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+              🧵 Ethical Manufacturing
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {ethicalStandards.map((standard, index) => {
+              const IconComponent = standard.icon;
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-blue-100 rounded-lg dark:bg-blue-900/20">
+                        <IconComponent className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <CardTitle className="text-lg">{standard.title}</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{standard.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg font-medium text-foreground">
+              We don't cut corners, and we don't work with anyone who does.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Measurable Sustainability Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+              🌍 Sustainability That's Measurable
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Kapes goes beyond claims — we give schools data-backed sustainability
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {sustainabilityFeatures.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+                  <CardHeader>
+                    <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
+                      <IconComponent className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          
+          <div className="text-center">
+            <p className="text-lg font-medium text-foreground">
+              Transparency is how we build trust — and move the industry forward.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Sustainable Logistics Section */}
+      <section className="py-16 px-4 bg-muted/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+              📦 Sustainable Logistics, Too
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Even our delivery and packaging is considered
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {logisticsFeatures.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+                  <CardHeader>
+                    <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
+                      <IconComponent className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <CardTitle className="text-lg">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Kapes makes it easy for schools to align their uniforms with their values — without compromise.
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Because doing the right thing should be the simplest option.
+          </p>
+          <Button size="lg" className="bg-green-600 hover:bg-green-700">
+            Learn About Our Partnership Tiers
+          </Button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SustainabilityEthics;
