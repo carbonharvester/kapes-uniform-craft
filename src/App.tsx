@@ -31,6 +31,7 @@ import SustainabilityEthics from "./pages/SustainabilityEthics";
 import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
 import SocialImpactAfrica from "./pages/SocialImpactAfrica";
 import { Header } from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Index />} />
