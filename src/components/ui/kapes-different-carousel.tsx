@@ -204,13 +204,13 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "ai-customer-care",
-    title: "AI Supported Customer Care",
+    title: "Customer Care Supported by AI",
     subtitle: "24/7 intelligent support at your fingertips.",
     description: "Smart assistance for every query",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=600&fit=crop",
     icon: <MessageCircle className="w-6 h-6" />,
     details: {
-      title: "AI Supported Customer Care",
+      title: "Customer Care Supported by AI",
       content: "Our advanced AI customer support system ensures your families never have to wait for help. Available 24/7, our intelligent chatbot can handle everything from sizing questions to order tracking, delivery scheduling, and product recommendations. It learns from every interaction to provide increasingly personalised support, understanding each family's preferences and history. For complex queries, seamless handover to human specialists ensures no question goes unanswered. The system also proactively reaches out with helpful information like size-up reminders, seasonal ordering suggestions, and maintenance tips — turning customer service into a valuable, ongoing relationship that makes uniform management effortless for busy parents.",
       features: [
         "24/7 AI-powered chatbot support",
