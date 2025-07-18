@@ -50,7 +50,7 @@ export function PartnershipTierCard({
           "text-sm font-medium",
           isCustom ? "text-[#f9f3df]" : ""
         )}>{tier.description}</h3>
-        <ul className={cn("space-y-2", tier.name === "CUSTOM" && "blur-sm hover:blur-none transition-all duration-300")}>
+        <ul className={cn("space-y-2", tier.name === "CUSTOM" && "blur-sm transition-all duration-300")}>
           {tier.features.map((feature, index) => <li key={index} className={cn(
             "flex items-center gap-2 text-sm font-medium",
             isCustom ? "text-white" :
