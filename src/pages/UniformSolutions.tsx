@@ -4,30 +4,43 @@ import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle } 
 export const UniformSolutions = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <img 
+            src="https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg" 
+            alt="Sustainable uniform solutions"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Sustainable Fashion Revolution</span>
+        
+        {/* Dual Overlays */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        
+        {/* Animated blur circles */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-6 py-3 mb-6">
+              <Sparkles className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">Sustainable Fashion Revolution</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-6">
               Uniform Solutions
             </h1>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-muted-foreground/30 flex-1 max-w-20"></div>
-              <p className="text-2xl md:text-3xl font-light text-muted-foreground">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
+              <p className="text-2xl md:text-3xl font-light text-white/90">
                 Sustainable. Ethical. Durable.
               </p>
-              <div className="h-px bg-muted-foreground/30 flex-1 max-w-20"></div>
+              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
             </div>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
+            <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
               At Kapes, we create school uniforms that reflect your school's values and commitment to sustainability—without sacrificing quality or comfort.
             </p>
           </div>

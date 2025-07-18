@@ -95,32 +95,45 @@ const KapesImpactPlatform = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <img 
+            src="https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg" 
+            alt="KapesImpact real-time sustainability dashboard"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
-              <BarChart3 className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-primary">KapesImpact™ Platform</span>
+        
+        {/* Dual Overlays */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        
+        {/* Animated blur circles */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-6 py-3 mb-6">
+              <BarChart3 className="w-5 h-5 text-white" />
+              <span className="text-sm font-medium text-white">KapesImpact™ Platform</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-6">
               Real-Time Sustainability Dashboard
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 max-w-3xl leading-relaxed">
               Transform your school's sustainability story with live data, instant transparency, 
               and powerful reporting that showcases your environmental leadership.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
                 <Monitor className="w-5 h-5 mr-2" />
                 Watch Demo
               </Button>
-              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
+              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-primary hover-scale transition-smooth">
                 <Download className="w-5 h-5 mr-2" />
                 Download Brochure
               </Button>

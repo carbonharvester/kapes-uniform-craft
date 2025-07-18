@@ -106,23 +106,36 @@ const CircularEconomyTakeback = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+          <img 
+            src="https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg" 
+            alt="Circular economy takeback scheme"
+            className="w-full h-full object-cover"
+          />
         </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
-              <Recycle className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Circular Economy & Takeback</span>
+        
+        {/* Dual Overlays */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        
+        {/* Animated blur circles */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl animate-fade-in">
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-6 py-3 mb-6">
+              <Recycle className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">Circular Economy & Takeback</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-6">
               Because school uniforms shouldn't end up in landfill.
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 max-w-3xl leading-relaxed">
               At Kapes, we believe school uniforms should be part of a circular system — not the waste stream. That's why we've built a fully managed takeback scheme that gives old uniforms a new life, and creates real-world impact with every item returned.
             </p>
           </div>
