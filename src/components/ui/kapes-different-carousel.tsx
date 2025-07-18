@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,7 +6,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain } from "lucide-react";
+import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain, MessageCircle } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
@@ -200,21 +199,44 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "ai-customer-care",
+    title: "AI Supported Customer Care",
+    subtitle: "24/7 intelligent support at your fingertips.",
+    description: "Smart assistance for every query",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=600&fit=crop",
+    icon: <MessageCircle className="w-6 h-6" />,
+    details: {
+      title: "AI Supported Customer Care",
+      content: "Our advanced AI customer support system ensures your families never have to wait for help. Available 24/7, our intelligent chatbot can handle everything from sizing questions to order tracking, delivery scheduling, and product recommendations. It learns from every interaction to provide increasingly personalised support, understanding each family's preferences and history. For complex queries, seamless handover to human specialists ensures no question goes unanswered. The system also proactively reaches out with helpful information like size-up reminders, seasonal ordering suggestions, and maintenance tips — turning customer service into a valuable, ongoing relationship that makes uniform management effortless for busy parents.",
+      features: [
+        "24/7 AI-powered chatbot support",
+        "Instant order tracking and updates",
+        "Intelligent sizing recommendations",
+        "Proactive customer outreach",
+        "Seamless human specialist handover",
+        "Multilingual support capabilities",
+        "Voice and text interaction options",
+        "Personalised shopping assistance"
+      ]
+    }
+  },
+  {
     id: "ai-forecasting",
     title: "AI Powered Forecasting",
-    subtitle: "Smart predictions and instant assistance.",
-    description: "Intelligent planning and support",
+    subtitle: "Smart predictions and intelligent planning.",
+    description: "Predictive inventory management",
     image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=600&fit=crop",
     icon: <Brain className="w-6 h-6" />,
     details: {
-      title: "AI Powered Forecasting & Customer Support",
-      content: "Our advanced AI technology predicts your uniform needs and provides instant, intelligent customer support 24/7.",
+      title: "AI Powered Forecasting & Inventory Management",
+      content: "Our advanced AI technology predicts your uniform needs with unprecedented accuracy, ensuring optimal stock levels and reducing waste through intelligent demand forecasting.",
       features: [
         "Predictive sizing and demand forecasting",
         "AI-powered inventory management",
-        "24/7 intelligent chatbot support",
         "Automated reorder suggestions",
-        "Smart size recommendations based on growth patterns"
+        "Smart size recommendations based on growth patterns",
+        "Seasonal demand prediction",
+        "Stock optimization algorithms"
       ]
     }
   }
