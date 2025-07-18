@@ -24,11 +24,13 @@ export function PartnershipSection({
       </div>
 
       <div className="grid w-full max-w-7xl gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-        {tiers.map((tier) => (
-          <PartnershipTierCard
+        {tiers.map((tier, index) => (
+          <div 
             key={tier.name}
-            tier={tier}
-          />
+            className={tier.highlighted ? "" : "blur-[2px] opacity-60 hover:blur-none hover:opacity-100 transition-all duration-300"}
+          >
+            <PartnershipTierCard tier={tier} />
+          </div>
         ))}
       </div>
     </section>
