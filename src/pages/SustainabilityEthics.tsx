@@ -101,27 +101,38 @@ const SustainabilityEthics = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-48 h-48 bg-accent/20 rounded-full blur-3xl animate-pulse delay-700"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
-              <Leaf className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Sustainability & Ethics</span>
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6">
-              Built from the ground up to do what's right — for people and planet.
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
+        
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Sustainability & Ethics</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+              Built to Do What's{" "}
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Right
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-              At Kapes, sustainability and ethics aren't an afterthought. They are the foundation of everything we do — from the fabric we choose to the factories we partner with, the packaging we use to the promises we make.
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              At Kapes, sustainability and ethics aren't an afterthought. They are the foundation of everything we do — from the fabric we choose to the factories we partner with.
             </p>
           </div>
         </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Sustainable Materials Section */}
