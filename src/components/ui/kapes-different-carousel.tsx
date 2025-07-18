@@ -126,7 +126,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "africa",
-    title: "Free Uniforms & School Meals in Africa",
+    title: "Free School Meals in Africa",
     subtitle: "Creating global educational equity.",
     description: "Supporting education worldwide",
     image: freeUniformsMealsImage,
