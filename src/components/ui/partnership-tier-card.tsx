@@ -37,7 +37,7 @@ export function PartnershipTierCard({
 
       <h2 className={cn(
         "flex items-center gap-3 text-xl font-medium",
-        isCustom ? "text-white" : ""
+        isCustom ? "text-[#f9f3df]" : ""
       )}>
         {tier.name}
         {isPopular && <Badge variant="secondary" className="mt-1 z-10">
