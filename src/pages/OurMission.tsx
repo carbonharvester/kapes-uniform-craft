@@ -41,20 +41,33 @@ const OurMission = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <Badge className="mb-4">Our Mission</Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
-              Reimagining School Uniforms for a{" "}
-              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-                Better World
-              </span>
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Our Mission</Badge>
+             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+              Creating{" "}
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                ethical futures
+              </span>{" "}
+              through sustainable fashion
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-              We believe that what students wear should reflect the values we want them to live by — sustainability, ethics, empowerment, and global citizenship.
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              We're transforming education by creating uniforms that feed children, 
+              empower communities, and heal our planet—one school at a time.
             </p>
           </div>
         </div>
@@ -100,42 +113,6 @@ const OurMission = () => {
                   </CardContent>
                 </Card>
               ))}
-            </div>
-          </section>
-
-          {/* Integrated Visual Section */}
-          <section className="relative -mx-4 h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-3xl">
-            {/* Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-no-repeat"
-              style={{
-                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-                backgroundPosition: "20% center"
-              }}
-            >
-              {/* Overlay for better text contrast */}
-              <div className="absolute inset-0 bg-black/20"></div>
-            </div>
-
-            {/* Green Text Box */}
-            <div className="absolute left-8 md:left-16 lg:left-20 top-1/2 -translate-y-1/2 max-w-lg">
-              <div className="bg-green-600 text-white p-8 md:p-10 lg:p-12 rounded-2xl shadow-2xl">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                  Creating{" "}
-                  <span className="text-yellow-400">lasting impact</span>{" "}
-                  through ethical uniform programmes
-                </h3>
-                <p className="text-green-100 text-lg md:text-xl mb-8 leading-relaxed">
-                  Every uniform we create feeds a child, educates a community, and heals our planet. 
-                  Join us in transforming education through sustainable fashion.
-                </p>
-                <Button 
-                  size="lg" 
-                  className="bg-white text-green-600 hover:bg-green-50 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Explore Our Programmes
-                </Button>
-              </div>
             </div>
           </section>
 
