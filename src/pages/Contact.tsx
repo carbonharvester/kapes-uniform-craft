@@ -89,9 +89,9 @@ const Contact = () => {
                     <Input type="number" placeholder="Number of Students" className="rounded-xl" />
                     <select className="w-full p-3 border rounded-xl bg-background">
                       <option value="">Select Preferred Tier</option>
-                      <option value="ecolaunch">EcoLaunch</option>
-                      <option value="sustainpro">SustainPro</option>
-                      <option value="legacyimpact">LegacyImpact</option>
+                      <option value="essentials">Essentials</option>
+                      <option value="core">Core</option>
+                      <option value="impact">Impact</option>
                     </select>
                     <Textarea placeholder="Additional requirements or questions..." rows={3} className="rounded-xl" />
                     <Button type="submit" className="w-full rounded-xl font-medium hover:scale-105 transition-smooth">

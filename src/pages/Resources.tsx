@@ -31,7 +31,7 @@ const Resources = () => {
     },
     {
       question: "How do the different tiers work?",
-      answer: "We offer three tiers - EcoLaunch, SustainPro, and LegacyImpact - each with increasing levels of support and features."
+      answer: "We offer three tiers - Essentials, Core, and Impact - each with increasing levels of support and features."
     },
     {
       question: "How is impact measured?",
