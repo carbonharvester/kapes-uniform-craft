@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Leaf, 
   Recycle, 
@@ -291,9 +292,11 @@ const SustainabilityEthics = () => {
             <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
               Because doing the right thing should be the simplest option.
             </p>
-            <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth text-white" style={{ backgroundColor: '#f97769' }}>
-              Learn About Our Partnership Tiers
-            </Button>
+            <Link to="/partnership-tiers">
+              <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth text-white" style={{ backgroundColor: '#f97769' }}>
+                Learn About Our Partnership Tiers
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
