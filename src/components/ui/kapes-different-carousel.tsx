@@ -118,7 +118,7 @@ const differences: DifferenceCard[] = [
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free Uniforms & School Meals in Africa",
-      content: "For every uniform sold, we provide free uniforms and school meals to children in Africa, breaking down barriers to education.",
+      content: "Our takeback scheme doesn't just reduce waste — it puts food on the table for children who need it most.\n\nFor every item of school uniform returned through our circular program, we provide a free school meal to a child who would otherwise go hungry. In Kenya, 1 in 3 children suffers from stunted growth due to chronic undernourishment. And while a subsidised meal can cost as little as 12 cents, far too many children still go without — sitting in classrooms with empty stomachs, unable to focus, learn, or thrive.\n\nBy encouraging families to return used uniforms, we close the loop and break down a devastating barrier to education. A small act — dropping a uniform into a return bag — becomes a lifeline.\n\nLess waste for the planet. More nourishment for children. That's what impact looks like.",
       features: [
         "1:1 uniform donation program",
         "Daily school meal provision",
