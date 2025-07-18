@@ -229,7 +229,7 @@ const differences: DifferenceCard[] = [
     icon: <Truck className="w-6 h-6" />,
     details: {
       title: "Next-Day Home Delivery",
-      content: "Our premium delivery service ensures uniforms arrive when you need them, with flexible options to suit every family.",
+      content: "Our premium delivery service is designed to meet the expectations of today's busy families. Uniforms arrive exactly when they're needed, with flexible delivery options that make life easier for parents. Every order is dispatched with guaranteed next-day delivery, complete with real-time tracking so parents know exactly where their items are at any given time. For added convenience, they can choose a delivery slot that fits their schedule or opt for safe-place delivery if they won't be home. It's one more way we help your school deliver a seamless, supportive uniform experience — from our warehouse to your families.",
       features: [
         "Guaranteed next-day delivery",
         "Real-time tracking updates",
