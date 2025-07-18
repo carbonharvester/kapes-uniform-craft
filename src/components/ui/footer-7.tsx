@@ -95,7 +95,6 @@ export const Footer7 = ({
                   className="h-8"
                 />
               </a>
-              <h2 className="text-xl font-semibold text-[#f9f3df]">{logo.title}</h2>
             </div>
             <p className="max-w-[70%] text-sm text-white/70">
               {description}
