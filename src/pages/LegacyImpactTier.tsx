@@ -48,17 +48,27 @@ const LegacyImpactTier = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
-              The LegacyImpact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
+              For schools who want to lead — not follow.
             </p>
-            <div className="flex items-center gap-2 text-lg text-white/80">
-              <Crown className="h-5 w-5 text-yellow-400" />
-              <span>Our complete, flagship experience — with every feature included</span>
-            </div>
           </div>
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      </section>
+
+      
+      {/* Introduction Section */}
+      <section className="relative py-16 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-8">
+            The LegacyImpact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
+          </p>
+          <div className="flex items-center justify-center gap-2 text-lg text-primary">
+            <Crown className="h-5 w-5" />
+            <span className="font-medium">Our complete, flagship experience — with every feature included</span>
+          </div>
+        </div>
       </section>
 
       {/* Key Highlights */}
