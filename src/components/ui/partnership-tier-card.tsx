@@ -50,7 +50,10 @@ export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
 
       <div className="flex-1 space-y-4">
         <h3 className="text-sm font-medium">{tier.description}</h3>
-        <ul className="space-y-2">
+        <ul className={cn(
+          "space-y-2",
+          tier.name === "CUSTOM" && "blur-sm hover:blur-none transition-all duration-300"
+        )}>
           {tier.features.map((feature, index) => (
             <li
               key={index}
