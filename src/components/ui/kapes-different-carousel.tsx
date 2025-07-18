@@ -104,14 +104,8 @@ const differences: DifferenceCard[] = [
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free School Uniforms in Africa",
-      content: "For every uniform sold, we provide free school uniforms to children in Africa, ensuring no child is denied education due to lack of proper attire.",
-      features: [
-        "1:1 uniform donation program",
-        "Quality uniforms built to last",
-        "Local manufacturing partnerships",
-        "Community engagement initiatives",
-        "Educational barrier removal"
-      ]
+      content: "**Every uniform your school purchases helps open the door to education for a child who needs it most.** Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
+      features: []
     }
   },
   {
