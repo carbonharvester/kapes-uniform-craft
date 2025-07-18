@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { BadgeCheck, ArrowRight } from "lucide-react";
+import { BadgeCheck, ArrowRight, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,7 @@ export function PartnershipTierCard({
   const isHighlighted = tier.highlighted;
   const isPopular = tier.popular;
   const isCustom = tier.name === "CUSTOM";
+  const isLegacyImpact = tier.name === "LEGACYIMPACT";
   
   return <Card className={cn(
     "relative flex flex-col gap-8 overflow-hidden p-6 h-full",
@@ -34,6 +35,9 @@ export function PartnershipTierCard({
   )}>
       {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
+      {isLegacyImpact && (
+        <Crown className="absolute top-4 right-4 h-6 w-6 text-primary z-10" />
+      )}
 
       <h2 className={cn(
         "flex items-center gap-3 text-xl font-medium",

@@ -47,7 +47,7 @@ export const PartnershipTiers = () => {
       description: "Our highest level of partnership for values-driven schools",
       cta: "Learn More",
       href: "/legacyimpact-tier",
-      popular: true,
+      popular: false,
     },
     {
       name: "CUSTOM",
