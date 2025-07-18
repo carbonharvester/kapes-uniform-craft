@@ -156,7 +156,7 @@ const differences: DifferenceCard[] = [
     icon: <Package className="w-6 h-6" />,
     details: {
       title: "E-Commerce Lockers",
-      content: "Our smart locker network provides secure, convenient collection points for uniform orders, perfect for busy families.",
+      content: "Installed at your school, the locker provides 24/7 access so parents can pick up orders whenever it suits them — before drop-off, after pick-up, or even during the weekend. As soon as their order is ready, they receive an instant SMS and email notification with a secure access code. The system also supports easy returns and exchanges, making it just as simple to send something back.\n\nIt's a modern, flexible solution designed for today's busy families — and one more way Kapes makes uniforms effortless for everyone involved.",
       features: [
         "24/7 access to secure lockers",
         "Multiple pickup locations",
