@@ -9,6 +9,7 @@ import {
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain, MessageCircle } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
+import sustainableMaterialsImage from "@/assets/sustainable-materials.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
@@ -38,7 +39,7 @@ const differences: DifferenceCard[] = [
     title: "Natural, Sustainable Materials",
     subtitle: "Every thread matters for our planet's future.",
     description: "100% organic and recycled fabrics",
-    image: organicCottonImage,
+    image: sustainableMaterialsImage,
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Natural, Sustainable Materials",
