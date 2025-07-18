@@ -98,34 +98,41 @@ const ImplementationTimeline = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-accent/20">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-      
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">
-              Implementation Journey
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
+        
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Implementation Journey</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Implementation{" "}
-              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                 Timeline
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               Your journey from consultation to launch — typically 13-21 weeks from start to finish
             </p>
-            <div className="flex items-center justify-center gap-4 text-lg text-muted-foreground">
+            <div className="flex items-center gap-4 text-lg text-white/80">
               <Clock className="h-5 w-5" />
               <span>Total timeline: 3-5 months</span>
             </div>
           </div>
         </div>
         
-        {/* Floating elements */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>

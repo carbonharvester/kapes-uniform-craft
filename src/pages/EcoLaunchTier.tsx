@@ -25,23 +25,34 @@ const EcoLaunchTier = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-background via-muted/30 to-accent/20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <Badge className="mb-4 bg-green-100 text-green-800">EcoLaunch Tier</Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">EcoLaunch Tier</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Ethical Uniforms,{" "}
-              <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                 Simplified
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               For schools who want sustainable, ethical uniforms without the complexity — get beautiful, responsible clothing that aligns with your values.
             </p>
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <Star className="h-4 w-4 text-yellow-500" />
+            <div className="flex items-center gap-2 text-sm text-white/80">
+              <Star className="h-4 w-4 text-yellow-400" />
               <span>Perfect for schools starting their sustainability journey</span>
             </div>
           </div>

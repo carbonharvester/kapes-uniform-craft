@@ -70,20 +70,41 @@ const WhatsInAFootprint = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4 bg-green-100 text-green-800">Environmental Impact</Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            What's in a Footprint?
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Every uniform leaves an environmental footprint. Here's how we're making ours as light as possible.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-lg">
-            <Footprints className="h-6 w-6 text-green-600" />
-            <span className="font-semibold">75% smaller environmental footprint</span>
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
+        
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Environmental Impact</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+              What's in a{" "}
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                Footprint?
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              Every uniform leaves an environmental footprint. Here's how we're making ours as light as possible.
+            </p>
+            <div className="flex items-center gap-2 text-lg text-white/80">
+              <Footprints className="h-6 w-6 text-green-400" />
+              <span className="font-semibold">75% smaller environmental footprint</span>
+            </div>
           </div>
         </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Footprint Comparison */}
