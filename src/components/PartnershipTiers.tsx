@@ -21,20 +21,6 @@ export const PartnershipTiers = () => {
       popular: false,
     },
     {
-      name: "LEGACYIMPACT",
-      features: [
-        "Everything in EcoLaunch",
-        "QR Codes on Every Garment",
-        "Student Governance Opportunity",
-        "Custom PR & CSR Toolkit",
-        "Dedicated Account Manager"
-      ],
-      description: "Our highest level of partnership for values-driven schools",
-      cta: "Learn More",
-      href: "/legacyimpact-tier",
-      popular: true,
-    },
-    {
       name: "SUSTAINPRO",
       features: [
         "Everything in EcoLaunch",
@@ -47,6 +33,20 @@ export const PartnershipTiers = () => {
       cta: "Learn More",
       href: "/sustainpro-tier",
       popular: false,
+    },
+    {
+      name: "LEGACYIMPACT",
+      features: [
+        "Everything in EcoLaunch",
+        "QR Codes on Every Garment",
+        "Student Governance Opportunity",
+        "Custom PR & CSR Toolkit",
+        "Dedicated Account Manager"
+      ],
+      description: "Our highest level of partnership for values-driven schools",
+      cta: "Learn More",
+      href: "/legacyimpact-tier",
+      popular: true,
     },
     {
       name: "CUSTOM",

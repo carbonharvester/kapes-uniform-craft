@@ -31,7 +31,7 @@ export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
       className={cn(
         "relative flex flex-col gap-8 overflow-hidden p-6 h-full",
         isHighlighted
-          ? "bg-foreground text-background"
+          ? "bg-primary text-primary-foreground border-primary"
           : "bg-background text-foreground",
         isPopular && "ring-2 ring-primary"
       )}
@@ -56,7 +56,7 @@ export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
               key={index}
               className={cn(
                 "flex items-center gap-2 text-sm font-medium",
-                isHighlighted ? "text-background" : "text-muted-foreground"
+                isHighlighted ? "text-primary-foreground" : "text-muted-foreground"
               )}
             >
               <BadgeCheck className="h-4 w-4" />
@@ -68,7 +68,7 @@ export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
 
       <Button
         variant={isHighlighted ? "secondary" : "default"}
-        className="w-full"
+        className={cn("w-full", isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90")}
         asChild
       >
         <a href={tier.href}>
