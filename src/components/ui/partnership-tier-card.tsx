@@ -31,7 +31,7 @@ export function PartnershipTierCard({
     isCustom ? "bg-[#030063] text-white border-[#030063]" : 
     isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
     "bg-background text-foreground",
-    isPopular && "ring-2 ring-primary"
+    (isPopular || isLegacyImpact) && "ring-2 ring-primary"
   )}>
       {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
