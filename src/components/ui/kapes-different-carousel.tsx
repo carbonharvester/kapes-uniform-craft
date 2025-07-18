@@ -10,6 +10,7 @@ import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, 
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import sustainableMaterialsImage from "@/assets/sustainable-materials.jpg";
+import ethicalManufacturingImage from "@/assets/ethical-manufacturing.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
@@ -52,7 +53,7 @@ const differences: DifferenceCard[] = [
     title: "Ethical Manufacturing",
     subtitle: "Fair wages and safe working conditions.",
     description: "Responsible production practices",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752783100/2_215_w1s3nv.jpg",
+    image: ethicalManufacturingImage,
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "Ethical Manufacturing",
