@@ -5,7 +5,7 @@ export const Footer = () => {
   const kapesFooterProps = {
     logo: {
       url: "/",
-      src: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=32&h=32&fit=crop&crop=center",
+      src: "/lovable-uploads/9ac843b9-dfa5-4ffa-9138-fba60284a971.png",
       alt: "Kapes Logo",
       title: "Kapes",
     },
