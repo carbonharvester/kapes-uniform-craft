@@ -62,6 +62,38 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "uniforms-africa",
+    title: "Uniform Program",
+    subtitle: "Providing dignity through education access.",
+    description: "Breaking barriers to learning",
+    image: uniformProgramImage,
+    icon: <Heart className="w-6 h-6" />,
+    details: {
+      title: "Free School Uniforms in Africa",
+      content: "**Every uniform your school purchases helps open the door to education for a child who needs it most.** Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
+      features: []
+    }
+  },
+  {
+    id: "africa",
+    title: "Feeding Program",
+    subtitle: "Creating global educational equity.",
+    description: "Supporting education worldwide",
+    image: freeUniformsMealsImage,
+    icon: <Heart className="w-6 h-6" />,
+    details: {
+      title: "Free Uniforms & School Meals in Africa",
+      content: "Our takeback scheme doesn't just reduce waste — it puts food on the table for children who need it most.\n\nFor every item of school uniform returned through our circular program, we provide a free school meal to a child who would otherwise go hungry. In Kenya, 1 in 3 children suffers from stunted growth due to chronic undernourishment. And while a subsidised meal can cost as little as 12 cents, far too many children still go without — sitting in classrooms with empty stomachs, unable to focus, learn, or thrive.\n\nBy encouraging families to return used uniforms, we close the loop and break down a devastating barrier to education. A small act — dropping a uniform into a return bag — becomes a lifeline.\n\nLess waste for the planet. More nourishment for children. That's what impact looks like.",
+      features: [
+        "1:1 uniform donation program",
+        "Daily school meal provision",
+        "Educational infrastructure support",
+        "Teacher training programs",
+        "Community development initiatives"
+      ]
+    }
+  },
+  {
     id: "dashboard",
     title: "Real-Time Sustainability Dashboard",
     subtitle: "Track your environmental impact live.",
@@ -98,38 +130,6 @@ const differences: DifferenceCard[] = [
       title: "Student Board",
       content: "We believe students should have a voice in shaping a more sustainable future — starting with their own school. Our student leadership program empowers young people to take an active role in sustainability, from reviewing impact data to leading real initiatives that make a difference. Through school-based committees, regular review meetings, and peer-led campaigns, students are given meaningful decision-making opportunities — not just token roles. They'll gain valuable leadership experience, develop practical skills, and inspire their peers to take action. It's not just about raising awareness — it's about raising leaders.",
       features: []
-    }
-  },
-  {
-    id: "uniforms-africa",
-    title: "Uniform Program",
-    subtitle: "Providing dignity through education access.",
-    description: "Breaking barriers to learning",
-    image: uniformProgramImage,
-    icon: <Heart className="w-6 h-6" />,
-    details: {
-      title: "Free School Uniforms in Africa",
-      content: "**Every uniform your school purchases helps open the door to education for a child who needs it most.** Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
-      features: []
-    }
-  },
-  {
-    id: "africa",
-    title: "Feeding Program",
-    subtitle: "Creating global educational equity.",
-    description: "Supporting education worldwide",
-    image: freeUniformsMealsImage,
-    icon: <Heart className="w-6 h-6" />,
-    details: {
-      title: "Free Uniforms & School Meals in Africa",
-      content: "Our takeback scheme doesn't just reduce waste — it puts food on the table for children who need it most.\n\nFor every item of school uniform returned through our circular program, we provide a free school meal to a child who would otherwise go hungry. In Kenya, 1 in 3 children suffers from stunted growth due to chronic undernourishment. And while a subsidised meal can cost as little as 12 cents, far too many children still go without — sitting in classrooms with empty stomachs, unable to focus, learn, or thrive.\n\nBy encouraging families to return used uniforms, we close the loop and break down a devastating barrier to education. A small act — dropping a uniform into a return bag — becomes a lifeline.\n\nLess waste for the planet. More nourishment for children. That's what impact looks like.",
-      features: [
-        "1:1 uniform donation program",
-        "Daily school meal provision",
-        "Educational infrastructure support",
-        "Teacher training programs",
-        "Community development initiatives"
-      ]
     }
   },
   {
@@ -171,21 +171,24 @@ const differences: DifferenceCard[] = [
     }
   },
   {
-    id: "visits",
-    title: "Farm & Factory Visits",
-    subtitle: "See sustainability in action firsthand.",
-    description: "Transparent supply chain access",
-    image: factoryVisitsImage,
-    icon: <MapPin className="w-6 h-6" />,
+    id: "educational-programs",
+    title: "Educational Programs",
+    subtitle: "Empowering students through sustainability education.",
+    description: "Interactive learning initiatives",
+    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
+    icon: <GraduationCap className="w-6 h-6" />,
     details: {
-      title: "Farm & Factory Visits",
-      content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
+      title: "Educational Programs",
+      content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
       features: [
-        "Guided farm and factory tours",
-        "Meet the people behind your uniforms",
-        "See sustainable practices in action",
-        "Educational opportunities for students",
-        "Complete supply chain transparency"
+        "Interactive sustainability workshops",
+        "Curriculum support materials",
+        "Supply chain education programs",
+        "Environmental impact demonstrations",
+        "Student leadership development",
+        "Guest speaker sessions",
+        "Hands-on circular economy projects",
+        "Real-world case study materials"
       ]
     }
   },
@@ -245,24 +248,21 @@ const differences: DifferenceCard[] = [
     }
   },
   {
-    id: "educational-programs",
-    title: "Educational Programs",
-    subtitle: "Empowering students through sustainability education.",
-    description: "Interactive learning initiatives",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
-    icon: <GraduationCap className="w-6 h-6" />,
+    id: "visits",
+    title: "Farm & Factory Visits",
+    subtitle: "See sustainability in action firsthand.",
+    description: "Transparent supply chain access",
+    image: factoryVisitsImage,
+    icon: <MapPin className="w-6 h-6" />,
     details: {
-      title: "Educational Programs",
-      content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
+      title: "Farm & Factory Visits",
+      content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
       features: [
-        "Interactive sustainability workshops",
-        "Curriculum support materials",
-        "Supply chain education programs",
-        "Environmental impact demonstrations",
-        "Student leadership development",
-        "Guest speaker sessions",
-        "Hands-on circular economy projects",
-        "Real-world case study materials"
+        "Guided farm and factory tours",
+        "Meet the people behind your uniforms",
+        "See sustainable practices in action",
+        "Educational opportunities for students",
+        "Complete supply chain transparency"
       ]
     }
   }
