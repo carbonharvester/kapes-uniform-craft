@@ -1,92 +1,56 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { BadgeCheck, ArrowRight } from "lucide-react"
-
-import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-
+import * as React from "react";
+import { BadgeCheck, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 export interface PartnershipTier {
-  name: string
-  description: string
-  features: string[]
-  cta: string
-  href: string
-  highlighted?: boolean
-  popular?: boolean
+  name: string;
+  description: string;
+  features: string[];
+  cta: string;
+  href: string;
+  highlighted?: boolean;
+  popular?: boolean;
 }
-
 interface PartnershipTierCardProps {
-  tier: PartnershipTier
+  tier: PartnershipTier;
 }
-
-export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
-  const isHighlighted = tier.highlighted
-  const isPopular = tier.popular
-
-  return (
-    <Card
-      className={cn(
-        "relative flex flex-col gap-8 overflow-hidden p-6 h-full",
-        isHighlighted
-          ? "bg-primary text-primary-foreground border-primary"
-          : "bg-background text-foreground",
-        isPopular && "ring-2 ring-primary"
-      )}
-    >
+export function PartnershipTierCard({
+  tier
+}: PartnershipTierCardProps) {
+  const isHighlighted = tier.highlighted;
+  const isPopular = tier.popular;
+  return <Card className={cn("relative flex flex-col gap-8 overflow-hidden p-6 h-full", isHighlighted ? "bg-primary text-primary-foreground border-primary" : "bg-background text-foreground", isPopular && "ring-2 ring-primary")}>
       {isHighlighted && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
 
       <h2 className="flex items-center gap-3 text-xl font-medium">
         {tier.name}
-        {isPopular && (
-          <Badge variant="secondary" className="mt-1 z-10">
+        {isPopular && <Badge variant="secondary" className="mt-1 z-10">
             🔥 Most Popular
-          </Badge>
-        )}
+          </Badge>}
       </h2>
 
       <div className="flex-1 space-y-4">
         <h3 className="text-sm font-medium">{tier.description}</h3>
-        <ul className={cn(
-          "space-y-2",
-          tier.name === "CUSTOM" && "blur-sm hover:blur-none transition-all duration-300"
-        )}>
-          {tier.features.map((feature, index) => (
-            <li
-              key={index}
-              className={cn(
-                "flex items-center gap-2 text-sm font-medium",
-                isHighlighted ? "text-primary-foreground" : "text-muted-foreground"
-              )}
-            >
+        <ul className={cn("space-y-2", tier.name === "CUSTOM" && "blur-sm hover:blur-none transition-all duration-300")}>
+          {tier.features.map((feature, index) => <li key={index} className={cn("flex items-center gap-2 text-sm font-medium", isHighlighted ? "text-primary-foreground" : "text-muted-foreground")}>
               <BadgeCheck className="h-4 w-4" />
               {feature}
-            </li>
-          ))}
+            </li>)}
         </ul>
       </div>
 
-      <Button
-        variant={isHighlighted ? "secondary" : "default"}
-        className={cn("w-full", isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90")}
-        asChild
-      >
+      <Button variant={isHighlighted ? "secondary" : "default"} className={cn("w-full", isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90")} asChild>
         <a href={tier.href}>
           {tier.cta}
           <ArrowRight className="ml-2 h-4 w-4" />
         </a>
       </Button>
-    </Card>
-  )
+    </Card>;
 }
-
-const HighlightedBackground = () => (
-  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" />
-)
-
-const PopularBackground = () => (
-  <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
-)
+const HighlightedBackground = () => <div className="absolute inset-0 from-primary/10 via-primary/5 to-transparent bg-transparent bg-[030063]" />;
+const PopularBackground = () => <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />;
