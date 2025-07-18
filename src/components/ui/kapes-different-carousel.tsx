@@ -229,7 +229,7 @@ const differences: DifferenceCard[] = [
     icon: <Brain className="w-6 h-6" />,
     details: {
       title: "AI Powered Forecasting & Inventory Management",
-      content: "Our advanced AI technology predicts your uniform needs with unprecedented accuracy, ensuring optimal stock levels and reducing waste through intelligent demand forecasting.",
+      content: "Our advanced AI technology takes the guesswork out of uniform planning — helping schools stay prepared, reduce waste, and serve families more efficiently.\n\nBy analysing historical sales, student growth patterns, and seasonal trends, our system accurately predicts future uniform demand — ensuring optimal stock levels at all times. This means fewer shortages, fewer overstocks, and a significantly lower risk of waste.\n\nWith automated reorder suggestions and intelligent inventory management, your school benefits from a smoother, more responsive supply chain. Our AI doesn't just react — it anticipates — so parents get what they need, when they need it, without delay or frustration.\n\nIt's a smarter, more sustainable way to manage uniforms — powered by data, backed by experience.",
       features: [
         "Predictive sizing and demand forecasting",
         "AI-powered inventory management",
