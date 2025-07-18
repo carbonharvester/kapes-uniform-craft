@@ -90,15 +90,9 @@ const differences: DifferenceCard[] = [
     image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=600&fit=crop",
     icon: <Users className="w-6 h-6" />,
     details: {
-      title: "Student Governance Board",
-      content: "We believe students should have a voice in sustainability decisions. Our governance program empowers them to lead.",
-      features: [
-        "Student-led sustainability committees",
-        "Regular impact review meetings",
-        "Decision-making authority on initiatives",
-        "Leadership development programs",
-        "Peer education opportunities"
-      ]
+      title: "Student Board",
+      content: "We believe students should have a voice in shaping a more sustainable future — starting with their own school. Our student leadership program empowers young people to take an active role in sustainability, from reviewing impact data to leading real initiatives that make a difference. Through school-based committees, regular review meetings, and peer-led campaigns, students are given meaningful decision-making opportunities — not just token roles. They'll gain valuable leadership experience, develop practical skills, and inspire their peers to take action. It's not just about raising awareness — it's about raising leaders.",
+      features: []
     }
   },
   {
