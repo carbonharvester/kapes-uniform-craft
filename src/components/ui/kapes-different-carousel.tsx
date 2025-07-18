@@ -12,6 +12,7 @@ import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
+import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -121,6 +122,25 @@ const differences: DifferenceCard[] = [
         "Decision-making authority on initiatives",
         "Leadership development programs",
         "Peer education opportunities"
+      ]
+    }
+  },
+  {
+    id: "uniforms-africa",
+    title: "Free School Uniforms in Africa",
+    subtitle: "Providing dignity through education access.",
+    description: "Breaking barriers to learning",
+    image: freeSchoolUniformsImage,
+    icon: <Heart className="w-6 h-6" />,
+    details: {
+      title: "Free School Uniforms in Africa",
+      content: "For every uniform sold, we provide free school uniforms to children in Africa, ensuring no child is denied education due to lack of proper attire.",
+      features: [
+        "1:1 uniform donation program",
+        "Quality uniforms built to last",
+        "Local manufacturing partnerships",
+        "Community engagement initiatives",
+        "Educational barrier removal"
       ]
     }
   },
