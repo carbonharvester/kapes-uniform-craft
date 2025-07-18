@@ -13,6 +13,7 @@ import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
 import uniformProgramImage from "@/assets/uniform-program.png";
+import eCommerceLockerImage from "@/assets/e-commerce-lockers.png";
 import studentBoardImage from "@/assets/student-board.jpg";
 import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
 import { cn } from "@/lib/utils";
@@ -153,7 +154,7 @@ const differences: DifferenceCard[] = [
     title: "E-Commerce Lockers",
     subtitle: "Smart collection points for busy families.",
     description: "Automated pickup and delivery",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752835016/WhatsApp_Image_2025-07-18_at_11.33.46_xdsryg.jpg",
+    image: eCommerceLockerImage,
     icon: <Package className="w-6 h-6" />,
     details: {
       title: "E-Commerce Lockers",
