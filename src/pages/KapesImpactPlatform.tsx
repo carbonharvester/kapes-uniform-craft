@@ -96,35 +96,30 @@ const KapesImpactPlatform = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg" 
-            alt="KapesImpact real-time sustainability dashboard"
-            className="w-full h-full object-cover"
-          />
-        </div>
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
         
-        {/* Dual Overlays */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
         
-        {/* Animated blur circles */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-        
-        {/* Content */}
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-6 py-3 mb-6">
-              <BarChart3 className="w-5 h-5 text-white" />
-              <span className="text-sm font-medium text-white">KapesImpact™ Platform</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white mb-6">
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <BarChart3 className="w-5 h-5 mr-2" />
+              KapesImpact™ Platform
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Real-Time Sustainability Dashboard
             </h1>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               Transform your school's sustainability story with live data, instant transparency, 
               and powerful reporting that showcases your environmental leadership.
             </p>
@@ -140,6 +135,9 @@ const KapesImpactPlatform = () => {
             </div>
           </div>
         </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* What KapesImpact™ Tracks */}
