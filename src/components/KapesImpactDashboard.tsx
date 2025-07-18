@@ -3,13 +3,12 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { BarChart3, TrendingUp, Target, Leaf, Award, ArrowRight } from "lucide-react";
-import sustainabilityDashboard from "@/assets/sustainability-dashboard.png";
 
 const dashboardFeatures = [{
   icon: Leaf,
   title: "Environmental Impact",
   description: "Track carbon footprint, waste reduction, and energy savings in real-time",
-  screenshot: sustainabilityDashboard
+  screenshot: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=600&fit=crop"
 }, {
   icon: BarChart3,
   title: "Data Visualization",
