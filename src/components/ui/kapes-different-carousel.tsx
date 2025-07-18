@@ -137,7 +137,7 @@ const differences: DifferenceCard[] = [
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "On-Campus School Shops",
-      content: "Our on-campus shops provide convenient access to uniforms while creating valuable retail experience opportunities for students.",
+      content: "Designed and built by Kapes, these dedicated retail spaces provide schools with a fully branded, professionally fitted shop right on-site. Parents benefit from convenient, face-to-face service where they can see, feel, and try uniforms before buying — with immediate access to essential items during the school year.\n\nBut these shops are more than just a point of sale. They also create hands-on learning opportunities for students, who can assist with stock management, customer service, and basic retail operations as part of a structured program. It's a chance to gain practical skills in a real business environment — right inside the school gates.\n\nWhether as a standalone shop or alongside our locker and delivery options, it's a seamless way to bring the uniform experience closer to your community.",
       features: [
         "Dedicated on-site retail spaces",
         "Student employment opportunities",
