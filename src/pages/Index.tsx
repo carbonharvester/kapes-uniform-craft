@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
 import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
+import { BlogSection } from "@/components/BlogSection";
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
       <KapesImpactDashboard />
       <FreeAuditTool />
       <Testimonials />
+      <BlogSection />
       <Footer />
     </div>
   );
