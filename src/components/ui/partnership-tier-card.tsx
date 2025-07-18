@@ -23,8 +23,16 @@ export function PartnershipTierCard({
 }: PartnershipTierCardProps) {
   const isHighlighted = tier.highlighted;
   const isPopular = tier.popular;
-  return <Card className={cn("relative flex flex-col gap-8 overflow-hidden p-6 h-full", isHighlighted ? "bg-primary text-primary-foreground border-primary" : "bg-background text-foreground", isPopular && "ring-2 ring-primary")}>
-      {isHighlighted && <HighlightedBackground />}
+  const isCustom = tier.name === "CUSTOM";
+  
+  return <Card className={cn(
+    "relative flex flex-col gap-8 overflow-hidden p-6 h-full",
+    isCustom ? "bg-[#030063] text-white border-[#030063]" : 
+    isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
+    "bg-background text-foreground",
+    isPopular && "ring-2 ring-primary"
+  )}>
+      {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
 
       <h2 className="flex items-center gap-3 text-xl font-medium">
@@ -35,16 +43,31 @@ export function PartnershipTierCard({
       </h2>
 
       <div className="flex-1 space-y-4">
-        <h3 className="text-sm font-medium">{tier.description}</h3>
+        <h3 className={cn(
+          "text-sm font-medium",
+          isCustom ? "text-[#f9f3df]" : ""
+        )}>{tier.description}</h3>
         <ul className={cn("space-y-2", tier.name === "CUSTOM" && "blur-sm hover:blur-none transition-all duration-300")}>
-          {tier.features.map((feature, index) => <li key={index} className={cn("flex items-center gap-2 text-sm font-medium", isHighlighted ? "text-primary-foreground" : "text-muted-foreground")}>
+          {tier.features.map((feature, index) => <li key={index} className={cn(
+            "flex items-center gap-2 text-sm font-medium",
+            isCustom ? "text-white" :
+            isHighlighted ? "text-primary-foreground" : "text-muted-foreground"
+          )}>
               <BadgeCheck className="h-4 w-4" />
               {feature}
             </li>)}
         </ul>
       </div>
 
-      <Button variant={isHighlighted ? "secondary" : "default"} className={cn("w-full", isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90")} asChild>
+      <Button 
+        variant={isHighlighted ? "secondary" : "default"} 
+        className={cn(
+          "w-full",
+          isCustom ? "bg-[#f9f3df] text-[#030063] hover:bg-[#f9f3df]/90" :
+          isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+        )} 
+        asChild
+      >
         <a href={tier.href}>
           {tier.cta}
           <ArrowRight className="ml-2 h-4 w-4" />
