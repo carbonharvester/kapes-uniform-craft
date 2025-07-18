@@ -78,14 +78,8 @@ const differences: DifferenceCard[] = [
     icon: <Recycle className="w-6 h-6" />,
     details: {
       title: "Fully Managed Takeback Scheme",
-      content: "Our comprehensive takeback program ensures no uniform ever goes to waste, creating a truly circular economy.",
-      features: [
-        "Free collection service",
-        "Professional cleaning and refurbishment",
-        "Donation to families in need",
-        "Material recycling into new products",
-        "Complete lifecycle tracking"
-      ]
+      content: "Our takeback program ensures that no uniform ever becomes waste — closing the loop and turning every garment into a force for good. At the end of its life, each Kapes uniform is collected, professionally cleaned and refurbished where possible, or responsibly recycled into new materials. Many items are donated to families in need, extending their use and impact even further. The entire process is fully managed by us — from free collections to lifecycle tracking — so your school doesn't need to lift a finger. It's a simple, powerful way to reduce environmental impact, support communities, and model circular thinking for your students and families.",
+      features: []
     }
   },
   {
