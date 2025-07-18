@@ -1,3 +1,4 @@
+
 import React from "react";
 import { PartnershipTiersDisplay } from "@/components/ui/partnership-tiers";
 
@@ -11,10 +12,10 @@ interface TierPlan {
 }
 
 export const PartnershipTiers = () => {
-  // Reordered tiers with Impact in the middle
+  // Reordered tiers with LegacyImpact in the middle
   const plans: TierPlan[] = [
     {
-      name: "ESSENTIALS",
+      name: "ECOLAUNCH",
       features: [
         "100% Sustainable Uniforms",
         "Ethical Manufacturing",
@@ -25,13 +26,13 @@ export const PartnershipTiers = () => {
       ],
       description: "For schools who want sustainable, ethical uniforms without the complexity",
       buttonText: "Learn More",
-      href: "/essentials-tier",
+      href: "/ecolaunch-tier",
       isPopular: false,
     },
     {
-      name: "IMPACT",
+      name: "LEGACYIMPACT",
       features: [
-        "Everything in Core",
+        "Everything in EcoLaunch",
         "QR Codes on Every Garment",
         "Student Governance Opportunity",
         "Custom PR & CSR Toolkit",
@@ -39,13 +40,13 @@ export const PartnershipTiers = () => {
       ],
       description: "Our highest level of partnership for values-driven schools",
       buttonText: "Learn More",
-      href: "/impact-tier",
+      href: "/legacyimpact-tier",
       isPopular: true,
     },
     {
-      name: "CORE",
+      name: "SUSTAINPRO",
       features: [
-        "Everything in Essentials",
+        "Everything in EcoLaunch",
         "Fully Managed Takeback Scheme",
         "KapesImpact™ Dashboard",
         "Free Meals & Uniforms Donated",
@@ -53,7 +54,7 @@ export const PartnershipTiers = () => {
       ],
       description: "For schools who want to create positive change with impact tracking",
       buttonText: "Learn More",
-      href: "/core-tier",
+      href: "/sustainpro-tier",
       isPopular: false,
     }
   ];

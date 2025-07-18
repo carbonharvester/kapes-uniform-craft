@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Crown, QrCode } from "lucide-react";
 
-const ImpactTier = () => {
+const LegacyImpactTier = () => {
   const included = [
     "100% Sustainable Uniforms",
     "Ethical Manufacturing",
@@ -30,7 +30,7 @@ const ImpactTier = () => {
       <section className="relative py-16 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">Impact Tier: Flagship Program</Badge>
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">LegacyImpact Tier: Flagship Program</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
               For Schools Who Want to{" "}
               <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -38,7 +38,7 @@ const ImpactTier = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
-              The Impact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
+              The LegacyImpact Tier is our highest level of partnership, built for values-driven schools that want to embed sustainability, equity, and student voice into the heart of their uniform program.
             </p>
             <div className="flex items-center justify-center gap-2 text-lg text-muted-foreground">
               <Crown className="h-5 w-5 text-primary" />
@@ -192,7 +192,7 @@ const ImpactTier = () => {
             "Uniforms shouldn't just cover students — they should empower them."
           </blockquote>
           <p className="text-xl text-muted-foreground font-light leading-relaxed">
-            The Impact Tier turns your school into a model for what ethical education looks like.
+            The LegacyImpact Tier turns your school into a model for what ethical education looks like.
           </p>
         </div>
       </section>
@@ -220,4 +220,4 @@ const ImpactTier = () => {
   );
 };
 
-export default ImpactTier;
+export default LegacyImpactTier;

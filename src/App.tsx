@@ -12,9 +12,9 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import OurProcess from "./pages/OurProcess";
 import ImplementationTimeline from "./pages/ImplementationTimeline";
-import EssentialsTier from "./pages/EssentialsTier";
-import CoreTier from "./pages/CoreTier";
-import ImpactTier from "./pages/ImpactTier";
+import EcoLaunchTier from "./pages/EcoLaunchTier";
+import SustainProTier from "./pages/SustainProTier";
+import LegacyImpactTier from "./pages/LegacyImpactTier";
 import EducationalResources from "./pages/EducationalResources";
 import OurMission from "./pages/OurMission";
 import Materials from "./pages/Materials";
@@ -55,9 +55,9 @@ const App = () => (
           
           {/* Partnership Tier Routes */}
           <Route path="/partnership-tiers" element={<PartnershipTiers />} />
-          <Route path="/essentials-tier" element={<EssentialsTier />} />
-          <Route path="/core-tier" element={<CoreTier />} />
-          <Route path="/impact-tier" element={<ImpactTier />} />
+          <Route path="/ecolaunch-tier" element={<EcoLaunchTier />} />
+          <Route path="/sustainpro-tier" element={<SustainProTier />} />
+          <Route path="/legacyimpact-tier" element={<LegacyImpactTier />} />
           
           {/* Resource Routes */}
           <Route path="/educational-resources" element={<EducationalResources />} />

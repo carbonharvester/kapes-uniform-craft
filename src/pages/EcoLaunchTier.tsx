@@ -1,10 +1,9 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, Star } from "lucide-react";
 
-const EssentialsTier = () => {
+const EcoLaunchTier = () => {
   const included = [
     "100% Sustainable Uniforms",
     "Ethical Manufacturing",
@@ -31,7 +30,7 @@ const EssentialsTier = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <Badge className="mb-4 bg-green-100 text-green-800">Essentials Tier</Badge>
+            <Badge className="mb-4 bg-green-100 text-green-800">EcoLaunch Tier</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
               Ethical Uniforms,{" "}
               <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -194,4 +193,4 @@ const EssentialsTier = () => {
   );
 };
 
-export default EssentialsTier;
+export default EcoLaunchTier;

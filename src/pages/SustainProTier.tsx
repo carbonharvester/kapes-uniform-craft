@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, Zap } from "lucide-react";
 
-const CoreTier = () => {
+const SustainProTier = () => {
   const included = [
     "100% Sustainable Uniforms",
     "Ethical Manufacturing", 
@@ -34,7 +34,7 @@ const CoreTier = () => {
       <section className="relative py-16 overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">Core Tier</Badge>
+            <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-6 py-2 font-medium">SustainPro Tier</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
               Sustainable Uniforms +{" "}
               <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
@@ -107,7 +107,7 @@ const CoreTier = () => {
                 <X className="h-6 w-6" />
                 What's Not Included
               </CardTitle>
-              <CardDescription className="text-lg">Premium features available in Impact Tier</CardDescription>
+              <CardDescription className="text-lg">Premium features available in LegacyImpact Tier</CardDescription>
             </CardHeader>
             <CardContent className="px-8 pb-8">
               <div className="grid gap-4 md:grid-cols-1">
@@ -186,7 +186,7 @@ const CoreTier = () => {
             Make an Impact Beyond Your Classroom
           </h2>
           <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
-            The Core Tier connects your school to a global movement of positive change — with every uniform making a difference.
+            The SustainPro Tier connects your school to a global movement of positive change — with every uniform making a difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
@@ -202,4 +202,4 @@ const CoreTier = () => {
   );
 };
 
-export default CoreTier;
+export default SustainProTier;
