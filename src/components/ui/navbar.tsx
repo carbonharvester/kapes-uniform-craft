@@ -99,6 +99,12 @@ const Navbar = ({
           url: "/uniform-solutions",
         },
         {
+          title: "Circular Economy & Takeback",
+          description: "Our circular economy and product takeback programs",
+          icon: <Recycle className="size-5 shrink-0" />,
+          url: "/circular-economy-takeback",
+        },
+        {
           title: "KapesImpact™ Platform",
           description: "Track your sustainability impact",
           icon: <Zap className="size-5 shrink-0" />,
@@ -115,12 +121,6 @@ const Navbar = ({
           description: "Sustainable delivery and packaging solutions",
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/delivery-packaging",
-        },
-        {
-          title: "Circular Economy & Takeback",
-          description: "Our circular economy and product takeback programs",
-          icon: <Recycle className="size-5 shrink-0" />,
-          url: "/circular-economy-takeback",
         },
       ],
     },
