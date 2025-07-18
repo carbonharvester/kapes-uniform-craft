@@ -1,3 +1,4 @@
+
 import { Logos3 } from "@/components/ui/logos3";
 
 export const SchoolLogos = () => {
@@ -35,7 +36,7 @@ export const SchoolLogos = () => {
     {
       id: "school-6",
       description: "International School",
-      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752857123/Horizontal_Lockup_94_f9ozlm.ai",
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752872116/Horizontal_Lockup_94_f9ozlm_uizm8f.png",
       className: "h-16 w-auto opacity-70 hover:opacity-100 transition-opacity",
     },
   ];
