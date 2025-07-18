@@ -200,12 +200,6 @@ const Navbar = ({
           icon: <Users className="size-5 shrink-0" />,
           url: "/student-governance",
         },
-        {
-          title: "Offers",
-          description: "Special offers and programs",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "/offers",
-        },
       ],
     },
     {
