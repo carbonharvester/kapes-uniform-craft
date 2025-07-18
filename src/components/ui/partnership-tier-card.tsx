@@ -35,7 +35,10 @@ export function PartnershipTierCard({
       {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
 
-      <h2 className="flex items-center gap-3 text-xl font-medium">
+      <h2 className={cn(
+        "flex items-center gap-3 text-xl font-medium",
+        isCustom ? "text-white" : ""
+      )}>
         {tier.name}
         {isPopular && <Badge variant="secondary" className="mt-1 z-10">
             🔥 Most Popular
