@@ -6,7 +6,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain, MessageCircle } from "lucide-react";
+import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain, MessageCircle, GraduationCap } from "lucide-react";
 import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import sustainableMaterialsImage from "@/assets/sustainable-materials.jpg";
@@ -241,6 +241,28 @@ const differences: DifferenceCard[] = [
         "Smart size recommendations based on growth patterns",
         "Seasonal demand prediction",
         "Stock optimization algorithms"
+      ]
+    }
+  },
+  {
+    id: "educational-programs",
+    title: "Educational Programs",
+    subtitle: "Empowering students through sustainability education.",
+    description: "Interactive learning initiatives",
+    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
+    icon: <GraduationCap className="w-6 h-6" />,
+    details: {
+      title: "Educational Programs",
+      content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
+      features: [
+        "Interactive sustainability workshops",
+        "Curriculum support materials",
+        "Supply chain education programs",
+        "Environmental impact demonstrations",
+        "Student leadership development",
+        "Guest speaker sessions",
+        "Hands-on circular economy projects",
+        "Real-world case study materials"
       ]
     }
   }
