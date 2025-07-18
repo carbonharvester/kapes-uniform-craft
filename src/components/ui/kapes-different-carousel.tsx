@@ -39,14 +39,8 @@ const differences: DifferenceCard[] = [
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Natural, Sustainable Materials",
-      content: "We use only the finest natural and recycled materials to create uniforms that are kind to both students and the planet.",
-      features: [
-        "100% organic cotton and recycled polyester",
-        "GOTS certified sustainable fabrics",
-        "Zero harmful chemicals or dyes",
-        "Biodegradable fiber options",
-        "Traceable supply chain materials"
-      ]
+      content: "We craft every uniform with the health of your students and the future of the planet in mind. Using only the highest quality natural and recycled materials, we ensure our garments are safe, breathable, and durable — without compromising on sustainability. From GOTS-certified organic cotton to recycled polyester and biodegradable fibers, every fabric we use is chosen for its low environmental impact and high performance in the classroom and beyond. Our materials are always free from harmful chemicals and dyes, and fully traceable through an ethical, transparent supply chain. This means your school can offer families uniforms they can feel proud of — comfortable for their children, and responsible for the world they'll grow up in.",
+      features: []
     }
   },
   {
