@@ -194,7 +194,7 @@ const differences: DifferenceCard[] = [
     title: "Next-Day Home Delivery",
     subtitle: "Fast, reliable delivery to your door.",
     description: "Premium logistics service",
-    image: nextDayDeliveryImage,
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752856244/0E7A6487_1_d6iaxq.jpg",
     icon: <Truck className="w-6 h-6" />,
     details: {
       title: "Next-Day Home Delivery",
