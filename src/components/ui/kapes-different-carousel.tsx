@@ -175,7 +175,7 @@ const differences: DifferenceCard[] = [
     icon: <MapPin className="w-6 h-6" />,
     details: {
       title: "Farm & Factory Visits",
-      content: "Experience complete transparency with guided visits to our partner farms and factories, seeing sustainable practices firsthand.",
+      content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
       features: [
         "Guided farm and factory tours",
         "Meet the people behind your uniforms",
