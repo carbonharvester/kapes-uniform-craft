@@ -58,16 +58,14 @@ const OurMission = () => {
         <div className="relative z-10 container mx-auto px-4 text-left">
           <div className="max-w-2xl space-y-8">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">Our Mission</Badge>
-             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
-              Creating{" "}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+              Reimagining School Uniforms for a{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-                ethical futures
-              </span>{" "}
-              through sustainable fashion
+                Better World
+              </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
-              We're transforming education by creating uniforms that feed children, 
-              empower communities, and heal our planet—one school at a time.
+              We believe that what students wear should reflect the values we want them to live by — sustainability, ethics, empowerment, and global citizenship.
             </p>
           </div>
         </div>
