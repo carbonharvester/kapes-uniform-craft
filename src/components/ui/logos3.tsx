@@ -1,3 +1,4 @@
+
 "use client";
 
 import AutoScroll from "embla-carousel-auto-scroll";
@@ -74,6 +75,9 @@ const Logos3 = ({
     },
   ],
 }: Logos3Props) => {
+  // Duplicate logos to ensure smooth infinite scrolling
+  const duplicatedLogos = [...logos, ...logos];
+
   return (
     <section className="py-16">
       <div className="container flex flex-col items-center text-center">
@@ -84,21 +88,35 @@ const Logos3 = ({
       <div className="pt-10 md:pt-16 lg:pt-20">
         <div className="relative mx-auto flex items-center justify-center lg:max-w-5xl">
           <Carousel
-            opts={{ loop: true }}
-            plugins={[AutoScroll({ playOnInit: true })]}
+            opts={{ 
+              loop: true,
+              align: "start",
+              dragFree: true,
+            }}
+            plugins={[
+              AutoScroll({ 
+                playOnInit: true,
+                delay: 0,
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+                stopOnFocusIn: false,
+              })
+            ]}
           >
             <CarouselContent className="ml-0">
-              {logos.map((logo) => (
+              {duplicatedLogos.map((logo, index) => (
                 <CarouselItem
-                  key={logo.id}
-                  className="flex basis-1/3 justify-center pl-0 sm:basis-1/4 md:basis-1/5 lg:basis-1/6"
+                  key={`${logo.id}-${index}`}
+                  className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
                 >
-                  <div className="mx-10 flex shrink-0 items-center justify-center">
+                  <div className="mx-8 flex shrink-0 items-center justify-center">
                     <div>
                       <img
                         src={logo.image}
                         alt={logo.description}
                         className={logo.className}
+                        loading="lazy"
                       />
                     </div>
                   </div>
