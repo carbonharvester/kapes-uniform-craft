@@ -14,6 +14,7 @@ import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
 import studentBoardImage from "@/assets/student-board.jpg";
+import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -190,7 +191,7 @@ const differences: DifferenceCard[] = [
     title: "Next-Day Home Delivery",
     subtitle: "Fast, reliable delivery to your door.",
     description: "Premium logistics service",
-    image: "https://images.unsplash.com/photo-1473177104440-ffee2f376098?w=400&h=600&fit=crop",
+    image: nextDayDeliveryImage,
     icon: <Truck className="w-6 h-6" />,
     details: {
       title: "Next-Day Home Delivery",
