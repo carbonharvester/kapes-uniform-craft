@@ -52,14 +52,8 @@ const differences: DifferenceCard[] = [
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "Ethical Manufacturing",
-      content: "Our manufacturing partners are carefully selected and regularly audited to ensure fair labor practices and safe working conditions.",
-      features: [
-        "Fair Trade certified factories",
-        "Living wage for all workers",
-        "Safe and healthy working environments",
-        "Regular third-party audits",
-        "Zero tolerance for child labor"
-      ]
+      content: "We take pride in knowing exactly who makes our uniforms — and how they're treated. Our manufacturing partners are carefully chosen not just for their craftsmanship, but for their commitment to people. Every factory we work with is Fair Trade certified or meets equivalent ethical standards, ensuring all workers receive a living wage, operate in safe and healthy environments, and are treated with dignity and respect. We maintain full visibility into their practices through regular third-party audits and uphold a strict zero-tolerance policy for child labour. When your school partners with Kapes, you're not just choosing better uniforms — you're supporting a global supply chain that values humanity as much as quality.",
+      features: []
     }
   },
   {
