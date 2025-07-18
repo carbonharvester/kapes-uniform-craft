@@ -81,12 +81,6 @@ const Navbar = ({
           url: "/sustainability-ethics",
         },
         {
-          title: "Circular Economy & Takeback",
-          description: "Our circular economy and product takeback programs",
-          icon: <Recycle className="size-5 shrink-0" />,
-          url: "/circular-economy-takeback",
-        },
-        {
           title: "Social Impact in Africa",
           description: "Our positive impact on African communities",
           icon: <Heart className="size-5 shrink-0" />,
@@ -121,6 +115,12 @@ const Navbar = ({
           description: "Sustainable delivery and packaging solutions",
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/delivery-packaging",
+        },
+        {
+          title: "Circular Economy & Takeback",
+          description: "Our circular economy and product takeback programs",
+          icon: <Recycle className="size-5 shrink-0" />,
+          url: "/circular-economy-takeback",
         },
       ],
     },
