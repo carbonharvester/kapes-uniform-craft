@@ -12,7 +12,6 @@ import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
-import sustainabilityDashboardImage from "@/assets/sustainability-dashboard.png";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -73,7 +72,7 @@ const differences: DifferenceCard[] = [
     title: "Real-Time Sustainability Dashboard",
     subtitle: "Track your environmental impact live.",
     description: "Complete transparency on impact",
-    image: sustainabilityDashboardImage,
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
     icon: <BarChart3 className="w-6 h-6" />,
     details: {
       title: "Real-Time Sustainability Dashboard",
