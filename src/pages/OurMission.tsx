@@ -116,16 +116,6 @@ const OurMission = () => {
               <div className="absolute inset-0 bg-black/20"></div>
             </div>
 
-            {/* Person Cutout - Foreground Layer */}
-            <div 
-              className="absolute right-0 top-0 w-1/2 md:w-2/5 lg:w-1/3 h-full bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-                backgroundPosition: "70% center",
-                clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%)"
-              }}
-            ></div>
-
             {/* Green Text Box */}
             <div className="absolute left-8 md:left-16 lg:left-20 top-1/2 -translate-y-1/2 max-w-lg">
               <div className="bg-green-600 text-white p-8 md:p-10 lg:p-12 rounded-2xl shadow-2xl">
