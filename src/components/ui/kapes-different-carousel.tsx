@@ -13,6 +13,7 @@ import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
+import studentBoardImage from "@/assets/student-board.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -87,7 +88,7 @@ const differences: DifferenceCard[] = [
     title: "Student Board",
     subtitle: "Empowering students to lead change.",
     description: "Student-led sustainability initiatives",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=600&fit=crop",
+    image: studentBoardImage,
     icon: <Users className="w-6 h-6" />,
     details: {
       title: "Student Board",
