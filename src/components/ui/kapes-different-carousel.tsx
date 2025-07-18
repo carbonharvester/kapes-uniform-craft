@@ -187,7 +187,7 @@ const differences: DifferenceCard[] = [
     title: "E-Commerce Lockers",
     subtitle: "Smart collection points for busy families.",
     description: "Automated pickup and delivery",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=600&fit=crop",
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752835016/WhatsApp_Image_2025-07-18_at_11.33.46_xdsryg.jpg",
     icon: <Package className="w-6 h-6" />,
     details: {
       title: "E-Commerce Lockers",
