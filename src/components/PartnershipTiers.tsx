@@ -1,19 +1,10 @@
 
 import React from "react";
-import { PartnershipTiersDisplay } from "@/components/ui/partnership-tiers";
-
-interface TierPlan {
-  name: string;
-  features: string[];
-  description: string;
-  buttonText: string;
-  href: string;
-  isPopular: boolean;
-}
+import { PartnershipSection } from "@/components/ui/partnership-section";
+import { PartnershipTier } from "@/components/ui/partnership-tier-card";
 
 export const PartnershipTiers = () => {
-  // Reordered tiers with LegacyImpact in the middle
-  const plans: TierPlan[] = [
+  const tiers: PartnershipTier[] = [
     {
       name: "ECOLAUNCH",
       features: [
@@ -25,9 +16,9 @@ export const PartnershipTiers = () => {
         "Plastic-Free Packaging"
       ],
       description: "For schools who want sustainable, ethical uniforms without the complexity",
-      buttonText: "Learn More",
+      cta: "Learn More",
       href: "/ecolaunch-tier",
-      isPopular: false,
+      popular: false,
     },
     {
       name: "LEGACYIMPACT",
@@ -39,9 +30,9 @@ export const PartnershipTiers = () => {
         "Dedicated Account Manager"
       ],
       description: "Our highest level of partnership for values-driven schools",
-      buttonText: "Learn More",
+      cta: "Learn More",
       href: "/legacyimpact-tier",
-      isPopular: true,
+      popular: true,
     },
     {
       name: "SUSTAINPRO",
@@ -53,17 +44,32 @@ export const PartnershipTiers = () => {
         "Factory Visits & Teaching Materials"
       ],
       description: "For schools who want to create positive change with impact tracking",
-      buttonText: "Learn More",
+      cta: "Learn More",
       href: "/sustainpro-tier",
-      isPopular: false,
+      popular: false,
+    },
+    {
+      name: "CUSTOM",
+      features: [
+        "Everything in SustainPro",
+        "Bespoke Partnership Design",
+        "Multi-Location Support",
+        "Advanced Impact Reporting",
+        "Executive Advisory Sessions",
+        "Priority Development Access"
+      ],
+      description: "Tailored partnerships for organizations with unique requirements",
+      cta: "Contact Us",
+      href: "/contact",
+      highlighted: true,
     }
   ];
 
   return (
-    <PartnershipTiersDisplay 
-      plans={plans}
+    <PartnershipSection 
       title="Partnership Tiers"
-      description="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
+      subtitle="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
+      tiers={tiers}
     />
   );
 };
