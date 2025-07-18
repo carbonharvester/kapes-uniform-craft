@@ -12,6 +12,7 @@ import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
+import uniformProgramImage from "@/assets/uniform-program.png";
 import studentBoardImage from "@/assets/student-board.jpg";
 import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
 import { cn } from "@/lib/utils";
@@ -101,7 +102,7 @@ const differences: DifferenceCard[] = [
     title: "Uniform Program",
     subtitle: "Providing dignity through education access.",
     description: "Breaking barriers to learning",
-    image: freeSchoolUniformsImage,
+    image: uniformProgramImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free School Uniforms in Africa",
