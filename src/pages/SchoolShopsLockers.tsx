@@ -1,60 +1,63 @@
+
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 
 export const SchoolShopsLockers = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-[radial-gradient(circle_at_60%_40%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-              <Store className="w-4 h-4" />
-              <span className="text-sm font-medium">On-Campus Solutions</span>
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
-              School Shops & Lockers
+      {/* Hero Section - Our Mission Template */}
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
+        
+        {/* Overlay and Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-left">
+          <div className="max-w-2xl space-y-8">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">On-Campus Solutions</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+              School Shops & 
+              <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                {" "}Lockers
+              </span>
             </h1>
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
-              <p className="text-2xl md:text-3xl font-semibold text-white/90">
-                Convenience Meets Sustainability—Right on Campus
-              </p>
-              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
-            </div>
-            <p className="text-xl max-w-4xl mx-auto leading-relaxed text-white/90">
-              Make uniform shopping effortless for parents by offering professionally designed and fully managed uniform stores or convenient e-commerce lockers directly at your school.
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
+              Convenience Meets Sustainability—Right on Campus. Make uniform shopping effortless for parents by offering professionally managed stores or convenient e-commerce lockers directly at your school.
             </p>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1200 120" className="w-full h-auto">
-            <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" fill="hsl(var(--background))"></path>
-          </svg>
-        </div>
+        
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      {/* Enhanced On-Campus School Shops Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">On-Campus School Shops</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school
-              </p>
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-6xl mx-auto space-y-20">
+          
+          {/* On-Campus School Shops Section */}
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
+              <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="animate-fade-in">
-                <div className="bg-gradient-to-br from-background to-secondary/20 rounded-3xl p-8 border border-border/50 shadow-2xl">
-                  <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Store className="w-8 h-8 text-primary" />
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                    <Store className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-6">Premium Retail Experience</h3>
+                  <h3 className="text-2xl font-medium mb-6">Premium Retail Experience</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -78,15 +81,15 @@ export const SchoolShopsLockers = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl p-8 border border-blue-100 dark:border-blue-900/20 shadow-lg">
-                  <div className="bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Users className="w-8 h-8 text-white" />
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                    <Users className="h-6 w-6 text-blue-500" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-6 text-blue-800 dark:text-blue-300">Fully Managed Operations</h3>
+                  <h3 className="text-2xl font-medium mb-6">Fully Managed Operations</h3>
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Zap className="w-4 h-4 text-blue-600" />
@@ -105,146 +108,138 @@ export const SchoolShopsLockers = () => {
                       <span className="text-sm">Sales reporting & analytics</span>
                     </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Enhanced E-Commerce Lockers Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary/5 to-accent/5 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-[radial-gradient(circle_at_30%_70%,rgba(0,0,0,0.05),transparent_70%)]"></div>
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">E-Commerce Lockers</h2>
+          {/* E-Commerce Lockers Section */}
+          <section>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">E-Commerce Lockers</h2>
               <div className="inline-flex items-center gap-2 bg-accent/10 rounded-full px-6 py-2 mb-6">
                 <Package className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-accent">Smart Pickup Solution</span>
               </div>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Secure, convenient, and available 24/7—the future of uniform collection
-              </p>
+              <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="group hover-scale animate-fade-in">
-                <div className="bg-background/80 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:border-primary/20">
-                  <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="w-8 h-8 text-white" />
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Shield className="h-6 w-6 text-purple-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Secure & Strategic</h3>
+                  <h3 className="text-xl font-medium mb-4">Secure & Strategic</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              <div className="group hover-scale animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-background/80 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:border-primary/20">
-                  <div className="bg-gradient-to-br from-green-500 to-emerald-500 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="w-8 h-8 text-white" />
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="h-6 w-6 text-green-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">24/7 Convenience</h3>
+                  <h3 className="text-xl font-medium mb-4">24/7 Convenience</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
 
-              <div className="group hover-scale animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="bg-background/80 backdrop-blur-sm border-2 border-border/50 rounded-2xl p-8 h-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:border-primary/20">
-                  <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="w-8 h-8 text-white" />
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Zap className="h-6 w-6 text-blue-500" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">Zero Admin Burden</h3>
+                  <h3 className="text-xl font-medium mb-4">Zero Admin Burden</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
                   </p>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Enhanced Benefits Section */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16 animate-fade-in">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Benefits to Schools</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Transform your uniform program into a seamless, sustainable service that enhances your school's reputation
-              </p>
+          {/* Benefits Section */}
+          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Benefits to Schools</h2>
+              <p className="text-muted-foreground text-lg">Transform your uniform program into a seamless, sustainable service that enhances your school's reputation</p>
             </div>
             
-            <div className="grid gap-8">
-              <div className="flex items-start gap-6 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-2xl p-8 animate-fade-in">
-                <div className="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3 text-green-800 dark:text-green-300">Enhanced Parent & Student Experience</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Convenient shopping options that fit busy family schedules, reducing stress and improving satisfaction with your school's services.
-                  </p>
-                </div>
-              </div>
+            <div className="grid gap-8 max-w-4xl mx-auto">
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Users className="h-6 w-6 text-green-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium mb-3">Enhanced Parent & Student Experience</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Convenient shopping options that fit busy family schedules, reducing stress and improving satisfaction with your school's services.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="flex items-start gap-6 bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl p-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <div className="bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3 text-blue-800 dark:text-blue-300">Zero Administrative Burden</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Completely managed by us—from inventory to customer service, we handle every aspect so your staff can focus on education.
-                  </p>
-                </div>
-              </div>
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Shield className="h-6 w-6 text-blue-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium mb-3">Zero Administrative Burden</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Completely managed by us—from inventory to customer service, we handle every aspect so your staff can focus on education.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              <div className="flex items-start gap-6 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-2xl p-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <div className="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3 text-purple-800 dark:text-purple-300">Visible Sustainability Leadership</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    A visible sign of your school's commitment to seamless service and sustainability—reinforcing your values daily.
-                  </p>
-                </div>
-              </div>
+              <Card className="border-0 shadow-glass">
+                <CardContent className="p-8">
+                  <div className="flex items-start gap-6">
+                    <div className="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Sparkles className="h-6 w-6 text-purple-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium mb-3">Visible Sustainability Leadership</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        A visible sign of your school's commitment to seamless service and sustainability—reinforcing your values daily.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Enhanced Call to Action Section */}
-      <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-[radial-gradient(circle_at_40%_60%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative">
-          <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
-              <Store className="w-4 h-4" />
-              <span className="text-sm font-medium">Get Started Today</span>
+          {/* CTA Section */}
+          <section className="text-center py-16">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-2 mb-6">
+              <Store className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Get Started Today</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Uniform Program?</h2>
-            <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-light mb-6">
+              Ready to Transform Your Uniform Program?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss which solution works best for your school—shops, lockers, or both.
             </p>
-            <Button size="lg" variant="secondary" className="text-lg px-12 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300">
               Request a Free Shop or Locker Consultation
-              <div className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</div>
             </Button>
-          </div>
+          </section>
+          
         </div>
-      </section>
+      </div>
     </div>
   );
 };
