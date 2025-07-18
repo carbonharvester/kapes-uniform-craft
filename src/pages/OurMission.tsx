@@ -107,9 +107,10 @@ const OurMission = () => {
           <section className="relative -mx-4 h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-3xl">
             {/* Background Image */}
             <div 
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-no-repeat"
               style={{
-                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')"
+                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+                backgroundPosition: "20% center"
               }}
             >
               {/* Overlay for better text contrast */}
