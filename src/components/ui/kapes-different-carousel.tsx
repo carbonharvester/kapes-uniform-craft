@@ -12,7 +12,7 @@ import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
-import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
+import freeSchoolUniformsImage from "@/assets/new-image.jpg";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
