@@ -103,6 +103,51 @@ const OurMission = () => {
             </div>
           </section>
 
+          {/* Integrated Visual Section */}
+          <section className="relative -mx-4 h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-3xl">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')"
+              }}
+            >
+              {/* Overlay for better text contrast */}
+              <div className="absolute inset-0 bg-black/20"></div>
+            </div>
+
+            {/* Person Cutout - Foreground Layer */}
+            <div 
+              className="absolute right-0 top-0 w-1/2 md:w-2/5 lg:w-1/3 h-full bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+                backgroundPosition: "70% center",
+                clipPath: "polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%)"
+              }}
+            ></div>
+
+            {/* Green Text Box */}
+            <div className="absolute left-8 md:left-16 lg:left-20 top-1/2 -translate-y-1/2 max-w-lg">
+              <div className="bg-green-600 text-white p-8 md:p-10 lg:p-12 rounded-2xl shadow-2xl">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight">
+                  Creating{" "}
+                  <span className="text-yellow-400">lasting impact</span>{" "}
+                  through ethical uniform programmes
+                </h3>
+                <p className="text-green-100 text-lg md:text-xl mb-8 leading-relaxed">
+                  Every uniform we create feeds a child, educates a community, and heals our planet. 
+                  Join us in transforming education through sustainable fashion.
+                </p>
+                <Button 
+                  size="lg" 
+                  className="bg-white text-green-600 hover:bg-green-50 font-semibold text-lg px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Explore Our Programmes
+                </Button>
+              </div>
+            </div>
+          </section>
+
           {/* The Challenge */}
           <section>
             <div className="text-center mb-12">
