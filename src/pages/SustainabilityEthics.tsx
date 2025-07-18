@@ -288,7 +288,7 @@ const SustainabilityEthics = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Kapes makes it easy for schools to align their uniforms with their values — without compromise.
             </h2>
-            <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
               Because doing the right thing should be the simplest option.
             </p>
             <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
