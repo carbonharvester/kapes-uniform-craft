@@ -62,7 +62,7 @@ export const PartnershipTiers = () => {
     <PartnershipTiersDisplay 
       plans={plans}
       title="Partnership Tiers"
-      description="Choose the level of impact that's right for your school\nAll tiers include sustainable, ethical uniforms and dedicated support."
+      description="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
     />
   );
 };
