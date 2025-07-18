@@ -318,6 +318,17 @@ export const KapesDifferentCarousel = () => {
                              {difference.details.content}
                            </p>
                            
+                           <div className="space-y-3">
+                             <h5 className="text-base font-medium text-foreground">Key Features:</h5>
+                             <ul className="space-y-2">
+                               {difference.details.features.map((feature, index) => (
+                                 <li key={index} className="text-sm text-muted-foreground flex items-center space-x-3">
+                                   <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0"></div>
+                                   <span>{feature}</span>
+                                 </li>
+                               ))}
+                             </ul>
+                           </div>
                          </div>
                        </DialogContent>
                      </Dialog>
