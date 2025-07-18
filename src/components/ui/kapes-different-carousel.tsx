@@ -12,6 +12,7 @@ import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
+import dashboardPopup from "@/assets/dashboard-popup.png";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -268,6 +269,15 @@ export const KapesDifferentCarousel = () => {
                     <h3 className="text-xl font-semibold leading-tight text-white">
                       {difference.title}
                     </h3>
+                  </div>
+
+                  {/* Dashboard popup image */}
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-24 opacity-60">
+                    <img 
+                      src={dashboardPopup} 
+                      alt="Dashboard preview" 
+                      className="w-full h-full object-contain rounded-lg"
+                    />
                   </div>
 
                    {/* Plus Button at bottom right */}
