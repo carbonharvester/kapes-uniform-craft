@@ -37,11 +37,12 @@ export const PartnershipTiers = () => {
     {
       name: "LEGACYIMPACT",
       features: [
-        "Everything in EcoLaunch",
+        "Everything in SustainPro",
         "QR Codes on Every Garment",
         "Student Governance Opportunity",
         "Custom PR & CSR Toolkit",
-        "Dedicated Account Manager"
+        "Dedicated Account Manager",
+        "Buy Now Pay Later Option"
       ],
       description: "Our highest level of partnership for values-driven schools",
       cta: "Learn More",
@@ -51,14 +52,13 @@ export const PartnershipTiers = () => {
     {
       name: "CUSTOM",
       features: [
-        "Everything in SustainPro",
         "Bespoke Partnership Design",
-        "Multi-Location Support",
+        "Multi-Location Support", 
         "Advanced Impact Reporting",
         "Executive Advisory Sessions",
         "Priority Development Access"
       ],
-      description: "Tailored partnerships for organizations with unique requirements",
+      description: "Tailored partnerships combining elements from all tiers for unique requirements",
       cta: "Contact Us",
       href: "/contact",
       highlighted: true,
