@@ -72,6 +72,7 @@ export const TierQuiz = ({ onComplete }: TierQuizProps) => {
         min={1}
         step={1}
         className="w-full"
+        onFocus={(e) => e.preventDefault()}
       />
       <div className="flex justify-between text-xs text-muted-foreground">
         <span>Not Important</span>
