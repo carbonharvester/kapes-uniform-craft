@@ -335,7 +335,7 @@ const Resources = () => {
                     className="w-full rounded-xl font-medium text-lg py-4 hover:scale-105 transition-smooth"
                     size="lg"
                   >
-                    Unlock Free Consultation
+                    Find Your Tier
                   </Button>
 
                   {showResult && (
