@@ -19,7 +19,7 @@ const SustainProTier = () => {
 
   const notIncluded = [
     "QR codes on garments",
-    "Student governance opportunities", 
+    "Student leadership opportunities", 
     "Kapes Adventures discount",
     "Custom PR & CSR toolkit",
     "Dedicated account manager"

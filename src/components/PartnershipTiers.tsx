@@ -39,7 +39,7 @@ export const PartnershipTiers = () => {
       features: [
         "Everything in SustainPro",
         "QR Codes on Every Garment",
-        "Student Governance Opportunity",
+        "Student Leadership Opportunity",
         "Custom PR & CSR Toolkit",
         "Dedicated Account Manager",
         "Buy Now Pay Later Option"

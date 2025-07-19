@@ -18,7 +18,7 @@ const EcoLaunchTier = () => {
     "KapesImpact™ dashboard",
     "Free meals & uniforms donated",
     "Factory visits or teaching materials",
-    "Student governance opportunities",
+    "Student leadership opportunities",
     "Dedicated account manager"
   ];
 

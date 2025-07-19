@@ -34,7 +34,7 @@ export function Features() {
         },
         {
             icon: GraduationCap,
-            title: "Student Governance Board",
+            title: "Student Leadership Board",
             description: "Give your students a voice in the sustainability mission"
         },
         {

@@ -32,7 +32,7 @@ const PartnershipTiers = () => {
     icon: Crown,
     color: "purple",
     route: "/legacyimpact-tier",
-    features: ["Everything in SustainPro", "QR Codes on Every Garment", "Student Governance Opportunity", "Custom PR & CSR Toolkit", "Dedicated Account Manager"]
+    features: ["Everything in SustainPro", "QR Codes on Every Garment", "Student Leadership Opportunity", "Custom PR & CSR Toolkit", "Dedicated Account Manager"]
   }];
 
   return (

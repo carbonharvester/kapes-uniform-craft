@@ -14,7 +14,7 @@ const LegacyImpactTier = () => {
     "Fully Managed Takeback Scheme",
     "KapesImpact™ Dashboard + QR Codes",
     "Free School Meals & Uniforms Donated",
-    "Student Governance Opportunity",
+    "Student Leadership Opportunity",
     "Factory Visits & Teaching Materials",
     "Kapes Adventures Discount",
     "Custom PR & CSR Toolkit",
@@ -131,7 +131,7 @@ const LegacyImpactTier = () => {
                           Get school-wide reporting PLUS QR codes printed on every garment. Scan to see impact per item, use in lessons and PR.
                         </p>
                       )}
-                      {item === "Student Governance Opportunity" && (
+                      {item === "Student Leadership Opportunity" && (
                         <p className="text-muted-foreground leading-relaxed">
                           Your school nominates one student to join the Kapes Young Leaders Council — contributing to real decisions and campaigns.
                         </p>

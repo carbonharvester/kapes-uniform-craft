@@ -195,10 +195,10 @@ const Navbar = ({
           url: "/factory-visits",
         },
         {
-          title: "Student Governance",
+          title: "Student Leadership",
           description: "Student involvement in sustainability",
           icon: <Users className="size-5 shrink-0" />,
-          url: "/student-governance",
+          url: "/student-leadership",
         },
       ],
     },

@@ -22,7 +22,7 @@ import OurFactories from "./pages/OurFactories";
 import WhatsInAFootprint from "./pages/WhatsInAFootprint";
 import PartnershipTiers from "./pages/PartnershipTiers";
 import FactoryVisits from "./pages/FactoryVisits";
-import StudentGovernance from "./pages/StudentGovernance";
+import StudentLeadership from "./pages/StudentLeadership";
 import { UniformSolutions } from "./pages/UniformSolutions";
 import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
 import KapesImpactPlatform from "./pages/KapesImpactPlatform";
@@ -62,7 +62,7 @@ const App = () => (
           {/* Resource Routes */}
           <Route path="/educational-resources" element={<EducationalResources />} />
           <Route path="/factory-visits" element={<FactoryVisits />} />
-          <Route path="/student-governance" element={<StudentGovernance />} />
+          <Route path="/student-leadership" element={<StudentLeadership />} />
           <Route path="/our-mission" element={<OurMission />} />
           <Route path="/materials" element={<Materials />} />
           <Route path="/our-factories" element={<OurFactories />} />
