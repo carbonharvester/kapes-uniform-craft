@@ -182,7 +182,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "governance",
-    title: "Young Voices Council",
+    title: "Kapes Young Leaders Council",
     subtitle: "Empowering students to lead change.",
     description: "Student-led sustainability initiatives",
     image: studentBoardImage,
