@@ -36,6 +36,22 @@ const SustainabilityScorecard: React.FC = () => {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [entryError, setEntryError] = useState(false);
 
+  // Check for user data from localStorage on component mount
+  React.useEffect(() => {
+    const storedUserData = localStorage.getItem('scorecardUserData');
+    if (storedUserData) {
+      try {
+        const parsedData = JSON.parse(storedUserData);
+        setUserData(parsedData);
+        setShowAssessment(true);
+        // Clear the stored data after using it
+        localStorage.removeItem('scorecardUserData');
+      } catch (error) {
+        console.error('Error parsing stored user data:', error);
+      }
+    }
+  }, []);
+
   const questions: Question[] = [
     { id: 'q1', label: 'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
     { id: 'q2', label: 'Are your uniforms made using conventional cotton?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },

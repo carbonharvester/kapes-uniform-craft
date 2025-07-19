@@ -1,8 +1,6 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { CheckCircle, FileText } from "lucide-react";
+import { CheckCircle } from "lucide-react";
+import { ScorecardAssessmentForm } from "./ScorecardAssessmentForm";
 
 export const FreeAuditTool = () => {
   return (
@@ -51,36 +49,7 @@ export const FreeAuditTool = () => {
               </div>
             </div>
             
-            <Card className="shadow-glass">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <FileText className="h-5 w-5" />
-                  Start Your Free Audit
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">School Name</label>
-                    <Input placeholder="Your school name" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Contact Email</label>
-                    <Input type="email" placeholder="your.email@school.edu" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-2">Number of Students</label>
-                    <Input type="number" placeholder="e.g., 500" />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Get My Free Audit Report
-                  </Button>
-                  <p className="text-xs text-muted-foreground text-center">
-                    No commitment required • Report delivered within 2 business days
-                  </p>
-                </form>
-              </CardContent>
-            </Card>
+            <ScorecardAssessmentForm />
           </div>
         </div>
       </div>
