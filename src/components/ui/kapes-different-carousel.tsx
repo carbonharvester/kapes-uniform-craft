@@ -111,7 +111,7 @@ const differences: DifferenceCard[] = [
     title: "Carbon Offsetting",
     subtitle: "Neutralizing our environmental impact.",
     description: "Climate-positive manufacturing",
-    image: "https://images.unsplash.com/photo-1569163139394-de44cb745190?w=400&h=600&fit=crop",
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Carbon Offsetting & Climate Action",
