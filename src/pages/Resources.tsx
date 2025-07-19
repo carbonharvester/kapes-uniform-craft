@@ -339,14 +339,14 @@ const Resources = () => {
                   </Button>
 
                   {showResult && (
-                    <div id="quiz-result" className="mt-8 p-6 bg-muted/50 rounded-2xl border">
+                    <div id="quiz-result" className="mt-8 p-6 bg-muted/50 rounded-2xl border text-center">
                       <h4 className="text-xl md:text-2xl font-medium mb-4 text-primary">
                         Your Perfect Tier: {recommendedTier}
                       </h4>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                      <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl mx-auto">
                         {recommendationDesc}
                       </p>
-                      <div className="text-center space-y-4">
+                      <div className="space-y-4">
                         <Button variant="outline" className="rounded-xl hover:scale-105 transition-smooth">
                           Take Our Sustainability Scorecard
                         </Button>
