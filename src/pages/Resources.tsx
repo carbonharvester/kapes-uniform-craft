@@ -119,7 +119,7 @@ const Resources = () => {
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                       <BookOpen className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="text-xl font-medium">Access Kapes LeadersAcademy</CardTitle>
+                    <CardTitle className="text-xl font-medium">Access Kapes Leaders Academy</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
