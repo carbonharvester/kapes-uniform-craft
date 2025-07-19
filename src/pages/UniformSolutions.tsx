@@ -1,20 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle } from "lucide-react";
-
 export const UniformSolutions = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg')",
-            backgroundPosition: "20% center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg')",
+        backgroundPosition: "20% center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
@@ -26,9 +21,7 @@ export const UniformSolutions = () => {
               <Sparkles className="w-4 h-4 mr-2" />
               Sustainable Fashion Revolution
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
-              Uniform Solutions
-            </h1>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Sustainable. Ethical. Durable.</h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               At Kapes, we create school uniforms that reflect your school's values and commitment to sustainability—without sacrificing quality or comfort.
             </p>
@@ -36,7 +29,9 @@ export const UniformSolutions = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* Enhanced Materials Section */}
@@ -70,7 +65,9 @@ export const UniformSolutions = () => {
               </div>
             </div>
 
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="group hover-lift transition-smooth animate-fade-in" style={{
+            animationDelay: '0.1s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full text-center">
                 <div className="flex justify-center mb-6">
                   <div className="bg-accent/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
@@ -90,7 +87,9 @@ export const UniformSolutions = () => {
               </div>
             </div>
 
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="group hover-lift transition-smooth animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full text-center">
                 <div className="flex justify-center mb-6">
                   <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
@@ -153,7 +152,9 @@ export const UniformSolutions = () => {
               </div>
             </div>
 
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="group hover-lift transition-smooth animate-fade-in" style={{
+            animationDelay: '0.1s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full">
                 <div className="flex justify-center mb-6">
                   <div className="bg-accent/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
@@ -181,7 +182,9 @@ export const UniformSolutions = () => {
               </div>
             </div>
 
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="group hover-lift transition-smooth animate-fade-in" style={{
+            animationDelay: '0.2s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full">
                 <div className="flex justify-center mb-6">
                   <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
@@ -258,6 +261,5 @@ export const UniformSolutions = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
