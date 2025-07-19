@@ -82,7 +82,6 @@ const CircularEconomyTakeback = () => {
         <div className="relative z-10 container mx-auto px-4 text-left">
           <div className="max-w-2xl space-y-8">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
-              <Recycle className="w-4 h-4 mr-2" />
               Circular Economy & Takeback
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Uniforms shouldn't end up in landfill.</h1>
