@@ -344,10 +344,10 @@ const SustainabilityScorecard: React.FC = () => {
         </div>
       </section>
 
-      {/* Assessment Preview */}
+      {/* Assessment Preview & What You'll Learn - Two Column Layout */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
                 Simple. Quick. Insightful.
@@ -357,103 +357,99 @@ const SustainabilityScorecard: React.FC = () => {
               </p>
             </div>
 
-            <Card className="max-w-2xl mx-auto">
-              <CardHeader>
-                <h3 className="text-2xl font-bold text-center">Get Started</h3>
-                <p className="text-muted-foreground text-center">
-                  Enter your details to begin your sustainability assessment
-                </p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Input
-                  type="text"
-                  placeholder="Your Name"
-                  value={userData.name}
-                  onChange={(e) => setUserData(prev => ({ ...prev, name: e.target.value }))}
-                />
-                <Input
-                  type="text"
-                  placeholder="School Name"
-                  value={userData.school}
-                  onChange={(e) => setUserData(prev => ({ ...prev, school: e.target.value }))}
-                />
-                <Input
-                  type="number"
-                  placeholder="Number of Students"
-                  value={userData.students}
-                  onChange={(e) => setUserData(prev => ({ ...prev, students: e.target.value }))}
-                />
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  value={userData.email}
-                  onChange={(e) => setUserData(prev => ({ ...prev, email: e.target.value }))}
-                />
-                <Button onClick={handleStartAssessment} className="w-full">
-                  <BarChart3 className="mr-2 h-4 w-4" />
-                  Start Scorecard Assessment
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* What You'll Learn - Left Column */}
+              <div>
+                <h3 className="text-3xl md:text-4xl font-light tracking-tight mb-8">
+                  What You'll Learn
+                </h3>
 
-      {/* Features Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight text-center mb-16">
-              What You'll Learn
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Material Sustainability</h4>
-                    <p className="text-muted-foreground">Evaluate fabrics, packaging, and material sourcing impact</p>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Material Sustainability</h4>
+                      <p className="text-muted-foreground">Evaluate fabrics, packaging, and material sourcing impact</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Supply Chain Ethics</h4>
-                    <p className="text-muted-foreground">Assess factory conditions, fair wages, and certifications</p>
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Supply Chain Ethics</h4>
+                      <p className="text-muted-foreground">Assess factory conditions, fair wages, and certifications</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">End-of-Life Management</h4>
-                    <p className="text-muted-foreground">Review takeback programs and circular economy practices</p>
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">End-of-Life Management</h4>
+                      <p className="text-muted-foreground">Review takeback programs and circular economy practices</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Distribution Efficiency</h4>
+                      <p className="text-muted-foreground">Analyze logistics, packaging, and delivery methods</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Innovation & Technology</h4>
+                      <p className="text-muted-foreground">Explore AI sizing, demand forecasting, and future trends</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-2">Readiness Assessment</h4>
+                      <p className="text-muted-foreground">Determine your school's readiness for sustainable transitions</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Distribution Efficiency</h4>
-                    <p className="text-muted-foreground">Analyze logistics, packaging, and delivery methods</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Innovation & Technology</h4>
-                    <p className="text-muted-foreground">Explore AI sizing, demand forecasting, and future trends</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold mb-2">Readiness Assessment</h4>
-                    <p className="text-muted-foreground">Determine your school's readiness for sustainable transitions</p>
-                  </div>
-                </div>
+              {/* Get Started - Right Column */}
+              <div>
+                <Card className="max-w-lg mx-auto lg:mx-0">
+                  <CardHeader>
+                    <h3 className="text-2xl font-bold text-center">Get Started</h3>
+                    <p className="text-muted-foreground text-center">
+                      Enter your details to begin your sustainability assessment
+                    </p>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <Input
+                      type="text"
+                      placeholder="Your Name"
+                      value={userData.name}
+                      onChange={(e) => setUserData(prev => ({ ...prev, name: e.target.value }))}
+                    />
+                    <Input
+                      type="text"
+                      placeholder="School Name"
+                      value={userData.school}
+                      onChange={(e) => setUserData(prev => ({ ...prev, school: e.target.value }))}
+                    />
+                    <Input
+                      type="number"
+                      placeholder="Number of Students"
+                      value={userData.students}
+                      onChange={(e) => setUserData(prev => ({ ...prev, students: e.target.value }))}
+                    />
+                    <Input
+                      type="email"
+                      placeholder="Your Email"
+                      value={userData.email}
+                      onChange={(e) => setUserData(prev => ({ ...prev, email: e.target.value }))}
+                    />
+                    <Button onClick={handleStartAssessment} className="w-full">
+                      <BarChart3 className="mr-2 h-4 w-4" />
+                      Start Scorecard Assessment
+                    </Button>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
