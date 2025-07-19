@@ -81,10 +81,7 @@ const ImplementationTimeline = () => {
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">Your journey from consultation to launch — typically 3 to 5 months from start to finish</p>
-            <div className="flex items-center gap-4 text-lg text-white/80">
-              <Clock className="h-5 w-5" />
-              <span>Total timeline: 3-5 months</span>
-            </div>
+            
           </div>
         </div>
         
