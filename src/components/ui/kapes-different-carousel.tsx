@@ -194,6 +194,26 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "pop-up",
+    title: "Pop-Up Experiences",
+    subtitle: "Bringing uniforms directly to your community.",
+    description: "Mobile uniform experiences and events",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=600&fit=crop",
+    icon: <Truck className="w-6 h-6" />,
+    details: {
+      title: "Pop-Up Experiences",
+      content: "Our mobile uniform experiences bring the complete Kapes service directly to your school community. Whether it's a weekend fitting event in the school hall, a pop-up shop at the school fair, or a dedicated uniform day in your local community center, we create memorable experiences that make uniform shopping convenient and engaging. These events often feature interactive sustainability workshops, meet-the-maker sessions, and hands-on demonstrations of our circular economy in action. Students and families can see, feel, and try our uniforms while learning about the positive impact their choices make around the world. It's more than just shopping — it's an opportunity to bring your school community together around shared values of sustainability, quality, and global citizenship.",
+      features: [
+        "Mobile fitting and sizing services",
+        "Community-based pop-up events",
+        "Interactive sustainability workshops",
+        "Meet-the-maker experiences",
+        "Family-friendly educational activities",
+        "Flexible scheduling around school events"
+      ]
+    }
+  },
+  {
     id: "shops",
     title: "Uniform Hubs",
     subtitle: "Convenient access to quality uniforms.",
