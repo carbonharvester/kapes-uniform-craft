@@ -142,7 +142,7 @@ const ImplementationTimeline = () => {
             
             <Card className="border-0 shadow-glass hover-lift transition-smooth">
               <CardHeader className="p-8">
-                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Manufacturing Complete</CardTitle>
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Manufacturing</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground">End of Phase 3</CardDescription>
               </CardHeader>
               <CardContent className="px-8 pb-8">
