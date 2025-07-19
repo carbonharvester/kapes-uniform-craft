@@ -9,10 +9,9 @@ import jsPDF from 'jspdf';
 interface Question {
   id: string;
   label: string;
-  description: string;
   options: { value: string; label: string; score: number }[];
-  section: string;
-  weight?: number;
+  section?: string;
+  description?: string;
 }
 
 interface UserData {
@@ -22,6 +21,11 @@ interface UserData {
   email: string;
 }
 
+interface UserAnswer {
+  question: string;
+  answer: string;
+}
+
 const SustainabilityScorecard: React.FC = () => {
   const [showAssessment, setShowAssessment] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -29,59 +33,45 @@ const SustainabilityScorecard: React.FC = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
+  const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
+  const [entryError, setEntryError] = useState(false);
 
   const questions: Question[] = [
-    // Wake-Up Call Section
-    { id: 'q1', section: 'The Wake-Up Call: Hidden Costs of Traditional Uniforms', label: 'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?', description: 'This can increase pollution as they don\'t break down.', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q2', section: 'The Wake-Up Call: Hidden Costs of Traditional Uniforms', label: 'Are your uniforms made using conventional cotton?', description: 'This type uses pesticides and high water.', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q3', section: 'The Wake-Up Call: Hidden Costs of Traditional Uniforms', label: 'Have you conducted an LCA to calculate the environmental impact of your uniforms? This would include the use of water and energy, and the CO2 emitted.', description: 'This measures the full footprint.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Win-Win-Win Model Section
-    { id: 'q4', section: 'The Win-Win-Win Model: Environment, Education, Economics', label: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', description: 'This balances emissions with positive actions.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q5', section: 'The Win-Win-Win Model: Environment, Education, Economics', label: 'Do you offset the impact of your uniforms by purchasing carbon credits in deforestation or reforestation projects?', description: 'This supports tree planting to offset emissions.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Continue with remaining questions...
-    { id: 'q6', section: 'Score Your Program: Sustainability Audit Checklist', label: 'Have you evaluated the environmental impact of the materials that you use and taken steps to minimise it?', description: 'This helps identify and reduce harm.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Fabrics Section
-    { id: 'q7', section: 'Fabrics That Don\'t Suck: Sustainable Material Choices', label: 'Do you use organic cotton as a primary material?', description: 'Organic cotton reduces pesticide use.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q8', section: 'Fabrics That Don\'t Suck: Sustainable Material Choices', label: 'Do you use recycled polyester as a primary material?', description: 'This reuses waste to lower impact.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q9', section: 'Fabrics That Don\'t Suck: Sustainable Material Choices', label: 'Do you use hemp, bamboo, or lyocell as primary materials?', description: 'These are low-impact natural fibers.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q10', section: 'Fabrics That Don\'t Suck: Sustainable Material Choices', label: 'Are your uniforms packaged in biodegradable or recyclable materials?', description: 'This avoids long-lasting plastic waste.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Supply Chain Section  
-    { id: 'q11', section: 'Building a Clean Supply Chain: Sourcing, Ethics, Certifications', label: 'Do you require your suppliers to disclose their environmental impact?', description: 'This promotes accountability in sourcing.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q12', section: 'Building a Clean Supply Chain: Sourcing, Ethics, Certifications', label: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', description: 'Audits verify fair practices.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q13', section: 'Building a Clean Supply Chain: Sourcing, Ethics, Certifications', label: 'Do you have a policy in place to ensure fair wages for all workers in the supply chain?', description: 'This supports ethical labor.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q14', section: 'Building a Clean Supply Chain: Sourcing, Ethics, Certifications', label: 'Do you have a policy in place to ensure safe working conditions for all workers in the supply chain?', description: 'This protects workers from harm.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q15', section: 'Building a Clean Supply Chain: Sourcing, Ethics, Certifications', label: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', description: 'Certifications confirm standards.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Takeback Section
-    { id: 'q16', section: 'Takeback, Reuse, and CSR That Works', label: 'Does your school collect and resell or giveaway used uniforms?', description: 'This extends uniform life.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Social Causes Section
-    { id: 'q17', section: 'Uniforms as Access Tools: Supporting Social Causes', label: 'Does your uniform program support any social causes?', description: 'This could include donations or free uniforms for needy students.', options: [{ value: 'yes', label: 'Yes', score: 1 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Distribution Section
-    { id: 'q18', section: 'Rollout Without Chaos: Budgeting and Distribution', label: 'Does your school have a uniform shop?', description: 'This can reduce transport emissions.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q19', section: 'Rollout Without Chaos: Budgeting and Distribution', label: 'Does your supplier have a shop?', description: 'Standalone shops may increase transport emissions.', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 2 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q20', section: 'Rollout Without Chaos: Budgeting and Distribution', label: 'Do you have online ordering for uniforms?', description: 'This can reduce store visits but increase shipping.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q21', section: 'Rollout Without Chaos: Budgeting and Distribution', label: 'Can parents pick up at school?', description: 'This minimizes shipping emissions.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Safety Section
-    { id: 'q22', section: 'Pitfalls + Power Moves: Avoiding Harmful Practices', label: 'Have your uniforms been tested for harmful or banned chemicals?', description: 'This protects students and the environment.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Transparency Section
-    { id: 'q23', section: 'Tracking Impact: Transparency and Metrics', label: 'Do your students, parents, and staff have full transparency of your supply chain?', description: 'This ensures accountability for sustainability.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Technology Section
-    { id: 'q24', section: 'The Future of Uniforms: Trends in Technology', label: 'Do you or your supplier use AI for uniform sizing to reduce returns?', description: 'This reduces waste from returns.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-    { id: 'q25', section: 'The Future of Uniforms: Trends in Technology', label: 'Do you or your supplier use AI to forecast uniform stock needs?', description: 'This prevents overproduction and waste.', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
-
-    // Readiness Questions
-    { id: 'readiness1', section: 'Readiness to Switch', label: 'Are you planning to review your uniform policy in the next 12 months?', description: '', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 0 }, { value: 'maybe', label: 'Maybe', score: 0 }] },
-    { id: 'readiness2', section: 'Readiness to Switch', label: 'Is there internal support (e.g., from leadership, parents) for switching to sustainable uniforms?', description: '', options: [{ value: 'strong', label: 'Strong support', score: 0 }, { value: 'moderate', label: 'Moderate support', score: 0 }, { value: 'low', label: 'Low/No support', score: 0 }] },
-    { id: 'readiness3', section: 'Readiness to Switch', label: 'What\'s your timeline for adopting sustainable uniforms?', description: '', options: [{ value: 'immediate', label: 'Within 6 months', score: 0 }, { value: 'short', label: '6-12 months', score: 0 }, { value: 'long', label: 'Over 12 months', score: 0 }, { value: 'none', label: 'No plans', score: 0 }] }
+    { id: 'q1', label: 'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q2', label: 'Are your uniforms made using conventional cotton?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 4 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q3', label: 'Have you conducted an LCA to calculate the environmental impact of your uniforms? This would include the use of water and energy, and the CO2 emitted.', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q4', label: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q5', label: 'Do you buy carbon credits to offset the impact of your uniforms?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q6', label: 'Have you evaluated the environmental impact of the materials that you use and taken steps to minimise it?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q7', label: 'Do you use organic cotton as a primary material?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q8', label: 'Do you use recycled polyester as a primary material?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q9', label: 'Do you use hemp, bamboo, or lyocell as primary materials?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q10', label: 'Are your uniforms packaged in biodegradable or recyclable materials?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q11', label: 'Do you require your suppliers to disclose their environmental impact?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q12', label: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q13', label: 'Do you have a policy in place to ensure fair wages for all workers in the supply chain?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q14', label: 'Do you have a policy in place to ensure safe working conditions for all workers in the supply chain?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q15', label: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q16', label: 'Does your school collect and resell or giveaway used uniforms?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q17', label: 'Does your uniform program support any social causes?', options: [{ value: 'yes', label: 'Yes', score: 1 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q18', label: 'Does your school have a uniform shop?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q19', label: 'Does your supplier have a shop?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 2 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q20', label: 'Do you have online ordering for uniforms?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q21', label: 'Can parents pick up at school?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q22', label: 'Have your uniforms been tested for harmful or banned chemicals?', options: [{ value: 'yes', label: 'Yes', score: 4 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q23', label: 'Do your students, parents, and staff have full transparency of your supply chain?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q24', label: 'Do you or your supplier use AI for uniform sizing to reduce returns?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    { id: 'q25', label: 'Do you or your supplier use AI to forecast uniform stock needs?', options: [{ value: 'yes', label: 'Yes', score: 2 }, { value: 'no', label: 'No', score: 0 }, { value: 'dont-know', label: 'Don\'t Know', score: 0 }] },
+    
+    // Non-scored questions
+    { id: 'nonscored1', label: 'Does your school value sustainability?', options: [{ value: 'very-high', label: 'Very High', score: 0 }, { value: 'high', label: 'High', score: 0 }, { value: 'medium', label: 'Medium', score: 0 }, { value: 'low', label: 'Low', score: 0 }] },
+    { id: 'nonscored2', label: 'Would you like to improve the sustainability of your uniforms?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 0 }, { value: 'maybe', label: 'Maybe', score: 0 }] },
+    { id: 'nonscored3', label: 'Would you consider switching to sustainable uniforms for next academic year?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 0 }, { value: 'maybe', label: 'Maybe', score: 0 }] },
+    
+    // Readiness questions
+    { id: 'readiness1', label: 'Are you planning to review your uniform policy in the next 12 months?', options: [{ value: 'yes', label: 'Yes', score: 0 }, { value: 'no', label: 'No', score: 0 }, { value: 'maybe', label: 'Maybe', score: 0 }] },
+    { id: 'readiness2', label: 'Is there internal support (e.g., from leadership, parents) for switching to sustainable uniforms?', options: [{ value: 'strong', label: 'Strong support', score: 0 }, { value: 'moderate', label: 'Moderate support', score: 0 }, { value: 'low', label: 'Low/No support', score: 0 }] },
+    { id: 'readiness3', label: 'What\'s your timeline for adopting sustainable uniforms?', options: [{ value: 'immediate', label: 'Within 6 months', score: 0 }, { value: 'short', label: '6-12 months', score: 0 }, { value: 'long', label: 'Over 12 months', score: 0 }, { value: 'none', label: 'No plans', score: 0 }] }
   ];
 
   const currentQuestion = questions[currentSlide];
@@ -100,10 +90,28 @@ const SustainabilityScorecard: React.FC = () => {
   };
 
   const handleNext = () => {
-    if (currentSlide < totalQuestions - 1) {
-      setCurrentSlide(prev => prev + 1);
-    } else {
+    const currentQ = questions[currentSlide];
+    const selected = answers[currentQ.id];
+    
+    // Require answers for sustainability questions (Q1-Q25), allow optional for others
+    if (!selected && currentSlide < 25) {
+      alert('Please answer the question to proceed.');
+      return;
+    }
+
+    if (currentSlide === totalQuestions - 1) {
+      // Validate that all required readiness questions are answered
+      const readinessQuestions = ['readiness1', 'readiness2', 'readiness3'];
+      const missingReadiness = readinessQuestions.some(id => !answers[id]);
+      
+      if (missingReadiness) {
+        alert('Please answer all readiness questions.');
+        return;
+      }
+      
       calculateResults();
+    } else {
+      setCurrentSlide(prev => prev + 1);
     }
   };
 
@@ -115,22 +123,101 @@ const SustainabilityScorecard: React.FC = () => {
 
   const calculateResults = () => {
     let totalScore = 0;
-    const scoredQuestions = questions.filter(q => !q.id.includes('readiness'));
+    const answeredQuestions: UserAnswer[] = [];
     
-    scoredQuestions.forEach(question => {
-      const answer = answers[question.id];
-      if (answer) {
+    // Calculate score from Q1-Q25 only (sustainability questions)
+    for (let i = 1; i <= 25; i++) {
+      const questionId = `q${i}`;
+      const question = questions.find(q => q.id === questionId);
+      const answer = answers[questionId];
+      
+      if (question && answer) {
         const option = question.options.find(opt => opt.value === answer);
         if (option) {
           totalScore += option.score;
+          answeredQuestions.push({
+            question: question.label,
+            answer: option.label
+          });
+        }
+      }
+    }
+
+    // Add non-scored questions to answers array
+    ['nonscored1', 'nonscored2', 'nonscored3', 'readiness1', 'readiness2', 'readiness3'].forEach(id => {
+      const question = questions.find(q => q.id === id);
+      const answer = answers[id];
+      if (question && answer) {
+        const option = question.options.find(opt => opt.value === answer);
+        if (option) {
+          answeredQuestions.push({
+            question: question.label,
+            answer: option.label
+          });
         }
       }
     });
 
-    const maxScore = 62; // Total possible score
+    const maxScore = 56; // Total possible score from Q1-Q25
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
+    setUserAnswers(answeredQuestions);
     setShowResults(true);
+
+    // Send data to Google Sheet
+    const formData = {
+      name: userData.name,
+      school: userData.school,
+      students: userData.students,
+      email: userData.email,
+      score: percentage,
+      answers: answeredQuestions
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbxfC609-OnZB_UcV_7Njh8q-UcvJAAtVdiQtpTKtYqDG0sGrIGQVeQldJy7ty6LZtDV/exec', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      mode: 'no-cors'
+    }).then(() => {
+      console.log('Data sent to Google Sheet');
+    }).catch(error => {
+      console.error('Error sending data:', error);
+    });
+  };
+
+  const getRecommendation = (questionNum: number, answer: string): string => {
+    if (answer.toLowerCase() === 'no' || answer.toLowerCase() === "don't know") {
+      switch (questionNum) {
+        case 1: return 'Switch to non-synthetic materials to reduce pollution.';
+        case 2: return 'Use organic cotton to lower water and pesticide use.';
+        case 3: return 'Conduct an LCA to uncover hidden impacts.';
+        case 4: return 'Implement verified carbon offset projects.';
+        case 5: return 'Purchase carbon credits for reforestation.';
+        case 6: return 'Evaluate and minimize material impacts.';
+        case 7: return 'Switch to organic cotton for better sustainability.';
+        case 8: return 'Use recycled polyester to reuse waste.';
+        case 9: return 'Use hemp, bamboo, or lyocell for sustainability.';
+        case 10: return 'Use biodegradable or recyclable packaging.';
+        case 11: return 'Require suppliers to disclose environmental impact.';
+        case 12: return 'Audit factories with bodies like Sedex.';
+        case 13: return 'Establish fair wage policies.';
+        case 14: return 'Implement safe working condition policies.';
+        case 15: return 'Require certifications for fair wages and safety.';
+        case 16: return 'Collect and resell or giveaway used uniforms.';
+        case 17: return 'Support social causes with your program.';
+        case 18: return 'Set up a school shop to lower emissions.';
+        case 19: return 'Minimize standalone shops for better sustainability.';
+        case 20: return 'Offer online ordering to reduce visits.';
+        case 21: return 'Enable pickup at school to cut shipping.';
+        case 22: return 'Test for harmful chemicals to protect health.';
+        case 23: return 'Provide full transparency of supply chain.';
+        case 24: return 'Use AI for sizing to reduce returns.';
+        case 25: return 'Use AI for stock forecasting to avoid waste.';
+        default: return 'Book a consultation to discuss improvements.';
+      }
+    } else {
+      return 'Great job! Continue building on this strength.';
+    }
   };
 
   const generateReport = () => {
@@ -143,7 +230,64 @@ const SustainabilityScorecard: React.FC = () => {
     doc.text(`Number of Students: ${userData.students}`, 10, 40);
     doc.text(`Email: ${userData.email}`, 10, 50);
     doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 60);
-    doc.text(`Sustainability Score: ${score}%`, 10, 70);
+    doc.setFontSize(14);
+    doc.text('Your Sustainability Score', 10, 70);
+    doc.setFontSize(12);
+    doc.text(`Score: ${score}%`, 10, 80);
+    doc.setFontSize(14);
+    doc.text('Your Answers and Recommendations', 10, 90);
+    doc.setFontSize(12);
+    
+    let y = 100;
+    userAnswers.forEach((ans, index) => {
+      if (y > 270) {
+        doc.addPage();
+        y = 10;
+      }
+      
+      // Split long text to fit within page width
+      const questionLines = doc.splitTextToSize(`${index + 1}. Question: ${ans.question}`, 180);
+      const answerLines = doc.splitTextToSize(`Answer: ${ans.answer}`, 180);
+      
+      questionLines.forEach((line: string) => {
+        doc.text(line, 10, y);
+        y += 5;
+      });
+      
+      answerLines.forEach((line: string) => {
+        doc.text(line, 10, y);
+        y += 5;
+      });
+      
+      let recommendation = 'Book a consultation to discuss your next steps for adopting sustainable uniforms.';
+      if (index < 25) {
+        recommendation = getRecommendation(index + 1, ans.answer);
+      }
+      
+      const recommendationLines = doc.splitTextToSize(`Recommendation: ${recommendation}`, 180);
+      recommendationLines.forEach((line: string) => {
+        doc.text(line, 10, y);
+        y += 5;
+      });
+      
+      y += 5; // Add space between questions
+    });
+
+    if (y > 250) {
+      doc.addPage();
+      y = 10;
+    }
+    
+    doc.text('Next Steps', 10, y);
+    y += 10;
+    const nextStepsText = 'Book a free consultation to discuss how Kapes Uniforms can help you improve your uniform program.';
+    const nextStepsLines = doc.splitTextToSize(nextStepsText, 180);
+    nextStepsLines.forEach((line: string) => {
+      doc.text(line, 10, y);
+      y += 5;
+    });
+    doc.text('Visit: /contact', 10, y + 5);
+
     doc.save('Sustainability_Scorecard_Report.pdf');
   };
 
@@ -196,13 +340,18 @@ const SustainabilityScorecard: React.FC = () => {
 
             <Card>
               <CardHeader>
-                <h3 className="text-lg font-semibold text-primary mb-2">
-                  {currentQuestion.section}
-                </h3>
-                <h2 className="text-xl font-bold">{currentQuestion.label}</h2>
-                {currentQuestion.description && (
-                  <p className="text-muted-foreground">{currentQuestion.description}</p>
+                {/* Show section headers */}
+                {currentSlide === 25 && (
+                  <h3 className="text-lg font-semibold text-primary mb-2">
+                    Additional Questions (Not Scored)
+                  </h3>
                 )}
+                {currentSlide === 28 && (
+                  <h3 className="text-lg font-semibold text-primary mb-2">
+                    Readiness to Switch
+                  </h3>
+                )}
+                <h2 className="text-xl font-bold">{currentQuestion.label}</h2>
               </CardHeader>
               <CardContent className="space-y-4">
                 {currentQuestion.options.map((option) => (
@@ -227,10 +376,7 @@ const SustainabilityScorecard: React.FC = () => {
                   >
                     Previous
                   </Button>
-                  <Button 
-                    onClick={handleNext}
-                    disabled={!answers[currentQuestion.id]}
-                  >
+                  <Button onClick={handleNext}>
                     {currentSlide === totalQuestions - 1 ? 'Submit Scorecard' : 'Next'}
                   </Button>
                 </div>
