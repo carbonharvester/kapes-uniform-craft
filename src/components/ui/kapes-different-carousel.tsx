@@ -24,6 +24,7 @@ interface DifferenceCard {
   id: string;
   title: string;
   subtitle: string;
+  tagline: string;
   description: string;
   image: string;
   icon: React.ReactNode;
@@ -39,6 +40,7 @@ const differences: DifferenceCard[] = [
     id: "materials",
     title: "Earth-First Fabrics",
     subtitle: "Every thread matters for our planet's future.",
+    tagline: "Kind to skin. Kinder to Earth.",
     description: "100% organic and recycled fabrics",
     image: sustainableMaterialsImage,
     icon: <Leaf className="w-6 h-6" />,
@@ -52,6 +54,7 @@ const differences: DifferenceCard[] = [
     id: "manufacturing",
     title: "People-First Production",
     subtitle: "Fair wages and safe working conditions.",
+    tagline: "Made with pride. Made with purpose.",
     description: "Responsible production practices",
     image: ethicalManufacturingImage,
     icon: <Factory className="w-6 h-6" />,
@@ -65,6 +68,7 @@ const differences: DifferenceCard[] = [
     id: "uniforms-africa",
     title: "One For All Promise",
     subtitle: "Providing dignity through education access.",
+    tagline: "Buy one. Give one. Change lives.",
     description: "Breaking barriers to learning",
     image: uniformProgramImage,
     icon: <Heart className="w-6 h-6" />,
@@ -78,6 +82,7 @@ const differences: DifferenceCard[] = [
     id: "takeback",
     title: "Circular Life Guarantee",
     subtitle: "Complete circular lifecycle management.",
+    tagline: "Wear. Return. Repeat.",
     description: "End-to-end uniform recycling",
     image: takebackSchemeImage,
     icon: <Recycle className="w-6 h-6" />,
@@ -91,6 +96,7 @@ const differences: DifferenceCard[] = [
     id: "africa",
     title: "Uniforms that Feed",
     subtitle: "Creating global educational equity.",
+    tagline: "Return uniforms. Feed children.",
     description: "Supporting education worldwide",
     image: freeUniformsMealsImage,
     icon: <Heart className="w-6 h-6" />,
@@ -110,6 +116,7 @@ const differences: DifferenceCard[] = [
     id: "dashboard",
     title: "KapesImpact Dashboard",
     subtitle: "Track your environmental impact live.",
+    tagline: "See impact. Share impact.",
     description: "Complete transparency on impact",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
     icon: <BarChart3 className="w-6 h-6" />,
@@ -123,6 +130,7 @@ const differences: DifferenceCard[] = [
     id: "carbon-offsetting",
     title: "Planet Positive Pledge",
     subtitle: "Neutralizing our environmental impact.",
+    tagline: "Beyond neutral. Actively healing.",
     description: "Climate-positive manufacturing",
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
     icon: <Leaf className="w-6 h-6" />,
@@ -143,6 +151,7 @@ const differences: DifferenceCard[] = [
     id: "educational-programs",
     title: "Kapes Eco Academy",
     subtitle: "Empowering students through sustainability education.",
+    tagline: "Learn it. Live it. Lead it.",
     description: "Interactive learning initiatives",
     image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
     icon: <GraduationCap className="w-6 h-6" />,
@@ -165,6 +174,7 @@ const differences: DifferenceCard[] = [
     id: "visits",
     title: "Behind-the-Scenes Tours",
     subtitle: "See sustainability in action firsthand.",
+    tagline: "From field to school. Transparency tells.",
     description: "Transparent supply chain access",
     image: factoryVisitsImage,
     icon: <MapPin className="w-6 h-6" />,
@@ -184,6 +194,7 @@ const differences: DifferenceCard[] = [
     id: "governance",
     title: "Kapes Young Leaders Council",
     subtitle: "Empowering students to lead change.",
+    tagline: "Young voices. Big changes.",
     description: "Student-led sustainability initiatives",
     image: studentBoardImage,
     icon: <Users className="w-6 h-6" />,
@@ -197,6 +208,7 @@ const differences: DifferenceCard[] = [
     id: "pop-up",
     title: "Pop-Up Experiences",
     subtitle: "Bringing uniforms directly to your community.",
+    tagline: "We come to you. You come together.",
     description: "Mobile uniform experiences and events",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=600&fit=crop",
     icon: <Truck className="w-6 h-6" />,
@@ -217,6 +229,7 @@ const differences: DifferenceCard[] = [
     id: "shops",
     title: "Uniform Hubs",
     subtitle: "Convenient access to quality uniforms.",
+    tagline: "Try. Buy. Learn. Earn.",
     description: "Physical retail presence at schools",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=600&fit=crop",
     icon: <Store className="w-6 h-6" />,
@@ -236,6 +249,7 @@ const differences: DifferenceCard[] = [
     id: "lockers",
     title: "SmartCollect Lockers",
     subtitle: "Smart collection points for busy families.",
+    tagline: "Order online. Collect anytime.",
     description: "Automated pickup and delivery",
     image: eCommerceLockerImage,
     icon: <Package className="w-6 h-6" />,
@@ -278,9 +292,12 @@ export const KapesDifferentCarousel = () => {
                 <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
                   {/* Text content at top left */}
                   <div>
-                    <h3 className="text-xl font-semibold leading-tight text-white">
+                    <h3 className="text-xl font-semibold leading-tight text-white mb-2">
                       {difference.title}
                     </h3>
+                    <p className="text-sm text-white/90 font-light">
+                      {difference.tagline}
+                    </p>
                   </div>
 
                    {/* Plus Button at bottom right */}
