@@ -188,7 +188,7 @@ const differences: DifferenceCard[] = [
     image: studentBoardImage,
     icon: <Users className="w-6 h-6" />,
     details: {
-      title: "Student Board",
+      title: "Kapes Young Leaders Council",
       content: "We believe students should have a voice in shaping a more sustainable future — starting with their own school. Our student leadership program empowers young people to take an active role in sustainability, from reviewing impact data to leading real initiatives that make a difference. Through school-based committees, regular review meetings, and peer-led campaigns, students are given meaningful decision-making opportunities — not just token roles. They'll gain valuable leadership experience, develop practical skills, and inspire their peers to take action. It's not just about raising awareness — it's about raising leaders.",
       features: []
     }

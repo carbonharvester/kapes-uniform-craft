@@ -53,7 +53,7 @@ const StudentGovernance = () => {
             Real Leadership, Not Just Symbolism
           </h2>
           <p className="text-lg text-muted-foreground">
-            Every Impact Tier school is invited to nominate one student to join the Kapes Student Board — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
+            Every Impact Tier school is invited to nominate one student to join the Kapes Young Leaders Council — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ const StudentGovernance = () => {
                   <div className="bg-primary/10 rounded-xl p-3 group-hover:scale-110 transition-smooth">
                     <Globe className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-semibold">🎓 The Kapes Student Board</h3>
+                  <h3 className="text-2xl font-semibold">🎓 The Kapes Young Leaders Council</h3>
                 </div>
                 <p className="text-muted-foreground mb-6">
                   Each selected student becomes part of a global group representing Kapes partner schools
@@ -112,7 +112,7 @@ const StudentGovernance = () => {
                   <h3 className="text-2xl font-semibold">🏫 School-Level Engagement</h3>
                 </div>
                 <p className="text-muted-foreground mb-6">
-                  Beyond the Student Board, Impact schools can engage students in meaningful ways
+                  Beyond the Young Leaders Council, Impact schools can engage students in meaningful ways
                 </p>
                 <p className="mb-6 font-medium">Students can also:</p>
                 <ul className="space-y-3">
@@ -169,9 +169,9 @@ const StudentGovernance = () => {
       <section className="py-16 px-4 bg-gradient-to-r from-purple-50 to-blue-50">
         <div className="container mx-auto max-w-4xl text-center">
           <blockquote className="text-xl font-semibold text-gray-900 mb-4">
-            "Being on the Kapes Student Board made me realise I could actually change things — not just talk about them."
+            "Being on the Kapes Young Leaders Council made me realise I could actually change things — not just talk about them."
           </blockquote>
-          <cite className="text-muted-foreground">— Student Board Member, 2024</cite>
+          <cite className="text-muted-foreground">— Young Leaders Council Member, 2024</cite>
         </div>
       </section>
 
@@ -229,7 +229,7 @@ const StudentGovernance = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
-                Nominate a Student Board Member
+                Nominate a Young Leaders Council Member
               </Button>
               <Button variant="outline" size="lg" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-primary hover-scale transition-smooth">
                 See Our Student-Led Campaigns

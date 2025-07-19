@@ -43,7 +43,7 @@ const EducationalResources = () => {
       title: "Student Voice & Leadership Tools",
       description: "For Impact Tier schools, students can take the lead",
       topics: [
-        "Nominate a Student Board Member for youth governance",
+        "Nominate a Kapes Young Leaders Council Member for youth governance",
         "Lead takeback drives and sustainability campaigns",
         "Contribute to school-wide reporting via KapesImpact™",
         "Drive uniform redesign projects"

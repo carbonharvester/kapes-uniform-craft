@@ -241,7 +241,7 @@ const PartnershipTiers = () => {
                     <TableCell className="text-center text-sm blur-sm">Enhanced program</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell className="font-medium">Student Board Member</TableCell>
+                    <TableCell className="font-medium">Kapes Young Leaders Council Member</TableCell>
                     <TableCell className="text-center">
                       <X className="h-5 w-5 text-red-500 mx-auto" />
                     </TableCell>

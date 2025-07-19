@@ -88,10 +88,10 @@ const LegacyImpactTier = () => {
             <Card className="border-0 shadow-glass hover-lift transition-smooth">
               <CardHeader className="p-8">
                 <Crown className="h-10 w-10 text-primary mb-4" />
-                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Student Board Member</CardTitle>
+                <CardTitle className="text-xl font-semibold leading-none tracking-tight">Kapes Young Leaders Council Member</CardTitle>
               </CardHeader>
               <CardContent className="px-8 pb-8">
-                <p className="text-muted-foreground leading-relaxed">Your school nominates a student to join the Kapes Student Board — real governance, real impact.</p>
+                <p className="text-muted-foreground leading-relaxed">Your school nominates a student to join the Kapes Young Leaders Council — real governance, real impact.</p>
               </CardContent>
             </Card>
             
@@ -133,7 +133,7 @@ const LegacyImpactTier = () => {
                       )}
                       {item === "Student Governance Opportunity" && (
                         <p className="text-muted-foreground leading-relaxed">
-                          Your school nominates one student to join the Kapes Student Board — contributing to real decisions and campaigns.
+                          Your school nominates one student to join the Kapes Young Leaders Council — contributing to real decisions and campaigns.
                         </p>
                       )}
                       {item === "Custom PR & CSR Toolkit" && (
