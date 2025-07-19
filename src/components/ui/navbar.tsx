@@ -333,12 +333,12 @@ const Navbar = ({
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return (
-      <NavigationMenuItem key={item.title}>
+      <NavigationMenuItem key={item.title} className="relative">
         <NavigationMenuTrigger className="text-foreground font-medium hover:text-primary transition-colors duration-300 rounded-xl">
           {item.title}
         </NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass">
+        <NavigationMenuContent className="absolute left-0 top-full mt-2">
+          <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass bg-popover/95 backdrop-blur-md">
             {item.items.map((subItem) => (
               <li key={subItem.title}>
                 <NavigationMenuLink asChild>
