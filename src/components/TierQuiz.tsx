@@ -174,7 +174,7 @@ export const TierQuiz = ({ onComplete }: TierQuizProps) => {
               {recommendationDesc}
             </p>
             <div className="space-y-4">
-              <Button variant="outline" className="rounded-xl hover:scale-105 transition-smooth bg-[#030063] text-white border-[#030063] hover:bg-[#030063]/90">
+              <Button variant="outline" className="rounded-xl hover:scale-105 transition-smooth bg-[#030063] text-white border-[#030063] hover:bg-[#030063]/90 hover:text-white">
                 Take Our Sustainability Scorecard
               </Button>
               <p className="text-sm text-muted-foreground italic">
