@@ -75,6 +75,19 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "takeback",
+    title: "Fully Managed Takeback Scheme",
+    subtitle: "Complete circular lifecycle management.",
+    description: "End-to-end uniform recycling",
+    image: takebackSchemeImage,
+    icon: <Recycle className="w-6 h-6" />,
+    details: {
+      title: "Fully Managed Takeback Scheme",
+      content: "Our takeback program ensures that no uniform ever becomes waste — closing the loop and turning every garment into a force for good. At the end of its life, each Kapes uniform is collected, professionally cleaned and refurbished where possible, or responsibly recycled into new materials. Many items are donated to families in need, extending their use and impact even further. The entire process is fully managed by us — from free collections to lifecycle tracking — so your school doesn't need to lift a finger. It's a simple, powerful way to reduce environmental impact, support communities, and model circular thinking for your students and families.",
+      features: []
+    }
+  },
+  {
     id: "africa",
     title: "Feeding Program",
     subtitle: "Creating global educational equity.",
@@ -94,6 +107,26 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "carbon-offsetting",
+    title: "Carbon Offsetting",
+    subtitle: "Neutralizing our environmental impact.",
+    description: "Climate-positive manufacturing",
+    image: "https://images.unsplash.com/photo-1569163139394-de44cb745190?w=400&h=600&fit=crop",
+    icon: <Leaf className="w-6 h-6" />,
+    details: {
+      title: "Carbon Offsetting & Climate Action",
+      content: "We go beyond reducing emissions — we actively work to remove carbon from the atmosphere. Every Kapes uniform is manufactured with a commitment to climate neutrality, backed by verified carbon offset programs that support reforestation, renewable energy, and sustainable agriculture projects worldwide. Our comprehensive carbon accounting tracks emissions throughout the entire lifecycle — from raw material production to transportation and end-of-life processing. Through partnerships with Gold Standard certified projects, we ensure that every uniform sold contributes to measurable, additional climate impact. This means your school's uniform program doesn't just minimize harm — it actively helps heal the planet.",
+      features: [
+        "Verified carbon offset programs",
+        "Gold Standard certified projects",
+        "Full lifecycle carbon accounting",
+        "Reforestation support initiatives",
+        "Renewable energy investments",
+        "Climate-positive manufacturing"
+      ]
+    }
+  },
+  {
     id: "dashboard",
     title: "Real-Time Sustainability Dashboard",
     subtitle: "Track your environmental impact live.",
@@ -103,19 +136,6 @@ const differences: DifferenceCard[] = [
     details: {
       title: "Real-Time Sustainability Dashboard",
       content: "**With Kapes, your school can measure its environmental and social impact — not just talk about it.** Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
-      features: []
-    }
-  },
-  {
-    id: "takeback",
-    title: "Fully Managed Takeback Scheme",
-    subtitle: "Complete circular lifecycle management.",
-    description: "End-to-end uniform recycling",
-    image: takebackSchemeImage,
-    icon: <Recycle className="w-6 h-6" />,
-    details: {
-      title: "Fully Managed Takeback Scheme",
-      content: "Our takeback program ensures that no uniform ever becomes waste — closing the loop and turning every garment into a force for good. At the end of its life, each Kapes uniform is collected, professionally cleaned and refurbished where possible, or responsibly recycled into new materials. Many items are donated to families in need, extending their use and impact even further. The entire process is fully managed by us — from free collections to lifecycle tracking — so your school doesn't need to lift a finger. It's a simple, powerful way to reduce environmental impact, support communities, and model circular thinking for your students and families.",
       features: []
     }
   },
