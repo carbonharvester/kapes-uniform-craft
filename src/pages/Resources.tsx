@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
+import { ValueCalculator } from "@/components/ValueCalculator";
 import { BookOpen, Download, Calculator } from "lucide-react";
 const Resources = () => {
   const blogPosts = [{
@@ -85,6 +86,9 @@ const Resources = () => {
                 </Card>)}
             </div>
           </section>
+
+          {/* Value Calculator */}
+          <ValueCalculator />
 
           {/* Educational Tools */}
           <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
