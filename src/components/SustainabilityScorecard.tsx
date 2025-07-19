@@ -647,7 +647,7 @@ const SustainabilityScorecard = () => {
         <div className="max-w-2xl mx-auto">
           <div className="mb-6">
             <div className="text-center mb-4">
-              <h1 className="text-2xl font-bold text-primary mb-2">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground mb-8">
                 Sustainability Scorecard for School Uniforms
               </h1>
               <p className="text-sm text-muted-foreground">
