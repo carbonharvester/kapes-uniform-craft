@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator } from "lucide-react";
 
 import {
   Accordion,
@@ -193,6 +193,12 @@ const Navbar = ({
           description: "Tour our manufacturing facilities",
           icon: <Building className="size-5 shrink-0" />,
           url: "/factory-visits",
+        },
+        {
+          title: "Sustainability Scorecard",
+          description: "Assess your school's uniform sustainability",
+          icon: <Calculator className="size-5 shrink-0" />,
+          url: "/sustainability-scorecard",
         },
         {
           title: "Resources & Tools",
