@@ -63,7 +63,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "uniforms-africa",
-    title: "Uniform Program",
+    title: "One For All Initiative",
     subtitle: "Providing dignity through education access.",
     description: "Breaking barriers to learning",
     image: uniformProgramImage,
