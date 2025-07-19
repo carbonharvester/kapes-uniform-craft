@@ -140,6 +140,47 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "educational-programs",
+    title: "Educational Programs",
+    subtitle: "Empowering students through sustainability education.",
+    description: "Interactive learning initiatives",
+    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
+    icon: <GraduationCap className="w-6 h-6" />,
+    details: {
+      title: "Educational Programs",
+      content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
+      features: [
+        "Interactive sustainability workshops",
+        "Curriculum support materials",
+        "Supply chain education programs",
+        "Environmental impact demonstrations",
+        "Student leadership development",
+        "Guest speaker sessions",
+        "Hands-on circular economy projects",
+        "Real-world case study materials"
+      ]
+    }
+  },
+  {
+    id: "visits",
+    title: "Farm & Factory Visits",
+    subtitle: "See sustainability in action firsthand.",
+    description: "Transparent supply chain access",
+    image: factoryVisitsImage,
+    icon: <MapPin className="w-6 h-6" />,
+    details: {
+      title: "Farm & Factory Visits",
+      content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
+      features: [
+        "Guided farm and factory tours",
+        "Meet the people behind your uniforms",
+        "See sustainable practices in action",
+        "Educational opportunities for students",
+        "Complete supply chain transparency"
+      ]
+    }
+  },
+  {
     id: "governance",
     title: "Student Board",
     subtitle: "Empowering students to lead change.",
@@ -190,102 +231,6 @@ const differences: DifferenceCard[] = [
       ]
     }
   },
-  {
-    id: "educational-programs",
-    title: "Educational Programs",
-    subtitle: "Empowering students through sustainability education.",
-    description: "Interactive learning initiatives",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
-    icon: <GraduationCap className="w-6 h-6" />,
-    details: {
-      title: "Educational Programs",
-      content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
-      features: [
-        "Interactive sustainability workshops",
-        "Curriculum support materials",
-        "Supply chain education programs",
-        "Environmental impact demonstrations",
-        "Student leadership development",
-        "Guest speaker sessions",
-        "Hands-on circular economy projects",
-        "Real-world case study materials"
-      ]
-    }
-  },
-  {
-    id: "delivery",
-    title: "Next-Day Home Delivery",
-    subtitle: "Fast, reliable delivery to your door.",
-    description: "Premium logistics service",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752856244/0E7A6487_1_d6iaxq.jpg",
-    icon: <Truck className="w-6 h-6" />,
-    details: {
-      title: "Next-Day Home Delivery",
-      content: "Our premium delivery service is designed to meet the expectations of today's busy families. Uniforms arrive exactly when they're needed, with flexible delivery options that make life easier for parents. Every order is dispatched with guaranteed next-day delivery, complete with real-time tracking so parents know exactly where their items are at any given time. For added convenience, they can choose a delivery slot that fits their schedule or opt for safe-place delivery if they won't be home. It's one more way we help your school deliver a seamless, supportive uniform experience — from our warehouse to your families.",
-      features: []
-    }
-  },
-  {
-    id: "ai-customer-care",
-    title: "Customer Care Supported by AI",
-    subtitle: "24/7 intelligent support at your fingertips.",
-    description: "Smart assistance for every query",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=600&fit=crop",
-    icon: <MessageCircle className="w-6 h-6" />,
-    details: {
-      title: "Customer Care Supported by AI",
-      content: "Our advanced AI customer support system ensures your families never have to wait for help. Available 24/7, our intelligent chatbot can handle everything from sizing questions to order tracking, delivery scheduling, and product recommendations. It learns from every interaction to provide increasingly personalised support, understanding each family's preferences and history. For complex queries, seamless handover to human specialists ensures no question goes unanswered. The system also proactively reaches out with helpful information like size-up reminders, seasonal ordering suggestions, and maintenance tips — turning customer service into a valuable, ongoing relationship that makes uniform management effortless for busy parents.",
-      features: [
-        "24/7 AI-powered chatbot support",
-        "Instant order tracking and updates",
-        "Intelligent sizing recommendations",
-        "Proactive customer outreach",
-        "Seamless human specialist handover",
-        "Multilingual support capabilities",
-        "Voice and text interaction options",
-        "Personalised shopping assistance"
-      ]
-    }
-  },
-  {
-    id: "ai-forecasting",
-    title: "AI Powered Forecasting",
-    subtitle: "Smart predictions and intelligent planning.",
-    description: "Predictive inventory management",
-    image: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=600&fit=crop",
-    icon: <Brain className="w-6 h-6" />,
-    details: {
-      title: "AI Powered Forecasting & Inventory Management",
-      content: "Our advanced AI technology takes the guesswork out of uniform planning — helping schools stay prepared, reduce waste, and serve families more efficiently.\n\nBy analysing historical sales, student growth patterns, and seasonal trends, our system accurately predicts future uniform demand — ensuring optimal stock levels at all times. This means fewer shortages, fewer overstocks, and a significantly lower risk of waste.\n\nWith automated reorder suggestions and intelligent inventory management, your school benefits from a smoother, more responsive supply chain. Our AI doesn't just react — it anticipates — so parents get what they need, when they need it, without delay or frustration.\n\nIt's a smarter, more sustainable way to manage uniforms — powered by data, backed by experience.",
-      features: [
-        "Predictive sizing and demand forecasting",
-        "AI-powered inventory management",
-        "Automated reorder suggestions",
-        "Smart size recommendations based on growth patterns",
-        "Seasonal demand prediction",
-        "Stock optimization algorithms"
-      ]
-    }
-  },
-  {
-    id: "visits",
-    title: "Farm & Factory Visits",
-    subtitle: "See sustainability in action firsthand.",
-    description: "Transparent supply chain access",
-    image: factoryVisitsImage,
-    icon: <MapPin className="w-6 h-6" />,
-    details: {
-      title: "Farm & Factory Visits",
-      content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
-      features: [
-        "Guided farm and factory tours",
-        "Meet the people behind your uniforms",
-        "See sustainable practices in action",
-        "Educational opportunities for students",
-        "Complete supply chain transparency"
-      ]
-    }
-  }
 ];
 
 export const KapesDifferentCarousel = () => {
