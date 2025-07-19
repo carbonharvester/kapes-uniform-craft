@@ -121,7 +121,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "carbon-offsetting",
-    title: "Carbon Offsetting",
+    title: "Planet Positive Pledge",
     subtitle: "Neutralizing our environmental impact.",
     description: "Climate-positive manufacturing",
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
