@@ -208,7 +208,7 @@ const differences: DifferenceCard[] = [
     id: "pop-up",
     title: "Pop-Up Experiences",
     subtitle: "Bringing uniforms directly to your community.",
-    tagline: "We come to you. You come together.",
+    tagline: "Bringing uniforms to your community.",
     description: "Mobile uniform experiences and events",
     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=600&fit=crop",
     icon: <Truck className="w-6 h-6" />,
