@@ -108,7 +108,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "dashboard",
-    title: "Impact Tracker Live",
+    title: "KapesImpact Dashboard",
     subtitle: "Track your environmental impact live.",
     description: "Complete transparency on impact",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
