@@ -214,7 +214,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "lockers",
-    title: "E-Commerce Lockers",
+    title: "Smart Pickup Points",
     subtitle: "Smart collection points for busy families.",
     description: "Automated pickup and delivery",
     image: eCommerceLockerImage,
