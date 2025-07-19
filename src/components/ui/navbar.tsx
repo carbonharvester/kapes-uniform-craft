@@ -86,6 +86,12 @@ const Navbar = ({
           icon: <Heart className="size-5 shrink-0" />,
           url: "/social-impact-africa",
         },
+        {
+          title: "Student Leadership",
+          description: "Student involvement in sustainability",
+          icon: <Users className="size-5 shrink-0" />,
+          url: "/student-leadership",
+        },
       ],
     },
     {
@@ -193,12 +199,6 @@ const Navbar = ({
           description: "Tour our manufacturing facilities",
           icon: <Building className="size-5 shrink-0" />,
           url: "/factory-visits",
-        },
-        {
-          title: "Student Leadership",
-          description: "Student involvement in sustainability",
-          icon: <Users className="size-5 shrink-0" />,
-          url: "/student-leadership",
         },
       ],
     },
