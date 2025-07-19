@@ -84,7 +84,7 @@ const CircularEconomyTakeback = () => {
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
               Circular Economy & Takeback
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Uniforms shouldn't end up in landfill.</h1>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Uniforms shouldn't end up in landfill</h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               At Kapes, we believe school uniforms should be part of a circular system — not the waste stream. That's why we've built a fully managed takeback scheme that gives old uniforms a new life, and creates real-world impact with every item returned.
             </p>
