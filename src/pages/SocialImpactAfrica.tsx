@@ -109,8 +109,8 @@ const SocialImpactAfrica = () => {
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-            backgroundPosition: "20% center"
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg')",
+            backgroundPosition: "center"
           }}
         ></div>
         
