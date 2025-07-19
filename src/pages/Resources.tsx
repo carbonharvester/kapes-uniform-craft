@@ -142,7 +142,7 @@ const Resources = () => {
           {/* Free Audit Tool */}
           <section>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Uniform Program Audit</h2>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free School Uniform Sustainability Scorecard</h2>
               <p className="text-muted-foreground text-lg">Get personalized insights for your school</p>
             </div>
             <Card className="border-0 shadow-glass max-w-4xl mx-auto">
