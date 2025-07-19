@@ -30,6 +30,7 @@ import { DeliveryPackaging } from "./pages/DeliveryPackaging";
 import SustainabilityEthics from "./pages/SustainabilityEthics";
 import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
 import SocialImpactAfrica from "./pages/SocialImpactAfrica";
+import SustainabilityScorecardPage from "./pages/SustainabilityScorecard";
 import { Header } from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -74,6 +75,7 @@ const App = () => (
           <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
           <Route path="/circular-economy-takeback" element={<CircularEconomyTakeback />} />
           <Route path="/social-impact-africa" element={<SocialImpactAfrica />} />
+          <Route path="/sustainability-scorecard" element={<SustainabilityScorecardPage />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
