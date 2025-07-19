@@ -4,7 +4,7 @@ import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { PartnershipTiers } from "@/components/PartnershipTiers";
-import { ScorecardWidget } from "@/components/ScorecardWidget";
+import SustainabilityScorecard from "@/components/SustainabilityScorecard";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
@@ -25,7 +25,7 @@ const Index = () => {
       <SchoolLogos />
       <PartnershipTiers />
       <KapesImpactDashboard />
-      <ScorecardWidget />
+      <SustainabilityScorecard />
       <Testimonials />
       <BlogSection />
       <Footer />

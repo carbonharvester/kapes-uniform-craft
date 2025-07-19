@@ -118,30 +118,23 @@ export const ValueCalculator = () => {
               </div>
             </div>
             
-            <Card className="shadow-glass">
-              <CardHeader>
-                <CardTitle className="flex items-center justify-center gap-2">
+            <Card className="shadow-glass" style={{ backgroundColor: '#cfeaff' }}>
+              <CardHeader className="text-center">
+                <CardTitle className="flex items-center justify-center gap-2 text-primary">
                   <Calculator className="h-5 w-5" />
                   Calculate Your Impact
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4" onSubmit={handleSubmit}>
+                <form className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">Number of Students:</label>
-                    <Input 
-                      type="number" 
-                      placeholder="Enter number of students" 
-                      value={students}
-                      onChange={(e) => setStudents(e.target.value)}
-                      min="1"
-                      required
-                    />
+                    <Input placeholder="Enter number of students" className="h-12" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">School Location (Region):</label>
-                    <Select value={location} onValueChange={setLocation} required>
-                      <SelectTrigger>
+                    <Select>
+                      <SelectTrigger className="h-12">
                         <SelectValue placeholder="Select region..." />
                       </SelectTrigger>
                       <SelectContent>
@@ -153,10 +146,7 @@ export const ValueCalculator = () => {
                       </SelectContent>
                     </Select>
                   </div>
-                  {error && (
-                    <div className="text-destructive text-sm text-center">{error}</div>
-                  )}
-                  <Button type="submit" className="w-full">
+                  <Button type="submit" className="w-full h-12">
                     Calculate Your Impact
                   </Button>
                 </form>
