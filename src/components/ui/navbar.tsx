@@ -159,19 +159,19 @@ const Navbar = ({
           url: "/partnership-tiers",
         },
         {
-          title: "EcoLaunch Tier",
+          title: "EcoLaunch",
           description: "Basic sustainable uniform solutions",
           icon: <Package className="size-5 shrink-0" />,
           url: "/ecolaunch-tier",
         },
         {
-          title: "SustainPro Tier",
+          title: "SustainPro",
           description: "Enhanced sustainability features",
           icon: <Trees className="size-5 shrink-0" />,
           url: "/sustainpro-tier",
         },
         {
-          title: "LegacyImpact Tier",
+          title: "LegacyImpact",
           description: "Full flagship sustainability program",
           icon: <Zap className="size-5 shrink-0" />,
           url: "/legacyimpact-tier",
