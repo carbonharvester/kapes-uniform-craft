@@ -53,71 +53,67 @@ export const FAQAccordion = ({ items = defaultItems }: FAQAccordionProps) => {
   };
 
   return (
-    <div className="max-w-4xl bg-white/30 dark:bg-black/30 backdrop-blur-md border border-gray-300 dark:border-gray-700 rounded-lg shadow-lg shadow-black/20 dark:shadow-white/10 transition-colors duration-500">
-      <h2 className="text-2xl font-extrabold text-black dark:text-white px-5 pt-5 select-none">
-        Frequently Asked Questions
-      </h2>
+    <div className="max-w-4xl w-full space-y-4">
+      {items.map(({ id, icon: Icon, title, content }) => {
+        const isOpen = openItem === id;
 
-      <div>
-        {items.map(({ id, icon: Icon, title, content }) => {
-          const isOpen = openItem === id;
-
-          return (
-            <div
-              key={id}
-              className="border-t border-gray-300 dark:border-gray-700 last:border-b-0"
+        return (
+          <div
+            key={id}
+            className="border-0 shadow-glass rounded-2xl overflow-hidden bg-card hover-lift transition-smooth"
+          >
+            <button
+              onClick={() => toggleItem(id)}
+              aria-expanded={isOpen}
+              className="flex items-center justify-between w-full p-6 text-foreground text-base font-medium cursor-pointer bg-transparent transition-smooth hover:bg-muted/50 focus:outline-none"
             >
-              <button
-                onClick={() => toggleItem(id)}
-                aria-expanded={isOpen}
-                className="flex items-center justify-between w-full px-5 py-4 text-black dark:text-white text-base font-medium cursor-pointer bg-transparent transition-colors duration-300 hover:bg-black/5 dark:hover:bg-white/10 select-none focus:outline-none"
-              >
-                <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Icon
-                    className="w-4 h-4 text-black dark:text-white"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                  <span>{title}</span>
-                </div>
-
-                <div className="relative w-4 h-4 flex-shrink-0">
-                  <Plus
-                    className={`absolute inset-0 text-black dark:text-white transition-opacity duration-300 ${
-                      isOpen ? "opacity-0" : "opacity-100"
-                    }`}
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                  <Minus
-                    className={`absolute inset-0 text-black dark:text-white transition-opacity duration-300 ${
-                      isOpen ? "opacity-100" : "opacity-0"
-                    }`}
+                    className="w-5 h-5 text-primary"
                     strokeWidth={2}
                     aria-hidden="true"
                   />
                 </div>
-              </button>
+                <span className="text-left">{title}</span>
+              </div>
 
-              <motion.div
-                initial={false}
-                animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                style={{ overflow: "hidden" }}
+              <div className="relative w-5 h-5 flex-shrink-0">
+                <Plus
+                  className={`absolute inset-0 text-muted-foreground transition-all duration-300 ${
+                    isOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
+                  }`}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+                <Minus
+                  className={`absolute inset-0 text-primary transition-all duration-300 ${
+                    isOpen ? "opacity-100 rotate-0" : "opacity-0 rotate-90"
+                  }`}
+                  strokeWidth={2}
+                  aria-hidden="true"
+                />
+              </div>
+            </button>
+
+            <motion.div
+              initial={false}
+              animate={{ height: isOpen ? "auto" : 0, opacity: isOpen ? 1 : 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              style={{ overflow: "hidden" }}
+            >
+              <div
+                ref={(el) => {
+                  contentRefs.current[id] = el;
+                }}
+                className="px-6 pb-6 text-muted-foreground leading-relaxed"
               >
-                <div
-                  ref={(el) => {
-                    contentRefs.current[id] = el;
-                  }}
-                  className="px-5 pb-5 text-gray-700 dark:text-gray-300 text-sm leading-relaxed select-text"
-                >
-                  {content}
-                </div>
-              </motion.div>
-            </div>
-          );
-        })}
-      </div>
+                {content}
+              </div>
+            </motion.div>
+          </div>
+        );
+      })}
     </div>
   );
 };
