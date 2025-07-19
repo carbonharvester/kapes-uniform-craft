@@ -457,7 +457,7 @@ const SustainabilityScorecard: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-[#f9f3df]">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
