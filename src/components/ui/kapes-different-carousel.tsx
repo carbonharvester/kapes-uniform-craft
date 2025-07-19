@@ -70,7 +70,7 @@ const differences: DifferenceCard[] = [
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Free School Uniforms in Africa",
-      content: "**Every uniform your school purchases helps open the door to education for a child who needs it most.** Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
+      content: "Every uniform your school purchases helps open the door to education for a child who needs it most. Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
       features: []
     }
   },
@@ -115,7 +115,7 @@ const differences: DifferenceCard[] = [
     icon: <BarChart3 className="w-6 h-6" />,
     details: {
       title: "Real-Time Sustainability Dashboard",
-      content: "**With Kapes, your school can measure its environmental and social impact — not just talk about it.** Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
+      content: "With Kapes, your school can measure its environmental and social impact — not just talk about it. Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
       features: []
     }
   },
