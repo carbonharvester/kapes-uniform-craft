@@ -76,7 +76,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "takeback",
-    title: "Fully Managed Takeback Scheme",
+    title: "Circular Life Guarantee",
     subtitle: "Complete circular lifecycle management.",
     description: "End-to-end uniform recycling",
     image: takebackSchemeImage,
