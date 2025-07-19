@@ -46,8 +46,8 @@ const OurMission = () => {
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-            backgroundPosition: "20% center"
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1750581278/Screen_Shot_2022-04-25_at_2.52.18_PM_iapeg0.jpg')",
+            backgroundPosition: "center"
           }}
         ></div>
         
