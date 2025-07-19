@@ -50,7 +50,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "manufacturing",
-    title: "Ethical Manufacturing",
+    title: "Conscience-Clear Production",
     subtitle: "Fair wages and safe working conditions.",
     description: "Responsible production practices",
     image: ethicalManufacturingImage,
