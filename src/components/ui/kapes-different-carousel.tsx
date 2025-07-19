@@ -37,7 +37,7 @@ interface DifferenceCard {
 const differences: DifferenceCard[] = [
   {
     id: "materials",
-    title: "Natural, Sustainable Materials",
+    title: "Earth-First Fabrics",
     subtitle: "Every thread matters for our planet's future.",
     description: "100% organic and recycled fabrics",
     image: sustainableMaterialsImage,
