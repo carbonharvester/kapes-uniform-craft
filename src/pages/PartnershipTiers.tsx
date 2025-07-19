@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const PartnershipTiers = () => {
   const tiers = [{
     name: "EcoLaunch",
-    badge: "EcoLaunch Tier",
+    badge: "EcoLaunch",
     tagline: "Ethical Uniforms, Simplified",
     description: "For schools who want sustainable, ethical uniforms without the complexity",
     icon: Star,
@@ -17,7 +17,7 @@ const PartnershipTiers = () => {
     features: ["100% Sustainable Uniforms", "Ethical Manufacturing", "Custom Design & Sampling", "Fully Managed Online Shop", "Full Delivery Options", "Plastic-Free Packaging"]
   }, {
     name: "SustainPro",
-    badge: "SustainPro Tier",
+    badge: "SustainPro",
     tagline: "Sustainable Uniforms + Real Impact",
     description: "For schools who want to create positive change with impact tracking",
     icon: Zap,
@@ -27,7 +27,7 @@ const PartnershipTiers = () => {
     popular: true
   }, {
     name: "LegacyImpact",
-    badge: "LegacyImpact Tier",
+    badge: "LegacyImpact",
     tagline: "For Schools Who Want to Lead — Not Follow",
     description: "Our highest level of partnership for values-driven schools",
     icon: Crown,
