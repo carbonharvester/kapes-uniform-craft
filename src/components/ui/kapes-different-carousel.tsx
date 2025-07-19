@@ -163,7 +163,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "visits",
-    title: "Behind-the-Scenes Journey",
+    title: "Behind-the-Scenes Toura",
     subtitle: "See sustainability in action firsthand.",
     description: "Transparent supply chain access",
     image: factoryVisitsImage,
