@@ -142,6 +142,11 @@
 /* Apple-inspired smooth scroll */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Glass morphism utility */
