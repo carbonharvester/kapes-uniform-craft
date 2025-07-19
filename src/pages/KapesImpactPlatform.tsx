@@ -330,10 +330,7 @@ const KapesImpactPlatform = () => {
               <Button size="lg" variant="secondary" className="rounded-2xl px-12 py-6 text-lg hover-scale transition-smooth">
                 Schedule Your Demo
               </Button>
-              <Button size="lg" variant="outline" className="rounded-2xl px-12 py-6 text-lg border-white text-white hover:bg-white hover:text-primary hover-scale transition-smooth">
-                <FileText className="w-5 h-5 mr-2" />
-                Get the Full Brochure
-              </Button>
+              
             </div>
             
             <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
