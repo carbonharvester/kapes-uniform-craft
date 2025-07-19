@@ -75,7 +75,7 @@ const ImplementationTimeline = () => {
           <div className="max-w-2xl space-y-8">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">Implementation Timeline</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
-              Implementation Journey{" "}
+              Implementation{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                 Timeline
               </span>
