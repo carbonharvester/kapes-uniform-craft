@@ -181,9 +181,7 @@ const ImplementationTimeline = () => {
             <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book Free Consultation
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
-              Download Timeline PDF
-            </Button>
+            
           </div>
         </div>
       </section>
