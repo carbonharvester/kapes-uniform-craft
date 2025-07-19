@@ -195,7 +195,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "shops",
-    title: "Campus Convenience Hubs",
+    title: "Uniform Hubs",
     subtitle: "Convenient access to quality uniforms.",
     description: "Physical retail presence at schools",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=400&h=600&fit=crop",
