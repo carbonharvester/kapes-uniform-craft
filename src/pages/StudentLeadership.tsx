@@ -67,7 +67,7 @@ const StudentLeadership = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg')",
           backgroundPosition: "center"
         }}></div>
         
