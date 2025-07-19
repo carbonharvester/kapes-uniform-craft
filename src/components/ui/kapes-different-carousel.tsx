@@ -141,7 +141,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "educational-programs",
-    title: "Future Leaders Academy",
+    title: "Kapes Academy",
     subtitle: "Empowering students through sustainability education.",
     description: "Interactive learning initiatives",
     image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
