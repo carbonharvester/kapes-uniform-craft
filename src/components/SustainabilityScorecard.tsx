@@ -304,7 +304,7 @@ const SustainabilityScorecard: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="text-center">
+              <Card className="text-center shadow-lg">
                 <CardContent className="pt-8 pb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                     <Leaf className="h-8 w-8" />
@@ -316,7 +316,7 @@ const SustainabilityScorecard: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card className="text-center">
+              <Card className="text-center shadow-lg">
                 <CardContent className="pt-8 pb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                     <Shield className="h-8 w-8" />
@@ -328,7 +328,7 @@ const SustainabilityScorecard: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card className="text-center">
+              <Card className="text-center shadow-lg">
                 <CardContent className="pt-8 pb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                     <Award className="h-8 w-8" />
