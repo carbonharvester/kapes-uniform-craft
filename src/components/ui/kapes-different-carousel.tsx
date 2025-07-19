@@ -107,6 +107,19 @@ const differences: DifferenceCard[] = [
     }
   },
   {
+    id: "dashboard",
+    title: "Real-Time Sustainability Dashboard",
+    subtitle: "Track your environmental impact live.",
+    description: "Complete transparency on impact",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
+    icon: <BarChart3 className="w-6 h-6" />,
+    details: {
+      title: "Real-Time Sustainability Dashboard",
+      content: "**With Kapes, your school can measure its environmental and social impact — not just talk about it.** Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
+      features: []
+    }
+  },
+  {
     id: "carbon-offsetting",
     title: "Carbon Offsetting",
     subtitle: "Neutralizing our environmental impact.",
@@ -124,19 +137,6 @@ const differences: DifferenceCard[] = [
         "Renewable energy investments",
         "Climate-positive manufacturing"
       ]
-    }
-  },
-  {
-    id: "dashboard",
-    title: "Real-Time Sustainability Dashboard",
-    subtitle: "Track your environmental impact live.",
-    description: "Complete transparency on impact",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
-    icon: <BarChart3 className="w-6 h-6" />,
-    details: {
-      title: "Real-Time Sustainability Dashboard",
-      content: "**With Kapes, your school can measure its environmental and social impact — not just talk about it.** Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
-      features: []
     }
   },
   {
