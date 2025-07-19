@@ -17,10 +17,10 @@ const ImplementationTimeline = () => {
     activities: ["Custom uniform design creation", "Material selection and sustainability verification", "Sample production and testing", "Student and parent feedback collection", "Final design refinement and approval"]
   }, {
     phase: "Phase 3",
-    title: "Platform Setup",
-    duration: "3-4 weeks",
+    title: "Sampling & Manufacturing",
+    duration: "10-12 weeks",
     status: "development",
-    activities: ["Online shop development and customization", "Payment gateway integration", "Delivery options configuration", "KapesImpact™ dashboard setup", "Staff training materials preparation"]
+    activities: ["Sample production and testing", "Manufacturing setup and quality assurance", "Bulk production scheduling", "Quality control checkpoints", "Pre-delivery inspections"]
   }, {
     phase: "Phase 4",
     title: "Testing & Training",
