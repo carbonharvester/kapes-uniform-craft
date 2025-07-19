@@ -121,7 +121,7 @@ export const TierQuiz = ({ onComplete }: TierQuizProps) => {
           />
           
           <SliderField
-            label="Full sustainability and eco-materials"
+            label="Eco-friendly materials"
             value={sustainability}
             onChange={setSustainability}
           />
