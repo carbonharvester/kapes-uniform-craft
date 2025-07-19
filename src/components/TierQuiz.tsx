@@ -88,7 +88,7 @@ export const TierQuiz = ({ onComplete }: TierQuizProps) => {
       <div className="text-center mb-8">
         <h3 className="text-2xl md:text-3xl font-medium mb-4">Find Your Perfect Kapes Uniforms Tier</h3>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          Rate the importance of each priority on a scale from 1 (Not Important) to 5 (Extremely Important) to discover your ideal tier: EcoLaunch (Base), SustainPro (Core), or LegacyImpact (Flagship). Complete the quiz to unlock a free consultation.
+          Rate the importance of each priority on a scale from 1 (Not Important) to 5 (Extremely Important) to discover your ideal tier.
         </p>
       </div>
 
