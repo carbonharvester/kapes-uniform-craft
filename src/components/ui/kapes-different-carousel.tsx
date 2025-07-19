@@ -182,7 +182,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "governance",
-    title: "Student Board",
+    title: "Young Voices Council",
     subtitle: "Empowering students to lead change.",
     description: "Student-led sustainability initiatives",
     image: studentBoardImage,
