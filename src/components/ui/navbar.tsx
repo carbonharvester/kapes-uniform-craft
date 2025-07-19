@@ -146,12 +146,6 @@ const Navbar = ({
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/implementation-timeline",
         },
-        {
-          title: "Resources",
-          description: "Educational and informational resources",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "/resources",
-        },
       ],
     },
     {
@@ -200,6 +194,12 @@ const Navbar = ({
           icon: <Building className="size-5 shrink-0" />,
           url: "/factory-visits",
         },
+        {
+          title: "Resources & Tools",
+          description: "Guides, calculators, and assessment tools",
+          icon: <Zap className="size-5 shrink-0" />,
+          url: "/resources",
+        },
       ],
     },
     {
@@ -209,7 +209,7 @@ const Navbar = ({
   ],
   mobileExtraLinks = [
     { name: "About", url: "/about" },
-    { name: "Resources", url: "/resources" },
+    { name: "Resources & Tools", url: "/resources" },
   ],
   auth = {
     login: { text: "KapesImpact", url: "/kapes-impact-platform" },
