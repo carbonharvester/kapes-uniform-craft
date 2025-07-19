@@ -19,7 +19,7 @@ export const UniformSolutions = () => {
           <div className="max-w-2xl space-y-8">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
               <Sparkles className="w-4 h-4 mr-2" />
-              Sustainable Fashion Revolution
+              Uniform Solutions
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Sustainable. Ethical. Durable.</h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
