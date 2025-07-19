@@ -29,13 +29,6 @@ export const UniformSolutions = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Uniform Solutions
             </h1>
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
-              <p className="text-2xl md:text-3xl font-light text-white/90">
-                Sustainable. Ethical. Durable.
-              </p>
-              <div className="h-px bg-white/30 flex-1 max-w-20"></div>
-            </div>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               At Kapes, we create school uniforms that reflect your school's values and commitment to sustainability—without sacrificing quality or comfort.
             </p>
