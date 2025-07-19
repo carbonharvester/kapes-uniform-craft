@@ -19,8 +19,8 @@ export const DeliveryPackaging = () => {
         ></div>
         
         {/* Overlay and Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15"></div>
         
         <div className="relative z-10 container mx-auto px-4 text-left">
           <div className="max-w-2xl space-y-8">
