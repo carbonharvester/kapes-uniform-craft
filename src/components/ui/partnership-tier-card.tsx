@@ -27,7 +27,7 @@ export function PartnershipTierCard({
   const isLegacyImpact = tier.name === "LEGACYIMPACT";
   
   return <Card className={cn(
-    "relative flex flex-col gap-8 overflow-hidden p-6 h-full",
+    "relative flex flex-col gap-8 overflow-hidden p-6 h-full shadow-glass",
     isCustom ? "bg-[#030063] text-white border-[#030063]" : 
     isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
     "bg-background text-foreground",

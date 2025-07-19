@@ -118,7 +118,7 @@ export const ValueCalculator = () => {
               </div>
             </div>
             
-            <Card>
+            <Card className="shadow-glass">
               <CardHeader>
                 <CardTitle className="flex items-center justify-center gap-2">
                   <Calculator className="h-5 w-5" />
@@ -170,7 +170,7 @@ export const ValueCalculator = () => {
                 Your School's Projected Value Equation Boost
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">🌍</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">CO2 Conquest</h3>
@@ -180,7 +180,7 @@ export const ValueCalculator = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">⚡</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">Energy Empire Built</h3>
@@ -190,7 +190,7 @@ export const ValueCalculator = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">💧</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">Water Warrior Win</h3>
@@ -200,7 +200,7 @@ export const ValueCalculator = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">🗑️</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">Waste Annihilation</h3>
@@ -210,7 +210,7 @@ export const ValueCalculator = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">👕</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">Uniform Uplift (Free</h3>
@@ -220,7 +220,7 @@ export const ValueCalculator = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center bg-background border border-border hover:shadow-md transition-shadow">
+                <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-8">
                     <div className="text-5xl mb-4">🍲</div>
                     <h3 className="font-bold text-foreground text-lg mb-1">Meal Miracle (Free</h3>

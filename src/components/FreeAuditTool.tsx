@@ -51,7 +51,7 @@ export const FreeAuditTool = () => {
               </div>
             </div>
             
-            <Card>
+            <Card className="shadow-glass">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="h-5 w-5" />
