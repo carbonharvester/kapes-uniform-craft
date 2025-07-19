@@ -411,7 +411,7 @@ const SustainabilityScorecard: React.FC = () => {
               </div>
 
               {/* Get Started - Right Column */}
-              <div>
+              <div className="bg-[#cfeaff] p-8 rounded-lg">
                 <Card className="max-w-lg mx-auto lg:mx-0">
                   <CardHeader>
                     <h3 className="text-2xl font-bold text-center">Get Started</h3>
