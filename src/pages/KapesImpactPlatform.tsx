@@ -257,7 +257,7 @@ const KapesImpactPlatform = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-2xl px-6 py-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white border border-white/20 rounded-2xl px-6 py-3 mb-6">
               <Sparkles className="w-5 h-5" style={{ color: '#030063' }} />
               <span className="text-sm font-medium" style={{ color: '#030063' }}>Transform Your Impact Story</span>
             </div>
