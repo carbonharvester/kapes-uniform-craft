@@ -15,7 +15,7 @@ import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
 import uniformProgramImage from "@/assets/uniform-program.png";
-import eCommerceLockerImage from "@/assets/e-commerce-lockers.png";
+import eCommerceLockerImage from "@/assets/smart-locker.jpg";
 import studentBoardImage from "@/assets/student-board.jpg";
 import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
 import { cn } from "@/lib/utils";
