@@ -195,6 +195,12 @@ const Navbar = ({
       url: "#",
       items: [
         {
+          title: "Blog",
+          description: "Latest sustainability insights and updates",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/blog",
+        },
+        {
           title: "Sustainability Scorecard",
           description: "Assess your school's uniform sustainability",
           icon: <Calculator className="size-5 shrink-0" />,
