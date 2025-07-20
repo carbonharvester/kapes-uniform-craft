@@ -20,15 +20,11 @@ const Blog = () => {
     queryFn: getAllBlogPosts,
   });
 
-  // Category filtering removed since category field is omitted
-
   // Filter posts based on search and category
   const filteredPosts = blogPosts?.filter(post => {
     const matchesSearch = !searchTerm || 
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    // Category filtering removed since field is omitted
     
     return matchesSearch;
   }) || [];
@@ -38,10 +34,10 @@ const Blog = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background font-inter">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-4">Something went wrong</h1>
+            <h1 className="text-2xl font-semibold text-heading mb-4">Something went wrong</h1>
             <p className="text-muted-foreground">We couldn't load the blog posts. Please try again later.</p>
           </div>
         </div>
@@ -51,7 +47,7 @@ const Blog = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background font-inter">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -72,14 +68,14 @@ const Blog = () => {
                 Updates
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto font-light">
               Stay informed with the latest trends in sustainable uniforms, cost-saving strategies, and educational innovations.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 bg-gradient-tri-soft">
         <div className="max-w-6xl mx-auto">
           
           {/* Search and Filter Controls */}
@@ -93,7 +89,7 @@ const Blog = () => {
                 className="pl-10"
               />
             </div>
-            </div>
+          </div>
 
           {isLoading ? (
             <div className="space-y-12">
@@ -129,7 +125,7 @@ const Blog = () => {
               {/* Featured Post */}
               {featuredPost && (
                 <section className="mb-16">
-                  <h2 className="text-3xl font-light tracking-tight mb-8">Featured Post</h2>
+                  <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-8">Featured Post</h2>
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="aspect-video overflow-hidden rounded-lg">
                       <img 
@@ -138,12 +134,12 @@ const Blog = () => {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                     <div className="space-y-6">
-                       <h3 className="text-3xl font-semibold leading-tight">{featuredPost.title}</h3>
-                       <p className="text-lg text-muted-foreground leading-relaxed">{featuredPost.excerpt}</p>
-                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                          <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
-                        </div>
+                    <div className="space-y-6">
+                      <h3 className="text-3xl font-semibold leading-tight text-heading">{featuredPost.title}</h3>
+                      <p className="text-lg text-muted-foreground leading-relaxed">{featuredPost.excerpt}</p>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
+                      </div>
                       <Button asChild size="lg">
                         <a href={`/blog/${featuredPost.slug}`}>Read Full Article</a>
                       </Button>
@@ -155,7 +151,7 @@ const Blog = () => {
               {/* Other Posts Grid */}
               {otherPosts.length > 0 && (
                 <section>
-                   <h2 className="text-3xl font-light tracking-tight mb-8">All Posts</h2>
+                  <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-8">All Posts</h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {otherPosts.map(post => (
                       <BlogCard key={post.slug} post={post} />
@@ -167,14 +163,14 @@ const Blog = () => {
               {/* No Results */}
               {filteredPosts.length === 0 && !isLoading && (
                 <div className="text-center py-16">
-                  <h3 className="text-2xl font-semibold mb-4">No posts found</h3>
-                   <p className="text-muted-foreground mb-6">
-                     {searchTerm ? "Try adjusting your search criteria." : "Check back soon for new content."}
-                   </p>
-                   {searchTerm && (
+                  <h3 className="text-2xl font-semibold text-heading mb-4">No posts found</h3>
+                  <p className="text-muted-foreground mb-6">
+                    {searchTerm ? "Try adjusting your search criteria." : "Check back soon for new content."}
+                  </p>
+                  {searchTerm && (
                     <Button 
                       variant="outline" 
-                       onClick={() => setSearchTerm("")}
+                      onClick={() => setSearchTerm("")}
                     >
                       Clear Filters
                     </Button>

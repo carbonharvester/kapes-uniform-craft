@@ -25,10 +25,10 @@ export const BlogSection = () => {
 
   if (error) {
     return (
-      <section className="py-16 px-4 bg-gradient-tri-soft">
+      <section className="py-16 px-4 bg-gradient-tri-soft font-inter">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-6">
               Latest Insights & Updates
             </h2>
             <p className="text-muted-foreground">
@@ -41,11 +41,11 @@ export const BlogSection = () => {
   }
 
   return (
-    <section className="py-16 px-4 bg-gradient-tri-soft">
+    <section className="py-16 px-4 bg-gradient-tri-soft font-inter">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-6">
               Latest Insights & Updates
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
