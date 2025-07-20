@@ -41,106 +41,45 @@ export const BlogSection = () => {
   return (
     <section className="py-16 px-4 bg-muted/20">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Latest Insights & Updates
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Stay informed with the latest trends in sustainable uniforms, cost-saving strategies, and educational innovations.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Featured Post */}
-          <div className="lg:col-span-2">
-            {featuredPosts
-              .filter(post => post.featured)
-              .map(post => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
-                      Featured
-                    </Badge>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
-                      <Badge variant="secondary">{post.category}</Badge>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {post.date}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="text-base">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))
-            }
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Latest Insights & Updates
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Stay informed with the latest trends in sustainable uniforms, cost-saving strategies, and educational innovations.
+            </p>
           </div>
-
-          {/* Regular Posts */}
-          <div className="space-y-6">
-            {featuredPosts
-              .filter(post => !post.featured)
-              .map(post => (
-                <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-                  <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Badge variant="secondary" className="text-xs">{post.category}</Badge>
-                      <span>•</span>
-                      <span>{post.readTime}</span>
-                    </div>
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors line-clamp-2">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <Button variant="ghost" size="sm" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
-                      Read More
-                      <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))
-            }
-          </div>
-        </div>
-
-        {/* View All Posts Button */}
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="hover-scale transition-smooth">
-            View All Posts
+          <Button variant="ghost" className="mt-6 md:mt-0 self-start md:self-auto">
+            Explore all posts
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {featuredPosts.map(post => (
+            <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
+              <div className="aspect-video relative overflow-hidden bg-muted/50 flex items-center justify-center">
+                <div className="w-16 h-16 bg-foreground rounded-lg flex items-center justify-center">
+                  <div className="w-8 h-8 bg-background rounded-sm"></div>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  {post.title}
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  {post.excerpt}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
+                  Read more
+                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
