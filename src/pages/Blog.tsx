@@ -65,14 +65,14 @@ const Blog = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <Badge className="mb-4 bg-white/10 text-foreground border-white/20">Blog & Insights</Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+            <Badge className="mb-4 bg-white/10 text-white border-white/20">Blog & Insights</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Latest Insights &{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                 Updates
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-3xl mx-auto">
               Stay informed with the latest trends in sustainable uniforms, cost-saving strategies, and educational innovations.
             </p>
           </div>
