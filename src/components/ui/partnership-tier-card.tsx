@@ -12,6 +12,7 @@ export interface PartnershipTier {
   href: string
   popular?: boolean
   highlighted?: boolean
+  blurred?: boolean
 }
 
 interface PartnershipTierCardProps {
@@ -101,7 +102,7 @@ export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
           {tier.description}
         </CardDescription>
         
-        <div className="space-y-3">
+        <div className={`space-y-3 ${tier.blurred ? 'blur-sm' : ''}`}>
           {tier.features.map((feature, index) => (
             <div key={index} className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
