@@ -38,12 +38,12 @@ const CircularEconomyTakeback = () => {
     description: "Drop them into a convenient school collection bin",
     icon: MapPin
   }, {
-    title: "Prepaid Return Label",
-    description: "Send them back using our prepaid return system",
+    title: "Shop Online",
+    description: "Purchase second-hand uniforms directly through our online store",
     icon: Mail
   }, {
-    title: "Pop-up Events & Locker Pickups",
-    description: "Hand them over during scheduled collection events",
+    title: "Home Delivery & Locker Pickups",
+    description: "Convenient collection and delivery options to your preferred location",
     icon: Calendar
   }];
   const impactResults = [{
@@ -276,7 +276,7 @@ const CircularEconomyTakeback = () => {
               <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth">
                 Learn About Partnership Tiers
               </Button>
-              <Button size="lg" variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-white hover:bg-white hover:text-primary hover-scale transition-smooth">
+              <Button size="lg" variant="outline" className="rounded-2xl px-8 py-6 text-lg border-white text-primary hover:bg-white hover:text-primary hover-scale transition-smooth">
                 See Impact Dashboard Demo
               </Button>
             </div>
