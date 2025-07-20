@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
+import ourMissionHero from "@/assets/our-mission-hero.jpg";
 
 const OurMission = () => {
   const values = [
@@ -48,7 +49,7 @@ const OurMission = () => {
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1750581278/Screen_Shot_2022-04-25_at_2.52.18_PM_iapeg0.jpg')",
+            backgroundImage: `url(${ourMissionHero})`,
             backgroundPosition: "center"
           }}
         ></div>
