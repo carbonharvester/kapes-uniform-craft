@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -25,33 +26,30 @@ const Affiliate = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero"></div>
-        <div className="absolute inset-0 bg-gradient-overlay opacity-50"></div>
-        
-        <div className="relative max-w-7xl mx-auto text-center">
-          <Badge className="mb-6 bg-white/10 text-white border-white/20 backdrop-blur-sm px-6 py-2 text-lg font-medium">
+      <section className="relative py-20 px-4 bg-gradient-hero-to-warm">
+        <div className="container mx-auto max-w-6xl text-center">
+          <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2 text-lg font-medium">
             🎯 Ultimate Affiliate Opportunity
           </Badge>
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Earn <span className="gradient-text-accent">$2,000</span> + An All-Expenses-Paid
+          <h1 className="text-4xl md:text-6xl font-bold text-heading mb-6 leading-tight">
+            Earn <span className="text-primary">$2,000</span> + An All-Expenses-Paid
             <br />
-            <span className="gradient-text-primary">Kenya Adventure</span>
+            <span className="text-primary">Kenya Adventure</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground mb-10 max-w-4xl mx-auto leading-relaxed">
             For every school you refer to Kapes, you don't just earn $2,000 in cash...
             <br />
-            <strong>You earn the experience of a lifetime in Kenya!</strong>
+            <strong className="text-foreground">You earn the experience of a lifetime in Kenya!</strong>
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+            <Button size="lg" className="px-8 py-4 text-lg">
               <Gift className="mr-2 h-5 w-5" />
               Join the Affiliate Program Now
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth border-white/20 text-white hover:bg-white/10">
+            <Button variant="outline" size="lg" className="px-8 py-4 text-lg">
               <Camera className="mr-2 h-5 w-5" />
               Watch Kenya Preview
             </Button>
@@ -61,9 +59,9 @@ const Affiliate = () => {
 
       {/* The Offer */}
       <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="heading-1 mb-6 gradient-text-primary">
+            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
               Here's What You Get
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -72,8 +70,8 @@ const Affiliate = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="relative overflow-hidden glass-card hover:scale-105 transition-smooth">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <Card className="relative overflow-hidden bg-card border border-border hover:shadow-lg transition-shadow">
               <Badge className="absolute top-4 right-4 bg-primary/10 text-primary border-primary/20">
                 Cash Reward
               </Badge>
@@ -87,23 +85,23 @@ const Affiliate = () => {
               <CardContent>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                     <span>Instant payment upon school enrollment</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                     <span>No cap on earnings</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle className="h-5 w-5 text-primary" />
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
                     <span>Recurring bonuses for renewals</span>
                   </li>
                 </ul>
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden glass-card hover:scale-105 transition-smooth">
-              <Badge className="absolute top-4 right-4 bg-secondary/10 text-secondary border-secondary/20">
+            <Card className="relative overflow-hidden bg-card border border-border hover:shadow-lg transition-shadow">
+              <Badge className="absolute top-4 right-4 bg-secondary/20 text-foreground border-border">
                 Experience Reward
               </Badge>
               <CardHeader className="text-center pb-4 pt-8">
@@ -116,15 +114,15 @@ const Affiliate = () => {
               <CardContent>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3">
-                    <Plane className="h-5 w-5 text-secondary" />
+                    <Plane className="h-5 w-5 text-foreground flex-shrink-0" />
                     <span>Round-trip flights covered</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-secondary" />
+                    <MapPin className="h-5 w-5 text-foreground flex-shrink-0" />
                     <span>5-star accommodation</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Camera className="h-5 w-5 text-secondary" />
+                    <Camera className="h-5 w-5 text-foreground flex-shrink-0" />
                     <span>Professional photo & video documentation</span>
                   </li>
                 </ul>
@@ -135,11 +133,11 @@ const Affiliate = () => {
       </section>
 
       {/* Kenya Experience */}
-      <section className="py-20 px-4 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 bg-gradient-warm-section">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="heading-1 mb-6">
-              Your <span className="gradient-text-primary">Kenya Adventure</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
+              Your <span className="text-primary">Kenya Adventure</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               This isn't just a vacation. It's a life-changing journey where you'll witness 
@@ -147,45 +145,45 @@ const Affiliate = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 max-w-4xl mx-auto">
             {[
               {
                 day: "Day 1-2",
                 title: "School Visits & Impact Tours",
                 description: "Visit the schools we support, meet students whose lives have been transformed, and see firsthand how your referrals create real change.",
                 icon: <School className="h-8 w-8" />,
-                color: "bg-primary"
+                color: "bg-primary text-primary-foreground"
               },
               {
                 day: "Day 3",
                 title: "Carbon Offset Project Experience",
                 description: "Tour our reforestation projects, plant trees with local communities, and understand the environmental impact of our work.",
                 icon: <TreePine className="h-8 w-8" />,
-                color: "bg-secondary"
+                color: "bg-secondary text-secondary-foreground"
               },
               {
                 day: "Day 4-5",
                 title: "Safari Adventure",
                 description: "Experience Kenya's incredible wildlife with guided safari tours through world-famous national parks.",
                 icon: <Camera className="h-8 w-8" />,
-                color: "bg-accent"
+                color: "bg-accent text-accent-foreground"
               },
               {
                 day: "Day 6",
                 title: "Cultural Immersion",
                 description: "Connect with local communities, experience traditional culture, and participate in authentic cultural exchanges.",
                 icon: <Heart className="h-8 w-8" />,
-                color: "bg-muted"
+                color: "bg-muted text-muted-foreground"
               }
             ].map((item, index) => (
-              <Card key={index} className="glass-card hover:scale-105 transition-smooth">
+              <Card key={index} className="bg-card border border-border hover:shadow-lg transition-shadow">
                 <div className="flex flex-col md:flex-row">
-                  <div className={`${item.color} p-8 text-primary-foreground flex flex-col justify-center items-center min-w-[200px] rounded-l-lg`}>
+                  <div className={`${item.color} p-8 flex flex-col justify-center items-center min-w-[200px] rounded-l-lg`}>
                     {item.icon}
                     <h3 className="text-2xl font-bold mt-4">{item.day}</h3>
                   </div>
                   <div className="flex-1 p-8">
-                    <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                    <h4 className="text-2xl font-bold mb-4 text-heading">{item.title}</h4>
                     <p className="text-lg text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
@@ -197,17 +195,17 @@ const Affiliate = () => {
 
       {/* How It Works */}
       <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="heading-1 mb-6">
-              How to <span className="gradient-text-primary">Qualify</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
+              How to <span className="text-primary">Qualify</span>
             </h2>
             <p className="text-xl text-muted-foreground">
               It's simple. Refer schools, get paid, change lives, experience Kenya.
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 max-w-4xl mx-auto">
             {[
               {
                 step: "01",
@@ -234,13 +232,13 @@ const Affiliate = () => {
                 reward: "Life-changing memories + professional documentation"
               }
             ].map((item, index) => (
-              <Card key={index} className="glass-card p-8 hover:scale-105 transition-smooth">
+              <Card key={index} className="bg-card border border-border p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-center gap-8">
-                  <div className="bg-gradient-primary text-white font-bold text-3xl w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="bg-primary text-primary-foreground font-bold text-3xl w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0">
                     {item.step}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+                    <h3 className="text-2xl font-bold mb-2 text-heading">{item.title}</h3>
                     <p className="text-muted-foreground mb-3">{item.description}</p>
                     <Badge className="bg-primary/10 text-primary border-primary/20">
                       <Gift className="mr-1 h-4 w-4" />
@@ -248,7 +246,7 @@ const Affiliate = () => {
                     </Badge>
                   </div>
                   {index < 3 && (
-                    <ChevronRight className="h-8 w-8 text-muted-foreground" />
+                    <ChevronRight className="h-8 w-8 text-muted-foreground flex-shrink-0" />
                   )}
                 </div>
               </Card>
@@ -258,10 +256,10 @@ const Affiliate = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="py-20 px-4 bg-gradient-subtle">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-20 px-4 bg-gradient-warm-section">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="heading-1 mb-6 gradient-text-primary">
+            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
               What Affiliates Say
             </h2>
           </div>
@@ -287,14 +285,14 @@ const Affiliate = () => {
                 avatar: "👩‍🌾"
               }
             ].map((testimonial, index) => (
-              <Card key={index} className="glass-card text-center p-8 hover:scale-105 transition-smooth">
+              <Card key={index} className="bg-card border border-border text-center p-8 hover:shadow-lg transition-shadow">
                 <div className="text-6xl mb-4">{testimonial.avatar}</div>
-                <h4 className="text-xl font-bold mb-2">{testimonial.name}</h4>
+                <h4 className="text-xl font-bold mb-2 text-heading">{testimonial.name}</h4>
                 <p className="text-muted-foreground mb-4">{testimonial.role}</p>
                 <p className="text-lg italic text-foreground mb-4">"{testimonial.quote}"</p>
                 <div className="flex justify-center">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-accent fill-current" />
+                    <Star key={i} className="h-5 w-5 text-primary fill-current" />
                   ))}
                 </div>
               </Card>
@@ -305,9 +303,9 @@ const Affiliate = () => {
 
       {/* FAQ */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
-            <h2 className="heading-1 mb-6 gradient-text-primary">
+            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
               Frequently Asked Questions
             </h2>
           </div>
@@ -335,8 +333,8 @@ const Affiliate = () => {
                 answer: "You'll get access to a real-time dashboard showing all your referrals, their status, earnings, and progress toward your Kenya trip."
               }
             ].map((faq, index) => (
-              <Card key={index} className="glass-card p-6 hover:scale-105 transition-smooth">
-                <h4 className="text-xl font-bold mb-3">{faq.question}</h4>
+              <Card key={index} className="bg-card border border-border p-6 hover:shadow-lg transition-shadow">
+                <h4 className="text-xl font-bold mb-3 text-heading">{faq.question}</h4>
                 <p className="text-muted-foreground">{faq.answer}</p>
               </Card>
             ))}
@@ -345,21 +343,21 @@ const Affiliate = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-hero">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="py-20 px-4 bg-gradient-hero-to-warm">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-heading">
             Ready to Start Your
             <br />
-            <span className="gradient-text-accent">Affiliate Journey?</span>
+            <span className="text-primary">Affiliate Journey?</span>
           </h2>
           
-          <p className="text-xl mb-10 max-w-3xl mx-auto opacity-90">
+          <p className="text-xl mb-10 max-w-3xl mx-auto text-muted-foreground">
             Join hundreds of affiliates who are earning serious money while making a real impact 
             on sustainable education. Your Kenya adventure awaits!
           </p>
           
           <div className="flex justify-center mb-10">
-            <Button size="lg" className="rounded-2xl px-12 py-6 font-medium text-xl hover:scale-105 transition-smooth">
+            <Button size="lg" className="px-12 py-6 text-xl">
               <DollarSign className="mr-2 h-6 w-6" />
               Start Earning $2,000 Per Referral
             </Button>
@@ -367,16 +365,16 @@ const Affiliate = () => {
           
           <div className="flex justify-center gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold">$2,000</div>
-              <div className="text-sm opacity-75">Per Referral</div>
+              <div className="text-3xl font-bold text-heading">$2,000</div>
+              <div className="text-sm text-muted-foreground">Per Referral</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">5</div>
-              <div className="text-sm opacity-75">Referrals = Kenya</div>
+              <div className="text-3xl font-bold text-heading">5</div>
+              <div className="text-sm text-muted-foreground">Referrals = Kenya</div>
             </div>
             <div>
-              <div className="text-3xl font-bold">∞</div>
-              <div className="text-sm opacity-75">No Earning Limit</div>
+              <div className="text-3xl font-bold text-heading">∞</div>
+              <div className="text-sm text-muted-foreground">No Earning Limit</div>
             </div>
           </div>
         </div>
