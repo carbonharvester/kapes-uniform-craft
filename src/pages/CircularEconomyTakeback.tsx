@@ -157,17 +157,14 @@ const CircularEconomyTakeback = () => {
         }}></div>
       </section>
 
-      {/* How It Works Section - Process Steps (Blue Theme) */}
-      <section className="py-16 px-4 relative">
-        {/* Section Separator */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-blue-50/50 dark:to-blue-950/20"></div>
-        
+      {/* How It Works Section - Process Steps */}
+      <section className="py-16 px-4 relative bg-gradient-to-b from-background via-background-cool/30 to-background">
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300">
+            <Badge className="mb-4 bg-background-cool/80 text-heading border-background-cool">
               Process Overview
             </Badge>
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-heading">
               ♻️ How the Takeback Scheme Works
             </h2>
             
@@ -176,14 +173,14 @@ const CircularEconomyTakeback = () => {
               <CollapsibleTrigger asChild>
                 <Button 
                   variant="ghost" 
-                  className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-950/20 transition-colors"
+                  className="text-heading hover:text-heading/80 hover:bg-background-cool/50 transition-colors"
                 >
                   Learn More About Our Process
                   {openSections.process ? <ChevronDown className="ml-2 h-4 w-4 rotate-180 transition-transform" /> : <ChevronDown className="ml-2 h-4 w-4 transition-transform" />}
                 </Button>
               </CollapsibleTrigger>
               <CollapsibleContent className="mt-4">
-                <div className="max-w-3xl mx-auto bg-blue-50/50 dark:bg-blue-950/20 rounded-lg p-6 border border-blue-200/50 dark:border-blue-800/50">
+                <div className="max-w-3xl mx-auto bg-background-cool/40 rounded-lg p-6 border border-background-cool/60">
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     Our three-step process ensures maximum impact with minimal effort. We handle all logistics, 
                     tracking, and reporting while creating measurable social and environmental benefits.
@@ -198,15 +195,15 @@ const CircularEconomyTakeback = () => {
               const IconComponent = step.icon;
               return (
                 <div key={index} className="relative group">
-                  <Card className="hover:shadow-lg transition-all duration-300 text-center h-full border-blue-200/50 hover:border-blue-300 dark:border-blue-800/50 dark:hover:border-blue-700 hover:-translate-y-1">
+                  <Card className="hover:shadow-lg transition-all duration-300 text-center h-full border-border/50 hover:border-primary/30 hover:-translate-y-1 bg-background/80 backdrop-blur-sm">
                     <CardHeader>
-                      <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 rounded-full flex items-center justify-center relative shadow-lg">
-                        <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400" />
-                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
+                      <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-background-cool/60 to-background-cool/80 rounded-full flex items-center justify-center relative shadow-lg">
+                        <IconComponent className="w-8 h-8 text-heading" />
+                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-primary to-primary/80 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
                           {step.step}
                         </div>
                       </div>
-                      <CardTitle className="text-xl text-blue-900 dark:text-blue-100">{step.title}</CardTitle>
+                      <CardTitle className="text-xl text-heading">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">{step.description}</p>
@@ -214,8 +211,8 @@ const CircularEconomyTakeback = () => {
                   </Card>
                   {!isMobile && index < takebackSteps.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                      <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center shadow-md">
-                        <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      <div className="w-8 h-8 bg-background-cool/60 rounded-full flex items-center justify-center shadow-md">
+                        <ArrowRight className="w-5 h-5 text-heading" />
                       </div>
                     </div>
                   )}
@@ -224,9 +221,6 @@ const CircularEconomyTakeback = () => {
             })}
           </div>
         </div>
-        
-        {/* Bottom Section Separator */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-blue-50/50 dark:to-blue-950/20"></div>
       </section>
 
       {/* Impact Feature Section with Dynamic Images */}
