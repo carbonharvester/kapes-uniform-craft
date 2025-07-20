@@ -32,8 +32,8 @@ const KapesImpactPlatform = () => {
     description: "See exactly where and how each garment was made, from raw materials to finished product."
   }, {
     icon: Shield,
-    title: "Worker Welfare Data",
-    description: "Access detailed information about working conditions, wages, and safety standards."
+    title: "Supplier Certifications",
+    description: "View certification status and compliance records for all manufacturing partners."
   }, {
     icon: Zap,
     title: "Real-Time Impact",
