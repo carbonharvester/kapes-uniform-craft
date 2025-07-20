@@ -34,7 +34,7 @@ const CircularEconomyTakeback = () => {
     icon: BarChart3
   }];
   const parentOptions = [{
-    title: "Shop Online",
+    title: "School Collection Bin",
     description: "Drop them into a convenient school collection bin",
     icon: MapPin
   }, {
