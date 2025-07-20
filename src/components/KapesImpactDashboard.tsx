@@ -61,7 +61,7 @@ export const KapesImpactDashboard = () => {
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
                       selectedFeature === index 
                         ? 'bg-primary text-primary-foreground' 
-                        : 'bg-primary text-primary-foreground'
+                        : 'bg-muted text-muted-foreground'
                     }`}>
                       <feature.icon className="h-6 w-6" />
                     </div>
