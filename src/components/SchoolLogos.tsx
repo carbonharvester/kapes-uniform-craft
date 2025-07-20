@@ -42,9 +42,11 @@ export const SchoolLogos = () => {
   ];
 
   return (
-    <Logos3 
-      heading="Trusted by Leading International Schools"
-      logos={schoolLogos}
-    />
+    <div className="bg-gradient-to-light-warm">
+      <Logos3 
+        heading="Trusted by Leading International Schools"
+        logos={schoolLogos}
+      />
+    </div>
   );
 };
