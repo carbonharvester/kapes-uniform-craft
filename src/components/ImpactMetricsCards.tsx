@@ -118,22 +118,31 @@ export const ImpactMetricsCards = () => {
       colorScheme: 'green' as const
     },
     {
+      icon: Heart,
+      title: "Free Uniforms",
+      value: 892,
+      unit: "provided",
+      description: "Free uniforms distributed to students in need through our social impact program",
+      trend: 18.2,
+      colorScheme: 'blue' as const
+    },
+    {
       icon: Recycle,
-      title: "Uniform Recycling",
-      value: 1256,
+      title: "Uniforms Recycled",
+      value: 1456,
       unit: "items",
       description: "Uniforms recycled and given new life through our takeback scheme",
       trend: 8.3,
-      colorScheme: 'blue' as const
+      colorScheme: 'orange' as const
     },
     {
       icon: Heart,
       title: "Meals Donated",
-      value: 3421,
+      value: 1456,
       unit: "meals",
-      description: "Nutritious school meals funded in African communities",
-      trend: 15.7,
-      colorScheme: 'orange' as const
+      description: "Nutritious school meals funded in African communities - matches uniforms recycled",
+      trend: 8.3,
+      colorScheme: 'green' as const
     }
   ];
 
@@ -149,7 +158,7 @@ export const ImpactMetricsCards = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, index) => (
             <MetricCard
               key={metric.title}
