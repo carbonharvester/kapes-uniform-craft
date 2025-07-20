@@ -6,6 +6,7 @@ import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, R
 import { Footer } from "@/components/Footer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
+
 const CircularEconomyTakeback = () => {
   const isMobile = useIsMobile();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -28,7 +29,7 @@ const CircularEconomyTakeback = () => {
       details: "Our managed takeback system integrates seamlessly with your existing uniform ordering process. Parents can return uniforms through multiple convenient channels, and all logistics are handled by our team.",
       benefits: [
         "Zero setup costs or ongoing admin",
-        "Automatic integration with KapesImpact™ dashboard",
+        "Automatic integration with KapesImpact™ dashboard", 
         "Transparent reporting for governors and leadership",
         "Enhanced sustainability credentials for school"
       ]
@@ -52,6 +53,7 @@ const CircularEconomyTakeback = () => {
       ]
     }
   };
+
   const takebackSteps = [{
     title: "Parents Return Used Uniforms",
     description: "Whether outgrown, damaged, or end-of-year leftovers",
@@ -68,6 +70,7 @@ const CircularEconomyTakeback = () => {
     icon: Heart,
     step: "3"
   }];
+
   const schoolBenefits = [{
     title: "Fully Managed by Us",
     description: "No extra work for your team",
@@ -81,6 +84,7 @@ const CircularEconomyTakeback = () => {
     description: "Your community can see the impact in real time",
     icon: BarChart3
   }];
+
   const parentOptions = [{
     title: "School Collection Bin",
     description: "Drop them into a convenient school collection bin",
@@ -94,6 +98,7 @@ const CircularEconomyTakeback = () => {
     description: "Convenient collection and delivery options to your preferred location",
     icon: Calendar
   }];
+
   const impactResults = [{
     title: "Uniforms Reused or Recycled",
     description: "Less textile waste in landfills",
@@ -115,14 +120,16 @@ const CircularEconomyTakeback = () => {
     icon: BarChart3,
     metric: "Transparency"
   }];
-  return <div className="min-h-screen bg-background">
+
+  return (
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg')",
-        backgroundPosition: "center"
-      }}></div>
+          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg')",
+          backgroundPosition: "center"
+        }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -142,8 +149,8 @@ const CircularEconomyTakeback = () => {
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
+          animationDelay: '1s'
+        }}></div>
       </section>
 
       {/* How It Works Section - Process Steps (Blue Theme) */}
@@ -184,8 +191,9 @@ const CircularEconomyTakeback = () => {
           
           <div className={`grid gap-8 mb-12 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {takebackSteps.map((step, index) => {
-            const IconComponent = step.icon;
-            return <div key={index} className="relative group">
+              const IconComponent = step.icon;
+              return (
+                <div key={index} className="relative group">
                   <Card className="hover:shadow-lg transition-all duration-300 text-center h-full border-blue-200/50 hover:border-blue-300 dark:border-blue-800/50 dark:hover:border-blue-700 hover:-translate-y-1">
                     <CardHeader>
                       <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 rounded-full flex items-center justify-center relative shadow-lg">
@@ -207,8 +215,9 @@ const CircularEconomyTakeback = () => {
                       </div>
                     </div>
                   )}
-                </div>;
-          })}
+                </div>
+              );
+            })}
           </div>
         </div>
         
@@ -221,24 +230,16 @@ const CircularEconomyTakeback = () => {
         {/* Diagonal transition from previous section */}
         <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-br from-blue-50/50 via-transparent to-background dark:from-blue-950/20 transform -skew-y-1 origin-top-left"></div>
         
-        {/* Background Image with Parallax Effect */}
+        {/* Background Image */}
         <div className="absolute inset-0">
           <div 
-            className="absolute inset-0 bg-cover bg-center transform scale-105 transition-transform duration-700 hover:scale-110" 
+            className="absolute inset-0 bg-cover bg-center" 
             style={{
               backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
             }} 
           />
-          {/* Multi-layer Overlay for Better Text Contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
-        </div>
-        
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-gradient-to-br from-accent/15 to-primary/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-white/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+          {/* Cleaner overlay for better text contrast */}
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         
         {/* Main Content */}
@@ -246,49 +247,61 @@ const CircularEconomyTakeback = () => {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-5xl mx-auto">
               {/* Impact Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-6 py-3 mb-8 border border-white/20">
-                <div className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
-                <span className="text-white/90 font-medium text-sm md:text-base">Real Impact • Real Results</span>
+              <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <div className="w-3 h-3 bg-primary rounded-full"></div>
+                <span className="text-white font-medium text-sm md:text-base">Real Impact • Real Results</span>
               </div>
               
               {/* Main Headline */}
-              <div className="space-y-6">
+              <div className="space-y-8 mb-12">
                 <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
                   <span className="block mb-2">One less uniform</span>
                   <span className="block mb-2">in landfill</span>
-                  <div className="flex items-center justify-center gap-4 my-6">
-                    <div className="h-px bg-gradient-to-r from-transparent via-white/50 to-transparent flex-1"></div>
-                    <div className="text-2xl md:text-4xl">🌍</div>
-                    <div className="h-px bg-gradient-to-r from-transparent via-white/50 to-transparent flex-1"></div>
+                  <div className="flex items-center justify-center gap-6 my-8">
+                    <div className="h-px bg-white/30 flex-1"></div>
+                    <Globe className="w-8 h-8 md:w-12 md:h-12 text-white" />
+                    <div className="h-px bg-white/30 flex-1"></div>
                   </div>
-                  <span className="block text-primary-glow">One more child fed</span>
+                  <span className="block text-primary">One more child fed</span>
                 </h3>
                 
-                <p className="text-white/80 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                   Every returned uniform creates a ripple effect of positive impact across communities in Africa and here at home
                 </p>
               </div>
               
-              {/* Impact Stats Cards */}
-              <div className={`grid gap-4 mt-12 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'} max-w-4xl mx-auto`}>
-                {[
-                  { icon: "🌱", stat: "100%", label: "Circular System" },
-                  { icon: "🍽️", stat: "1:1", label: "Meals per Uniform" },
-                  { icon: "♻️", stat: "Zero", label: "Landfill Waste" }
-                ].map((item, idx) => (
-                  <div key={idx} className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
-                    <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                    <div className="text-2xl md:text-3xl font-bold text-white mb-1">{item.stat}</div>
-                    <div className="text-white/80 text-sm md:text-base">{item.label}</div>
+              {/* Redesigned Impact Stats Cards */}
+              <div className={`grid gap-6 max-w-4xl mx-auto ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
+                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Recycle className="w-6 h-6 text-primary" />
                   </div>
-                ))}
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
+                  <div className="text-white/80 text-sm md:text-base">Circular System</div>
+                </div>
+                
+                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Heart className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">1:1</div>
+                  <div className="text-white/80 text-sm md:text-base">Meals per Uniform</div>
+                </div>
+                
+                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                    <Target className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">Zero</div>
+                  <div className="text-white/80 text-sm md:text-base">Landfill Waste</div>
+                </div>
               </div>
               
               {/* Call to Action */}
-              <div className="mt-10">
+              <div className="mt-12">
                 <Button 
                   size="lg" 
-                  className="bg-white/15 hover:bg-white/25 backdrop-blur-md text-white border border-white/30 hover:border-white/50 rounded-full px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                  className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105"
                 >
                   Discover the Full Impact Journey
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -350,19 +363,19 @@ const CircularEconomyTakeback = () => {
           
           <div className={`grid gap-6 mb-8 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {schoolBenefits.map((benefit, index) => {
-            const IconComponent = benefit.icon;
-            return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-green-200/50 hover:border-green-300 dark:border-green-800/50 dark:hover:border-green-700 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                      <IconComponent className="w-7 h-7 text-green-600 dark:text-green-400" />
-                    </div>
-                    <CardTitle className="text-lg text-green-900 dark:text-green-100">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{benefit.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
+              const IconComponent = benefit.icon;
+              return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-green-200/50 hover:border-green-300 dark:border-green-800/50 dark:hover:border-green-700 hover:-translate-y-1">
+                <CardHeader>
+                  <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <IconComponent className="w-7 h-7 text-green-600 dark:text-green-400" />
+                  </div>
+                  <CardTitle className="text-lg text-green-900 dark:text-green-100">{benefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{benefit.description}</p>
+                </CardContent>
+              </Card>;
+            })}
           </div>
           
           <div className="text-center">
@@ -424,19 +437,19 @@ const CircularEconomyTakeback = () => {
           
           <div className={`grid gap-6 mb-8 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {parentOptions.map((option, index) => {
-            const IconComponent = option.icon;
-            return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-purple-200/50 hover:border-purple-300 dark:border-purple-800/50 dark:hover:border-purple-700 hover:-translate-y-1">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/40 dark:to-purple-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                      <IconComponent className="w-7 h-7 text-purple-600 dark:text-purple-400" />
-                    </div>
-                    <CardTitle className="text-lg text-purple-900 dark:text-purple-100">{option.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{option.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
+              const IconComponent = option.icon;
+              return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-purple-200/50 hover:border-purple-300 dark:border-purple-800/50 dark:hover:border-purple-700 hover:-translate-y-1">
+                <CardHeader>
+                  <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/40 dark:to-purple-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <IconComponent className="w-7 h-7 text-purple-600 dark:text-purple-400" />
+                  </div>
+                  <CardTitle className="text-lg text-purple-900 dark:text-purple-100">{option.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{option.description}</p>
+                </CardContent>
+              </Card>;
+            })}
           </div>
           
           <div className="text-center">
@@ -497,22 +510,22 @@ const CircularEconomyTakeback = () => {
           
           <div className={`grid gap-6 mb-8 justify-items-center ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
             {impactResults.map((result, index) => {
-            const IconComponent = result.icon;
-            return <Card key={index} className={`hover:shadow-lg transition-all duration-300 text-center group border-orange-200/50 hover:border-orange-300 dark:border-orange-800/50 dark:hover:border-orange-700 hover:-translate-y-1 ${isMobile ? 'w-full max-w-md' : 'w-full max-w-sm'}`}>
-                  <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/40 dark:to-orange-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                      <IconComponent className="w-7 h-7 text-orange-600 dark:text-orange-400" />
-                    </div>
-                    <Badge variant="outline" className="mb-2 mx-auto border-orange-200 text-orange-700 dark:border-orange-800 dark:text-orange-300">
-                      {result.metric}
-                    </Badge>
-                    <CardTitle className="text-lg text-center text-orange-900 dark:text-orange-100">{result.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground text-center">{result.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
+              const IconComponent = result.icon;
+              return <Card key={index} className={`hover:shadow-lg transition-all duration-300 text-center group border-orange-200/50 hover:border-orange-300 dark:border-orange-800/50 dark:hover:border-orange-700 hover:-translate-y-1 ${isMobile ? 'w-full max-w-md' : 'w-full max-w-sm'}`}>
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/40 dark:to-orange-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <IconComponent className="w-7 h-7 text-orange-600 dark:text-orange-400" />
+                  </div>
+                  <Badge variant="outline" className="mb-2 mx-auto border-orange-200 text-orange-700 dark:border-orange-800 dark:text-orange-300">
+                    {result.metric}
+                  </Badge>
+                  <CardTitle className="text-lg text-center text-orange-900 dark:text-orange-100">{result.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-muted-foreground text-center">{result.description}</p>
+                </CardContent>
+              </Card>;
+            })}
           </div>
           
           <div className="text-center">
@@ -554,6 +567,8 @@ const CircularEconomyTakeback = () => {
         </div>
       </section>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default CircularEconomyTakeback;
