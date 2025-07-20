@@ -18,7 +18,7 @@ export const SchoolCodeEntry = () => {
   };
 
   return (
-    <section className="py-24" style={{ background: 'linear-gradient(135deg, #cfeaff 0%, rgba(207, 234, 255, 0.6) 100%)' }}>
+    <section className="py-24 bg-gradient-warm-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -65,8 +65,8 @@ export const SchoolCodeEntry = () => {
               )}
               
               <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: '#cfeaff' }}>
-                  <span className="text-gray-700">?</span>
+                <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center">
+                  <span className="text-accent-foreground">?</span>
                 </div>
                 <span className="font-medium">Need help finding your school code?</span>
               </div>
