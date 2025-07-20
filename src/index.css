@@ -72,6 +72,9 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Footer background - Deep blue */
+    --footer-background: 242 97% 19%;
   }
 
   .dark {
@@ -124,6 +127,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Footer background - Deep blue (same in dark mode) */
+    --footer-background: 242 97% 19%;
   }
 }
 
@@ -254,5 +260,5 @@ body {
 
 /* Footer gradient */
 .bg-gradient-to-footer {
-  background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  background: hsl(var(--footer-background));
 }
