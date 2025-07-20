@@ -10,6 +10,7 @@ import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
 import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
 import { BlogSection } from "@/components/BlogSection";
+import { FloatingGetStarted } from "@/components/FloatingGetStarted";
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
       <Testimonials />
       <BlogSection />
       <Footer />
+      <FloatingGetStarted />
     </div>
   );
 };
