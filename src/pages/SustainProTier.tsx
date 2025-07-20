@@ -66,8 +66,9 @@ const SustainProTier = () => {
       </section>
 
       {/* What's Included */}
-      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="relative py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
+      <section className="bg-gradient-warm-section relative py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           <Card className="mb-12 border-0 shadow-glass">
             <CardHeader className="p-8">
               <CardTitle className="text-2xl md:text-3xl font-medium text-primary flex items-center gap-3">
@@ -129,12 +130,14 @@ const SustainProTier = () => {
               </div>
             </CardContent>
           </Card>
+          </div>
         </div>
       </section>
 
       {/* Impact Highlights */}
-      <section className="relative py-16 px-4 bg-gradient-warm-section -mx-4 rounded-3xl">
-        <div className="container mx-auto max-w-4xl">
+      <section className="bg-gradient-light-warm-section relative py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Your Impact at a Glance</h2>
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
@@ -156,12 +159,14 @@ const SustainProTier = () => {
               </CardHeader>
             </Card>
           </div>
+          </div>
         </div>
       </section>
 
       {/* Best For */}
-      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="relative py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
+      <section className="bg-gradient-warm-section relative py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Perfect For</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
@@ -185,13 +190,15 @@ const SustainProTier = () => {
               </CardContent>
             </Card>
           </div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-footer">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+      <section className="relative py-20 bg-gradient-to-footer">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Make an Impact Beyond Your Classroom
           </h2>
           <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
@@ -204,6 +211,7 @@ const SustainProTier = () => {
             <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book Your Free Uniform & Sustainability Audit
             </Button>
+            </div>
           </div>
         </div>
       </section>

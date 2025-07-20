@@ -85,11 +85,10 @@ const Materials = () => {
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto space-y-20">
-          
-          {/* Materials Grid */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+      {/* Materials Grid */}
+      <section className="bg-gradient-warm-section py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Material Portfolio</h2>
               <p className="text-muted-foreground text-lg">Innovation meets sustainability in every thread</p>
@@ -124,10 +123,14 @@ const Materials = () => {
                 </Card>
               ))}
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Certifications */}
-          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
+      {/* Certifications Section */}
+      <section className="bg-gradient-light-warm-section py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Certified Excellence</h2>
               <p className="text-muted-foreground text-lg">Third-party verified sustainability standards</p>
@@ -145,10 +148,14 @@ const Materials = () => {
                 </Card>
               ))}
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Material Journey */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+      {/* Process Section */}
+      <section className="bg-gradient-warm-section py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">From Fiber to Future</h2>
               <p className="text-muted-foreground text-lg">The journey of our sustainable materials</p>
@@ -195,10 +202,43 @@ const Materials = () => {
                 </CardContent>
               </Card>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* CTA Section */}
-          <section className="text-center py-16 bg-gradient-to-footer">
+      {/* Impact Stats */}
+      <section className="bg-gradient-light-warm-section py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-12">Material Impact</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardContent className="p-8 text-center">
+                  <div className="text-3xl font-light text-primary mb-2">85%</div>
+                  <div className="text-muted-foreground">Less water used than conventional cotton</div>
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardContent className="p-8 text-center">
+                  <div className="text-3xl font-light text-primary mb-2">100%</div>
+                  <div className="text-muted-foreground">Recyclable or biodegradable materials</div>
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardContent className="p-8 text-center">
+                  <div className="text-3xl font-light text-primary mb-2">0</div>
+                  <div className="text-muted-foreground">Harmful chemicals in our fabrics</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-20 bg-gradient-to-footer">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Experience the Difference
             </h2>
@@ -213,10 +253,9 @@ const Materials = () => {
                 Learn About Our Process
               </Button>
             </div>
-          </section>
-          
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
