@@ -72,10 +72,10 @@ export const getAllBlogPosts = async (): Promise<BlogPost[]> => {
   try {
     const response = await client.getEntries({
       content_type: CONTENT_TYPE_ID,
-      order: '-fields.date',
+      order: ['-fields.date'],
     });
 
-    return response.items.map(transformBlogPost);
+    return response.items.map(item => transformBlogPost(item as unknown as ContentfulBlogPost));
   } catch (error) {
     console.error('Error fetching blog posts:', error);
     throw new Error('Failed to fetch blog posts');
@@ -94,7 +94,7 @@ export const getBlogPostBySlug = async (slug: string): Promise<BlogPost | null> 
       return null;
     }
 
-    return transformBlogPost(response.items[0] as ContentfulBlogPost);
+    return transformBlogPost(response.items[0] as unknown as ContentfulBlogPost);
   } catch (error) {
     console.error('Error fetching blog post:', error);
     throw new Error('Failed to fetch blog post');
@@ -106,10 +106,10 @@ export const getBlogPostsByCategory = async (category: string): Promise<BlogPost
     const response = await client.getEntries({
       content_type: CONTENT_TYPE_ID,
       'fields.category': category,
-      order: '-fields.date',
+      order: ['-fields.date'],
     });
 
-    return response.items.map(transformBlogPost);
+    return response.items.map(item => transformBlogPost(item as unknown as ContentfulBlogPost));
   } catch (error) {
     console.error('Error fetching blog posts by category:', error);
     throw new Error('Failed to fetch blog posts');
@@ -120,11 +120,11 @@ export const getLatestBlogPosts = async (limit: number = 3): Promise<BlogPost[]>
   try {
     const response = await client.getEntries({
       content_type: CONTENT_TYPE_ID,
-      order: '-fields.date',
+      order: ['-fields.date'],
       limit,
     });
 
-    return response.items.map(transformBlogPost);
+    return response.items.map(item => transformBlogPost(item as unknown as ContentfulBlogPost));
   } catch (error) {
     console.error('Error fetching latest blog posts:', error);
     throw new Error('Failed to fetch latest blog posts');
