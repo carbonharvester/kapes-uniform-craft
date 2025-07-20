@@ -16,7 +16,6 @@ export interface BlogPost {
   excerpt: string;
   content: Document;
   featuredImage: ContentfulAsset;
-  readTime?: string; // Generated from content
 }
 
 export interface ContentfulBlogPost {

@@ -29,27 +29,6 @@ const transformAsset = (asset: any): ContentfulAsset => {
   };
 };
 
-// Helper function to calculate read time
-const calculateReadTime = (content: any): string => {
-  if (!content) return '5 min read';
-  
-  // Convert rich text to plain text and count words
-  const getText = (node: any): string => {
-    if (!node) return '';
-    if (typeof node === 'string') return node;
-    if (node.value) return node.value;
-    if (node.content) {
-      return node.content.map(getText).join(' ');
-    }
-    return '';
-  };
-  
-  const plainText = getText(content);
-  const wordCount = plainText.split(/\s+/).filter(word => word.length > 0).length;
-  const readTime = Math.max(1, Math.round(wordCount / 200)); // 200 words per minute
-  
-  return `${readTime} min read`;
-};
 
 // Transform Contentful entry to BlogPost
 const transformBlogPost = (entry: ContentfulBlogPost): BlogPost => {
@@ -60,7 +39,6 @@ const transformBlogPost = (entry: ContentfulBlogPost): BlogPost => {
     excerpt: entry.fields.excerpt,
     content: entry.fields.content,
     featuredImage: transformAsset(entry.fields.featuredImage),
-    readTime: calculateReadTime(entry.fields.content),
   };
 };
 

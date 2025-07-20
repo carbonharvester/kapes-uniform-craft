@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { BlogPost } from "@/types/blog";
 import { Link } from "react-router-dom";
 
@@ -49,10 +49,6 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
               <span className="flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
                 {formatDate(post.date)}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-3 h-3" />
-                {post.readTime}
               </span>
             </div>
             <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">

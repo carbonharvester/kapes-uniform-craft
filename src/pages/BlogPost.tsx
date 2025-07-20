@@ -6,7 +6,7 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Share2 } from "lucide-react";
 import { getBlogPostBySlug, getLatestBlogPosts } from "@/services/contentful";
 import { BlogCard } from "@/components/BlogCard";
 import { Footer } from "@/components/Footer";
@@ -188,10 +188,6 @@ const BlogPost = () => {
                    <span className="flex items-center gap-1">
                      <Calendar className="w-4 h-4" />
                      {formatDate(post.date)}
-                   </span>
-                   <span className="flex items-center gap-1">
-                     <Clock className="w-4 h-4" />
-                     {post.readTime}
                    </span>
                  </div>
                 

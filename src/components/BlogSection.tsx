@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { getLatestBlogPosts } from "@/services/contentful";
@@ -112,10 +112,6 @@ export const BlogSection = () => {
                         <span className="flex items-center gap-1">
                           <Calendar className="w-3 h-3" />
                           {formatDate(post.date)}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {post.readTime}
                         </span>
                       </div>
                       <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">

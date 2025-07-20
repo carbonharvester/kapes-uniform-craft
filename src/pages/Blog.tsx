@@ -133,11 +133,9 @@ const Blog = () => {
                      <div className="space-y-6">
                        <h3 className="text-3xl font-semibold leading-tight">{featuredPost.title}</h3>
                        <p className="text-lg text-muted-foreground leading-relaxed">{featuredPost.excerpt}</p>
-                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                         <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
-                         <span>•</span>
-                         <span>{featuredPost.readTime}</span>
-                       </div>
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                          <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
+                        </div>
                       <Button asChild size="lg">
                         <a href={`/blog/${featuredPost.slug}`}>Read Full Article</a>
                       </Button>
