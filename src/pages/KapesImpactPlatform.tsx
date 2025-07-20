@@ -190,9 +190,9 @@ const KapesImpactPlatform = () => {
       <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
-            <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-2xl px-6 py-3 mb-6">
-              <FileText className="w-5 h-5 text-secondary" />
-              <span className="text-sm font-medium text-secondary">Professional Reporting</span>
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
+              <FileText className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium text-primary">Professional Reporting</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Reporting Made Easy
