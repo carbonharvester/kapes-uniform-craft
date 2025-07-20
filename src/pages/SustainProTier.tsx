@@ -65,8 +65,8 @@ const SustainProTier = () => {
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      {/* What's Included */}
-      <section className="bg-gradient-warm-section relative py-16">
+      {/* What's Included - Blue gradient like homepage */}
+      <section className="relative py-16" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
           <Card className="mb-12 border-0 shadow-glass">
@@ -134,8 +134,8 @@ const SustainProTier = () => {
         </div>
       </section>
 
-      {/* Impact Highlights */}
-      <section className="bg-gradient-light-warm-section relative py-16">
+      {/* Impact Highlights - Warm cream */}
+      <section className="bg-gradient-warm-section relative py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Your Impact at a Glance</h2>
@@ -163,8 +163,8 @@ const SustainProTier = () => {
         </div>
       </section>
 
-      {/* Best For */}
-      <section className="bg-gradient-warm-section relative py-16">
+      {/* Best For - Blue gradient */}
+      <section className="relative py-16" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Perfect For</h2>

@@ -85,8 +85,8 @@ const Materials = () => {
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
-      {/* Materials Grid */}
-      <section className="bg-gradient-warm-section py-16">
+      {/* Materials Grid - Blue gradient like homepage */}
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -127,8 +127,8 @@ const Materials = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <section className="bg-gradient-light-warm-section py-16">
+      {/* Certifications Section - Warm cream */}
+      <section className="bg-gradient-warm-section py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -152,8 +152,8 @@ const Materials = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="bg-gradient-warm-section py-16">
+      {/* Process Section - Blue gradient */}
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -206,7 +206,7 @@ const Materials = () => {
         </div>
       </section>
 
-      {/* Impact Stats */}
+      {/* Impact Stats - Light cream */}
       <section className="bg-gradient-light-warm-section py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
