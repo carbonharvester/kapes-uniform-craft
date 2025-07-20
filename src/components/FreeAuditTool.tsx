@@ -16,7 +16,7 @@ export const FreeAuditTool = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
               Discover Your School's Sustainability Score in 5 Minutes
             </h2>
-            <p className="text-muted-foreground mb-4">If you are a school that values sustainability does not currently have sustainable uniforms, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>
+            <p className="text-muted-foreground mb-4">If your schools values sustainability but does not currently have sustainable uniforms yet, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>
             <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-primary" />
