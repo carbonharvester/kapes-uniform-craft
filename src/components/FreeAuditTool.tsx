@@ -21,29 +21,43 @@ export const FreeAuditTool = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Sustainability Assessment</h4>
-                    <p className="text-muted-foreground text-sm">Current environmental impact analysis</p>
+                    <h4 className="font-semibold">Material Sustainability</h4>
+                    <p className="text-muted-foreground text-sm">Evaluate fabrics, packaging, and material sourcing impact</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">School Benchmarking</h4>
-                    <p className="text-muted-foreground text-sm">Compare your sustainability performance against other schools</p>
+                    <h4 className="font-semibold">Supply Chain Ethics</h4>
+                    <p className="text-muted-foreground text-sm">Assess factory conditions, fair wages, and certifications</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Impact Projections</h4>
-                    <p className="text-muted-foreground text-sm">See your potential positive impact with Kapes</p>
+                    <h4 className="font-semibold">End-of-Life Management</h4>
+                    <p className="text-muted-foreground text-sm">Review takeback programs and circular economy practices</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Custom Recommendations</h4>
-                    <p className="text-muted-foreground text-sm">Tailored action plan for your school</p>
+                    <h4 className="font-semibold">Distribution Efficiency</h4>
+                    <p className="text-muted-foreground text-sm">Analyze logistics, packaging, and delivery methods</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold">Innovation & Technology</h4>
+                    <p className="text-muted-foreground text-sm">Explore AI sizing, demand forecasting, and future trends</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold">Readiness Assessment</h4>
+                    <p className="text-muted-foreground text-sm">Determine your school's readiness for sustainable transitions</p>
                   </div>
                 </div>
               </div>
