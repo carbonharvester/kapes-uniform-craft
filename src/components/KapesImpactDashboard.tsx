@@ -30,7 +30,7 @@ export const KapesImpactDashboard = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
 
   return (
-    <section className="py-24" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
+    <section className="py-24" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
