@@ -32,8 +32,8 @@ const KapesImpactPlatform = () => {
     description: "See exactly where and how each garment was made, from raw materials to finished product."
   }, {
     icon: Shield,
-    title: "Supplier Certifications",
-    description: "View certification status and compliance records for all manufacturing partners."
+    title: "Worker Welfare Data",
+    description: "Access detailed information about working conditions, wages, and safety standards."
   }, {
     icon: Zap,
     title: "Real-Time Impact",
@@ -309,7 +309,7 @@ const KapesImpactPlatform = () => {
 
       {/* Enhanced CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[cfeaff]">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
         </div>
