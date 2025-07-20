@@ -23,7 +23,7 @@ export const FreeAuditTool = () => {
           {/* Social proof banner */}
           <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 mb-8 text-center">
             <p className="text-sm font-medium text-primary">
-              🔥 Limited Time: Free expert consultation for qualified schools (Valued at $75000)
+              🔥 Limited Time: Free expert consultation for qualified schools (Valued at $750)
             </p>
           </div>
           
