@@ -118,9 +118,9 @@ export const SchoolShopsLockers = () => {
           <section>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">E-Commerce Lockers</h2>
-              <div className="inline-flex items-center gap-2 bg-accent/10 rounded-full px-6 py-2 mb-6">
-                <Package className="w-4 h-4 text-accent" />
-                <span className="text-sm font-medium text-accent">Smart Pickup Solution</span>
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6">
+                <Package className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Smart Pickup Solution</span>
               </div>
               <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
             </div>
