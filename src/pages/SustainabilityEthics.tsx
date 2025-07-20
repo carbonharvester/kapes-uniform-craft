@@ -2,115 +2,76 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  Leaf, 
-  Recycle, 
-  Shield, 
-  Users, 
-  BarChart3, 
-  QrCode, 
-  Package, 
-  Truck,
-  CheckCircle,
-  Heart,
-  Globe
-} from "lucide-react";
-
+import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe } from "lucide-react";
 const SustainabilityEthics = () => {
-  const sustainableMaterials = [
-    {
-      title: "Regenerative Organic Cotton",
-      description: "Improves soil health, biodiversity, and farmer livelihoods",
-      icon: Leaf
-    },
-    {
-      title: "Recycled Materials", 
-      description: "Reduces reliance on virgin resources and cuts plastic waste",
-      icon: Recycle
-    },
-    {
-      title: "Biodegradable Alternatives to Polyester",
-      description: "High-performance fabrics that safely return to nature at end of life",
-      icon: Globe
-    },
-    {
-      title: "Zero Toxins, Zero Greenwashing",
-      description: "Every fabric is safe, breathable, and built to last",
-      icon: Shield
-    }
-  ];
-
-  const ethicalStandards = [
-    {
-      title: "No Child Labour",
-      description: "Ever",
-      icon: Shield
-    },
-    {
-      title: "Fair Wages & Safe Working Conditions", 
-      description: "Protecting worker rights and wellbeing",
-      icon: Heart
-    },
-    {
-      title: "Independent Audits & Full Transparency",
-      description: "Open books, verified practices",
-      icon: CheckCircle
-    },
-    {
-      title: "Respect for Workers & Their Communities",
-      description: "Supporting local communities and economies",
-      icon: Users
-    }
-  ];
-
-  const sustainabilityFeatures = [
-    {
-      title: "KapesImpact™ Dashboard",
-      description: "Every Core and Impact school receives access to track their sustainability metrics",
-      icon: BarChart3
-    },
-    {
-      title: "Real-Time Impact Tracking",
-      description: "Track your school's carbon savings, recycled garments, and meals donated",
-      icon: BarChart3
-    },
-    {
-      title: "QR Code Transparency",
-      description: "Impact tier uniforms come with QR codes showing real-time garment impact",
-      icon: QrCode
-    }
-  ];
-
-  const logisticsFeatures = [
-    {
-      title: "Glassine Paper Packaging",
-      description: "Impact tier gets fully plastic-free experience",
-      icon: Package
-    },
-    {
-      title: "Recycled Polybags", 
-      description: "Core tier protection with purpose",
-      icon: Recycle
-    },
-    {
-      title: "Smart Delivery Options",
-      description: "Next-day delivery for convenience with reduced waste",
-      icon: Truck
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const sustainableMaterials = [{
+    title: "Regenerative Organic Cotton",
+    description: "Improves soil health, biodiversity, and farmer livelihoods",
+    icon: Leaf
+  }, {
+    title: "Recycled Materials",
+    description: "Reduces reliance on virgin resources and cuts plastic waste",
+    icon: Recycle
+  }, {
+    title: "Biodegradable Alternatives to Polyester",
+    description: "High-performance fabrics that safely return to nature at end of life",
+    icon: Globe
+  }, {
+    title: "Zero Toxins, Zero Greenwashing",
+    description: "Every fabric is safe, breathable, and built to last",
+    icon: Shield
+  }];
+  const ethicalStandards = [{
+    title: "No Child Labour",
+    description: "Ever",
+    icon: Shield
+  }, {
+    title: "Fair Wages & Safe Working Conditions",
+    description: "Protecting worker rights and wellbeing",
+    icon: Heart
+  }, {
+    title: "Independent Audits & Full Transparency",
+    description: "Open books, verified practices",
+    icon: CheckCircle
+  }, {
+    title: "Respect for Workers & Their Communities",
+    description: "Supporting local communities and economies",
+    icon: Users
+  }];
+  const sustainabilityFeatures = [{
+    title: "KapesImpact™ Dashboard",
+    description: "Every Core and Impact school receives access to track their sustainability metrics",
+    icon: BarChart3
+  }, {
+    title: "Real-Time Impact Tracking",
+    description: "Track your school's carbon savings, recycled garments, and meals donated",
+    icon: BarChart3
+  }, {
+    title: "QR Code Transparency",
+    description: "Impact tier uniforms come with QR codes showing real-time garment impact",
+    icon: QrCode
+  }];
+  const logisticsFeatures = [{
+    title: "Glassine Paper Packaging",
+    description: "Impact tier gets fully plastic-free experience",
+    icon: Package
+  }, {
+    title: "Recycled Polybags",
+    description: "Core tier protection with purpose",
+    icon: Recycle
+  }, {
+    title: "Smart Delivery Options",
+    description: "Next-day delivery for convenience with reduced waste",
+    icon: Truck
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-            backgroundPosition: "20% center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+        backgroundPosition: "20% center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -132,7 +93,9 @@ const SustainabilityEthics = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* Sustainable Materials Section */}
@@ -149,9 +112,8 @@ const SustainabilityEthics = () => {
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {sustainableMaterials.map((material, index) => {
-              const IconComponent = material.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+            const IconComponent = material.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-green-100 rounded-lg dark:bg-green-900/20">
@@ -163,9 +125,8 @@ const SustainabilityEthics = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{material.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center">
@@ -190,9 +151,8 @@ const SustainabilityEthics = () => {
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {ethicalStandards.map((standard, index) => {
-              const IconComponent = standard.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+            const IconComponent = standard.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-blue-100 rounded-lg dark:bg-blue-900/20">
@@ -204,9 +164,8 @@ const SustainabilityEthics = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{standard.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center">
@@ -231,9 +190,8 @@ const SustainabilityEthics = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {sustainabilityFeatures.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            const IconComponent = feature.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
                       <IconComponent className="w-6 h-6 text-purple-600" />
@@ -243,9 +201,8 @@ const SustainabilityEthics = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center">
@@ -270,9 +227,8 @@ const SustainabilityEthics = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {logisticsFeatures.map((feature, index) => {
-              const IconComponent = feature.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            const IconComponent = feature.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
                       <IconComponent className="w-6 h-6 text-orange-600" />
@@ -282,37 +238,38 @@ const SustainabilityEthics = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{feature.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
 
       {/* Enhanced CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#f9f3df]">
+        <div className="absolute inset-0 bg-[#030063]">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-white">
               Kapes makes it easy for schools to align their uniforms with their values — without compromise.
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
+            <p style={{
+            color: '#030063'
+          }} className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-white">
               Because doing the right thing should be the simplest option.
             </p>
             <Link to="/partnership-tiers">
-              <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth text-white" style={{ backgroundColor: '#f97769' }}>
+              <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth text-white" style={{
+              backgroundColor: '#f97769'
+            }}>
                 Learn About Our Partnership Tiers
               </Button>
             </Link>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default SustainabilityEthics;
