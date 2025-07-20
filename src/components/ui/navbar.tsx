@@ -253,7 +253,7 @@ const Navbar = ({
           </div>
           <div className="flex gap-3">
             <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
-              <a href={auth.login.url}>{auth.login.text}</a>
+              <a href="/shop">Shop</a>
             </Button>
             <Button asChild size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
               <a href="/sustainability-scorecard">Take Audit</a>
