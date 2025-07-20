@@ -7,6 +7,7 @@ import { Calendar, ArrowRight } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 import { getLatestBlogPosts } from "@/services/contentful";
+import { BlogCard } from "@/components/BlogCard";
 
 export const BlogSection = () => {
   const { data: blogPosts, isLoading, error } = useQuery({
@@ -63,7 +64,7 @@ export const BlogSection = () => {
           {isLoading ? (
             // Loading skeleton
             [...Array(3)].map((_, index) => (
-              <Card key={index} className="overflow-hidden">
+              <Card key={index} className="overflow-hidden h-[400px]">
                 <Skeleton className="aspect-video w-full" />
                 <CardHeader>
                   <Skeleton className="h-4 w-20 mb-2" />
@@ -84,44 +85,7 @@ export const BlogSection = () => {
             ))
           ) : (
             blogPosts?.map(post => (
-              <Link key={post.slug} to={`/blog/${post.slug}`}>
-                <Card className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-                  <div className="aspect-video relative overflow-hidden bg-muted/50">
-                    <img 
-                      src={post.featuredImage.url} 
-                      alt={post.featuredImage.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                     <div className="absolute top-4 left-4">
-                       <span className="text-xs text-background/90 bg-background/20 backdrop-blur-sm px-2 py-1 rounded">
-                         {formatDate(post.date)}
-                       </span>
-                     </div>
-                  </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
-                      {post.title}
-                    </CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" />
-                          {formatDate(post.date)}
-                        </span>
-                      </div>
-                      <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
-                        Read more
-                        <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
+              <BlogCard key={post.slug} post={post} />
             ))
           )}
         </div>
