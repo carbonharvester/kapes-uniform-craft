@@ -82,7 +82,7 @@ export const ValueCalculator = () => {
   };
 
   return (
-    <section className="py-16 bg-background-cool relative">
+    <section className="py-16 bg-gradient-cool-warm relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

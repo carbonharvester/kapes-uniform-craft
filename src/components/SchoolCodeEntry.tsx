@@ -18,7 +18,7 @@ export const SchoolCodeEntry = () => {
   };
 
   return (
-    <section className="py-24 bg-background-warm">
+    <section className="py-24 bg-gradient-warm-section">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">

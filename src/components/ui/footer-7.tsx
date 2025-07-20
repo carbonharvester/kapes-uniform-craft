@@ -81,7 +81,7 @@ export const Footer7 = ({
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
-    <section className="py-32 bg-[#030063] text-white">
+    <section className="py-32 bg-gradient-to-footer text-foreground">
       <div className="container mx-auto">
         <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
           <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
@@ -96,12 +96,12 @@ export const Footer7 = ({
                 />
               </a>
             </div>
-            <p className="max-w-[70%] text-sm text-white/70">
+            <p className="max-w-[70%] text-sm text-muted-foreground">
               {description}
             </p>
-            <ul className="flex items-center space-x-6 text-white/70">
+            <ul className="flex items-center space-x-6 text-muted-foreground">
               {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium hover:text-[#f9f3df]">
+                <li key={idx} className="font-medium hover:text-primary">
                   <a href={social.href} aria-label={social.label}>
                     {social.icon}
                   </a>
@@ -112,12 +112,12 @@ export const Footer7 = ({
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold text-white">{section.title}</h3>
-                <ul className="space-y-3 text-xs text-white/70">
+                <h3 className="mb-4 font-bold text-foreground">{section.title}</h3>
+                <ul className="space-y-3 text-xs text-muted-foreground">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-[#f9f3df]"
+                      className="font-medium hover:text-primary"
                     >
                       <a href={link.href}>{link.name}</a>
                     </li>
