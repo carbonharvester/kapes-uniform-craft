@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -173,29 +172,27 @@ const BlogPost = () => {
               />
             </div>
 
-             <div className="space-y-6">
-              
+            <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
                 {post.title}
               </h1>
               
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                {post.excerpt}
-              </p>
-
-               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 py-6 border-y border-border">
-                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                   <span className="flex items-center gap-1">
-                     <Calendar className="w-4 h-4" />
-                     {formatDate(post.date)}
-                   </span>
-                 </div>
+              {/* Date and Share Section - Moved here for better hierarchy */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Calendar className="w-4 h-4" />
+                  <span>{formatDate(post.date)}</span>
+                </div>
                 
                 <Button variant="outline" size="sm" onClick={sharePost}>
                   <Share2 className="w-4 h-4 mr-2" />
                   Share
                 </Button>
               </div>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                {post.excerpt}
+              </p>
             </div>
 
             {/* Content */}
