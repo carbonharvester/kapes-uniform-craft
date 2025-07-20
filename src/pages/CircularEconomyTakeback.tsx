@@ -2,10 +2,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { FeatureSteps } from "@/components/ui/feature-section";
 import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, RefreshCw, Target, CheckCircle, TrendingUp, Mail, MapPin, Calendar, ChevronDown, Plus, Minus } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
+import circularSystemImg from "@/assets/circular-system.jpg";
+import mealsProgramImg from "@/assets/meals-program.jpg";
+import zeroWasteImg from "@/assets/zero-waste.jpg";
 
 const CircularEconomyTakeback = () => {
   const isMobile = useIsMobile();
@@ -225,95 +229,35 @@ const CircularEconomyTakeback = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-blue-50/50 dark:to-blue-950/20"></div>
       </section>
 
-      {/* Enhanced Hero Impact Section */}
-      <section className="relative min-h-[70vh] overflow-hidden">
-        {/* Diagonal transition from previous section */}
-        <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-br from-blue-50/50 via-transparent to-background dark:from-blue-950/20 transform -skew-y-1 origin-top-left"></div>
-        
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <div 
-            className="absolute inset-0 bg-cover bg-center" 
-            style={{
-              backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
-            }} 
-          />
-          {/* Cleaner overlay for better text contrast */}
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
-        
-        {/* Main Content */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-5xl mx-auto">
-              {/* Impact Badge */}
-              <div className="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
-                <span className="text-white font-medium text-sm md:text-base">Real Impact • Real Results</span>
-              </div>
-              
-              {/* Main Headline */}
-              <div className="space-y-8 mb-12">
-                <h3 className="text-3xl md:text-5xl lg:text-6xl font-light text-white leading-tight">
-                  <span className="block mb-2">One less uniform</span>
-                  <span className="block mb-2">in landfill</span>
-                  <div className="flex items-center justify-center gap-6 my-8">
-                    <div className="h-px bg-white/30 flex-1"></div>
-                    <Globe className="w-8 h-8 md:w-12 md:h-12 text-white" />
-                    <div className="h-px bg-white/30 flex-1"></div>
-                  </div>
-                  <span className="block text-primary">One more child fed</span>
-                </h3>
-                
-                <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
-                  Every returned uniform creates a ripple effect of positive impact across communities in Africa and here at home
-                </p>
-              </div>
-              
-              {/* Redesigned Impact Stats Cards */}
-              <div className={`grid gap-6 max-w-4xl mx-auto ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
-                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Recycle className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-                  <div className="text-white/80 text-sm md:text-base">Circular System</div>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">1:1</div>
-                  <div className="text-white/80 text-sm md:text-base">Meals per Uniform</div>
-                </div>
-                
-                <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Target className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">Zero</div>
-                  <div className="text-white/80 text-sm md:text-base">Landfill Waste</div>
-                </div>
-              </div>
-              
-              {/* Call to Action */}
-              <div className="mt-12">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105"
-                >
-                  Discover the Full Impact Journey
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Diagonal transition to next section */}
-        <div className="absolute -bottom-24 left-0 right-0 h-24 bg-gradient-to-tl from-green-50/50 via-transparent to-background dark:from-green-950/20 transform skew-y-1 origin-bottom-right"></div>
-      </section>
+      {/* Impact Feature Section with Dynamic Images */}
+      <FeatureSteps 
+        features={[
+          { 
+            step: 'Impact 1',
+            title: '100% Circular System',
+            content: 'Every uniform returned enters our closed-loop system, ensuring nothing goes to waste and creating continuous value for communities.',
+            image: circularSystemImg,
+            icon: Recycle
+          },
+          { 
+            step: 'Impact 2',
+            title: '1:1 Meals per Uniform', 
+            content: 'For every uniform item returned, we fund one nutritious school meal for a child in need across African communities.',
+            image: mealsProgramImg,
+            icon: Heart
+          },
+          { 
+            step: 'Impact 3',
+            title: 'Zero Landfill Waste',
+            content: 'Through our comprehensive takeback scheme, no uniform ends up in landfill - creating a truly sustainable textile lifecycle.',
+            image: zeroWasteImg,
+            icon: Target
+          }
+        ]}
+        title="Real Impact • Real Results"
+        autoPlayInterval={4000}
+        className="bg-gradient-to-b from-background to-muted/30"
+      />
 
       {/* For Schools Section - Green Theme */}
       <section className="bg-gradient-to-br from-green-50/50 via-green-25/30 to-background dark:from-green-950/20 dark:via-green-900/10 py-16 px-4 relative">
