@@ -279,103 +279,74 @@ export const KapesDifferentCarousel = () => {
         }}
         className="w-full"
       >
-        <CarouselContent className="-ml-2 md:-ml-4 py-8">
-          {differences.map((difference, index) => (
+        <CarouselContent className="-ml-2 md:-ml-4 py-4">
+          {differences.map((difference) => (
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 px-2 basis-full sm:basis-1/2 lg:basis-1/3">
-              <Card className="h-[500px] border-0 overflow-hidden relative group cursor-pointer transition-all duration-500 hover:scale-[1.02] rounded-3xl shadow-lg hover:shadow-2xl">
+              <Card className="h-96 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
                 <div 
                   className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url(${difference.image})` }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0) 25%)' }} />
                 
-                {/* Enhanced gradient overlay for better text readability */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/20" />
-                
-                <CardContent className="p-8 h-full flex flex-col justify-between relative z-10">
-                  {/* Top section with icon and text */}
-                  <div className="space-y-4">
-                    <div className="inline-flex p-3 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30">
-                      {React.cloneElement(difference.icon as React.ReactElement, {
-                        className: "w-6 h-6 text-white"
-                      })}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h3 className="text-2xl font-bold leading-tight text-white">
-                        {difference.title}
-                      </h3>
-                      <p className="text-sm text-white/90 font-medium leading-relaxed">
-                        {difference.tagline}
-                      </p>
-                      <p className="text-xs text-white/75 leading-relaxed">
-                        {difference.subtitle}
-                      </p>
-                    </div>
+                <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
+                  {/* Text content at top left */}
+                  <div>
+                    <h3 className="text-xl font-semibold leading-tight text-white mb-2">
+                      {difference.title}
+                    </h3>
+                    <p className="text-sm text-white/90 font-light">
+                      {difference.tagline}
+                    </p>
                   </div>
 
-                  {/* Bottom section with plus button */}
-                  <div className="flex justify-end">
-                    <Dialog 
-                      open={openDialog === difference.id} 
-                      onOpenChange={(open) => setOpenDialog(open ? difference.id : null)}
-                    >
-                      <DialogTrigger asChild>
-                        <button
-                          className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setOpenDialog(openDialog === difference.id ? null : difference.id);
-                          }}
-                        >
-                          <Plus className="w-5 h-5 text-white" />
-                        </button>
-                      </DialogTrigger>
-                      <DialogContent className="w-[520px] max-w-[520px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm rounded-2xl">
-                        <div className="p-10">
-                          <div className="flex items-center space-x-4 mb-8">
-                            <div className="p-4 rounded-2xl bg-primary/10">
-                              {React.cloneElement(difference.icon as React.ReactElement, {
-                                className: "w-7 h-7 text-primary"
-                              })}
-                            </div>
-                            <h4 className="text-2xl font-bold text-foreground">
-                              {difference.details.title}
-                            </h4>
-                          </div>
-                          
-                          <div className="prose prose-gray max-w-none">
-                            <p className="text-base text-muted-foreground mb-6 leading-relaxed whitespace-pre-line">
+                   {/* Plus Button at bottom right */}
+                   <div className="flex justify-end">
+                     <Dialog 
+                       open={openDialog === difference.id} 
+                       onOpenChange={(open) => setOpenDialog(open ? difference.id : null)}
+                     >
+                       <DialogTrigger asChild>
+                         <button
+                           className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
+                           onClick={(e) => {
+                             e.stopPropagation();
+                             setOpenDialog(openDialog === difference.id ? null : difference.id);
+                           }}
+                         >
+                           <Plus className="w-4 h-4 text-white" />
+                         </button>
+                       </DialogTrigger>
+                       <DialogContent className="w-[480px] max-w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm">
+                         <div className="p-8">
+                           <div className="flex items-center space-x-4 mb-6">
+                             <div className="p-3 rounded-xl bg-primary">
+                               {React.cloneElement(difference.icon as React.ReactElement, {
+                                 className: "w-6 h-6 text-white"
+                               })}
+                             </div>
+                             <h4 className="text-xl font-semibold text-foreground">
+                               {difference.details.title}
+                             </h4>
+                           </div>
+                           
+                            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                               {difference.details.content}
                             </p>
-                            
-                            {difference.details.features.length > 0 && (
-                              <div>
-                                <h5 className="text-lg font-semibold text-foreground mb-4">Key Features:</h5>
-                                <ul className="space-y-2">
-                                  {difference.details.features.map((feature, idx) => (
-                                    <li key={idx} className="flex items-start space-x-3">
-                                      <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                                      <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  </div>
+                         </div>
+                       </DialogContent>
+                     </Dialog>
+                   </div>
                 </CardContent>
               </Card>
             </CarouselItem>
           ))}
         </CarouselContent>
         
-        {/* Enhanced navigation arrows */}
-        <div className="flex justify-center items-center mt-12 space-x-6">
-          <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 w-12 h-12 rounded-2xl border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" />
-          <CarouselNext className="relative right-0 translate-x-0 translate-y-0 w-12 h-12 rounded-2xl border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" />
+        {/* Navigation arrows positioned below and centered */}
+        <div className="flex justify-center items-center mt-8 space-x-4">
+          <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
+          <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
         </div>
       </Carousel>
     </div>
