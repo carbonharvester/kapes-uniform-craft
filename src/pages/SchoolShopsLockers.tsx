@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { Feature } from "@/components/ui/feature-with-image-comparison";
 
 export const SchoolShopsLockers = () => {
   return (
@@ -221,6 +222,9 @@ export const SchoolShopsLockers = () => {
               </Card>
             </div>
           </section>
+
+          {/* Image Comparison Section */}
+          <Feature />
 
           {/* CTA Section */}
           <section className="text-center py-16">
