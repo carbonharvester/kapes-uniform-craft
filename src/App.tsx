@@ -19,7 +19,6 @@ import EducationalResources from "./pages/EducationalResources";
 import OurMission from "./pages/OurMission";
 import Materials from "./pages/Materials";
 import OurFactories from "./pages/OurFactories";
-import WhatsInAFootprint from "./pages/WhatsInAFootprint";
 import PartnershipTiers from "./pages/PartnershipTiers";
 import FactoryVisits from "./pages/FactoryVisits";
 import StudentLeadership from "./pages/StudentLeadership";
@@ -67,7 +66,6 @@ const App = () => (
           <Route path="/our-mission" element={<OurMission />} />
           <Route path="/materials" element={<Materials />} />
           <Route path="/our-factories" element={<OurFactories />} />
-          <Route path="/whats-in-a-footprint" element={<WhatsInAFootprint />} />
           <Route path="/uniform-solutions" element={<UniformSolutions />} />
           <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
            <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />

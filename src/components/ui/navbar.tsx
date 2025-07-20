@@ -1,5 +1,5 @@
 import React from "react";
-import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator, Factory, Leaf } from "lucide-react";
 
 import {
   Accordion,
@@ -65,6 +65,10 @@ const Navbar = ({
   },
   menu = [
     {
+      title: "About",
+      url: "/about",
+    },
+    {
       title: "Why Kapes",
       url: "#",
       items: [
@@ -81,10 +85,28 @@ const Navbar = ({
           url: "/sustainability-ethics",
         },
         {
+          title: "Materials",
+          description: "Sustainable and innovative fabric choices",
+          icon: <Leaf className="size-5 shrink-0" />,
+          url: "/materials",
+        },
+        {
+          title: "Our Factories",
+          description: "Ethical manufacturing partnerships worldwide",
+          icon: <Factory className="size-5 shrink-0" />,
+          url: "/our-factories",
+        },
+        {
           title: "Social Impact in Africa",
           description: "Our positive impact on African communities",
           icon: <Heart className="size-5 shrink-0" />,
           url: "/social-impact-africa",
+        },
+        {
+          title: "Educational Resources",
+          description: "Teaching materials about sustainability",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/educational-resources",
         },
         {
           title: "Student Leadership",
@@ -183,12 +205,6 @@ const Navbar = ({
       url: "#",
       items: [
         {
-          title: "Educational Resources",
-          description: "Teaching materials about sustainability",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "/educational-resources",
-        },
-        {
           title: "Factory Visits",
           description: "Tour our manufacturing facilities",
           icon: <Building className="size-5 shrink-0" />,
@@ -214,7 +230,6 @@ const Navbar = ({
     },
   ],
   mobileExtraLinks = [
-    { name: "About", url: "/about" },
     { name: "Resources & Tools", url: "/resources" },
   ],
   auth = {
@@ -260,6 +275,7 @@ const Navbar = ({
             </Button>
           </div>
         </nav>
+
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <a href={logo.url} className="flex items-center gap-2">
