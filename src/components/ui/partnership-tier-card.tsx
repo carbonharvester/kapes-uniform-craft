@@ -1,126 +1,86 @@
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Star, Sparkles, Crown, Settings } from "lucide-react"
-
+import * as React from "react";
+import { BadgeCheck, ArrowRight, Crown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 export interface PartnershipTier {
-  name: string
-  features: string[]
-  description: string
-  cta: string
-  href: string
-  popular?: boolean
-  highlighted?: boolean
+  name: string;
+  description: string;
+  features: string[];
+  cta: string;
+  href: string;
+  highlighted?: boolean;
+  popular?: boolean;
 }
-
 interface PartnershipTierCardProps {
-  tier: PartnershipTier
+  tier: PartnershipTier;
 }
-
-export function PartnershipTierCard({ tier }: PartnershipTierCardProps) {
-  const getIconForTier = (tierName: string) => {
-    switch (tierName.toLowerCase()) {
-      case 'ecolaunch':
-        return <Star className="w-6 h-6 text-green-600" />
-      case 'sustainpro':
-        return <Sparkles className="w-6 h-6 text-blue-600" />
-      case 'legacyimpact':
-        return <Crown className="w-6 h-6 text-purple-600" />
-      case 'custom':
-        return <Settings className="w-6 h-6 text-orange-600" />
-      default:
-        return <Star className="w-6 h-6 text-primary" />
-    }
-  }
-
-  const getColorScheme = (tierName: string) => {
-    switch (tierName.toLowerCase()) {
-      case 'ecolaunch':
-        return {
-          badge: 'bg-green-100 text-green-800 border-green-200',
-          header: 'bg-green-50',
-          button: 'bg-green-600 hover:bg-green-700 text-white'
-        }
-      case 'sustainpro':
-        return {
-          badge: 'bg-blue-100 text-blue-800 border-blue-200',
-          header: 'bg-blue-50',
-          button: 'bg-blue-600 hover:bg-blue-700 text-white'
-        }
-      case 'legacyimpact':
-        return {
-          badge: 'bg-purple-100 text-purple-800 border-purple-200',
-          header: 'bg-purple-50',
-          button: 'bg-purple-600 hover:purple-700 text-white'
-        }
-      case 'custom':
-        return {
-          badge: 'bg-orange-100 text-orange-800 border-orange-200',
-          header: 'bg-orange-50',
-          button: 'bg-orange-600 hover:bg-orange-700 text-white'
-        }
-      default:
-        return {
-          badge: 'bg-gray-100 text-gray-800 border-gray-200',
-          header: 'bg-gray-50',
-          button: 'bg-primary hover:bg-primary/90 text-primary-foreground'
-        }
-    }
-  }
-
-  const colorScheme = getColorScheme(tier.name)
+export function PartnershipTierCard({
+  tier
+}: PartnershipTierCardProps) {
+  const isHighlighted = tier.highlighted;
+  const isPopular = tier.popular;
+  const isCustom = tier.name === "CUSTOM";
+  const isLegacyImpact = tier.name === "LEGACYIMPACT";
   
-  return (
-    <Card className={`h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:scale-105 ${
-      tier.highlighted ? 'ring-2 ring-primary shadow-xl scale-105' : ''
-    } ${tier.popular ? 'border-primary shadow-lg' : ''}`}>
-      <CardHeader className={`text-center pb-4 ${colorScheme.header} rounded-t-lg`}>
-        <div className="flex items-center justify-center mb-3">
-          {getIconForTier(tier.name)}
-        </div>
-        
-        <div className="space-y-2">
-          {tier.popular && (
-            <Badge className="bg-primary text-primary-foreground">
-              Most Popular
-            </Badge>
-          )}
-          {tier.highlighted && (
-            <Badge className={colorScheme.badge}>
-              Recommended
-            </Badge>
-          )}
-          
-          <CardTitle className="text-xl font-bold">{tier.name}</CardTitle>
-        </div>
-      </CardHeader>
-      
-      <CardContent className="flex-1 p-6">
-        <CardDescription className="text-center mb-6 text-base leading-relaxed">
-          {tier.description}
-        </CardDescription>
-        
-        <div className="space-y-3">
-          {tier.features.map((feature, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-              <span className="text-sm leading-relaxed">{feature}</span>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-      
-      <CardFooter className="p-6 pt-0">
-        <Button 
-          asChild 
-          className={`w-full rounded-xl font-medium transition-all duration-300 hover:scale-105 ${colorScheme.button}`}
-        >
-          <a href={tier.href}>
-            {tier.cta}
-          </a>
-        </Button>
-      </CardFooter>
-    </Card>
-  )
+  return <Card className={cn(
+    "relative flex flex-col gap-8 overflow-hidden p-6 h-full shadow-glass",
+    isCustom ? "bg-[#030063] text-white border-[#030063]" : 
+    isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
+    "bg-background text-foreground",
+    (isPopular || isLegacyImpact) && "ring-2 ring-primary"
+  )}>
+      {isHighlighted && !isCustom && <HighlightedBackground />}
+      {isPopular && <PopularBackground />}
+      {isLegacyImpact && (
+        <Crown className="absolute top-4 right-4 h-6 w-6 text-primary z-10" />
+      )}
+
+      <h2 className={cn(
+        "flex items-center gap-3 text-xl font-medium",
+        isCustom ? "text-[#f9f3df]" : ""
+      )}>
+        {tier.name}
+        {isPopular && <Badge variant="secondary" className="mt-1 z-10">
+            🔥 Most Popular
+          </Badge>}
+      </h2>
+
+      <div className="flex-1 space-y-4">
+        <h3 className={cn(
+          "text-sm font-medium",
+          isCustom ? "text-[#f9f3df]" : ""
+        )}>{tier.description}</h3>
+        <ul className={cn("space-y-2", tier.name === "CUSTOM" && "blur-sm transition-all duration-300")}>
+          {tier.features.map((feature, index) => <li key={index} className={cn(
+            "flex items-center gap-2 text-sm font-medium",
+            isCustom ? "text-white" :
+            isHighlighted ? "text-primary-foreground" : "text-muted-foreground"
+          )}>
+              <BadgeCheck className="h-4 w-4" />
+              {feature}
+            </li>)}
+        </ul>
+      </div>
+
+      <Button 
+        variant={isHighlighted ? "secondary" : "default"} 
+        className={cn(
+          "w-full",
+          isCustom ? "bg-[#f9f3df] text-[#030063] hover:bg-[#f9f3df]/90" :
+          isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+        )} 
+        asChild
+      >
+        <a href={tier.href}>
+          {tier.cta}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </a>
+      </Button>
+    </Card>;
 }
+const HighlightedBackground = () => <div className="absolute inset-0 from-primary/10 via-primary/5 to-transparent bg-transparent bg-[030063]" />;
+const PopularBackground = () => <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />;
