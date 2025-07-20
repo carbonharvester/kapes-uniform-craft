@@ -5,7 +5,7 @@ export const Footer = () => {
   const kapesFooterProps = {
     logo: {
       url: "/",
-      src: "/lovable-uploads/9ac843b9-dfa5-4ffa-9138-fba60284a971.png",
+      src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1753029943/03_Kapes_Small_Inline_White_4x_lqxjlh.png",
       alt: "Kapes Logo",
       title: "Kapes",
     },
