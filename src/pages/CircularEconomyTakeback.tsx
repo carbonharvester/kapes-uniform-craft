@@ -73,7 +73,7 @@ const CircularEconomyTakeback = () => {
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
           backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg')",
-          backgroundPosition: "center"
+          backgroundPosition: "left center"
         }}></div>
         
         {/* Overlay and Gradient */}
