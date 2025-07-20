@@ -81,18 +81,6 @@ const Navbar = ({
           url: "/sustainability-ethics",
         },
         {
-          title: "Materials",
-          description: "Sustainable and innovative fabric choices",
-          icon: <Leaf className="size-5 shrink-0" />,
-          url: "/materials",
-        },
-        {
-          title: "Our Factories",
-          description: "Ethical manufacturing partnerships worldwide",
-          icon: <Factory className="size-5 shrink-0" />,
-          url: "/our-factories",
-        },
-        {
           title: "Social Impact in Africa",
           description: "Our positive impact on African communities",
           icon: <Heart className="size-5 shrink-0" />,
