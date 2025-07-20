@@ -53,7 +53,7 @@ export const SchoolShopsLockers = () => {
               <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <Card className="border-0 shadow-glass">
                 <CardContent className="p-8">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
@@ -113,10 +113,10 @@ export const SchoolShopsLockers = () => {
                 </CardContent>
               </Card>
             </div>
-
-            {/* Before/After Comparison */}
-            <Feature />
           </section>
+
+          {/* Image Comparison Section */}
+          <Feature />
 
           {/* E-Commerce Lockers Section */}
           <section>
