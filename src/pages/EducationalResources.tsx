@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Play, Factory, Users, Download, Eye } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const EducationalResources = () => {
   const resources = [
@@ -228,6 +229,7 @@ const EducationalResources = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

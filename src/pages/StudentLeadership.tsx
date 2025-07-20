@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Globe, Award, Calendar, BookOpen, Megaphone, ArrowRight } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const StudentLeadership = () => {
   const boardActivities = [
@@ -255,6 +256,7 @@ const StudentLeadership = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

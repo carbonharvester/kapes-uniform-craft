@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
+import { Footer } from "@/components/Footer";
 const ImplementationTimeline = () => {
   const phases = [{
     phase: "Phase 1",
@@ -180,6 +181,7 @@ const ImplementationTimeline = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };
 export default ImplementationTimeline;

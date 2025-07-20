@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, RefreshCw, Target, CheckCircle, TrendingUp, Mail, MapPin, Calendar } from "lucide-react";
+import { Footer } from "@/components/Footer";
 const CircularEconomyTakeback = () => {
   const takebackSteps = [{
     title: "Parents Return Used Uniforms",
@@ -275,6 +276,7 @@ const CircularEconomyTakeback = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };
 export default CircularEconomyTakeback;

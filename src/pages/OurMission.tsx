@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Footer } from "@/components/Footer";
 
 const OurMission = () => {
   const values = [
@@ -265,6 +266,7 @@ const OurMission = () => {
           
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

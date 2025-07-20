@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Monitor, Users, BookOpen, Plane, ArrowRight, Globe } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const FactoryVisits = () => {
   const locations = [
@@ -255,6 +256,7 @@ const FactoryVisits = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

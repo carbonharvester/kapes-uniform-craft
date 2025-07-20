@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe } from "lucide-react";
+import { Footer } from "@/components/Footer";
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
     title: "Regenerative Organic Cotton",
@@ -270,6 +271,7 @@ const SustainabilityEthics = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };
 export default SustainabilityEthics;

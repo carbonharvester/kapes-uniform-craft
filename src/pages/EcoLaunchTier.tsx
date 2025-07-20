@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, Star } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const EcoLaunchTier = () => {
   const included = [
@@ -200,6 +201,7 @@ const EcoLaunchTier = () => {
           
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

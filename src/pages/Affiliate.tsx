@@ -21,6 +21,7 @@ import {
   Clock,
   CheckCircle
 } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const Affiliate = () => {
   return (
@@ -379,6 +380,7 @@ const Affiliate = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

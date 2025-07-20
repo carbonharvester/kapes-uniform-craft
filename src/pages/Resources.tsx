@@ -7,6 +7,7 @@ import { ValueCalculator } from "@/components/ValueCalculator";
 import { TierQuiz } from "@/components/TierQuiz";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { BookOpen, Download } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const Resources = () => {
   const blogPosts = [
@@ -130,6 +131,7 @@ const Resources = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

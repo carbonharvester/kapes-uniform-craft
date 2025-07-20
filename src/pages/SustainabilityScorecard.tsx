@@ -1,4 +1,5 @@
 import SustainabilityScorecard from '@/components/SustainabilityScorecard';
+import { Footer } from "@/components/Footer";
 
 const SustainabilityScorecardPage = () => {
   return (
@@ -6,6 +7,7 @@ const SustainabilityScorecardPage = () => {
       <div className="container mx-auto py-12">
         <SustainabilityScorecard />
       </div>
+      <Footer />
     </div>
   );
 };

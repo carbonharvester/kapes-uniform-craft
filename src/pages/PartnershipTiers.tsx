@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { CheckCircle, ArrowRight, Star, Zap, Crown, Check, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Footer } from "@/components/Footer";
 
 const PartnershipTiers = () => {
   const tiers = [{
@@ -224,6 +225,7 @@ const PartnershipTiers = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

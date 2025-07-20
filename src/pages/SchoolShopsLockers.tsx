@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 export const SchoolShopsLockers = () => {
   return (
@@ -240,6 +241,7 @@ export const SchoolShopsLockers = () => {
           
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Crown, QrCode } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const LegacyImpactTier = () => {
   const included = [
@@ -235,6 +236,7 @@ const LegacyImpactTier = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

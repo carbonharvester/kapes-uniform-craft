@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Truck, MapPin, Package, Leaf, Recycle, ShieldCheck, Sparkles, CheckCircle, Clock } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 export const DeliveryPackaging = () => {
   return (
@@ -356,6 +357,7 @@ export const DeliveryPackaging = () => {
           
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

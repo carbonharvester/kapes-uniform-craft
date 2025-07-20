@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BarChart3, Leaf, QrCode, FileText, Sparkles, TrendingUp, Award, Heart, Monitor, Smartphone, Users, Globe, Shield, Target, Zap, Eye, BookOpen, Download, CheckCircle } from "lucide-react";
+import { Footer } from "@/components/Footer";
 const KapesImpactPlatform = () => {
   const trackingMetrics = [{
     icon: Leaf,
@@ -350,6 +351,7 @@ const KapesImpactPlatform = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };
 export default KapesImpactPlatform;

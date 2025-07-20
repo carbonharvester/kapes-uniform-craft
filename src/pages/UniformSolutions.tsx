@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle } from "lucide-react";
+import { Footer } from "@/components/Footer";
 export const UniformSolutions = () => {
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -260,5 +261,6 @@ export const UniformSolutions = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>;
 };

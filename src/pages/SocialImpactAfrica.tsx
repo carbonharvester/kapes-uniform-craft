@@ -7,7 +7,7 @@ import {
   Utensils, 
   Shirt, 
   BarChart3, 
-  QrCode, 
+  QrCode,
   Globe, 
   Target,
   CheckCircle,
@@ -18,6 +18,7 @@ import {
   Sparkles,
   ArrowRight
 } from "lucide-react";
+import { Footer } from "@/components/Footer";
 
 const SocialImpactAfrica = () => {
   const uniformImpact = [
@@ -340,6 +341,7 @@ const SocialImpactAfrica = () => {
           </p>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
