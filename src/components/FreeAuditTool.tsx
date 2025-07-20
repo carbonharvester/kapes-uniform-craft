@@ -81,7 +81,7 @@ export const FreeAuditTool = () => {
               {/* Testimonial */}
               <div className="mt-8 p-4 bg-background/50 rounded-xl border border-border/50">
                 <p className="text-sm italic text-muted-foreground mb-2">
-                  "The assessment revealed gaps we never knew existed. We're now saving £12,000 annually while improving our sustainability rating."
+                  "The assessment revealed gaps we never knew existed. We're now making  improving our sustainability rating while making a real social impact."
                 </p>
                 <p className="text-xs font-medium">- Sarah Mitchell, Head of Operations, Greenfield Academy</p>
               </div>
