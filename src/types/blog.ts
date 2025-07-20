@@ -16,7 +16,6 @@ export interface BlogPost {
   excerpt: string;
   content: Document;
   featuredImage: ContentfulAsset;
-  category: string;
   readTime?: string; // Generated from content
 }
 
@@ -41,6 +40,5 @@ export interface ContentfulBlogPost {
         description?: string;
       };
     };
-    category: string;
   };
 }

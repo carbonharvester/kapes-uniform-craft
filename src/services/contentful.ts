@@ -60,7 +60,6 @@ const transformBlogPost = (entry: ContentfulBlogPost): BlogPost => {
     excerpt: entry.fields.excerpt,
     content: entry.fields.content,
     featuredImage: transformAsset(entry.fields.featuredImage),
-    category: entry.fields.category,
     readTime: calculateReadTime(entry.fields.content),
   };
 };
@@ -100,13 +99,10 @@ export const getBlogPostBySlug = async (slug: string): Promise<BlogPost | null> 
 
 export const getBlogPostsByCategory = async (category: string): Promise<BlogPost[]> => {
   try {
-    const response = await client.getEntries({
-      content_type: CONTENT_TYPE_ID,
-      'fields.category': category,
-      order: ['-fields.date'],
-    });
-
-    return response.items.map(item => transformBlogPost(item as unknown as ContentfulBlogPost));
+    // Since category field is omitted, this function will return all posts
+    // You may want to remove this function or implement client-side filtering
+    console.warn('Category field is omitted from API response. Returning all posts.');
+    return getAllBlogPosts();
   } catch (error) {
     console.error('Error fetching blog posts by category:', error);
     throw new Error('Failed to fetch blog posts');
