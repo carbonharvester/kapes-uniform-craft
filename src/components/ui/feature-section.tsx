@@ -44,30 +44,30 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval])
 
   return (
-    <div className={cn("p-8 md:p-12", className)}>
-      <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-10 text-center">
+    <div className={cn("py-16 px-4", className)}>
+      <div className="max-w-6xl mx-auto w-full">
+        <h2 className="text-2xl md:text-3xl font-medium mb-12 text-center text-heading">
           {title}
         </h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
-          <div className="order-2 md:order-1 space-y-8">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12">
+          <div className="order-2 md:order-1 space-y-6">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-6 md:gap-8"
+                  className="flex items-center gap-4 md:gap-6"
                   initial={{ opacity: 0.3 }}
                   animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                   transition={{ duration: 0.5 }}
                 >
                   <motion.div
                     className={cn(
-                      "w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center border-2",
+                      "w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center border-2 transition-all duration-300",
                       index === currentFeature
-                        ? "bg-primary border-primary text-primary-foreground scale-110"
-                        : "bg-muted border-muted-foreground",
+                        ? "bg-primary border-primary text-primary-foreground scale-110 shadow-lg"
+                        : "bg-muted border-muted-foreground text-muted-foreground",
                     )}
                   >
                     {IconComponent ? (
@@ -80,10 +80,10 @@ export function FeatureSteps({
                   </motion.div>
 
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-semibold">
+                    <h3 className="text-xl md:text-2xl font-medium text-heading mb-1">
                       {feature.title || feature.step}
                     </h3>
-                    <p className="text-sm md:text-lg text-muted-foreground">
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                       {feature.content}
                     </p>
                   </div>
@@ -94,7 +94,8 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              "order-1 md:order-2 relative h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden rounded-lg"
+              "order-1 md:order-2 relative h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden rounded-xl shadow-lg",
+              "border border-border/50"
             )}
           >
             <AnimatePresence mode="wait">
