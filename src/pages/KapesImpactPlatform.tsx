@@ -334,20 +334,7 @@ const KapesImpactPlatform = () => {
               
             </div>
             
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">5 min</div>
-                <div className="text-white/70 text-sm">Setup Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">24/7</div>
-                <div className="text-white/70 text-sm">Live Data</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold mb-2">100%</div>
-                <div className="text-white/70 text-sm">Transparency</div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
