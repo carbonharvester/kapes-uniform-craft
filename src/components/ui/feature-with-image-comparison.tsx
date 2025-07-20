@@ -23,7 +23,7 @@ function Feature() {
   };
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full pt-8 pb-20 lg:pt-12 lg:pb-40">
       <div className="container mx-auto">
         <div className="flex flex-col gap-4">
           <div>
