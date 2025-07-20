@@ -148,7 +148,20 @@ export const ImpactMetricsCards = () => {
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto max-w-6xl">        
+      <div className="container mx-auto max-w-6xl">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
+            <TrendingUp className="w-5 h-5 text-primary" />
+            <span className="text-sm font-medium text-primary">Real-Time Metrics</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            What KapesImpact™ Tracks
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Every uniform tells a story of positive change. See the measurable impact your school creates through sustainable uniform programs.
+          </p>
+        </div>
+        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, index) => (
             <MetricCard
