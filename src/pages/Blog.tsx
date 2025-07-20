@@ -9,6 +9,7 @@ import { Search, Filter } from "lucide-react";
 import { getAllBlogPosts } from "@/services/contentful";
 import { BlogPost } from "@/types/blog";
 import { Footer } from "@/components/Footer";
+import blogHeroImage from "@/assets/blog-hero.jpg";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -52,8 +53,15 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-tri-soft">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/10"></div>
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={blogHeroImage} 
+            alt="Blog hero" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
         
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
