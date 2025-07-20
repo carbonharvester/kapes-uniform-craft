@@ -173,8 +173,7 @@ const BlogPost = () => {
               />
             </div>
 
-            <div className="space-y-6">
-              <Badge variant="secondary">{post.category}</Badge>
+             <div className="space-y-6">
               
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
                 {post.title}
@@ -184,30 +183,17 @@ const BlogPost = () => {
                 {post.excerpt}
               </p>
 
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 py-6 border-y border-border">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={post.authorImage.url}
-                      alt={post.authorImage.title}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-medium text-foreground">{post.author}</p>
-                      <p className="text-sm text-muted-foreground">{post.authorTitle}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {formatDate(post.date)}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4" />
-                      {post.readTime}
-                    </span>
-                  </div>
-                </div>
+               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 py-6 border-y border-border">
+                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                   <span className="flex items-center gap-1">
+                     <Calendar className="w-4 h-4" />
+                     {formatDate(post.date)}
+                   </span>
+                   <span className="flex items-center gap-1">
+                     <Clock className="w-4 h-4" />
+                     {post.readTime}
+                   </span>
+                 </div>
                 
                 <Button variant="outline" size="sm" onClick={sharePost}>
                   <Share2 className="w-4 h-4 mr-2" />

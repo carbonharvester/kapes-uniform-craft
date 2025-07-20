@@ -92,11 +92,11 @@ export const BlogSection = () => {
                       alt={post.featuredImage.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-4 left-4">
-                      <Badge variant="secondary" className="bg-background/90 text-foreground">
-                        {post.category}
-                      </Badge>
-                    </div>
+                     <div className="absolute top-4 left-4">
+                       <span className="text-xs text-background/90 bg-background/20 backdrop-blur-sm px-2 py-1 rounded">
+                         {formatDate(post.date)}
+                       </span>
+                     </div>
                   </div>
                   <CardHeader>
                     <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">

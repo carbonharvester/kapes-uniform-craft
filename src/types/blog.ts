@@ -16,11 +16,7 @@ export interface BlogPost {
   excerpt: string;
   content: Document;
   featuredImage: ContentfulAsset;
-  author: string;
-  authorTitle: string;
-  authorImage: ContentfulAsset;
-  category: string;
-  readTime?: string;
+  readTime?: string; // Generated from content
 }
 
 export interface ContentfulBlogPost {
@@ -44,16 +40,5 @@ export interface ContentfulBlogPost {
         description?: string;
       };
     };
-    author: string;
-    authorTitle: string;
-    authorImage: {
-      fields: {
-        file: {
-          url: string;
-        };
-        title: string;
-      };
-    };
-    category: string;
   };
 }
