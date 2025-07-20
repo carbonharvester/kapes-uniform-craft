@@ -65,10 +65,6 @@ const Navbar = ({
   },
   menu = [
     {
-      title: "About",
-      url: "/about",
-    },
-    {
       title: "Why Kapes",
       url: "#",
       items: [
