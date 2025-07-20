@@ -214,10 +214,6 @@ const Navbar = ({
         },
       ],
     },
-    {
-      title: "Contact",
-      url: "/contact",
-    },
   ],
   mobileExtraLinks = [
     { name: "Resources & Tools", url: "/resources" },
