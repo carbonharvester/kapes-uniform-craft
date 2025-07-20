@@ -48,7 +48,6 @@ export const PartnershipTiers = () => {
       cta: "Learn More",
       href: "/legacyimpact-tier",
       popular: false,
-      highlighted: true,
     },
     {
       name: "CUSTOM",
@@ -62,8 +61,7 @@ export const PartnershipTiers = () => {
       description: "Tailored partnerships combining elements from all tiers for unique requirements",
       cta: "Contact Us",
       href: "/contact",
-      popular: false,
-      blurred: true,
+      highlighted: true,
     }
   ];
 
