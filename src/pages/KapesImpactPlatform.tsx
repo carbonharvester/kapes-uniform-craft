@@ -270,7 +270,7 @@ const KapesImpactPlatform = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button size="lg" className="rounded-2xl px-12 py-6 text-lg hover-scale transition-smooth bg-white text-black hover:bg-white/90">
+              <Button size="lg" className="rounded-2xl px-12 py-6 text-lg hover-scale transition-smooth bg-orange-600 text-white hover:bg-orange-700">
                 Schedule Your Demo
               </Button>
             </div>
