@@ -12,7 +12,7 @@ export const Testimonials = () => {
   };
 
   return (
-    <section className="py-16" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
+    <section className="py-16 bg-gradient-from-light-warm">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">

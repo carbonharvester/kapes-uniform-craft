@@ -39,7 +39,7 @@ export const BlogSection = () => {
   ];
 
   return (
-    <section className="py-16 px-4" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
+    <section className="py-16 px-4 bg-gradient-tri-soft">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>

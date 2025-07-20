@@ -4,7 +4,7 @@ import { ScorecardAssessmentForm } from "./ScorecardAssessmentForm";
 
 export const FreeAuditTool = () => {
   return (
-    <section className="py-16 relative" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
+    <section className="py-16 relative" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

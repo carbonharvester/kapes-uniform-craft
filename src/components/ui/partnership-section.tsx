@@ -17,7 +17,7 @@ export function PartnershipSection({
   tiers,
 }: PartnershipSectionProps) {
   return (
-    <section className="flex flex-col items-center gap-10 py-10" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
+    <section className="flex flex-col items-center gap-10 py-10" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
       <div className="space-y-7 text-center">
         <div className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">{title}</h1>
