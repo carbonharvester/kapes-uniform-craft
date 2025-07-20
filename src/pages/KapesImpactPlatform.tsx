@@ -94,8 +94,6 @@ const KapesImpactPlatform = () => {
           <ImpactMetricsCards />
         </div>
       </section>
-
-      {/* QR Technology Section */}
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
