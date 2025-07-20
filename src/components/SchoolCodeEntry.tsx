@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { GraduationCap } from "lucide-react";
 
 export const SchoolCodeEntry = () => {
   const [schoolCode, setSchoolCode] = useState("");
@@ -18,8 +19,16 @@ export const SchoolCodeEntry = () => {
   };
 
   return (
-    <section className="py-24" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
+      {/* Background illustration */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-64 h-64 opacity-10">
+        <div className="relative w-full h-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-3xl"></div>
+          <GraduationCap className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 text-primary/30" />
+        </div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left side - Elegant typography */}
@@ -37,7 +46,10 @@ export const SchoolCodeEntry = () => {
             </div>
             
             {/* Right side - Clean form in card */}
-            <div className="glass rounded-3xl p-8 shadow-glass border border-border/50">
+            <div className="glass rounded-3xl p-8 shadow-glass border border-border/50 relative">
+              {/* Decorative elements */}
+              <div className="absolute -top-2 -right-2 w-16 h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
+              
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">School Code</label>

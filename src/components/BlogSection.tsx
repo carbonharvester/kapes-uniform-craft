@@ -13,7 +13,7 @@ export const BlogSection = () => {
       category: "Sustainability",
       readTime: "5 min read",
       date: "Mar 15, 2024",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?w=800&h=400&fit=crop&crop=center",
       featured: true
     },
     {
@@ -23,7 +23,7 @@ export const BlogSection = () => {
       category: "Finance",
       readTime: "4 min read",
       date: "Mar 12, 2024",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop&crop=center",
       featured: false
     },
     {
@@ -59,9 +59,16 @@ export const BlogSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {featuredPosts.map(post => (
             <Card key={post.id} className="overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer">
-              <div className="aspect-video relative overflow-hidden bg-muted/50 flex items-center justify-center">
-                <div className="w-16 h-16 bg-foreground rounded-lg flex items-center justify-center">
-                  <div className="w-8 h-8 bg-background rounded-sm"></div>
+              <div className="aspect-video relative overflow-hidden bg-muted/50">
+                <img 
+                  src={post.image} 
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge variant="secondary" className="bg-background/90 text-foreground">
+                    {post.category}
+                  </Badge>
                 </div>
               </div>
               <CardHeader>
@@ -73,10 +80,22 @@ export const BlogSection = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
-                <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
-                  Read more
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3 h-3" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <Button variant="ghost" className="p-0 h-auto font-medium group-hover:text-primary transition-colors">
+                    Read more
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           ))}

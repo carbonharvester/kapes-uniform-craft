@@ -2,6 +2,7 @@
 import React from "react";
 import { PartnershipSection } from "@/components/ui/partnership-section";
 import { PartnershipTier } from "@/components/ui/partnership-tier-card";
+import { Rocket, TreePine, Crown, Settings } from "lucide-react";
 
 export const PartnershipTiers = () => {
   const tiers: PartnershipTier[] = [
@@ -19,6 +20,7 @@ export const PartnershipTiers = () => {
       cta: "Learn More",
       href: "/ecolaunch-tier",
       popular: false,
+      icon: "rocket"
     },
     {
       name: "SUSTAINPRO",
@@ -33,6 +35,7 @@ export const PartnershipTiers = () => {
       cta: "Learn More",
       href: "/sustainpro-tier",
       popular: false,
+      icon: "tree"
     },
     {
       name: "LEGACYIMPACT",
@@ -48,6 +51,7 @@ export const PartnershipTiers = () => {
       cta: "Learn More",
       href: "/legacyimpact-tier",
       popular: false,
+      icon: "crown"
     },
     {
       name: "CUSTOM",
@@ -62,14 +66,19 @@ export const PartnershipTiers = () => {
       cta: "Contact Us",
       href: "/contact",
       highlighted: true,
+      icon: "settings"
     }
   ];
 
   return (
-    <PartnershipSection 
-      title="Partnership Tiers"
-      subtitle="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
-      tiers={tiers}
-    />
+    <div className="relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+      <PartnershipSection 
+        title="Partnership Tiers"
+        subtitle="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
+        tiers={tiers}
+      />
+    </div>
   );
 };

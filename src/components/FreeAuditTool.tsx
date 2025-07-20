@@ -1,5 +1,5 @@
 
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Target, FileText, Users, Download, Zap } from "lucide-react";
 import { ScorecardAssessmentForm } from "./ScorecardAssessmentForm";
 
 export const FreeAuditTool = () => {
@@ -19,45 +19,48 @@ export const FreeAuditTool = () => {
               <h3 className="text-2xl md:text-3xl font-medium mb-6">What You'll Receive:</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Target className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Material Sustainability</h4>
-                    <p className="text-muted-foreground text-sm">Evaluate fabrics, packaging, and material sourcing impact</p>
+                    <h4 className="font-semibold">Hidden Sustainability Score</h4>
+                    <p className="text-muted-foreground text-sm">Get an instant 0-100% score revealing how eco-friendly your uniforms really are</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <FileText className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Supply Chain Ethics</h4>
-                    <p className="text-muted-foreground text-sm">Assess factory conditions, fair wages, and certifications</p>
+                    <h4 className="font-semibold">Personalized Improvement Plan</h4>
+                    <p className="text-muted-foreground text-sm">Tailored feedback explaining your score with simple steps to boost it</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Users className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">End-of-Life Management</h4>
-                    <p className="text-muted-foreground text-sm">Review takeback programs and circular economy practices</p>
+                    <h4 className="font-semibold">Free Expert Consultation</h4>
+                    <p className="text-muted-foreground text-sm">Qualify for a one-on-one session with Kapes experts to implement changes</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Download className="h-4 w-4 text-primary" />
+                  </div>
                   <div>
-                    <h4 className="font-semibold">Distribution Efficiency</h4>
-                    <p className="text-muted-foreground text-sm">Analyze logistics, packaging, and delivery methods</p>
+                    <h4 className="font-semibold">Downloadable Custom Report</h4>
+                    <p className="text-muted-foreground text-sm">PDF report with your score, answers, and bespoke recommendations for leadership</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold">Innovation & Technology</h4>
-                    <p className="text-muted-foreground text-sm">Explore AI sizing, demand forecasting, and future trends</p>
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Zap className="h-4 w-4 text-primary" />
                   </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold">Readiness Assessment</h4>
-                    <p className="text-muted-foreground text-sm">Determine your school's readiness for sustainable transitions</p>
+                    <h4 className="font-semibold">Zero Cost, High Reward</h4>
+                    <p className="text-muted-foreground text-sm">Just 5-10 minutes for insights that save money, reduce waste, and enhance reputation</p>
                   </div>
                 </div>
               </div>
