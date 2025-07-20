@@ -140,6 +140,20 @@ const CircularEconomyTakeback = () => {
         </div>
       </section>
 
+      {/* Impact Image Section */}
+      <section className="py-12 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <img 
+              src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg"
+              alt="Circular economy impact in action"
+              className="w-full h-[400px] md:h-[500px] object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+        </div>
+      </section>
+
       {/* For Schools Section */}
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
