@@ -42,10 +42,10 @@ const BlogPost = () => {
         <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">{children}</h3>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
-        <ul className="list-disc list-inside mb-6 space-y-2 text-lg">{children}</ul>
+        <ul className="list-disc list-outside mb-6 space-y-2 text-lg pl-6">{children}</ul>
       ),
       [BLOCKS.OL_LIST]: (node: any, children: any) => (
-        <ol className="list-decimal list-inside mb-6 space-y-2 text-lg">{children}</ol>
+        <ol className="list-decimal list-outside mb-6 space-y-2 text-lg pl-6">{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
         <li className="text-foreground/90">{children}</li>
