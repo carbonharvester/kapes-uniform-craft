@@ -1,16 +1,43 @@
 
-import { CheckCircle, Target, FileText, Users, Download, Zap } from "lucide-react";
+import { CheckCircle, Target, FileText, Users, Download, Zap, Star, TrendingUp } from "lucide-react";
 import { ScorecardAssessmentForm } from "./ScorecardAssessmentForm";
 
 export const FreeAuditTool = () => {
   return (
-    <section className="py-16 relative" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
+    <section id="audit-section" className="py-16 relative" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Uniform Program Audit</h2>
-            <p className="text-muted-foreground">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-sm text-muted-foreground">Rated 4.9/5 by school administrators</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+              Discover Your School's Sustainability Score in 5 Minutes
+            </h2>
+            <p className="text-muted-foreground mb-4">
               Get a comprehensive analysis of your current uniform program with actionable recommendations
+            </p>
+            <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4 text-primary" />
+                <span>150+ schools completed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <TrendingUp className="h-4 w-4 text-primary" />
+                <span>Average score: 34%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Social proof banner */}
+          <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 mb-8 text-center">
+            <p className="text-sm font-medium text-primary">
+              🔥 Limited Time: Free expert consultation for qualified schools (Valued at £500)
             </p>
           </div>
           
@@ -63,6 +90,14 @@ export const FreeAuditTool = () => {
                     <p className="text-muted-foreground text-sm">Just 5-10 minutes for insights that save money, reduce waste, and enhance reputation</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Testimonial */}
+              <div className="mt-8 p-4 bg-background/50 rounded-xl border border-border/50">
+                <p className="text-sm italic text-muted-foreground mb-2">
+                  "The assessment revealed gaps we never knew existed. We're now saving £12,000 annually while improving our sustainability rating."
+                </p>
+                <p className="text-xs font-medium">- Sarah Mitchell, Head of Operations, Greenfield Academy</p>
               </div>
             </div>
             

@@ -10,6 +10,11 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
+          {/* Subtle scorecard header */}
+          <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">
+            Free 5-Minute Sustainability Assessment Available
+          </div>
+          
           {/* Main headline with consistent typography */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white drop-shadow-lg">
             School Uniforms That{" "}
@@ -42,6 +47,12 @@ export const Hero = () => {
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
+            </button>
+            <button 
+              onClick={() => document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white/90 border border-white/30 rounded-xl font-medium text-base transition-all duration-300 hover:bg-white/10 hover:scale-105 backdrop-blur-sm"
+            >
+              Get Sustainability Score
             </button>
           </div>
         </div>
