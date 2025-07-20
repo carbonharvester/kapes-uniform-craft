@@ -43,7 +43,7 @@ export const BlogSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
               Latest Insights & Updates
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl">
