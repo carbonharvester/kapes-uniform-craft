@@ -72,9 +72,9 @@ const CircularEconomyTakeback = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg')",
-          backgroundPosition: "left center"
-        }}></div>
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg')",
+        backgroundPosition: "center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -119,7 +119,7 @@ const CircularEconomyTakeback = () => {
                           {step.step}
                         </div>
                       </div>
-                      <CardTitle className="text-lg">{step.title}</CardTitle>
+                      <CardTitle className="text-xl">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">{step.description}</p>
@@ -132,30 +132,7 @@ const CircularEconomyTakeback = () => {
           })}
           </div>
           
-          <div className="text-center bg-blue-50 p-6 rounded-lg dark:bg-blue-950/20">
-            <p className="text-xl font-bold text-blue-800 dark:text-blue-200">
-              One less uniform in landfill = one more child fed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Image Section */}
-      <section className="py-12 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="relative rounded-2xl overflow-hidden shadow-lg">
-            <img 
-              src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg"
-              alt="Circular economy impact in action"
-              className="w-full h-[400px] md:h-[500px] object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-8 left-8 right-8 text-center">
-              <p className="text-2xl md:text-3xl font-bold text-white bg-blue-600/90 px-6 py-4 rounded-lg backdrop-blur-sm">
-                One less uniform in landfill = one more child fed.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </section>
 
