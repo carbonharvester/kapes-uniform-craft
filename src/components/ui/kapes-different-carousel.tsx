@@ -287,7 +287,7 @@ export const KapesDifferentCarousel = () => {
                   className="absolute inset-0 bg-no-repeat"
                   style={{ 
                     backgroundImage: `url(${difference.image})`,
-                    backgroundSize: difference.id === "takeback" ? "90%" : "cover",
+                    backgroundSize: difference.id === "takeback" ? "100% auto" : "cover",
                     backgroundPosition: difference.id === "takeback" ? "center top" : "center"
                   }}
                 />
