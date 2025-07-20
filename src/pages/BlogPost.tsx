@@ -29,16 +29,16 @@ const BlogPost = () => {
   const richTextOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
-        <p className="mb-6 text-lg leading-relaxed text-foreground/90">{children}</p>
+        <p className="mb-6 text-lg leading-relaxed text-content font-light">{children}</p>
       ),
       [BLOCKS.HEADING_1]: (node: any, children: any) => (
-        <h1 className="text-4xl font-bold mb-8 mt-12 text-foreground">{children}</h1>
+        <h1 className="text-4xl font-light mb-8 mt-12 text-heading tracking-tight">{children}</h1>
       ),
       [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <h2 className="text-3xl font-semibold mb-6 mt-10 text-foreground">{children}</h2>
+        <h2 className="text-3xl font-light mb-6 mt-10 text-heading tracking-tight">{children}</h2>
       ),
       [BLOCKS.HEADING_3]: (node: any, children: any) => (
-        <h3 className="text-2xl font-semibold mb-4 mt-8 text-foreground">{children}</h3>
+        <h3 className="text-2xl font-normal mb-4 mt-8 text-heading">{children}</h3>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
         <ul className="list-disc list-outside mb-6 space-y-2 text-lg pl-6">{children}</ul>
@@ -47,11 +47,11 @@ const BlogPost = () => {
         <ol className="list-decimal list-outside mb-6 space-y-2 text-lg pl-6">{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-        <li className="text-foreground/90">{children}</li>
+        <li className="text-content font-light">{children}</li>
       ),
       [BLOCKS.QUOTE]: (node: any, children: any) => (
-        <blockquote className="border-l-4 border-primary pl-6 py-4 mb-6 bg-muted/50 rounded-r-lg">
-          <div className="text-lg italic text-foreground/90">{children}</div>
+        <blockquote className="border-l-4 border-primary pl-6 py-4 mb-6 bg-secondary/10 rounded-r-lg">
+          <div className="text-lg italic text-content font-light">{children}</div>
         </blockquote>
       ),
       [INLINES.HYPERLINK]: (node: any, children: any) => (
@@ -59,7 +59,7 @@ const BlogPost = () => {
           href={node.data.uri} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-primary hover:text-primary/80 underline font-medium"
+          className="text-primary hover:text-primary/80 underline font-medium transition-colors"
         >
           {children}
         </a>
@@ -90,11 +90,11 @@ const BlogPost = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/5 font-inter">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-4">Post not found</h1>
-            <p className="text-muted-foreground mb-6">The blog post you're looking for doesn't exist.</p>
+            <h1 className="text-2xl font-light text-heading mb-4">Post not found</h1>
+            <p className="text-content mb-6 font-light">The blog post you're looking for doesn't exist.</p>
             <Button asChild>
               <Link to="/blog">Back to Blog</Link>
             </Button>
@@ -107,7 +107,7 @@ const BlogPost = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/5 font-inter">
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             <Skeleton className="h-8 w-32 mb-8" />
@@ -132,11 +132,11 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/5 font-inter">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground mb-4">Post not found</h1>
-            <p className="text-muted-foreground mb-6">The blog post you're looking for doesn't exist.</p>
+            <h1 className="text-2xl font-light text-heading mb-4">Post not found</h1>
+            <p className="text-content mb-6 font-light">The blog post you're looking for doesn't exist.</p>
             <Button asChild>
               <Link to="/blog">Back to Blog</Link>
             </Button>
@@ -150,12 +150,12 @@ const BlogPost = () => {
   const filteredRelatedPosts = relatedPosts?.filter(p => p.slug !== post.slug).slice(0, 3) || [];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/5 font-inter">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           
           {/* Back Button */}
-          <Button variant="ghost" asChild className="mb-8">
+          <Button variant="ghost" asChild className="mb-8 text-heading hover:text-primary transition-colors">
             <Link to="/blog">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
@@ -164,7 +164,7 @@ const BlogPost = () => {
 
           {/* Hero Section */}
           <article className="space-y-8">
-            <div className="aspect-video overflow-hidden rounded-lg">
+            <div className="aspect-video overflow-hidden rounded-lg border border-border shadow-md">
               <img 
                 src={post.featuredImage.url}
                 alt={post.featuredImage.title}
@@ -173,24 +173,24 @@ const BlogPost = () => {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
+              <h1 className="text-4xl md:text-5xl font-light leading-tight tracking-tight text-heading">
                 {post.title}
               </h1>
               
-              {/* Date and Share Section - Moved here for better hierarchy */}
+              {/* Date and Share Section */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-content">
                   <Calendar className="w-4 h-4" />
                   <span>{formatDate(post.date)}</span>
                 </div>
                 
-                <Button variant="outline" size="sm" onClick={sharePost}>
+                <Button variant="outline" size="sm" onClick={sharePost} className="border-primary/20 hover:bg-primary/5">
                   <Share2 className="w-4 h-4 mr-2" />
                   Share
                 </Button>
               </div>
               
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-content leading-relaxed font-light">
                 {post.excerpt}
               </p>
             </div>
@@ -203,8 +203,8 @@ const BlogPost = () => {
 
           {/* Related Posts */}
           {filteredRelatedPosts.length > 0 && (
-            <section className="mt-16 pt-16 border-t border-border">
-              <h2 className="text-3xl font-semibold mb-8 text-foreground">Related Posts</h2>
+            <section className="mt-16 pt-16 border-t border-border/50">
+              <h2 className="text-3xl font-light mb-8 text-heading tracking-tight">Related Posts</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredRelatedPosts.map(relatedPost => (
                   <BlogCard key={relatedPost.slug} post={relatedPost} />
