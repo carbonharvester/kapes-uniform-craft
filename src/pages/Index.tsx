@@ -20,10 +20,12 @@ const Index = () => {
       <div id="parent-section" className="scroll-mt-20">
         <SchoolCodeEntry />
       </div>
+      <div id="audit-section" className="scroll-mt-20">
+        <FreeAuditTool />
+      </div>
       <div id="school-section" className="scroll-mt-20">
         <WhatMakesKapesDifferent />
       </div>
-      <FreeAuditTool />
       <ValueCalculator />
       <SchoolLogos />
       <PartnershipTiers />
