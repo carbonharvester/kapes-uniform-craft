@@ -18,13 +18,7 @@ export const SchoolCodeEntry = () => {
   };
 
   return (
-    <section className="py-24" style={{ 
-      background: `
-        radial-gradient(ellipse at left, transparent 0%, hsl(209 100% 91%) 15%, hsl(209 100% 91%) 85%, transparent 100%),
-        radial-gradient(ellipse at right, transparent 0%, hsl(209 100% 91%) 15%, hsl(209 100% 91%) 85%, transparent 100%),
-        linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)
-      `
-    }}>
+    <section className="py-24" style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
