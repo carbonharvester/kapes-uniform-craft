@@ -120,7 +120,7 @@ const EducationalResources = () => {
       </section>
 
       {/* Plug and Play Section */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
           <div className="text-center mb-12">
@@ -201,7 +201,7 @@ const EducationalResources = () => {
       </section>
 
       {/* Quote */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-light-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <blockquote className="text-3xl md:text-4xl font-light tracking-tight mb-6">
             "Education doesn't stop at the classroom. With Kapes, every uniform is a learning opportunity."

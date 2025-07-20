@@ -112,7 +112,7 @@ export const UniformSolutions = () => {
       </section>
 
       {/* Enhanced Uniform Types Section */}
-      <section className="py-24 bg-gradient-to-br from-background via-muted/30 to-accent/20 relative overflow-hidden">
+      <section className="bg-gradient-warm-section py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16 animate-fade-in">

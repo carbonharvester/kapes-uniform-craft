@@ -72,7 +72,7 @@ const LegacyImpactTier = () => {
       </section>
 
       {/* Key Highlights */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="border-0 shadow-glass hover-lift transition-smooth">
@@ -156,7 +156,7 @@ const LegacyImpactTier = () => {
       </section>
 
       {/* What's Not Included */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-light-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <Card className="border-0 shadow-glass">
             <CardHeader className="p-8">
@@ -205,7 +205,7 @@ const LegacyImpactTier = () => {
       </section>
 
       {/* Quote */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-to-footer relative py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <blockquote className="text-3xl md:text-4xl font-light tracking-tight mb-6">
             "Uniforms shouldn't just cover students — they should empower them."

@@ -183,7 +183,7 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Free School Meals Section */}
-      <section className="py-16 px-4 bg-muted/20">
+      <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
@@ -255,7 +255,7 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Track Impact Section */}
-      <section className="py-16 px-4 bg-muted/20">
+      <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
@@ -328,7 +328,7 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Final Impact Statement */}
-      <section className="py-12 px-4 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-950/20 dark:to-red-950/20">
+      <section className="bg-gradient-to-footer py-12 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="flex items-center justify-center gap-4 mb-4">
             <Sparkles className="w-8 h-8 text-orange-600" />

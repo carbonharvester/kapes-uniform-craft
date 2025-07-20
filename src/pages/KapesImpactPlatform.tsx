@@ -139,7 +139,7 @@ const KapesImpactPlatform = () => {
       </section>
 
       {/* QR Technology Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-2xl px-6 py-3 mb-6">
@@ -244,7 +244,7 @@ const KapesImpactPlatform = () => {
       </section>
 
       {/* Reporting Features */}
-      <section className="py-16 px-4 bg-gradient-to-br from-background via-muted/30 to-accent/20">
+      <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/20 rounded-2xl px-6 py-3 mb-6">

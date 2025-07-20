@@ -149,7 +149,7 @@ const PartnershipTiers = () => {
           </section>
 
           {/* Detailed Comparison Table */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
                 Detailed Feature Comparison
@@ -210,7 +210,7 @@ const PartnershipTiers = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl text-center">
+          <section className="bg-gradient-to-footer py-16 text-center">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Ready to Get Started?
             </h2>

@@ -177,7 +177,7 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Ethical Manufacturing Section */}
-      <section className="py-16 px-4 bg-muted/20">
+      <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
@@ -257,7 +257,7 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Sustainable Logistics Section */}
-      <section className="py-16 px-4 bg-muted/20">
+      <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">

@@ -78,7 +78,7 @@ const OurMission = () => {
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Mission Statement */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="max-w-4xl mx-auto text-center">
               <blockquote className="text-2xl md:text-4xl font-light text-foreground mb-8 leading-relaxed">
                 "To transform school uniforms from a necessity into a force for positive change — empowering students, supporting communities, and healing our planet."
@@ -155,7 +155,7 @@ const OurMission = () => {
           </section>
 
           {/* Our Solution */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Solution</h2>
               <p className="text-muted-foreground text-lg">How we're creating positive change</p>

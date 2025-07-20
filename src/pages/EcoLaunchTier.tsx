@@ -141,7 +141,7 @@ const EcoLaunchTier = () => {
           </section>
 
           {/* Best For */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Perfect For</h2>
               <p className="text-muted-foreground text-lg">Schools that align with this approach</p>

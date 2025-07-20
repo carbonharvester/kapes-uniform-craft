@@ -126,7 +126,7 @@ const ImplementationTimeline = () => {
       </section>
 
       {/* Key Milestones */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Key Milestones</h2>
           <div className="grid gap-8 md:grid-cols-3">

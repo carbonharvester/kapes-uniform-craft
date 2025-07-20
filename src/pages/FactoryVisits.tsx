@@ -206,7 +206,7 @@ const FactoryVisits = () => {
           </section>
 
           {/* Why It Matters */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why Factory Visits Matter</h2>
               <p className="text-muted-foreground text-lg">The educational impact</p>
@@ -224,7 +224,7 @@ const FactoryVisits = () => {
           </section>
 
           {/* Student Quote */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-light-warm-section py-16">
             <Card className="border-0 shadow-glass max-w-4xl mx-auto text-center">
               <CardContent className="p-8 md:p-12">
                 <blockquote className="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
@@ -236,7 +236,7 @@ const FactoryVisits = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl text-center">
+          <section className="bg-gradient-to-footer py-16 text-center">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Experience the Full Story
             </h2>

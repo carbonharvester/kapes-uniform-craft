@@ -45,7 +45,7 @@ export const DeliveryPackaging = () => {
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Next-Day Delivery Section */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Next-Day Home Delivery</h2>
               <p className="text-muted-foreground text-lg">Lightning-fast delivery that puts parent convenience first</p>
@@ -160,7 +160,7 @@ export const DeliveryPackaging = () => {
           </section>
 
           {/* Sustainable Packaging Section */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Sustainable Packaging Options</h2>
               <p className="text-muted-foreground text-lg">Every tier includes sustainable packaging that reflects your school's commitment to the environment</p>
