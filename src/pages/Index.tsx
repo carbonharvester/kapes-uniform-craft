@@ -8,7 +8,7 @@ import { PartnershipTiers } from "@/components/PartnershipTiers";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
-import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
+
 import { BlogSection } from "@/components/BlogSection";
 import { FloatingGetStarted } from "@/components/FloatingGetStarted";
 
@@ -29,7 +29,7 @@ const Index = () => {
       <SchoolLogos />
       <PartnershipTiers />
       <Testimonials />
-      <KapesImpactDashboard />
+      
       <BlogSection />
       <Footer />
       <FloatingGetStarted />
