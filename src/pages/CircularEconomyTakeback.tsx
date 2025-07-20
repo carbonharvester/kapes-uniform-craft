@@ -136,6 +136,22 @@ const CircularEconomyTakeback = () => {
         </div>
       </section>
 
+      {/* Visual Break Image */}
+      <section className="relative h-96 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
+          }}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute bottom-8 left-0 right-0 text-center">
+          <h3 className="text-2xl md:text-3xl font-medium text-white px-4">
+            One less uniform in landfill = one more child fed
+          </h3>
+        </div>
+      </section>
+
       {/* For Schools Section */}
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
