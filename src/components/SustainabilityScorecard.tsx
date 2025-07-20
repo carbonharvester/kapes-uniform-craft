@@ -839,7 +839,7 @@ const SustainabilityScorecard: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-[#cfeaff]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -893,7 +893,7 @@ const SustainabilityScorecard: React.FC = () => {
       </section>
 
       {/* Assessment Preview & What You'll Learn - Two Column Layout */}
-      <section className="py-20">
+      <section className="py-20 bg-[#cfeaff]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -997,7 +997,7 @@ const SustainabilityScorecard: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-[#f9f3df]">
+      <section className="py-20 bg-[#cfeaff]">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
