@@ -19,7 +19,8 @@ const Blog = () => {
     queryFn: getAllBlogPosts,
   });
 
-  // Category filtering removed since category field is omitted
+  // Get unique categories
+  const categories = blogPosts ? [...new Set(blogPosts.map(post => post.category))] : [];
 
   // Filter posts based on search and category
   const filteredPosts = blogPosts?.filter(post => {
@@ -27,9 +28,9 @@ const Blog = () => {
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // Category filtering removed since field is omitted
+    const matchesCategory = !selectedCategory || post.category === selectedCategory;
     
-    return matchesSearch;
+    return matchesSearch && matchesCategory;
   }) || [];
 
   const featuredPost = filteredPosts[0];
@@ -85,7 +86,27 @@ const Blog = () => {
                 className="pl-10"
               />
             </div>
-          </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={selectedCategory === null ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory(null)}
+              >
+                All Posts
+              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
 
           {isLoading ? (
             <div className="space-y-12">
@@ -131,6 +152,7 @@ const Blog = () => {
                       />
                     </div>
                      <div className="space-y-6">
+                       <Badge variant="secondary">{featuredPost.category}</Badge>
                        <h3 className="text-3xl font-semibold leading-tight">{featuredPost.title}</h3>
                        <p className="text-lg text-muted-foreground leading-relaxed">{featuredPost.excerpt}</p>
                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -149,7 +171,9 @@ const Blog = () => {
               {/* Other Posts Grid */}
               {otherPosts.length > 0 && (
                 <section>
-                   <h2 className="text-3xl font-light tracking-tight mb-8">All Posts</h2>
+                   <h2 className="text-3xl font-light tracking-tight mb-8">
+                     {selectedCategory ? `${selectedCategory} Posts` : 'All Posts'}
+                   </h2>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {otherPosts.map(post => (
                       <BlogCard key={post.slug} post={post} />
@@ -163,12 +187,18 @@ const Blog = () => {
                 <div className="text-center py-16">
                   <h3 className="text-2xl font-semibold mb-4">No posts found</h3>
                    <p className="text-muted-foreground mb-6">
-                     {searchTerm ? "Try adjusting your search criteria." : "Check back soon for new content."}
+                     {searchTerm || selectedCategory 
+                       ? "Try adjusting your search or filter criteria."
+                       : "Check back soon for new content."
+                     }
                    </p>
-                   {searchTerm && (
+                   {(searchTerm || selectedCategory) && (
                     <Button 
                       variant="outline" 
-                       onClick={() => setSearchTerm("")}
+                       onClick={() => {
+                         setSearchTerm("");
+                         setSelectedCategory(null);
+                       }}
                     >
                       Clear Filters
                     </Button>

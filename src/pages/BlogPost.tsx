@@ -174,6 +174,7 @@ const BlogPost = () => {
             </div>
 
              <div className="space-y-6">
+               <Badge variant="secondary">{post.category}</Badge>
               
               <h1 className="text-4xl md:text-5xl font-bold leading-tight text-foreground">
                 {post.title}

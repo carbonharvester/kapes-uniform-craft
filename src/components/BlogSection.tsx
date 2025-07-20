@@ -93,9 +93,9 @@ export const BlogSection = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                      <div className="absolute top-4 left-4">
-                       <span className="text-xs text-background/90 bg-background/20 backdrop-blur-sm px-2 py-1 rounded">
-                         {formatDate(post.date)}
-                       </span>
+                       <Badge variant="secondary" className="bg-background/90 text-foreground">
+                         {post.category}
+                       </Badge>
                      </div>
                   </div>
                   <CardHeader>
