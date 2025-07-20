@@ -119,7 +119,7 @@ const CircularEconomyTakeback = () => {
                           {step.step}
                         </div>
                       </div>
-                      <CardTitle className="text-xl">{step.title}</CardTitle>
+                      <CardTitle className="text-lg">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">{step.description}</p>
