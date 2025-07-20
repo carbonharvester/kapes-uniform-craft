@@ -51,9 +51,9 @@ export const KapesImpactDashboard = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedFeature(index)}
-                  className={`p-6 rounded-xl border transition-all text-center ${
+                  className={`p-6 rounded-xl border transition-all text-center shadow-lg hover:shadow-xl ${
                     selectedFeature === index 
-                      ? 'bg-primary/5 border-primary/20 shadow-sm' 
+                      ? 'bg-primary/5 border-primary/20' 
                       : 'bg-card hover:bg-card/80 border-border hover:border-border/80'
                   }`}
                 >
@@ -61,13 +61,9 @@ export const KapesImpactDashboard = () => {
                     <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
                       selectedFeature === index 
                         ? 'bg-primary text-primary-foreground' 
-                        : 'bg-primary/10'
+                        : 'bg-primary text-primary-foreground'
                     }`}>
-                      <feature.icon className={`h-6 w-6 ${
-                        selectedFeature === index 
-                          ? 'text-primary-foreground' 
-                          : 'text-primary'
-                      }`} />
+                      <feature.icon className="h-6 w-6" />
                     </div>
                     <h4 className="font-semibold mb-2 text-foreground">{feature.title}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
