@@ -115,6 +115,9 @@ export const SchoolShopsLockers = () => {
             </div>
           </section>
 
+          {/* Image Comparison Section */}
+          <Feature />
+
           {/* E-Commerce Lockers Section */}
           <section>
             <div className="text-center mb-16">
@@ -222,9 +225,6 @@ export const SchoolShopsLockers = () => {
               </Card>
             </div>
           </section>
-
-          {/* Image Comparison Section */}
-          <Feature />
 
           {/* CTA Section */}
           <section className="text-center py-16">
