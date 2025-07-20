@@ -31,10 +31,10 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
           />
         </div>
         <CardHeader className="flex-1">
-          <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors line-clamp-2 text-heading">
+          <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors line-clamp-2 text-black">
             {post.title}
           </CardTitle>
-          <CardDescription className="text-muted-foreground line-clamp-3 flex-1 font-inter">
+          <CardDescription className="text-sm text-muted-foreground line-clamp-3 flex-1 font-inter">
             {post.excerpt}
           </CardDescription>
         </CardHeader>

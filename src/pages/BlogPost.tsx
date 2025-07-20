@@ -29,29 +29,29 @@ const BlogPost = () => {
   const richTextOptions = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
-        <p className="mb-6 text-lg leading-relaxed text-content font-light">{children}</p>
+        <p className="mb-6 text-base leading-relaxed text-content font-light">{children}</p>
       ),
       [BLOCKS.HEADING_1]: (node: any, children: any) => (
-        <h1 className="text-4xl font-light mb-8 mt-12 text-black tracking-tight">{children}</h1>
+        <h1 className="text-2xl font-light mb-8 mt-12 text-black tracking-tight">{children}</h1>
       ),
       [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <h2 className="text-3xl font-light mb-6 mt-10 text-black tracking-tight">{children}</h2>
+        <h2 className="text-xl font-light mb-6 mt-10 text-black tracking-tight">{children}</h2>
       ),
       [BLOCKS.HEADING_3]: (node: any, children: any) => (
-        <h3 className="text-2xl font-normal mb-4 mt-8 text-black">{children}</h3>
+        <h3 className="text-lg font-normal mb-4 mt-8 text-black">{children}</h3>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
-        <ul className="list-disc list-outside mb-6 space-y-2 text-lg pl-6">{children}</ul>
+        <ul className="list-disc list-outside mb-6 space-y-2 text-base pl-6">{children}</ul>
       ),
       [BLOCKS.OL_LIST]: (node: any, children: any) => (
-        <ol className="list-decimal list-outside mb-6 space-y-2 text-lg pl-6">{children}</ol>
+        <ol className="list-decimal list-outside mb-6 space-y-2 text-base pl-6">{children}</ol>
       ),
       [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
         <li className="text-content font-light">{children}</li>
       ),
       [BLOCKS.QUOTE]: (node: any, children: any) => (
         <blockquote className="border-l-4 border-primary pl-6 py-4 mb-6 bg-secondary/10 rounded-r-lg">
-          <div className="text-lg italic text-content font-light">{children}</div>
+          <div className="text-base italic text-content font-light">{children}</div>
         </blockquote>
       ),
       [INLINES.HYPERLINK]: (node: any, children: any) => (
@@ -173,7 +173,7 @@ const BlogPost = () => {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl font-light leading-tight tracking-tight text-black">
+              <h1 className="text-2xl md:text-3xl font-light leading-tight tracking-tight text-black">
                 {post.title}
               </h1>
               
@@ -190,7 +190,7 @@ const BlogPost = () => {
                 </Button>
               </div>
               
-              <p className="text-xl text-content leading-relaxed font-light">
+              <p className="text-base text-content leading-relaxed font-light">
                 {post.excerpt}
               </p>
             </div>
@@ -204,7 +204,7 @@ const BlogPost = () => {
           {/* Related Posts */}
           {filteredRelatedPosts.length > 0 && (
             <section className="mt-16 pt-16 border-t border-border/50">
-              <h2 className="text-3xl font-light mb-8 text-black tracking-tight">Related Posts</h2>
+              <h2 className="text-xl font-light mb-8 text-black tracking-tight">Related Posts</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredRelatedPosts.map(relatedPost => (
                   <BlogCard key={relatedPost.slug} post={relatedPost} />
