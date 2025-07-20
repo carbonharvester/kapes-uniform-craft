@@ -40,7 +40,7 @@ export const Hero = () => {
               </svg>
             </button>
             <button 
-              onClick={() => document.getElementById('school-section')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm"
             >
               I'm a School
