@@ -128,8 +128,8 @@ export const SchoolShopsLockers = () => {
         </div>
       </section>
 
-      {/* Image Comparison Section with reduced padding */}
-      <div className="py-8">
+      {/* Image Comparison Section with minimal padding */}
+      <div className="py-2">
         <Feature />
       </div>
 
