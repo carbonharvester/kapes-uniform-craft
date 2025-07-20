@@ -17,16 +17,7 @@ export const FreeAuditTool = () => {
               Discover Your School's Sustainability Score in 5 Minutes
             </h2>
             <p className="text-muted-foreground mb-4">If your schools values sustainability but does not currently have sustainable uniforms yet, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>
-            <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary" />
-                <span>150+ schools completed</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4 text-primary" />
-                <span>Average score: 34%</span>
-              </div>
-            </div>
+            
           </div>
 
           {/* Social proof banner */}
