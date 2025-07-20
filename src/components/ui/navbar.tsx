@@ -256,7 +256,7 @@ const Navbar = ({
               <a href={auth.login.url}>{auth.login.text}</a>
             </Button>
             <Button asChild size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
-              <a href={auth.signup.url}>{auth.signup.text}</a>
+              <a href="/sustainability-scorecard">Take Audit</a>
             </Button>
           </div>
         </nav>
