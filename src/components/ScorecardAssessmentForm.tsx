@@ -39,7 +39,7 @@ export const ScorecardAssessmentForm = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <FileText className="h-5 w-5" />
-          Start Your Sustainability Assessment
+          Start Your Assessment
         </CardTitle>
       </CardHeader>
       <CardContent>
