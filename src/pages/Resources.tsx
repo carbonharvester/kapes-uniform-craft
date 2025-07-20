@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { TierQuiz } from "@/components/TierQuiz";
-import { BookOpen, Download, Calculator } from "lucide-react";
+import { FreeAuditTool } from "@/components/FreeAuditTool";
+import { BookOpen, Download } from "lucide-react";
 const Resources = () => {
   const blogPosts = [{
     title: "Top Sustainability Challenges for Private Schools",
@@ -141,45 +142,7 @@ const Resources = () => {
             </div>
           </section>
 
-          {/* Free Audit Tool */}
-          <section>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free School Uniform Sustainability Scorecard</h2>
-              <p className="text-muted-foreground text-lg">Get personalized insights for your school</p>
-            </div>
-            <Card className="border-0 shadow-glass max-w-4xl mx-auto">
-              <CardContent className="p-8 md:p-12">
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Calculator className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-medium mb-4">Diagnostic Tool with Report Generation</h3>
-                  <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-                    Get a comprehensive analysis of your current uniform program with personalized recommendations for improvement.
-                  </p>
-                </div>
-                <div className="max-w-2xl mx-auto">
-                  <form className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">School Name</label>
-                      <input type="text" className="w-full p-3 border rounded-xl bg-background" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Current Uniform Supplier</label>
-                      <input type="text" className="w-full p-3 border rounded-xl bg-background" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Annual Uniform Budget</label>
-                      <input type="number" className="w-full p-3 border rounded-xl bg-background" />
-                    </div>
-                    <Button type="submit" className="w-full rounded-xl font-medium text-lg py-4 hover:scale-105 transition-smooth">
-                      Start Free Audit
-                    </Button>
-                  </form>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
+          <FreeAuditTool />
 
           {/* Partnership Tier Quiz */}
           <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
