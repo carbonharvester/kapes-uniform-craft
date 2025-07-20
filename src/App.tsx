@@ -28,6 +28,8 @@ import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
 import SocialImpactAfrica from "./pages/SocialImpactAfrica";
 import SustainabilityScorecardPage from "./pages/SustainabilityScorecard";
 import Affiliate from "./pages/Affiliate";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import { Header } from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -46,6 +48,10 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/affiliate" element={<Affiliate />} />
+          
+          {/* Blog Routes */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           
           {/* Process & Timeline Routes */}
           <Route path="/our-process" element={<OurProcess />} />
