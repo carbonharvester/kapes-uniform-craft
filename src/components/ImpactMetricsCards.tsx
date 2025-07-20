@@ -148,16 +148,7 @@ export const ImpactMetricsCards = () => {
 
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight text-foreground mb-4">
-            Real Impact • <span className="text-primary">Real Results</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See the measurable difference your school community is making through our sustainable uniform program
-          </p>
-        </div>
-        
+      <div className="container mx-auto max-w-6xl">        
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {metrics.map((metric, index) => (
             <MetricCard
