@@ -201,6 +201,12 @@ const Navbar = ({
           url: "/blog",
         },
         {
+          title: "FAQ",
+          description: "Frequently asked questions and AI chat",
+          icon: <Book className="size-5 shrink-0" />,
+          url: "/faq",
+        },
+        {
           title: "Sustainability Scorecard",
           description: "Assess your school's uniform sustainability",
           icon: <Calculator className="size-5 shrink-0" />,
