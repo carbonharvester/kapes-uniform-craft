@@ -48,12 +48,6 @@ export const Hero = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            <button 
-              onClick={() => document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group inline-flex items-center justify-center px-6 py-3 bg-transparent text-white/90 border border-white/30 rounded-xl font-medium text-base transition-all duration-300 hover:bg-white/10 hover:scale-105 backdrop-blur-sm"
-            >
-              Get Sustainability Score
-            </button>
           </div>
         </div>
       </div>
