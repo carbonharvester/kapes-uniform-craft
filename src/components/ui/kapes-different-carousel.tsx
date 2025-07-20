@@ -11,7 +11,7 @@ import factoryVisitsImage from "@/assets/factory-visits.jpg";
 import organicCottonImage from "@/assets/organic-cotton.jpg";
 import sustainableMaterialsImage from "@/assets/sustainable-materials.jpg";
 import ethicalManufacturingImage from "@/assets/ethical-manufacturing.jpg";
-import takebackSchemeImage from "@/assets/takeback-scheme.jpg";
+import takebackSchemeImage from "@/assets/circular-life-guarantee.jpg";
 import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
 import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
 import uniformProgramImage from "@/assets/uniform-program.png";
