@@ -149,7 +149,7 @@ const differences: DifferenceCard[] = [
   },
   {
     id: "educational-programs",
-    title: "Kapes Eco Academy",
+    title: "Kapes Online Academy",
     subtitle: "Empowering students through sustainability education.",
     tagline: "Learn it. Live it. Lead it.",
     description: "Interactive learning initiatives",
