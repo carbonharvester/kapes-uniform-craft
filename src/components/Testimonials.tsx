@@ -17,16 +17,14 @@ export const Testimonials = () => {
           
           <div className="max-w-4xl mx-auto">
             <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
-              <iframe
-                src="https://player.vimeo.com/video/720191939?h=0&title=1&byline=1&portrait=1"
+              <video
+                src="https://res.cloudinary.com/dng12bd0a/video/upload/v1752989802/case_study__fairgreen_international_1080p_g0dkdi.mp4"
                 width="100%"
                 height="100%"
-                className="absolute inset-0"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
+                className="absolute inset-0 object-cover"
+                controls
                 title="What Schools Are Saying"
-              ></iframe>
+              />
             </div>
           </div>
         </div>
