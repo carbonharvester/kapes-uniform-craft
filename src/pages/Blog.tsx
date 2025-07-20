@@ -9,7 +9,7 @@ import { Search, Filter } from "lucide-react";
 import { getAllBlogPosts } from "@/services/contentful";
 import { BlogPost } from "@/types/blog";
 import { Footer } from "@/components/Footer";
-import blogHeroImage from "@/assets/blog-hero.jpg";
+import newBlogHeroImage from "@/assets/new-blog-hero.jpg";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,7 +56,7 @@ const Blog = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={blogHeroImage} 
+            src={newBlogHeroImage} 
             alt="Blog hero" 
             className="w-full h-full object-cover"
           />
