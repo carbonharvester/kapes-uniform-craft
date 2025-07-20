@@ -316,7 +316,7 @@ const SustainabilityScorecard: React.FC = () => {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto">
             <CardHeader className="text-center">
-              <h2 className="text-3xl font-bold text-primary mb-4">Your Sustainability Score</h2>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight text-primary mb-4">Your Sustainability Score</h2>
               <div className="text-6xl font-bold text-primary mb-4">{score}%</div>
               <p className="text-muted-foreground mb-4">
                 {getScoreDescription(score)}
@@ -574,7 +574,7 @@ const SustainabilityScorecard: React.FC = () => {
               <div className="bg-[#cfeaff] p-8 rounded-lg">
                 <Card className="max-w-lg mx-auto lg:mx-0">
                   <CardHeader>
-                    <h3 className="text-2xl font-bold text-center">Get Started</h3>
+                    <h3 className="text-2xl md:text-3xl font-medium text-center">Get Started</h3>
                     <p className="text-muted-foreground text-center">
                       Enter your details to begin your sustainability assessment
                     </p>

@@ -10,7 +10,7 @@ export const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Let's Start the Conversation</h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">Let's Start the Conversation</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Ready to transform your school's uniform program? Get in touch with our education specialists.
             </p>
@@ -63,7 +63,7 @@ export const ContactForm = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+                <h3 className="text-2xl md:text-3xl font-medium mb-6">Get in Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary" />

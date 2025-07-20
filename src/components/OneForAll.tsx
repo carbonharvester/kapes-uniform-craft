@@ -5,7 +5,7 @@ export const OneForAll = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-8">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
               One <span className="text-primary">For All</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">

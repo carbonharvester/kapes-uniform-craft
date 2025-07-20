@@ -101,7 +101,7 @@ const CircularEconomyTakeback = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               ♻️ How the Takeback Scheme Works
             </h2>
           </div>
@@ -143,7 +143,7 @@ const CircularEconomyTakeback = () => {
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               🏫 For Schools: Zero Admin, Real Results
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -180,7 +180,7 @@ const CircularEconomyTakeback = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               👨‍👩‍👧 For Parents: Simple & Purposeful
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -217,7 +217,7 @@ const CircularEconomyTakeback = () => {
       <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               📈 The Results Speak for Themselves
             </h2>
           </div>

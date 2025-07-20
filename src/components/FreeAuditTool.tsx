@@ -16,7 +16,7 @@ export const FreeAuditTool = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6">What You'll Receive:</h3>
+              <h3 className="text-2xl md:text-3xl font-medium mb-6">What You'll Receive:</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
