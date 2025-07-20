@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const OurMission = () => {
   const values = [
@@ -256,8 +257,8 @@ const OurMission = () => {
               <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
                 Start Your Journey
               </Button>
-              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
-                Learn About Our Impact
+              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
+                <Link to="/social-impact-africa">Learn About Our Impact</Link>
               </Button>
             </div>
           </section>
