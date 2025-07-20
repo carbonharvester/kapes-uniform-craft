@@ -42,8 +42,8 @@
     /* Heading color - Deep navy blue */
     --heading: 240 95% 20%;
     
-    /* Warm background - Cream/beige */
-    --background-warm: 46 67% 93%;
+    /* Warm background - Lighter cream/beige */
+    --background-warm: 46 67% 96%;
     
     /* Cool background - Light blue */
     --background-cool: 205 100% 91%;
@@ -51,8 +51,8 @@
     /* Kapes Impact section background */
     --background-kapes-impact: 208 100% 91%;
     
-    /* Light warm background - 2 shades lighter than f9f3df */
-    --background-light-warm: 46 65% 97%;
+    /* Light warm background - Even lighter cream */
+    --background-light-warm: 46 65% 98%;
     
     /* Apple-inspired radius */
     --radius: 0.75rem;

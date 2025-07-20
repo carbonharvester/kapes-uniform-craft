@@ -91,7 +91,7 @@ const OurFactories = () => {
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Factory Locations */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Global Partners</h2>
               <p className="text-muted-foreground text-lg">Ethical manufacturing across three continents</p>
@@ -168,7 +168,7 @@ const OurFactories = () => {
           </section>
 
           {/* Audit Process */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+          <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Audit Process</h2>
               <p className="text-muted-foreground text-lg">Rigorous verification ensures compliance and continuous improvement</p>

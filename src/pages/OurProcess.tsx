@@ -90,8 +90,8 @@ const OurProcess = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
           
-          {/* Process Steps */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+      {/* Process Steps */}
+      <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Four-Step Journey</h2>
               <p className="text-muted-foreground text-lg">A seamless pathway to sustainable uniforms</p>
@@ -188,7 +188,7 @@ const OurProcess = () => {
           </section>
 
           {/* What Sets Us Apart */}
-          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
+          <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">What Sets Us Apart</h2>
               <p className="text-muted-foreground text-lg">Why schools choose our process</p>
