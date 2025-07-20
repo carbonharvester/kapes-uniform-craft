@@ -284,7 +284,7 @@ export const KapesDifferentCarousel = () => {
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 px-2 basis-full sm:basis-1/2 lg:basis-1/3">
               <Card className="h-96 border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                   style={{ backgroundImage: `url(${difference.image})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0) 25%)' }} />
