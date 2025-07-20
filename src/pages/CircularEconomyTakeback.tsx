@@ -138,12 +138,9 @@ const CircularEconomyTakeback = () => {
 
       {/* Visual Break Image */}
       <section className="relative h-96 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
+      }} />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute bottom-8 left-0 right-0 text-center">
           <h3 className="text-2xl md:text-3xl font-medium text-white px-4">
@@ -196,9 +193,7 @@ const CircularEconomyTakeback = () => {
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               👨‍👩‍👧 For Parents: Simple & Purposeful
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Returning old uniforms is as easy as:
-            </p>
+            <p className="text-lg text-muted-foreground">Returning and purchasing old uniforms is as easy as:</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
