@@ -153,7 +153,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Empowering students through sustainability education.",
     tagline: "Learn it. Live it. Lead it.",
     description: "Interactive learning initiatives",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=400&h=600&fit=crop",
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752999752/490294314_1221791753286267_8865515835930643023_n_cue5wc.jpg",
     icon: <GraduationCap className="w-6 h-6" />,
     details: {
       title: "Educational Programs",
