@@ -7,6 +7,26 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-black/30 z-10"></div>
       </div>
       
+      {/* Enhanced floating elements for visual interest */}
+      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      
+      {/* Additional visual elements */}
+      <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-white/5 rounded-lg rotate-45 animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-20 h-20 bg-primary/5 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+      
+      {/* Sustainability icons floating */}
+      <div className="absolute top-1/3 left-10 opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }}>
+        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+          <span className="text-white text-xl">♻️</span>
+        </div>
+      </div>
+      <div className="absolute top-2/3 right-10 opacity-20 animate-pulse" style={{ animationDelay: '2.5s' }}>
+        <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
+          <span className="text-white text-xl">🌱</span>
+        </div>
+      </div>
+      
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
@@ -46,10 +66,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-      
-      {/* Floating elements for visual interest */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
     </section>
   );
 };
