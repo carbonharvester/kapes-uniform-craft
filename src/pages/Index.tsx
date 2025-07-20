@@ -11,7 +11,6 @@ import { SchoolLogos } from "@/components/SchoolLogos";
 import { KapesImpactDashboard } from "@/components/KapesImpactDashboard";
 import { BlogSection } from "@/components/BlogSection";
 import { FloatingGetStarted } from "@/components/FloatingGetStarted";
-import { FloatingScorecardCTA } from "@/components/FloatingScorecardCTA";
 
 const Index = () => {
   return (
@@ -34,7 +33,6 @@ const Index = () => {
       <BlogSection />
       <Footer />
       <FloatingGetStarted />
-      <FloatingScorecardCTA />
     </div>
   );
 };
