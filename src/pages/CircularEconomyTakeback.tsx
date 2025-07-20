@@ -1,9 +1,57 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, RefreshCw, Target, CheckCircle, TrendingUp, Mail, MapPin, Calendar } from "lucide-react";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, RefreshCw, Target, CheckCircle, TrendingUp, Mail, MapPin, Calendar, ChevronDown, Plus, Minus } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useState, useEffect } from "react";
 const CircularEconomyTakeback = () => {
+  const isMobile = useIsMobile();
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    schools: false,
+    parents: false,
+    impact: false,
+    process: false
+  });
+
+  const toggleSection = (section: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section]
+    }));
+  };
+
+  // Enhanced data with more details for progressive disclosure
+  const detailedInfo = {
+    schools: {
+      details: "Our managed takeback system integrates seamlessly with your existing uniform ordering process. Parents can return uniforms through multiple convenient channels, and all logistics are handled by our team.",
+      benefits: [
+        "Zero setup costs or ongoing admin",
+        "Automatic integration with KapesImpact™ dashboard",
+        "Transparent reporting for governors and leadership",
+        "Enhanced sustainability credentials for school"
+      ]
+    },
+    parents: {
+      details: "Returning uniforms is simple and rewarding. Every item you return helps fund meals for children in Africa while keeping textiles out of landfill.",
+      benefits: [
+        "Free collection from home or school",
+        "Immediate impact tracking",
+        "Access to affordable second-hand uniforms",
+        "Teaching children about circular economy"
+      ]
+    },
+    impact: {
+      details: "Our impact measurement goes beyond simple recycling statistics. We track environmental, social, and community benefits in real-time.",
+      metrics: [
+        "Carbon footprint reduction per uniform",
+        "Number of meals funded in African schools",
+        "Textile waste diverted from landfill",
+        "Parent engagement and satisfaction scores"
+      ]
+    }
+  };
   const takebackSteps = [{
     title: "Parents Return Used Uniforms",
     description: "Whether outgrown, damaged, or end-of-year leftovers",
@@ -98,78 +146,162 @@ const CircularEconomyTakeback = () => {
       }}></div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {/* How It Works Section - Process Steps (Blue Theme) */}
+      <section className="py-16 px-4 relative">
+        {/* Section Separator */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-blue-50/50 dark:to-blue-950/20"></div>
+        
+        <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-12">
+            <Badge className="mb-4 bg-blue-100 text-blue-700 border-blue-200 dark:bg-blue-900/30 dark:text-blue-300">
+              Process Overview
+            </Badge>
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
               ♻️ How the Takeback Scheme Works
             </h2>
+            
+            {/* Progressive Disclosure for Process Details */}
+            <Collapsible open={openSections.process} onOpenChange={() => toggleSection('process')}>
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  className="text-blue-600 hover:text-blue-700 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-950/20 transition-colors"
+                >
+                  Learn More About Our Process
+                  {openSections.process ? <ChevronDown className="ml-2 h-4 w-4 rotate-180 transition-transform" /> : <ChevronDown className="ml-2 h-4 w-4 transition-transform" />}
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-4">
+                <div className="max-w-3xl mx-auto bg-blue-50/50 dark:bg-blue-950/20 rounded-lg p-6 border border-blue-200/50 dark:border-blue-800/50">
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Our three-step process ensures maximum impact with minimal effort. We handle all logistics, 
+                    tracking, and reporting while creating measurable social and environmental benefits.
+                  </p>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className={`grid gap-8 mb-12 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {takebackSteps.map((step, index) => {
             const IconComponent = step.icon;
-            return <div key={index} className="relative">
-                  <Card className="hover:shadow-lg transition-shadow text-center h-full">
+            return <div key={index} className="relative group">
+                  <Card className="hover:shadow-lg transition-all duration-300 text-center h-full border-blue-200/50 hover:border-blue-300 dark:border-blue-800/50 dark:hover:border-blue-700 hover:-translate-y-1">
                     <CardHeader>
-                      <div className="mx-auto mb-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center relative dark:bg-blue-900/20">
-                        <IconComponent className="w-8 h-8 text-blue-600" />
-                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/40 dark:to-blue-800/40 rounded-full flex items-center justify-center relative shadow-lg">
+                        <IconComponent className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
                           {step.step}
                         </div>
                       </div>
-                      <CardTitle className="text-xl">{step.title}</CardTitle>
+                      <CardTitle className="text-xl text-blue-900 dark:text-blue-100">{step.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground">{step.description}</p>
                     </CardContent>
                   </Card>
-                  {index < takebackSteps.length - 1 && <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                      <ArrowRight className="w-6 h-6 text-muted-foreground" />
-                    </div>}
+                  {!isMobile && index < takebackSteps.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                      <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/40 rounded-full flex items-center justify-center shadow-md">
+                        <ArrowRight className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      </div>
+                    </div>
+                  )}
                 </div>;
           })}
           </div>
-          
-          
         </div>
+        
+        {/* Bottom Section Separator */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-blue-50/50 dark:to-blue-950/20"></div>
       </section>
 
-      {/* Visual Break Image */}
+      {/* Enhanced Visual Break with Diagonal Transition */}
       <section className="relative h-96 overflow-hidden">
+        {/* Diagonal transition from previous section */}
+        <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-br from-blue-50/50 via-transparent to-background dark:from-blue-950/20 transform -skew-y-1 origin-top-left"></div>
+        
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg')"
       }} />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="absolute bottom-8 left-0 right-0 text-center">
-          <h3 className="text-2xl md:text-3xl font-medium text-white px-4">
-            One less uniform in landfill = one more child fed
-          </h3>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-black/50" />
+        
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-20 left-20 w-16 h-16 bg-white/10 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-24 h-24 bg-white/10 rounded-full animate-pulse delay-1000"></div>
+        
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-4 max-w-4xl">
+            <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl md:text-4xl font-light text-white mb-4 leading-tight">
+                One less uniform in landfill = one more child fed
+              </h3>
+              <p className="text-white/90 text-lg">
+                Every returned uniform creates a ripple effect of positive impact
+              </p>
+            </div>
+          </div>
         </div>
+        
+        {/* Diagonal transition to next section */}
+        <div className="absolute -bottom-24 left-0 right-0 h-24 bg-gradient-to-tl from-green-50/50 via-transparent to-background dark:from-green-950/20 transform skew-y-1 origin-bottom-right"></div>
       </section>
 
-      {/* For Schools Section */}
-      <section className="bg-gradient-warm-section py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {/* For Schools Section - Green Theme */}
+      <section className="bg-gradient-to-br from-green-50/50 via-green-25/30 to-background dark:from-green-950/20 dark:via-green-900/10 py-16 px-4 relative">
+        {/* Top section separator */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-green-50/50 dark:to-green-950/20"></div>
+        
+        <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
+            <Badge className="mb-4 bg-green-100 text-green-700 border-green-200 dark:bg-green-900/30 dark:text-green-300">
+              For Educational Institutions
+            </Badge>
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-green-900 dark:text-green-100">
               🏫 For Schools: Zero Admin, Real Results
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Our takeback system is:
+            <p className="text-lg text-muted-foreground mb-6">
+              Our takeback system is designed for busy schools:
             </p>
+            
+            {/* Progressive Disclosure for Schools */}
+            <Collapsible open={openSections.schools} onOpenChange={() => toggleSection('schools')}>
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="border-green-200 text-green-700 hover:bg-green-50 dark:border-green-800 dark:text-green-300 dark:hover:bg-green-950/20 min-h-12"
+                >
+                  {openSections.schools ? 'Hide Details' : 'See Full Benefits'}
+                  {openSections.schools ? <Minus className="ml-2 h-4 w-4" /> : <Plus className="ml-2 h-4 w-4" />}
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-6">
+                <div className="max-w-4xl mx-auto bg-green-50 dark:bg-green-950/30 rounded-xl p-6 border border-green-200 dark:border-green-800">
+                  <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
+                    {detailedInfo.schools.details}
+                  </p>
+                  <div className={`grid gap-4 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+                    {detailedInfo.schools.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 bg-white/50 dark:bg-black/20 rounded-lg">
+                        <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+                        <span className="text-sm font-medium">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className={`grid gap-6 mb-8 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {schoolBenefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-green-200/50 hover:border-green-300 dark:border-green-800/50 dark:hover:border-green-700 hover:-translate-y-1">
                   <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center dark:bg-green-900/20">
-                      <IconComponent className="w-6 h-6 text-green-600" />
+                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/40 dark:to-green-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                      <IconComponent className="w-7 h-7 text-green-600 dark:text-green-400" />
                     </div>
-                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                    <CardTitle className="text-lg text-green-900 dark:text-green-100">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{benefit.description}</p>
@@ -179,32 +311,71 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-lg font-medium text-foreground">
-              Schools on the Core and Impact tiers automatically receive takeback integration and impact reporting.
-            </p>
+            <div className="bg-green-100/50 dark:bg-green-900/20 rounded-xl p-6 border border-green-200/50 dark:border-green-800/50">
+              <p className="text-lg font-medium text-green-900 dark:text-green-100">
+                Schools on the Core and Impact tiers automatically receive takeback integration and impact reporting.
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Bottom section separator */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-green-50/50 dark:to-green-950/20"></div>
       </section>
 
-      {/* For Parents Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {/* For Parents Section - Purple Theme */}
+      <section className="py-16 px-4 relative bg-gradient-to-br from-purple-50/30 via-background to-purple-25/20 dark:from-purple-950/10 dark:to-purple-900/5">
+        {/* Diagonal section separator */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-br from-green-50/30 via-transparent to-purple-50/30 dark:from-green-950/10 dark:to-purple-950/10 transform -skew-y-1 origin-top-left"></div>
+        
+        <div className="container mx-auto max-w-6xl relative mt-12">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
+            <Badge className="mb-4 bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300">
+              For Families
+            </Badge>
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-purple-900 dark:text-purple-100">
               👨‍👩‍👧 For Parents: Simple & Purposeful
             </h2>
-            <p className="text-lg text-muted-foreground">Returning and purchasing old uniforms is as easy as:</p>
+            <p className="text-lg text-muted-foreground mb-6">Returning and purchasing old uniforms is as easy as:</p>
+            
+            {/* Progressive Disclosure for Parents */}
+            <Collapsible open={openSections.parents} onOpenChange={() => toggleSection('parents')}>
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="border-purple-200 text-purple-700 hover:bg-purple-50 dark:border-purple-800 dark:text-purple-300 dark:hover:bg-purple-950/20 min-h-12"
+                >
+                  {openSections.parents ? 'Hide Family Benefits' : 'See Family Benefits'}
+                  {openSections.parents ? <Minus className="ml-2 h-4 w-4" /> : <Plus className="ml-2 h-4 w-4" />}
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-6">
+                <div className="max-w-4xl mx-auto bg-purple-50 dark:bg-purple-950/30 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+                  <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
+                    {detailedInfo.parents.details}
+                  </p>
+                  <div className={`grid gap-4 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+                    {detailedInfo.parents.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 bg-white/50 dark:bg-black/20 rounded-lg">
+                        <Heart className="h-5 w-5 text-purple-600 dark:text-purple-400 flex-shrink-0" />
+                        <span className="text-sm font-medium">{benefit}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className={`grid gap-6 mb-8 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-3'}`}>
             {parentOptions.map((option, index) => {
             const IconComponent = option.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            return <Card key={index} className="hover:shadow-lg transition-all duration-300 text-center group border-purple-200/50 hover:border-purple-300 dark:border-purple-800/50 dark:hover:border-purple-700 hover:-translate-y-1">
                   <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
-                      <IconComponent className="w-6 h-6 text-purple-600" />
+                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/40 dark:to-purple-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                      <IconComponent className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                     </div>
-                    <CardTitle className="text-lg">{option.title}</CardTitle>
+                    <CardTitle className="text-lg text-purple-900 dark:text-purple-100">{option.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{option.description}</p>
@@ -214,34 +385,73 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-lg font-medium text-foreground">
-              It's not just recycling — it's feeding children, reducing waste, and teaching values.
-            </p>
+            <div className="bg-purple-100/50 dark:bg-purple-900/20 rounded-xl p-6 border border-purple-200/50 dark:border-purple-800/50">
+              <p className="text-lg font-medium text-purple-900 dark:text-purple-100">
+                It's not just recycling — it's feeding children, reducing waste, and teaching values.
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Bottom diagonal separator */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-tl from-orange-50/30 via-transparent to-purple-50/30 dark:from-orange-950/10 dark:to-purple-950/10 transform skew-y-1 origin-bottom-right"></div>
       </section>
 
-      {/* Results Section */}
-      <section className="bg-gradient-light-warm-section py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+      {/* Results Section - Orange Theme */}
+      <section className="bg-gradient-to-br from-orange-50/40 via-orange-25/20 to-background dark:from-orange-950/15 dark:via-orange-900/8 py-16 px-4 relative">
+        {/* Top diagonal separator */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-orange-50/40 dark:to-orange-950/15"></div>
+        
+        <div className="container mx-auto max-w-6xl relative mt-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3">
+            <Badge className="mb-4 bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300">
+              Impact Measurement
+            </Badge>
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-orange-900 dark:text-orange-100">
               📈 The Results Speak for Themselves
             </h2>
+            
+            {/* Progressive Disclosure for Impact */}
+            <Collapsible open={openSections.impact} onOpenChange={() => toggleSection('impact')}>
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  className="border-orange-200 text-orange-700 hover:bg-orange-50 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-950/20 min-h-12"
+                >
+                  {openSections.impact ? 'Hide Impact Details' : 'See Impact Metrics'}
+                  {openSections.impact ? <Minus className="ml-2 h-4 w-4" /> : <Plus className="ml-2 h-4 w-4" />}
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-6">
+                <div className="max-w-4xl mx-auto bg-orange-50 dark:bg-orange-950/30 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
+                  <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
+                    {detailedInfo.impact.details}
+                  </p>
+                  <div className={`grid gap-4 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
+                    {detailedInfo.impact.metrics.map((metric, idx) => (
+                      <div key={idx} className="flex items-center gap-3 p-3 bg-white/50 dark:bg-black/20 rounded-lg">
+                        <BarChart3 className="h-5 w-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
+                        <span className="text-sm font-medium">{metric}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-items-center">
+          <div className={`grid gap-6 mb-8 justify-items-center ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
             {impactResults.map((result, index) => {
             const IconComponent = result.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center w-full max-w-sm">
+            return <Card key={index} className={`hover:shadow-lg transition-all duration-300 text-center group border-orange-200/50 hover:border-orange-300 dark:border-orange-800/50 dark:hover:border-orange-700 hover:-translate-y-1 ${isMobile ? 'w-full max-w-md' : 'w-full max-w-sm'}`}>
                   <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
-                      <IconComponent className="w-6 h-6 text-orange-600" />
+                    <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/40 dark:to-orange-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                      <IconComponent className="w-7 h-7 text-orange-600 dark:text-orange-400" />
                     </div>
-                    <Badge variant="outline" className="mb-2 mx-auto">
+                    <Badge variant="outline" className="mb-2 mx-auto border-orange-200 text-orange-700 dark:border-orange-800 dark:text-orange-300">
                       {result.metric}
                     </Badge>
-                    <CardTitle className="text-lg text-center">{result.title}</CardTitle>
+                    <CardTitle className="text-lg text-center text-orange-900 dark:text-orange-100">{result.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center">
                     <p className="text-muted-foreground text-center">{result.description}</p>
@@ -251,11 +461,16 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-lg font-medium text-foreground mb-4">
-              By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
-            </p>
+            <div className="bg-orange-100/50 dark:bg-orange-900/20 rounded-xl p-6 border border-orange-200/50 dark:border-orange-800/50">
+              <p className="text-lg font-medium text-orange-900 dark:text-orange-100 mb-4">
+                By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
+              </p>
+            </div>
           </div>
         </div>
+        
+        {/* Bottom section separator */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-orange-50/40 dark:to-orange-950/15"></div>
       </section>
 
       {/* Enhanced CTA Section */}
