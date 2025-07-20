@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -112,52 +111,94 @@ export const ValueCalculator = () => {
   ] : [];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-background via-background-warm/20 to-background relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-20 left-20 w-40 h-40 bg-primary/5 rounded-full blur-2xl"></div>
-      <div className="absolute bottom-20 right-20 w-32 h-32 bg-accent/5 rounded-full blur-xl"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <Card className="shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
-            <CardHeader className="text-center pb-8">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Calculator className="w-8 h-8 text-white" />
+    <section className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+              <Calculator className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Impact Value Calculator
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              See the transformational impact your school can make through sustainable uniform solutions
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">Environmental Impact</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <TreePine className="w-6 h-6 text-green-600 mt-1" />
+                    <div>
+                      <h4 className="font-medium text-foreground">Carbon Footprint Reduction</h4>
+                      <p className="text-muted-foreground">Significant CO₂ savings through sustainable materials and manufacturing processes</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Droplets className="w-6 h-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-medium text-foreground">Water Conservation</h4>
+                      <p className="text-muted-foreground">Massive water savings through responsible production and circular economy practices</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <CardTitle className="text-3xl md:text-4xl font-light tracking-tight text-primary mb-4">
-                Value Calculator: Unlock Your School's Epic Sustainability Wins
-              </CardTitle>
-              <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">
-                Input your school's details to reveal the massive dream outcomes: slashed emissions, conserved resources, 
-                and life-changing impacts in Africa. Based on averages from partnered schools and industry data.
-              </p>
-            </CardHeader>
-            
-            <CardContent className="space-y-8">
-              {/* Input Form */}
-              <div className="max-w-md mx-auto">
+
+              <div>
+                <h3 className="text-2xl font-semibold text-foreground mb-4">Social Impact</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <Heart className="w-6 h-6 text-red-600 mt-1" />
+                    <div>
+                      <h4 className="font-medium text-foreground">Meals for Children</h4>
+                      <p className="text-muted-foreground">Every uniform purchase provides nutritious meals to children in Africa</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Users className="w-6 h-6 text-purple-600 mt-1" />
+                    <div>
+                      <h4 className="font-medium text-foreground">Free Uniforms</h4>
+                      <p className="text-muted-foreground">Donated uniforms help children access education and break the cycle of poverty</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Calculator */}
+            <Card className="bg-card border shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl">Calculate Your Impact</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Number of Students:</label>
+                    <label className="text-sm font-medium text-foreground">Number of Students</label>
                     <Input
                       type="number"
                       placeholder="Enter number of students"
                       value={students}
                       onChange={(e) => setStudents(e.target.value)}
                       min="1"
-                      className="h-12 text-center text-lg"
+                      className="h-12 text-lg"
                       required
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">School Location (Region):</label>
+                    <label className="text-sm font-medium text-foreground">School Region</label>
                     <Select value={region} onValueChange={setRegion} required>
                       <SelectTrigger className="h-12 text-lg">
-                        <SelectValue placeholder="Select region..." />
+                        <SelectValue placeholder="Select your region" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="europe">Europe (High Regulatory Savings)</SelectItem>
+                        <SelectItem value="europe">Europe</SelectItem>
                         <SelectItem value="north-america">North America</SelectItem>
                         <SelectItem value="asia">Asia</SelectItem>
                         <SelectItem value="africa">Africa</SelectItem>
@@ -169,78 +210,62 @@ export const ValueCalculator = () => {
                   <Button
                     type="submit"
                     disabled={isCalculating || !students || !region}
-                    className="w-full h-12 text-lg font-medium bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+                    className="w-full h-12 text-lg"
                   >
                     {isCalculating ? (
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        Calculating Your Impact...
+                        Calculating...
                       </div>
                     ) : (
-                      "Calculate Your Grand Slam Impact"
+                      "Calculate Impact"
                     )}
                   </Button>
                 </form>
-              </div>
 
-              {/* Results */}
-              {results && (
-                <div className="mt-12 space-y-8 animate-fade-in">
-                  <div className="text-center">
-                    <Badge variant="secondary" className="text-lg px-4 py-2 mb-4">
-                      <TrendingUp className="w-4 h-4 mr-2" />
-                      Your Annual Impact for {formatNumber(results.students)} Students
-                    </Badge>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {impactCards.map((card, index) => (
-                      <Card key={index} className={`${card.bgColor} border-0 hover:scale-105 transition-transform duration-300`}>
-                        <CardContent className="p-6 text-center">
-                          <div className={`w-12 h-12 ${card.color} mx-auto mb-4 flex items-center justify-center`}>
-                            <card.icon className="w-8 h-8" />
-                          </div>
-                          <h3 className="font-semibold text-lg mb-2">{card.title}</h3>
-                          <div className="space-y-1">
-                            <div className={`text-3xl font-bold ${card.color}`}>
+                {/* Results */}
+                {results && (
+                  <div className="mt-8 space-y-6">
+                    <div className="text-center">
+                      <Badge variant="secondary" className="text-lg px-4 py-2">
+                        <TrendingUp className="w-4 h-4 mr-2" />
+                        Annual Impact for {formatNumber(results.students)} Students
+                      </Badge>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      {impactCards.map((card, index) => (
+                        <Card key={index} className={`${card.bgColor} border-0`}>
+                          <CardContent className="p-4 text-center">
+                            <div className={`w-8 h-8 ${card.color} mx-auto mb-2 flex items-center justify-center`}>
+                              <card.icon className="w-6 h-6" />
+                            </div>
+                            <div className={`text-lg font-bold ${card.color}`}>
                               {card.value}
                             </div>
-                            <div className="text-sm text-muted-foreground">{card.unit}</div>
-                            <div className="text-xs text-muted-foreground mt-2">{card.description}</div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
+                            <div className="text-xs text-muted-foreground">{card.unit}</div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                    
+                    {/* Cost Savings */}
+                    <Card className="bg-green-50 border-green-200">
+                      <CardContent className="p-4 text-center">
+                        <h4 className="font-semibold text-green-800 mb-1">Annual Cost Savings</h4>
+                        <div className="text-2xl font-bold text-green-600">
+                          £{formatNumber(results.costSavings)}
+                        </div>
+                        <p className="text-xs text-green-700">
+                          Through efficiency gains and partnership benefits
+                        </p>
+                      </CardContent>
+                    </Card>
                   </div>
-                  
-                  {/* Cost Savings Highlight */}
-                  <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-xl font-semibold text-green-800 mb-2">Estimated Annual Cost Savings</h3>
-                      <div className="text-4xl font-bold text-green-600 mb-2">
-                        £{formatNumber(results.costSavings)}
-                      </div>
-                      <p className="text-sm text-green-700">
-                        Through efficiency gains, reduced waste, and partnership benefits
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-              )}
-
-              {/* Default state when no results */}
-              {!results && !isCalculating && (
-                <div className="text-center py-12 bg-gray-50 rounded-xl">
-                  <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Calculator className="w-8 h-8 text-gray-400" />
-                  </div>
-                  <p className="text-muted-foreground text-lg">
-                    Results will appear here after calculation
-                  </p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
