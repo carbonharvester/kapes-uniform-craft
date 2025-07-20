@@ -34,7 +34,7 @@ export const Footer = () => {
           { name: "Resources", href: "/resources" },
           { name: "Educational Resources", href: "/educational-resources" },
           { name: "Contact", href: "/contact" },
-          { name: "Offers", href: "/offers" },
+          { name: "Affiliate Program", href: "/affiliate" },
         ],
       },
     ],
