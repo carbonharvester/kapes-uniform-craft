@@ -12,7 +12,7 @@ export const FloatingGetStarted = () => {
   return (
     <Button
       onClick={scrollToGetStarted}
-      className="fixed right-6 top-1/2 -translate-y-1/2 z-50 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90"
+      className="fixed left-6 top-1/2 -translate-y-1/2 -rotate-90 z-50 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 origin-center"
       size="lg"
     >
       Get Started
