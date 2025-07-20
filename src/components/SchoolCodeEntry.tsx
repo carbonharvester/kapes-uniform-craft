@@ -20,7 +20,7 @@ export const SchoolCodeEntry = () => {
   return (
     <section className="py-24" style={{ 
         background: `
-          radial-gradient(ellipse at center, hsl(209 100% 91%) 0%, hsl(209 100% 91%) 60%, hsl(0 0% 100%) 100%),
+          linear-gradient(90deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 10%, hsl(209 100% 91%) 90%, hsl(0 0% 100%) 100%),
           linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)
         `
       }}>
