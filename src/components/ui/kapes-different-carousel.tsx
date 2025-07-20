@@ -231,7 +231,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Convenient access to quality uniforms.",
     tagline: "Try. Buy. Learn. Earn.",
     description: "Physical retail presence at schools",
-    image: "/src/assets/uniform-hubs.png",
+    image: "/src/assets/uniform-hubs.jpg",
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "On-Campus School Shops",
