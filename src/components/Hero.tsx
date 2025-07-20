@@ -27,8 +27,7 @@ export const Hero = () => {
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 
               onClick={() => document.getElementById('parent-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group inline-flex items-center justify-center px-8 py-4 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-              style={{ backgroundColor: '#cfeaff', color: '#1a365d' }}
+              className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               I'm a Parent
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
