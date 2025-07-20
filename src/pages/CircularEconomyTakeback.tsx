@@ -149,7 +149,12 @@ const CircularEconomyTakeback = () => {
               alt="Circular economy impact in action"
               className="w-full h-[400px] md:h-[500px] object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+            <div className="absolute bottom-8 left-8 right-8 text-center">
+              <p className="text-2xl md:text-3xl font-bold text-white bg-blue-600/90 px-6 py-4 rounded-lg backdrop-blur-sm">
+                One less uniform in landfill = one more child fed.
+              </p>
+            </div>
           </div>
         </div>
       </section>
