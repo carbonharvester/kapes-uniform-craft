@@ -43,81 +43,98 @@ export const SchoolShopsLockers = () => {
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
+      {/* Full-width background sections */}
+      
+      {/* On-Campus School Shops Section */}
+      <section className="bg-gradient-warm-section py-16 w-full">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
+            <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-stretch max-w-6xl mx-auto">
+            <Card className="border-0 shadow-glass h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Store className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-2xl font-medium mb-6">Premium Retail Experience</h3>
+                <div className="space-y-4 flex-grow">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Beautifully designed spaces</h4>
+                      <p className="text-sm text-muted-foreground">Tailored specifically for your school's aesthetic and brand</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Try-before-you-buy</h4>
+                      <p className="text-sm text-muted-foreground">Fitting rooms and size consultations on-site</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Expert staff support</h4>
+                      <p className="text-sm text-muted-foreground">Knowledgeable team to assist with all uniform needs</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-glass h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                  <Users className="h-6 w-6 text-blue-500" />
+                </div>
+                <h3 className="text-2xl font-medium mb-6">Fully Managed Operations</h3>
+                <div className="space-y-4 flex-grow">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Stocking & inventory management</h4>
+                      <p className="text-sm text-muted-foreground">Professional stocking and inventory management</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Professional staffing</h4>
+                      <p className="text-sm text-muted-foreground">Expert staff dedicated to uniform services</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Visual merchandising</h4>
+                      <p className="text-sm text-muted-foreground">Professional display and store presentation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-semibold mb-1">Sales reporting & analytics</h4>
+                      <p className="text-sm text-muted-foreground">Detailed insights and performance tracking</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Comparison Section with reduced padding */}
+      <div className="py-8">
+        <Feature />
+      </div>
+
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
-          
-          {/* On-Campus School Shops Section */}
-          <section className="bg-gradient-warm-section py-16">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
-              <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <Card className="border-0 shadow-glass">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                    <Store className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-medium mb-6">Premium Retail Experience</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold mb-1">Beautifully designed spaces</h4>
-                        <p className="text-sm text-muted-foreground">Tailored specifically for your school's aesthetic and brand</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold mb-1">Try-before-you-buy</h4>
-                        <p className="text-sm text-muted-foreground">Fitting rooms and size consultations on-site</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold mb-1">Expert staff support</h4>
-                        <p className="text-sm text-muted-foreground">Knowledgeable team to assist with all uniform needs</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-glass">
-                <CardContent className="p-8">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-                    <Users className="h-6 w-6 text-blue-500" />
-                  </div>
-                  <h3 className="text-2xl font-medium mb-6">Fully Managed Operations</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm">Stocking & inventory management</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm">Professional staffing</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm">Visual merchandising</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Zap className="w-4 h-4 text-blue-600" />
-                      <span className="text-sm">Sales reporting & analytics</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          {/* Image Comparison Section */}
-          <Feature />
-
           {/* E-Commerce Lockers Section */}
           <section>
             <div className="text-center mb-16">
