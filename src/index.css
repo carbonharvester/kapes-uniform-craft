@@ -51,6 +51,9 @@
     /* Kapes Impact section background */
     --background-kapes-impact: 208 100% 91%;
     
+    /* Light warm background - 2 shades lighter than f9f3df */
+    --background-light-warm: 46 65% 97%;
+    
     /* Apple-inspired radius */
     --radius: 0.75rem;
 
