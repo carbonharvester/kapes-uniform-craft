@@ -1,27 +1,22 @@
-
 import { CheckCircle, Target, FileText, Users, Download, Zap, Star, TrendingUp } from "lucide-react";
 import { ScorecardAssessmentForm } from "./ScorecardAssessmentForm";
-
 export const FreeAuditTool = () => {
-  return (
-    <section id="audit-section" className="py-16 relative" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
+  return <section id="audit-section" className="py-16 relative" style={{
+    backgroundColor: 'hsl(var(--background-light-warm))'
+  }}>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                ))}
+                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
               </div>
               <span className="text-sm text-muted-foreground">Rated 4.9/5 by school administrators</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
               Discover Your School's Sustainability Score in 5 Minutes
             </h2>
-            <p className="text-muted-foreground mb-4">
-              Get a comprehensive analysis of your current uniform program with actionable recommendations
-            </p>
+            <p className="text-muted-foreground mb-4">If you are a school that values sustainability does not currently have sustainable uniforms, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>
             <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Users className="h-4 w-4 text-primary" />
@@ -105,6 +100,5 @@ export const FreeAuditTool = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
