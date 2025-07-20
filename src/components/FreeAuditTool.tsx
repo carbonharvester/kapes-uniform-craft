@@ -83,7 +83,7 @@ export const FreeAuditTool = () => {
                 <p className="text-sm italic text-muted-foreground mb-2">
                   "The assessment revealed gaps we never knew existed. We're now making  improving our sustainability rating while making a real social impact."
                 </p>
-                <p className="text-xs font-medium">- Sarah Mitchell, Head of Operations, Greenfield Academy</p>
+                <p className="text-xs font-medium">- Michelle Wijkhuijs, School Services & Events Coordinator, British International School of Jeddah</p>
               </div>
             </div>
             
