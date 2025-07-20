@@ -28,7 +28,7 @@ const SustainProTier = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
@@ -66,7 +66,7 @@ const SustainProTier = () => {
       </section>
 
       {/* What's Included */}
-      <section className="relative py-16 px-4">
+      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <Card className="mb-12 border-0 shadow-glass">
             <CardHeader className="p-8">
@@ -133,7 +133,7 @@ const SustainProTier = () => {
       </section>
 
       {/* Impact Highlights */}
-      <section className="relative py-16 px-4 bg-muted/30 -mx-4 rounded-3xl">
+      <section className="relative py-16 px-4 bg-gradient-warm-section -mx-4 rounded-3xl">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Your Impact at a Glance</h2>
           <div className="grid gap-8 md:grid-cols-3">
@@ -160,7 +160,7 @@ const SustainProTier = () => {
       </section>
 
       {/* Best For */}
-      <section className="relative py-16 px-4">
+      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Perfect For</h2>
           <div className="grid gap-8 md:grid-cols-2">
@@ -189,7 +189,7 @@ const SustainProTier = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4 bg-gradient-to-footer">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Make an Impact Beyond Your Classroom

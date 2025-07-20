@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -6,39 +7,50 @@ import { ValueCalculator } from "@/components/ValueCalculator";
 import { TierQuiz } from "@/components/TierQuiz";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { BookOpen, Download } from "lucide-react";
+
 const Resources = () => {
-  const blogPosts = [{
-    title: "Top Sustainability Challenges for Private Schools",
-    excerpt: "Navigate the key challenges schools face when implementing sustainable practices.",
-    category: "Sustainability"
-  }, {
-    title: "Ethical Fashion in Education: A Guide for Schools",
-    excerpt: "Understanding how to make ethical choices in school uniform procurement.",
-    category: "Ethics"
-  }, {
-    title: "Building Student Engagement Through Sustainability",
-    excerpt: "Practical tips for involving students in your school's sustainability journey.",
-    category: "Engagement"
-  }];
+  const blogPosts = [
+    {
+      title: "Top Sustainability Challenges for Private Schools",
+      excerpt: "Navigate the key challenges schools face when implementing sustainable practices.",
+      category: "Sustainability"
+    },
+    {
+      title: "Ethical Fashion in Education: A Guide for Schools",
+      excerpt: "Understanding how to make ethical choices in school uniform procurement.",
+      category: "Ethics"
+    },
+    {
+      title: "Building Student Engagement Through Sustainability",
+      excerpt: "Practical tips for involving students in your school's sustainability journey.",
+      category: "Engagement"
+    }
+  ];
   
-  const faqs = [{
-    question: "What are the contract terms for partnership?",
-    answer: "Our partnerships are based on 3-year minimum agreements with flexible terms and upgrade options."
-  }, {
-    question: "How do the different tiers work?",
-    answer: "We offer three tiers - EcoLaunch, SustainPro, and LegacyImpact - each with increasing levels of support and features."
-  }, {
-    question: "How is impact measured?",
-    answer: "Through our KapesImpact™ dashboard, which tracks carbon savings, recycling rates, meals donated, and more in real-time."
-  }];
-  return <div className="min-h-screen bg-background">
+  const faqs = [
+    {
+      question: "What are the contract terms for partnership?",
+      answer: "Our partnerships are based on 3-year minimum agreements with flexible terms and upgrade options."
+    },
+    {
+      question: "How do the different tiers work?",
+      answer: "We offer three tiers - EcoLaunch, SustainPro, and LegacyImpact - each with increasing levels of support and features."
+    },
+    {
+      question: "How is impact measured?",
+      answer: "Through our KapesImpact™ dashboard, which tracks carbon savings, recycling rates, meals donated, and more in real-time."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-        backgroundPosition: "20% center"
-      }}></div>
+          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+          backgroundPosition: "20% center"
+        }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -61,21 +73,22 @@ const Resources = () => {
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
+          animationDelay: '1s'
+        }}></div>
       </section>
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Blog Section */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Latest Articles</h2>
               <p className="text-muted-foreground text-lg">Insights and guidance for sustainable education</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
-              {blogPosts.map(post => <Card key={post.title} className="border-0 shadow-glass hover-lift transition-smooth">
+              {blogPosts.map(post => (
+                <Card key={post.title} className="border-0 shadow-glass hover-lift transition-smooth">
                   <CardHeader>
                     <Badge className="w-fit mb-4 bg-primary/10 text-primary">{post.category}</Badge>
                     <CardTitle className="text-xl font-medium leading-tight">{post.title}</CardTitle>
@@ -86,18 +99,18 @@ const Resources = () => {
                       Read More
                     </Button>
                   </CardContent>
-                </Card>)}
+                </Card>
+              ))}
             </div>
           </section>
 
           {/* Value Calculator */}
           <ValueCalculator />
 
-
           <FreeAuditTool />
 
           {/* Partnership Tier Quiz */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
             <Card className="border-0 shadow-glass max-w-4xl mx-auto">
               <CardContent className="p-8 md:p-12">
                 <TierQuiz />
@@ -106,7 +119,7 @@ const Resources = () => {
           </section>
 
           {/* FAQ Section */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Frequently Asked Questions</h2>
               <p className="text-muted-foreground text-lg">Quick answers to common questions</p>
@@ -117,6 +130,8 @@ const Resources = () => {
           </section>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Resources;

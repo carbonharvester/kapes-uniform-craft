@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -12,7 +11,7 @@ const OurProcess = () => {
       description: "Understanding your school's needs, values, and uniform requirements",
       details: [
         "Initial consultation and needs assessment",
-        "Custom design development",
+        "Custom design development", 
         "Sample creation and feedback",
         "Final design approval"
       ]
@@ -55,7 +54,7 @@ const OurProcess = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
@@ -92,7 +91,7 @@ const OurProcess = () => {
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Process Steps */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Four-Step Journey</h2>
               <p className="text-muted-foreground text-lg">A seamless pathway to sustainable uniforms</p>
@@ -147,7 +146,7 @@ const OurProcess = () => {
           </section>
 
           {/* Timeline Overview */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Typical Timeline</h2>
               <p className="text-muted-foreground text-lg">From initial contact to full implementation</p>
@@ -189,7 +188,7 @@ const OurProcess = () => {
           </section>
 
           {/* What Sets Us Apart */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">What Sets Us Apart</h2>
               <p className="text-muted-foreground text-lg">Why schools choose our process</p>
@@ -226,7 +225,7 @@ const OurProcess = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16">
+          <section className="text-center py-16 bg-gradient-to-footer">
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Ready to Begin Your Journey?
             </h2>

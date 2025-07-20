@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +13,7 @@ const OurFactories = () => {
       specialties: ["Cotton processing", "Natural dyes", "Traditional craftsmanship"]
     },
     {
-      location: "Porto, Portugal",
+      location: "Porto, Portugal", 
       name: "Atlantic Sustainable Mills",
       employees: 280,
       certifications: ["GOTS", "Cradle to Cradle", "EU Ecolabel"],
@@ -55,7 +54,7 @@ const OurFactories = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
@@ -92,7 +91,7 @@ const OurFactories = () => {
         <div className="max-w-6xl mx-auto space-y-20">
           
           {/* Factory Locations */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Global Partners</h2>
               <p className="text-muted-foreground text-lg">Ethical manufacturing across three continents</p>
@@ -148,7 +147,7 @@ const OurFactories = () => {
           </section>
 
           {/* Our Standards */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
+          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Manufacturing Standards</h2>
               <p className="text-muted-foreground text-lg">Non-negotiable principles that guide every partnership</p>
@@ -169,7 +168,7 @@ const OurFactories = () => {
           </section>
 
           {/* Audit Process */}
-          <section>
+          <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4 rounded-3xl">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Audit Process</h2>
               <p className="text-muted-foreground text-lg">Rigorous verification ensures compliance and continuous improvement</p>
@@ -215,7 +214,7 @@ const OurFactories = () => {
           </section>
 
           {/* Transparency */}
-          <section>
+          <section className="bg-gradient-to-footer py-16 px-4 rounded-3xl">
             <Card className="border-0 shadow-glass">
               <CardContent className="p-8 md:p-12 text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6">

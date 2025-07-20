@@ -70,7 +70,7 @@ const WhatsInAFootprint = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
@@ -108,7 +108,7 @@ const WhatsInAFootprint = () => {
       </section>
 
       {/* Footprint Comparison */}
-      <section className="py-16 px-4">
+      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12">Kapes vs. Conventional Uniforms</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -144,7 +144,7 @@ const WhatsInAFootprint = () => {
       </section>
 
       {/* Lifecycle Assessment */}
-      <section className="py-16 px-4 bg-muted/50">
+      <section className="py-16 px-4 bg-gradient-warm-section">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">Full Lifecycle Assessment</h2>
           <div className="space-y-6">
@@ -171,7 +171,7 @@ const WhatsInAFootprint = () => {
       </section>
 
       {/* Real Numbers */}
-      <section className="py-16 px-4">
+      <section style={{ background: 'linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(209 100% 91%) 20%, hsl(209 100% 91%) 80%, hsl(0 0% 100%) 100%)' }} className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-12">Real Impact, Real Numbers</h2>
           <div className="grid gap-8 md:grid-cols-3">
@@ -200,7 +200,7 @@ const WhatsInAFootprint = () => {
       </section>
 
       {/* Third Party Verification */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-green-50">
+      <section className="py-16 px-4 bg-gradient-warm-section">
         <div className="container mx-auto max-w-4xl">
           <Card>
             <CardHeader>
@@ -237,7 +237,7 @@ const WhatsInAFootprint = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-gradient-to-footer">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-6">
             Measure Your School's Impact
