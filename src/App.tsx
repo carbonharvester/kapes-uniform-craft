@@ -27,6 +27,7 @@ import SustainabilityEthics from "./pages/SustainabilityEthics";
 import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
 import SocialImpactAfrica from "./pages/SocialImpactAfrica";
 import SustainabilityScorecardPage from "./pages/SustainabilityScorecard";
+import Affiliate from "./pages/Affiliate";
 import { Header } from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/affiliate" element={<Affiliate />} />
           
           {/* Process & Timeline Routes */}
           <Route path="/our-process" element={<OurProcess />} />

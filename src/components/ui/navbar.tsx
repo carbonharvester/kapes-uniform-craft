@@ -188,6 +188,12 @@ const Navbar = ({
           icon: <Zap className="size-5 shrink-0" />,
           url: "/legacyimpact-tier",
         },
+        {
+          title: "Affiliate Program",
+          description: "Earn $2,000 per referral + Kenya trip",
+          icon: <Award className="size-5 shrink-0" />,
+          url: "/affiliate",
+        },
       ],
     },
     {
