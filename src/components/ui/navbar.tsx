@@ -134,6 +134,12 @@ const Navbar = ({
           icon: <Sunset className="size-5 shrink-0" />,
           url: "/delivery-packaging",
         },
+        {
+          title: "Factory Visits",
+          description: "Tour our manufacturing facilities",
+          icon: <Building className="size-5 shrink-0" />,
+          url: "/factory-visits",
+        },
       ],
     },
     {
@@ -188,12 +194,6 @@ const Navbar = ({
       title: "Resources",
       url: "#",
       items: [
-        {
-          title: "Factory Visits",
-          description: "Tour our manufacturing facilities",
-          icon: <Building className="size-5 shrink-0" />,
-          url: "/factory-visits",
-        },
         {
           title: "Sustainability Scorecard",
           description: "Assess your school's uniform sustainability",
