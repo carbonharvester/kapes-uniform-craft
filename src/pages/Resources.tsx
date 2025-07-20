@@ -93,54 +93,6 @@ const Resources = () => {
           {/* Value Calculator */}
           <ValueCalculator />
 
-          {/* Educational Tools */}
-          <section className="py-16 bg-muted/30 -mx-4 px-4 rounded-3xl">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Free Educational Tools</h2>
-              <p className="text-muted-foreground text-lg">Resources to empower your sustainability journey</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <BookOpen className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl font-medium">Sustainability Guides</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Comprehensive guides for implementing sustainability practices in schools.
-                  </p>
-                  <Button variant="outline" className="flex items-center gap-2 rounded-xl hover:scale-105 transition-smooth">
-                    <Download className="h-4 w-4" />
-                    Download Guides
-                  </Button>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <BookOpen className="h-6 w-6 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl font-medium">Kapes Leaders Academy</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Ready-to-use lesson plans on sustainability, ethics, and global citizenship.
-                  </p>
-                  <Button variant="outline" className="flex items-center gap-2 rounded-xl hover:scale-105 transition-smooth">
-                    <Download className="h-4 w-4" />
-                    Download Plans
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
 
           <FreeAuditTool />
 
