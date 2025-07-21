@@ -73,12 +73,12 @@ const SustainabilityScorecard = () => {
     
     let isAnswered = false;
     if (currentQ.type === 'checkbox') {
-      isAnswered = formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
+      isAnswered = !!formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
     } else if (currentQ.type === 'select') {
-      const selectElement = formElement.querySelector(`select[name="${currentQ.id}"]`);
+      const selectElement = formElement.querySelector(`select[name="${currentQ.id}"]`) as HTMLSelectElement;
       isAnswered = selectElement && selectElement.value !== '';
     } else {
-      isAnswered = formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
+      isAnswered = !!formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
     }
     
     if (!isAnswered) {
