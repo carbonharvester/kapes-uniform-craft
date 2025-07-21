@@ -287,7 +287,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Send data to Google Sheet
-    const sheetURL = 'https://script.google.com/macros/s/AKfycbxfC609-OnZB_UcV_7Njh8q-UcvJAAtVdiQtpTKtYqDG0sGrIGQVeQldJy7ty6LZtDV/exec';
+    const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
     const formData = {
       name: userData.name,
       email: userData.email,
