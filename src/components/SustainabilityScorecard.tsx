@@ -19,6 +19,21 @@ const SustainabilityScorecard: React.FC = () => {
   const [showFeaturesSection, setShowFeaturesSection] = useState(false);
   const [showConsultationQualify, setShowConsultationQualify] = useState(false);
 
+  // Check for existing user data in localStorage on component mount
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('scorecardUserData');
+    if (storedUserData) {
+      try {
+        const parsedData = JSON.parse(storedUserData);
+        setUserData(parsedData);
+        setShowAssessment(true);
+      } catch (error) {
+        console.error('Error parsing stored user data:', error);
+        localStorage.removeItem('scorecardUserData');
+      }
+    }
+  }, []);
+
   const questions = [
     'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?',
     'Are your uniforms made using conventional cotton?',
@@ -159,6 +174,9 @@ const SustainabilityScorecard: React.FC = () => {
     setUserAnswers(answeredQuestions);
     setShowResults(true);
     setShowAssessment(false);
+
+    // Clear localStorage after assessment is complete
+    localStorage.removeItem('scorecardUserData');
 
     // Send data to Google Sheet
     const formData = {
