@@ -17,6 +17,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [showResults, setShowResults] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [entryError, setEntryError] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const [userData, setUserData] = useState({
     name: initialData?.name || '',
@@ -40,7 +41,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'materials', text: 'What materials are your uniforms including PE kits made from? (Select all that apply)', type: 'checkbox' },
     { id: 'q3', text: 'Do you know how much water, energy, and carbon emissions result from the production of your uniforms?', type: 'radio' },
     { id: 'q4', text: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', type: 'radio' },
-    { id: 'q8', text: 'Are your uniforms packaged in biodegradable or recyclable materials?', type: 'radio' },
+    { id: 'packaging', text: 'What materials are your uniforms packaged in? (Select all that apply)', type: 'checkbox' },
     { id: 'q9', text: 'Do you require your suppliers to disclose their environmental impact?', type: 'radio' },
     { id: 'q10', text: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', type: 'radio' },
     { id: 'q11', text: 'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?', type: 'radio' },
@@ -50,14 +51,38 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'distribution', text: 'How are uniforms distributed/ordered? (Select all that apply)', type: 'checkbox' },
     { id: 'q19', text: 'Have your uniforms been tested for harmful or banned chemicals?', type: 'radio' },
     { id: 'q20', text: 'Do your students, parents, and staff have full transparency of your supply chain?', type: 'radio' },
+    { id: 'education', text: 'Do you educate your students about the impacts of fashion, related to their uniforms?', type: 'radio' },
     { id: 'ai_usage', text: 'Do you use AI in your uniform program? (Select all that apply)', type: 'checkbox' },
     { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
     { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' },
     { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' }
   ];
 
-  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 15, 5, 5, 6]; // 14 scored questions
-  const maxScore = 114;
+  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions, updated for distribution (19) and added education (5)
+  const maxScore = 127;
+
+  const columnNames: Record<string, string> = {
+    'What materials are your uniforms including PE kits made from? (Select all that apply)': 'Materials Used',
+    'Do you know how much water, energy, and carbon emissions result from the production of your uniforms?': 'Environmental Impact Knowledge',
+    'Do you offset the environmental impact of the uniforms through verified carbon offset projects?': 'Carbon Offset Projects',
+    'What materials are your uniforms packaged in? (Select all that apply)': 'Packaging Materials',
+    'Do you require your suppliers to disclose their environmental impact?': 'Supplier Disclosure',
+    'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?': 'Ethical Audits',
+    'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?': 'Living Wages Policy',
+    'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?': '3rd Party Certifications',
+    'Does your school collect and resell or giveaway used uniforms?': 'Uniform Collection/Resale',
+    'Does your uniform program support any social causes?': 'Social Causes Support',
+    'How are uniforms distributed/ordered? (Select all that apply)': 'Distribution Methods',
+    'Have your uniforms been tested for harmful or banned chemicals?': 'Chemical Testing',
+    'Do your students, parents, and staff have full transparency of your supply chain?': 'Supply Chain Transparency',
+    'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
+    'Do you use AI in your uniform program? (Select all that apply)': 'AI Usage',
+    'How would you rate your current uniform program out of 10?': 'Program Rating',
+    'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Improvement Consideration',
+    'How important is sustainability within your school?': 'Sustainability Importance',
+    'Do you want to improve the sustainability of your school uniforms?': 'Wants to Improve',
+    'Selected features:': 'Selected Features'
+  };
 
   useEffect(() => {
     // Check if user data exists in localStorage from homepage form
@@ -94,9 +119,42 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     };
 
     makeExclusive('materials', ['dont_know']);
+    makeExclusive('packaging', ['dont_know']);
     makeExclusive('distribution', ['dont_know']);
     makeExclusive('ai_usage', ['no', 'dont_know']);
   }, [showQuiz, currentSlide]);
+
+  useEffect(() => {
+    if (showResults && !sent) {
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
+      const formData: Record<string, any> = {
+        name: userData.name,
+        email: userData.email,
+        school: userData.school,
+        students: userData.students,
+        score: score,
+      };
+
+      userAnswers.forEach(({ question, answer }) => {
+        const col = columnNames[question];
+        if (col) {
+          formData[col.replace(/ /g, '_')] = answer;
+        }
+      });
+
+      fetch(sheetURL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        mode: 'no-cors'
+      }).then(() => {
+        console.log('Data sent to Google Sheet');
+      }).catch(error => {
+        console.error('Error sending data:', error);
+      });
+
+      setSent(true);
+    }
+  }, [showResults, sent, userData, score, userAnswers]);
 
   const handleStart = () => {
     if (!userData.name || !userData.school || !userData.students || !userData.email) {
@@ -175,9 +233,31 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       }
     }
 
+    // Packaging question
+    console.log('📝 Processing packaging question...');
+    const packagingSelections = formAnswers.packaging as string[] || [];
+    console.log('🎯 Packaging selections:', packagingSelections);
+    
+    if (packagingSelections.length === 0) {
+      console.log('❌ Packaging question NOT answered');
+      missingQuestions.push('Packaging question');
+    } else {
+      console.log('✅ Packaging question answered');
+      const packagingAnswer = packagingSelections.join(', ');
+      answers.push({ question: "What materials are your uniforms packaged in? (Select all that apply)", answer: packagingAnswer });
+      
+      if (packagingSelections.includes('dont_know')) {
+        totalScore += 0;
+      } else {
+        if (!packagingSelections.includes('plastic')) totalScore += 2;
+        if (packagingSelections.includes('recycled_plastic')) totalScore += 2;
+        if (packagingSelections.includes('paper')) totalScore += 2;
+      }
+    }
+
     // Single radio questions
-    const radioQuestions = ['q3', 'q4', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q19', 'q20'];
-    const questionWeights = [5, 4, 6, 5, 7, 8, 7, 6, 3, 5, 5];
+    const radioQuestions = ['q3', 'q4', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q19', 'q20', 'education'];
+    const questionWeights = [5, 4, 5, 7, 8, 7, 6, 3, 5, 5, 5];
     
     radioQuestions.forEach((qId, index) => {
       console.log(`📝 Processing question ${qId}...`);
@@ -217,6 +297,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         if (!distSelections.includes('supplier_shop')) totalScore += 3;
         if (distSelections.includes('online_ordering')) totalScore += 4;
         if (distSelections.includes('pickup_school')) totalScore += 4;
+        if (distSelections.includes('popup_events')) totalScore += 4;
       }
     }
 
@@ -242,7 +323,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     console.log('📊 Validation Summary:');
-    console.log('✅ Questions answered:', 14 - missingQuestions.length);
+    console.log('✅ Questions answered:', 15 - missingQuestions.length);
     console.log('❌ Missing questions:', missingQuestions.length);
     console.log('📋 Missing questions list:', missingQuestions);
 
@@ -263,15 +344,76 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
-    
-    let bodyText = '';
+
+    // Build customized bodyText based on answers
+    let baseText = '';
+    let customFeedback: string[] = [];
+
     if (percentage >= 67) {
-      bodyText = 'Your high score reflects strong practices. To maximize, double down on transparency and technology.';
+      baseText = 'Your high score reflects strong practices.';
     } else if (percentage >= 33) {
-      bodyText = 'Your medium score shows some positive steps but gaps in offsetting and distribution. Enhance by adding AI tools and takeback programs.';
+      baseText = 'Your medium score shows some positive steps but room for improvement.';
     } else {
-      bodyText = 'Your low score is likely due to reliance on traditional materials and lack of transparency or ethical audits. To improve, focus on sustainable fabrics and supply chain practices.';
+      baseText = 'Your low score indicates opportunities for significant enhancements.';
     }
+
+    // Analyze specific areas and add custom feedback
+    // Materials
+    if (materialSelections.includes('virgin_synth') || materialSelections.includes('conventional_cotton')) {
+      customFeedback.push('Consider switching to more sustainable materials like organic cotton or recycled polyester to reduce environmental impact.');
+    } else if (materialSelections.includes('dont_know')) {
+      customFeedback.push('Gaining visibility into your uniform materials could help identify sustainable alternatives.');
+    }
+
+    // Carbon offsetting and environmental impact
+    if (formAnswers['q4'] === '0') {
+      customFeedback.push('Implementing verified carbon offset projects could help mitigate the emissions from uniform production.');
+    }
+    if (formAnswers['q3'] === '0') {
+      customFeedback.push('Tracking water, energy, and carbon usage in production would improve your environmental awareness.');
+    }
+
+    // Packaging
+    if (packagingSelections.includes('plastic') && !packagingSelections.includes('recycled_plastic')) {
+      customFeedback.push('Opt for biodegradable or recycled packaging to minimize waste.');
+    }
+
+    // Ethical supply chain
+    if (formAnswers['q10'] === '0' || formAnswers['q11'] === '0' || formAnswers['q12'] === '0') {
+      customFeedback.push('Strengthen your supply chain by requiring ethical audits, living wage policies, and third-party certifications.');
+    }
+
+    // Distribution
+    if (distSelections.includes('supplier_shop') || !distSelections.includes('online_ordering') || !distSelections.includes('popup_events')) {
+      customFeedback.push('Enhance distribution with online ordering, pop-up events, or school pickups to reduce carbon footprints from travel.');
+    }
+
+    // AI usage
+    if (aiSelections.includes('no') || aiSelections.includes('dont_know')) {
+      customFeedback.push('Incorporating AI for size recommendations or stock forecasting could optimize your program and reduce returns/waste.');
+    }
+
+    // Takeback and education
+    if (formAnswers['q13'] === '0') {
+      customFeedback.push('Adding a uniform collection and resale program would promote circularity.');
+    }
+    if (formAnswers['education'] === '0') {
+      customFeedback.push('Educating students on fashion impacts could foster greater sustainability engagement.');
+    }
+
+    // Transparency
+    if (formAnswers['q20'] === '0') {
+      customFeedback.push('Increasing supply chain transparency for parents and students would build trust.');
+    }
+
+    // Combine into final description
+    let bodyText = baseText;
+    if (customFeedback.length > 0) {
+      bodyText += ' Specific areas to focus on: ' + customFeedback.join(' ');
+    } else {
+      bodyText += ' Keep building on transparency, technology, and sustainable practices.';
+    }
+
     setScoreDescription(bodyText);
     setUserAnswers(answers);
 
@@ -285,26 +427,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     } else {
       setShowResults(true);
     }
-
-    // Send data to Google Sheet
-    const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
-    const formData = {
-      name: userData.name,
-      email: userData.email,
-      school: userData.school,
-      students: userData.students,
-      answers: answers,
-      score: percentage
-    };
-    fetch(sheetURL, {
-      method: 'POST',
-      body: JSON.stringify(formData),
-      mode: 'no-cors'
-    }).then(() => {
-      console.log('Data sent to Google Sheet');
-    }).catch(error => {
-      console.error('Error sending data:', error);
-    });
   };
 
   const handleImproveSubmit = () => {
@@ -411,6 +533,55 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     </div>
   );
 
+  const renderPackagingQuestion = () => (
+    <div className="space-y-3">
+      <label className="flex items-center space-x-2">
+        <input 
+          type="checkbox" 
+          name="packaging" 
+          value="plastic" 
+          className="rounded border-border"
+          checked={(formAnswers.packaging as string[] || []).includes('plastic')}
+          onChange={(e) => handleCheckboxChange('packaging', 'plastic', e.target.checked)}
+        />
+        <span>Plastic</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input 
+          type="checkbox" 
+          name="packaging" 
+          value="recycled_plastic" 
+          className="rounded border-border"
+          checked={(formAnswers.packaging as string[] || []).includes('recycled_plastic')}
+          onChange={(e) => handleCheckboxChange('packaging', 'recycled_plastic', e.target.checked)}
+        />
+        <span>Recycled plastic</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input 
+          type="checkbox" 
+          name="packaging" 
+          value="paper" 
+          className="rounded border-border"
+          checked={(formAnswers.packaging as string[] || []).includes('paper')}
+          onChange={(e) => handleCheckboxChange('packaging', 'paper', e.target.checked)}
+        />
+        <span>Paper</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input 
+          type="checkbox" 
+          name="packaging" 
+          value="dont_know" 
+          className="rounded border-border"
+          checked={(formAnswers.packaging as string[] || []).includes('dont_know')}
+          onChange={(e) => handleCheckboxChange('packaging', 'dont_know', e.target.checked)}
+        />
+        <span>Don't know</span>
+      </label>
+    </div>
+  );
+
   const renderDistributionQuestion = () => (
     <div className="space-y-3">
       <label className="flex items-center space-x-2">
@@ -456,6 +627,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           onChange={(e) => handleCheckboxChange('distribution', 'pickup_school', e.target.checked)}
         />
         <span>Pickup at school</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="popup_events" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
+          onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
+        />
+        <span>Pop-up events (these events usually happen once or twice a year at the school premises)</span>
       </label>
       <label className="flex items-center space-x-2">
         <input 
@@ -673,6 +855,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               </label>
               
               {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
+              {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
               {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
               {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
               {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
