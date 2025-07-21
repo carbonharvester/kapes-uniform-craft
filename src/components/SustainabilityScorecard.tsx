@@ -51,21 +51,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'q12', text: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', type: 'radio' },
     { id: 'q13', text: 'Does your school collect and resell or giveaway used uniforms?', type: 'radio' },
     { id: 'q14', text: 'Does your uniform program support any social causes?', type: 'radio' },
-    { id: 'q15', text: 'Does your school have a uniform shop?', type: 'radio' },
-    { id: 'q16', text: 'Does your supplier have a shop?', type: 'radio' },
-    { id: 'q17', text: 'Do you have online ordering for uniforms?', type: 'radio' },
-    { id: 'q18', text: 'Can parents pick up at school?', type: 'radio' },
+    { id: 'distribution', text: 'How are uniforms distributed/ordered? (Select all that apply)', type: 'checkbox' },
     { id: 'q19', text: 'Have your uniforms been tested for harmful or banned chemicals?', type: 'radio' },
     { id: 'q20', text: 'Do your students, parents, and staff have full transparency of your supply chain?', type: 'radio' },
-    { id: 'q21', text: 'Is AI used to provide size recommendations for parents?', type: 'radio' },
-    { id: 'q22', text: 'Do you or your supplier use AI to forecast uniform stock needs?', type: 'radio' },
+    { id: 'ai_usage', text: 'Do you use AI in your uniform program? (Select all that apply)', type: 'checkbox' },
     { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
     { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' },
     { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' }
   ];
 
-  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 4, 3, 4, 4, 5, 5, 3, 3];
-  const maxScore = 111;
+  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 4, 15, 5, 5, 6]; // Combined materials (36), simplified LCA (5), carbon offset (4), packaging (6), suppliers disclose (5), audited (7), policy living wages (8), certifications (7), collect used (6), social causes (3), combined distribution (15), tested chemicals (5), transparency (5), combined AI (6)
+  const maxScore = 114;
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -75,10 +71,39 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     };
     document.head.appendChild(script);
 
-    return () => {
-      document.head.removeChild(script);
+    // Setup exclusive checkboxes
+    const makeExclusive = (groupName: string, exclusiveValues: string[]) => {
+      const handleChange = () => {
+        const checkboxes = formRef.current?.querySelectorAll(`input[name="${groupName}"]`) as NodeListOf<HTMLInputElement>;
+        if (!checkboxes) return;
+
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', () => {
+            if (exclusiveValues.includes(checkbox.value) && checkbox.checked) {
+              checkboxes.forEach(cb => {
+                if (!exclusiveValues.includes(cb.value)) cb.checked = false;
+              });
+            } else if (checkbox.checked) {
+              checkboxes.forEach(cb => {
+                if (exclusiveValues.includes(cb.value)) cb.checked = false;
+              });
+            }
+          });
+        });
+      };
+      setTimeout(handleChange, 100);
     };
-  }, []);
+
+    makeExclusive('materials', ['dont_know']);
+    makeExclusive('distribution', ['dont_know']);
+    makeExclusive('ai_usage', ['no', 'dont_know']);
+
+    return () => {
+      if (script.parentNode) {
+        document.head.removeChild(script);
+      }
+    };
+  }, [showQuiz, currentSlide]);
 
   const handleStart = () => {
     if (!userData.name || !userData.school || !userData.students || !userData.email) {
@@ -129,13 +154,14 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     if (!formElement) return;
 
     let totalScore = 0;
+    let answered = 0;
     const answers: Array<{question: string, answer: string}> = [];
 
-    // Materials question (special handling)
+    // Materials question
     const materialSelections = Array.from(formElement.querySelectorAll('input[name="materials"]:checked') as NodeListOf<HTMLInputElement>)
       .map(cb => cb.value);
     const materialsAnswer = materialSelections.join(', ') || 'Not Answered';
-    answers.push({ question: "What materials are your uniforms including PE kits made from?", answer: materialsAnswer });
+    answers.push({ question: "What materials are your uniforms including PE kits made from? (Select all that apply)", answer: materialsAnswer });
     
     if (materialSelections.includes('dont_know')) {
       totalScore += 0;
@@ -145,6 +171,100 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       if (materialSelections.includes('organic_cotton')) totalScore += 9;
       if (materialSelections.includes('recycled_poly')) totalScore += 9;
     }
+    answered++;
+
+    // Simplified LCA
+    const lcaSelected = formElement.querySelector('input[name="q3"]:checked') as HTMLInputElement;
+    if (lcaSelected) {
+      totalScore += 5 * parseInt(lcaSelected.value);
+      answered++;
+      answers.push({ question: "Do you know how much water, energy, and carbon emissions result from the production of your uniforms?", answer: lcaSelected.nextSibling?.textContent?.trim() || '' });
+    }
+
+    // Carbon offset
+    const offsetSelected = formElement.querySelector('input[name="q4"]:checked') as HTMLInputElement;
+    if (offsetSelected) {
+      totalScore += 4 * parseInt(offsetSelected.value);
+      answered++;
+      answers.push({ question: "Do you offset the environmental impact of the uniforms through verified carbon offset projects?", answer: offsetSelected.nextSibling?.textContent?.trim() || '' });
+    }
+
+    // Packaging to social causes (q8-q14)
+    const singleQuestions = ['q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14'];
+    const questionWeights = [6, 5, 7, 8, 7, 6, 3];
+    singleQuestions.forEach((qId, index) => {
+      const selected = formElement.querySelector(`input[name="${qId}"]:checked`) as HTMLInputElement;
+      if (selected) {
+        totalScore += questionWeights[index] * parseInt(selected.value);
+        answered++;
+        const questionObj = questions.find(q => q.id === qId);
+        answers.push({ question: questionObj?.text || '', answer: selected.nextSibling?.textContent?.trim() || '' });
+      }
+    });
+
+    // Combined distribution
+    const distSelections = Array.from(formElement.querySelectorAll('input[name="distribution"]:checked') as NodeListOf<HTMLInputElement>)
+      .map(cb => cb.value);
+    const distAnswer = distSelections.join(', ') || 'Not Answered';
+    answers.push({ question: "How are uniforms distributed/ordered? (Select all that apply)", answer: distAnswer });
+    
+    if (distSelections.includes('dont_know')) {
+      totalScore += 0;
+    } else {
+      if (distSelections.includes('school_shop')) totalScore += 4;
+      if (!distSelections.includes('supplier_shop')) totalScore += 3;
+      if (distSelections.includes('online_ordering')) totalScore += 4;
+      if (distSelections.includes('pickup_school')) totalScore += 4;
+    }
+    answered++;
+
+    // Tested chemicals
+    const testedSelected = formElement.querySelector('input[name="q19"]:checked') as HTMLInputElement;
+    if (testedSelected) {
+      totalScore += 5 * parseInt(testedSelected.value);
+      answered++;
+      answers.push({ question: "Have your uniforms been tested for harmful or banned chemicals?", answer: testedSelected.nextSibling?.textContent?.trim() || '' });
+    }
+
+    // Transparency
+    const transSelected = formElement.querySelector('input[name="q20"]:checked') as HTMLInputElement;
+    if (transSelected) {
+      totalScore += 5 * parseInt(transSelected.value);
+      answered++;
+      answers.push({ question: "Do your students, parents, and staff have full transparency of your supply chain?", answer: transSelected.nextSibling?.textContent?.trim() || '' });
+    }
+
+    // Combined AI
+    const aiSelections = Array.from(formElement.querySelectorAll('input[name="ai_usage"]:checked') as NodeListOf<HTMLInputElement>)
+      .map(cb => cb.value);
+    const aiAnswer = aiSelections.join(', ') || 'Not Answered';
+    answers.push({ question: "Do you use AI in your uniform program? (Select all that apply)", answer: aiAnswer });
+    
+    if (aiSelections.includes('no') || aiSelections.includes('dont_know')) {
+      totalScore += 0;
+    } else {
+      if (aiSelections.includes('size_recommend')) totalScore += 3;
+      if (aiSelections.includes('forecast_stock')) totalScore += 3;
+    }
+    answered++;
+
+    if (answered < 15) {
+      alert('Please answer all sustainability questions.');
+      return;
+    }
+
+    // Extras (non-scored)
+    const extra1Select = formElement.querySelector('select[name="extra1"]') as HTMLSelectElement;
+    const extra1Answer = extra1Select ? extra1Select.value : 'Not Answered';
+    answers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
+
+    const extra2Selected = formElement.querySelector('input[name="extra2"]:checked') as HTMLInputElement;
+    const extra2Answer = extra2Selected ? extra2Selected.nextSibling?.textContent?.trim() : 'Not Answered';
+    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer || '' });
+
+    const extra3Selected = formElement.querySelector('input[name="extra3"]:checked') as HTMLInputElement;
+    const extra3Answer = extra3Selected ? extra3Selected.nextSibling?.textContent?.trim() : 'Not Answered';
+    answers.push({ question: "How important is sustainability within your school?", answer: extra3Answer || '' });
 
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
@@ -166,6 +286,82 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     } else {
       setShowResults(true);
     }
+
+    // Send data to Google Sheet
+    const sheetURL = 'https://script.google.com/macros/s/AKfycbxfC609-OnZB_UcV_7Njh8q-UcvJAAtVdiQtpTKtYqDG0sGrIGQVeQldJy7ty6LZtDV/exec';
+    const formData = {
+      name: userData.name,
+      email: userData.email,
+      answers: answers,
+      score: percentage
+    };
+    fetch(sheetURL, {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      mode: 'no-cors'
+    }).then(() => {
+      console.log('Data sent to Google Sheet');
+    }).catch(error => {
+      console.error('Error sending data:', error);
+    });
+  };
+
+  const handleImproveSubmit = () => {
+    const formElement = formRef.current;
+    if (!formElement) return;
+    
+    const selected = formElement.querySelector('input[name="improve"]:checked') as HTMLInputElement;
+    if (!selected) {
+      alert('Please select an option.');
+      return;
+    }
+    setUserImprove(selected.value);
+    userAnswers.push({ question: 'Do you want to improve the sustainability of your school uniforms?', answer: selected.value });
+    setShowImprove(false);
+    if (selected.value === 'yes') {
+      setShowFeatures(true);
+    } else {
+      setShowResults(true);
+    }
+  };
+
+  const handleFeaturesSubmit = () => {
+    const formElement = formRef.current;
+    if (!formElement) return;
+    
+    const selectedFeatures = Array.from(formElement.querySelectorAll('.features-list input:checked') as NodeListOf<HTMLInputElement>)
+      .map(input => input.value);
+    if (selectedFeatures.length === 0) {
+      alert('Please select at least one feature.');
+      return;
+    }
+    setUserFeatures(selectedFeatures);
+    userAnswers.push({ question: 'Selected features:', answer: selectedFeatures.join(', ') });
+    setShowFeatures(false);
+    setShowConsultation(true);
+    setShowResults(true);
+  };
+
+  const generateReport = () => {
+    if (!window.jsPDF) {
+      alert('PDF generation not available. Please try again.');
+      return;
+    }
+    
+    const doc = new window.jsPDF();
+    doc.setFontSize(16);
+    doc.text('Kapes Uniforms Sustainability Scorecard Report', 10, 10);
+    doc.setFontSize(12);
+    doc.text(`Name: ${userData.name}`, 10, 20);
+    doc.text(`School: ${userData.school}`, 10, 30);
+    doc.text(`Number of Students: ${userData.students}`, 10, 40);
+    doc.text(`Email: ${userData.email}`, 10, 50);
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 60);
+    doc.setFontSize(14);
+    doc.text('Your Sustainability Score', 10, 70);
+    doc.setFontSize(12);
+    doc.text(`Score: ${score}%`, 10, 80);
+    doc.save('Sustainability_Scorecard_Report.pdf');
   };
 
   const renderMaterialsQuestion = () => (
@@ -193,27 +389,93 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     </div>
   );
 
-  const renderRadioQuestion = (questionId: string) => {
-    const getValue = (option: string) => {
-      if (questionId === 'q16' && option === 'No') return '1';
-      if (questionId === 'q16' && (option === 'Yes' || option === "Don't Know")) return '0';
-      return option === 'Yes' ? '1' : '0';
-    };
+  const renderDistributionQuestion = () => (
+    <div className="space-y-3">
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="distribution" value="school_shop" className="rounded border-border" />
+        <span>School shop</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="distribution" value="supplier_shop" className="rounded border-border" />
+        <span>Supplier shop</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="distribution" value="online_ordering" className="rounded border-border" />
+        <span>Online ordering</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="distribution" value="pickup_school" className="rounded border-border" />
+        <span>Pickup at school</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="distribution" value="dont_know" className="rounded border-border" />
+        <span>Don't know</span>
+      </label>
+    </div>
+  );
 
+  const renderAIQuestion = () => (
+    <div className="space-y-3">
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="ai_usage" value="size_recommend" className="rounded border-border" />
+        <span>For size recommendations to reduce returns</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="ai_usage" value="forecast_stock" className="rounded border-border" />
+        <span>For forecasting stock needs</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="ai_usage" value="no" className="rounded border-border" />
+        <span>No</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="ai_usage" value="dont_know" className="rounded border-border" />
+        <span>Don't know</span>
+      </label>
+    </div>
+  );
+
+  const renderRadioQuestion = (questionId: string) => {
     return (
       <div className="space-y-3">
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value={getValue('Yes')} className="border-border" />
+          <input type="radio" name={questionId} value="1" className="border-border" />
           <span>Yes</span>
         </label>
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value={getValue('No')} className="border-border" />
+          <input type="radio" name={questionId} value="0" className="border-border" />
           <span>No</span>
         </label>
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value={getValue("Don't Know")} className="border-border" />
+          <input type="radio" name={questionId} value="0" className="border-border" />
           <span>Don't Know</span>
         </label>
+      </div>
+    );
+  };
+
+  const renderSelectQuestion = (questionId: string) => (
+    <select name={questionId} className="w-full p-3 border border-border rounded bg-background text-foreground">
+      <option value="">Select rating</option>
+      {[...Array(11)].map((_, i) => (
+        <option key={i} value={i}>{i}</option>
+      ))}
+    </select>
+  );
+
+  const renderExtraRadioQuestion = (questionId: string) => {
+    const options = questionId === 'extra2' 
+      ? ['Yes', 'No', 'Maybe']
+      : ['Very important', 'Important', 'Somewhat important', 'Not important'];
+    
+    return (
+      <div className="space-y-3">
+        {options.map(option => (
+          <label key={option} className="flex items-center space-x-2">
+            <input type="radio" name={questionId} value={option} className="border-border" />
+            <span>{option}</span>
+          </label>
+        ))}
       </div>
     );
   };
@@ -293,8 +555,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               </label>
               
               {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
+              {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
+              {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
               {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
                 renderRadioQuestion(questions[currentSlide].id)}
+              {questions[currentSlide].id === 'extra1' && renderSelectQuestion(questions[currentSlide].id)}
+              {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
             </div>
             
             <div className="flex justify-between mt-5">
@@ -314,6 +580,71 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           </div>
         )}
 
+        {showImprove && (
+          <div className="mt-8 p-5 bg-muted rounded-lg text-left">
+            <h2 className="text-heading text-xl mb-4">Do you want to improve the sustainability of your school uniforms?</h2>
+            <div className="space-y-3 mb-4">
+              <label className="flex items-center space-x-2">
+                <input type="radio" name="improve" value="yes" className="border-border" />
+                <span>Yes</span>
+              </label>
+              <label className="flex items-center space-x-2">
+                <input type="radio" name="improve" value="no" className="border-border" />
+                <span>No</span>
+              </label>
+            </div>
+            <button 
+              onClick={handleImproveSubmit}
+              className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+            >
+              Submit
+            </button>
+          </div>
+        )}
+
+        {showFeatures && (
+          <div className="mt-8 p-5 bg-muted rounded-lg text-left">
+            <h2 className="text-heading text-xl mb-4">Select what's important to you:</h2>
+            <ul className="features-list list-none p-0 space-y-2 mb-4">
+              {[
+                'EcoLegacy Fabrics (Natural, Sustainable Materials)',
+                'Humanity-First Production (Ethical Manufacturing)',
+                'Uniform Uplift Initiative (Free Uniform Program)',
+                'CycleWorks Program (Fully Managed Takeback Scheme)',
+                'Meal Miracle Mission (Feeding Program)',
+                'KapesImpact Tracker (Real-Time Sustainability Dashboard)',
+                'CO2 Conquest Credits (Carbon Offsetting)',
+                'GreenFuture Curriculum (Educational Programs)',
+                'Roots & Reality Tours (Farm & Factory Visits)',
+                'EcoAmbassador Council (Student Board)',
+                'EcoHub Shops (On-Campus School Shops)',
+                'SmartDrop Lockers (E-Commerce Lockers)'
+              ].map((feature, index) => (
+                <li key={index} className="flex items-center space-x-2">
+                  <input type="checkbox" value={feature.split(' (')[0]} className="rounded border-border" />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <button 
+              onClick={handleFeaturesSubmit}
+              className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+            >
+              Submit Priorities
+            </button>
+          </div>
+        )}
+
+        {showConsultation && (
+          <div className="mt-8 text-center">
+            <h2 className="text-heading text-xl mb-4">You Qualify for a Free Consultation!</h2>
+            <p className="mb-4">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
+            <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
+              <a href="/consultation" className="text-primary-foreground no-underline">Book Free Consultation</a>
+            </button>
+          </div>
+        )}
+
         {showResults && (
           <div className="mt-8 p-5 bg-muted rounded-lg text-center">
             <h2 className="text-heading text-2xl mb-4">
@@ -323,10 +654,13 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               {scoreDescription}
             </p>
             <div className="space-y-4">
-              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
+              <button 
+                onClick={generateReport}
+                className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+              >
                 Download Your Personalized Report
               </button>
-              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
+              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90 ml-2">
                 <a href="/consultation" className="text-primary-foreground no-underline">
                   Book Your Free Consultation
                 </a>
