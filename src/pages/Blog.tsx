@@ -142,7 +142,7 @@ const Blog = () => {
                 <section className="mb-16">
                   <div className="text-center mb-8">
                     <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Latest</Badge>
-                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">Featured Post</h2>
+                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">Featured Article</h2>
                   </div>
                   
                   <Link to={`/blog/${featuredPost.slug}`} className="block group">
