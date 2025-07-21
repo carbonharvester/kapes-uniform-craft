@@ -282,7 +282,7 @@ export const KapesDifferentCarousel = () => {
         <CarouselContent className="-ml-2 md:-ml-4 py-4">
           {differences.map((difference) => (
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 px-2 basis-full sm:basis-1/2 lg:basis-1/3">
-              <Card className="h-[28rem] border border-black overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
+              <Card className="h-[28rem] border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
                 <div 
                   className="absolute inset-0 bg-no-repeat"
                   style={{ 
@@ -291,7 +291,7 @@ export const KapesDifferentCarousel = () => {
                     backgroundPosition: difference.id === "takeback" ? "center top" : "center"
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/60 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 15%, rgba(255,255,255,0) 35%)' }} />
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 65%)' }} />
                 
                 <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
                   {/* Text content at top left */}
