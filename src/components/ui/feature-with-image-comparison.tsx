@@ -26,7 +26,7 @@ function Feature() {
             <h2 className="text-3xl md:text-5xl tracking-tighter lg:max-w-xl font-regular">
               Before vs After
             </h2>
-            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-muted-foreground">See the transformation from the British International School of Jeddah's previous shop into our modern solution.</p>
+            <p className="text-lg max-w-xl lg:max-w-xl leading-relaxed tracking-tight text-muted-foreground">See the transformation from The British International School of Jeddah's previous shop into our modern solution.</p>
           </div>
           <div className="pt-12 w-full">
             <div className="relative aspect-video w-full h-full overflow-hidden rounded-2xl select-none" onMouseMove={onMouseMove} onMouseUp={() => setOnMouseDown(false)} onTouchMove={onMouseMove} onTouchEnd={() => setOnMouseDown(false)}>
