@@ -415,8 +415,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       customFeedback.push('Strengthen your supply chain by requiring ethical audits, living wage policies, and third-party certifications.');
     }
 
-    // Distribution
-    if (distSelections.includes('supplier_shop') || !distSelections.includes('online_ordering') || !distSelections.includes('popup_events')) {
+    // Distribution - Fixed logic to only recommend when distribution is actually poor
+    if (distSelections.includes('supplier_shop') && 
+        !distSelections.includes('online_ordering') && 
+        !distSelections.includes('pickup_school') && 
+        !distSelections.includes('popup_events')) {
       customFeedback.push('Enhance distribution with online ordering, pop-up events, or school pickups to reduce carbon footprints from travel.');
     }
 
