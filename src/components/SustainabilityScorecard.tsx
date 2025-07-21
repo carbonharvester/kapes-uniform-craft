@@ -1,4 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Progress } from '@/components/ui/progress';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, ArrowRight, ArrowLeft, Trophy, Target, Lightbulb } from 'lucide-react';
 
 interface SustainabilityScorecardProps {
   initialData?: {
@@ -508,270 +512,286 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
   };
 
+  // Progress calculation
+  const progressValue = ((currentSlide + 1) / questions.length) * 100;
+
+  // Score color based on percentage
+  const getScoreColor = (score: number) => {
+    if (score >= 67) return 'text-green-600';
+    if (score >= 33) return 'text-yellow-600';
+    return 'text-red-600';
+  };
+
+  const getScoreIcon = (score: number) => {
+    if (score >= 67) return <Trophy className="w-8 h-8 text-green-600" />;
+    if (score >= 33) return <Target className="w-8 h-8 text-yellow-600" />;
+    return <Lightbulb className="w-8 h-8 text-red-600" />;
+  };
+
   const renderMaterialsQuestion = () => (
-    <div className="space-y-3">
-      <label className="flex items-center space-x-2">
+    <div className="space-y-4">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="materials" 
           value="virgin_synth" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.materials as string[] || []).includes('virgin_synth')}
           onChange={(e) => handleCheckboxChange('materials', 'virgin_synth', e.target.checked)}
         />
-        <span>Virgin (Non-recycled) Synthetic Fibres like Polyester and Nylon</span>
+        <span className="text-sm font-medium">Virgin (Non-recycled) Synthetic Fibres like Polyester and Nylon</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="materials" 
           value="conventional_cotton" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.materials as string[] || []).includes('conventional_cotton')}
           onChange={(e) => handleCheckboxChange('materials', 'conventional_cotton', e.target.checked)}
         />
-        <span>Conventional (non-organic) cotton</span>
+        <span className="text-sm font-medium">Conventional (non-organic) cotton</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="materials" 
           value="recycled_poly" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.materials as string[] || []).includes('recycled_poly')}
           onChange={(e) => handleCheckboxChange('materials', 'recycled_poly', e.target.checked)}
         />
-        <span>Recycled Polyester</span>
+        <span className="text-sm font-medium">Recycled Polyester</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="materials" 
           value="organic_cotton" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.materials as string[] || []).includes('organic_cotton')}
           onChange={(e) => handleCheckboxChange('materials', 'organic_cotton', e.target.checked)}
         />
-        <span>Organic Cotton</span>
+        <span className="text-sm font-medium">Organic Cotton</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="materials" 
           value="dont_know" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.materials as string[] || []).includes('dont_know')}
           onChange={(e) => handleCheckboxChange('materials', 'dont_know', e.target.checked)}
         />
-        <span>Don't know</span>
+        <span className="text-sm font-medium">Don't know</span>
       </label>
     </div>
   );
 
   const renderPackagingQuestion = () => (
-    <div className="space-y-3">
-      <label className="flex items-center space-x-2">
+    <div className="space-y-4">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="packaging" 
           value="plastic" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.packaging as string[] || []).includes('plastic')}
           onChange={(e) => handleCheckboxChange('packaging', 'plastic', e.target.checked)}
         />
-        <span>Plastic</span>
+        <span className="text-sm font-medium">Plastic</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="packaging" 
           value="recycled_plastic" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.packaging as string[] || []).includes('recycled_plastic')}
           onChange={(e) => handleCheckboxChange('packaging', 'recycled_plastic', e.target.checked)}
         />
-        <span>Recycled plastic</span>
+        <span className="text-sm font-medium">Recycled plastic</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="packaging" 
           value="paper" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.packaging as string[] || []).includes('paper')}
           onChange={(e) => handleCheckboxChange('packaging', 'paper', e.target.checked)}
         />
-        <span>Paper</span>
+        <span className="text-sm font-medium">Paper</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="packaging" 
           value="dont_know" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.packaging as string[] || []).includes('dont_know')}
           onChange={(e) => handleCheckboxChange('packaging', 'dont_know', e.target.checked)}
         />
-        <span>Don't know</span>
+        <span className="text-sm font-medium">Don't know</span>
       </label>
     </div>
   );
 
   const renderDistributionQuestion = () => (
-    <div className="space-y-3">
-      <label className="flex items-center space-x-2">
+    <div className="space-y-4">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="school_shop" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('school_shop')}
           onChange={(e) => handleCheckboxChange('distribution', 'school_shop', e.target.checked)}
         />
-        <span>School shop</span>
+        <span className="text-sm font-medium">School shop</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="supplier_shop" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('supplier_shop')}
           onChange={(e) => handleCheckboxChange('distribution', 'supplier_shop', e.target.checked)}
         />
-        <span>Supplier shop</span>
+        <span className="text-sm font-medium">Supplier shop</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="online_ordering" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('online_ordering')}
           onChange={(e) => handleCheckboxChange('distribution', 'online_ordering', e.target.checked)}
         />
-        <span>Online ordering</span>
+        <span className="text-sm font-medium">Online ordering</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="pickup_school" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('pickup_school')}
           onChange={(e) => handleCheckboxChange('distribution', 'pickup_school', e.target.checked)}
         />
-        <span>Pickup at school</span>
+        <span className="text-sm font-medium">Pickup at school</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="popup_events" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
           onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
         />
-        <span>Pop-up events</span>
+        <span className="text-sm font-medium">Pop-up events</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="distribution" 
           value="dont_know" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.distribution as string[] || []).includes('dont_know')}
           onChange={(e) => handleCheckboxChange('distribution', 'dont_know', e.target.checked)}
         />
-        <span>Don't know</span>
+        <span className="text-sm font-medium">Don't know</span>
       </label>
     </div>
   );
 
   const renderAIQuestion = () => (
-    <div className="space-y-3">
-      <label className="flex items-center space-x-2">
+    <div className="space-y-4">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="ai_usage" 
           value="size_recommend" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.ai_usage as string[] || []).includes('size_recommend')}
           onChange={(e) => handleCheckboxChange('ai_usage', 'size_recommend', e.target.checked)}
         />
-        <span>For size recommendations to reduce returns</span>
+        <span className="text-sm font-medium">For size recommendations to reduce returns</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="ai_usage" 
           value="forecast_stock" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.ai_usage as string[] || []).includes('forecast_stock')}
           onChange={(e) => handleCheckboxChange('ai_usage', 'forecast_stock', e.target.checked)}
         />
-        <span>For forecasting stock needs</span>
+        <span className="text-sm font-medium">For forecasting stock needs</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="ai_usage" 
           value="no" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.ai_usage as string[] || []).includes('no')}
           onChange={(e) => handleCheckboxChange('ai_usage', 'no', e.target.checked)}
         />
-        <span>No</span>
+        <span className="text-sm font-medium">No</span>
       </label>
-      <label className="flex items-center space-x-2">
+      <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
           type="checkbox" 
           name="ai_usage" 
           value="dont_know" 
-          className="rounded border-border"
+          className="w-4 h-4 text-primary focus:ring-primary border-border rounded"
           checked={(formAnswers.ai_usage as string[] || []).includes('dont_know')}
           onChange={(e) => handleCheckboxChange('ai_usage', 'dont_know', e.target.checked)}
         />
-        <span>Don't know</span>
+        <span className="text-sm font-medium">Don't know</span>
       </label>
     </div>
   );
 
   const renderRadioQuestion = (questionId: string) => {
     return (
-      <div className="space-y-3">
-        <label className="flex items-center space-x-2">
+      <div className="space-y-4">
+        <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
           <input 
             type="radio" 
             name={questionId} 
             value="1" 
-            className="border-border"
+            className="w-4 h-4 text-primary focus:ring-primary border-border"
             checked={formAnswers[questionId] === '1'}
             onChange={(e) => handleAnswerChange(questionId, e.target.value)}
           />
-          <span>Yes</span>
+          <span className="text-sm font-medium">Yes</span>
         </label>
-        <label className="flex items-center space-x-2">
+        <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
           <input 
             type="radio" 
             name={questionId} 
             value="0" 
-            className="border-border"
+            className="w-4 h-4 text-primary focus:ring-primary border-border"
             checked={formAnswers[questionId] === '0'}
             onChange={(e) => handleAnswerChange(questionId, e.target.value)}
           />
-          <span>No</span>
+          <span className="text-sm font-medium">No</span>
         </label>
-        <label className="flex items-center space-x-2">
+        <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
           <input 
             type="radio" 
             name={questionId} 
             value="2" 
-            className="border-border"
+            className="w-4 h-4 text-primary focus:ring-primary border-border"
             checked={formAnswers[questionId] === '2'}
             onChange={(e) => handleAnswerChange(questionId, e.target.value)}
           />
-          <span>Don't Know</span>
+          <span className="text-sm font-medium">Don't Know</span>
         </label>
       </div>
     );
@@ -780,7 +800,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const renderSelectQuestion = (questionId: string) => (
     <select 
       name={questionId} 
-      className="w-full p-3 border border-border rounded bg-background text-foreground"
+      className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
       value={formAnswers[questionId] as string || ''}
       onChange={(e) => handleAnswerChange(questionId, e.target.value)}
     >
@@ -797,18 +817,18 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       : ['Very important', 'Important', 'Somewhat important', 'Not important'];
     
     return (
-      <div className="space-y-3">
+      <div className="space-y-4">
         {options.map(option => (
-          <label key={option} className="flex items-center space-x-2">
+          <label key={option} className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
             <input 
               type="radio" 
               name={questionId} 
               value={option} 
-              className="border-border"
+              className="w-4 h-4 text-primary focus:ring-primary border-border"
               checked={formAnswers[questionId] === option}
               onChange={(e) => handleAnswerChange(questionId, e.target.value)}
             />
-            <span>{option}</span>
+            <span className="text-sm font-medium">{option}</span>
           </label>
         ))}
       </div>
@@ -816,186 +836,249 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg" ref={formRef}>
+    <div className="w-full max-w-4xl mx-auto p-6" ref={formRef}>
       {showEntryForm && (
-        <h1 className="text-heading text-3xl font-bold mb-5 text-center">
-          Sustainability Scorecard for School Uniforms
-        </h1>
-      )}
-      
-      {showEntryForm && (
-        <div className="text-left space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={userData.name}
-            onChange={(e) => setUserData({...userData, name: e.target.value})}
-            className="w-full p-3 border border-border rounded bg-background text-foreground"
-            required
-          />
-          <input
-            type="text"
-            placeholder="School Name"
-            value={userData.school}
-            onChange={(e) => setUserData({...userData, school: e.target.value})}
-            className="w-full p-3 border border-border rounded bg-background text-foreground"
-            required
-          />
-          <input
-            type="number"
-            placeholder="Number of Students"
-            value={userData.students}
-            onChange={(e) => setUserData({...userData, students: e.target.value})}
-            className="w-full p-3 border border-border rounded bg-background text-foreground"
-            min="1"
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            value={userData.email}
-            onChange={(e) => setUserData({...userData, email: e.target.value})}
-            className="w-full p-3 border border-border rounded bg-background text-foreground"
-            required
-          />
-          {entryError && (
-            <div className="text-destructive mb-4 text-center">
-              Please fill all fields to start.
+        <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <CardHeader className="text-center pb-8">
+            <CardTitle className="text-4xl font-bold text-heading mb-4">
+              Sustainability Scorecard for School Uniforms
+            </CardTitle>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Discover how sustainable your school uniform program is and get personalized recommendations for improvement.
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">Your Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  value={userData.name}
+                  onChange={(e) => setUserData({...userData, name: e.target.value})}
+                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">School Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter school name"
+                  value={userData.school}
+                  onChange={(e) => setUserData({...userData, school: e.target.value})}
+                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">Number of Students</label>
+                <input
+                  type="number"
+                  placeholder="Enter student count"
+                  value={userData.students}
+                  onChange={(e) => setUserData({...userData, students: e.target.value})}
+                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  min="1"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">Your Email</label>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={userData.email}
+                  onChange={(e) => setUserData({...userData, email: e.target.value})}
+                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
             </div>
-          )}
-          <button
-            onClick={handleStart}
-            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-          >
-            Start Scorecard
-          </button>
-        </div>
+            {entryError && (
+              <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+                Please fill all fields to start the assessment.
+              </div>
+            )}
+            <Button
+              onClick={handleStart}
+              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
+              size="lg"
+            >
+              Start Sustainability Assessment
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </CardContent>
+        </Card>
       )}
 
       {showQuiz && (
-        <div>
-          <div className="mb-5 text-center">
-            <progress 
-              value={((currentSlide + 1) / questions.length) * 100} 
-              max="100"
-              className="w-full h-5 [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-primary"
-            />
-            <div className="text-sm text-muted-foreground mt-1">
-              {Math.round(((currentSlide + 1) / questions.length) * 100)}% Complete
+        <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <CardHeader className="pb-6">
+            <div className="flex justify-between items-center mb-4">
+              <div className="text-sm font-medium text-muted-foreground">
+                Question {currentSlide + 1} of {questions.length}
+              </div>
+              <div className="text-sm font-medium text-primary">
+                {Math.round(progressValue)}% Complete
+              </div>
             </div>
-          </div>
-          
-          <div className="mb-8">
-            <label className="block mb-3 font-bold text-foreground">
+            <Progress value={progressValue} className="h-3 mb-6" />
+            <CardTitle className="text-xl font-bold text-heading leading-relaxed">
               {questions[currentSlide].text}
-            </label>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="min-h-[200px]">
+              {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
+              {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
+              {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
+              {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
+              {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
+                renderRadioQuestion(questions[currentSlide].id)}
+              {questions[currentSlide].id === 'extra1' && renderSelectQuestion(questions[currentSlide].id)}
+              {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
+            </div>
             
-            {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
-            {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
-            {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
-            {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
-            {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
-              renderRadioQuestion(questions[currentSlide].id)}
-            {questions[currentSlide].id === 'extra1' && renderSelectQuestion(questions[currentSlide].id)}
-            {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
-          </div>
-          
-          <div className="flex justify-between mt-5">
-            <button
-              onClick={handlePrev}
-              className={`w-[48%] bg-secondary text-secondary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-secondary/80 ${currentSlide === 0 ? 'hidden' : 'inline-block'}`}
-            >
-              Previous
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-[48%] bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90 ml-auto"
-            >
-              {currentSlide === questions.length - 1 ? 'Submit Scorecard' : 'Next'}
-            </button>
-          </div>
-        </div>
+            <div className="flex justify-between items-center pt-6 border-t border-border">
+              <Button
+                onClick={handlePrev}
+                variant="outline"
+                className={`flex items-center space-x-2 ${currentSlide === 0 ? 'invisible' : ''}`}
+                disabled={currentSlide === 0}
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Previous</span>
+              </Button>
+              <Button
+                onClick={handleNext}
+                className="flex items-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                <span>{currentSlide === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       )}
 
       {showImprove && (
-        <div className="mt-8 p-5 bg-muted rounded-lg text-left">
-          <h2 className="text-heading text-xl mb-4">Do you want to improve the sustainability of your school uniforms?</h2>
-          <div className="space-y-3 mb-4">
-            <label className="flex items-center space-x-2">
-              <input type="radio" name="improve" value="yes" className="border-border" />
-              <span>Yes</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <input type="radio" name="improve" value="no" className="border-border" />
-              <span>No</span>
-            </label>
-          </div>
-          <button 
-            onClick={handleImproveSubmit}
-            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-          >
-            Submit
-          </button>
-        </div>
+        <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-heading text-center">
+              Ready to Improve Your Sustainability?
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <p className="text-center text-muted-foreground text-lg">
+              Do you want to improve the sustainability of your school uniforms?
+            </p>
+            <div className="space-y-4">
+              <label className="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
+                <input type="radio" name="improve" value="yes" className="w-4 h-4 text-primary focus:ring-primary border-border" />
+                <span className="text-lg font-medium">Yes, I want to improve our sustainability</span>
+              </label>
+              <label className="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
+                <input type="radio" name="improve" value="no" className="w-4 h-4 text-primary focus:ring-primary border-border" />
+                <span className="text-lg font-medium">No, I'm satisfied with our current approach</span>
+              </label>
+            </div>
+            <Button 
+              onClick={handleImproveSubmit}
+              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
+              size="lg"
+            >
+              Continue
+            </Button>
+          </CardContent>
+        </Card>
       )}
 
       {showFeatures && (
-        <div className="mt-8 p-5 bg-muted rounded-lg text-left">
-          <h2 className="text-heading text-xl mb-4">Select what's important to you:</h2>
-          <ul className="features-list list-none p-0 space-y-2 mb-4">
-            {[
-              'Natural, Sustainable Materials',
-              'Ethical Manufacturing',
-              'Free Uniform Program',
-              'Fully Managed Takeback Scheme',
-              'Feeding Program',
-              'Real-Time Sustainability Dashboard',
-              'Carbon Offsetting',
-              'Educational Programs',
-              'Farm & Factory Visits',
-              'Student Board',
-              'On-Campus School Shops',
-              'E-Commerce Lockers'
-            ].map((feature, index) => (
-              <li key={index} className="flex items-center space-x-2">
-                <input type="checkbox" value={feature.split(' (')[0]} className="rounded border-border" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <button 
-            onClick={handleFeaturesSubmit}
-            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-          >
-            Submit Priorities
-          </button>
-        </div>
+        <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-heading text-center">
+              What's Most Important to You?
+            </CardTitle>
+            <p className="text-center text-muted-foreground">
+              Select the features that matter most for your school's uniform program
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="features-list grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                'Natural, Sustainable Materials',
+                'Ethical Manufacturing',
+                'Free Uniform Program',
+                'Fully Managed Takeback Scheme',
+                'Feeding Program',
+                'Real-Time Sustainability Dashboard',
+                'Carbon Offsetting',
+                'Educational Programs',
+                'Farm & Factory Visits',
+                'Student Board',
+                'On-Campus School Shops',
+                'E-Commerce Lockers'
+              ].map((feature, index) => (
+                <label key={index} className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
+                  <input type="checkbox" value={feature.split(' (')[0]} className="w-4 h-4 text-primary focus:ring-primary border-border rounded" />
+                  <span className="text-sm font-medium">{feature}</span>
+                </label>
+              ))}
+            </div>
+            <Button 
+              onClick={handleFeaturesSubmit}
+              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
+              size="lg"
+            >
+              Submit Priorities
+            </Button>
+          </CardContent>
+        </Card>
       )}
 
       {showResults && (
-        <div className="mt-8 p-5 bg-muted rounded-lg text-center">
-          <h2 className="text-heading text-2xl mb-4">
-            Your Sustainability Score: {score}%
-          </h2>
-          <p className="mb-5 text-foreground">
-            {scoreDescription}
-          </p>
-          
-          {userFeatures.length > 0 && (
-            <div className="mb-6 p-4 bg-background rounded-lg">
-              <h3 className="text-heading text-xl mb-3">You Qualify for a Free Consultation!</h3>
-              <p className="mb-4 text-foreground">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
+        <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <CardHeader className="text-center pb-8">
+            <div className="flex justify-center mb-6">
+              {getScoreIcon(score)}
             </div>
-          )}
-          
-          <div className="space-y-4">
-            <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
-              <a href="/consultation" className="text-primary-foreground no-underline">
-                Book Your Free Consultation
-              </a>
-            </button>
-          </div>
-        </div>
+            <CardTitle className="text-4xl font-bold text-heading mb-2">
+              Your Sustainability Score
+            </CardTitle>
+            <div className={`text-6xl font-bold ${getScoreColor(score)} mb-4`}>
+              {score}%
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              {scoreDescription}
+            </p>
+          </CardHeader>
+          <CardContent>
+            {userFeatures.length > 0 && (
+              <div className="mb-8 p-6 bg-primary/10 rounded-xl border border-primary/20">
+                <h3 className="text-2xl font-bold text-heading mb-3 text-center">
+                  🎉 You Qualify for a Free Consultation!
+                </h3>
+                <p className="text-center text-foreground text-lg">
+                  Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.
+                </p>
+              </div>
+            )}
+            
+            <div className="flex justify-center">
+              <Button 
+                asChild
+                className="px-8 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
+                size="lg"
+              >
+                <a href="/consultation">
+                  Book Your Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       )}
     </div>
   );
