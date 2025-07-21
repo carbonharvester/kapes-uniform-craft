@@ -299,7 +299,7 @@ export const KapesDifferentCarousel = () => {
                     <h3 className="text-xl font-semibold leading-tight text-foreground mb-2">
                       {difference.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground font-bold">
+                    <p className="text-sm text-foreground font-bold">
                       {difference.tagline}
                     </p>
                   </div>
