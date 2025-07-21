@@ -4,8 +4,8 @@ import { Footer } from "@/components/Footer";
 
 const SustainabilityScorecardPage = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center" style={{ backgroundColor: '#cfeaff' }}>
-      <div className="container mx-auto py-12 flex justify-center">
+    <div className="min-h-screen flex flex-col justify-center items-center" style={{ backgroundColor: '#cfeaff' }}>
+      <div className="flex-1 flex items-center justify-center py-12">
         <SustainabilityScorecard />
       </div>
       <Footer />

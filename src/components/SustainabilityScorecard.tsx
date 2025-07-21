@@ -816,189 +816,187 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg" ref={formRef}>
-        {showEntryForm && (
-          <h1 className="text-heading text-3xl font-bold mb-5 text-center">
-            Sustainability Scorecard for School Uniforms
-          </h1>
-        )}
-        
-        {showEntryForm && (
-          <div className="text-left space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={userData.name}
-              onChange={(e) => setUserData({...userData, name: e.target.value})}
-              className="w-full p-3 border border-border rounded bg-background text-foreground"
-              required
+    <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg" ref={formRef}>
+      {showEntryForm && (
+        <h1 className="text-heading text-3xl font-bold mb-5 text-center">
+          Sustainability Scorecard for School Uniforms
+        </h1>
+      )}
+      
+      {showEntryForm && (
+        <div className="text-left space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={userData.name}
+            onChange={(e) => setUserData({...userData, name: e.target.value})}
+            className="w-full p-3 border border-border rounded bg-background text-foreground"
+            required
+          />
+          <input
+            type="text"
+            placeholder="School Name"
+            value={userData.school}
+            onChange={(e) => setUserData({...userData, school: e.target.value})}
+            className="w-full p-3 border border-border rounded bg-background text-foreground"
+            required
+          />
+          <input
+            type="number"
+            placeholder="Number of Students"
+            value={userData.students}
+            onChange={(e) => setUserData({...userData, students: e.target.value})}
+            className="w-full p-3 border border-border rounded bg-background text-foreground"
+            min="1"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={userData.email}
+            onChange={(e) => setUserData({...userData, email: e.target.value})}
+            className="w-full p-3 border border-border rounded bg-background text-foreground"
+            required
+          />
+          {entryError && (
+            <div className="text-destructive mb-4 text-center">
+              Please fill all fields to start.
+            </div>
+          )}
+          <button
+            onClick={handleStart}
+            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+          >
+            Start Scorecard
+          </button>
+        </div>
+      )}
+
+      {showQuiz && (
+        <div>
+          <div className="mb-5 text-center">
+            <progress 
+              value={((currentSlide + 1) / questions.length) * 100} 
+              max="100"
+              className="w-full h-5 [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-primary"
             />
-            <input
-              type="text"
-              placeholder="School Name"
-              value={userData.school}
-              onChange={(e) => setUserData({...userData, school: e.target.value})}
-              className="w-full p-3 border border-border rounded bg-background text-foreground"
-              required
-            />
-            <input
-              type="number"
-              placeholder="Number of Students"
-              value={userData.students}
-              onChange={(e) => setUserData({...userData, students: e.target.value})}
-              className="w-full p-3 border border-border rounded bg-background text-foreground"
-              min="1"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              value={userData.email}
-              onChange={(e) => setUserData({...userData, email: e.target.value})}
-              className="w-full p-3 border border-border rounded bg-background text-foreground"
-              required
-            />
-            {entryError && (
-              <div className="text-destructive mb-4 text-center">
-                Please fill all fields to start.
-              </div>
-            )}
+            <div className="text-sm text-muted-foreground mt-1">
+              {Math.round(((currentSlide + 1) / questions.length) * 100)}% Complete
+            </div>
+          </div>
+          
+          <div className="mb-8">
+            <label className="block mb-3 font-bold text-foreground">
+              {questions[currentSlide].text}
+            </label>
+            
+            {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
+            {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
+            {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
+            {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
+            {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
+              renderRadioQuestion(questions[currentSlide].id)}
+            {questions[currentSlide].id === 'extra1' && renderSelectQuestion(questions[currentSlide].id)}
+            {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
+          </div>
+          
+          <div className="flex justify-between mt-5">
             <button
-              onClick={handleStart}
-              className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+              onClick={handlePrev}
+              className={`w-[48%] bg-secondary text-secondary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-secondary/80 ${currentSlide === 0 ? 'hidden' : 'inline-block'}`}
             >
-              Start Scorecard
+              Previous
+            </button>
+            <button
+              onClick={handleNext}
+              className="w-[48%] bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90 ml-auto"
+            >
+              {currentSlide === questions.length - 1 ? 'Submit Scorecard' : 'Next'}
             </button>
           </div>
-        )}
+        </div>
+      )}
 
-        {showQuiz && (
-          <div>
-            <div className="mb-5 text-center">
-              <progress 
-                value={((currentSlide + 1) / questions.length) * 100} 
-                max="100"
-                className="w-full h-5 [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-primary"
-              />
-              <div className="text-sm text-muted-foreground mt-1">
-                {Math.round(((currentSlide + 1) / questions.length) * 100)}% Complete
-              </div>
-            </div>
-            
-            <div className="mb-8">
-              <label className="block mb-3 font-bold text-foreground">
-                {questions[currentSlide].text}
-              </label>
-              
-              {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
-              {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
-              {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
-              {questions[currentSlide].id === 'ai_usage' && renderAIQuestion()}
-              {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
-                renderRadioQuestion(questions[currentSlide].id)}
-              {questions[currentSlide].id === 'extra1' && renderSelectQuestion(questions[currentSlide].id)}
-              {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
-            </div>
-            
-            <div className="flex justify-between mt-5">
-              <button
-                onClick={handlePrev}
-                className={`w-[48%] bg-secondary text-secondary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-secondary/80 ${currentSlide === 0 ? 'hidden' : 'inline-block'}`}
-              >
-                Previous
-              </button>
-              <button
-                onClick={handleNext}
-                className="w-[48%] bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90 ml-auto"
-              >
-                {currentSlide === questions.length - 1 ? 'Submit Scorecard' : 'Next'}
-              </button>
-            </div>
+      {showImprove && (
+        <div className="mt-8 p-5 bg-muted rounded-lg text-left">
+          <h2 className="text-heading text-xl mb-4">Do you want to improve the sustainability of your school uniforms?</h2>
+          <div className="space-y-3 mb-4">
+            <label className="flex items-center space-x-2">
+              <input type="radio" name="improve" value="yes" className="border-border" />
+              <span>Yes</span>
+            </label>
+            <label className="flex items-center space-x-2">
+              <input type="radio" name="improve" value="no" className="border-border" />
+              <span>No</span>
+            </label>
           </div>
-        )}
+          <button 
+            onClick={handleImproveSubmit}
+            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+          >
+            Submit
+          </button>
+        </div>
+      )}
 
-        {showImprove && (
-          <div className="mt-8 p-5 bg-muted rounded-lg text-left">
-            <h2 className="text-heading text-xl mb-4">Do you want to improve the sustainability of your school uniforms?</h2>
-            <div className="space-y-3 mb-4">
-              <label className="flex items-center space-x-2">
-                <input type="radio" name="improve" value="yes" className="border-border" />
-                <span>Yes</span>
-              </label>
-              <label className="flex items-center space-x-2">
-                <input type="radio" name="improve" value="no" className="border-border" />
-                <span>No</span>
-              </label>
+      {showFeatures && (
+        <div className="mt-8 p-5 bg-muted rounded-lg text-left">
+          <h2 className="text-heading text-xl mb-4">Select what's important to you:</h2>
+          <ul className="features-list list-none p-0 space-y-2 mb-4">
+            {[
+              'Natural, Sustainable Materials',
+              'Ethical Manufacturing',
+              'Free Uniform Program',
+              'Fully Managed Takeback Scheme',
+              'Feeding Program',
+              'Real-Time Sustainability Dashboard',
+              'Carbon Offsetting',
+              'Educational Programs',
+              'Farm & Factory Visits',
+              'Student Board',
+              'On-Campus School Shops',
+              'E-Commerce Lockers'
+            ].map((feature, index) => (
+              <li key={index} className="flex items-center space-x-2">
+                <input type="checkbox" value={feature.split(' (')[0]} className="rounded border-border" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+          <button 
+            onClick={handleFeaturesSubmit}
+            className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
+          >
+            Submit Priorities
+          </button>
+        </div>
+      )}
+
+      {showResults && (
+        <div className="mt-8 p-5 bg-muted rounded-lg text-center">
+          <h2 className="text-heading text-2xl mb-4">
+            Your Sustainability Score: {score}%
+          </h2>
+          <p className="mb-5 text-foreground">
+            {scoreDescription}
+          </p>
+          
+          {userFeatures.length > 0 && (
+            <div className="mb-6 p-4 bg-background rounded-lg">
+              <h3 className="text-heading text-xl mb-3">You Qualify for a Free Consultation!</h3>
+              <p className="mb-4 text-foreground">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
             </div>
-            <button 
-              onClick={handleImproveSubmit}
-              className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-            >
-              Submit
+          )}
+          
+          <div className="space-y-4">
+            <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
+              <a href="/consultation" className="text-primary-foreground no-underline">
+                Book Your Free Consultation
+              </a>
             </button>
           </div>
-        )}
-
-        {showFeatures && (
-          <div className="mt-8 p-5 bg-muted rounded-lg text-left">
-            <h2 className="text-heading text-xl mb-4">Select what's important to you:</h2>
-            <ul className="features-list list-none p-0 space-y-2 mb-4">
-              {[
-                'Natural, Sustainable Materials',
-                'Ethical Manufacturing',
-                'Free Uniform Program',
-                'Fully Managed Takeback Scheme',
-                'Feeding Program',
-                'Real-Time Sustainability Dashboard',
-                'Carbon Offsetting',
-                'Educational Programs',
-                'Farm & Factory Visits',
-                'Student Board',
-                'On-Campus School Shops',
-                'E-Commerce Lockers'
-              ].map((feature, index) => (
-                <li key={index} className="flex items-center space-x-2">
-                  <input type="checkbox" value={feature.split(' (')[0]} className="rounded border-border" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button 
-              onClick={handleFeaturesSubmit}
-              className="w-full bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-            >
-              Submit Priorities
-            </button>
-          </div>
-        )}
-
-        {showResults && (
-          <div className="mt-8 p-5 bg-muted rounded-lg text-center">
-            <h2 className="text-heading text-2xl mb-4">
-              Your Sustainability Score: {score}%
-            </h2>
-            <p className="mb-5 text-foreground">
-              {scoreDescription}
-            </p>
-            
-            {userFeatures.length > 0 && (
-              <div className="mb-6 p-4 bg-background rounded-lg">
-                <h3 className="text-heading text-xl mb-3">You Qualify for a Free Consultation!</h3>
-                <p className="mb-4 text-foreground">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
-              </div>
-            )}
-            
-            <div className="space-y-4">
-              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
-                <a href="/consultation" className="text-primary-foreground no-underline">
-                  Book Your Free Consultation
-                </a>
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
