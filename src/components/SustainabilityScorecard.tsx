@@ -64,6 +64,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const maxScore = 114;
 
   useEffect(() => {
+    // Check if user data exists in localStorage from homepage form
+    const storedUserData = localStorage.getItem('scorecardUserData');
+    if (storedUserData) {
+      const parsedData = JSON.parse(storedUserData);
+      setUserData(parsedData);
+      setShowEntryForm(false);
+      setShowQuiz(true);
+      localStorage.removeItem('scorecardUserData'); // Clean up
+    }
+
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
     script.onload = () => {
