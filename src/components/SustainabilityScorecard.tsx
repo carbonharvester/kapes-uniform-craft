@@ -266,10 +266,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       
       if (selectedValue) {
         console.log(`✅ Question ${qId} answered`);
-        totalScore += questionWeights[index] * parseInt(selectedValue);
-        const questionObj = questions.find(q => q.id === qId);
-        const answerText = selectedValue === '1' ? 'Yes' : selectedValue === '0' ? 'No/Don\'t Know' : selectedValue;
-        answers.push({ question: questionObj?.text || '', answer: answerText });
+        const scoreValue = selectedValue === '2' ? 0 : parseInt(selectedValue);
+        totalScore += questionWeights[index] * scoreValue;
+        
+        let answerText = '';
+        if (selectedValue === '1') answerText = 'Yes';
+        else if (selectedValue === '0') answerText = 'No';
+        else if (selectedValue === '2') answerText = 'Don\'t Know';
+        else answerText = selectedValue;
+        
+        answers.push({ question: questions.find(q => q.id === qId)?.text || '', answer: answerText });
       } else {
         console.log(`❌ Question ${qId} NOT answered`);
         const questionObj = questions.find(q => q.id === qId);
@@ -366,10 +372,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Carbon offsetting and environmental impact
-    if (formAnswers['q4'] === '0') {
+    if (formAnswers['q4'] === '0' || formAnswers['q4'] === '2') {
       customFeedback.push('Implementing verified carbon offset projects could help mitigate the emissions from uniform production.');
     }
-    if (formAnswers['q3'] === '0') {
+    if (formAnswers['q3'] === '0' || formAnswers['q3'] === '2') {
       customFeedback.push('Tracking water, energy, and carbon usage in production would improve your environmental awareness.');
     }
 
@@ -379,7 +385,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Ethical supply chain
-    if (formAnswers['q10'] === '0' || formAnswers['q11'] === '0' || formAnswers['q12'] === '0') {
+    if (formAnswers['q10'] === '0' || formAnswers['q10'] === '2' || formAnswers['q11'] === '0' || formAnswers['q11'] === '2' || formAnswers['q12'] === '0' || formAnswers['q12'] === '2') {
       customFeedback.push('Strengthen your supply chain by requiring ethical audits, living wage policies, and third-party certifications.');
     }
 
@@ -394,15 +400,15 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Takeback and education
-    if (formAnswers['q13'] === '0') {
+    if (formAnswers['q13'] === '0' || formAnswers['q13'] === '2') {
       customFeedback.push('Adding a uniform collection and resale program would promote circularity.');
     }
-    if (formAnswers['education'] === '0') {
+    if (formAnswers['education'] === '0' || formAnswers['education'] === '2') {
       customFeedback.push('Educating students on fashion impacts could foster greater sustainability engagement.');
     }
 
     // Transparency
-    if (formAnswers['q20'] === '0') {
+    if (formAnswers['q20'] === '0' || formAnswers['q20'] === '2') {
       customFeedback.push('Increasing supply chain transparency for parents and students would build trust.');
     }
 
@@ -637,7 +643,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
           onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
         />
-        <span>Pop-up events (these events usually happen once or twice a year at the school premises)</span>
+        <span>Pop-up events</span>
       </label>
       <label className="flex items-center space-x-2">
         <input 
@@ -731,9 +737,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           <input 
             type="radio" 
             name={questionId} 
-            value="0" 
+            value="2" 
             className="border-border"
-            checked={formAnswers[questionId] === '0'}
+            checked={formAnswers[questionId] === '2'}
             onChange={(e) => handleAnswerChange(questionId, e.target.value)}
           />
           <span>Don't Know</span>
@@ -783,9 +789,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg" ref={formRef}>
-        <h1 className="text-heading text-3xl font-bold mb-5 text-center">
-          Sustainability Scorecard for School Uniforms
-        </h1>
+        {showEntryForm && (
+          <h1 className="text-heading text-3xl font-bold mb-5 text-center">
+            Sustainability Scorecard for School Uniforms
+          </h1>
+        )}
         
         {showEntryForm && (
           <div className="text-left space-y-4">
