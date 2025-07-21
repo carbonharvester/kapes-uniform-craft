@@ -37,7 +37,7 @@ export const FreeAuditTool = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Hidden Sustainability Score</h4>
-                    <p className="text-muted-foreground text-sm">Get an instant 0-100% score revealing how eco-friendly your uniforms really are</p>
+                    <p className="text-muted-foreground text-sm">Get an instant score revealing how eco-friendly your uniforms really are</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
