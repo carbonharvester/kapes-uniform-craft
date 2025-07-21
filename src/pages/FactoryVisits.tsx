@@ -66,7 +66,7 @@ const FactoryVisits = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1200&h=800&fit=crop')",
+          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg')",
           backgroundPosition: "center"
         }}></div>
         
@@ -76,7 +76,7 @@ const FactoryVisits = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-left">
           <div className="max-w-2xl space-y-8">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">Factory Visits</Badge>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Farm & Factory Visits</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               From Classroom to{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
@@ -209,7 +209,7 @@ const FactoryVisits = () => {
           {/* Why It Matters */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why Factory Visits Matter</h2>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why Farm & Factory Visits Matter</h2>
               <p className="text-muted-foreground text-lg">The educational impact</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
