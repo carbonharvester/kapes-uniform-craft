@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-declare global {
-  interface Window {
-    jsPDF: any;
-  }
-}
-
 interface SustainabilityScorecardProps {
   initialData?: {
     name: string;
@@ -20,7 +14,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [showQuiz, setShowQuiz] = useState(!!initialData);
   const [showImprove, setShowImprove] = useState(false);
   const [showFeatures, setShowFeatures] = useState(false);
-  const [showConsultation, setShowConsultation] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [entryError, setEntryError] = useState(false);
@@ -77,13 +70,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       localStorage.removeItem('scorecardUserData'); // Clean up
     }
 
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-    script.onload = () => {
-      console.log('jsPDF loaded');
-    };
-    document.head.appendChild(script);
-
     // Setup exclusive checkboxes
     const makeExclusive = (groupName: string, exclusiveValues: string[]) => {
       const handleChange = () => {
@@ -110,12 +96,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     makeExclusive('materials', ['dont_know']);
     makeExclusive('distribution', ['dont_know']);
     makeExclusive('ai_usage', ['no', 'dont_know']);
-
-    return () => {
-      if (script.parentNode) {
-        document.head.removeChild(script);
-      }
-    };
   }, [showQuiz, currentSlide]);
 
   const handleStart = () => {
@@ -165,15 +145,23 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const processResults = () => {
+    console.log('🔍 Starting form validation and processing...');
+    console.log('📊 Form element:', formRef.current);
+
     let totalScore = 0;
     const answers: Array<{question: string, answer: string}> = [];
     const missingQuestions: string[] = [];
 
     // Materials question
+    console.log('📝 Processing materials question...');
     const materialSelections = formAnswers.materials as string[] || [];
+    console.log('🎯 Materials selections:', materialSelections);
+    
     if (materialSelections.length === 0) {
+      console.log('❌ Materials question NOT answered');
       missingQuestions.push('Materials question');
     } else {
+      console.log('✅ Materials question answered');
       const materialsAnswer = materialSelections.join(', ');
       answers.push({ question: "What materials are your uniforms including PE kits made from? (Select all that apply)", answer: materialsAnswer });
       
@@ -192,23 +180,33 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const questionWeights = [5, 4, 6, 5, 7, 8, 7, 6, 3, 5, 5];
     
     radioQuestions.forEach((qId, index) => {
+      console.log(`📝 Processing question ${qId}...`);
       const selectedValue = formAnswers[qId] as string;
+      console.log(`🎯 Question ${qId} selected:`, selectedValue);
+      
       if (selectedValue) {
+        console.log(`✅ Question ${qId} answered`);
         totalScore += questionWeights[index] * parseInt(selectedValue);
         const questionObj = questions.find(q => q.id === qId);
         const answerText = selectedValue === '1' ? 'Yes' : selectedValue === '0' ? 'No/Don\'t Know' : selectedValue;
         answers.push({ question: questionObj?.text || '', answer: answerText });
       } else {
+        console.log(`❌ Question ${qId} NOT answered`);
         const questionObj = questions.find(q => q.id === qId);
         missingQuestions.push(questionObj?.text || qId);
       }
     });
 
     // Distribution question
+    console.log('📝 Processing distribution question...');
     const distSelections = formAnswers.distribution as string[] || [];
+    console.log('🎯 Distribution selections:', distSelections);
+    
     if (distSelections.length === 0) {
+      console.log('❌ Distribution question NOT answered');
       missingQuestions.push('Distribution question');
     } else {
+      console.log('✅ Distribution question answered');
       const distAnswer = distSelections.join(', ');
       answers.push({ question: "How are uniforms distributed/ordered? (Select all that apply)", answer: distAnswer });
       
@@ -223,10 +221,15 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // AI question
+    console.log('📝 Processing AI question...');
     const aiSelections = formAnswers.ai_usage as string[] || [];
+    console.log('🎯 AI selections:', aiSelections);
+    
     if (aiSelections.length === 0) {
+      console.log('❌ AI question NOT answered');
       missingQuestions.push('AI usage question');
     } else {
+      console.log('✅ AI question answered');
       const aiAnswer = aiSelections.join(', ');
       answers.push({ question: "Do you use AI in your uniform program? (Select all that apply)", answer: aiAnswer });
       
@@ -237,6 +240,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         if (aiSelections.includes('forecast_stock')) totalScore += 3;
       }
     }
+
+    console.log('📊 Validation Summary:');
+    console.log('✅ Questions answered:', 14 - missingQuestions.length);
+    console.log('❌ Missing questions:', missingQuestions.length);
+    console.log('📋 Missing questions list:', missingQuestions);
 
     if (missingQuestions.length > 0) {
       alert(`Please answer the following questions:\n\n${missingQuestions.join('\n')}`);
@@ -267,6 +275,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     setScoreDescription(bodyText);
     setUserAnswers(answers);
 
+    console.log('🎯 Total score:', totalScore);
     console.log('🎉 Form successfully processed!');
     console.log(`📊 Final score: ${percentage}%`);
 
@@ -328,30 +337,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     setUserFeatures(selectedFeatures);
     userAnswers.push({ question: 'Selected features:', answer: selectedFeatures.join(', ') });
     setShowFeatures(false);
-    setShowConsultation(true);
     setShowResults(true);
-  };
-
-  const generateReport = () => {
-    if (!window.jsPDF) {
-      alert('PDF generation not available. Please try again.');
-      return;
-    }
-    
-    const doc = new window.jsPDF();
-    doc.setFontSize(16);
-    doc.text('Kapes Uniforms Sustainability Scorecard Report', 10, 10);
-    doc.setFontSize(12);
-    doc.text(`Name: ${userData.name}`, 10, 20);
-    doc.text(`School: ${userData.school}`, 10, 30);
-    doc.text(`Number of Students: ${userData.students}`, 10, 40);
-    doc.text(`Email: ${userData.email}`, 10, 50);
-    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 60);
-    doc.setFontSize(14);
-    doc.text('Your Sustainability Score', 10, 70);
-    doc.setFontSize(12);
-    doc.text(`Score: ${score}%`, 10, 80);
-    doc.save('Sustainability_Scorecard_Report.pdf');
   };
 
   const handleCheckboxChange = (questionId: string, value: string, checked: boolean) => {
@@ -765,16 +751,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           </div>
         )}
 
-        {showConsultation && (
-          <div className="mt-8 text-center">
-            <h2 className="text-heading text-xl mb-4">You Qualify for a Free Consultation!</h2>
-            <p className="mb-4">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
-            <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
-              <a href="/consultation" className="text-primary-foreground no-underline">Book Free Consultation</a>
-            </button>
-          </div>
-        )}
-
         {showResults && (
           <div className="mt-8 p-5 bg-muted rounded-lg text-center">
             <h2 className="text-heading text-2xl mb-4">
@@ -783,14 +759,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             <p className="mb-5 text-foreground">
               {scoreDescription}
             </p>
+            
+            {userFeatures.length > 0 && (
+              <div className="mb-6 p-4 bg-background rounded-lg">
+                <h3 className="text-heading text-xl mb-3">You Qualify for a Free Consultation!</h3>
+                <p className="mb-4 text-foreground">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
+              </div>
+            )}
+            
             <div className="space-y-4">
-              <button 
-                onClick={generateReport}
-                className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90"
-              >
-                Download Your Personalized Report
-              </button>
-              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90 ml-2">
+              <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
                 <a href="/consultation" className="text-primary-foreground no-underline">
                   Book Your Free Consultation
                 </a>
