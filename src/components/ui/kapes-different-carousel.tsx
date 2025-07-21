@@ -312,7 +312,7 @@ export const KapesDifferentCarousel = () => {
                      >
                        <DialogTrigger asChild>
                          <button
-                            className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm border border-black/30 flex items-center justify-center hover:bg-black/30 transition-all duration-200 hover:scale-110"
+                            className="w-8 h-8 rounded-full bg-white border border-black/20 flex items-center justify-center hover:bg-gray-100 transition-all duration-200 hover:scale-110"
                             onClick={(e) => {
                               e.stopPropagation();
                               setOpenDialog(openDialog === difference.id ? null : difference.id);
