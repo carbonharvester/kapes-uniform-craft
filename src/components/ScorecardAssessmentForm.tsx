@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,21 +7,30 @@ import { FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface UserData {
-  name: string;
   school: string;
-  students: string;
+  country: string;
+  firstName: string;
+  lastName: string;
   email: string;
+  students: string;
 }
 
 export const ScorecardAssessmentForm = () => {
-  const [userData, setUserData] = useState<UserData>({ name: '', school: '', students: '', email: '' });
+  const [userData, setUserData] = useState<UserData>({ 
+    school: '', 
+    country: '', 
+    firstName: '', 
+    lastName: '', 
+    email: '', 
+    students: '' 
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const handleStartAssessment = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!userData.name || !userData.school || !userData.students || !userData.email) {
+    if (!userData.school || !userData.country || !userData.firstName || !userData.lastName || !userData.email || !userData.students) {
       alert('Please fill all fields to start.');
       return;
     }
@@ -54,11 +64,29 @@ export const ScorecardAssessmentForm = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">Contact Name</label>
+            <label className="block text-sm font-medium mb-2">Country</label>
             <Input 
-              placeholder="Your name" 
-              value={userData.name}
-              onChange={(e) => setUserData(prev => ({ ...prev, name: e.target.value }))}
+              placeholder="Your country" 
+              value={userData.country}
+              onChange={(e) => setUserData(prev => ({ ...prev, country: e.target.value }))}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">First Name</label>
+            <Input 
+              placeholder="Your first name" 
+              value={userData.firstName}
+              onChange={(e) => setUserData(prev => ({ ...prev, firstName: e.target.value }))}
+              required
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-2">Last Name</label>
+            <Input 
+              placeholder="Your last name" 
+              value={userData.lastName}
+              onChange={(e) => setUserData(prev => ({ ...prev, lastName: e.target.value }))}
               required
             />
           </div>
