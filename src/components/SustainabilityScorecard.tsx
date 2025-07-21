@@ -291,6 +291,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const formData = {
       name: userData.name,
       email: userData.email,
+      school: userData.school,
+      students: userData.students,
       answers: answers,
       score: percentage
     };
