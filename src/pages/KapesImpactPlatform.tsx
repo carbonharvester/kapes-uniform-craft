@@ -264,7 +264,7 @@ const KapesImpactPlatform = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Future of Sustainable Education?
             </h2>
-            <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
               Join forward-thinking schools already using KapesImpact™ to showcase their 
               environmental leadership and inspire their communities.
             </p>
