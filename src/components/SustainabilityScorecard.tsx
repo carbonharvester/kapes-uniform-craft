@@ -60,7 +60,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' }
   ];
 
-  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 4, 15, 5, 5, 6]; // Combined materials (36), simplified LCA (5), carbon offset (4), packaging (6), suppliers disclose (5), audited (7), policy living wages (8), certifications (7), collect used (6), social causes (3), combined distribution (15), tested chemicals (5), transparency (5), combined AI (6)
+  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 15, 5, 5, 6]; // 14 scored questions
   const maxScore = 114;
 
   useEffect(() => {
@@ -248,7 +248,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
     answered++;
 
-    if (answered < 15) {
+    if (answered < 14) {
       alert('Please answer all sustainability questions.');
       return;
     }
