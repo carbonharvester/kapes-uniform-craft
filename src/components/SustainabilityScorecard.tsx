@@ -6,8 +6,7 @@ import { CheckCircle, ArrowRight, ArrowLeft, Trophy, Target, Lightbulb } from 'l
 
 interface SustainabilityScorecardProps {
   initialData?: {
-    firstName: string;
-    surname: string;
+    name: string;
     school: string;
     students: string;
     email: string;
@@ -25,8 +24,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [sent, setSent] = useState(false);
 
   const [userData, setUserData] = useState({
-    firstName: initialData?.firstName || '',
-    surname: initialData?.surname || '',
+    name: initialData?.name || '',
     school: initialData?.school || '',
     country: '',
     students: initialData?.students || '',
@@ -143,8 +141,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       // Create a simplified data structure
       const formData = {
         // User information
-        firstName: userData.firstName,
-        surname: userData.surname,
+        name: userData.name,
         email: userData.email,
         school: userData.school,
         country: userData.country,
@@ -192,7 +189,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   }, [showResults, sent, userData, score, userAnswers, questions]);
 
   const handleStart = () => {
-    if (!userData.firstName || !userData.surname || !userData.school || !userData.country || !userData.students || !userData.email) {
+    if (!userData.name || !userData.school || !userData.country || !userData.students || !userData.email) {
       setEntryError(true);
       return;
     }
@@ -855,23 +852,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           <CardContent className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">First Name</label>
+                <label className="text-sm font-semibold text-foreground">Your Name</label>
                 <input
                   type="text"
-                  placeholder="Enter your first name"
-                  value={userData.firstName}
-                  onChange={(e) => setUserData({...userData, firstName: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter your last name"
-                  value={userData.surname}
-                  onChange={(e) => setUserData({...userData, surname: e.target.value})}
+                  placeholder="Enter your name"
+                  value={userData.name}
+                  onChange={(e) => setUserData({...userData, name: e.target.value})}
                   className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   required
                 />
