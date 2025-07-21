@@ -1,36 +1,10 @@
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { CheckCircle, Star, Users, Leaf, ShoppingBag, Award, ArrowRight, ArrowLeft, FileText, Calendar, Mail, Building2, GraduationCap } from "lucide-react";
+import React, { useState, useEffect } from 'react';
 import jsPDF from 'jspdf';
-
-interface Question {
-  id: string;
-  text: string;
-  options: { text: string; value: string }[];
-  chapter?: string;
-}
-
-interface UserData {
-  name: string;
-  school: string;
-  students: string;
-  email: string;
-}
-
-interface UserAnswer {
-  question: string;
-  answer: string;
-}
 
 const SustainabilityScorecard: React.FC = () => {
   const [showAssessment, setShowAssessment] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [userData, setUserData] = useState<UserData>({
+  const [userData, setUserData] = useState({
     name: '',
     school: '',
     students: '',
@@ -39,58 +13,71 @@ const SustainabilityScorecard: React.FC = () => {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResults, setShowResults] = useState(false);
   const [score, setScore] = useState(0);
-  const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
+  const [userAnswers, setUserAnswers] = useState<Array<{ question: string; answer: string }>>([]);
   const [entryError, setEntryError] = useState(false);
+  const [showImproveSection, setShowImproveSection] = useState(false);
+  const [showFeaturesSection, setShowFeaturesSection] = useState(false);
+  const [showConsultationQualify, setShowConsultationQualify] = useState(false);
 
-  // Check for user data from localStorage on component mount
-  React.useEffect(() => {
-    const storedUserData = localStorage.getItem('scorecardUserData');
-    if (storedUserData) {
-      try {
-        const parsedData = JSON.parse(storedUserData);
-        setUserData(parsedData);
-        setShowAssessment(true);
-        // Clear the stored data after using it
-        localStorage.removeItem('scorecardUserData');
-      } catch (error) {
-        console.error('Error parsing stored user data:', error);
-      }
-    }
-  }, []);
-
-  const questions: Question[] = [
-    { id: 'q1', text: 'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?', options: [{ text: 'Yes', value: '0' }, { text: 'No', value: '4' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q2', text: 'Are your uniforms made using conventional cotton?', options: [{ text: 'Yes', value: '0' }, { text: 'No', value: '4' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q3', text: 'Have you conducted an LCA to calculate the environmental impact of your uniforms? This would include the use of water and energy, and the CO2 emitted.', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q4', text: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q5', text: 'Do you buy carbon credits to offset the impact of your uniforms?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q6', text: 'Do you use organic cotton as a primary material?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q7', text: 'Do you use recycled polyester as a primary material?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q8', text: 'Do you use hemp, bamboo, or lyocell as primary materials?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q9', text: 'Are your uniforms packaged in biodegradable or recyclable materials?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q10', text: 'Do you require your suppliers to disclose their environmental impact?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q11', text: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q12', text: 'Do you have a policy in place to ensure fair wages for all workers in the supply chain?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q13', text: 'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q14', text: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q15', text: 'Does your school collect and resell or giveaway used uniforms?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q16', text: 'Does your uniform program support any social causes?', options: [{ text: 'Yes', value: '1' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q17', text: 'Does your school have a uniform shop?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q18', text: 'Does your supplier have a shop?', options: [{ text: 'Yes', value: '0' }, { text: 'No', value: '2' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q19', text: 'Do you have online ordering for uniforms?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q20', text: 'Can parents pick up at school?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q21', text: 'Have your uniforms been tested for harmful or banned chemicals?', options: [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q22', text: 'Do your students, parents, and staff have full transparency of your supply chain?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q23', text: 'Do you or your supplier use AI for uniform sizing to reduce returns?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    { id: 'q24', text: 'Do you or your supplier use AI to forecast uniform stock needs?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
-    
-    // Readiness questions
-    { id: 'readiness1', text: 'Are you planning to review your uniform policy in the next 12 months?', options: [{ text: 'Yes', value: 'yes' }, { text: 'No', value: 'no' }, { text: 'Maybe', value: 'maybe' }], chapter: 'Readiness to Switch' },
-    { id: 'readiness2', text: 'Is there internal support (e.g., from leadership, parents) for switching to sustainable uniforms?', options: [{ text: 'Strong support', value: 'strong' }, { text: 'Moderate support', value: 'moderate' }, { text: 'Low/No support', value: 'low' }] },
-    { id: 'readiness3', text: "What's your timeline for adopting sustainable uniforms?", options: [{ text: 'Within 6 months', value: 'immediate' }, { text: '6-12 months', value: 'short' }, { text: 'Over 12 months', value: 'long' }, { text: 'No plans', value: 'none' }] },
+  const questions = [
+    'Are your uniforms made using virgin synthetic fibres such as polyester, nylon, etc?',
+    'Are your uniforms made using conventional cotton?',
+    'Have you conducted an LCA to calculate the environmental impact of your uniforms? This would include the use of water and energy, and the CO2 emitted.',
+    'Do you offset the environmental impact of the uniforms through verified carbon offset projects?',
+    'Do you buy carbon credits to offset the impact of your uniforms?',
+    'Do you use organic cotton as a primary material?',
+    'Do you use recycled polyester as a primary material?',
+    'Do you use hemp, bamboo, or lyocell as primary materials?',
+    'Are your uniforms packaged in biodegradable or recyclable materials?',
+    'Do you require your suppliers to disclose their environmental impact?',
+    'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?',
+    'Do you have a policy in place to ensure fair wages for all workers in the supply chain?',
+    'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?',
+    'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?',
+    'Does your school collect and resell or giveaway used uniforms?',
+    'Does your uniform program support any social causes?',
+    'Does your school have a uniform shop?',
+    'Does your supplier have a shop?',
+    'Do you have online ordering for uniforms?',
+    'Can parents pick up at school?',
+    'Have your uniforms been tested for harmful or banned chemicals?',
+    'Do your students, parents, and staff have full transparency of your supply chain?',
+    'Do you or your supplier use AI for uniform sizing to reduce returns?',
+    'Do you or your supplier use AI to forecast uniform stock needs?',
+    'Are you planning to review your uniform policy in the next 12 months?',
+    'Is there internal support (e.g., from leadership, parents) for switching to sustainable uniforms?',
+    "What's your timeline for adopting sustainable uniforms?"
   ];
 
-  const totalQuestions = questions.length;
+  const questionOptions = [
+    [{ text: 'Yes', value: '0' }, { text: 'No', value: '4' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '0' }, { text: 'No', value: '4' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '1' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '0' }, { text: 'No', value: '2' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '4' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }],
+    [{ text: 'Yes', value: 'yes' }, { text: 'No', value: 'no' }, { text: 'Maybe', value: 'maybe' }],
+    [{ text: 'Strong support', value: 'strong' }, { text: 'Moderate support', value: 'moderate' }, { text: 'Low/No support', value: 'low' }],
+    [{ text: 'Within 6 months', value: 'immediate' }, { text: '6-12 months', value: 'short' }, { text: 'Over 12 months', value: 'long' }, { text: 'No plans', value: 'none' }]
+  ];
 
   const handleStartAssessment = () => {
     if (!userData.name || !userData.school || !userData.students || !userData.email) {
@@ -101,34 +88,23 @@ const SustainabilityScorecard: React.FC = () => {
     setShowAssessment(true);
   };
 
-  const handleAnswer = (questionId: string, value: string) => {
+  const handleAnswer = (questionIndex: number, value: string) => {
     setAnswers(prev => ({
       ...prev,
-      [questionId]: value
+      [`q${questionIndex + 1}`]: value
     }));
   };
 
   const handleNext = () => {
-    const currentQ = questions[currentSlide];
-    const selected = answers[currentQ.id];
-
-    // Require answers for sustainability questions (Q1-Q24), allow optional for others
+    const selected = answers[`q${currentSlide + 1}`];
+    
     if (!selected && currentSlide < 24) {
       alert('Please answer the question to proceed.');
       return;
     }
 
-    if (currentSlide === totalQuestions - 1) {
-      // Validate that all required readiness questions are answered
-      const readinessQuestions = ['readiness1', 'readiness2', 'readiness3'];
-      const missingReadiness = readinessQuestions.some(id => !answers[id]);
-      
-      if (missingReadiness) {
-        alert('Please answer all readiness questions.');
-        return;
-      }
-      
-      calculateResults();
+    if (currentSlide === questions.length - 1) {
+      processResults();
     } else {
       setCurrentSlide(prev => prev + 1);
     }
@@ -140,50 +116,49 @@ const SustainabilityScorecard: React.FC = () => {
     }
   };
 
-  const calculateResults = () => {
+  const processResults = () => {
     let score = 0;
     let answered = 0;
-    const answeredQuestions: UserAnswer[] = [];
+    const answeredQuestions: Array<{ question: string; answer: string }> = [];
+    const weights = [4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 4, 1, 2, 0, 2, 2, 2];
 
-    // Calculate score from Q1-Q24 only (sustainability questions)  
-    const weights = [4, 4, 4, 2, 2, 4, 4, 4, 4, 2, 2, 2, 2, 2, 4, 1, 2, 0, 2, 2, 4, 2, 2, 2];
-    
-    for (let i = 1; i <= 24; i++) {
-      const questionId = `q${i}`;
-      const selected = answers[questionId];
+    for (let i = 1; i <= 21; i++) {
+      const selected = answers[`q${i}`];
       if (selected) {
         score += parseInt(selected) * weights[i-1];
         answered++;
-        const question = questions.find(q => q.id === questionId);
-        const option = question?.options.find(opt => opt.value === selected);
+        const selectedOption = questionOptions[i-1].find(opt => opt.value === selected);
         answeredQuestions.push({
-          question: question?.text || '',
-          answer: option?.text || ''
+          question: questions[i-1],
+          answer: selectedOption?.text || ''
         });
       }
     }
 
-    if (answered < 24) {
-      alert('Please answer all 24 sustainability questions.');
+    if (answered < 21) {
+      alert('Please answer all 21 sustainability questions.');
       return;
     }
 
-
     // Add readiness questions
-    ['readiness1', 'readiness2', 'readiness3'].forEach(id => {
-      const selected = answers[id];
-      const question = questions.find(q => q.id === id);
-      const option = question?.options.find(opt => opt.value === selected);
+    for (let i = 25; i <= 27; i++) {
+      const selected = answers[`q${i}`];
+      if (!selected) {
+        alert('Please answer all readiness questions.');
+        return;
+      }
+      const selectedOption = questionOptions[i-1].find(opt => opt.value === selected);
       answeredQuestions.push({
-        question: question?.text || '',
-        answer: option?.text || ''
+        question: questions[i-1],
+        answer: selectedOption?.text || ''
       });
-    });
+    }
 
-    const percentage = Math.round((score / 48) * 100);
+    const percentage = Math.min(Math.round((score / 48) * 100), 100);
     setScore(percentage);
     setUserAnswers(answeredQuestions);
     setShowResults(true);
+    setShowAssessment(false);
 
     // Send data to Google Sheet
     const formData = {
@@ -202,6 +177,47 @@ const SustainabilityScorecard: React.FC = () => {
     }).catch(error => {
       console.error('Error sending data:', error);
     });
+  };
+
+  const generateReport = () => {
+    // @ts-ignore
+    const { jsPDF } = window.jspdf || { jsPDF };
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text('Kapes Uniforms Sustainability Scorecard Report', 10, 10);
+    doc.setFontSize(12);
+    doc.text(`Name: ${userData.name}`, 10, 20);
+    doc.text(`School: ${userData.school}`, 10, 30);
+    doc.text(`Number of Students: ${userData.students}`, 10, 40);
+    doc.text(`Email: ${userData.email}`, 10, 50);
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 60);
+    doc.setFontSize(14);
+    doc.text('Your Sustainability Score', 10, 70);
+    doc.setFontSize(12);
+    doc.text(`Score: ${score}%`, 10, 80);
+    doc.setFontSize(14);
+    doc.text('Your Answers and Recommendations', 10, 90);
+    doc.setFontSize(12);
+    
+    let y = 100;
+    userAnswers.forEach((ans, index) => {
+      doc.text(`${index + 1}. Question: ${ans.question}`, 10, y);
+      doc.text(`Answer: ${ans.answer}`, 10, y + 5);
+      let recommendation = index < 21 ? getRecommendation(index + 1, ans.answer) : 'Book a consultation to discuss your next steps for adopting sustainable uniforms.';
+      doc.text(`Recommendation: ${recommendation}`, 10, y + 10);
+      y += 20;
+      if (y > 270) {
+        doc.addPage();
+        y = 10;
+      }
+    });
+
+    doc.text('Next Steps', 10, y);
+    y += 10;
+    doc.text('Book a free consultation to discuss how Kapes Uniforms can help you improve your uniform program.', 10, y, { maxWidth: 180 });
+    doc.text('Visit: /consultation', 10, y + 10);
+
+    doc.save('Sustainability_Scorecard_Report.pdf');
   };
 
   const getRecommendation = (questionNum: number, answer: string): string => {
@@ -228,9 +244,6 @@ const SustainabilityScorecard: React.FC = () => {
         case 19: return 'Offer online ordering to reduce visits.';
         case 20: return 'Enable pickup at school to cut shipping.';
         case 21: return 'Test for harmful chemicals to protect health.';
-        case 22: return 'Provide full transparency of supply chain.';
-        case 23: return 'Use AI for sizing to reduce returns.';
-        case 24: return 'Use AI for stock forecasting to avoid waste.';
         default: return 'Book a consultation to discuss improvements.';
       }
     } else {
@@ -238,72 +251,148 @@ const SustainabilityScorecard: React.FC = () => {
     }
   };
 
-  const generateReport = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(16);
-    doc.text('Kapes Uniforms Sustainability Scorecard Report', 10, 10);
-    doc.setFontSize(12);
-    doc.text(`Name: ${userData.name}`, 10, 20);
-    doc.text(`School: ${userData.school}`, 10, 30);
-    doc.text(`Number of Students: ${userData.students}`, 10, 40);
-    doc.text(`Email: ${userData.email}`, 10, 50);
-    doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, 60);
-    
-    doc.setFontSize(14);
-    doc.text('Your Sustainability Score', 10, 70);
-    doc.setFontSize(12);
-    doc.text(`Score: ${score}%`, 10, 80);
-    
-    doc.setFontSize(14);
-    doc.text('Your Answers and Recommendations', 10, 90);
-    doc.setFontSize(12);
-    
-    let y = 100;
-    userAnswers.forEach((ans, index) => {
-      doc.text(`${index + 1}. Question: ${ans.question}`, 10, y);
-      doc.text(`Answer: ${ans.answer}`, 10, y + 5);
-      let recommendation = index < 24 ? getRecommendation(index + 1, ans.answer) : 'Book a consultation to discuss your next steps for adopting sustainable uniforms.';
-      doc.text(`Recommendation: ${recommendation}`, 10, y + 10);
-      y += 20;
-      if (y > 270) {
-        doc.addPage();
-        y = 10;
-      }
-    });
-
-    doc.text('Next Steps', 10, y);
-    y += 10;
-    doc.text('Book a free consultation to discuss how Kapes Uniforms can help you improve your uniform program.', 10, y, { maxWidth: 180 });
-    doc.text('Visit: /consultation', 10, y + 10);
-
-    doc.save('Sustainability_Scorecard_Report.pdf');
-  };
-
   const getScoreDescription = (score: number): string => {
     if (score < 33) {
-      return 'Your low score is due to reliance on traditional materials and lack of transparency. To improve, switch to eco-friendly fabrics and ethical audits.';
+      return 'Your low score is likely due to reliance on traditional materials and lack of transparency or ethical audits. To improve, focus on sustainable fabrics and supply chain practices.';
     } else if (score < 67) {
       return 'Your medium score shows some positive steps but gaps in offsetting and distribution. Enhance by adding AI tools and takeback programs.';
     } else {
-      return 'Your high score reflects strong practices. To maximize, focus on advanced transparency and technology.';
+      return 'Your high score reflects strong practices. To maximize, double down on transparency and technology.';
+    }
+  };
+
+  const styles = {
+    container: {
+      fontFamily: 'Arial, sans-serif',
+      margin: 0,
+      padding: 0,
+      color: '#333',
+      background: '#f9f9f9',
+      textAlign: 'center' as const
+    },
+    scorecardContainer: {
+      maxWidth: '700px',
+      margin: '50px auto',
+      padding: '20px',
+      background: '#fff',
+      borderRadius: '10px',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
+    },
+    h1: {
+      color: '#4CAF50',
+      fontSize: '28px',
+      marginBottom: '20px'
+    },
+    h2: {
+      color: '#4CAF50',
+      fontSize: '20px',
+      marginBottom: '15px'
+    },
+    entryForm: {
+      textAlign: 'left' as const
+    },
+    input: {
+      width: '100%',
+      padding: '10px',
+      marginBottom: '15px',
+      border: '1px solid #ddd',
+      borderRadius: '5px'
+    },
+    button: {
+      background: '#4CAF50',
+      color: 'white',
+      padding: '12px 20px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '16px',
+      transition: 'background 0.3s',
+      width: '100%'
+    },
+    buttonHover: {
+      background: '#45a049'
+    },
+    quizSection: {
+      display: showAssessment ? 'block' : 'none',
+      textAlign: 'left' as const
+    },
+    question: {
+      marginBottom: '30px'
+    },
+    label: {
+      display: 'block',
+      marginBottom: '10px',
+      fontWeight: 'bold'
+    },
+    radioGroup: {
+      marginBottom: '10px'
+    },
+    radioLabel: {
+      fontWeight: 'normal',
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: '5px'
+    },
+    radioInput: {
+      marginRight: '10px'
+    },
+    results: {
+      display: showResults ? 'block' : 'none',
+      marginTop: '30px',
+      padding: '20px',
+      background: '#f0f0f0',
+      borderRadius: '10px',
+      textAlign: 'center' as const
+    },
+    resultScore: {
+      fontSize: '28px',
+      color: '#4CAF50',
+      marginBottom: '20px'
+    },
+    consultationBtn: {
+      marginTop: '20px'
+    },
+    error: {
+      color: 'red',
+      marginBottom: '15px',
+      display: entryError ? 'block' : 'none',
+      textAlign: 'center' as const
+    },
+    progress: {
+      fontSize: '14px',
+      color: '#666',
+      marginBottom: '20px',
+      textAlign: 'center' as const
+    },
+    navButtons: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginTop: '20px'
+    },
+    navButton: {
+      width: '48%',
+      background: '#4CAF50',
+      color: 'white',
+      padding: '12px 20px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      fontSize: '16px'
     }
   };
 
   if (showResults) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center py-12">
-        <div className="max-w-2xl w-full mx-auto p-6 bg-card rounded-lg shadow-lg">
-          <div className="text-center space-y-6">
-            <h2 className="text-4xl font-bold text-primary">Your Sustainability Score: {score}%</h2>
-            <p className="text-muted-foreground">{getScoreDescription(score)}</p>
-            
-            <div className="space-y-4">
-              <Button onClick={generateReport} className="w-full">
-                Download Your Personalized Report
-              </Button>
-              <Button className="w-full" asChild>
-                <a href="/consultation">Book Your Free Consultation</a>
-              </Button>
+      <div style={styles.container}>
+        <div style={styles.scorecardContainer}>
+          <div style={styles.results}>
+            <h2 style={{...styles.h2, fontSize: '24px'}}>Your Sustainability Score: <span style={styles.resultScore}>{score}%</span></h2>
+            <p style={{marginBottom: '20px'}}>{getScoreDescription(score)}</p>
+            <div style={{marginTop: '20px'}}>
+              <button style={styles.button} onClick={generateReport}>Download Your Personalized Report</button>
+            </div>
+            <div style={styles.consultationBtn}>
+              <button style={styles.button}><a href="/consultation" style={{color: 'white', textDecoration: 'none'}}>Book Your Free Consultation</a></button>
             </div>
           </div>
         </div>
@@ -313,47 +402,46 @@ const SustainabilityScorecard: React.FC = () => {
 
   if (showAssessment) {
     const currentQuestion = questions[currentSlide];
-    const chapterTitle = currentQuestion.chapter || '';
+    const options = questionOptions[currentSlide];
     
     return (
-      <div className="min-h-screen bg-background py-12">
-        <div className="max-w-2xl mx-auto p-6">
-          {chapterTitle && (
-            <h2 className="text-xl font-semibold text-primary mb-4">{chapterTitle}</h2>
-          )}
-          
-          <div className="bg-card rounded-lg shadow-lg p-6 space-y-6">
-            <div className="text-center text-sm text-muted-foreground">
-              Question {currentSlide + 1} of {totalQuestions}
-            </div>
-            
-            <div className="space-y-4">
-              <h3 className="text-lg font-medium">{currentQuestion.text}</h3>
-              
-              <RadioGroup
-                value={answers[currentQuestion.id] || ''}
-                onValueChange={(value) => handleAnswer(currentQuestion.id, value)}
-              >
-                {currentQuestion.options.map((option) => (
-                  <div key={option.value} className="flex items-center space-x-2">
-                    <RadioGroupItem value={option.value} id={option.value} />
-                    <Label htmlFor={option.value}>{option.text}</Label>
-                  </div>
+      <div style={styles.container}>
+        <div style={styles.scorecardContainer}>
+          <div style={styles.quizSection}>
+            {currentSlide === 24 && <h2 style={styles.h2}>Readiness to Switch</h2>}
+            <div style={styles.question}>
+              <label style={styles.label}>{currentQuestion}</label>
+              <div style={styles.radioGroup}>
+                {options.map((option, index) => (
+                  <label key={index} style={styles.radioLabel}>
+                    <input 
+                      type="radio" 
+                      name={`q${currentSlide + 1}`} 
+                      value={option.value}
+                      checked={answers[`q${currentSlide + 1}`] === option.value}
+                      onChange={(e) => handleAnswer(currentSlide, e.target.value)}
+                      style={styles.radioInput}
+                    />
+                    {option.text}
+                  </label>
                 ))}
-              </RadioGroup>
+              </div>
             </div>
-            
-            <div className="flex justify-between pt-6">
-              <Button 
-                variant="outline" 
+            <div style={styles.navButtons}>
+              <button 
+                type="button" 
+                style={{...styles.navButton, display: currentSlide === 0 ? 'none' : 'inline-block'}}
                 onClick={handlePrevious}
-                disabled={currentSlide === 0}
               >
                 Previous
-              </Button>
-              <Button onClick={handleNext}>
-                {currentSlide === totalQuestions - 1 ? 'Submit Scorecard' : 'Next'}
-              </Button>
+              </button>
+              <button 
+                type="button" 
+                style={styles.navButton}
+                onClick={handleNext}
+              >
+                {currentSlide === questions.length - 1 ? 'Submit Scorecard' : 'Next'}
+              </button>
             </div>
           </div>
         </div>
@@ -362,58 +450,47 @@ const SustainabilityScorecard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto p-6">
-        <div className="bg-card rounded-lg shadow-lg p-6 space-y-6">
-          <div className="text-center space-y-4">
-            <h1 className="text-3xl font-bold text-primary">Sustainability Scorecard for School Uniforms</h1>
-            <p className="text-muted-foreground">
-              Enter your details to access the scorecard. Answer questions one by one to assess your school's uniform sustainability. 
-              At the end, get your score, a report, and book a consultation.
-            </p>
-          </div>
-          
-          <div className="space-y-4">
-            <Input
-              type="text"
-              placeholder="Your Name"
-              value={userData.name}
-              onChange={(e) => setUserData({...userData, name: e.target.value})}
-              required
-            />
-            <Input
-              type="text"
-              placeholder="School Name"
-              value={userData.school}
-              onChange={(e) => setUserData({...userData, school: e.target.value})}
-              required
-            />
-            <Input
-              type="number"
-              placeholder="Number of Students"
-              value={userData.students}
-              onChange={(e) => setUserData({...userData, students: e.target.value})}
-              min="1"
-              required
-            />
-            <Input
-              type="email"
-              placeholder="Your Email"
-              value={userData.email}
-              onChange={(e) => setUserData({...userData, email: e.target.value})}
-              required
-            />
-            
-            {entryError && (
-              <div className="text-destructive text-center">
-                Please fill all fields to start.
-              </div>
-            )}
-            
-            <Button onClick={handleStartAssessment} className="w-full">
-              Start Scorecard
-            </Button>
-          </div>
+    <div style={styles.container}>
+      <div style={styles.scorecardContainer}>
+        <h1 style={styles.h1}>Sustainability Scorecard for School Uniforms</h1>
+        <p>Enter your details to access the scorecard. Answer questions one by one to assess your school's uniform sustainability. At the end, get your score, a report, and book a consultation.</p>
+        
+        <div style={styles.entryForm}>
+          <input 
+            type="text" 
+            placeholder="Your Name" 
+            value={userData.name}
+            onChange={(e) => setUserData({...userData, name: e.target.value})}
+            style={styles.input}
+            required 
+          />
+          <input 
+            type="text" 
+            placeholder="School Name" 
+            value={userData.school}
+            onChange={(e) => setUserData({...userData, school: e.target.value})}
+            style={styles.input}
+            required 
+          />
+          <input 
+            type="number" 
+            min="1" 
+            placeholder="Number of Students" 
+            value={userData.students}
+            onChange={(e) => setUserData({...userData, students: e.target.value})}
+            style={styles.input}
+            required 
+          />
+          <input 
+            type="email" 
+            placeholder="Your Email" 
+            value={userData.email}
+            onChange={(e) => setUserData({...userData, email: e.target.value})}
+            style={styles.input}
+            required 
+          />
+          <div style={styles.error}>Please fill all fields to start.</div>
+          <button type="button" style={styles.button} onClick={handleStartAssessment}>Start Scorecard</button>
         </div>
       </div>
     </div>
