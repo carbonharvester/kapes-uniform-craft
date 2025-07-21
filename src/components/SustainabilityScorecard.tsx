@@ -26,6 +26,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [userData, setUserData] = useState({
     name: initialData?.name || '',
     school: initialData?.school || '',
+    country: '',
     students: initialData?.students || '',
     email: initialData?.email || ''
   });
@@ -143,6 +144,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         name: userData.name,
         email: userData.email,
         school: userData.school,
+        country: userData.country,
         students: userData.students,
         score: score,
         timestamp: new Date().toISOString(),
@@ -187,7 +189,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   }, [showResults, sent, userData, score, userAnswers, questions]);
 
   const handleStart = () => {
-    if (!userData.name || !userData.school || !userData.students || !userData.email) {
+    if (!userData.name || !userData.school || !userData.country || !userData.students || !userData.email) {
       setEntryError(true);
       return;
     }
@@ -867,6 +869,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter school name"
                   value={userData.school}
                   onChange={(e) => setUserData({...userData, school: e.target.value})}
+                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-foreground">Country</label>
+                <input
+                  type="text"
+                  placeholder="Enter country"
+                  value={userData.country}
+                  onChange={(e) => setUserData({...userData, country: e.target.value})}
                   className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                   required
                 />
