@@ -84,11 +84,6 @@ const SustainabilityScorecard: React.FC = () => {
     { id: 'q23', text: 'Do you or your supplier use AI for uniform sizing to reduce returns?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
     { id: 'q24', text: 'Do you or your supplier use AI to forecast uniform stock needs?', options: [{ text: 'Yes', value: '2' }, { text: 'No', value: '0' }, { text: "Don't Know", value: '0' }] },
     
-    // Non-scored questions
-    { id: 'nonscored1', text: 'Does your school value sustainability?', options: [{ text: 'Very High', value: 'very-high' }, { text: 'High', value: 'high' }, { text: 'Medium', value: 'medium' }, { text: 'Low', value: 'low' }] },
-    { id: 'nonscored2', text: 'Would you like to improve the sustainability of your uniforms?', options: [{ text: 'Yes', value: 'yes' }, { text: 'No', value: 'no' }, { text: 'Maybe', value: 'maybe' }] },
-    { id: 'nonscored3', text: 'Would you consider switching to sustainable uniforms for next academic year?', options: [{ text: 'Yes', value: 'yes' }, { text: 'No', value: 'no' }, { text: 'Maybe', value: 'maybe' }] },
-    
     // Readiness questions
     { id: 'readiness1', text: 'Are you planning to review your uniform policy in the next 12 months?', options: [{ text: 'Yes', value: 'yes' }, { text: 'No', value: 'no' }, { text: 'Maybe', value: 'maybe' }], chapter: 'Readiness to Switch' },
     { id: 'readiness2', text: 'Is there internal support (e.g., from leadership, parents) for switching to sustainable uniforms?', options: [{ text: 'Strong support', value: 'strong' }, { text: 'Moderate support', value: 'moderate' }, { text: 'Low/No support', value: 'low' }] },
@@ -173,16 +168,6 @@ const SustainabilityScorecard: React.FC = () => {
       return;
     }
 
-    // Add non-scored questions
-    ['nonscored1', 'nonscored2', 'nonscored3'].forEach(id => {
-      const selected = answers[id];
-      const question = questions.find(q => q.id === id);
-      const option = question?.options.find(opt => opt.value === selected);
-      answeredQuestions.push({
-        question: question?.text || '',
-        answer: option?.text || 'Not Answered'
-      });
-    });
 
     // Add readiness questions
     ['readiness1', 'readiness2', 'readiness3'].forEach(id => {
@@ -296,11 +281,11 @@ const SustainabilityScorecard: React.FC = () => {
 
   const getScoreDescription = (score: number): string => {
     if (score < 33) {
-      return 'Your low score is likely due to use of conventional materials and lack of ethical audits, leading to higher environmental impact. To improve, switch to organic fabrics and implement transparency measures.';
+      return 'Your low score is due to reliance on traditional materials and lack of transparency. To improve, switch to eco-friendly fabrics and ethical audits.';
     } else if (score < 67) {
-      return 'Your medium score reflects some positive steps but gaps in offsetting and distribution. Enhance by adding AI tools and takeback programs to reduce waste.';
+      return 'Your medium score shows some positive steps but gaps in offsetting and distribution. Enhance by adding AI tools and takeback programs.';
     } else {
-      return 'Your high score shows strong practices in materials and ethics. To maximize, double down on AI trends and full supply chain transparency.';
+      return 'Your high score reflects strong practices. To maximize, focus on advanced transparency and technology.';
     }
   };
 
