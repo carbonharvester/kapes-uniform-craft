@@ -126,35 +126,61 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   useEffect(() => {
     if (showResults && !sent) {
+      console.log('📤 Sending data to Google Sheets...');
+      console.log('👤 User data:', userData);
+      console.log('📊 Score:', score);
+      console.log('📝 User answers:', userAnswers);
+
       const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
-      const formData: Record<string, any> = {
+      
+      // Create a simplified data structure
+      const formData = {
+        // User information
         name: userData.name,
         email: userData.email,
         school: userData.school,
         students: userData.students,
         score: score,
+        timestamp: new Date().toISOString(),
+        
+        // Answers - send as key-value pairs using question IDs
+        answers: {}
       };
 
+      // Add all answers using question IDs as keys
       userAnswers.forEach(({ question, answer }) => {
-        const col = columnNames[question];
-        if (col) {
-          formData[col.replace(/ /g, '_')] = answer;
+        // Find the question ID for this question text
+        const questionObj = questions.find(q => q.text === question);
+        if (questionObj) {
+          formData.answers[questionObj.id] = answer;
+        } else {
+          // Handle special questions that aren't in the main questions array
+          if (question === 'Do you want to improve the sustainability of your school uniforms?') {
+            formData.answers['wants_improvement'] = answer;
+          } else if (question === 'Selected features:') {
+            formData.answers['selected_features'] = answer;
+          }
         }
       });
 
+      console.log('📦 Final form data being sent:', formData);
+
       fetch(sheetURL, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
         mode: 'no-cors'
       }).then(() => {
-        console.log('Data sent to Google Sheet');
+        console.log('✅ Data sent to Google Sheet successfully');
       }).catch(error => {
-        console.error('Error sending data:', error);
+        console.error('❌ Error sending data to Google Sheet:', error);
       });
 
       setSent(true);
     }
-  }, [showResults, sent, userData, score, userAnswers]);
+  }, [showResults, sent, userData, score, userAnswers, questions]);
 
   const handleStart = () => {
     if (!userData.name || !userData.school || !userData.students || !userData.email) {
