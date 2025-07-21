@@ -3,7 +3,7 @@ import { KapesDifferentCarousel } from "@/components/ui/kapes-different-carousel
 
 export const WhatMakesKapesDifferent = () => {
   return (
-    <section className="py-16 bg-gradient-from-warm relative">
+    <section className="py-16 bg-white relative">
       <div className="relative z-10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
