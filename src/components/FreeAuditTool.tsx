@@ -73,7 +73,7 @@ export const FreeAuditTool = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Zero Cost, High Reward</h4>
-                    <p className="text-muted-foreground text-sm">Just 5-10 minutes for insights that save money, reduce waste, and enhance reputation</p>
+                    <p className="text-muted-foreground text-sm">Just 5 minutes for insights that save money, reduce waste, and enhance reputation</p>
                   </div>
                 </div>
               </div>
