@@ -291,15 +291,15 @@ export const KapesDifferentCarousel = () => {
                     backgroundPosition: difference.id === "takeback" ? "center top" : "center"
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0) 25%)' }} />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/20" />
                 
                 <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
                   {/* Text content at top left */}
                   <div>
-                    <h3 className="text-xl font-semibold leading-tight text-white mb-2">
+                    <h3 className="text-xl font-semibold leading-tight text-foreground mb-2">
                       {difference.title}
                     </h3>
-                    <p className="text-sm text-white/90 font-light">
+                    <p className="text-sm text-muted-foreground font-light">
                       {difference.tagline}
                     </p>
                   </div>
@@ -312,13 +312,13 @@ export const KapesDifferentCarousel = () => {
                      >
                        <DialogTrigger asChild>
                          <button
-                           className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/30 transition-all duration-200 hover:scale-110"
-                           onClick={(e) => {
-                             e.stopPropagation();
-                             setOpenDialog(openDialog === difference.id ? null : difference.id);
-                           }}
-                         >
-                           <Plus className="w-4 h-4 text-white" />
+                            className="w-8 h-8 rounded-full bg-black/20 backdrop-blur-sm border border-black/30 flex items-center justify-center hover:bg-black/30 transition-all duration-200 hover:scale-110"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setOpenDialog(openDialog === difference.id ? null : difference.id);
+                            }}
+                          >
+                            <Plus className="w-4 h-4 text-black" />
                          </button>
                        </DialogTrigger>
                        <DialogContent className="w-[480px] max-w-[480px] p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm">
