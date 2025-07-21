@@ -737,18 +737,18 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             <h2 className="text-heading text-xl mb-4">Select what's important to you:</h2>
             <ul className="features-list list-none p-0 space-y-2 mb-4">
               {[
-                'EcoLegacy Fabrics (Natural, Sustainable Materials)',
-                'Humanity-First Production (Ethical Manufacturing)',
-                'Uniform Uplift Initiative (Free Uniform Program)',
-                'CycleWorks Program (Fully Managed Takeback Scheme)',
-                'Meal Miracle Mission (Feeding Program)',
-                'KapesImpact Tracker (Real-Time Sustainability Dashboard)',
-                'CO2 Conquest Credits (Carbon Offsetting)',
-                'GreenFuture Curriculum (Educational Programs)',
-                'Roots & Reality Tours (Farm & Factory Visits)',
-                'EcoAmbassador Council (Student Board)',
-                'EcoHub Shops (On-Campus School Shops)',
-                'SmartDrop Lockers (E-Commerce Lockers)'
+                'Natural, Sustainable Materials',
+                'Ethical Manufacturing',
+                'Free Uniform Program',
+                'Fully Managed Takeback Scheme',
+                'Feeding Program',
+                'Real-Time Sustainability Dashboard',
+                'Carbon Offsetting',
+                'Educational Programs',
+                'Farm & Factory Visits',
+                'Student Board',
+                'On-Campus School Shops',
+                'E-Commerce Lockers'
               ].map((feature, index) => (
                 <li key={index} className="flex items-center space-x-2">
                   <input type="checkbox" value={feature.split(' (')[0]} className="rounded border-border" />
