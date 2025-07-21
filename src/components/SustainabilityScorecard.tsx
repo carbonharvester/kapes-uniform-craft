@@ -38,6 +38,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [score, setScore] = useState(0);
   const [scoreDescription, setScoreDescription] = useState('');
 
+  // Form answers state
+  const [formAnswers, setFormAnswers] = useState<Record<string, string | string[]>>({});
+
   const formRef = useRef<HTMLDivElement>(null);
 
   const questions = [
@@ -125,20 +128,22 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     setShowQuiz(true);
   };
 
+  const handleAnswerChange = (questionId: string, value: string | string[]) => {
+    setFormAnswers(prev => ({
+      ...prev,
+      [questionId]: value
+    }));
+  };
+
   const handleNext = () => {
-    const formElement = formRef.current;
-    if (!formElement) return;
-    
     const currentQ = questions[currentSlide];
     
     let isAnswered = false;
     if (currentQ.type === 'checkbox') {
-      isAnswered = !!formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
-    } else if (currentQ.type === 'select') {
-      const selectElement = formElement.querySelector(`select[name="${currentQ.id}"]`) as HTMLSelectElement;
-      isAnswered = selectElement && selectElement.value !== '';
+      const answers = formAnswers[currentQ.id] as string[] || [];
+      isAnswered = answers.length > 0;
     } else {
-      isAnswered = !!formElement.querySelector(`input[name="${currentQ.id}"]:checked`);
+      isAnswered = !!formAnswers[currentQ.id];
     }
     
     if (!isAnswered) {
@@ -160,26 +165,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const processResults = () => {
-    const formElement = formRef.current;
-    if (!formElement) {
-      console.log('❌ Form element not found');
-      return;
-    }
-
-    console.log('🔍 Starting form validation and processing...');
-    console.log('📊 Form element:', formElement);
-
     let totalScore = 0;
-    let answered = 0;
     const answers: Array<{question: string, answer: string}> = [];
     const missingQuestions: string[] = [];
 
     // Materials question
-    console.log('📝 Processing materials question...');
-    const materialSelections = Array.from(formElement.querySelectorAll('input[name="materials"]:checked') as NodeListOf<HTMLInputElement>)
-      .map(cb => cb.value);
-    console.log('🎯 Materials selections:', materialSelections);
-    
+    const materialSelections = formAnswers.materials as string[] || [];
     if (materialSelections.length === 0) {
       missingQuestions.push('Materials question');
     } else {
@@ -194,7 +185,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         if (materialSelections.includes('organic_cotton')) totalScore += 9;
         if (materialSelections.includes('recycled_poly')) totalScore += 9;
       }
-      answered++;
     }
 
     // Single radio questions
@@ -202,30 +192,20 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const questionWeights = [5, 4, 6, 5, 7, 8, 7, 6, 3, 5, 5];
     
     radioQuestions.forEach((qId, index) => {
-      console.log(`📝 Processing question ${qId}...`);
-      const selected = formElement.querySelector(`input[name="${qId}"]:checked`) as HTMLInputElement;
-      console.log(`🎯 Question ${qId} selected:`, selected);
-      
-      if (selected) {
-        totalScore += questionWeights[index] * parseInt(selected.value);
-        answered++;
+      const selectedValue = formAnswers[qId] as string;
+      if (selectedValue) {
+        totalScore += questionWeights[index] * parseInt(selectedValue);
         const questionObj = questions.find(q => q.id === qId);
-        const answerText = selected.nextSibling?.textContent?.trim() || selected.value;
+        const answerText = selectedValue === '1' ? 'Yes' : selectedValue === '0' ? 'No/Don\'t Know' : selectedValue;
         answers.push({ question: questionObj?.text || '', answer: answerText });
-        console.log(`✅ Question ${qId} answered: ${answerText}`);
       } else {
         const questionObj = questions.find(q => q.id === qId);
         missingQuestions.push(questionObj?.text || qId);
-        console.log(`❌ Question ${qId} NOT answered`);
       }
     });
 
     // Distribution question
-    console.log('📝 Processing distribution question...');
-    const distSelections = Array.from(formElement.querySelectorAll('input[name="distribution"]:checked') as NodeListOf<HTMLInputElement>)
-      .map(cb => cb.value);
-    console.log('🎯 Distribution selections:', distSelections);
-    
+    const distSelections = formAnswers.distribution as string[] || [];
     if (distSelections.length === 0) {
       missingQuestions.push('Distribution question');
     } else {
@@ -240,15 +220,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         if (distSelections.includes('online_ordering')) totalScore += 4;
         if (distSelections.includes('pickup_school')) totalScore += 4;
       }
-      answered++;
     }
 
     // AI question
-    console.log('📝 Processing AI question...');
-    const aiSelections = Array.from(formElement.querySelectorAll('input[name="ai_usage"]:checked') as NodeListOf<HTMLInputElement>)
-      .map(cb => cb.value);
-    console.log('🎯 AI selections:', aiSelections);
-    
+    const aiSelections = formAnswers.ai_usage as string[] || [];
     if (aiSelections.length === 0) {
       missingQuestions.push('AI usage question');
     } else {
@@ -261,14 +236,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         if (aiSelections.includes('size_recommend')) totalScore += 3;
         if (aiSelections.includes('forecast_stock')) totalScore += 3;
       }
-      answered++;
     }
-
-    console.log(`📊 Validation Summary:`);
-    console.log(`✅ Questions answered: ${answered}`);
-    console.log(`❌ Missing questions: ${missingQuestions.length}`);
-    console.log(`📋 Missing questions list:`, missingQuestions);
-    console.log(`🎯 Total score: ${totalScore}`);
 
     if (missingQuestions.length > 0) {
       alert(`Please answer the following questions:\n\n${missingQuestions.join('\n')}`);
@@ -276,17 +244,14 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Process extra questions (non-scored)
-    const extra1Select = formElement.querySelector('select[name="extra1"]') as HTMLSelectElement;
-    const extra1Answer = extra1Select ? extra1Select.value : 'Not Answered';
+    const extra1Answer = formAnswers.extra1 as string || 'Not Answered';
     answers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
 
-    const extra2Selected = formElement.querySelector('input[name="extra2"]:checked') as HTMLInputElement;
-    const extra2Answer = extra2Selected ? extra2Selected.nextSibling?.textContent?.trim() : 'Not Answered';
-    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer || '' });
+    const extra2Answer = formAnswers.extra2 as string || 'Not Answered';
+    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer });
 
-    const extra3Selected = formElement.querySelector('input[name="extra3"]:checked') as HTMLInputElement;
-    const extra3Answer = extra3Selected ? extra3Selected.nextSibling?.textContent?.trim() : 'Not Answered';
-    answers.push({ question: "How important is sustainability within your school?", answer: extra3Answer || '' });
+    const extra3Answer = formAnswers.extra3 as string || 'Not Answered';
+    answers.push({ question: "How important is sustainability within your school?", answer: extra3Answer });
 
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
@@ -389,26 +354,70 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     doc.save('Sustainability_Scorecard_Report.pdf');
   };
 
+  const handleCheckboxChange = (questionId: string, value: string, checked: boolean) => {
+    const currentValues = (formAnswers[questionId] as string[]) || [];
+    if (checked) {
+      handleAnswerChange(questionId, [...currentValues, value]);
+    } else {
+      handleAnswerChange(questionId, currentValues.filter(v => v !== value));
+    }
+  };
+
   const renderMaterialsQuestion = () => (
     <div className="space-y-3">
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="materials" value="virgin_synth" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="materials" 
+          value="virgin_synth" 
+          className="rounded border-border"
+          checked={(formAnswers.materials as string[] || []).includes('virgin_synth')}
+          onChange={(e) => handleCheckboxChange('materials', 'virgin_synth', e.target.checked)}
+        />
         <span>Virgin (Non-recycled) Synthetic Fibres like Polyester and Nylon</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="materials" value="conventional_cotton" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="materials" 
+          value="conventional_cotton" 
+          className="rounded border-border"
+          checked={(formAnswers.materials as string[] || []).includes('conventional_cotton')}
+          onChange={(e) => handleCheckboxChange('materials', 'conventional_cotton', e.target.checked)}
+        />
         <span>Conventional (non-organic) cotton</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="materials" value="recycled_poly" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="materials" 
+          value="recycled_poly" 
+          className="rounded border-border"
+          checked={(formAnswers.materials as string[] || []).includes('recycled_poly')}
+          onChange={(e) => handleCheckboxChange('materials', 'recycled_poly', e.target.checked)}
+        />
         <span>Recycled Polyester</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="materials" value="organic_cotton" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="materials" 
+          value="organic_cotton" 
+          className="rounded border-border"
+          checked={(formAnswers.materials as string[] || []).includes('organic_cotton')}
+          onChange={(e) => handleCheckboxChange('materials', 'organic_cotton', e.target.checked)}
+        />
         <span>Organic Cotton</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="materials" value="dont_know" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="materials" 
+          value="dont_know" 
+          className="rounded border-border"
+          checked={(formAnswers.materials as string[] || []).includes('dont_know')}
+          onChange={(e) => handleCheckboxChange('materials', 'dont_know', e.target.checked)}
+        />
         <span>Don't know</span>
       </label>
     </div>
@@ -417,23 +426,58 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const renderDistributionQuestion = () => (
     <div className="space-y-3">
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="distribution" value="school_shop" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="school_shop" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('school_shop')}
+          onChange={(e) => handleCheckboxChange('distribution', 'school_shop', e.target.checked)}
+        />
         <span>School shop</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="distribution" value="supplier_shop" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="supplier_shop" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('supplier_shop')}
+          onChange={(e) => handleCheckboxChange('distribution', 'supplier_shop', e.target.checked)}
+        />
         <span>Supplier shop</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="distribution" value="online_ordering" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="online_ordering" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('online_ordering')}
+          onChange={(e) => handleCheckboxChange('distribution', 'online_ordering', e.target.checked)}
+        />
         <span>Online ordering</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="distribution" value="pickup_school" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="pickup_school" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('pickup_school')}
+          onChange={(e) => handleCheckboxChange('distribution', 'pickup_school', e.target.checked)}
+        />
         <span>Pickup at school</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="distribution" value="dont_know" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="distribution" 
+          value="dont_know" 
+          className="rounded border-border"
+          checked={(formAnswers.distribution as string[] || []).includes('dont_know')}
+          onChange={(e) => handleCheckboxChange('distribution', 'dont_know', e.target.checked)}
+        />
         <span>Don't know</span>
       </label>
     </div>
@@ -442,19 +486,47 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const renderAIQuestion = () => (
     <div className="space-y-3">
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="ai_usage" value="size_recommend" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="ai_usage" 
+          value="size_recommend" 
+          className="rounded border-border"
+          checked={(formAnswers.ai_usage as string[] || []).includes('size_recommend')}
+          onChange={(e) => handleCheckboxChange('ai_usage', 'size_recommend', e.target.checked)}
+        />
         <span>For size recommendations to reduce returns</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="ai_usage" value="forecast_stock" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="ai_usage" 
+          value="forecast_stock" 
+          className="rounded border-border"
+          checked={(formAnswers.ai_usage as string[] || []).includes('forecast_stock')}
+          onChange={(e) => handleCheckboxChange('ai_usage', 'forecast_stock', e.target.checked)}
+        />
         <span>For forecasting stock needs</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="ai_usage" value="no" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="ai_usage" 
+          value="no" 
+          className="rounded border-border"
+          checked={(formAnswers.ai_usage as string[] || []).includes('no')}
+          onChange={(e) => handleCheckboxChange('ai_usage', 'no', e.target.checked)}
+        />
         <span>No</span>
       </label>
       <label className="flex items-center space-x-2">
-        <input type="checkbox" name="ai_usage" value="dont_know" className="rounded border-border" />
+        <input 
+          type="checkbox" 
+          name="ai_usage" 
+          value="dont_know" 
+          className="rounded border-border"
+          checked={(formAnswers.ai_usage as string[] || []).includes('dont_know')}
+          onChange={(e) => handleCheckboxChange('ai_usage', 'dont_know', e.target.checked)}
+        />
         <span>Don't know</span>
       </label>
     </div>
@@ -464,15 +536,36 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     return (
       <div className="space-y-3">
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value="1" className="border-border" />
+          <input 
+            type="radio" 
+            name={questionId} 
+            value="1" 
+            className="border-border"
+            checked={formAnswers[questionId] === '1'}
+            onChange={(e) => handleAnswerChange(questionId, e.target.value)}
+          />
           <span>Yes</span>
         </label>
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value="0" className="border-border" />
+          <input 
+            type="radio" 
+            name={questionId} 
+            value="0" 
+            className="border-border"
+            checked={formAnswers[questionId] === '0'}
+            onChange={(e) => handleAnswerChange(questionId, e.target.value)}
+          />
           <span>No</span>
         </label>
         <label className="flex items-center space-x-2">
-          <input type="radio" name={questionId} value="0" className="border-border" />
+          <input 
+            type="radio" 
+            name={questionId} 
+            value="0" 
+            className="border-border"
+            checked={formAnswers[questionId] === '0'}
+            onChange={(e) => handleAnswerChange(questionId, e.target.value)}
+          />
           <span>Don't Know</span>
         </label>
       </div>
@@ -480,7 +573,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const renderSelectQuestion = (questionId: string) => (
-    <select name={questionId} className="w-full p-3 border border-border rounded bg-background text-foreground">
+    <select 
+      name={questionId} 
+      className="w-full p-3 border border-border rounded bg-background text-foreground"
+      value={formAnswers[questionId] as string || ''}
+      onChange={(e) => handleAnswerChange(questionId, e.target.value)}
+    >
       <option value="">Select rating</option>
       {[...Array(11)].map((_, i) => (
         <option key={i} value={i}>{i}</option>
@@ -497,7 +595,14 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       <div className="space-y-3">
         {options.map(option => (
           <label key={option} className="flex items-center space-x-2">
-            <input type="radio" name={questionId} value={option} className="border-border" />
+            <input 
+              type="radio" 
+              name={questionId} 
+              value={option} 
+              className="border-border"
+              checked={formAnswers[questionId] === option}
+              onChange={(e) => handleAnswerChange(questionId, e.target.value)}
+            />
             <span>{option}</span>
           </label>
         ))}
