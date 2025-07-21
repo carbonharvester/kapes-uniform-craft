@@ -167,10 +167,6 @@ const Blog = () => {
                                 <Calendar className="w-4 h-4" />
                                 {formatDate(featuredPost.date)}
                               </span>
-                              <span className="flex items-center gap-2">
-                                <Clock className="w-4 h-4" />
-                                5 min read
-                              </span>
                             </div>
                             
                             {/* Title */}
