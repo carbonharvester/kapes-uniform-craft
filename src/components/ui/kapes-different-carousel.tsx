@@ -291,7 +291,7 @@ export const KapesDifferentCarousel = () => {
                     backgroundPosition: difference.id === "takeback" ? "center top" : "center"
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.6) 45%, rgba(255,255,255,0) 65%)' }} />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/60 to-transparent" style={{ background: 'linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.6) 15%, rgba(255,255,255,0) 35%)' }} />
                 
                 <CardContent className="p-6 h-full flex flex-col justify-between relative z-10">
                   {/* Text content at top left */}
