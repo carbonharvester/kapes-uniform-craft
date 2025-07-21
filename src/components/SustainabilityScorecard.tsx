@@ -866,10 +866,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-sm font-semibold text-foreground">Surname</label>
+                <label className="text-sm font-semibold text-foreground">Last Name</label>
                 <input
                   type="text"
-                  placeholder="Enter your surname"
+                  placeholder="Enter your last name"
                   value={userData.surname}
                   onChange={(e) => setUserData({...userData, surname: e.target.value})}
                   className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
