@@ -1,57 +1,84 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-const SustainabilityScorecard = () => {
-  const [currentStep, setCurrentStep] = useState('entry');
+declare global {
+  interface Window {
+    jsPDF: any;
+  }
+}
+
+interface SustainabilityScorecardProps {
+  initialData?: {
+    name: string;
+    school: string;
+    students: string;
+    email: string;
+  };
+}
+
+const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) => {
+  const [showEntryForm, setShowEntryForm] = useState(!initialData);
+  const [showQuiz, setShowQuiz] = useState(!!initialData);
+  const [showImprove, setShowImprove] = useState(false);
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [showConsultation, setShowConsultation] = useState(false);
+  const [showResults, setShowResults] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [userData, setUserData] = useState({
-    name: '',
-    school: '',
-    students: '',
-    email: ''
-  });
-  const [userAnswers, setUserAnswers] = useState([]);
-  const [userImprove, setUserImprove] = useState(null);
-  const [userFeatures, setUserFeatures] = useState([]);
   const [entryError, setEntryError] = useState(false);
 
+  const [userData, setUserData] = useState({
+    name: initialData?.name || '',
+    school: initialData?.school || '',
+    students: initialData?.students || '',
+    email: initialData?.email || ''
+  });
+  
+  const [userAnswers, setUserAnswers] = useState<Array<{question: string, answer: string}>>([]);
+  const [userImprove, setUserImprove] = useState<string | null>(null);
+  const [userFeatures, setUserFeatures] = useState<string[]>([]);
+  const [score, setScore] = useState(0);
+  const [scoreDescription, setScoreDescription] = useState('');
+
+  const formRef = useRef<HTMLDivElement>(null);
+
   const questions = [
-    { 
-      id: 'materials', 
-      type: 'checkbox', 
-      label: 'What materials are your uniforms including PE kits made from? (Select all that apply)', 
-      options: [
-        { value: 'virgin_synth', label: 'Virgin (Non-recycled) Synthetic Fibres like Polyester and Nylon' },
-        { value: 'conventional_cotton', label: 'Conventional (non-organic) cotton' },
-        { value: 'recycled_poly', label: 'Recycled Polyester' },
-        { value: 'organic_cotton', label: 'Organic Cotton' },
-        { value: 'dont_know', label: "Don't know" }
-      ]
-    },
-    { id: 'q3', type: 'radio', label: 'Have you conducted an LCA to calculate the environmental impact of your uniforms? This would include the use of water and energy, and the CO2 emitted.', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q4', type: 'radio', label: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q5', type: 'radio', label: 'Do you buy carbon credits to offset the impact of your uniforms?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q8', type: 'radio', label: 'Are your uniforms packaged in biodegradable or recyclable materials?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q9', type: 'radio', label: 'Do you require your suppliers to disclose their environmental impact?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q10', type: 'radio', label: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q11', type: 'radio', label: 'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q12', type: 'radio', label: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q13', type: 'radio', label: 'Does your school collect and resell or giveaway used uniforms?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q14', type: 'radio', label: 'Does your uniform program support any social causes?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q15', type: 'radio', label: 'Does your school have a uniform shop?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q16', type: 'radio', label: 'Does your supplier have a shop?', options: [{ value: 1, label: 'Yes' }, { value: 0, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q17', type: 'radio', label: 'Do you have online ordering for uniforms?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q18', type: 'radio', label: 'Can parents pick up at school?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q19', type: 'radio', label: 'Have your uniforms been tested for harmful or banned chemicals?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q20', type: 'radio', label: 'Do your students, parents, and staff have full transparency of your supply chain?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q21', type: 'radio', label: 'Is AI used to provide size recommendations for parents?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'q22', type: 'radio', label: 'Do you or your supplier use AI to forecast uniform stock needs?', options: [{ value: 0, label: 'Yes' }, { value: 1, label: 'No' }, { value: 1, label: "Don't Know" }] },
-    { id: 'extra1', type: 'select', label: 'How would you rate your current uniform program out of 10?', options: [...Array(11)].map((_, i) => ({ value: i, label: i.toString() })) },
-    { id: 'extra2', type: 'radio', label: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', options: [{ value: 'Yes', label: 'Yes' }, { value: 'No', label: 'No' }, { value: 'Maybe', label: 'Maybe' }] },
-    { id: 'extra3', type: 'radio', label: 'How important is sustainability within your school?', options: [{ value: 'Very important', label: 'Very important' }, { value: 'Important', label: 'Important' }, { value: 'Somewhat important', label: 'Somewhat important' }, { value: 'Not important', label: 'Not important' }] }
+    { id: 'materials', text: 'What materials are your uniforms including PE kits made from? (Select all that apply)', type: 'checkbox' },
+    { id: 'q3', text: 'Do you know how much water, energy, and carbon emissions result from the production of your uniforms?', type: 'radio' },
+    { id: 'q4', text: 'Do you offset the environmental impact of the uniforms through verified carbon offset projects?', type: 'radio' },
+    { id: 'q8', text: 'Are your uniforms packaged in biodegradable or recyclable materials?', type: 'radio' },
+    { id: 'q9', text: 'Do you require your suppliers to disclose their environmental impact?', type: 'radio' },
+    { id: 'q10', text: 'Are all of the factories and suppliers in your supply chain audited by ethical bodies such as Sedex?', type: 'radio' },
+    { id: 'q11', text: 'Do you have a policy in place to ensure living wages and good working conditions for all workers in the supply chain?', type: 'radio' },
+    { id: 'q12', text: 'Do you require your uniform provider to provide 3rd party certifications to ensure that fair wages and safe working conditions are being adhered to?', type: 'radio' },
+    { id: 'q13', text: 'Does your school collect and resell or giveaway used uniforms?', type: 'radio' },
+    { id: 'q14', text: 'Does your uniform program support any social causes?', type: 'radio' },
+    { id: 'q15', text: 'Does your school have a uniform shop?', type: 'radio' },
+    { id: 'q16', text: 'Does your supplier have a shop?', type: 'radio' },
+    { id: 'q17', text: 'Do you have online ordering for uniforms?', type: 'radio' },
+    { id: 'q18', text: 'Can parents pick up at school?', type: 'radio' },
+    { id: 'q19', text: 'Have your uniforms been tested for harmful or banned chemicals?', type: 'radio' },
+    { id: 'q20', text: 'Do your students, parents, and staff have full transparency of your supply chain?', type: 'radio' },
+    { id: 'q21', text: 'Is AI used to provide size recommendations for parents?', type: 'radio' },
+    { id: 'q22', text: 'Do you or your supplier use AI to forecast uniform stock needs?', type: 'radio' },
+    { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
+    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' },
+    { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' }
   ];
 
-  const weights = [10, 8, 5, 4, 4, 6, 5, 7, 8, 7, 6, 3, 4, 3, 4, 4, 5, 5, 3, 3];
-  const maxScore = 104;
+  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 4, 3, 4, 4, 5, 5, 3, 3];
+  const maxScore = 111;
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    script.onload = () => {
+      console.log('jsPDF loaded');
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleStart = () => {
     if (!userData.name || !userData.school || !userData.students || !userData.email) {
@@ -59,17 +86,15 @@ const SustainabilityScorecard = () => {
       return;
     }
     setEntryError(false);
-    setCurrentStep('quiz');
-  };
-
-  const updateProgress = () => {
-    return Math.round(((currentSlide + 1) / questions.length) * 100);
+    setShowEntryForm(false);
+    setShowQuiz(true);
   };
 
   const handleNext = () => {
-    const currentQ = questions[currentSlide];
-    const formElement = document.querySelector('.scorecard-form');
+    const formElement = formRef.current;
     if (!formElement) return;
+    
+    const currentQ = questions[currentSlide];
     
     let isAnswered = false;
     if (currentQ.type === 'checkbox') {
@@ -85,34 +110,129 @@ const SustainabilityScorecard = () => {
       alert('Please select an answer to proceed.');
       return;
     }
-
+    
     if (currentSlide === questions.length - 1) {
       processResults();
     } else {
-      setCurrentSlide(currentSlide + 1);
+      setCurrentSlide(prev => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(prev => prev - 1);
     }
   };
 
   const processResults = () => {
-    // Process results and send to Google Sheets as before
-    setCurrentStep('results');
+    const formElement = formRef.current;
+    if (!formElement) return;
+
+    let totalScore = 0;
+    const answers: Array<{question: string, answer: string}> = [];
+
+    // Materials question (special handling)
+    const materialSelections = Array.from(formElement.querySelectorAll('input[name="materials"]:checked') as NodeListOf<HTMLInputElement>)
+      .map(cb => cb.value);
+    const materialsAnswer = materialSelections.join(', ') || 'Not Answered';
+    answers.push({ question: "What materials are your uniforms including PE kits made from?", answer: materialsAnswer });
+    
+    if (materialSelections.includes('dont_know')) {
+      totalScore += 0;
+    } else {
+      if (!materialSelections.includes('virgin_synth')) totalScore += 10;
+      if (!materialSelections.includes('conventional_cotton')) totalScore += 8;
+      if (materialSelections.includes('organic_cotton')) totalScore += 9;
+      if (materialSelections.includes('recycled_poly')) totalScore += 9;
+    }
+
+    const percentage = Math.round((totalScore / maxScore) * 100);
+    setScore(percentage);
+    
+    let bodyText = '';
+    if (percentage >= 67) {
+      bodyText = 'Your high score reflects strong practices. To maximize, double down on transparency and technology.';
+    } else if (percentage >= 33) {
+      bodyText = 'Your medium score shows some positive steps but gaps in offsetting and distribution. Enhance by adding AI tools and takeback programs.';
+    } else {
+      bodyText = 'Your low score is likely due to reliance on traditional materials and lack of transparency or ethical audits. To improve, focus on sustainable fabrics and supply chain practices.';
+    }
+    setScoreDescription(bodyText);
+    setUserAnswers(answers);
+
+    setShowQuiz(false);
+    if (percentage < 67) {
+      setShowImprove(true);
+    } else {
+      setShowResults(true);
+    }
+  };
+
+  const renderMaterialsQuestion = () => (
+    <div className="space-y-3">
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="materials" value="virgin_synth" className="rounded border-border" />
+        <span>Virgin (Non-recycled) Synthetic Fibres like Polyester and Nylon</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="materials" value="conventional_cotton" className="rounded border-border" />
+        <span>Conventional (non-organic) cotton</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="materials" value="recycled_poly" className="rounded border-border" />
+        <span>Recycled Polyester</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="materials" value="organic_cotton" className="rounded border-border" />
+        <span>Organic Cotton</span>
+      </label>
+      <label className="flex items-center space-x-2">
+        <input type="checkbox" name="materials" value="dont_know" className="rounded border-border" />
+        <span>Don't know</span>
+      </label>
+    </div>
+  );
+
+  const renderRadioQuestion = (questionId: string) => {
+    const getValue = (option: string) => {
+      if (questionId === 'q16' && option === 'No') return '1';
+      if (questionId === 'q16' && (option === 'Yes' || option === "Don't Know")) return '0';
+      return option === 'Yes' ? '1' : '0';
+    };
+
+    return (
+      <div className="space-y-3">
+        <label className="flex items-center space-x-2">
+          <input type="radio" name={questionId} value={getValue('Yes')} className="border-border" />
+          <span>Yes</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input type="radio" name={questionId} value={getValue('No')} className="border-border" />
+          <span>No</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input type="radio" name={questionId} value={getValue("Don't Know")} className="border-border" />
+          <span>Don't Know</span>
+        </label>
+      </div>
+    );
   };
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg">
+      <div className="max-w-2xl mx-auto p-5 bg-card rounded-lg shadow-lg" ref={formRef}>
         <h1 className="text-heading text-3xl font-bold mb-5 text-center">
           Sustainability Scorecard for School Uniforms
         </h1>
         
-        {currentStep === 'entry' && (
-          <div className="text-left">
+        {showEntryForm && (
+          <div className="text-left space-y-4">
             <input
               type="text"
               placeholder="Your Name"
               value={userData.name}
               onChange={(e) => setUserData({...userData, name: e.target.value})}
-              className="w-full p-3 mb-4 border border-border rounded"
+              className="w-full p-3 border border-border rounded bg-background text-foreground"
               required
             />
             <input
@@ -120,7 +240,7 @@ const SustainabilityScorecard = () => {
               placeholder="School Name"
               value={userData.school}
               onChange={(e) => setUserData({...userData, school: e.target.value})}
-              className="w-full p-3 mb-4 border border-border rounded"
+              className="w-full p-3 border border-border rounded bg-background text-foreground"
               required
             />
             <input
@@ -128,7 +248,7 @@ const SustainabilityScorecard = () => {
               placeholder="Number of Students"
               value={userData.students}
               onChange={(e) => setUserData({...userData, students: e.target.value})}
-              className="w-full p-3 mb-4 border border-border rounded"
+              className="w-full p-3 border border-border rounded bg-background text-foreground"
               min="1"
               required
             />
@@ -137,7 +257,7 @@ const SustainabilityScorecard = () => {
               placeholder="Your Email"
               value={userData.email}
               onChange={(e) => setUserData({...userData, email: e.target.value})}
-              className="w-full p-3 mb-4 border border-border rounded"
+              className="w-full p-3 border border-border rounded bg-background text-foreground"
               required
             />
             {entryError && (
@@ -154,72 +274,32 @@ const SustainabilityScorecard = () => {
           </div>
         )}
 
-        {currentStep === 'quiz' && (
-          <div className="scorecard-form">
+        {showQuiz && (
+          <div>
             <div className="mb-5 text-center">
               <progress 
-                value={updateProgress()} 
+                value={((currentSlide + 1) / questions.length) * 100} 
                 max="100"
                 className="w-full h-5 [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-primary"
               />
               <div className="text-sm text-muted-foreground mt-1">
-                {updateProgress()}% Complete
+                {Math.round(((currentSlide + 1) / questions.length) * 100)}% Complete
               </div>
             </div>
             
             <div className="mb-8">
               <label className="block mb-3 font-bold text-foreground">
-                {questions[currentSlide].label}
+                {questions[currentSlide].text}
               </label>
               
-              {questions[currentSlide].type === 'checkbox' && (
-                <div className="space-y-2">
-                  {questions[currentSlide].options.map((option, index) => (
-                    <label key={index} className="flex items-start font-normal text-foreground">
-                      <input
-                        type="checkbox"
-                        name={questions[currentSlide].id}
-                        value={option.value}
-                        className="mr-3 mt-1"
-                      />
-                      <span>{option.label}</span>
-                    </label>
-                  ))}
-                </div>
-              )}
-              
-              {questions[currentSlide].type === 'radio' && (
-                <div className="space-y-2">
-                  {questions[currentSlide].options.map((option, index) => (
-                    <label key={index} className="flex items-center font-normal text-foreground">
-                      <input
-                        type="radio"
-                        name={questions[currentSlide].id}
-                        value={option.value}
-                        className="mr-3"
-                      />
-                      <span>{option.label}</span>
-                    </label>
-                  ))}
-                </div>
-              )}
-              
-              {questions[currentSlide].type === 'select' && (
-                <select
-                  name={questions[currentSlide].id}
-                  className="w-full p-3 border border-border rounded text-foreground bg-background"
-                >
-                  <option value="">Select rating</option>
-                  {questions[currentSlide].options.map((option, index) => (
-                    <option key={index} value={option.value}>{option.label}</option>
-                  ))}
-                </select>
-              )}
+              {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
+              {questions[currentSlide].type === 'radio' && !['extra1', 'extra2', 'extra3'].includes(questions[currentSlide].id) && 
+                renderRadioQuestion(questions[currentSlide].id)}
             </div>
             
             <div className="flex justify-between mt-5">
               <button
-                onClick={() => setCurrentSlide(Math.max(0, currentSlide - 1))}
+                onClick={handlePrev}
                 className={`w-[48%] bg-secondary text-secondary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-secondary/80 ${currentSlide === 0 ? 'hidden' : 'inline-block'}`}
               >
                 Previous
@@ -234,13 +314,13 @@ const SustainabilityScorecard = () => {
           </div>
         )}
 
-        {currentStep === 'results' && (
+        {showResults && (
           <div className="mt-8 p-5 bg-muted rounded-lg text-center">
             <h2 className="text-heading text-2xl mb-4">
-              Your Sustainability Score: 75%
+              Your Sustainability Score: {score}%
             </h2>
             <p className="mb-5 text-foreground">
-              Your score shows good sustainability practices with room for improvement.
+              {scoreDescription}
             </p>
             <div className="space-y-4">
               <button className="bg-primary text-primary-foreground py-3 px-5 rounded cursor-pointer text-base transition-colors hover:bg-primary/90">
