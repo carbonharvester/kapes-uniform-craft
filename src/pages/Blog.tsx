@@ -5,32 +5,45 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, Calendar, Clock, ArrowRight } from "lucide-react";
 import { getAllBlogPosts } from "@/services/contentful";
 import { BlogPost } from "@/types/blog";
 import { Footer } from "@/components/Footer";
+import { Link } from "react-router-dom";
 import newBlogHeroImage from "@/assets/new-blog-hero.jpg";
+
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const {
-    data: blogPosts,
-    isLoading,
-    error
-  } = useQuery({
+
+  const { data: blogPosts, isLoading, error } = useQuery({
     queryKey: ['blogPosts'],
-    queryFn: getAllBlogPosts
+    queryFn: getAllBlogPosts,
   });
 
   // Filter posts based on search and category
   const filteredPosts = blogPosts?.filter(post => {
-    const matchesSearch = !searchTerm || post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = !searchTerm || 
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    
     return matchesSearch;
   }) || [];
+
   const featuredPost = filteredPosts[0];
   const otherPosts = filteredPosts.slice(1);
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
   if (error) {
-    return <div className="min-h-screen bg-background font-inter">
+    return (
+      <div className="min-h-screen bg-background font-inter">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
             <h1 className="text-xl font-semibold text-black mb-4">Something went wrong</h1>
@@ -38,13 +51,20 @@ const Blog = () => {
           </div>
         </div>
         <Footer />
-      </div>;
+      </div>
+    );
   }
-  return <div className="min-h-screen bg-background font-inter">
+
+  return (
+    <div className="min-h-screen bg-background font-inter">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={newBlogHeroImage} alt="Blog hero" className="w-full h-full object-cover" />
+          <img 
+            src={newBlogHeroImage} 
+            alt="Blog hero" 
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
         
@@ -71,26 +91,39 @@ const Blog = () => {
           <div className="flex flex-col md:flex-row gap-4 mb-12">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-              <Input placeholder="Search blog posts..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="pl-10" />
+              <Input
+                placeholder="Search blog posts..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
             </div>
           </div>
 
-          {isLoading ? <div className="space-y-12">
+          {isLoading ? (
+            <div className="space-y-12">
               {/* Featured Post Skeleton */}
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <Skeleton className="aspect-video w-full" />
-                <div className="space-y-4">
-                  <Skeleton className="h-4 w-20" />
-                  <Skeleton className="h-8 w-full" />
-                  <Skeleton className="h-4 w-full" />
-                  <Skeleton className="h-4 w-3/4" />
-                  <Skeleton className="h-6 w-32" />
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-0">
+                  <Skeleton className="aspect-[4/3] w-full" />
+                  <div className="p-8 lg:p-12 space-y-6">
+                    <Skeleton className="h-6 w-24" />
+                    <Skeleton className="h-8 w-full" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-3/4" />
+                    <div className="flex items-center gap-4">
+                      <Skeleton className="h-4 w-20" />
+                      <Skeleton className="h-4 w-16" />
+                    </div>
+                    <Skeleton className="h-12 w-40" />
+                  </div>
                 </div>
               </div>
               
               {/* Other Posts Skeleton */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[...Array(6)].map((_, i) => <div key={i} className="space-y-4">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="space-y-4">
                     <Skeleton className="aspect-video w-full" />
                     <div className="space-y-2">
                       <Skeleton className="h-4 w-16" />
@@ -98,52 +131,114 @@ const Blog = () => {
                       <Skeleton className="h-4 w-full" />
                       <Skeleton className="h-4 w-2/3" />
                     </div>
-                  </div>)}
-              </div>
-            </div> : <>
-              {/* Featured Post */}
-              {featuredPost && <section className="mb-16">
-                  <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black mb-8">Featured Post</h2>
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div className="aspect-video overflow-hidden rounded-lg">
-                      <img src={featuredPost.featuredImage.url} alt={featuredPost.featuredImage.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-                    </div>
-                    <div className="space-y-6">
-                      <h3 className="text-xl font-semibold leading-tight text-black">{featuredPost.title}</h3>
-                      <p className="text-base text-muted-foreground leading-relaxed">{featuredPost.excerpt}</p>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <span>{new Date(featuredPost.date).toLocaleDateString()}</span>
-                      </div>
-                      <Button asChild size="lg">
-                        
-                      </Button>
-                    </div>
                   </div>
-                </section>}
+                ))}
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Enhanced Featured Post */}
+              {featuredPost && (
+                <section className="mb-16">
+                  <div className="text-center mb-8">
+                    <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Featured Article</Badge>
+                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">Featured Post</h2>
+                  </div>
+                  
+                  <Link to={`/blog/${featuredPost.slug}`} className="block group">
+                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-border group-hover:border-primary/20">
+                      <div className="grid lg:grid-cols-2 gap-0">
+                        {/* Featured Image */}
+                        <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden">
+                          <img 
+                            src={featuredPost.featuredImage.url}
+                            alt={featuredPost.featuredImage.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="p-8 lg:p-12 flex flex-col justify-center">
+                          <div className="space-y-6">
+                            {/* Date and Reading Time */}
+                            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                              <span className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4" />
+                                {formatDate(featuredPost.date)}
+                              </span>
+                            </div>
+                            
+                            {/* Title */}
+                            <h3 className="text-2xl lg:text-3xl font-semibold leading-tight text-heading group-hover:text-primary transition-colors duration-300">
+                              {featuredPost.title}
+                            </h3>
+                            
+                            {/* Excerpt */}
+                            <p className="text-base lg:text-lg text-muted-foreground leading-relaxed line-clamp-3">
+                              {featuredPost.excerpt}
+                            </p>
+                            
+                            {/* CTA */}
+                            <div className="pt-4">
+                              <Button size="lg" className="group-hover:bg-primary/90 transition-colors">
+                                Read Full Article
+                                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </section>
+              )}
 
               {/* Other Posts Grid */}
-              {otherPosts.length > 0 && <section>
-                  <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black mb-8">All Posts</h2>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {otherPosts.map(post => <BlogCard key={post.slug} post={post} />)}
+              {otherPosts.length > 0 && (
+                <section>
+                  <div className="flex items-center justify-between mb-8">
+                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">More Articles</h2>
+                    <div className="text-sm text-muted-foreground">
+                      {otherPosts.length} article{otherPosts.length !== 1 ? 's' : ''}
+                    </div>
                   </div>
-                </section>}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {otherPosts.map(post => (
+                      <BlogCard key={post.slug} post={post} />
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* No Results */}
-              {filteredPosts.length === 0 && !isLoading && <div className="text-center py-16">
-                  <h3 className="text-xl font-semibold text-black mb-4">No posts found</h3>
-                  <p className="text-muted-foreground mb-6">
-                    {searchTerm ? "Try adjusting your search criteria." : "Check back soon for new content."}
-                  </p>
-                  {searchTerm && <Button variant="outline" onClick={() => setSearchTerm("")}>
-                      Clear Filters
-                    </Button>}
-                </div>}
-            </>}
+              {filteredPosts.length === 0 && !isLoading && (
+                <div className="text-center py-16">
+                  <div className="max-w-md mx-auto">
+                    <h3 className="text-xl font-semibold text-heading mb-4">No posts found</h3>
+                    <p className="text-muted-foreground mb-6">
+                      {searchTerm ? "Try adjusting your search criteria to find what you're looking for." : "Check back soon for new content and insights."}
+                    </p>
+                    {searchTerm && (
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setSearchTerm("")}
+                        className="hover:bg-primary hover:text-primary-foreground"
+                      >
+                        Clear Search
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
       
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Blog;
