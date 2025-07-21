@@ -69,6 +69,11 @@ const Navbar = ({
       description: "Student involvement in sustainability",
       icon: <Users className="size-5 shrink-0" />,
       url: "/student-leadership"
+    }, {
+      title: "Factory Visits",
+      description: "Tour our manufacturing facilities",
+      icon: <Factory className="size-5 shrink-0" />,
+      url: "/factory-visits"
     }]
   }, {
     title: "Solutions",
@@ -98,11 +103,6 @@ const Navbar = ({
       description: "Sustainable delivery and packaging solutions",
       icon: <Sunset className="size-5 shrink-0" />,
       url: "/delivery-packaging"
-    }, {
-      title: "Factory Visits",
-      description: "Tour our manufacturing facilities",
-      icon: <Building className="size-5 shrink-0" />,
-      url: "/factory-visits"
     }]
   }, {
     title: "How It Works",
