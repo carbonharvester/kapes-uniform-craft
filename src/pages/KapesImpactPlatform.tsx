@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { BarChart3, Leaf, QrCode, FileText, Sparkles, TrendingUp, Award, Heart, Monitor, Smartphone, Users, Globe, Shield, Target, Zap, Eye, BookOpen, Download, CheckCircle } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { ImpactMetricsCards } from "@/components/ImpactMetricsCards";
-
 const KapesImpactPlatform = () => {
   const platformFeatures = [{
     icon: Eye,
@@ -19,7 +18,6 @@ const KapesImpactPlatform = () => {
     title: "Real-Time Impact",
     description: "Live updates on carbon savings, water usage, and social impact generated."
   }];
-
   const stakeholderFeatures = [{
     icon: Users,
     title: "School Leaders",
@@ -39,16 +37,14 @@ const KapesImpactPlatform = () => {
     features: ["Public dashboard", "Social sharing", "Impact comparisons"],
     color: "purple"
   }];
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg')",
-          backgroundPosition: "20% center"
-        }}></div>
+        backgroundImage: "url('https://res.cloudinary.com/drkudvyog/image/upload/v1737219891/mf7gylpmgb26uh7lbk8w.jpg')",
+        backgroundPosition: "20% center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -71,8 +67,8 @@ const KapesImpactPlatform = () => {
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       <ImpactMetricsCards />
@@ -93,8 +89,7 @@ const KapesImpactPlatform = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
-              {platformFeatures.map((feature, index) => (
-                <div key={index} className="flex items-start gap-4">
+              {platformFeatures.map((feature, index) => <div key={index} className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
@@ -104,8 +99,7 @@ const KapesImpactPlatform = () => {
                       {feature.description}
                     </p>
                   </div>
-                </div>
-              ))}
+                </div>)}
               
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="text-center p-6 border-0 shadow-glass rounded-2xl">
@@ -120,8 +114,8 @@ const KapesImpactPlatform = () => {
             </div>
 
             <div className="relative animate-fade-in" style={{
-              animationDelay: '0.2s'
-            }}>
+            animationDelay: '0.2s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-12 text-center">
                 <div className="w-40 h-40 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-8">
                   <QrCode className="w-20 h-20 text-primary" />
@@ -157,10 +151,9 @@ const KapesImpactPlatform = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {stakeholderFeatures.map((stakeholder, index) => (
-              <div key={index} className="group hover-lift transition-smooth animate-fade-in" style={{
-                animationDelay: `${index * 0.1}s`
-              }}>
+            {stakeholderFeatures.map((stakeholder, index) => <div key={index} className="group hover-lift transition-smooth animate-fade-in" style={{
+            animationDelay: `${index * 0.1}s`
+          }}>
                 <div className="border-0 shadow-glass rounded-3xl p-8 h-full">
                   <div className="text-center mb-6">
                     <div className={`w-16 h-16 bg-${stakeholder.color}-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-smooth`}>
@@ -172,16 +165,13 @@ const KapesImpactPlatform = () => {
                     {stakeholder.description}
                   </p>
                   <div className="space-y-2">
-                    {stakeholder.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center gap-2 text-sm">
+                    {stakeholder.features.map((feature, featureIndex) => <div key={featureIndex} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         <span>{feature}</span>
-                      </div>
-                    ))}
+                      </div>)}
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -217,8 +207,8 @@ const KapesImpactPlatform = () => {
             </div>
 
             <div className="group hover-lift transition-smooth animate-fade-in text-center" style={{
-              animationDelay: '0.1s'
-            }}>
+            animationDelay: '0.1s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 h-full">
                 <div className="bg-primary/10 rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-smooth">
                   <Award className="w-8 h-8 text-primary" />
@@ -232,8 +222,8 @@ const KapesImpactPlatform = () => {
             </div>
 
             <div className="group hover-lift transition-smooth animate-fade-in text-center" style={{
-              animationDelay: '0.2s'
-            }}>
+            animationDelay: '0.2s'
+          }}>
               <div className="border-0 shadow-glass rounded-3xl p-8 h-full">
                 <div className="bg-primary/10 rounded-2xl p-4 w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-smooth">
                   <Globe className="w-8 h-8 text-primary" />
@@ -250,7 +240,9 @@ const KapesImpactPlatform = () => {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-12 text-white relative overflow-hidden" style={{ backgroundColor: '#cfeaff' }}>
+      <section className="py-12 text-white relative overflow-hidden" style={{
+      backgroundColor: '#cfeaff'
+    }}>
         <div className="absolute inset-0 bg-[cfeaff]">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
@@ -258,28 +250,32 @@ const KapesImpactPlatform = () => {
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-white border border-white/20 rounded-2xl px-6 py-3 mb-6">
-              <Sparkles className="w-5 h-5" style={{ color: '#030063' }} />
-              <span className="text-sm font-medium" style={{ color: '#030063' }}>Transform Your Impact Story</span>
+              <Sparkles className="w-5 h-5" style={{
+              color: '#030063'
+            }} />
+              <span className="text-sm font-medium" style={{
+              color: '#030063'
+            }}>Transform Your Impact Story</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Future of Sustainable Education?
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{
+            color: '#030063'
+          }}>
               Join forward-thinking schools already using KapesImpact™ to showcase their 
               environmental leadership and inspire their communities.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button size="lg" className="rounded-2xl px-12 py-6 text-lg hover-scale transition-smooth text-white hover:opacity-90" style={{ backgroundColor: '#f97769' }}>
-                Schedule Your Demo
-              </Button>
+              <Button size="lg" className="rounded-2xl px-12 py-6 text-lg hover-scale transition-smooth text-white hover:opacity-90" style={{
+              backgroundColor: '#f97769'
+            }}>Start Your Journey</Button>
             </div>
           </div>
         </div>
       </section>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default KapesImpactPlatform;
