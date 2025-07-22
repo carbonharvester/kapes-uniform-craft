@@ -138,8 +138,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     if (showResults && !sent) {
       console.log('📤 Sending data to Google Sheets...');
       console.log('👤 User data:', userData);
-      console.log('📊 Score:', score);
-      console.log('📝 User answers:', userAnswers);
+      console.log('Score:', score);
+      console.log('User answers:', userAnswers);
 
       const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
       
@@ -175,7 +175,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         }
       });
 
-      console.log('📦 Final form data being sent:', formData);
+      console.log('Final form data being sent:', formData);
 
       fetch(sheetURL, {
         method: 'POST',
@@ -185,9 +185,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         body: JSON.stringify(formData),
         mode: 'no-cors'
       }).then(() => {
-        console.log('✅ Data sent to Google Sheet successfully');
+        console.log('Data sent to Google Sheet successfully');
       }).catch(error => {
-        console.error('❌ Error sending data to Google Sheet:', error);
+        console.error('Error sending data to Google Sheet:', error);
       });
 
       setSent(true);
@@ -248,23 +248,23 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const processResults = () => {
-    console.log('🔍 Starting form validation and processing...');
-    console.log('📊 Form element:', formRef.current);
+    console.log('Starting form validation and processing...');
+    console.log('Form element:', formRef.current);
 
     let totalScore = 0;
     const answers: Array<{question: string, answer: string}> = [];
     const missingQuestions: string[] = [];
 
     // Materials question
-    console.log('📝 Processing materials question...');
+    console.log('Processing materials question...');
     const materialSelections = formAnswers.materials as string[] || [];
-    console.log('🎯 Materials selections:', materialSelections);
+    console.log('Materials selections:', materialSelections);
     
     if (materialSelections.length === 0) {
-      console.log('❌ Materials question NOT answered');
+      console.log('Materials question NOT answered');
       missingQuestions.push('Materials question');
     } else {
-      console.log('✅ Materials question answered');
+      console.log('Materials question answered');
       const materialsAnswer = materialSelections.join(', ');
       answers.push({ question: "What materials are your uniforms including PE kits made from? (Select all that apply)", answer: materialsAnswer });
       
@@ -279,15 +279,15 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Packaging question
-    console.log('📝 Processing packaging question...');
+    console.log('Processing packaging question...');
     const packagingSelections = formAnswers.packaging as string[] || [];
-    console.log('🎯 Packaging selections:', packagingSelections);
+    console.log('Packaging selections:', packagingSelections);
     
     if (packagingSelections.length === 0) {
-      console.log('❌ Packaging question NOT answered');
+      console.log('Packaging question NOT answered');
       missingQuestions.push('Packaging question');
     } else {
-      console.log('✅ Packaging question answered');
+      console.log('Packaging question answered');
       const packagingAnswer = packagingSelections.join(', ');
       answers.push({ question: "What materials are your uniforms packaged in? (Select all that apply)", answer: packagingAnswer });
       
@@ -305,12 +305,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const questionWeights = [5, 4, 5, 7, 8, 7, 6, 3, 5, 5, 5];
     
     radioQuestions.forEach((qId, index) => {
-      console.log(`📝 Processing question ${qId}...`);
+      console.log(`Processing question ${qId}...`);
       const selectedValue = formAnswers[qId] as string;
-      console.log(`🎯 Question ${qId} selected:`, selectedValue);
+      console.log(`Question ${qId} selected:`, selectedValue);
       
       if (selectedValue) {
-        console.log(`✅ Question ${qId} answered`);
+        console.log(`Question ${qId} answered`);
         const scoreValue = selectedValue === '2' ? 0 : parseInt(selectedValue);
         totalScore += questionWeights[index] * scoreValue;
         
@@ -322,22 +322,22 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         
         answers.push({ question: questions.find(q => q.id === qId)?.text || '', answer: answerText });
       } else {
-        console.log(`❌ Question ${qId} NOT answered`);
+        console.log(`Question ${qId} NOT answered`);
         const questionObj = questions.find(q => q.id === qId);
         missingQuestions.push(questionObj?.text || qId);
       }
     });
 
     // Distribution question
-    console.log('📝 Processing distribution question...');
+    console.log('Processing distribution question...');
     const distSelections = formAnswers.distribution as string[] || [];
-    console.log('🎯 Distribution selections:', distSelections);
+    console.log('Distribution selections:', distSelections);
     
     if (distSelections.length === 0) {
-      console.log('❌ Distribution question NOT answered');
+      console.log('Distribution question NOT answered');
       missingQuestions.push('Distribution question');
     } else {
-      console.log('✅ Distribution question answered');
+      console.log('Distribution question answered');
       const distAnswer = distSelections.join(', ');
       answers.push({ question: "How are uniforms distributed/ordered? (Select all that apply)", answer: distAnswer });
       
@@ -353,15 +353,15 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // AI question
-    console.log('📝 Processing AI question...');
+    console.log('Processing AI question...');
     const aiSelections = formAnswers.ai_usage as string[] || [];
-    console.log('🎯 AI selections:', aiSelections);
+    console.log('AI selections:', aiSelections);
     
     if (aiSelections.length === 0) {
-      console.log('❌ AI question NOT answered');
+      console.log('AI question NOT answered');
       missingQuestions.push('AI usage question');
     } else {
-      console.log('✅ AI question answered');
+      console.log('AI question answered');
       const aiAnswer = aiSelections.join(', ');
       answers.push({ question: "Do you use AI in your uniform program? (Select all that apply)", answer: aiAnswer });
       
@@ -373,10 +373,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       }
     }
 
-    console.log('📊 Validation Summary:');
-    console.log('✅ Questions answered:', 15 - missingQuestions.length);
-    console.log('❌ Missing questions:', missingQuestions.length);
-    console.log('📋 Missing questions list:', missingQuestions);
+    console.log('Validation Summary:');
+    console.log('Questions answered:', 15 - missingQuestions.length);
+    console.log('Missing questions:', missingQuestions.length);
+    console.log('Missing questions list:', missingQuestions);
 
     if (missingQuestions.length > 0) {
       alert(`Please answer the following questions:\n\n${missingQuestions.join('\n')}`);
@@ -471,9 +471,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     setScoreDescription(bodyText);
     setUserAnswers(answers);
 
-    console.log('🎯 Total score:', totalScore);
-    console.log('🎉 Form successfully processed!');
-    console.log(`📊 Final score: ${percentage}%`);
+    console.log('Total score:', totalScore);
+    console.log('Form successfully processed!');
+    console.log(`Final score: ${percentage}%`);
 
     setShowQuiz(false);
     if (percentage < 67) {
@@ -1291,7 +1291,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             {userFeatures.length > 0 && (
               <div className="mb-6 md:mb-8 p-4 md:p-6 bg-primary/10 rounded-xl border border-primary/20">
                 <h3 className="text-xl md:text-2xl font-bold text-heading mb-3 text-center">
-                  🎉 You Qualify for a Free Consultation!
+                  You Qualify for a Free Consultation!
                 </h3>
                 <p className="text-center text-foreground text-base md:text-lg">
                   Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.

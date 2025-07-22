@@ -30,7 +30,7 @@ const Affiliate = () => {
       <section className="relative py-20 px-4 bg-gradient-hero-to-warm">
         <div className="container mx-auto max-w-6xl text-center">
           <Badge className="mb-6 bg-primary/10 text-primary border-primary/20 px-6 py-2 text-lg font-medium">
-            🎯 Ultimate Affiliate Opportunity
+            Ultimate Affiliate Opportunity
           </Badge>
           
           <h1 className="text-4xl md:text-6xl font-bold text-heading mb-6 leading-tight">
@@ -271,7 +271,7 @@ const Affiliate = () => {
                 name: "Sarah Johnson",
                 role: "Education Consultant",
                 quote: "I've earned $24,000 in 6 months and just got back from Kenya. This program changed my life AND my bank account!",
-                avatar: "👩‍🏫"
+                avatar: ""
               },
               {
                 name: "Mike Chen",

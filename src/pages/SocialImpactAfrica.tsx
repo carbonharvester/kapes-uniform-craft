@@ -231,7 +231,7 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
-              🧵 Creating Jobs Through Local Production
+              Creating Jobs Through Local Production
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Impact isn't just about charity — it's about creating self-sustaining ecosystems. That's why our free uniforms are made locally, providing:
@@ -295,7 +295,7 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              🍲 Free School Meals
+              Free School Meals
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               We also fund school meals for children who can't afford to eat during the day — helping reduce absenteeism, improve concentration, and keep children in school longer.
@@ -332,7 +332,7 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              🧵 Creating Jobs Through Local Production
+              Creating Jobs Through Local Production
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Impact isn't just about charity — it's about creating self-sustaining ecosystems. That's why our free uniforms are made locally, providing:
@@ -363,7 +363,7 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              📊 Track Your School's Impact
+              Track Your School's Impact
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Every Core and Impact tier school receives access to the KapesImpact™ platform, where you can track:
@@ -403,7 +403,7 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-3">
-              ❤️ Real Change. Real Children. Real Schools.
+              Real Change. Real Children. Real Schools.
             </h2>
             <p className="text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
               This isn't theoretical impact — it's children learning, eating, and thriving because your school chose Kapes.

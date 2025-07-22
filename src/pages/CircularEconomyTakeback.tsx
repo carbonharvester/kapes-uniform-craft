@@ -165,7 +165,7 @@ const CircularEconomyTakeback = () => {
               Process Overview
             </Badge>
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-heading">
-              ♻️ How the Takeback Scheme Works
+              How the Takeback Scheme Works
             </h2>
             
             {/* Progressive Disclosure for Process Details */}
@@ -264,7 +264,7 @@ const CircularEconomyTakeback = () => {
               For Educational Institutions
             </Badge>
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-green-900 dark:text-green-100">
-              🏫 For Schools: Zero Admin, Real Results
+              For Schools: Zero Admin, Real Results
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
               Our takeback system is designed for busy schools:
@@ -340,7 +340,7 @@ const CircularEconomyTakeback = () => {
               For Families
             </Badge>
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-purple-900 dark:text-purple-100">
-              👨‍👩‍👧 For Parents: Simple & Purposeful
+              For Parents: Simple & Purposeful
             </h2>
             <p className="text-lg text-muted-foreground mb-6">Returning and purchasing old uniforms is as easy as:</p>
             
@@ -414,7 +414,7 @@ const CircularEconomyTakeback = () => {
               Impact Measurement
             </Badge>
             <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-orange-900 dark:text-orange-100">
-              📈 The Results Speak for Themselves
+              The Results Speak for Themselves
             </h2>
             
             {/* Progressive Disclosure for Impact */}

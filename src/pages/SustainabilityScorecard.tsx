@@ -55,7 +55,7 @@ const SustainabilityScorecardPage = () => {
               {/* Social proof banner */}
               <div className="bg-primary/5 border border-primary/10 rounded-2xl p-3 md:p-4 mb-6 md:mb-8 text-center mx-2">
                 <p className="text-xs sm:text-sm font-medium text-primary">
-                  🔥 Limited Time: Free expert consultation for qualified schools (Valued at $750)
+                  Limited Time: Free expert consultation for qualified schools (Valued at $750)
                 </p>
               </div>
             </div>

@@ -76,7 +76,7 @@ export function PartnershipTierCard({
         )}>
           {tier.name}
           {isPopular && <Badge variant="secondary" className="ml-2 mt-1 z-10">
-              🔥 Most Popular
+              Most Popular
             </Badge>}
         </h2>
       </div>
