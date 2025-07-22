@@ -66,109 +66,79 @@ export const SchoolShopsLockers = () => {
       {/* Full-width background sections */}
       
       {/* On-Campus School Shops Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        {/* Background decorative elements */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-500/5 rounded-full blur-xl"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-3 mb-8">
-              <Store className="w-5 h-5 text-primary" />
-              <span className="text-sm font-semibold text-primary tracking-wide uppercase">On-Campus Solutions</span>
-            </div>
-            <h2 className="text-5xl md:text-6xl font-light tracking-tight leading-tight mb-6" style={{ color: '#030063' }}>
-              On-Campus School Shops
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school
-            </p>
+      <section className="bg-gradient-warm-section py-16 w-full">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
+            <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch max-w-7xl mx-auto">
-            {/* Premium Retail Experience Card */}
-            <Card className="group relative overflow-hidden border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardContent className="relative p-10 h-full flex flex-col">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <Store className="h-8 w-8 text-red-500" />
+          <div className="grid md:grid-cols-2 gap-12 items-stretch max-w-6xl mx-auto">
+            <Card className="border-0 shadow-glass h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                  <Store className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-3xl font-bold mb-8" style={{ color: '#030063' }}>Premium Retail Experience</h3>
-                <div className="space-y-6 flex-grow">
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                <h3 className="text-2xl font-medium mb-6">Premium Retail Experience</h3>
+                <div className="space-y-4 flex-grow">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Beautifully designed spaces</h4>
-                      <p className="text-muted-foreground leading-relaxed">Tailored specifically for your school's aesthetic and brand</p>
+                      <h4 className="font-semibold mb-1">Beautifully designed spaces</h4>
+                      <p className="text-sm text-muted-foreground">Tailored specifically for your school's aesthetic and brand</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Try-before-you-buy</h4>
-                      <p className="text-muted-foreground leading-relaxed">Fitting rooms and size consultations on-site</p>
+                      <h4 className="font-semibold mb-1">Try-before-you-buy</h4>
+                      <p className="text-sm text-muted-foreground">Fitting rooms and size consultations on-site</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Expert staff support</h4>
-                      <p className="text-muted-foreground leading-relaxed">Knowledgeable team to assist with all uniform needs</p>
+                      <h4 className="font-semibold mb-1">Expert staff support</h4>
+                      <p className="text-sm text-muted-foreground">Knowledgeable team to assist with all uniform needs</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Fully Managed Operations Card */}
-            <Card className="group relative overflow-hidden border-0 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardContent className="relative p-10 h-full flex flex-col">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-8 w-8 text-blue-500" />
+            <Card className="border-0 shadow-glass h-full">
+              <CardContent className="p-8 h-full flex flex-col">
+                <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                  <Users className="h-6 w-6 text-blue-500" />
                 </div>
-                <h3 className="text-3xl font-bold mb-8" style={{ color: '#030063' }}>Fully Managed Operations</h3>
-                <div className="space-y-6 flex-grow">
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                <h3 className="text-2xl font-medium mb-6">Fully Managed Operations</h3>
+                <div className="space-y-4 flex-grow">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Stocking & inventory management</h4>
-                      <p className="text-muted-foreground leading-relaxed">Professional stocking and inventory management</p>
+                      <h4 className="font-semibold mb-1">Stocking & inventory management</h4>
+                      <p className="text-sm text-muted-foreground">Professional stocking and inventory management</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Professional staffing</h4>
-                      <p className="text-muted-foreground leading-relaxed">Expert staff dedicated to uniform services</p>
+                      <h4 className="font-semibold mb-1">Professional staffing</h4>
+                      <p className="text-sm text-muted-foreground">Expert staff dedicated to uniform services</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Visual merchandising</h4>
-                      <p className="text-muted-foreground leading-relaxed">Professional display and store presentation</p>
+                      <h4 className="font-semibold mb-1">Visual merchandising</h4>
+                      <p className="text-sm text-muted-foreground">Professional display and store presentation</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-5">
-                    <div className="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-400" />
-                    </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <h4 className="text-lg font-bold mb-2" style={{ color: '#030063' }}>Sales reporting & analytics</h4>
-                      <p className="text-muted-foreground leading-relaxed">Detailed insights and performance tracking</p>
+                      <h4 className="font-semibold mb-1">Sales reporting & analytics</h4>
+                      <p className="text-sm text-muted-foreground">Detailed insights and performance tracking</p>
                     </div>
                   </div>
                 </div>
