@@ -269,7 +269,7 @@ const renderMenuItem = (item: MenuItem) => {
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent className="absolute left-0 top-full mt-2">
-          <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass bg-popover/70 backdrop-blur-md">
+          <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass bg-popover/25 backdrop-blur-md">
             {item.items.map(subItem => <li key={subItem.title}>
                 <NavigationMenuLink asChild>
                   <a className="flex select-none gap-4 rounded-xl p-4 leading-none no-underline outline-none transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground group" href={subItem.url}>
