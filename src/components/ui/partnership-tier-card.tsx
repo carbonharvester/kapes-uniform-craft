@@ -49,7 +49,7 @@ export function PartnershipTierCard({
   const IconComponent = getIcon();
   
   return <Card className={cn(
-    "relative flex flex-col gap-8 overflow-hidden p-6 h-full shadow-glass",
+    "relative flex flex-col gap-8 overflow-hidden p-6 h-full md:h-full shadow-glass min-h-[480px] md:min-h-[400px]",
     isCustom ? "bg-[#030063] text-white border-[#030063]" : 
     isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
     "bg-background text-foreground",
