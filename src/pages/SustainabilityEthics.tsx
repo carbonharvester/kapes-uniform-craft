@@ -8,19 +8,23 @@ const SustainabilityEthics = () => {
   const sustainableMaterials = [{
     title: "Regenerative Organic Cotton",
     description: "Improves soil health, biodiversity, and farmer livelihoods",
-    icon: Leaf
+    icon: Leaf,
+    image: "/src/assets/organic-cotton.jpg"
   }, {
     title: "Recycled Materials",
     description: "Reduces reliance on virgin resources and cuts plastic waste",
-    icon: Recycle
+    icon: Recycle,
+    image: "/src/assets/sustainable-materials.jpg"
   }, {
     title: "Biodegradable Alternatives to Polyester",
     description: "High-performance fabrics that safely return to nature at end of life",
-    icon: Globe
+    icon: Globe,
+    image: "/src/assets/zero-waste.jpg"
   }, {
     title: "Zero Toxins, Zero Greenwashing",
     description: "Every fabric is safe, breathable, and built to last",
-    icon: Shield
+    icon: Shield,
+    image: "/src/assets/ethical-manufacturing.jpg"
   }];
   const ethicalStandards = [{
     title: "No Child Labour",
@@ -114,7 +118,15 @@ const SustainabilityEthics = () => {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {sustainableMaterials.map((material, index) => {
             const IconComponent = material.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow">
+            return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
+                  <div className="aspect-video relative overflow-hidden">
+                    <img 
+                      src={material.image} 
+                      alt={material.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-green-100 rounded-lg dark:bg-green-900/20">
