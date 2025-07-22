@@ -289,75 +289,6 @@ const SocialImpactAfrica = () => {
           </div>
         </div>
       </section>
-
-      {/* Free School Meals Section */}
-      <section className="bg-gradient-warm-section py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              Free School Meals
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We also fund school meals for children who can't afford to eat during the day — helping reduce absenteeism, improve concentration, and keep children in school longer.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {mealProgram.map((program, index) => {
-            const IconComponent = program.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center dark:bg-green-900/20">
-                      <IconComponent className="w-6 h-6 text-green-600" />
-                    </div>
-                    <CardTitle className="text-lg">{program.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{program.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-          
-          <div className="text-center bg-green-50 p-6 rounded-lg dark:bg-green-950/20">
-            <p className="text-xl font-bold text-green-800 dark:text-green-200">
-              One garment returned = one child fed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Creating Jobs Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              Creating Jobs Through Local Production
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Impact isn't just about charity — it's about creating self-sustaining ecosystems. That's why our free uniforms are made locally, providing:
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {jobCreation.map((job, index) => {
-            const IconComponent = job.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
-                      <IconComponent className="w-6 h-6 text-purple-600" />
-                    </div>
-                    <CardTitle className="text-lg">{job.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{job.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-        </div>
-      </section>
-
       {/* Track Impact Section */}
       <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -426,7 +357,6 @@ const SocialImpactAfrica = () => {
         </div>
       </section>
 
-      {/* Final Impact Statement */}
       
       <Footer />
     </div>;
