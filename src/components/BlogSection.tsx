@@ -60,7 +60,7 @@ export const BlogSection = () => {
           </Button>
         </div>
 
-        <div className="grid w-full max-w-7xl mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full max-w-5xl mx-auto gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {isLoading ? (
             // Loading skeleton
             [...Array(3)].map((_, index) => (
