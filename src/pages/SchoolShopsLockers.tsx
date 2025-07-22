@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,38 +6,29 @@ import { Footer } from "@/components/Footer";
 import { Feature } from "@/components/ui/feature-with-image-comparison";
 import { ImageContentSection } from "@/components/ImageContentSection";
 import eCommerceHeroImage from "@/assets/e-commerce-lockers-hero.jpg";
-
 export const SchoolShopsLockers = () => {
   // E-commerce lockers features data
-  const eCommerceFeatures = [
-    {
-      title: "Secure & Strategic",
-      description: "Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.",
-      icon: Shield
-    },
-    {
-      title: "24/7 Convenience", 
-      description: "Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.",
-      icon: Clock
-    },
-    {
-      title: "Zero Admin Burden",
-      description: "Fully managed logistics by Kapes; zero extra work for your school—we handle everything.",
-      icon: Zap
-    }
-  ];
-  return (
-    <div className="min-h-screen bg-background">
+  const eCommerceFeatures = [{
+    title: "Secure & Strategic",
+    description: "Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.",
+    icon: Shield
+  }, {
+    title: "24/7 Convenience",
+    description: "Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.",
+    icon: Clock
+  }, {
+    title: "Zero Admin Burden",
+    description: "Fully managed logistics by Kapes; zero extra work for your school—we handle everything.",
+    icon: Zap
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section - Our Mission Template */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-            backgroundPosition: "20% center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+        backgroundPosition: "20% center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -60,7 +50,9 @@ export const SchoolShopsLockers = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* Full-width background sections */}
@@ -154,17 +146,7 @@ export const SchoolShopsLockers = () => {
       </div>
 
       {/* E-Commerce Lockers Section */}
-      <ImageContentSection
-        title="E-Commerce Lockers"
-        description="Secure, convenient, and available 24/7—the future of uniform collection"
-        imageSrc={eCommerceHeroImage}
-        imageAlt="E-commerce lockers installation showing modern secure pickup solution"
-        items={eCommerceFeatures}
-        bottomText="Smart pickup solution that transforms uniform collection for busy families"
-        imagePosition="right"
-        iconColorScheme="blue"
-        className="bg-gradient-warm-section"
-      />
+      <ImageContentSection title="E-Commerce Lockers" description="Secure, convenient, and available 24/7—the future of uniform collection" imageSrc={eCommerceHeroImage} imageAlt="E-commerce lockers installation showing modern secure pickup solution" items={eCommerceFeatures} bottomText="Smart pickup solution that transforms uniform collection for busy families" imagePosition="right" iconColorScheme="blue" className="bg-gradient-warm-section" />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
@@ -228,7 +210,9 @@ export const SchoolShopsLockers = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16" style={{ backgroundColor: '#cfeaff' }}>
+          <section className="text-center py-16" style={{
+          backgroundColor: '#cfeaff'
+        }}>
             <div className="inline-flex items-center gap-2 bg-white/80 rounded-full px-6 py-2 mb-6">
               <Store className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Get Started Today</span>
@@ -239,14 +223,11 @@ export const SchoolShopsLockers = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss which solution works best for your school—shops, lockers, or both.
             </p>
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300">
-              Request a Free Shop or Locker Consultation
-            </Button>
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300">Request a Consultation</Button>
           </section>
           
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </div>;
 };
