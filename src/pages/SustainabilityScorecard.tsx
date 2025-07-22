@@ -14,8 +14,8 @@ const SustainabilityScorecardPage = () => {
     if (storedUserData) {
       try {
         const userData = JSON.parse(storedUserData);
-        // Check if we have the required fields from the new form structure
-        if (userData.schoolName && userData.firstName && userData.lastName && userData.country && userData.students) {
+        // Check if we have the required fields from the updated form structure
+        if (userData.firstName && userData.lastName && userData.email && userData.schoolName && userData.country) {
           setShowAssessment(true);
         }
       } catch (error) {

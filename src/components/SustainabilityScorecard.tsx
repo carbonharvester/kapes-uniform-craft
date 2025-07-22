@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +7,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Progress } from '@/components/ui/progress';
-import { CheckCircle, Download, ArrowLeft, Send, Mail, School, User, MapPin, Phone } from 'lucide-react';
+import { CheckCircle, Download, ArrowLeft, Send, Mail, School, User, MapPin } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import jsPDF from 'jspdf';
 
@@ -22,11 +21,12 @@ interface Question {
 }
 
 interface UserData {
-  schoolName: string;
-  contactName: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  phone: string;
-  location: string;
+  schoolName: string;
+  country: string;
+  students: string;
 }
 
 const questions: Question[] = [
@@ -297,11 +297,12 @@ const SustainabilityScorecard = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   const [userData, setUserData] = useState<UserData>({
-    schoolName: '',
-    contactName: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: '',
-    location: ''
+    schoolName: '',
+    country: '',
+    students: ''
   });
   const [showUserForm, setShowUserForm] = useState(true);
   const [showResults, setShowResults] = useState(false);
@@ -318,7 +319,7 @@ const SustainabilityScorecard = () => {
 
   const handleUserDataSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!userData.schoolName || !userData.contactName || !userData.email) {
+    if (!userData.firstName || !userData.lastName || !userData.email || !userData.schoolName) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -453,24 +454,36 @@ const SustainabilityScorecard = () => {
     const { totalScore, maxPossibleScore, percentage } = calculateScore();
     const analysis = getScoreAnalysis(percentage);
     
-    // Create a comprehensive data object with all answers
+    // Create submission data in Google Sheet column order
     const submissionData = {
-      timestamp: new Date().toISOString(),
-      schoolName: userData.schoolName,
-      contactName: userData.contactName,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
       email: userData.email,
-      phone: userData.phone,
-      location: userData.location,
-      totalScore: totalScore,
-      maxPossibleScore: maxPossibleScore,
-      percentage: percentage,
-      grade: analysis.grade,
-      ...Object.fromEntries(
-        questions.map(q => [
-          q.id,
-          Array.isArray(answers[q.id]) ? answers[q.id].join('; ') : (answers[q.id]?.[0] || '')
-        ])
-      )
+      school: userData.schoolName,
+      country: userData.country,
+      students: userData.students,
+      score: percentage,
+      timestamp: new Date().toISOString(),
+      // Map questions to Google Sheet column names in order
+      materials: answers.materials ? answers.materials.join('; ') : '',
+      environmental_impact: answers.certifications ? answers.certifications.join('; ') : '',
+      carbon_offset: answers.manufacturing ? answers.manufacturing[0] : '',
+      packaging: answers.packaging ? answers.packaging[0] : '',
+      supplier_disclosure: answers.supplier_ethics ? answers.supplier_ethics[0] : '',
+      ethical_audits: answers.durability ? answers.durability[0] : '',
+      living_wages: answers.end_of_life ? answers.end_of_life.join('; ') : '',
+      certifications: answers.purchasing_frequency ? answers.purchasing_frequency[0] : '',
+      collection_resale: answers.cost_consideration ? answers.cost_consideration[0] : '',
+      social_causes: answers.washing_care ? answers.washing_care.join('; ') : '',
+      distribution: answers.transportation ? answers.transportation[0] : '',
+      chemical_testing: answers.parent_feedback ? answers.parent_feedback[0] : '',
+      supply_chain: answers.school_sustainability ? answers.school_sustainability.join('; ') : '',
+      education: answers.uniform_sizes ? answers.uniform_sizes[0] : '',
+      ai_usage: answers.student_input ? answers.student_input[0] : '',
+      sustainability_importance: answers.budget_flexibility ? answers.budget_flexibility[0] : '',
+      program_rating: answers.timeline_flexibility ? answers.timeline_flexibility[0] : '',
+      willing_to_improve: answers.improvement_consideration ? answers.improvement_consideration[0] : '',
+      selected_features: answers.important_features ? answers.important_features.join('; ') : ''
     };
 
     console.log('Submission data:', submissionData);
@@ -536,7 +549,7 @@ const SustainabilityScorecard = () => {
     // School Info
     doc.setFontSize(12);
     doc.text(`School: ${userData.schoolName}`, 20, 50);
-    doc.text(`Contact: ${userData.contactName}`, 20, 60);
+    doc.text(`Contact: ${userData.firstName} ${userData.lastName}`, 20, 60);
     doc.text(`Email: ${userData.email}`, 20, 70);
     
     // Score
@@ -581,34 +594,36 @@ const SustainabilityScorecard = () => {
         </CardHeader>
         <CardContent className="px-4 md:px-6">
           <form onSubmit={handleUserDataSubmit} className="space-y-4 md:space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="schoolName" className="flex items-center gap-2 text-sm md:text-base">
-                <School className="w-4 h-4" />
-                School Name *
-              </Label>
-              <Input
-                id="schoolName"
-                value={userData.schoolName}
-                onChange={(e) => setUserData(prev => ({...prev, schoolName: e.target.value}))}
-                placeholder="Enter your school name"
-                required
-                className="text-sm md:text-base"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="contactName" className="flex items-center gap-2 text-sm md:text-base">
-                <User className="w-4 h-4" />
-                Contact Name *
-              </Label>
-              <Input
-                id="contactName"
-                value={userData.contactName}
-                onChange={(e) => setUserData(prev => ({...prev, contactName: e.target.value}))}
-                placeholder="Your full name"
-                required
-                className="text-sm md:text-base"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName" className="flex items-center gap-2 text-sm md:text-base">
+                  <User className="w-4 h-4" />
+                  First Name *
+                </Label>
+                <Input
+                  id="firstName"
+                  value={userData.firstName}
+                  onChange={(e) => setUserData(prev => ({...prev, firstName: e.target.value}))}
+                  placeholder="Your first name"
+                  required
+                  className="text-sm md:text-base"
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="lastName" className="flex items-center gap-2 text-sm md:text-base">
+                  <User className="w-4 h-4" />
+                  Last Name *
+                </Label>
+                <Input
+                  id="lastName"
+                  value={userData.lastName}
+                  onChange={(e) => setUserData(prev => ({...prev, lastName: e.target.value}))}
+                  placeholder="Your last name"
+                  required
+                  className="text-sm md:text-base"
+                />
+              </div>
             </div>
             
             <div className="space-y-2">
@@ -628,29 +643,46 @@ const SustainabilityScorecard = () => {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="phone" className="flex items-center gap-2 text-sm md:text-base">
-                <Phone className="w-4 h-4" />
-                Phone Number
+              <Label htmlFor="schoolName" className="flex items-center gap-2 text-sm md:text-base">
+                <School className="w-4 h-4" />
+                School Name *
               </Label>
               <Input
-                id="phone"
-                value={userData.phone}
-                onChange={(e) => setUserData(prev => ({...prev, phone: e.target.value}))}
-                placeholder="Your phone number"
+                id="schoolName"
+                value={userData.schoolName}
+                onChange={(e) => setUserData(prev => ({...prev, schoolName: e.target.value}))}
+                placeholder="Enter your school name"
+                required
                 className="text-sm md:text-base"
               />
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="location" className="flex items-center gap-2 text-sm md:text-base">
+              <Label htmlFor="country" className="flex items-center gap-2 text-sm md:text-base">
                 <MapPin className="w-4 h-4" />
-                School Location
+                Country *
               </Label>
               <Input
-                id="location"
-                value={userData.location}
-                onChange={(e) => setUserData(prev => ({...prev, location: e.target.value}))}
-                placeholder="City, Country"
+                id="country"
+                value={userData.country}
+                onChange={(e) => setUserData(prev => ({...prev, country: e.target.value}))}
+                placeholder="Your country"
+                required
+                className="text-sm md:text-base"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <Label htmlFor="students" className="flex items-center gap-2 text-sm md:text-base">
+                <School className="w-4 h-4" />
+                Number of Students
+              </Label>
+              <Input
+                id="students"
+                type="number"
+                value={userData.students}
+                onChange={(e) => setUserData(prev => ({...prev, students: e.target.value}))}
+                placeholder="Enter number of students"
                 className="text-sm md:text-base"
               />
             </div>
