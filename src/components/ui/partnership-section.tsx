@@ -25,7 +25,10 @@ export function PartnershipSection({
         </div>
         
         <TierQuizModal>
-          <Button className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button 
+            className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer"
+            style={{ WebkitTapHighlightColor: 'transparent' }}
+          >
             Find Your Perfect Tier
           </Button>
         </TierQuizModal>
