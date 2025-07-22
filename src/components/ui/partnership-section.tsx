@@ -26,7 +26,8 @@ export function PartnershipSection({
         
         <Button 
           onClick={() => {
-            console.log("Button clicked");
+            console.log("Find Your Tier button clicked");
+            alert("Button clicked - modal should open");
             document.dispatchEvent(new CustomEvent('openTierQuiz'));
           }}
           className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer"

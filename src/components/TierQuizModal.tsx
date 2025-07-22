@@ -8,7 +8,8 @@ export const TierQuizModal = () => {
 
   useEffect(() => {
     const handleOpenQuiz = () => {
-      console.log("Opening tier quiz modal");
+      console.log("TierQuizModal: Received openTierQuiz event");
+      alert("Event received - opening modal");
       setOpen(true);
     };
 
