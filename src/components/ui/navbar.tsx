@@ -177,7 +177,7 @@ const Navbar = ({
     }
   }
 }: NavbarProps) => {
-  return <section className="py-4 md:py-6 sticky top-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
+  return <header className="py-4 md:py-6 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-8">
@@ -263,7 +263,7 @@ const Navbar = ({
           </div>
         </div>
       </div>
-    </section>;
+    </header>;
 };
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {

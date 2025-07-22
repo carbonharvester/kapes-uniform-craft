@@ -159,6 +159,13 @@ html {
 
 body {
   overflow-x: hidden;
+  padding-top: 80px; /* Space for fixed header */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 96px; /* Larger space for desktop header */
+  }
 }
 
 /* Glass morphism utility */
