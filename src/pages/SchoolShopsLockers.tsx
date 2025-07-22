@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Feature } from "@/components/ui/feature-with-image-comparison";
+import eCommerceHeroImage from "@/assets/e-commerce-lockers-hero.jpg";
 
 export const SchoolShopsLockers = () => {
   return (
@@ -144,6 +145,14 @@ export const SchoolShopsLockers = () => {
                 <span className="text-sm font-medium text-primary">Smart Pickup Solution</span>
               </div>
               <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
+            </div>
+            
+            <div className="mb-12">
+              <img 
+                src={eCommerceHeroImage} 
+                alt="E-commerce lockers installation showing modern secure pickup solution"
+                className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
+              />
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
