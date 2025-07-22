@@ -21,7 +21,7 @@ const SustainabilityEthics = () => {
     icon: Globe,
     image: "/src/assets/zero-waste.jpg"
   }, {
-    title: "No Chemical Treatments",
+    title: "No Toxic Chemical Treatments",
     description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finshes",
     icon: Shield,
     image: "/src/assets/ethical-manufacturing.jpg"
