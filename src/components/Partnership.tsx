@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Partnership = () => {
   return (
@@ -17,11 +18,11 @@ export const Partnership = () => {
               Sustainability Scorecard to benchmark the sustainability of your uniforms.
             </p>
             <div className="space-y-4">
-              <Button size="lg" className="w-full md:w-auto mr-4">
-                Take scorecard
+              <Button size="lg" className="w-full md:w-auto mr-4" asChild>
+                <Link to="/sustainability-scorecard">Take scorecard</Link>
               </Button>
-              <Button variant="outline" size="lg" className="w-full md:w-auto">
-                Join Waiting List
+              <Button variant="outline" size="lg" className="w-full md:w-auto" asChild>
+                <Link to="/sustainability-scorecard">Join Waiting List</Link>
               </Button>
             </div>
           </div>

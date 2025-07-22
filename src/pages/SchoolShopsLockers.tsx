@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -223,7 +224,9 @@ export const SchoolShopsLockers = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss which solution works best for your school—shops, lockers, or both.
             </p>
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300">Request a Consultation</Button>
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300" asChild>
+              <Link to="/sustainability-scorecard">Request a Consultation</Link>
+            </Button>
           </section>
           
         </div>

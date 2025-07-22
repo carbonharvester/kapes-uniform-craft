@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { Footer } from "@/components/Footer";
 const ImplementationTimeline = () => {
@@ -174,8 +175,8 @@ const ImplementationTimeline = () => {
             Book your free consultation to discuss your timeline and requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
-              Book Free Consultation
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
+              <Link to="/sustainability-scorecard">Book Free Consultation</Link>
             </Button>
             
           </div>

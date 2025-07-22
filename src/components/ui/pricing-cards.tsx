@@ -1,5 +1,6 @@
 import React from "react";
 import { Check, MoveRight, PhoneCall } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -67,8 +68,8 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-4">
-                    Get Started <MoveRight className="w-4 h-4" />
+                  <Button variant="outline" className="gap-4" asChild>
+                     <Link to="/sustainability-scorecard">Get Started <MoveRight className="w-4 h-4" /></Link>
                   </Button>
                 </div>
               </CardContent>
@@ -115,8 +116,8 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button className="gap-4">
-                    Join Core Tier <MoveRight className="w-4 h-4" />
+                  <Button className="gap-4" asChild>
+                     <Link to="/sustainability-scorecard">Join Core Tier <MoveRight className="w-4 h-4" /></Link>
                   </Button>
                 </div>
               </CardContent>
@@ -163,8 +164,8 @@ function Pricing() {
                       </div>
                     </div>
                   </div>
-                  <Button variant="outline" className="gap-4">
-                    Book a consultation <PhoneCall className="w-4 h-4" />
+                  <Button variant="outline" className="gap-4" asChild>
+                     <Link to="/sustainability-scorecard">Book a consultation <PhoneCall className="w-4 h-4" /></Link>
                   </Button>
                 </div>
               </CardContent>
