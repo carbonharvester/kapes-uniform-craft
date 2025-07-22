@@ -23,6 +23,7 @@ export default {
 				'inter': ['Inter', 'system-ui', 'sans-serif'],
 				'academy': ['Academy Sans Expanded', 'Inter', 'system-ui', 'sans-serif'],
 				'academy-sans': ['Academy Sans', 'Inter', 'system-ui', 'sans-serif'],
+				'academy-hero': ['Academy Sans Expanded', 'Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

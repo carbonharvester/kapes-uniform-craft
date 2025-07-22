@@ -15,6 +15,14 @@
 }
 
 @font-face {
+  font-family: 'Academy Sans Expanded';
+  src: url('./assets/fonts/AcademySansExpanded-Extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Academy Sans';
   src: url('./assets/fonts/AcademySans-Regular.otf') format('opentype');
   font-weight: normal;
@@ -164,7 +172,7 @@
   
   /* Heading styles */
   h1, h2, h3, h4, h5, h6 {
-    @apply text-heading font-academy-sans;
+    @apply text-heading font-academy font-bold;
   }
 }
 
