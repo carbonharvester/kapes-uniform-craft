@@ -26,7 +26,7 @@ export const BlogSection = () => {
   if (error) {
     return (
       <section className="py-16 px-4 bg-gradient-tri-soft font-inter">
-        <div className="container mx-auto max-w-6xl">
+        <div className="w-full px-4 md:px-8 lg:px-12">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-6">
               Latest Insights & Updates
@@ -42,7 +42,7 @@ export const BlogSection = () => {
 
   return (
     <section className="py-16 px-4 bg-gradient-tri-soft font-inter">
-      <div className="container mx-auto max-w-6xl">
+      <div className="w-full px-4 md:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight text-heading mb-6">
