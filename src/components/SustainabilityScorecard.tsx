@@ -147,7 +147,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       const formData = {
         // User information
         firstName: userData.firstName,
-        surname: userData.surname,
+        lastName: userData.surname, // Changed from 'surname' to 'lastName' for clarity
         email: userData.email,
         school: userData.school,
         country: userData.country,
@@ -156,7 +156,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         timestamp: new Date().toISOString(),
         
         // Answers - send as key-value pairs using question IDs
-        answers: {}
+        answers: {},
+        
+        // Special fields for easier access
+        wantsToImprove: '', // Will be populated below
+        selectedFeatures: '' // Will be populated below
       };
 
       // Add all answers using question IDs as keys
@@ -169,13 +173,29 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           // Handle special questions that aren't in the main questions array
           if (question === 'Do you want to improve the sustainability of your school uniforms?') {
             formData.answers['wants_improvement'] = answer;
+            formData.wantsToImprove = answer; // Also add as top-level field
           } else if (question === 'Selected features:') {
             formData.answers['selected_features'] = answer;
+            formData.selectedFeatures = answer; // Also add as top-level field
+          } else if (question === 'Would you consider improving this in the next 12 months by switching to a more sustainable program?') {
+            formData.answers['extra2'] = answer;
           }
         }
       });
 
       console.log('Final form data being sent:', formData);
+      console.log('UserData check:', {
+        firstName: userData.firstName,
+        surname: userData.surname, 
+        country: userData.country
+      });
+      console.log('UserAnswers array:', userAnswers);
+      console.log('Looking for wants_improvement and selected_features...');
+      userAnswers.forEach(({ question, answer }) => {
+        if (question.includes('improve') || question.includes('features')) {
+          console.log('Found special question:', question, '→', answer);
+        }
+      });
 
       fetch(sheetURL, {
         method: 'POST',
@@ -480,6 +500,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     // Check if user said no to question about improving in next 12 months
     const extra2Answer = formAnswers.extra2 as string;
     if (extra2Answer === '0') { // User said no to improving in next 12 months
+      // Still add this answer to the results for tracking
+      setUserAnswers(prev => [...prev, { question: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', answer: 'No' }]);
       setShowResults(true);
       return;
     }
@@ -501,7 +523,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       return;
     }
     setUserImprove(selected.value);
-    userAnswers.push({ question: 'Do you want to improve the sustainability of your school uniforms?', answer: selected.value });
+    setUserAnswers(prev => [...prev, { question: 'Do you want to improve the sustainability of your school uniforms?', answer: selected.value }]);
     setShowImprove(false);
     if (selected.value === 'yes') {
       setShowFeatures(true);
@@ -521,7 +543,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       return;
     }
     setUserFeatures(selectedFeatures);
-    userAnswers.push({ question: 'Selected features:', answer: selectedFeatures.join(', ') });
+    setUserAnswers(prev => [...prev, { question: 'Selected features:', answer: selectedFeatures.join(', ') }]);
     setShowFeatures(false);
     setShowResults(true);
   };
