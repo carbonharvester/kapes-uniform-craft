@@ -162,10 +162,7 @@ const Navbar = ({
       url: "/resources"
     }]
   }],
-  mobileExtraLinks = [{
-    name: "Resources & Tools",
-    url: "/resources"
-  }],
+  mobileExtraLinks = [],
   auth = {
     login: {
       text: "KapesImpact",
