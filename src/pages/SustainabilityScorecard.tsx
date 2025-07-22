@@ -9,6 +9,14 @@ import { CheckCircle, ArrowRight, Target, FileText, Users, Download, Zap, Star, 
 const SustainabilityScorecardPage = () => {
   const [showAssessment, setShowAssessment] = useState(false);
 
+  // Check for user data from homepage form on component mount
+  React.useEffect(() => {
+    const storedUserData = localStorage.getItem('scorecardUserData');
+    if (storedUserData) {
+      setShowAssessment(true);
+    }
+  }, []);
+
   if (showAssessment) {
     return (
       <div className="min-h-screen flex flex-col justify-center items-center" style={{ backgroundColor: '#cfeaff' }}>
