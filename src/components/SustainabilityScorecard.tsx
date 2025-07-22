@@ -865,7 +865,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
           <CardHeader className="text-center pb-6 md:pb-8 px-4 md:px-6">
             <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4">
-              Sustainability Scorecard for School Uniforms
+              School Uniforms Sustainability Scorecard
             </CardTitle>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover how sustainable your school uniform program is and get personalized recommendations for improvement.
