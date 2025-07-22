@@ -459,10 +459,12 @@ const CircularEconomyTakeback = () => {
             })}
           </div>
           
-          <div className="text-center">
-            <p className="text-lg font-medium text-heading dark:text-heading mb-4">
-              By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
-            </p>
+          <div className="text-center mt-12">
+            <div className="max-w-4xl mx-auto bg-white/80 dark:bg-background-cool/30 rounded-2xl p-8 shadow-lg border border-primary/10 dark:border-primary/20">
+              <p className="text-xl md:text-2xl font-medium text-heading dark:text-heading leading-relaxed">
+                By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
+              </p>
+            </div>
           </div>
         </div>
         
