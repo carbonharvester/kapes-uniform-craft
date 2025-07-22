@@ -57,9 +57,6 @@ export function PartnershipTierCard({
   )}>
       {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}
-      {isLegacyImpact && (
-        <Crown className="absolute top-4 right-4 h-6 w-6 text-primary z-10" />
-      )}
 
       <div className="flex items-center gap-3">
         <div className={cn(
