@@ -226,6 +226,70 @@ const SocialImpactAfrica = () => {
         </div>
       </section>
 
+      {/* Creating Jobs Through Local Production Section */}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+              🧵 Creating Jobs Through Local Production
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Impact isn't just about charity — it's about creating self-sustaining ecosystems. That's why our free uniforms are made locally, providing:
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Content Section - on Left */}
+            <div className="space-y-8 order-1">
+              <div className="grid gap-8">
+                {jobCreation.map((job, index) => {
+                  const IconComponent = job.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-xl flex items-center justify-center group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {job.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {job.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Creating sustainable employment opportunities in local communities.
+                </p>
+              </div>
+            </div>
+
+            {/* Image Section - on Right */}
+            <div className="relative order-2">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg" 
+                  alt="Local production - creating jobs through manufacturing" 
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Free School Meals Section */}
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
