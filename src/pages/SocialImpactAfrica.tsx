@@ -99,44 +99,65 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Free School Uniforms Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center justify-center gap-3">
-              👕 Free School Uniforms
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+              Free School Uniforms
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               In many parts of Africa, a uniform is the barrier between a child and a classroom. Children without one are often turned away — even from free public schools.
             </p>
           </div>
           
-          <div className="mb-8">
-            <p className="text-center text-lg font-medium text-foreground mb-8">
-              Through our impact program, funded by your uniform purchases:
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {uniformImpact.map((impact, index) => {
-            const IconComponent = impact.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center dark:bg-blue-900/20">
-                      <IconComponent className="w-6 h-6 text-blue-600" />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Content Section */}
+            <div className="space-y-8">
+              <div className="grid gap-8">
+                {uniformImpact.map((impact, index) => {
+                  const IconComponent = impact.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {impact.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {impact.description}
+                        </p>
+                      </div>
                     </div>
-                    <CardTitle className="text-lg">{impact.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{impact.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-          
-          <div className="text-center bg-blue-50 p-6 rounded-lg dark:bg-blue-950/20">
-            <p className="text-lg font-medium text-blue-800 dark:text-blue-200">
-              Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
-            </p>
+                  );
+                })}
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
+                </p>
+              </div>
+            </div>
+            
+            {/* Image Section */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="/lovable-uploads/2e783055-77b3-4a83-a845-c317664cdd57.png" 
+                  alt="Free school uniforms program - children in school" 
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+            </div>
           </div>
         </div>
       </section>

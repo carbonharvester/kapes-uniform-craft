@@ -188,8 +188,8 @@ const SustainabilityEthics = () => {
                   return (
                     <div key={index} className="flex gap-4 items-start group">
                       <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <IconComponent className="w-5 h-5 text-primary" />
+                        <div className="w-10 h-10 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl flex items-center justify-center group-hover:bg-red-100 dark:group-hover:bg-red-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-red-600 dark:text-red-400" />
                         </div>
                       </div>
                       <div className="space-y-1">
