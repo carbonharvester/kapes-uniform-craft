@@ -214,7 +214,7 @@ const SustainabilityEthics = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9260-1_ihvv9k.jpg" 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg" 
                   alt="Ethical manufacturing - worker at sewing machine" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
