@@ -20,12 +20,13 @@ const SustainabilityEthics = () => {
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
     icon: Globe,
     image: "/src/assets/zero-waste.jpg"
-  }, {
-    title: "No Toxic Chemical Treatments",
-    description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finshes",
-    icon: Shield,
-    image: "/src/assets/ethical-manufacturing.jpg"
   }];
+
+  const noToxicChemicals = {
+    title: "No Toxic Chemical Treatments",
+    description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finishes",
+    icon: Shield
+  };
   const ethicalStandards = [{
     title: "No Child Labour",
     description: "Ever. Zero tolerance policy.",
@@ -115,7 +116,7 @@ const SustainabilityEthics = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
             {sustainableMaterials.map((material, index) => {
             const IconComponent = material.icon;
             return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
@@ -136,6 +137,19 @@ const SustainabilityEthics = () => {
                   </CardContent>
                 </Card>;
           })}
+          </div>
+
+          {/* No Toxic Chemicals Banner */}
+          <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-8 mb-8">
+            <div className="flex items-center justify-center gap-4">
+              <div className="p-3 bg-green-100 rounded-lg dark:bg-green-900/30">
+                <Shield className="w-8 h-8 text-green-600" />
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-2">{noToxicChemicals.title}</h3>
+                <p className="text-lg text-muted-foreground">{noToxicChemicals.description}</p>
+              </div>
+            </div>
           </div>
           
           <div className="text-center">
