@@ -384,11 +384,9 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <div className="bg-purple-100/50 dark:bg-purple-900/20 rounded-xl p-6 border border-purple-200/50 dark:border-purple-800/50">
-              <p className="text-lg font-medium text-purple-900 dark:text-purple-100">
-                It's not just recycling — it's feeding children, reducing waste, and teaching values.
-              </p>
-            </div>
+            <p className="text-lg font-medium text-purple-900 dark:text-purple-100">
+              It's not just recycling — it's feeding children, reducing waste, and teaching values.
+            </p>
           </div>
         </div>
         
