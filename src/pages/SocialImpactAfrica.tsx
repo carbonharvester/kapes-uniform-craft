@@ -147,7 +147,7 @@ const SocialImpactAfrica = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/2e783055-77b3-4a83-a845-c317664cdd57.png" 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
                   alt="Free school uniforms program - children in school" 
                   className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                 />
