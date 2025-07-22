@@ -3,24 +3,39 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Building, User, Mail, Phone, MapPin } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Building, User, Users, Globe } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface UserData {
-  school: string;
-  contactName: string;
-  email: string;
-  phone: string;
-  location: string;
+  schoolName: string;
+  firstName: string;
+  lastName: string;
+  country: string;
+  students: string;
 }
 
+const countries = [
+  'Afghanistan', 'Albania', 'Algeria', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan',
+  'Bahrain', 'Bangladesh', 'Belarus', 'Belgium', 'Bolivia', 'Bosnia and Herzegovina', 'Brazil', 'Bulgaria',
+  'Cambodia', 'Cameroon', 'Canada', 'Chile', 'China', 'Colombia', 'Costa Rica', 'Croatia', 'Czech Republic',
+  'Denmark', 'Dominican Republic', 'Ecuador', 'Egypt', 'Estonia', 'Ethiopia', 'Finland', 'France',
+  'Georgia', 'Germany', 'Ghana', 'Greece', 'Guatemala', 'Honduras', 'Hong Kong', 'Hungary',
+  'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy',
+  'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Latvia', 'Lebanon', 'Lithuania', 'Luxembourg',
+  'Malaysia', 'Malta', 'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Nigeria', 'Norway',
+  'Pakistan', 'Panama', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar',
+  'Romania', 'Russia', 'Saudi Arabia', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'Sweden', 'Switzerland',
+  'Thailand', 'Turkey', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Venezuela', 'Vietnam'
+];
+
 export const ScorecardAssessmentForm = () => {
-  const [userData, setUserData] = useState<UserData>({ 
-    school: '', 
-    contactName: '', 
-    email: '', 
-    phone: '',
-    location: ''
+  const [userData, setUserData] = useState<UserData>({
+    schoolName: '',
+    firstName: '',
+    lastName: '',
+    country: '',
+    students: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -28,7 +43,7 @@ export const ScorecardAssessmentForm = () => {
   const handleStartAssessment = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!userData.school || !userData.contactName || !userData.email || !userData.location) {
+    if (!userData.schoolName || !userData.firstName || !userData.lastName || !userData.country || !userData.students) {
       alert('Please fill all required fields to start.');
       return;
     }
@@ -61,64 +76,74 @@ export const ScorecardAssessmentForm = () => {
             </label>
             <Input 
               placeholder="Enter your school name" 
-              value={userData.school}
-              onChange={(e) => setUserData(prev => ({ ...prev, school: e.target.value }))}
+              value={userData.schoolName}
+              onChange={(e) => setUserData(prev => ({ ...prev, schoolName: e.target.value }))}
               required
             />
           </div>
           
-          <div>
-            <label className="flex items-center gap-2 text-sm font-medium mb-2">
-              <User className="h-4 w-4" />
-              Contact Name *
-            </label>
-            <Input 
-              placeholder="Your full name" 
-              value={userData.contactName}
-              onChange={(e) => setUserData(prev => ({ ...prev, contactName: e.target.value }))}
-              required
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="flex items-center gap-2 text-sm font-medium mb-2">
+                <User className="h-4 w-4" />
+                First Name *
+              </label>
+              <Input 
+                placeholder="Your first name" 
+                value={userData.firstName}
+                onChange={(e) => setUserData(prev => ({ ...prev, firstName: e.target.value }))}
+                required
+              />
+            </div>
+            
+            <div>
+              <label className="flex items-center gap-2 text-sm font-medium mb-2">
+                <User className="h-4 w-4" />
+                Last Name *
+              </label>
+              <Input 
+                placeholder="Your last name" 
+                value={userData.lastName}
+                onChange={(e) => setUserData(prev => ({ ...prev, lastName: e.target.value }))}
+                required
+              />
+            </div>
           </div>
           
           <div>
             <label className="flex items-center gap-2 text-sm font-medium mb-2">
-              <Mail className="h-4 w-4" />
-              Email Address *
+              <Globe className="h-4 w-4" />
+              Country *
             </label>
-            <Input 
-              type="email" 
-              placeholder="your.email@school.edu" 
-              value={userData.email}
-              onChange={(e) => setUserData(prev => ({ ...prev, email: e.target.value }))}
-              required
-            />
+            <Select value={userData.country} onValueChange={(value) => setUserData(prev => ({ ...prev, country: value }))}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select your country" />
+              </SelectTrigger>
+              <SelectContent className="bg-background border shadow-md max-h-60 overflow-y-auto z-50">
+                {countries.map((country) => (
+                  <SelectItem key={country} value={country}>
+                    {country}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
           
           <div>
             <label className="flex items-center gap-2 text-sm font-medium mb-2">
-              <Phone className="h-4 w-4" />
-              Phone Number
+              <Users className="h-4 w-4" />
+              Number of Students *
             </label>
             <Input 
-              type="tel" 
-              placeholder="Your phone number" 
-              value={userData.phone}
-              onChange={(e) => setUserData(prev => ({ ...prev, phone: e.target.value }))}
-            />
-          </div>
-          
-          <div>
-            <label className="flex items-center gap-2 text-sm font-medium mb-2">
-              <MapPin className="h-4 w-4" />
-              School Location
-            </label>
-            <Input 
-              placeholder="City, Country" 
-              value={userData.location}
-              onChange={(e) => setUserData(prev => ({ ...prev, location: e.target.value }))}
+              type="number"
+              placeholder="Enter number of students" 
+              value={userData.students}
+              onChange={(e) => setUserData(prev => ({ ...prev, students: e.target.value }))}
               required
+              min="1"
             />
           </div>
+
           <Button type="submit" className="w-full bg-coral hover:bg-coral/90" disabled={isSubmitting}>
             {isSubmitting ? 'Starting Assessment...' : 'Start Assessment'}
           </Button>
