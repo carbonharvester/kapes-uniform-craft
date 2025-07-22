@@ -228,7 +228,7 @@ export const SchoolShopsLockers = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16">
+          <section className="text-center py-16" style={{ backgroundColor: '#cfeaff' }}>
             <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-2 mb-6">
               <Store className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Get Started Today</span>
