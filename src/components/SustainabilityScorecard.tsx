@@ -61,8 +61,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'education', text: 'Do you educate your students about the impacts of fashion, related to their uniforms?', type: 'radio' },
     { id: 'ai_usage', text: 'Do you use AI in your uniform program? (Select all that apply)', type: 'checkbox' },
     { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' },
-    { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
-    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' }
+    { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' }
   ];
 
   const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions, updated for distribution (19) and added education (5)
@@ -85,7 +84,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
     'Do you use AI in your uniform program? (Select all that apply)': 'AI Usage',
     'How would you rate your current uniform program out of 10?': 'Program Rating',
-    'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Improvement Consideration',
     'How important is sustainability within your school?': 'Sustainability Importance',
     'Do you want to improve the sustainability of your school uniforms?': 'Wants to Improve',
     'Selected features:': 'Selected Features'
@@ -177,8 +175,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           } else if (question === 'Selected features:') {
             formData.answers['selected_features'] = answer;
             formData.selectedFeatures = answer; // Also add as top-level field
-          } else if (question === 'Would you consider improving this in the next 12 months by switching to a more sustainable program?') {
-            formData.answers['extra2'] = answer;
           }
         }
       });
@@ -496,15 +492,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     console.log(`Final score: ${percentage}%`);
 
     setShowQuiz(false);
-    
-    // Check if user said no to question about improving in next 12 months
-    const extra2Answer = formAnswers.extra2 as string;
-    if (extra2Answer === '0') { // User said no to improving in next 12 months
-      // Still add this answer to the results for tracking
-      setUserAnswers(prev => [...prev, { question: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', answer: 'No' }]);
-      setShowResults(true);
-      return;
-    }
     
     if (percentage < 67) {
       setShowImprove(true);
