@@ -81,6 +81,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'How are uniforms distributed/ordered? (Select all that apply)': 'Distribution Methods',
     'Have your uniforms been tested for harmful or banned chemicals?': 'Chemical Testing',
     'Do your students, parents, and staff have full transparency of your supply chain?': 'Supply Chain Transparency',
+    'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
     'Do you use AI in your uniform program? (Select all that apply)': 'AI Usage',
     'How important is sustainability within your school?': 'Sustainability Importance',
     'How would you rate your current uniform program out of 10?': 'Program Rating',
