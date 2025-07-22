@@ -21,7 +21,6 @@ const SustainabilityEthics = () => {
     icon: Globe,
     image: "/src/assets/zero-waste.jpg"
   }];
-
   const noToxicChemicals = {
     title: "No Toxic Chemical Treatments",
     description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finishes",
@@ -173,9 +172,7 @@ const SustainabilityEthics = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
               Ethical Manufacturing
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
-            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment.</p>
           </div>
           
           <div className="grid rounded-lg container p-8 grid-cols-1 gap-8 items-center lg:grid-cols-2">
