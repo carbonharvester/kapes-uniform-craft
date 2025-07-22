@@ -22,7 +22,7 @@ const SustainabilityEthics = () => {
     image: "/src/assets/zero-waste.jpg"
   }, {
     title: "No Chemical Treatments",
-    description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits",
+    description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finshes",
     icon: Shield,
     image: "/src/assets/ethical-manufacturing.jpg"
   }];
