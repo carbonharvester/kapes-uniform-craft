@@ -81,11 +81,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'How are uniforms distributed/ordered? (Select all that apply)': 'Distribution Methods',
     'Have your uniforms been tested for harmful or banned chemicals?': 'Chemical Testing',
     'Do your students, parents, and staff have full transparency of your supply chain?': 'Supply Chain Transparency',
-    'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
     'Do you use AI in your uniform program? (Select all that apply)': 'AI Usage',
-    'How would you rate your current uniform program out of 10?': 'Program Rating',
     'How important is sustainability within your school?': 'Sustainability Importance',
-    'Do you want to improve the sustainability of your school uniforms?': 'Wants to Improve',
+    'How would you rate your current uniform program out of 10?': 'Program Rating',
+    'Do you want to improve the sustainability of your school uniforms?': 'Willing to improve?',
     'Selected features:': 'Selected Features'
   };
 
@@ -141,40 +140,32 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
       
-      // Create a simplified data structure
+      // Create form data with exact column names matching Google Sheets
       const formData = {
-        // User information
-        firstName: userData.firstName,
-        lastName: userData.surname, // Changed from 'surname' to 'lastName' for clarity
-        email: userData.email,
-        school: userData.school,
-        country: userData.country,
-        students: userData.students,
-        score: score,
-        timestamp: new Date().toISOString(),
-        
-        // Answers - send as key-value pairs using question IDs
-        answers: {},
-        
-        // Special fields for easier access
-        wantsToImprove: '', // Will be populated below
-        selectedFeatures: '' // Will be populated below
+        'First Name': userData.firstName,
+        'Last Name': userData.surname,
+        'Email': userData.email,
+        'School': userData.school,
+        'Country': userData.country,
+        'Students': userData.students,
+        'Score': score,
+        'Timestamp': new Date().toISOString(),
+        'Willing to improve?': '',
+        'Selected Features': ''
       };
 
-      // Add all answers using question IDs as keys
+      // Add all answers using the exact column names from Google Sheets
       userAnswers.forEach(({ question, answer }) => {
-        // Find the question ID for this question text
-        const questionObj = questions.find(q => q.text === question);
-        if (questionObj) {
-          formData.answers[questionObj.id] = answer;
+        // Use the columnNames mapping to get the exact Google Sheets column name
+        const columnName = columnNames[question];
+        if (columnName) {
+          formData[columnName] = answer;
         } else {
-          // Handle special questions that aren't in the main questions array
+          // Handle special questions that aren't in the columnNames mapping
           if (question === 'Do you want to improve the sustainability of your school uniforms?') {
-            formData.answers['wants_improvement'] = answer;
-            formData.wantsToImprove = answer; // Also add as top-level field
+            formData['Willing to improve?'] = answer;
           } else if (question === 'Selected features:') {
-            formData.answers['selected_features'] = answer;
-            formData.selectedFeatures = answer; // Also add as top-level field
+            formData['Selected Features'] = answer;
           }
         }
       });
