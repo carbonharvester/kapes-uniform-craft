@@ -70,7 +70,7 @@ const Navbar = ({
       icon: <Users className="size-5 shrink-0" />,
       url: "/student-leadership"
     }, {
-      title: "Factory Visits",
+      title: "Farm & Factory Visits",
       description: "Tour our manufacturing facilities",
       icon: <Factory className="size-5 shrink-0" />,
       url: "/factory-visits"
