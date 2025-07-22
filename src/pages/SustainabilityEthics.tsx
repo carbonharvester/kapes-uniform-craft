@@ -14,7 +14,7 @@ const SustainabilityEthics = () => {
     title: "Recycled Materials",
     description: "Reduces reliance on virgin resources and cuts plastic waste",
     icon: Recycle,
-    image: "/src/assets/sustainable-materials.jpg"
+    image: "/src/assets/recycled-materials.png"
   }, {
     title: "Lyocell",
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
