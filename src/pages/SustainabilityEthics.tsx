@@ -147,40 +147,48 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Ethical Manufacturing Section */}
-      <section className="bg-gradient-warm-section py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-              Ethical Manufacturing
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {ethicalStandards.map((standard, index) => {
-            const IconComponent = standard.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-blue-100 rounded-lg dark:bg-blue-900/20">
-                        <IconComponent className="w-6 h-6 text-blue-600" />
+      <section className="bg-gradient-warm-section py-20 lg:py-40">
+        <div className="container mx-auto">
+          <div className="grid border rounded-lg container p-8 grid-cols-1 gap-8 items-center lg:grid-cols-2">
+            <div className="flex gap-10 flex-col">
+              <div className="flex gap-4 flex-col">
+                <div>
+                  <Badge variant="outline">Manufacturing</Badge>
+                </div>
+                <div className="flex gap-2 flex-col">
+                  <h2 className="text-3xl lg:text-5xl tracking-tighter max-w-xl text-left font-regular">
+                    Ethical Manufacturing
+                  </h2>
+                  <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-left">
+                    We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
+                  </p>
+                </div>
+              </div>
+              <div className="grid lg:pl-6 grid-cols-1 gap-6">
+                {ethicalStandards.map((standard, index) => {
+                  const IconComponent = standard.icon;
+                  return (
+                    <div key={index} className="flex flex-row gap-6 items-start">
+                      <IconComponent className="w-4 h-4 mt-2 text-primary" />
+                      <div className="flex flex-col gap-1">
+                        <p className="font-medium">{standard.title}</p>
+                        <p className="text-muted-foreground text-sm">
+                          {standard.description}
+                        </p>
                       </div>
-                      <CardTitle className="text-lg">{standard.title}</CardTitle>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{standard.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-          
-          <div className="text-center">
-            <p className="text-lg font-medium text-foreground">
-              We don't cut corners, and we don't work with anyone who does.
-            </p>
+                  );
+                })}
+              </div>
+              <div className="text-left">
+                <p className="text-lg font-medium text-foreground">
+                  We don't cut corners, and we don't work with anyone who does.
+                </p>
+              </div>
+            </div>
+            <div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{
+              backgroundImage: "url('/src/assets/ethical-manufacturing.jpg')"
+            }}></div>
           </div>
         </div>
       </section>
