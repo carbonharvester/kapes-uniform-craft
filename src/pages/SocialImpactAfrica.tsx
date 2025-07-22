@@ -331,14 +331,9 @@ const SocialImpactAfrica = () => {
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
-                            {metric.title}
-                          </h3>
-                          <Badge variant="outline" className={`text-xs ${metric.tier === 'Impact Only' ? 'bg-purple-100 text-purple-800 border-purple-200' : 'bg-blue-100 text-blue-800 border-blue-200'}`}>
-                            {metric.tier}
-                          </Badge>
-                        </div>
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {metric.title}
+                        </h3>
                         <p className="text-muted-foreground leading-relaxed">
                           {metric.description}
                         </p>
