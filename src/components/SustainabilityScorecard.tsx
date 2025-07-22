@@ -815,7 +815,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const renderSelectQuestion = (questionId: string) => (
     <select 
       name={questionId} 
-      className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+      className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
       value={formAnswers[questionId] as string || ''}
       onChange={(e) => handleAnswerChange(questionId, e.target.value)}
     >
@@ -851,19 +851,19 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6" ref={formRef}>
+    <div className="w-full max-w-4xl mx-auto p-3 md:p-6" ref={formRef}>
       {showEntryForm && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader className="text-center pb-8">
-            <CardTitle className="text-4xl font-bold text-heading mb-4">
+          <CardHeader className="text-center pb-6 md:pb-8 px-4 md:px-6">
+            <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4">
               Sustainability Scorecard for School Uniforms
             </CardTitle>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
               Discover how sustainable your school uniform program is and get personalized recommendations for improvement.
             </p>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <CardContent className="space-y-4 md:space-y-6 px-4 md:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground">First Name</label>
                 <input
@@ -871,7 +871,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter your first name"
                   value={userData.firstName}
                   onChange={(e) => setUserData({...userData, firstName: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                 />
               </div>
@@ -882,7 +882,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter your last name"
                   value={userData.surname}
                   onChange={(e) => setUserData({...userData, surname: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                 />
               </div>
@@ -893,7 +893,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter school name"
                   value={userData.school}
                   onChange={(e) => setUserData({...userData, school: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                 />
               </div>
@@ -902,7 +902,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 <select
                   value={userData.country}
                   onChange={(e) => setUserData({...userData, country: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                 >
                   <option value="">Select your country</option>
@@ -1110,7 +1110,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter student count"
                   value={userData.students}
                   onChange={(e) => setUserData({...userData, students: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   min="1"
                   required
                 />
@@ -1122,7 +1122,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                   placeholder="Enter your email"
                   value={userData.email}
                   onChange={(e) => setUserData({...userData, email: e.target.value})}
-                  className="w-full p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                  className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                   required
                 />
               </div>
@@ -1134,11 +1134,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             )}
             <Button
               onClick={handleStart}
-              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
+              className="w-full py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
               size="lg"
             >
               Start Sustainability Assessment
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </CardContent>
         </Card>
@@ -1146,7 +1146,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       {showQuiz && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader className="pb-4 md:pb-6">
+          <CardHeader className="pb-4 md:pb-6 px-4 md:px-6">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
               <div className="text-sm font-medium text-muted-foreground">
                 Question {currentSlide + 1} of {questions.length}
@@ -1160,8 +1160,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               {questions[currentSlide].text}
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4 md:space-y-6">
-            <div className="min-h-[180px] md:min-h-[200px]">
+          <CardContent className="space-y-4 md:space-y-6 px-4 md:px-6">
+            <div className="min-h-[160px] md:min-h-[200px]">
               {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
               {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
               {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
@@ -1176,7 +1176,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               <Button
                 onClick={handlePrev}
                 variant="outline"
-                className={`flex items-center space-x-2 w-full sm:w-auto order-2 sm:order-1 ${currentSlide === 0 ? 'invisible' : ''}`}
+                className={`flex items-center justify-center space-x-2 w-full sm:w-auto order-2 sm:order-1 py-2.5 md:py-3 text-sm md:text-base ${currentSlide === 0 ? 'invisible' : ''}`}
                 disabled={currentSlide === 0}
                 size="lg"
               >
@@ -1185,7 +1185,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               </Button>
               <Button
                 onClick={handleNext}
-                className="flex items-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto order-1 sm:order-2"
+                className="flex items-center justify-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto order-1 sm:order-2 py-2.5 md:py-3 text-sm md:text-base"
                 size="lg"
               >
                 <span>{currentSlide === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
@@ -1198,28 +1198,28 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       {showImprove && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-heading text-center">
+          <CardHeader className="px-4 md:px-6">
+            <CardTitle className="text-xl md:text-2xl font-bold text-heading text-center">
               Ready to Improve Your Sustainability?
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <p className="text-center text-muted-foreground text-lg">
+          <CardContent className="space-y-4 md:space-y-6 px-4 md:px-6">
+            <p className="text-center text-muted-foreground text-base md:text-lg">
               Do you want to improve the sustainability of your school uniforms?
             </p>
-            <div className="space-y-4">
-              <label className="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
+            <div className="space-y-3 md:space-y-4">
+              <label className="flex items-center space-x-3 p-3 md:p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
                 <input type="radio" name="improve" value="yes" className="w-4 h-4 text-primary focus:ring-primary border-border" />
-                <span className="text-lg font-medium">Yes, I want to improve our sustainability</span>
+                <span className="text-base md:text-lg font-medium">Yes, I want to improve our sustainability</span>
               </label>
-              <label className="flex items-center space-x-3 p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
+              <label className="flex items-center space-x-3 p-3 md:p-4 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
                 <input type="radio" name="improve" value="no" className="w-4 h-4 text-primary focus:ring-primary border-border" />
-                <span className="text-lg font-medium">No, I'm satisfied with our current approach</span>
+                <span className="text-base md:text-lg font-medium">No, I'm satisfied with our current approach</span>
               </label>
             </div>
             <Button 
               onClick={handleImproveSubmit}
-              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
               size="lg"
             >
               Continue
@@ -1230,16 +1230,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       {showFeatures && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-heading text-center">
+          <CardHeader className="px-4 md:px-6">
+            <CardTitle className="text-xl md:text-2xl font-bold text-heading text-center">
               What's Most Important to You?
             </CardTitle>
-            <p className="text-center text-muted-foreground">
+            <p className="text-center text-muted-foreground text-sm md:text-base">
               Select the features that matter most for your school's uniform program
             </p>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="features-list grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="space-y-4 md:space-y-6 px-4 md:px-6">
+            <div className="features-list grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {[
                 'Natural, Sustainable Materials',
                 'Ethical Manufacturing',
@@ -1262,7 +1262,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             </div>
             <Button 
               onClick={handleFeaturesSubmit}
-              className="w-full py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground"
               size="lg"
             >
               Submit Priorities
@@ -1273,27 +1273,27 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       {showResults && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader className="text-center pb-8">
-            <div className="flex justify-center mb-6">
+          <CardHeader className="text-center pb-6 md:pb-8 px-4 md:px-6">
+            <div className="flex justify-center mb-4 md:mb-6">
               {getScoreIcon(score)}
             </div>
-            <CardTitle className="text-4xl font-bold text-heading mb-2">
+            <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-2">
               Your Sustainability Score
             </CardTitle>
-            <div className={`text-6xl font-bold ${getScoreColor(score)} mb-4`}>
+            <div className={`text-4xl md:text-6xl font-bold ${getScoreColor(score)} mb-3 md:mb-4`}>
               {score}%
             </div>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {scoreDescription}
             </p>
           </CardHeader>
-          <CardContent>
+          <CardContent className="px-4 md:px-6">
             {userFeatures.length > 0 && (
-              <div className="mb-8 p-6 bg-primary/10 rounded-xl border border-primary/20">
-                <h3 className="text-2xl font-bold text-heading mb-3 text-center">
+              <div className="mb-6 md:mb-8 p-4 md:p-6 bg-primary/10 rounded-xl border border-primary/20">
+                <h3 className="text-xl md:text-2xl font-bold text-heading mb-3 text-center">
                   🎉 You Qualify for a Free Consultation!
                 </h3>
-                <p className="text-center text-foreground text-lg">
+                <p className="text-center text-foreground text-base md:text-lg">
                   Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.
                 </p>
               </div>
@@ -1302,12 +1302,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
             <div className="flex justify-center">
               <Button 
                 asChild
-                className="px-8 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
+                className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02] w-full sm:w-auto"
                 size="lg"
               >
                 <a href="/consultation">
                   Book Your Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
                 </a>
               </Button>
             </div>
