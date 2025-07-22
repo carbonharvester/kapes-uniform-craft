@@ -259,7 +259,7 @@ const SustainabilityEthics = () => {
 
       {/* Enhanced CTA Section */}
       <section className="py-24 bg-gradient-to-br from-primary via-primary to-primary/80 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#030063]">
+        <div className="absolute inset-0 bg-[#cfeaff]">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-20 w-48 h-48 bg-white/10 rounded-full blur-3xl animate-pulse delay-700"></div>
         </div>
