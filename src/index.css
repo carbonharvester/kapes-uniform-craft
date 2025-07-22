@@ -65,7 +65,7 @@
     --ring: 8 92% 70%;
     
     /* Heading color - Dark navy blue (#030063) */
-    --heading: 230 95% 20%;
+    --heading: 242 100% 19%;
     
     /* Warm background - Lighter cream/beige */
     --background-warm: 46 67% 96%;
@@ -136,7 +136,7 @@
     --ring: 8 92% 65%;
     
     /* Heading color - Dark navy blue (#030063) in dark mode */
-    --heading: 230 95% 20%;
+    --heading: 242 100% 19%;
     
     /* Warm background - Darker for dark mode */
     --background-warm: 40 40% 15%;
