@@ -167,10 +167,10 @@ const SocialImpactAfrica = () => {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
-              Free School Uniforms
+              Free School Meals
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              In many parts of Africa, a uniform is the barrier between a child and a classroom. Children without one are often turned away — even from free public schools.
+              We also fund school meals for children who can't afford to eat during the day — helping reduce absenteeism, improve concentration, and keep children in school longer.
             </p>
           </div>
           
@@ -194,21 +194,21 @@ const SocialImpactAfrica = () => {
             {/* Content Section - Now on Right */}
             <div className="space-y-8 order-2">
               <div className="grid gap-8">
-                {uniformImpact.map((impact, index) => {
-                  const IconComponent = impact.icon;
+                {mealProgram.map((program, index) => {
+                  const IconComponent = program.icon;
                   return (
                     <div key={index} className="flex gap-4 items-start group">
                       <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                          <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        <div className="w-10 h-10 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl flex items-center justify-center group-hover:bg-green-100 dark:group-hover:bg-green-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-green-600 dark:text-green-400" />
                         </div>
                       </div>
                       <div className="space-y-1">
                         <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
-                          {impact.title}
+                          {program.title}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          {impact.description}
+                          {program.description}
                         </p>
                       </div>
                     </div>
@@ -218,7 +218,7 @@ const SocialImpactAfrica = () => {
               
               <div className="pt-4 border-t border-border/50">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
+                  One garment returned = one child fed.
                 </p>
               </div>
             </div>
