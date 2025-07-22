@@ -66,8 +66,8 @@ const SustainabilityEthics = () => {
     description: "Core tier protection with purpose",
     icon: Recycle
   }, {
-    title: "Smart Delivery Options",
-    description: "Next-day delivery for convenience with reduced waste",
+    title: "Smart Lockers",
+    description: "Secure, contactless delivery to school lockers reducing packaging waste",
     icon: Truck
   }];
   return <div className="min-h-screen bg-background">
