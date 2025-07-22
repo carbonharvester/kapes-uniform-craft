@@ -250,7 +250,7 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Real Change Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-[#cfeaff]">
         <div className="container mx-auto max-w-6xl text-center">
           <div className="mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 flex items-center justify-center gap-3">
