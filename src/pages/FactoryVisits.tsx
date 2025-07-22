@@ -237,7 +237,7 @@ const FactoryVisits = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="bg-gradient-to-footer py-16 text-center">
+          <section className="py-16 text-center" style={{ backgroundColor: '#cfeaff' }}>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Experience the Full Story
             </h2>
