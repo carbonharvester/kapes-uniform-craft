@@ -83,7 +83,7 @@ const SocialImpactAfrica = () => {
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               Every Uniform Helps Another Child{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-                Go to School
+                Get an Education
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
