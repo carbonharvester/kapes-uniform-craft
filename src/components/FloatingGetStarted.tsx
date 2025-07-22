@@ -30,10 +30,11 @@ export const FloatingGetStarted = () => {
   return (
     <Button
       onClick={scrollToGetStarted}
-      className="fixed -left-10 top-1/2 -translate-y-1/2 -rotate-90 z-50 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 origin-center"
-      size="lg"
+      className="fixed left-2 top-1/2 -translate-y-1/2 z-50 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 px-3 py-2 text-sm md:text-base md:px-6 md:py-3 md:-left-10 md:-rotate-90"
+      size="sm"
     >
-      Get Started
+      <span className="md:block">Get Started</span>
+      <span className="md:hidden">Start</span>
     </Button>
   );
 };

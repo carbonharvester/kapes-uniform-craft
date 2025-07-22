@@ -16,7 +16,7 @@ export const Hero = () => {
           </div>
           
           {/* Main headline with consistent typography */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-white drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-tight text-white drop-shadow-lg px-4">
             School Uniforms That{" "}
             <span className="font-medium text-white drop-shadow-lg">
               Make the World Better
@@ -24,27 +24,27 @@ export const Hero = () => {
           </h1>
           
           {/* Subtitle with perfect spacing */}
-          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg">
+          <p className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
             Ethically made. Sustainably sourced. Fully managed from design to delivery with measurable impact and zero admin for your school
           </p>
           
           {/* CTA buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
             <button 
               onClick={() => document.getElementById('parent-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl"
+              className="group inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-base md:text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
             >
               I'm a Parent
-              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
             <button 
               onClick={() => document.getElementById('audit-section')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group inline-flex items-center justify-center px-8 py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm"
+              className="group inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-medium text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm w-full sm:w-auto"
             >
               I'm a School
-              <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
