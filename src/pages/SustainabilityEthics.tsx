@@ -204,7 +204,7 @@ const SustainabilityEthics = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-muted rounded-md aspect-[4/3] bg-cover bg-center max-w-md" style={{
+            <div className="bg-muted rounded-md aspect-[4/3] bg-cover bg-center" style={{
             backgroundImage: "url('/src/assets/ethical-manufacturing.jpg')"
           }}></div>
           </div>
