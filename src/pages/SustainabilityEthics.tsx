@@ -169,21 +169,17 @@ const SustainabilityEthics = () => {
       {/* Ethical Manufacturing Section */}
       <section className="bg-gradient-warm-section py-20 lg:py-40">
         <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+              Ethical Manufacturing
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
+            </p>
+          </div>
+          
           <div className="grid rounded-lg container p-8 grid-cols-1 gap-8 items-center lg:grid-cols-2">
             <div className="flex gap-10 flex-col">
-              <div className="flex gap-4 flex-col">
-                <div>
-                  
-                </div>
-                <div className="flex gap-2 flex-col">
-                  <h2 className="text-3xl lg:text-5xl tracking-tighter max-w-xl text-left font-regular">
-                    Ethical Manufacturing
-                  </h2>
-                  <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-left">
-                    We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
-                  </p>
-                </div>
-              </div>
               <div className="grid lg:pl-6 grid-cols-1 gap-6">
                 {ethicalStandards.map((standard, index) => {
                 const IconComponent = standard.icon;
