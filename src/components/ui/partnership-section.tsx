@@ -24,17 +24,26 @@ export function PartnershipSection({
           <p className="text-muted-foreground">{subtitle}</p>
         </div>
         
-        <Button 
-          onClick={() => {
-            console.log("Find Your Tier button clicked");
-            alert("Button clicked - modal should open");
-            document.dispatchEvent(new CustomEvent('openTierQuiz'));
-          }}
-          className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer"
-          style={{ WebkitTapHighlightColor: 'transparent' }}
-        >
-          Find Your Perfect Tier
-        </Button>
+        <div className="relative z-10">
+          <Button 
+            onClick={() => {
+              console.log("Find Your Tier button clicked");
+              alert("Button clicked - modal should open");
+              document.dispatchEvent(new CustomEvent('openTierQuiz'));
+            }}
+            onTouchStart={() => {
+              console.log("Touch started on button");
+            }}
+            className="rounded-xl px-6 py-3 font-medium transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer relative z-10"
+            style={{ 
+              WebkitTapHighlightColor: 'transparent',
+              pointerEvents: 'auto',
+              userSelect: 'none'
+            }}
+          >
+            Find Your Perfect Tier
+          </Button>
+        </div>
       </div>
 
       <div className="grid w-full max-w-7xl gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
