@@ -153,7 +153,7 @@ const SustainabilityEthics = () => {
             <div className="flex gap-10 flex-col">
               <div className="flex gap-4 flex-col">
                 <div>
-                  <Badge variant="outline">Manufacturing</Badge>
+                  
                 </div>
                 <div className="flex gap-2 flex-col">
                   <h2 className="text-3xl lg:text-5xl tracking-tighter max-w-xl text-left font-regular">
@@ -166,9 +166,8 @@ const SustainabilityEthics = () => {
               </div>
               <div className="grid lg:pl-6 grid-cols-1 gap-6">
                 {ethicalStandards.map((standard, index) => {
-                  const IconComponent = standard.icon;
-                  return (
-                    <div key={index} className="flex flex-row gap-6 items-start">
+                const IconComponent = standard.icon;
+                return <div key={index} className="flex flex-row gap-6 items-start">
                       <IconComponent className="w-4 h-4 mt-2 text-primary" />
                       <div className="flex flex-col gap-1">
                         <p className="font-medium">{standard.title}</p>
@@ -176,9 +175,8 @@ const SustainabilityEthics = () => {
                           {standard.description}
                         </p>
                       </div>
-                    </div>
-                  );
-                })}
+                    </div>;
+              })}
               </div>
               <div className="text-left">
                 <p className="text-lg font-medium text-foreground">
@@ -187,8 +185,8 @@ const SustainabilityEthics = () => {
               </div>
             </div>
             <div className="bg-muted rounded-md aspect-square bg-cover bg-center" style={{
-              backgroundImage: "url('/src/assets/ethical-manufacturing.jpg')"
-            }}></div>
+            backgroundImage: "url('/src/assets/ethical-manufacturing.jpg')"
+          }}></div>
           </div>
         </div>
       </section>
