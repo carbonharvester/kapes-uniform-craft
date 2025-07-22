@@ -490,7 +490,7 @@ const CircularEconomyTakeback = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Because impact shouldn't require effort — just better systems.
             </h2>
-            <p className="text-xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>
               Ready to make your school uniforms part of the circular economy?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
