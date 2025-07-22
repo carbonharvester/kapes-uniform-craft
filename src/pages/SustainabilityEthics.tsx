@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe } from "lucide-react";
+import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe, Ban } from "lucide-react";
 import { Footer } from "@/components/Footer";
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
@@ -25,7 +25,7 @@ const SustainabilityEthics = () => {
   const noToxicChemicals = {
     title: "No Toxic Chemical Treatments",
     description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural finishes",
-    icon: Shield
+    icon: Ban
   };
   const ethicalStandards = [{
     title: "No Child Labour",
@@ -142,8 +142,8 @@ const SustainabilityEthics = () => {
           {/* No Toxic Chemicals Banner */}
           <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-8 mb-8">
             <div className="flex items-center justify-center gap-4">
-              <div className="p-3 bg-green-100 rounded-lg dark:bg-green-900/30">
-                <Shield className="w-8 h-8 text-green-600" />
+              <div className="p-3 bg-red-100 rounded-lg dark:bg-red-900/30">
+                <Ban className="w-8 h-8 text-red-600" />
               </div>
               <div className="text-center">
                 <h3 className="text-2xl font-semibold mb-2">{noToxicChemicals.title}</h3>
