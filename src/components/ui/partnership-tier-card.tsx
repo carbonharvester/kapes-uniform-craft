@@ -50,7 +50,7 @@ export function PartnershipTierCard({
   
   return <Card className={cn(
     "relative flex flex-col gap-8 overflow-hidden p-6 h-full md:h-full shadow-glass min-h-[480px] md:min-h-[400px]",
-    isCustom ? "bg-black text-white border-black" : 
+    isCustom ? "bg-[#030063] text-white border-[#030063]" : 
     isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
     "bg-background text-foreground",
     (isPopular || isLegacyImpact) && "ring-2 ring-primary"
@@ -105,7 +105,7 @@ export function PartnershipTierCard({
         variant={isHighlighted ? "secondary" : "default"} 
         className={cn(
           "w-full touch-manipulation",
-          isCustom ? "bg-[#f9f3df] text-black md:hover:bg-[#f9f3df]/90" :
+          isCustom ? "bg-[#f9f3df] text-[#030063] md:hover:bg-[#f9f3df]/90" :
           isHighlighted && "bg-primary-foreground text-primary md:hover:bg-primary-foreground/90"
         )} 
         asChild
@@ -118,5 +118,5 @@ export function PartnershipTierCard({
     </Card>;
 }
 
-const HighlightedBackground = () => <div className="absolute inset-0 from-primary/10 via-primary/5 to-transparent bg-transparent bg-black" />;
+const HighlightedBackground = () => <div className="absolute inset-0 from-primary/10 via-primary/5 to-transparent bg-transparent bg-[030063]" />;
 const PopularBackground = () => <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />;

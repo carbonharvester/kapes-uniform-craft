@@ -250,13 +250,19 @@ const KapesImpactPlatform = () => {
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
             <div className="inline-flex items-center gap-2 bg-white border border-white/20 rounded-2xl px-6 py-3 mb-6">
-              <Sparkles className="w-5 h-5 text-black" />
-              <span className="text-sm font-medium text-black">Transform Your Impact Story</span>
+              <Sparkles className="w-5 h-5" style={{
+              color: '#030063'
+            }} />
+              <span className="text-sm font-medium" style={{
+              color: '#030063'
+            }}>Transform Your Impact Story</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Future of Sustainable Education?
             </h2>
-            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-black">
+            <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{
+            color: '#030063'
+          }}>
               Join forward-thinking schools already using KapesImpact™ to showcase their 
               environmental leadership and inspire their communities.
             </p>
