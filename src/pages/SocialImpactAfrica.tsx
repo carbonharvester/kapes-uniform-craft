@@ -162,6 +162,70 @@ const SocialImpactAfrica = () => {
         </div>
       </section>
 
+      {/* Free School Uniforms Section - Reversed Layout */}
+      <section className="py-20 lg:py-32 bg-gradient-warm-section">
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+              Free School Uniforms
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              In many parts of Africa, a uniform is the barrier between a child and a classroom. Children without one are often turned away — even from free public schools.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image Section - Now on Left */}
+            <div className="relative order-1">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
+                  alt="Free school uniforms program - children in school" 
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+            </div>
+
+            {/* Content Section - Now on Right */}
+            <div className="space-y-8 order-2">
+              <div className="grid gap-8">
+                {uniformImpact.map((impact, index) => {
+                  const IconComponent = impact.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {impact.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {impact.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Free School Meals Section */}
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
