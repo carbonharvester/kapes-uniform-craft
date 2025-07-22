@@ -120,11 +120,7 @@ const SustainabilityEthics = () => {
             const IconComponent = material.icon;
             return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
                   <div className="aspect-video relative overflow-hidden">
-                    <img 
-                      src={material.image} 
-                      alt={material.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                    />
+                    <img src={material.image} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
                   <CardHeader>
@@ -265,7 +261,7 @@ const SustainabilityEthics = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-white">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-[#030063]">
               Kapes makes it easy for schools to align their uniforms with their values — without compromise.
             </h2>
             <p style={{
