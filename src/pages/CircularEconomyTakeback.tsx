@@ -404,16 +404,16 @@ const CircularEconomyTakeback = () => {
       </section>
 
       {/* Results Section - Orange Theme */}
-      <section className="bg-gradient-to-br from-orange-50/40 via-orange-25/20 to-background dark:from-orange-950/15 dark:via-orange-900/8 py-16 px-4 relative">
+      <section className="bg-gradient-to-br from-background-cool/40 via-background-cool/20 to-background dark:from-background-cool/15 dark:via-background-cool/8 py-16 px-4 relative">
         {/* Top diagonal separator */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-orange-50/40 dark:to-orange-950/15"></div>
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-background-cool/40 dark:to-background-cool/15"></div>
         
         <div className="container mx-auto max-w-6xl relative mt-8">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-orange-100 text-orange-700 border-orange-200 dark:bg-orange-900/30 dark:text-orange-300">
+            <Badge className="mb-4 bg-background-cool/80 text-heading border-background-cool">
               Impact Measurement
             </Badge>
-            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-orange-900 dark:text-orange-100">
+            <h2 className="text-2xl md:text-3xl font-medium mb-4 flex items-center justify-center gap-3 text-heading">
               The Results Speak for Themselves
             </h2>
             
@@ -422,21 +422,21 @@ const CircularEconomyTakeback = () => {
               <CollapsibleTrigger asChild>
                 <Button 
                   variant="outline" 
-                  className="border-orange-200 text-orange-700 hover:bg-orange-50 dark:border-orange-800 dark:text-orange-300 dark:hover:bg-orange-950/20 min-h-12"
+                  className="border-primary/20 text-heading hover:bg-background-cool/50 dark:border-primary/30 dark:text-heading dark:hover:bg-background-cool/20 min-h-12"
                 >
                   {openSections.impact ? 'Hide Impact Details' : 'See Impact Metrics'}
                   {openSections.impact ? <Minus className="ml-2 h-4 w-4" /> : <Plus className="ml-2 h-4 w-4" />}
                 </Button>
               </CollapsibleTrigger>
               <CollapsibleContent className="mt-6">
-                <div className="max-w-4xl mx-auto bg-orange-50 dark:bg-orange-950/30 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
+                <div className="max-w-4xl mx-auto bg-background-cool/50 dark:bg-background-cool/20 rounded-xl p-6 border border-background-cool dark:border-background-cool/40">
                   <p className="text-muted-foreground text-lg mb-4 leading-relaxed">
                     {detailedInfo.impact.details}
                   </p>
                   <div className={`grid gap-4 ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2'}`}>
                     {detailedInfo.impact.metrics.map((metric, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-3 bg-white/50 dark:bg-black/20 rounded-lg">
-                        <BarChart3 className="h-5 w-5 text-orange-600 dark:text-orange-400 flex-shrink-0" />
+                        <BarChart3 className="h-5 w-5 text-primary dark:text-primary flex-shrink-0" />
                         <span className="text-sm font-medium">{metric}</span>
                       </div>
                     ))}
@@ -449,15 +449,15 @@ const CircularEconomyTakeback = () => {
           <div className={`grid gap-6 mb-8 justify-items-center ${isMobile ? 'grid-cols-1' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
             {impactResults.map((result, index) => {
               const IconComponent = result.icon;
-              return <Card key={index} className={`hover:shadow-lg transition-all duration-300 text-center group border-orange-200/50 hover:border-orange-300 dark:border-orange-800/50 dark:hover:border-orange-700 hover:-translate-y-1 ${isMobile ? 'w-full max-w-md' : 'w-full max-w-sm'}`}>
+              return <Card key={index} className={`hover:shadow-lg transition-all duration-300 text-center group border-primary/20 hover:border-primary/40 dark:border-primary/30 dark:hover:border-primary/50 hover:-translate-y-1 ${isMobile ? 'w-full max-w-md' : 'w-full max-w-sm'}`}>
                 <CardHeader className="text-center">
-                  <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/40 dark:to-orange-800/40 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-                    <IconComponent className="w-7 h-7 text-orange-600 dark:text-orange-400" />
+                  <div className="mx-auto mb-4 w-14 h-14 bg-gradient-to-br from-background-cool/60 to-background-cool/80 dark:from-background-cool/40 dark:to-background-cool/20 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <IconComponent className="w-7 h-7 text-primary dark:text-primary" />
                   </div>
-                  <Badge variant="outline" className="mb-2 mx-auto border-orange-200 text-orange-700 dark:border-orange-800 dark:text-orange-300">
+                  <Badge variant="outline" className="mb-2 mx-auto border-primary/30 text-heading dark:border-primary/40 dark:text-heading">
                     {result.metric}
                   </Badge>
-                  <CardTitle className="text-lg text-center text-orange-900 dark:text-orange-100">{result.title}</CardTitle>
+                  <CardTitle className="text-lg text-center text-heading dark:text-heading">{result.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
                   <p className="text-muted-foreground text-center">{result.description}</p>
@@ -467,8 +467,8 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <div className="bg-orange-100/50 dark:bg-orange-900/20 rounded-xl p-6 border border-orange-200/50 dark:border-orange-800/50">
-              <p className="text-lg font-medium text-orange-900 dark:text-orange-100 mb-4">
+            <div className="bg-background-cool/50 dark:bg-background-cool/20 rounded-xl p-6 border border-background-cool/50 dark:border-background-cool/30">
+              <p className="text-lg font-medium text-heading dark:text-heading mb-4">
                 By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
               </p>
             </div>
@@ -476,7 +476,7 @@ const CircularEconomyTakeback = () => {
         </div>
         
         {/* Bottom section separator */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-orange-50/40 dark:to-orange-950/15"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-background-cool/40 dark:to-background-cool/15"></div>
       </section>
 
       {/* Enhanced CTA Section */}
