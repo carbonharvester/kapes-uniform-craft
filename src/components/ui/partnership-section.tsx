@@ -24,14 +24,16 @@ export function PartnershipSection({
           <p className="text-muted-foreground">{subtitle}</p>
         </div>
         
-        <TierQuizModal>
-          <Button 
-            className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer"
-            style={{ WebkitTapHighlightColor: 'transparent' }}
-          >
-            Find Your Perfect Tier
-          </Button>
-        </TierQuizModal>
+        <Button 
+          onClick={() => {
+            console.log("Button clicked");
+            document.dispatchEvent(new CustomEvent('openTierQuiz'));
+          }}
+          className="rounded-xl px-6 py-3 font-medium hover:scale-105 transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer"
+          style={{ WebkitTapHighlightColor: 'transparent' }}
+        >
+          Find Your Perfect Tier
+        </Button>
       </div>
 
       <div className="grid w-full max-w-7xl gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">

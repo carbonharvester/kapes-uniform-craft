@@ -11,6 +11,7 @@ import { SchoolLogos } from "@/components/SchoolLogos";
 
 import { BlogSection } from "@/components/BlogSection";
 import { FloatingGetStarted } from "@/components/FloatingGetStarted";
+import { TierQuizModal } from "@/components/TierQuizModal";
 
 const Index = () => {
   return (
@@ -33,6 +34,7 @@ const Index = () => {
       <BlogSection />
       <Footer />
       <FloatingGetStarted />
+      <TierQuizModal />
     </div>
   );
 };
