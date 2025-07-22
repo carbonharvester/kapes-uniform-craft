@@ -28,7 +28,7 @@ const SustainabilityEthics = () => {
   }];
   const ethicalStandards = [{
     title: "No Child Labour",
-    description: "Ever. Zero tolerance policy with rigorous auditing and verification at every level of our supply chain",
+    description: "Ever. Zero tolerance policy.",
     icon: Shield
   }, {
     title: "Fair Wages & Safe Working Conditions",
