@@ -167,69 +167,6 @@ const SustainabilityEthics = () => {
         </div>
       </section>
 
-      {/* Ethical Manufacturing Section */}
-      <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
-        <div className="container mx-auto max-w-7xl px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
-              Ethical Manufacturing
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Content Section */}
-            <div className="space-y-8">
-              <div className="grid gap-8">
-                {ethicalStandards.map((standard, index) => {
-                  const IconComponent = standard.icon;
-                  return (
-                    <div key={index} className="flex gap-4 items-start group">
-                      <div className="flex-shrink-0 mt-1">
-                        <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <IconComponent className="w-5 h-5 text-primary" />
-                        </div>
-                      </div>
-                      <div className="space-y-1">
-                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
-                          {standard.title}
-                        </h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          {standard.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-              
-              <div className="pt-4 border-t border-border/50">
-                <p className="text-xl font-medium text-foreground">
-                  We don't cut corners, and we don't work with anyone who does.
-                </p>
-              </div>
-            </div>
-            
-            {/* Image Section */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg" 
-                  alt="Ethical manufacturing - worker at sewing machine" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Measurable Sustainability Section */}
       <section className="py-16 px-4">
