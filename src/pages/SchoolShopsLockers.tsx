@@ -162,7 +162,7 @@ export const SchoolShopsLockers = () => {
         items={eCommerceFeatures}
         bottomText="Smart pickup solution that transforms uniform collection for busy families"
         imagePosition="right"
-        iconColorScheme="purple"
+        iconColorScheme="blue"
         className="bg-gradient-warm-section"
       />
 
