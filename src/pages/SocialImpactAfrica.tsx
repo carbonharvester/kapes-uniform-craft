@@ -102,7 +102,7 @@ const SocialImpactAfrica = () => {
       <section className="py-20 lg:py-32">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Free School Uniforms
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -166,7 +166,7 @@ const SocialImpactAfrica = () => {
       <section className="py-20 lg:py-32 bg-gradient-warm-section">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Free School Meals
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
