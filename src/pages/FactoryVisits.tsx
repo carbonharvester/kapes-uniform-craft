@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Monitor, Users, BookOpen, Plane, ArrowRight, Globe } from "lucide-react";
+import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const FactoryVisits = () => {
@@ -9,13 +9,6 @@ const FactoryVisits = () => {
     { country: "India", city: "Chennai", type: "Ethical Cotton Processing" },
     { country: "Kenya", city: "Nairobi", type: "Sustainable Garment Production" },
     { country: "UAE", city: "Dubai", type: "Quality Control & Distribution" }
-  ];
-
-  const virtualFeatures = [
-    "Pre-recorded walk-throughs of our factories",
-    "Short videos spotlighting different production stages", 
-    "Interviews with real garment workers and tailors",
-    "Discussion guides and teaching aids to enhance learning"
   ];
 
   const curriculumAreas = [
@@ -100,7 +93,7 @@ const FactoryVisits = () => {
           
           {/* Visit Types */}
           <section>
-            <div className="grid gap-8 lg:grid-cols-2">
+            <div className="max-w-4xl mx-auto">
               <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
@@ -112,7 +105,7 @@ const FactoryVisits = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Available to SustainPro and LegacyImpact tier schools
+                    Immersive educational experiences for schools
                   </p>
                   <p className="mb-6 font-medium">These immersive visits give your students and staff direct access to:</p>
                   <ul className="space-y-3 mb-8">
@@ -147,36 +140,6 @@ const FactoryVisits = () => {
                         </div>
                       ))}
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                      <Monitor className="h-6 w-6 text-accent" />
-                    </div>
-                    <CardTitle className="text-2xl font-medium">Virtual Factory Tours</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    If you can't travel — we'll bring the experience to you
-                  </p>
-                  <p className="mb-6 font-medium">All schools (EcoLaunch, SustainPro, and LegacyImpact) can access:</p>
-                  <ul className="space-y-3 mb-8">
-                    {virtualFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-sm text-muted-foreground leading-relaxed">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="bg-accent/5 p-4 rounded-xl border border-accent/10">
-                    <p className="text-sm font-medium">
-                      <strong>Perfect for:</strong> assemblies, lessons, and global citizenship days.
-                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -244,13 +207,10 @@ const FactoryVisits = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Take your students behind the scenes and show them the positive impact of ethical manufacturing.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button size="lg" className="rounded-2xl px-8 py-6 text-lg hover:scale-105 transition-smooth">
-                Request a Virtual Tour
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-6 text-lg hover:scale-105 transition-smooth">
                 Apply for an In-Person Visit
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </section>
