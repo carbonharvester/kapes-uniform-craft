@@ -169,7 +169,7 @@ const SustainabilityEthics = () => {
       <section className="bg-gradient-warm-section py-20 lg:py-32">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Ethical Manufacturing
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -204,7 +204,7 @@ const SustainabilityEthics = () => {
               </div>
               
               <div className="pt-4 border-t border-border/50">
-                <p className="text-xl font-medium text-foreground italic">
+                <p className="text-xl font-medium text-foreground">
                   We don't cut corners, and we don't work with anyone who does.
                 </p>
               </div>
@@ -214,7 +214,7 @@ const SustainabilityEthics = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/lovable-uploads/c69b1a91-350e-46c5-8e73-b1a04cd0543d.png" 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9260-1_ihvv9k.jpg" 
                   alt="Ethical manufacturing - worker at sewing machine" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
