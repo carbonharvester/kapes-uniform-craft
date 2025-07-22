@@ -206,7 +206,7 @@ const SustainabilityEthics = () => {
               </div>
               
               <div className="pt-4 border-t border-border/50">
-                <p className="text-xl text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed">
                   We don't cut corners, and we don't work with anyone who does.
                 </p>
               </div>
