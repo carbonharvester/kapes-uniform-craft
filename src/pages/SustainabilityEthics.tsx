@@ -140,14 +140,20 @@ const SustainabilityEthics = () => {
           </div>
 
           {/* No Toxic Chemicals Banner */}
-          <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-8 mb-8">
-            <div className="flex items-center justify-center gap-4">
-              <div className="p-3 bg-red-100 rounded-lg dark:bg-red-900/30">
-                <Ban className="w-8 h-8 text-red-600" />
+          <div className="bg-gradient-to-r from-red-50 via-red-25 to-orange-50 dark:from-red-900/10 dark:via-red-900/5 dark:to-orange-900/10 border border-red-100 dark:border-red-900/20 rounded-xl p-8 mb-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 max-w-4xl mx-auto">
+              <div className="flex-shrink-0">
+                <div className="p-4 bg-red-100 dark:bg-red-900/30 rounded-xl shadow-sm">
+                  <Ban className="w-12 h-12 text-red-600 dark:text-red-400" />
+                </div>
               </div>
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-2">{noToxicChemicals.title}</h3>
-                <p className="text-lg text-muted-foreground">{noToxicChemicals.description}</p>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-red-900 dark:text-red-100">
+                  {noToxicChemicals.title}
+                </h3>
+                <p className="text-lg leading-relaxed text-red-800 dark:text-red-200">
+                  {noToxicChemicals.description}
+                </p>
               </div>
             </div>
           </div>
