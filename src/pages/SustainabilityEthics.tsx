@@ -6,7 +6,7 @@ import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckC
 import { Footer } from "@/components/Footer";
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
-    title: "Regenerative Organic Cotton",
+    title: "Organic Cotton",
     description: "Improves soil health, biodiversity, and farmer livelihoods",
     icon: Leaf,
     image: "/src/assets/organic-cotton.jpg"
@@ -21,8 +21,8 @@ const SustainabilityEthics = () => {
     icon: Globe,
     image: "/src/assets/zero-waste.jpg"
   }, {
-    title: "Zero Toxins, Zero Greenwashing",
-    description: "Every fabric is safe, breathable, and built to last",
+    title: "No Chemical Treatments",
+    description: "We never use toxic chemicals that promise wrinkle-free or stain-repellent benefits - just safe, natural fabrics",
     icon: Shield,
     image: "/src/assets/ethical-manufacturing.jpg"
   }];
