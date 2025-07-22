@@ -104,9 +104,9 @@ export function PartnershipTierCard({
       <Button 
         variant={isHighlighted ? "secondary" : "default"} 
         className={cn(
-          "w-full",
-          isCustom ? "bg-[#f9f3df] text-[#030063] hover:bg-[#f9f3df]/90" :
-          isHighlighted && "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
+          "w-full touch-manipulation",
+          isCustom ? "bg-[#f9f3df] text-[#030063] md:hover:bg-[#f9f3df]/90" :
+          isHighlighted && "bg-primary-foreground text-primary md:hover:bg-primary-foreground/90"
         )} 
         asChild
       >
