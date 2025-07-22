@@ -60,9 +60,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'q20', text: 'Do your students, parents, and staff have full transparency of your supply chain?', type: 'radio' },
     { id: 'education', text: 'Do you educate your students about the impacts of fashion, related to their uniforms?', type: 'radio' },
     { id: 'ai_usage', text: 'Do you use AI in your uniform program? (Select all that apply)', type: 'checkbox' },
+    { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' },
     { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
-    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' },
-    { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' }
+    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' }
   ];
 
   const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions, updated for distribution (19) and added education (5)
@@ -387,8 +387,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const extra1Answer = formAnswers.extra1 as string || 'Not Answered';
     answers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
 
-    const extra2Answer = formAnswers.extra2 as string || 'Not Answered';
-    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer });
+    const extra2AnswerText = formAnswers.extra2 as string || 'Not Answered';
+    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2AnswerText });
 
     const extra3Answer = formAnswers.extra3 as string || 'Not Answered';
     answers.push({ question: "How important is sustainability within your school?", answer: extra3Answer });
@@ -476,6 +476,14 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     console.log(`Final score: ${percentage}%`);
 
     setShowQuiz(false);
+    
+    // Check if user said no to question about improving in next 12 months
+    const extra2Answer = formAnswers.extra2 as string;
+    if (extra2Answer === '0') { // User said no to improving in next 12 months
+      setShowResults(true);
+      return;
+    }
+    
     if (percentage < 67) {
       setShowImprove(true);
     } else {
@@ -1299,18 +1307,46 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               </div>
             )}
             
-            <div className="flex justify-center">
-              <Button 
-                asChild
-                className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02] w-full sm:w-auto"
-                size="lg"
-              >
-                <a href="/consultation">
-                  Book Your Free Consultation
-                  <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
-                </a>
-              </Button>
-            </div>
+            {/* Check if user said no to improving in next 12 months */}
+            {formAnswers.extra2 === '0' ? (
+              <div className="flex flex-col items-center space-y-4">
+                <div className="relative">
+                  <Button 
+                    disabled
+                    className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold bg-muted text-muted-foreground rounded-lg w-full sm:w-auto opacity-50 cursor-not-allowed"
+                    size="lg"
+                  >
+                    Book Your Free Consultation
+                    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+                  </Button>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-8 h-8 text-red-500">✕</div>
+                  </div>
+                </div>
+                <p className="text-center text-muted-foreground text-sm md:text-base max-w-lg">
+                  We would love to speak to you at a time when you are considering switching to a more sustainable school uniform program. Please reach out if this changes.
+                </p>
+              </div>
+            ) : userImprove === 'no' ? (
+              <div className="text-center">
+                <p className="text-muted-foreground text-base md:text-lg max-w-lg mx-auto">
+                  We want to use your time as valuably as possible, so we would love to speak to you when you want to improve the sustainability of your uniform program.
+                </p>
+              </div>
+            ) : (
+              <div className="flex justify-center">
+                <Button 
+                  asChild
+                  className="px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02] w-full sm:w-auto"
+                  size="lg"
+                >
+                  <a href="/consultation">
+                    Book Your Free Consultation
+                    <ArrowRight className="ml-2 w-4 h-4 md:w-5 md:h-5" />
+                  </a>
+                </Button>
+              </div>
+            )}
           </CardContent>
         </Card>
       )}
