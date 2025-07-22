@@ -212,7 +212,7 @@ const SustainabilityEthics = () => {
             
             {/* Image Section */}
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] rounded-2xl rounded-b-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg" 
                   alt="Ethical manufacturing - worker at sewing machine" 
