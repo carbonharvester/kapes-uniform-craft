@@ -374,7 +374,7 @@ const SocialImpactAfrica = () => {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button size="lg" variant="outline">
-              Book a Call to Join the Movement
+              Join the Movement
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
