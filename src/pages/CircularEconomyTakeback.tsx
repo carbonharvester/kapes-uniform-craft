@@ -253,10 +253,10 @@ const CircularEconomyTakeback = () => {
         className="bg-gradient-to-b from-background to-muted/30"
       />
 
-      {/* For Schools Section - Green Theme */}
-      <section className="bg-gradient-to-br from-green-50/50 via-green-25/30 to-background dark:from-green-950/20 dark:via-green-900/10 py-16 px-4 relative">
+      {/* For Schools Section - Cream Theme */}
+      <section className="bg-gradient-to-br from-background-warm via-background-warm/80 to-background dark:from-background-warm/20 dark:via-background-warm/10 py-16 px-4 relative">
         {/* Top section separator */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-green-50/50 dark:to-green-950/20"></div>
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-background-warm dark:to-background-warm/20"></div>
         
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-12">
@@ -326,7 +326,7 @@ const CircularEconomyTakeback = () => {
         </div>
         
         {/* Bottom section separator */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-green-50/50 dark:to-green-950/20"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-background-warm dark:to-background-warm/20"></div>
       </section>
 
       {/* For Parents Section - Purple Theme */}
@@ -403,10 +403,10 @@ const CircularEconomyTakeback = () => {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-tl from-orange-50/30 via-transparent to-purple-50/30 dark:from-orange-950/10 dark:to-purple-950/10 transform skew-y-1 origin-bottom-right"></div>
       </section>
 
-      {/* Results Section - Orange Theme */}
-      <section className="bg-gradient-to-br from-background-cool/40 via-background-cool/20 to-background dark:from-background-cool/15 dark:via-background-cool/8 py-16 px-4 relative">
+      {/* Results Section - Cream Theme */}
+      <section className="bg-gradient-to-br from-background-warm via-background-warm/80 to-background dark:from-background-warm/20 dark:via-background-warm/10 py-16 px-4 relative">
         {/* Top diagonal separator */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-background-cool/40 dark:to-background-cool/15"></div>
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-background-warm dark:to-background-warm/20"></div>
         
         <div className="container mx-auto max-w-6xl relative mt-8">
           <div className="text-center mb-12">
@@ -476,7 +476,7 @@ const CircularEconomyTakeback = () => {
         </div>
         
         {/* Bottom section separator */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-background-cool/40 dark:to-background-cool/15"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-background-warm dark:to-background-warm/20"></div>
       </section>
 
       {/* Enhanced CTA Section */}
