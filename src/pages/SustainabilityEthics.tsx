@@ -191,7 +191,7 @@ const SustainabilityEthics = () => {
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <h3 className="text-lg font-semibold text-foreground">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
                           {standard.title}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
