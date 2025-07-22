@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe, Ban } from "lucide-react";
 import { Footer } from "@/components/Footer";
+
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
     title: "Organic Cotton",
@@ -11,7 +12,7 @@ const SustainabilityEthics = () => {
     icon: Leaf,
     image: "/src/assets/organic-cotton.jpg"
   }, {
-    title: "Recycled Materials",
+    title: "Recycled Materials", 
     description: "Reduces reliance on virgin resources and cuts plastic waste",
     icon: Recycle,
     image: "/src/assets/recycled-materials.png"
@@ -69,6 +70,7 @@ const SustainabilityEthics = () => {
     description: "Secure, contactless delivery to school lockers reducing packaging waste",
     icon: Truck
   }];
+
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -166,7 +168,7 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Ethical Manufacturing Section */}
-      <section className="bg-gradient-warm-section py-20 lg:py-32">
+      <section className="bg-gradient-warm-section py-20 lg:py-32 rounded-b-2xl overflow-hidden">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
@@ -212,7 +214,7 @@ const SustainabilityEthics = () => {
             
             {/* Image Section */}
             <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl rounded-b-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
                   src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg" 
                   alt="Ethical manufacturing - worker at sewing machine" 
@@ -326,4 +328,5 @@ const SustainabilityEthics = () => {
       <Footer />
     </div>;
 };
+
 export default SustainabilityEthics;
