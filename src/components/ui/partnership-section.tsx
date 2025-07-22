@@ -41,7 +41,7 @@ export function PartnershipSection({
         </div>
       </div>
 
-      <div className="grid w-full max-w-7xl gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid w-full max-w-5xl gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         {tiers.map((tier) => (
           <PartnershipTierCard
             key={tier.name}
