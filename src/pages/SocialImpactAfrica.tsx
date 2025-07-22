@@ -1,119 +1,77 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  Heart, 
-  Users, 
-  Utensils, 
-  Shirt, 
-  BarChart3, 
-  QrCode,
-  Globe, 
-  Target,
-  CheckCircle,
-  TrendingUp,
-  HandHeart,
-  GraduationCap,
-  Building,
-  Sparkles,
-  ArrowRight
-} from "lucide-react";
+import { Heart, Users, Utensils, Shirt, BarChart3, QrCode, Globe, Target, CheckCircle, TrendingUp, HandHeart, GraduationCap, Building, Sparkles, ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
-
 const SocialImpactAfrica = () => {
-  const uniformImpact = [
-    {
-      title: "Free School Uniforms for Children in Need",
-      description: "We provide uniforms to children who otherwise couldn't afford them",
-      icon: Shirt
-    },
-    {
-      title: "Local Ethical Production",
-      description: "We work with local factories and tailors to produce uniforms ethically",
-      icon: Building
-    },
-    {
-      title: "Dignity, Confidence & Access",
-      description: "We support dignity, confidence, and access to learning",
-      icon: GraduationCap
-    }
-  ];
-
-  const mealProgram = [
-    {
-      title: "Funded Through Takeback Scheme",
-      description: "Every returned Kapes uniform = 1 meal donated",
-      icon: Utensils
-    },
-    {
-      title: "Local Partner Implementation",
-      description: "We work with partners in Kenya and beyond to monitor delivery",
-      icon: Globe
-    },
-    {
-      title: "Improved School Attendance",
-      description: "Reducing absenteeism and improving concentration",
-      icon: TrendingUp
-    }
-  ];
-
-  const jobCreation = [
-    {
-      title: "Jobs for Adults",
-      description: "Employment in tailoring and manufacturing",
-      icon: Users
-    },
-    {
-      title: "Skills Development",
-      description: "Training for women and youth",
-      icon: Target
-    },
-    {
-      title: "Community Strengthening",
-      description: "Circular income that supports families",
-      icon: Heart
-    }
-  ];
-
-  const trackingMetrics = [
-    {
-      title: "Uniforms Donated",
-      description: "Track the number of free uniforms provided",
-      icon: Shirt,
-      tier: "Core & Impact"
-    },
-    {
-      title: "Meals Funded",
-      description: "See how many children have been fed",
-      icon: Utensils,
-      tier: "Core & Impact"
-    },
-    {
-      title: "Carbon Savings",
-      description: "Environmental impact from circular systems",
-      icon: Globe,
-      tier: "Core & Impact"
-    },
-    {
-      title: "QR Code Tracking",
-      description: "Garment-level impact tracking",
-      icon: QrCode,
-      tier: "Impact Only"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const uniformImpact = [{
+    title: "Free School Uniforms for Children in Need",
+    description: "We provide uniforms to children who otherwise couldn't afford them",
+    icon: Shirt
+  }, {
+    title: "Local Ethical Production",
+    description: "We work with local factories and tailors to produce uniforms ethically",
+    icon: Building
+  }, {
+    title: "Dignity, Confidence & Access",
+    description: "We support dignity, confidence, and access to learning",
+    icon: GraduationCap
+  }];
+  const mealProgram = [{
+    title: "Funded Through Takeback Scheme",
+    description: "Every returned Kapes uniform = 1 meal donated",
+    icon: Utensils
+  }, {
+    title: "Local Partner Implementation",
+    description: "We work with partners in Kenya and beyond to monitor delivery",
+    icon: Globe
+  }, {
+    title: "Improved School Attendance",
+    description: "Reducing absenteeism and improving concentration",
+    icon: TrendingUp
+  }];
+  const jobCreation = [{
+    title: "Jobs for Adults",
+    description: "Employment in tailoring and manufacturing",
+    icon: Users
+  }, {
+    title: "Skills Development",
+    description: "Training for women and youth",
+    icon: Target
+  }, {
+    title: "Community Strengthening",
+    description: "Circular income that supports families",
+    icon: Heart
+  }];
+  const trackingMetrics = [{
+    title: "Uniforms Donated",
+    description: "Track the number of free uniforms provided",
+    icon: Shirt,
+    tier: "Core & Impact"
+  }, {
+    title: "Meals Funded",
+    description: "See how many children have been fed",
+    icon: Utensils,
+    tier: "Core & Impact"
+  }, {
+    title: "Carbon Savings",
+    description: "Environmental impact from circular systems",
+    icon: Globe,
+    tier: "Core & Impact"
+  }, {
+    title: "QR Code Tracking",
+    description: "Garment-level impact tracking",
+    icon: QrCode,
+    tier: "Impact Only"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg')",
-            backgroundPosition: "center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg')",
+        backgroundPosition: "center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -135,7 +93,9 @@ const SocialImpactAfrica = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* Free School Uniforms Section */}
@@ -158,9 +118,8 @@ const SocialImpactAfrica = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {uniformImpact.map((impact, index) => {
-              const IconComponent = impact.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            const IconComponent = impact.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center dark:bg-blue-900/20">
                       <IconComponent className="w-6 h-6 text-blue-600" />
@@ -170,9 +129,8 @@ const SocialImpactAfrica = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{impact.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center bg-blue-50 p-6 rounded-lg dark:bg-blue-950/20">
@@ -197,9 +155,8 @@ const SocialImpactAfrica = () => {
           
           <div className="grid md:grid-cols-3 gap-6 mb-8">
             {mealProgram.map((program, index) => {
-              const IconComponent = program.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            const IconComponent = program.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center dark:bg-green-900/20">
                       <IconComponent className="w-6 h-6 text-green-600" />
@@ -209,9 +166,8 @@ const SocialImpactAfrica = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{program.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center bg-green-50 p-6 rounded-lg dark:bg-green-950/20">
@@ -236,9 +192,8 @@ const SocialImpactAfrica = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             {jobCreation.map((job, index) => {
-              const IconComponent = job.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center">
+            const IconComponent = job.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
                   <CardHeader>
                     <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
                       <IconComponent className="w-6 h-6 text-purple-600" />
@@ -248,9 +203,8 @@ const SocialImpactAfrica = () => {
                   <CardContent>
                     <p className="text-muted-foreground">{job.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -269,17 +223,13 @@ const SocialImpactAfrica = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 justify-items-center">
             {trackingMetrics.map((metric, index) => {
-              const IconComponent = metric.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow text-center w-full max-w-sm">
+            const IconComponent = metric.icon;
+            return <Card key={index} className="hover:shadow-lg transition-shadow text-center w-full max-w-sm">
                   <CardHeader className="text-center">
                     <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
                       <IconComponent className="w-6 h-6 text-orange-600" />
                     </div>
-                    <Badge 
-                      variant="outline" 
-                      className={`mb-2 mx-auto ${metric.tier === 'Impact Only' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}
-                    >
+                    <Badge variant="outline" className={`mb-2 mx-auto ${metric.tier === 'Impact Only' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'}`}>
                       {metric.tier}
                     </Badge>
                     <CardTitle className="text-lg text-center">{metric.title}</CardTitle>
@@ -287,9 +237,8 @@ const SocialImpactAfrica = () => {
                   <CardContent className="text-center">
                     <p className="text-muted-foreground text-center">{metric.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
           
           <div className="text-center">
@@ -329,21 +278,8 @@ const SocialImpactAfrica = () => {
       </section>
 
       {/* Final Impact Statement */}
-      <section className="bg-gradient-to-footer py-12 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <Sparkles className="w-8 h-8 text-orange-600" />
-            <HandHeart className="w-8 h-8 text-red-600" />
-            <Sparkles className="w-8 h-8 text-orange-600" />
-          </div>
-          <p className="text-2xl font-bold text-foreground">
-            Together, we're making education accessible, one uniform at a time.
-          </p>
-        </div>
-      </section>
+      
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default SocialImpactAfrica;
