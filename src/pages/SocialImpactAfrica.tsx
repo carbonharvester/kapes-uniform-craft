@@ -369,7 +369,7 @@ const SocialImpactAfrica = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-600 hover:bg-orange-700">
+            <Button size="lg" style={{ backgroundColor: '#f97767' }} className="hover:opacity-90 transition-opacity">
               See Our Current Projects
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
