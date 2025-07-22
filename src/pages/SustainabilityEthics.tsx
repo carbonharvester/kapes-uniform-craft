@@ -168,7 +168,7 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Ethical Manufacturing Section */}
-      <section className="bg-gradient-warm-section py-20 lg:py-32 rounded-b-2xl overflow-hidden">
+      <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
