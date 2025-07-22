@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { GripVertical } from "lucide-react";
-import beforeImageComparison from "@/assets/before-image-comparison.png";
+import beforeImageComparison from "@/assets/before-image-comparison-new.png";
 function Feature() {
   const [inset, setInset] = useState<number>(50);
   const [onMouseDown, setOnMouseDown] = useState<boolean>(false);
