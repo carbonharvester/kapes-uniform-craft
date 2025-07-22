@@ -100,6 +100,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       setShowEntryForm(false);
       setShowQuiz(true);
       localStorage.removeItem('scorecardUserData'); // Clean up
+      
+      // Scroll to top when assessment starts
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     // Setup exclusive checkboxes
@@ -228,6 +231,13 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       processResults();
     } else {
       setCurrentSlide(prev => prev + 1);
+      // Scroll to top of card on mobile for better UX
+      setTimeout(() => {
+        const card = document.querySelector('.bg-gradient-to-br');
+        if (card && window.innerWidth < 768) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   };
 
@@ -1136,8 +1146,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       {showQuiz && (
         <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-          <CardHeader className="pb-6">
-            <div className="flex justify-between items-center mb-4">
+          <CardHeader className="pb-4 md:pb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
               <div className="text-sm font-medium text-muted-foreground">
                 Question {currentSlide + 1} of {questions.length}
               </div>
@@ -1145,13 +1155,13 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 {Math.round(progressValue)}% Complete
               </div>
             </div>
-            <Progress value={progressValue} className="h-3 mb-6" />
-            <CardTitle className="text-xl font-bold text-heading leading-relaxed">
+            <Progress value={progressValue} className="h-2 md:h-3 mb-4 md:mb-6" />
+            <CardTitle className="text-lg md:text-xl font-bold text-heading leading-relaxed">
               {questions[currentSlide].text}
             </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="min-h-[200px]">
+          <CardContent className="space-y-4 md:space-y-6">
+            <div className="min-h-[180px] md:min-h-[200px]">
               {questions[currentSlide].id === 'materials' && renderMaterialsQuestion()}
               {questions[currentSlide].id === 'packaging' && renderPackagingQuestion()}
               {questions[currentSlide].id === 'distribution' && renderDistributionQuestion()}
@@ -1162,19 +1172,21 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               {['extra2', 'extra3'].includes(questions[currentSlide].id) && renderExtraRadioQuestion(questions[currentSlide].id)}
             </div>
             
-            <div className="flex justify-between items-center pt-6 border-t border-border">
+            <div className="flex flex-col sm:flex-row justify-between items-center pt-4 md:pt-6 border-t border-border gap-3 sm:gap-0">
               <Button
                 onClick={handlePrev}
                 variant="outline"
-                className={`flex items-center space-x-2 ${currentSlide === 0 ? 'invisible' : ''}`}
+                className={`flex items-center space-x-2 w-full sm:w-auto order-2 sm:order-1 ${currentSlide === 0 ? 'invisible' : ''}`}
                 disabled={currentSlide === 0}
+                size="lg"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Previous</span>
               </Button>
               <Button
                 onClick={handleNext}
-                className="flex items-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="flex items-center space-x-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto order-1 sm:order-2"
+                size="lg"
               >
                 <span>{currentSlide === questions.length - 1 ? 'Complete Assessment' : 'Next Question'}</span>
                 <ArrowRight className="w-4 h-4" />

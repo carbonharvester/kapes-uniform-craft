@@ -19,9 +19,11 @@ const SustainabilityScorecardPage = () => {
 
   if (showAssessment) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center" style={{ backgroundColor: '#cfeaff' }}>
-        <div className="flex-1 flex items-center justify-center py-12">
-          <SustainabilityScorecard />
+      <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#cfeaff' }}>
+        <div className="flex-1 flex items-center justify-center py-6 md:py-12 px-4">
+          <div className="w-full max-w-3xl">
+            <SustainabilityScorecard />
+          </div>
         </div>
         <Footer />
       </div>
