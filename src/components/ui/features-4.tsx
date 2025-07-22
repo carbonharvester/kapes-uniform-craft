@@ -1,3 +1,4 @@
+
 import { 
   Recycle, 
   Users, 
@@ -89,7 +90,7 @@ export function Features() {
                                         <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                             <IconComponent className="w-6 h-6 text-primary" />
                                         </div>
-                                        <h3 className="text-lg font-semibold text-foreground">
+                                        <h3 className="text-lg font-semibold">
                                             {feature.title}
                                         </h3>
                                         <p className="text-muted-foreground leading-relaxed">

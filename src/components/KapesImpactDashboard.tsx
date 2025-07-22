@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ export const KapesImpactDashboard = () => {
           <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
                 KapesImpact™{" "}
                 <span className="text-primary">Dashboard</span>
               </h2>
@@ -69,7 +70,7 @@ export const KapesImpactDashboard = () => {
                       }`}>
                         <feature.icon className="h-6 w-6" />
                       </div>
-                      <h4 className="font-semibold mb-2 text-foreground">{feature.title}</h4>
+                      <h4 className="font-semibold mb-2">{feature.title}</h4>
                       <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
                     </div>
                   </button>

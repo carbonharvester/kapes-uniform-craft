@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -167,14 +168,14 @@ export const ValueCalculator = () => {
 
           {showResults && results && (
             <div className="mt-8 md:mt-12">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight text-center mb-6 md:mb-8 text-foreground px-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight text-center mb-6 md:mb-8 px-4">
                 Your School's Projected Value Equation Boost
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">🌍</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">CO2 Conquest</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">CO2 Conquest</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">(Emissions Saved)</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.co2} kg CO2e</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">{results.co2Analogy}</div>
@@ -184,7 +185,7 @@ export const ValueCalculator = () => {
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">⚡</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">Energy Empire Built</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Energy Empire Built</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">(Energy Saved)</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.energy} MJ</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">{results.energyAnalogy}</div>
@@ -194,7 +195,7 @@ export const ValueCalculator = () => {
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">💧</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">Water Warrior Win</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Water Warrior Win</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">(Water Saved)</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.water} liters</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">{results.waterAnalogy}</div>
@@ -204,7 +205,7 @@ export const ValueCalculator = () => {
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">🗑️</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">Waste Annihilation</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Waste Annihilation</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">(Waste Diverted)</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.waste} kg</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">Keeping landfills empty!</div>
@@ -214,7 +215,7 @@ export const ValueCalculator = () => {
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">👕</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">Uniform Uplift (Free)</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Uniform Uplift (Free)</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">Uniforms Provided</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.uniforms} uniforms</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">Matching your student body!</div>
@@ -224,7 +225,7 @@ export const ValueCalculator = () => {
                 <Card className="text-center bg-background border border-border shadow-glass hover:shadow-lg transition-shadow">
                   <CardContent className="p-4 md:p-6 lg:p-8">
                     <div className="text-3xl md:text-4xl lg:text-5xl mb-3 md:mb-4">🍲</div>
-                    <h3 className="font-bold text-foreground text-base md:text-lg mb-1">Meal Miracle (Free)</h3>
+                    <h3 className="font-bold text-base md:text-lg mb-1">Meal Miracle (Free)</h3>
                     <p className="text-muted-foreground text-xs md:text-sm mb-3 md:mb-4">Meals Funded</p>
                     <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 text-foreground">{results.meals} meals</div>
                     <div className="text-xs md:text-sm text-muted-foreground italic">Nourishing futures in Africa!</div>

@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +11,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-light tracking-tight text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
               Get In Touch
             </h1>
             <p className="text-lg text-muted-foreground">

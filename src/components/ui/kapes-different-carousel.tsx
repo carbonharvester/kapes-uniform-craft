@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -329,7 +330,7 @@ export const KapesDifferentCarousel = () => {
                                  className: "w-6 h-6 text-white"
                                })}
                              </div>
-                             <h4 className="text-xl font-semibold text-foreground">
+                             <h4 className="text-xl font-semibold">
                                {difference.details.title}
                              </h4>
                            </div>
