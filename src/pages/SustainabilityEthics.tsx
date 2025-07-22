@@ -107,8 +107,8 @@ const SustainabilityEthics = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 flex items-center justify-center gap-3">
-              🌱 Sustainable Materials
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+              Sustainable Materials
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We use the safest, most sustainable materials available for children and the planet
@@ -150,8 +150,8 @@ const SustainabilityEthics = () => {
       <section className="bg-gradient-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 flex items-center justify-center gap-3">
-              🧵 Ethical Manufacturing
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+              Ethical Manufacturing
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We manufacture responsibly in fully vetted, ethical factories. Our partners share our commitment to:
@@ -189,8 +189,8 @@ const SustainabilityEthics = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 flex items-center justify-center gap-3">
-              🌍 Sustainability That's Measurable
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+              Sustainability That's Measurable
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Kapes goes beyond claims — we give schools data-backed sustainability
@@ -226,8 +226,8 @@ const SustainabilityEthics = () => {
       <section className="bg-gradient-light-warm-section py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4 flex items-center justify-center gap-3">
-              📦 Sustainable Logistics, Too
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+              Sustainable Logistics, Too
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Even our delivery and packaging is considered
