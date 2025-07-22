@@ -46,7 +46,7 @@ const Blog = () => {
       <div className="min-h-screen bg-background font-inter">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center">
-            <h1 className="text-xl font-semibold text-black mb-4">Something went wrong</h1>
+            <h1 className="text-xl font-semibold mb-4">Something went wrong</h1>
             <p className="text-muted-foreground">We couldn't load the blog posts. Please try again later.</p>
           </div>
         </div>
