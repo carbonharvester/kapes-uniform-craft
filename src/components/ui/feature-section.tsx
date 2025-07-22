@@ -29,8 +29,11 @@ export function FeatureSteps({
 }: FeatureStepsProps) {
   const [currentFeature, setCurrentFeature] = useState(0)
   const [progress, setProgress] = useState(0)
+  const [isAutoPlay, setIsAutoPlay] = useState(true)
 
   useEffect(() => {
+    if (!isAutoPlay) return
+
     const timer = setInterval(() => {
       if (progress < 100) {
         setProgress((prev) => prev + 100 / (autoPlayInterval / 100))
@@ -41,7 +44,13 @@ export function FeatureSteps({
     }, 100)
 
     return () => clearInterval(timer)
-  }, [progress, features.length, autoPlayInterval])
+  }, [progress, features.length, autoPlayInterval, isAutoPlay])
+
+  const handleFeatureClick = (index: number) => {
+    setCurrentFeature(index)
+    setProgress(0)
+    setIsAutoPlay(false)
+  }
 
   return (
     <div className={cn("py-16 px-4", className)}>
@@ -57,10 +66,11 @@ export function FeatureSteps({
               return (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4 md:gap-6"
+                  className="flex items-center gap-4 md:gap-6 cursor-pointer hover:bg-muted/30 rounded-lg p-3 transition-all duration-300"
                   initial={{ opacity: 0.3 }}
                   animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
                   transition={{ duration: 0.5 }}
+                  onClick={() => handleFeatureClick(index)}
                 >
                   <motion.div
                     className={cn(
@@ -115,7 +125,7 @@ export function FeatureSteps({
                         alt={feature.step}
                         className="w-full h-full object-cover transition-transform transform"
                       />
-                      <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-background via-background/50 to-transparent" />
+                      
                     </motion.div>
                   ),
               )}
