@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -237,7 +238,7 @@ const StudentLeadership = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="bg-gradient-to-footer py-16 text-center">
+          <section className="py-16 text-center" style={{ backgroundColor: '#cfeaff' }}>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Empower Your Students to Shape the Future
             </h2>
