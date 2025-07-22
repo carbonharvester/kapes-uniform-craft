@@ -19,7 +19,7 @@ export const TierQuizModal = ({ children }: TierQuizModalProps) => {
       <DialogTrigger asChild>
         {children}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-full p-4 sm:p-6">
         <DialogHeader>
           <DialogTitle className="sr-only">Partnership Tier Quiz</DialogTitle>
         </DialogHeader>
