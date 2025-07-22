@@ -119,7 +119,7 @@ const SustainabilityEthics = () => {
             {sustainableMaterials.map((material, index) => {
             const IconComponent = material.icon;
             return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
-                  <div className="aspect-video relative overflow-hidden">
+                  <div className="aspect-[4/3] relative overflow-hidden">
                     <img src={material.image} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
