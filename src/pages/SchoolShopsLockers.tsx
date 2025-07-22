@@ -5,9 +5,28 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Feature } from "@/components/ui/feature-with-image-comparison";
+import { ImageContentSection } from "@/components/ImageContentSection";
 import eCommerceHeroImage from "@/assets/e-commerce-lockers-hero.jpg";
 
 export const SchoolShopsLockers = () => {
+  // E-commerce lockers features data
+  const eCommerceFeatures = [
+    {
+      title: "Secure & Strategic",
+      description: "Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.",
+      icon: Shield
+    },
+    {
+      title: "24/7 Convenience", 
+      description: "Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.",
+      icon: Clock
+    },
+    {
+      title: "Zero Admin Burden",
+      description: "Fully managed logistics by Kapes; zero extra work for your school—we handle everything.",
+      icon: Zap
+    }
+  ];
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section - Our Mission Template */}
@@ -134,65 +153,21 @@ export const SchoolShopsLockers = () => {
         <Feature />
       </div>
 
+      {/* E-Commerce Lockers Section */}
+      <ImageContentSection
+        title="E-Commerce Lockers"
+        description="Secure, convenient, and available 24/7—the future of uniform collection"
+        imageSrc={eCommerceHeroImage}
+        imageAlt="E-commerce lockers installation showing modern secure pickup solution"
+        items={eCommerceFeatures}
+        bottomText="Smart pickup solution that transforms uniform collection for busy families"
+        imagePosition="right"
+        iconColorScheme="purple"
+        className="bg-gradient-warm-section"
+      />
+
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
-          {/* E-Commerce Lockers Section */}
-          <section>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">E-Commerce Lockers</h2>
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6">
-                <Package className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Smart Pickup Solution</span>
-              </div>
-              <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
-            </div>
-            
-            <div className="mb-12">
-              <img 
-                src={eCommerceHeroImage} 
-                alt="E-commerce lockers installation showing modern secure pickup solution"
-                className="w-full h-[400px] object-cover rounded-2xl shadow-lg"
-              />
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="h-6 w-6 text-purple-500" />
-                  </div>
-                  <h3 className="text-xl font-medium mb-4">Secure & Strategic</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="h-6 w-6 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-medium mb-4">24/7 Convenience</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="h-6 w-6 text-blue-500" />
-                  </div>
-                  <h3 className="text-xl font-medium mb-4">Zero Admin Burden</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
 
           {/* Benefits Section */}
           <section className="bg-gradient-light-warm-section py-16">
