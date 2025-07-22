@@ -16,9 +16,9 @@ export const Hero = () => {
           </div>
           
           {/* Main headline with consistent typography */}
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-light tracking-tight text-white drop-shadow-lg px-4">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-academy font-bold tracking-tight text-white drop-shadow-lg px-4">
             School Uniforms That{" "}
-            <span className="font-medium text-white drop-shadow-lg">
+            <span className="font-academy font-bold text-white drop-shadow-lg">
               Make the World Better
             </span>
           </h1>
