@@ -282,7 +282,7 @@ export const KapesDifferentCarousel = () => {
         <CarouselContent className="-ml-2 md:-ml-4 py-4">
           {differences.map((difference) => (
             <CarouselItem key={difference.id} className="pl-2 md:pl-4 px-2 basis-full sm:basis-1/2 lg:basis-1/3">
-              <Card className="h-[28rem] border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 hover:scale-105 rounded-2xl">
+              <Card className="h-[28rem] border-0 overflow-hidden relative group cursor-pointer transition-all duration-300 md:hover:scale-105 rounded-2xl touch-manipulation">
                 <div 
                   className="absolute inset-0 bg-no-repeat"
                   style={{ 
@@ -312,7 +312,7 @@ export const KapesDifferentCarousel = () => {
                      >
                        <DialogTrigger asChild>
                          <button
-                            className="w-8 h-8 rounded-full bg-white border border-black/20 flex items-center justify-center hover:bg-gray-100 transition-all duration-200 hover:scale-110"
+                            className="w-8 h-8 rounded-full bg-white border border-black/20 flex items-center justify-center md:hover:bg-gray-100 transition-all duration-200 md:hover:scale-110 touch-manipulation"
                             onClick={(e) => {
                               e.stopPropagation();
                               setOpenDialog(openDialog === difference.id ? null : difference.id);
