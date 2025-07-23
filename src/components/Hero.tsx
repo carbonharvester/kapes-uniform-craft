@@ -15,10 +15,7 @@ export const Hero = () => {
           
           {/* Main headline with consistent typography */}
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4">
-            School Uniforms That{" "}
-            <span className="font-academy-hero font-extrabold text-white drop-shadow-lg">
-              Make the World Better
-            </span>
+            School Uniforms That Create Change
           </h1>
           
           {/* Subtitle with perfect spacing */}
