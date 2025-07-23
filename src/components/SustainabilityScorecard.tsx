@@ -374,57 +374,106 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const recommendations = [];
     const strengths = [];
     
-    // Materials analysis
+    // Materials analysis - using actual answer values
     const materialsAnswers = answers['materials'] || [];
-    if (materialsAnswers.includes('Organic cotton')) {
+    if (materialsAnswers.includes('organic_cotton')) {
       strengths.push("✅ Using organic cotton reduces environmental impact");
-    } else {
+    }
+    if (materialsAnswers.includes('recycled_poly')) {
+      strengths.push("✅ Using recycled polyester supports circular economy");
+    }
+    if (materialsAnswers.includes('virgin_synth')) {
+      recommendations.push("🌱 **Materials**: Consider switching from virgin synthetic fibers to recycled polyester");
+    }
+    if (materialsAnswers.includes('conventional_cotton')) {
       recommendations.push("🌱 **Materials**: Consider switching to organic cotton for reduced environmental impact");
     }
-    
-    if (materialsAnswers.includes('Recycled materials')) {
-      strengths.push("✅ Using recycled materials supports circular economy");
-    } else {
-      recommendations.push("♻️ **Recycled Content**: Incorporate recycled materials to reduce waste");
+    if (materialsAnswers.includes('dont_know')) {
+      recommendations.push("🔍 **Materials Research**: Find out what materials your uniforms are made from to make informed decisions");
     }
     
-    // Packaging analysis
+    // Packaging analysis - using actual answer values
     const packagingAnswers = answers['packaging'] || [];
-    if (packagingAnswers.includes('Minimal packaging')) {
-      strengths.push("✅ Minimal packaging reduces waste");
-    } else {
-      recommendations.push("📦 **Packaging**: Minimize packaging materials and use recyclable options");
+    if (packagingAnswers.includes('recycled_plastic')) {
+      strengths.push("✅ Using recycled plastic packaging reduces waste");
+    }
+    if (packagingAnswers.includes('paper')) {
+      strengths.push("✅ Paper packaging is more sustainable than plastic");
+    }
+    if (packagingAnswers.includes('plastic')) {
+      recommendations.push("📦 **Packaging**: Consider switching from plastic to recycled plastic or paper packaging");
+    }
+    if (packagingAnswers.includes('dont_know')) {
+      recommendations.push("📦 **Packaging Research**: Find out what packaging materials are used for your uniforms");
     }
     
-    // Distribution analysis
+    // Distribution analysis - using actual answer values
     const distributionAnswers = answers['distribution'] || [];
-    if (distributionAnswers.includes('Local suppliers')) {
-      strengths.push("✅ Local suppliers reduce carbon footprint");
-    } else {
-      recommendations.push("🚛 **Distribution**: Source from local suppliers to reduce transportation emissions");
+    if (distributionAnswers.includes('pickup_school')) {
+      strengths.push("✅ School pickup reduces shipping emissions");
+    }
+    if (distributionAnswers.includes('popup_events')) {
+      strengths.push("✅ Pop-up events provide efficient distribution");
+    }
+    if (distributionAnswers.includes('online_ordering') && !distributionAnswers.includes('pickup_school')) {
+      recommendations.push("🚛 **Distribution**: Consider offering pickup at school to reduce shipping emissions");
+    }
+    if (distributionAnswers.includes('dont_know')) {
+      recommendations.push("🚛 **Distribution Research**: Review your uniform distribution methods for efficiency opportunities");
     }
     
-    // End-of-life analysis
-    const endOfLifeAnswer = answers['end_of_life'];
-    if (endOfLifeAnswer === 'Yes') {
-      strengths.push("✅ Take-back program supports circular economy");
-    } else {
-      recommendations.push("🔄 **Take-back Program**: Implement a uniform collection and recycling program");
+    // AI usage analysis - using actual answer values
+    const aiAnswers = answers['ai_usage'] || [];
+    if (aiAnswers.includes('size_recommend')) {
+      strengths.push("✅ AI size recommendations reduce returns and waste");
+    }
+    if (aiAnswers.includes('forecast_stock')) {
+      strengths.push("✅ AI stock forecasting reduces overproduction");
+    }
+    if (aiAnswers.includes('no') || aiAnswers.includes('dont_know')) {
+      recommendations.push("🤖 **AI Technology**: Consider AI for size recommendations to reduce returns and waste");
     }
     
-    // Durability analysis
-    const durabilityAnswer = answers['durability'];
-    if (durabilityAnswer === 'Excellent' || durabilityAnswer === 'Good') {
-      strengths.push("✅ Good durability reduces replacement frequency");
-    } else {
-      recommendations.push("💪 **Durability**: Invest in higher-quality uniforms that last longer");
+    // Environmental tracking
+    if (answers['q3'] === '1') {
+      strengths.push("✅ Tracking environmental impact of production");
+    } else if (answers['q3'] === '0') {
+      recommendations.push("📊 **Impact Tracking**: Start measuring water, energy, and carbon emissions from uniform production");
+    }
+    
+    // Carbon offsetting
+    if (answers['q4'] === '1') {
+      strengths.push("✅ Offsetting environmental impact through verified projects");
+    } else if (answers['q4'] === '0') {
+      recommendations.push("🌍 **Carbon Offsetting**: Consider implementing verified carbon offset projects");
+    }
+    
+    // Used uniform collection
+    if (answers['q13'] === '1') {
+      strengths.push("✅ Collecting and reusing uniforms supports circular economy");
+    } else if (answers['q13'] === '0') {
+      recommendations.push("🔄 **Uniform Reuse**: Start collecting and reselling/donating used uniforms");
+    }
+    
+    // Supply chain transparency
+    if (answers['q20'] === '1') {
+      strengths.push("✅ Providing supply chain transparency");
+    } else if (answers['q20'] === '0') {
+      recommendations.push("🔍 **Transparency**: Provide full supply chain transparency to your community");
+    }
+    
+    // Student education
+    if (answers['education'] === '1') {
+      strengths.push("✅ Educating students about fashion impacts");
+    } else if (answers['education'] === '0') {
+      recommendations.push("📚 **Education**: Educate students about the environmental impacts of fashion");
     }
     
     // Score-based recommendations
     if (score < 30) {
-      recommendations.unshift("🎯 **Priority**: Your sustainability score indicates significant opportunity for improvement. Focus on materials and packaging first.");
+      recommendations.unshift("🎯 **Priority**: Your sustainability score indicates significant opportunity for improvement. Focus on materials and supply chain transparency first.");
     } else if (score < 60) {
-      recommendations.unshift("📈 **Progress**: You're on the right track. Focus on optimizing your strongest areas.");
+      recommendations.unshift("📈 **Progress**: You're on the right track. Focus on optimizing your strongest areas and filling gaps.");
     } else {
       recommendations.unshift("🌟 **Excellence**: Strong sustainability foundation. Fine-tune remaining areas for maximum impact.");
     }
