@@ -185,12 +185,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       fetch(sheetURL, {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
-        mode: 'no-cors'
-      }).then(() => {
-        console.log('Data sent to Google Sheet');
+      }).then(response => {
+        console.log('✅ Response received:', response.status);
+        return response.text();
+      }).then(data => {
+        console.log('✅ Data sent to Google Sheet successfully:', data);
       }).catch(error => {
-        console.error('Error sending data:', error);
+        console.error('❌ Error sending data to Google Sheet:', error);
       });
 
       setSent(true);
