@@ -64,7 +64,7 @@ const ImpactPartnershipPage = () => {
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Why Choose Impact Over Cash?</h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
               We believe every school deserves access to the full power of ethical, sustainable uniforms. 
-              That's why we've eliminated tiers and created one comprehensive partnership that gives every school everything they need to lead positive change.
+              That's why we've eliminated revenue shares that only increase costs for parents and created one comprehensive partnership that gives every school everything they need to lead positive change.
             </p>
           </section>
 
