@@ -83,6 +83,13 @@ const ImpactPartnershipPage = () => {
       traditional: "Restrictive buy-back clauses"
     },
     {
+      icon: "⚖️",
+      feature: "Ethical Supply Chain",
+      description: "Fair wages, safe working conditions, and ethical practices",
+      kapes: "100% Ethical - Audited & certified supply chain",
+      traditional: "Limited oversight - Unverified practices"
+    },
+    {
       icon: "🚚",
       feature: "Delivery Options",
       description: "Flexible delivery and collection options",
