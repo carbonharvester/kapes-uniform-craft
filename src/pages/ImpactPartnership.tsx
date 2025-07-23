@@ -146,7 +146,7 @@ const ImpactPartnershipPage = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-left">
           <div className="max-w-3xl space-y-8">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">THE Impact Partnership</Badge>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">Impact Partnership</Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
               One Partnership.{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
