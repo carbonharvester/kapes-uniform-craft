@@ -44,6 +44,14 @@ export const KapesComparison = () => {
       traditional: "Virgin Synthetics",
       traditionalPositive: false,
     },
+    {
+      icon: "⚖️",
+      feature: "Ethical Manufacturing",
+      kapes: "100% Audited & Certified",
+      kapesPositive: true,
+      traditional: "Limited Oversight",
+      traditionalPositive: false,
+    },
   ];
 
   return (
