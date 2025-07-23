@@ -26,9 +26,9 @@ export const Hero = () => {
             <button onClick={() => document.getElementById('parent-section')?.scrollIntoView({
             behavior: 'smooth'
           })} className="group inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-primary text-primary-foreground rounded-2xl font-medium text-base md:text-lg transition-all duration-300 hover:bg-primary/90 hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto">
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-start">
                 <span className="text-base md:text-lg font-medium">I'm a Parent</span>
-                <span className="text-xs md:text-sm opacity-90 mt-0.5">Shop Now</span>
+                <span className="text-xs opacity-90 mt-0.5">Shop Now</span>
               </div>
               <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -37,9 +37,9 @@ export const Hero = () => {
             <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
             behavior: 'smooth'
           })} className="group inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 bg-white/10 text-white border border-white/20 rounded-2xl font-medium text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm w-full sm:w-auto">
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-start">
                 <span className="text-base md:text-lg font-medium">I'm a School</span>
-                <span className="text-xs md:text-sm opacity-90 mt-0.5">See How It Works</span>
+                <span className="text-xs opacity-90 mt-0.5">See How It Works</span>
               </div>
               <svg className="ml-2 w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
