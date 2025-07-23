@@ -476,7 +476,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const sustainabilityImportance = formAnswers.extra3;
     const willingToImprove = formAnswers.extra2;
 
-    if (sustainabilityImportance !== 'Very important') {
+    if (sustainabilityImportance === 'Not important') {
       setLowSustainability(true);
       setShowResults(true);
     } else if (willingToImprove === 'No') {
@@ -799,7 +799,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   const renderExtraRadioQuestion = (questionId: string) => {
     const options = questionId === 'extra2' 
-      ? ['Yes', 'No'] // Removed 'Maybe'
+      ? ['Yes', 'No']
       : ['Very important', 'Important', 'Somewhat important', 'Not important'];
     
     return (
@@ -1013,7 +1013,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
               {lowSustainability && (
                 <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Thanks, but we are only consulting with schools that value sustainability.
+                  Thank you for taking the time to complete the scorecard. However, we are currently focusing our consultations on schools that prioritise sustainability as a core value.
                 </p>
               )}
               
