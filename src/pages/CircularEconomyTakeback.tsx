@@ -316,6 +316,13 @@ const CircularEconomyTakeback = () => {
             })}
           </div>
           
+          <div className="text-center">
+            <div className="bg-green-100/50 dark:bg-green-900/20 rounded-xl p-6 border border-green-200/50 dark:border-green-800/50">
+              <p className="text-lg font-medium text-green-900 dark:text-green-100">
+                Schools on the Core and Impact tiers automatically receive takeback integration and impact reporting.
+              </p>
+            </div>
+          </div>
         </div>
         
         {/* Bottom section separator */}
@@ -384,9 +391,11 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-lg font-medium text-purple-900 dark:text-purple-100">
-              It's not just recycling — it's feeding children, reducing waste, and teaching values.
-            </p>
+            <div className="bg-purple-100/50 dark:bg-purple-900/20 rounded-xl p-6 border border-purple-200/50 dark:border-purple-800/50">
+              <p className="text-lg font-medium text-purple-900 dark:text-purple-100">
+                It's not just recycling — it's feeding children, reducing waste, and teaching values.
+              </p>
+            </div>
           </div>
         </div>
         
@@ -457,10 +466,12 @@ const CircularEconomyTakeback = () => {
             })}
           </div>
           
-          <div className="text-center mt-12">
-            <p className="text-xl md:text-2xl font-medium text-heading dark:text-heading leading-relaxed">
-              By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
-            </p>
+          <div className="text-center">
+            <div className="bg-background-cool/50 dark:bg-background-cool/20 rounded-xl p-6 border border-background-cool/50 dark:border-background-cool/30">
+              <p className="text-lg font-medium text-heading dark:text-heading mb-4">
+                By making uniforms circular, we reduce environmental impact and increase social impact — without schools or parents having to change the way they shop.
+              </p>
+            </div>
           </div>
         </div>
         

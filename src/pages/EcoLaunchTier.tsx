@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { CheckCircle, X, Star } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
@@ -189,11 +188,11 @@ const EcoLaunchTier = () => {
                   Every item is ethically made, environmentally responsible, and designed to make students feel confident and proud.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
-                    <Link to="/sustainability-scorecard">Compare All Tiers</Link>
+                  <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                    Compare All Tiers
                   </Button>
-                  <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
-                    <Link to="/sustainability-scorecard">Book Your Free Audit</Link>
+                  <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                    Book Your Free Audit
                   </Button>
                 </div>
               </CardContent>

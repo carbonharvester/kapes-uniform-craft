@@ -1,35 +1,24 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Store, Package, Clock, Users, Sparkles, CheckCircle, Shield, Zap } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Feature } from "@/components/ui/feature-with-image-comparison";
-import { ImageContentSection } from "@/components/ImageContentSection";
-import eCommerceHeroImage from "@/assets/e-commerce-lockers-hero.jpg";
+
 export const SchoolShopsLockers = () => {
-  // E-commerce lockers features data
-  const eCommerceFeatures = [{
-    title: "Secure & Strategic",
-    description: "Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.",
-    icon: Shield
-  }, {
-    title: "24/7 Convenience",
-    description: "Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.",
-    icon: Clock
-  }, {
-    title: "Zero Admin Burden",
-    description: "Fully managed logistics by Kapes; zero extra work for your school—we handle everything.",
-    icon: Zap
-  }];
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       {/* Hero Section - Our Mission Template */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-        backgroundPosition: "20% center"
-      }}></div>
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+            backgroundPosition: "20% center"
+          }}
+        ></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -51,9 +40,7 @@ export const SchoolShopsLockers = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-        animationDelay: '1s'
-      }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </section>
 
       {/* Full-width background sections */}
@@ -123,6 +110,13 @@ export const SchoolShopsLockers = () => {
                   <div className="flex items-start gap-4">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                     <div>
+                      <h4 className="font-semibold mb-1">Visual merchandising</h4>
+                      <p className="text-sm text-muted-foreground">Professional display and store presentation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
                       <h4 className="font-semibold mb-1">Sales reporting & analytics</h4>
                       <p className="text-sm text-muted-foreground">Detailed insights and performance tracking</p>
                     </div>
@@ -139,11 +133,57 @@ export const SchoolShopsLockers = () => {
         <Feature />
       </div>
 
-      {/* E-Commerce Lockers Section */}
-      <ImageContentSection title="E-Commerce Lockers" description="Secure, convenient, and available 24/7—the future of uniform collection" imageSrc={eCommerceHeroImage} imageAlt="E-commerce lockers installation showing modern secure pickup solution" items={eCommerceFeatures} bottomText="Smart pickup solution that transforms uniform collection for busy families" imagePosition="right" iconColorScheme="blue" className="bg-gradient-warm-section" />
-
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
+          {/* E-Commerce Lockers Section */}
+          <section>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">E-Commerce Lockers</h2>
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6">
+                <Package className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Smart Pickup Solution</span>
+              </div>
+              <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Shield className="h-6 w-6 text-purple-500" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-4">Secure & Strategic</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Clock className="h-6 w-6 text-green-500" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-4">24/7 Convenience</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
+                <CardContent className="p-8 h-full">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Zap className="h-6 w-6 text-blue-500" />
+                  </div>
+                  <h3 className="text-xl font-medium mb-4">Zero Admin Burden</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
           {/* Benefits Section */}
           <section className="bg-gradient-light-warm-section py-16">
@@ -204,10 +244,8 @@ export const SchoolShopsLockers = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16" style={{
-          backgroundColor: '#cfeaff'
-        }}>
-            <div className="inline-flex items-center gap-2 bg-white/80 rounded-full px-6 py-2 mb-6">
+          <section className="text-center py-16">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-2 mb-6">
               <Store className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Get Started Today</span>
             </div>
@@ -217,13 +255,14 @@ export const SchoolShopsLockers = () => {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss which solution works best for your school—shops, lockers, or both.
             </p>
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300" asChild>
-              <Link to="/sustainability-scorecard">Request a Consultation</Link>
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-all duration-300">
+              Request a Free Shop or Locker Consultation
             </Button>
           </section>
           
         </div>
       </div>
       <Footer />
-    </div>;
+    </div>
+  );
 };

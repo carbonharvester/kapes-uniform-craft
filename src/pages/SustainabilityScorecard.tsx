@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SustainabilityScorecard from '@/components/SustainabilityScorecard';
 import { Footer } from "@/components/Footer";
@@ -12,15 +13,7 @@ const SustainabilityScorecardPage = () => {
   React.useEffect(() => {
     const storedUserData = localStorage.getItem('scorecardUserData');
     if (storedUserData) {
-      try {
-        const userData = JSON.parse(storedUserData);
-        // Check if we have the required fields from the updated form structure
-        if (userData.firstName && userData.lastName && userData.email && userData.schoolName && userData.country) {
-          setShowAssessment(true);
-        }
-      } catch (error) {
-        console.error('Error parsing stored user data:', error);
-      }
+      setShowAssessment(true);
     }
   }, []);
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { GripVertical } from "lucide-react";
-import beforeImageComparison from "@/assets/before-image-comparison-new.png";
 function Feature() {
   const [inset, setInset] = useState<number>(50);
   const [onMouseDown, setOnMouseDown] = useState<boolean>(false);
@@ -47,7 +46,7 @@ function Feature() {
               <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753009981/Untitled_design_3_zz8vdo.jpg" alt="Modern uniform solution" className="absolute left-0 top-0 z-10 w-full h-full object-cover aspect-video rounded-2xl select-none border" style={{
               clipPath: "inset(0 0 0 " + inset + "%)"
             }} />
-              <img src={beforeImageComparison} alt="Traditional uniform distribution" className="absolute left-0 top-0 w-full h-full object-cover aspect-video rounded-2xl select-none border" />
+              <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753038512/WhatsApp_Image_2025-07-20_at_20.04.16_ssfyrw.jpg" alt="Traditional uniform distribution" className="absolute left-0 top-0 w-full h-full object-cover aspect-video rounded-2xl select-none border" />
             </div>
           </div>
         </div>

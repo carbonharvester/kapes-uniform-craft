@@ -104,7 +104,8 @@ export function FeatureSteps({
 
           <div
             className={cn(
-              "order-1 md:order-2 relative h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden rounded-xl shadow-lg"
+              "order-1 md:order-2 relative h-[300px] md:h-[400px] lg:h-[450px] overflow-hidden rounded-xl shadow-lg",
+              "border border-border/50"
             )}
           >
             <AnimatePresence mode="wait">
@@ -113,7 +114,7 @@ export function FeatureSteps({
                   index === currentFeature && (
                     <motion.div
                       key={index}
-                      className="absolute inset-0 rounded-lg overflow-hidden border border-border/50"
+                      className="absolute inset-0 rounded-lg overflow-hidden"
                       initial={{ y: 100, opacity: 0, rotateX: -20 }}
                       animate={{ y: 0, opacity: 1, rotateX: 0 }}
                       exit={{ y: -100, opacity: 0, rotateX: 20 }}

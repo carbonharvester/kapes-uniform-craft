@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { BookOpen, Play, Factory, Users, Download, Eye } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
@@ -221,11 +220,11 @@ const EducationalResources = () => {
             Engage your students with meaningful content that connects their daily uniform to global impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
-              <Link to="/sustainability-scorecard">Download a Sample Lesson</Link>
+            <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+              Download a Sample Lesson
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
-              <Link to="/sustainability-scorecard">Book a Demo of Our Resources</Link>
+            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+              Book a Demo of Our Resources
             </Button>
           </div>
         </div>
