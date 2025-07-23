@@ -21,11 +21,11 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "🌱",
-      feature: "Carbon Neutral Uniforms",
-      kapes: "Yes",
+      icon: "📋",
+      feature: "Buy-back Clauses",
+      kapes: "No Restrictive Clauses",
       kapesPositive: true,
-      traditional: "No",
+      traditional: "Restrictive Terms",
       traditionalPositive: false,
     },
     {
