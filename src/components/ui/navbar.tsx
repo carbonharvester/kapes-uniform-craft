@@ -105,7 +105,7 @@ const Navbar = ({
       url: "/delivery-packaging"
     }]
   }, {
-    title: "How It Works",
+    title: "Partner with us",
     url: "#",
     items: [{
       title: "Our Process",
