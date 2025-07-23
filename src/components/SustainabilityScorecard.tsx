@@ -348,8 +348,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       setLowSustainability(true);
       
       // Generate detailed recommendations even for "not important" users
-      const { recommendations, strengths } = generateDetailedRecommendations(formAnswers, score);
-      const detailedFeedback = `**Your Sustainability Assessment Results**\n\n**Current Score: ${score}/100**\n\n${strengths.length > 0 ? `**What you're doing well:**\n${strengths.join('\n')}\n\n` : ''}**Opportunities for improvement:**\n${recommendations.join('\n\n')}\n\nWhile sustainability may not be your current priority, implementing these changes could reduce costs and improve your school's reputation.`;
+      const { narrative } = generateDetailedRecommendations(formAnswers, score);
+      const detailedFeedback = `${narrative}\n\nWhile sustainability may not be your current priority, implementing these changes could reduce costs and improve your school's reputation.`;
       
       setScoreDescription(detailedFeedback);
       setShowQuiz(false);
@@ -371,114 +371,128 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const generateDetailedRecommendations = (answers: any, score: number) => {
-    const recommendations = [];
     const strengths = [];
+    const improvements = [];
     
-    // Materials analysis - using actual answer values
+    // Materials analysis
     const materialsAnswers = answers['materials'] || [];
     if (materialsAnswers.includes('organic_cotton')) {
-      strengths.push("✅ Using organic cotton reduces environmental impact");
+      strengths.push("incorporating organic cotton");
     }
     if (materialsAnswers.includes('recycled_poly')) {
-      strengths.push("✅ Using recycled polyester supports circular economy");
+      strengths.push("using recycled polyester");
     }
     if (materialsAnswers.includes('virgin_synth')) {
-      recommendations.push("🌱 **Materials**: Consider switching from virgin synthetic fibers to recycled polyester");
+      improvements.push("transitioning from virgin synthetic fibers to recycled polyester");
     }
     if (materialsAnswers.includes('conventional_cotton')) {
-      recommendations.push("🌱 **Materials**: Consider switching to organic cotton for reduced environmental impact");
-    }
-    if (materialsAnswers.includes('dont_know')) {
-      recommendations.push("🔍 **Materials Research**: Find out what materials your uniforms are made from to make informed decisions");
+      improvements.push("adopting organic cotton to lessen environmental footprints");
     }
     
-    // Packaging analysis - using actual answer values
+    // Packaging analysis
     const packagingAnswers = answers['packaging'] || [];
     if (packagingAnswers.includes('recycled_plastic')) {
-      strengths.push("✅ Using recycled plastic packaging reduces waste");
+      strengths.push("incorporating recycled plastic packaging, a commendable step that effectively reduces waste");
     }
     if (packagingAnswers.includes('paper')) {
-      strengths.push("✅ Paper packaging is more sustainable than plastic");
+      strengths.push("using paper packaging");
     }
     if (packagingAnswers.includes('plastic')) {
-      recommendations.push("📦 **Packaging**: Consider switching from plastic to recycled plastic or paper packaging");
-    }
-    if (packagingAnswers.includes('dont_know')) {
-      recommendations.push("📦 **Packaging Research**: Find out what packaging materials are used for your uniforms");
+      improvements.push("switching from plastic to recycled plastic packaging");
     }
     
-    // Distribution analysis - using actual answer values
+    // Distribution analysis
     const distributionAnswers = answers['distribution'] || [];
     if (distributionAnswers.includes('pickup_school')) {
-      strengths.push("✅ School pickup reduces shipping emissions");
-    }
-    if (distributionAnswers.includes('popup_events')) {
-      strengths.push("✅ Pop-up events provide efficient distribution");
+      strengths.push("offering school pickups to reduce shipping emissions");
     }
     if (distributionAnswers.includes('online_ordering') && !distributionAnswers.includes('pickup_school')) {
-      recommendations.push("🚛 **Distribution**: Consider offering pickup at school to reduce shipping emissions");
-    }
-    if (distributionAnswers.includes('dont_know')) {
-      recommendations.push("🚛 **Distribution Research**: Review your uniform distribution methods for efficiency opportunities");
+      improvements.push("enhancing distribution by offering school pickups to minimise shipping emissions");
     }
     
-    // AI usage analysis - using actual answer values
+    // AI usage analysis
     const aiAnswers = answers['ai_usage'] || [];
     if (aiAnswers.includes('size_recommend')) {
-      strengths.push("✅ AI size recommendations reduce returns and waste");
-    }
-    if (aiAnswers.includes('forecast_stock')) {
-      strengths.push("✅ AI stock forecasting reduces overproduction");
+      strengths.push("implementing AI size recommendations to reduce returns");
     }
     if (aiAnswers.includes('no') || aiAnswers.includes('dont_know')) {
-      recommendations.push("🤖 **AI Technology**: Consider AI for size recommendations to reduce returns and waste");
+      improvements.push("integrating AI technology for size recommendations to reduce returns and waste");
     }
     
     // Environmental tracking
-    if (answers['q3'] === '1') {
-      strengths.push("✅ Tracking environmental impact of production");
-    } else if (answers['q3'] === '0') {
-      recommendations.push("📊 **Impact Tracking**: Start measuring water, energy, and carbon emissions from uniform production");
+    if (answers['q3'] === '0') {
+      improvements.push("tracking water, energy, and carbon emissions from uniform production");
     }
     
     // Carbon offsetting
-    if (answers['q4'] === '1') {
-      strengths.push("✅ Offsetting environmental impact through verified projects");
-    } else if (answers['q4'] === '0') {
-      recommendations.push("🌍 **Carbon Offsetting**: Consider implementing verified carbon offset projects");
-    }
-    
-    // Used uniform collection
-    if (answers['q13'] === '1') {
-      strengths.push("✅ Collecting and reusing uniforms supports circular economy");
-    } else if (answers['q13'] === '0') {
-      recommendations.push("🔄 **Uniform Reuse**: Start collecting and reselling/donating used uniforms");
+    if (answers['q4'] === '0') {
+      improvements.push("implementing verified carbon offset projects");
     }
     
     // Supply chain transparency
-    if (answers['q20'] === '1') {
-      strengths.push("✅ Providing supply chain transparency");
-    } else if (answers['q20'] === '0') {
-      recommendations.push("🔍 **Transparency**: Provide full supply chain transparency to your community");
+    if (answers['q20'] === '0') {
+      improvements.push("providing full supply chain transparency to your community");
     }
     
     // Student education
-    if (answers['education'] === '1') {
-      strengths.push("✅ Educating students about fashion impacts");
-    } else if (answers['education'] === '0') {
-      recommendations.push("📚 **Education**: Educate students about the environmental impacts of fashion");
+    if (answers['education'] === '0') {
+      improvements.push("educating students about the environmental impacts of fashion");
     }
     
-    // Score-based recommendations
+    // Generate narrative response
+    let narrative = `Your Sustainability Score stands at ${score}%, reflecting `;
+    
     if (score < 30) {
-      recommendations.unshift("🎯 **Priority**: Your sustainability score indicates significant opportunity for improvement. Focus on materials and supply chain transparency first.");
+      narrative += "a modest starting point on your sustainability journey";
     } else if (score < 60) {
-      recommendations.unshift("📈 **Progress**: You're on the right track. Focus on optimizing your strongest areas and filling gaps.");
+      narrative += "good progress on your sustainability journey";
     } else {
-      recommendations.unshift("🌟 **Excellence**: Strong sustainability foundation. Fine-tune remaining areas for maximum impact.");
+      narrative += "strong commitment to sustainability";
     }
     
-    return { recommendations, strengths };
+    narrative += ". ";
+    
+    // Add strengths
+    if (strengths.length > 0) {
+      if (strengths.length === 1) {
+        narrative += `You're doing well by ${strengths[0]}. `;
+      } else if (strengths.length === 2) {
+        narrative += `You're doing well by ${strengths[0]} and ${strengths[1]}. `;
+      } else {
+        const lastStrength = strengths.pop();
+        narrative += `You're doing well by ${strengths.join(', ')}, and ${lastStrength}. `;
+      }
+    }
+    
+    // Add improvement opportunities
+    if (improvements.length > 0) {
+      if (score < 60) {
+        narrative += "However, there are significant opportunities for improvement to elevate your score. ";
+        
+        if (score < 30) {
+          narrative += "Prioritizing efforts in materials and supply chain transparency could yield the most impact. ";
+        }
+        
+        narrative += "Consider ";
+        
+        if (improvements.length === 1) {
+          narrative += `${improvements[0]}`;
+        } else if (improvements.length === 2) {
+          narrative += `${improvements[0]} and ${improvements[1]}`;
+        } else {
+          const lastImprovement = improvements.pop();
+          narrative += `${improvements.join(', ')}, and ${lastImprovement}`;
+        }
+        
+        narrative += " for a more sustainable future.";
+      } else {
+        narrative += `To achieve even greater impact, consider ${improvements.join(', ')}.`;
+      }
+    } else if (score >= 60) {
+      narrative += "You have established a strong foundation and are well-positioned to lead by example in sustainable uniform programs.";
+    }
+    
+    return { narrative };
   };
 
   const processResults = () => {
