@@ -10,7 +10,7 @@ import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import OurProcess from "./pages/OurProcess";
-import ImplementationTimeline from "./pages/ImplementationTimeline";
+
 import EcoLaunchTier from "./pages/EcoLaunchTier";
 import SustainProTier from "./pages/SustainProTier";
 import LegacyImpactTier from "./pages/LegacyImpactTier";
@@ -55,7 +55,7 @@ const App = () => (
           
           {/* Process & Timeline Routes */}
           <Route path="/our-process" element={<OurProcess />} />
-          <Route path="/implementation-timeline" element={<ImplementationTimeline />} />
+          
           
           {/* Partnership Tier Routes */}
           <Route path="/partnership-tiers" element={<PartnershipTiers />} />
