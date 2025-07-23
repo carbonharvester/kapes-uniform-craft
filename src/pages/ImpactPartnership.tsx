@@ -41,6 +41,20 @@ const ImpactPartnershipPage = () => {
       traditional: "No - Standard manufacturing"
     },
     {
+      icon: "🧵",
+      feature: "Materials",
+      description: "Quality and sustainability of fabric materials",
+      kapes: "100% Sustainable - Organic & recycled materials only",
+      traditional: "Standard materials - Limited sustainability"
+    },
+    {
+      icon: "🤖",
+      feature: "AI Technology",
+      description: "AI-powered sizing and fit technology",
+      kapes: "AI-Powered Sizing - Perfect fit, fewer returns",
+      traditional: "Manual sizing - Higher return rates"
+    },
+    {
       icon: "🍽️",
       feature: "Free Meals for Children",
       description: "Every uniform purchase funds meals for children in need",
@@ -62,11 +76,18 @@ const ImpactPartnershipPage = () => {
       traditional: "Not offered"
     },
     {
-      icon: "🏫",
-      feature: "Admin Burden on School",
-      description: "Time spent managing uniform program",
-      kapes: "< 1 Hour per term",
-      traditional: "High - Ongoing management"
+      icon: "📋",
+      feature: "Buy-back Clauses",
+      description: "Contractual terms for switching suppliers",
+      kapes: "No restrictive clauses - Switch anytime",
+      traditional: "Restrictive buy-back clauses"
+    },
+    {
+      icon: "🚚",
+      feature: "Delivery Options",
+      description: "Flexible delivery and collection options",
+      kapes: "Home, school & smart lockers available",
+      traditional: "Physical store only - No school collection"
     },
     {
       icon: "🌍",
