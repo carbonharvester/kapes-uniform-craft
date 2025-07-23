@@ -160,11 +160,11 @@ const ImpactPartnershipPage = () => {
 
           {/* All Features Included */}
           <section className="space-y-12">
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Everything Included. Always.
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg max-w-2xl">
                 No hidden features. No premium upgrades. No compromises.
               </p>
             </div>
@@ -195,11 +195,11 @@ const ImpactPartnershipPage = () => {
 
           {/* Detailed Comparison Table */}
           <section className="space-y-12">
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
                 Why Schools Are Switching to Kapes
               </h2>
-              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
                 We focus on impact, not revenue. See how we compare to traditional uniform suppliers who prioritize profit over purpose.
               </p>
             </div>
@@ -264,7 +264,7 @@ const ImpactPartnershipPage = () => {
 
           {/* Impact Numbers */}
           <section className="bg-gradient-warm-section py-16 rounded-3xl">
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Real Impact, Real Numbers
               </h2>
@@ -295,7 +295,7 @@ const ImpactPartnershipPage = () => {
 
           {/* Perfect For */}
           <section>
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Perfect For Every School
               </h2>
