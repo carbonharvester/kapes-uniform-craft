@@ -51,7 +51,7 @@ const ImpactPartnershipPage = () => {
       icon: "🤖",
       feature: "AI Technology",
       description: "AI-powered sizing and fit technology",
-      kapes: "AI-Powered Sizing - Perfect fit, fewer returns",
+      kapes: "AI-Powered Sizing - Fewer returns",
       traditional: "Manual sizing - Higher return rates"
     },
     {
