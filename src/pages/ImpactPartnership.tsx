@@ -1,78 +1,41 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, ArrowRight, Leaf, Heart, Users, Cog } from "lucide-react";
 import { Footer } from "@/components/Footer";
-
 const ImpactPartnershipPage = () => {
-  const allFeatures = [
-    {
-      category: "Environmental Excellence",
-      icon: Leaf,
-      color: "text-green-600",
-      bgColor: "bg-green-50",
-      features: [
-        "100% Sustainable Materials Only - No compromises, ever",
-        "Regenerative & Recycled Fibers - Materials that heal the planet",
-        "Zero-Waste Circular System - Nothing goes to landfill",
-        "Plastic-Free Packaging - Beautiful, biodegradable unboxing",
-        "Fully Managed Takeback Scheme - We handle the full lifecycle",
-        "Carbon Footprint Tracking - Measure and reduce your impact"
-      ]
-    },
-    {
-      category: "Social Impact",
-      icon: Heart,
-      color: "text-red-600", 
-      bgColor: "bg-red-50",
-      features: [
-        "Free School Meals Funded - Every uniform sale feeds children in need",
-        "Free Uniforms Donated Globally - Local production, global impact",
-        "Ethical Manufacturing Guarantee - Safe, fair-wage, child-labor-free",
-        "Factory Transparency - Visit our facilities, meet our makers",
-        "Community Development - Supporting local economies worldwide"
-      ]
-    },
-    {
-      category: "Educational Innovation",
-      icon: Users,
-      color: "text-blue-600",
-      bgColor: "bg-blue-50", 
-      features: [
-        "Student Leadership Council - Real voice in real decisions",
-        "QR Codes on Every Garment - Scan to see impact and story",
-        "Factory Visits & Teaching Materials - Bring learning to life",
-        "Sustainability Curriculum Support - Age-appropriate resources",
-        "Impact Dashboard - Real-time tracking for students and staff"
-      ]
-    },
-    {
-      category: "Operational Excellence",
-      icon: Cog,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
-      features: [
-        "Fully Managed Online Shop - We build, maintain, and support",
-        "AI-Powered Sizing Technology - Perfect fit, fewer returns",
-        "Multiple Delivery Options - Home, school, or smart lockers",
-        "Dedicated Account Manager - Your personal impact strategist",
-        "Custom PR & CSR Toolkit - Showcase your leadership"
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const allFeatures = [{
+    category: "Environmental Excellence",
+    icon: Leaf,
+    color: "text-green-600",
+    bgColor: "bg-green-50",
+    features: ["100% Sustainable Materials Only - No compromises, ever", "Regenerative & Recycled Fibers - Materials that heal the planet", "Zero-Waste Circular System - Nothing goes to landfill", "Plastic-Free Packaging - Beautiful, biodegradable unboxing", "Fully Managed Takeback Scheme - We handle the full lifecycle", "Carbon Footprint Tracking - Measure and reduce your impact"]
+  }, {
+    category: "Social Impact",
+    icon: Heart,
+    color: "text-red-600",
+    bgColor: "bg-red-50",
+    features: ["Free School Meals Funded - Every uniform sale feeds children in need", "Free Uniforms Donated Globally - Local production, global impact", "Ethical Manufacturing Guarantee - Safe, fair-wage, child-labor-free", "Factory Transparency - Visit our facilities, meet our makers", "Community Development - Supporting local economies worldwide"]
+  }, {
+    category: "Educational Innovation",
+    icon: Users,
+    color: "text-blue-600",
+    bgColor: "bg-blue-50",
+    features: ["Student Leadership Council - Real voice in real decisions", "QR Codes on Every Garment - Scan to see impact and story", "Factory Visits & Teaching Materials - Bring learning to life", "Sustainability Curriculum Support - Age-appropriate resources", "Impact Dashboard - Real-time tracking for students and staff"]
+  }, {
+    category: "Operational Excellence",
+    icon: Cog,
+    color: "text-purple-600",
+    bgColor: "bg-purple-50",
+    features: ["Fully Managed Online Shop - We build, maintain, and support", "AI-Powered Sizing Technology - Perfect fit, fewer returns", "Multiple Delivery Options - Home, school, or smart lockers", "Dedicated Account Manager - Your personal impact strategist", "Custom PR & CSR Toolkit - Showcase your leadership"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
-            backgroundPosition: "center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
+        backgroundPosition: "center"
+      }}></div>
         
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15"></div>
@@ -98,9 +61,7 @@ const ImpactPartnershipPage = () => {
           
           {/* Introduction */}
           <section className="text-center">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
-              Why Choose Impact Over Tiers?
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Why Choose Impact Over Cash?</h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
               We believe every school deserves access to the full power of ethical, sustainable uniforms. 
               That's why we've eliminated tiers and created one comprehensive partnership that gives every school everything they need to lead positive change.
@@ -119,8 +80,7 @@ const ImpactPartnershipPage = () => {
             </div>
             
             <div className="grid gap-8 md:grid-cols-2">
-              {allFeatures.map((category, index) => (
-                <Card key={index} className="border-0 shadow-glass overflow-hidden">
+              {allFeatures.map((category, index) => <Card key={index} className="border-0 shadow-glass overflow-hidden">
                   <CardHeader className="pb-4">
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${category.bgColor}`}>
@@ -133,16 +93,13 @@ const ImpactPartnershipPage = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {category.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-3">
+                      {category.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start gap-3">
                           <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                           <span className="text-sm leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </section>
 
@@ -174,103 +131,6 @@ const ImpactPartnershipPage = () => {
                 <div className="text-4xl font-light text-primary mb-2">100%</div>
                 <div className="text-muted-foreground">Sustainable materials</div>
               </div>
-            </div>
-          </section>
-
-          {/* Detailed Comparison */}
-          <section className="space-y-12">
-            <div className="text-center mb-12 animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
-                Why Schools Are Switching to Kapes
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Most uniform suppliers focus on revenue. We focus on impact. Here's how Kapes compares to traditional models—point for point.
-              </p>
-            </div>
-            
-            <Card className="border-0 shadow-lg overflow-hidden bg-white animate-scale-in">
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-gray-50/80 border-b">
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[250px]">Feature</th>
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[350px]">Kapes</th>
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[350px]">Traditional Supplier</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🌿 Sustainable Materials</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Organic, low-impact fabrics that reduce pollution</td>
-                        <td className="py-6 px-8 text-gray-500">Often synthetic, petroleum-based fabrics</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🧵 Ethical Manufacturing</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Certified ethical factories with fair wages</td>
-                        <td className="py-6 px-8 text-gray-500">Commonly lowest-cost factories with no transparency</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🌱 Carbon Neutral</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Full lifecycle impact calculated and offset</td>
-                        <td className="py-6 px-8 text-gray-500">No tracking, no offsets</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">♻️ Takeback Scheme</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Free, fully managed program to return & recycle uniforms</td>
-                        <td className="py-6 px-8 text-gray-500">Not offered</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🍽️ Free School Meals</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">1 meal donated for every item returned</td>
-                        <td className="py-6 px-8 text-gray-500">No contribution</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">👕 Free Uniforms to Children in Need</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Included in every partnership, co-branded with the school</td>
-                        <td className="py-6 px-8 text-gray-500">Not offered</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">📊 Impact Dashboard</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Real-time data showing carbon saved, meals donated, uniforms provided</td>
-                        <td className="py-6 px-8 text-gray-500">No data or tracking available</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🛍️ On-Campus Shops & Lockers</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Managed by Kapes, branded for your school</td>
-                        <td className="py-6 px-8 text-gray-500">Requires school staff or third parties</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🧠 Educational Programs</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Factory visits, workshops, student board</td>
-                        <td className="py-6 px-8 text-gray-500">Not part of the offer</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.0s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">🔧 Setup & Admin</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Zero stock risk, minimal staff time required</td>
-                        <td className="py-6 px-8 text-gray-500">School handles ordering, storage, complaints</td>
-                      </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.1s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">💰 Revenue Share</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">No — value is returned through impact</td>
-                        <td className="py-6 px-8 text-gray-500">Usually 10–15% cut to the school</td>
-                      </tr>
-                      <tr className="hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-                        <td className="py-6 px-8 font-semibold text-gray-900">📢 PR & Marketing Support</td>
-                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Custom content, case studies, press features</td>
-                        <td className="py-6 px-8 text-gray-500">None</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-            
-            <div className="text-center mt-10 animate-fade-in" style={{ animationDelay: '1.4s' }}>
-              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Ready to Switch? Partner With Kapes
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
             </div>
           </section>
 
@@ -317,7 +177,9 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Call to Action */}
-          <section className="text-center py-16 rounded-3xl" style={{ backgroundColor: '#cfeaff' }}>
+          <section className="text-center py-16 rounded-3xl" style={{
+          backgroundColor: '#cfeaff'
+        }}>
             <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Impact Revolution?
             </h2>
@@ -337,8 +199,6 @@ const ImpactPartnershipPage = () => {
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ImpactPartnershipPage;
