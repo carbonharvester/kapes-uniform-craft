@@ -179,7 +179,7 @@ const ImpactPartnershipPage = () => {
 
           {/* Detailed Comparison */}
           <section className="space-y-12">
-            <div className="text-center mb-12">
+            <div className="text-center mb-12 animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Why Schools Are Switching to Kapes
               </h2>
@@ -188,7 +188,7 @@ const ImpactPartnershipPage = () => {
               </p>
             </div>
             
-            <Card className="border-0 shadow-lg overflow-hidden bg-white">
+            <Card className="border-0 shadow-lg overflow-hidden bg-white animate-scale-in">
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
                   <table className="w-full">
@@ -200,64 +200,64 @@ const ImpactPartnershipPage = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🌿 Sustainable Materials</td>
-                        <td className="py-6 px-8 text-gray-800">Organic, low-impact fabrics that reduce pollution</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Organic, low-impact fabrics that reduce pollution</td>
                         <td className="py-6 px-8 text-gray-500">Often synthetic, petroleum-based fabrics</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🧵 Ethical Manufacturing</td>
-                        <td className="py-6 px-8 text-gray-800">Certified ethical factories with fair wages</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Certified ethical factories with fair wages</td>
                         <td className="py-6 px-8 text-gray-500">Commonly lowest-cost factories with no transparency</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🌱 Carbon Neutral</td>
-                        <td className="py-6 px-8 text-gray-800">Full lifecycle impact calculated and offset</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Full lifecycle impact calculated and offset</td>
                         <td className="py-6 px-8 text-gray-500">No tracking, no offsets</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">♻️ Takeback Scheme</td>
-                        <td className="py-6 px-8 text-gray-800">Free, fully managed program to return & recycle uniforms</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Free, fully managed program to return & recycle uniforms</td>
                         <td className="py-6 px-8 text-gray-500">Not offered</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🍽️ Free School Meals</td>
-                        <td className="py-6 px-8 text-gray-800">1 meal donated for every item returned</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">1 meal donated for every item returned</td>
                         <td className="py-6 px-8 text-gray-500">No contribution</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.6s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">👕 Free Uniforms to Children in Need</td>
-                        <td className="py-6 px-8 text-gray-800">Included in every partnership, co-branded with the school</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Included in every partnership, co-branded with the school</td>
                         <td className="py-6 px-8 text-gray-500">Not offered</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.7s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">📊 Impact Dashboard</td>
-                        <td className="py-6 px-8 text-gray-800">Real-time data showing carbon saved, meals donated, uniforms provided</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Real-time data showing carbon saved, meals donated, uniforms provided</td>
                         <td className="py-6 px-8 text-gray-500">No data or tracking available</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.8s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🛍️ On-Campus Shops & Lockers</td>
-                        <td className="py-6 px-8 text-gray-800">Managed by Kapes, branded for your school</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Managed by Kapes, branded for your school</td>
                         <td className="py-6 px-8 text-gray-500">Requires school staff or third parties</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '0.9s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🧠 Educational Programs</td>
-                        <td className="py-6 px-8 text-gray-800">Factory visits, workshops, student board</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Factory visits, workshops, student board</td>
                         <td className="py-6 px-8 text-gray-500">Not part of the offer</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.0s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">🔧 Setup & Admin</td>
-                        <td className="py-6 px-8 text-gray-800">Zero stock risk, minimal staff time required</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Zero stock risk, minimal staff time required</td>
                         <td className="py-6 px-8 text-gray-500">School handles ordering, storage, complaints</td>
                       </tr>
-                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.1s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">💰 Revenue Share</td>
-                        <td className="py-6 px-8 text-gray-800">No — value is returned through impact</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">No — value is returned through impact</td>
                         <td className="py-6 px-8 text-gray-500">Usually 10–15% cut to the school</td>
                       </tr>
-                      <tr className="hover:bg-gray-50/30 transition-colors">
+                      <tr className="hover:bg-gray-50/50 hover:scale-[1.01] transition-all duration-300 animate-fade-in" style={{ animationDelay: '1.2s' }}>
                         <td className="py-6 px-8 font-semibold text-gray-900">📢 PR & Marketing Support</td>
-                        <td className="py-6 px-8 text-gray-800">Custom content, case studies, press features</td>
+                        <td className="py-6 px-8 text-gray-800 hover:text-green-700 transition-colors">Custom content, case studies, press features</td>
                         <td className="py-6 px-8 text-gray-500">None</td>
                       </tr>
                     </tbody>
@@ -266,10 +266,10 @@ const ImpactPartnershipPage = () => {
               </CardContent>
             </Card>
             
-            <div className="text-center mt-10">
-              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth shadow-lg">
+            <div className="text-center mt-10 animate-fade-in" style={{ animationDelay: '1.4s' }}>
+              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl">
                 Ready to Switch? Partner With Kapes
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           </section>
