@@ -834,7 +834,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="w-full max-w-4xl mx-auto p-3 md:p-6" ref={formRef}>
         
         {showEntryForm && (
@@ -915,9 +915,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         {showQuiz && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader className="pb-4 md:pb-6">
-              <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4 text-center">
-                Sustainability Scorecard for School Uniforms
-              </CardTitle>
               <div className="mb-4 md:mb-6">
                 <Progress 
                   value={((currentSlide + 1) / questions.length) * 100} 
