@@ -112,11 +112,7 @@ const Navbar = ({
       description: "Step-by-step guide to working with Kapes",
       icon: <Zap className="size-5 shrink-0" />,
       url: "/our-process"
-    }]
-  }, {
-    title: "Partnership",
-    url: "#",
-    items: [{
+    }, {
       title: "Impact Partnership",
       description: "Comprehensive sustainability solutions for maximum impact",
       icon: <Award className="size-5 shrink-0" />,
