@@ -150,7 +150,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   useEffect(() => {
     if (showResults && !sent) {
       console.log('🚀 Sending data to Google Sheets...');
-      const sheetURL = 'https://script.google.com/macros/s/AKfycbyjDQ69vfhWCTcyBQe5tEPXQ3qkZ2c1usa0AJfomQAnMf42qLUDtFX2PAlVvprG3w/exec';
+      const sheetURL = 'https://script.google.com/macros/s/AKfycby04jakWLvP36uUWd74KSQb2Q0hQnWBGj6dctj51w4NHzTApetxZ4B2tbOjuARpMu6J/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
         'Last Name': userData.surname,
@@ -186,9 +186,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       fetch(sheetURL, {
         method: 'POST',
         body: 'data=' + encodeURIComponent(JSON.stringify(payload)),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
         mode: 'no-cors',
       }).then(() => {
         console.log('✅ Data sent to Google Sheet (no-cors mode, response not readable)');
