@@ -396,7 +396,28 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
 
-    // Build customized bodyText based on answers
+    // Check if they qualify for consultation
+    const willToImprove = formAnswers.extra2 as string;
+    const sustainabilityImportance = formAnswers.extra3 as string;
+
+    // Check disqualifying conditions first
+    if (willToImprove === 'No') {
+      setScoreDescription('Thank you for completing our scorecard. We would love to speak to you at a time when you are considering improving your uniform program.');
+      setShowQuiz(false);
+      setShowResults(true);
+      setUserAnswers(answers);
+      return;
+    }
+
+    if (sustainabilityImportance === 'Not important') {
+      setScoreDescription('Thank you for completing our scorecard. We are currently only consulting with schools that value sustainability.');
+      setShowQuiz(false);
+      setShowResults(true);
+      setUserAnswers(answers);
+      return;
+    }
+
+    // Build customized bodyText based on answers for qualifying respondents
     let baseText = '';
     let customFeedback: string[] = [];
 
@@ -790,7 +811,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   const renderExtraRadioQuestion = (questionId: string) => {
     const options = questionId === 'extra2' 
-      ? ['Yes', 'No', 'Maybe']
+      ? ['Yes', 'No']
       : ['Very important', 'Important', 'Somewhat important', 'Not important'];
     
     return (
