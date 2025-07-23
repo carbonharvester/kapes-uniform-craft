@@ -220,7 +220,7 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Call to Action */}
-          <section className="text-center bg-gradient-to-footer py-16 rounded-3xl">
+          <section className="text-center py-16 rounded-3xl" style={{ backgroundColor: '#cfeaff' }}>
             <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Impact Revolution?
             </h2>
