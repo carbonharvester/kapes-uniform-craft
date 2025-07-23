@@ -188,77 +188,77 @@ const ImpactPartnershipPage = () => {
               </p>
             </div>
             
-            <Card className="border-0 shadow-glass overflow-hidden">
+            <Card className="border-0 shadow-lg overflow-hidden bg-white">
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b bg-muted/30">
-                        <th className="text-left font-semibold py-4 px-6 min-w-[200px]">Feature</th>
-                        <th className="text-left font-semibold py-4 px-6 min-w-[300px]">Kapes</th>
-                        <th className="text-left font-semibold py-4 px-6 min-w-[300px]">Traditional Supplier</th>
+                      <tr className="bg-gray-50/80 border-b">
+                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[250px]">Feature</th>
+                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[350px]">Kapes</th>
+                        <th className="text-left font-semibold py-6 px-8 text-gray-700 min-w-[350px]">Traditional Supplier</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🌿 Sustainable Materials</td>
-                        <td className="py-4 px-6 text-sm">Organic, low-impact fabrics that reduce pollution</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Often synthetic, petroleum-based fabrics</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🌿 Sustainable Materials</td>
+                        <td className="py-6 px-8 text-gray-800">Organic, low-impact fabrics that reduce pollution</td>
+                        <td className="py-6 px-8 text-gray-500">Often synthetic, petroleum-based fabrics</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🧵 Ethical Manufacturing</td>
-                        <td className="py-4 px-6 text-sm">Certified ethical factories with fair wages</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Commonly lowest-cost factories with no transparency</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🧵 Ethical Manufacturing</td>
+                        <td className="py-6 px-8 text-gray-800">Certified ethical factories with fair wages</td>
+                        <td className="py-6 px-8 text-gray-500">Commonly lowest-cost factories with no transparency</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🌱 Carbon Neutral</td>
-                        <td className="py-4 px-6 text-sm">Full lifecycle impact calculated and offset</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">No tracking, no offsets</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🌱 Carbon Neutral</td>
+                        <td className="py-6 px-8 text-gray-800">Full lifecycle impact calculated and offset</td>
+                        <td className="py-6 px-8 text-gray-500">No tracking, no offsets</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">♻️ Takeback Scheme</td>
-                        <td className="py-4 px-6 text-sm">Free, fully managed program to return & recycle uniforms</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Not offered</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">♻️ Takeback Scheme</td>
+                        <td className="py-6 px-8 text-gray-800">Free, fully managed program to return & recycle uniforms</td>
+                        <td className="py-6 px-8 text-gray-500">Not offered</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🍽️ Free School Meals</td>
-                        <td className="py-4 px-6 text-sm">1 meal donated for every item returned</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">No contribution</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🍽️ Free School Meals</td>
+                        <td className="py-6 px-8 text-gray-800">1 meal donated for every item returned</td>
+                        <td className="py-6 px-8 text-gray-500">No contribution</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">👕 Free Uniforms to Children in Need</td>
-                        <td className="py-4 px-6 text-sm">Included in every partnership, co-branded with the school</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Not offered</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">👕 Free Uniforms to Children in Need</td>
+                        <td className="py-6 px-8 text-gray-800">Included in every partnership, co-branded with the school</td>
+                        <td className="py-6 px-8 text-gray-500">Not offered</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">📊 Impact Dashboard</td>
-                        <td className="py-4 px-6 text-sm">Real-time data showing carbon saved, meals donated, uniforms provided</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">No data or tracking available</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">📊 Impact Dashboard</td>
+                        <td className="py-6 px-8 text-gray-800">Real-time data showing carbon saved, meals donated, uniforms provided</td>
+                        <td className="py-6 px-8 text-gray-500">No data or tracking available</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🛍️ On-Campus Shops & Lockers</td>
-                        <td className="py-4 px-6 text-sm">Managed by Kapes, branded for your school</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Requires school staff or third parties</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🛍️ On-Campus Shops & Lockers</td>
+                        <td className="py-6 px-8 text-gray-800">Managed by Kapes, branded for your school</td>
+                        <td className="py-6 px-8 text-gray-500">Requires school staff or third parties</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🧠 Educational Programs</td>
-                        <td className="py-4 px-6 text-sm">Factory visits, workshops, student board</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Not part of the offer</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🧠 Educational Programs</td>
+                        <td className="py-6 px-8 text-gray-800">Factory visits, workshops, student board</td>
+                        <td className="py-6 px-8 text-gray-500">Not part of the offer</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">🔧 Setup & Admin</td>
-                        <td className="py-4 px-6 text-sm">Zero stock risk, minimal staff time required</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">School handles ordering, storage, complaints</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">🔧 Setup & Admin</td>
+                        <td className="py-6 px-8 text-gray-800">Zero stock risk, minimal staff time required</td>
+                        <td className="py-6 px-8 text-gray-500">School handles ordering, storage, complaints</td>
                       </tr>
-                      <tr className="border-b">
-                        <td className="py-4 px-6 font-medium">💰 Revenue Share</td>
-                        <td className="py-4 px-6 text-sm">No — value is returned through impact</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">Usually 10–15% cut to the school</td>
+                      <tr className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">💰 Revenue Share</td>
+                        <td className="py-6 px-8 text-gray-800">No — value is returned through impact</td>
+                        <td className="py-6 px-8 text-gray-500">Usually 10–15% cut to the school</td>
                       </tr>
-                      <tr>
-                        <td className="py-4 px-6 font-medium">📢 PR & Marketing Support</td>
-                        <td className="py-4 px-6 text-sm">Custom content, case studies, press features</td>
-                        <td className="py-4 px-6 text-sm text-muted-foreground">None</td>
+                      <tr className="hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 font-semibold text-gray-900">📢 PR & Marketing Support</td>
+                        <td className="py-6 px-8 text-gray-800">Custom content, case studies, press features</td>
+                        <td className="py-6 px-8 text-gray-500">None</td>
                       </tr>
                     </tbody>
                   </table>
@@ -266,8 +266,8 @@ const ImpactPartnershipPage = () => {
               </CardContent>
             </Card>
             
-            <div className="text-center">
-              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth">
+            <div className="text-center mt-10">
+              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth shadow-lg">
                 Ready to Switch? Partner With Kapes
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
