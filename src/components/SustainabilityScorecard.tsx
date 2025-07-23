@@ -216,6 +216,112 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }));
   };
 
+  const calculateScore = () => {
+    // Calculate score for the first 15 questions only
+    let totalScore = 0;
+    const answers: Array<{question: string, answer: string}> = [];
+
+    // Materials question
+    const materialSelections = formAnswers.materials as string[] || [];
+    if (materialSelections.length > 0) {
+      const materialsAnswer = materialSelections.join(', ');
+      answers.push({ question: "What materials are your uniforms including PE kits made from? (Select all that apply)", answer: materialsAnswer });
+      
+      if (materialSelections.includes('dont_know')) {
+        totalScore += 0;
+      } else {
+        if (!materialSelections.includes('virgin_synth')) totalScore += 10;
+        if (!materialSelections.includes('conventional_cotton')) totalScore += 8;
+        if (materialSelections.includes('organic_cotton')) totalScore += 9;
+        if (materialSelections.includes('recycled_poly')) totalScore += 9;
+      }
+    }
+
+    // Packaging question
+    const packagingSelections = formAnswers.packaging as string[] || [];
+    if (packagingSelections.length > 0) {
+      const packagingAnswer = packagingSelections.join(', ');
+      answers.push({ question: "What materials are your uniforms packaged in? (Select all that apply)", answer: packagingAnswer });
+      
+      if (packagingSelections.includes('dont_know')) {
+        totalScore += 0;
+      } else {
+        if (!packagingSelections.includes('plastic')) totalScore += 2;
+        if (packagingSelections.includes('recycled_plastic')) totalScore += 2;
+        if (packagingSelections.includes('paper')) totalScore += 2;
+      }
+    }
+
+    // Single radio questions
+    const radioQuestions = ['q3', 'q4', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q19', 'q20', 'education'];
+    const questionWeights = [5, 4, 5, 7, 8, 7, 6, 3, 5, 5, 5];
+    
+    radioQuestions.forEach((qId, index) => {
+      const selectedValue = formAnswers[qId] as string;
+      if (selectedValue) {
+        const scoreValue = selectedValue === '1' ? 1 : 0;
+        totalScore += questionWeights[index] * scoreValue;
+        
+        const questionObj = questions.find(q => q.id === qId);
+        let answerText = 'Not Answered';
+        if (selectedValue === '1') answerText = 'Yes';
+        else if (selectedValue === '0') answerText = 'No';
+        else if (selectedValue === '2') answerText = "Don't Know";
+        
+        answers.push({ question: questionObj?.text || '', answer: answerText });
+      }
+    });
+
+    // Distribution question
+    const distSelections = formAnswers.distribution as string[] || [];
+    if (distSelections.length > 0) {
+      const distAnswer = distSelections.join(', ');
+      answers.push({ question: "How are uniforms distributed/ordered? (Select all that apply)", answer: distAnswer });
+      
+      if (distSelections.includes('dont_know')) {
+        totalScore += 0;
+      } else {
+        if (distSelections.includes('school_shop')) totalScore += 4;
+        if (!distSelections.includes('supplier_shop')) totalScore += 3;
+        if (distSelections.includes('online_ordering')) totalScore += 4;
+        if (distSelections.includes('pickup_school')) totalScore += 4;
+        if (distSelections.includes('popup_events')) totalScore += 4;
+      }
+    }
+
+    // AI question
+    const aiSelections = formAnswers.ai_usage as string[] || [];
+    if (aiSelections.length > 0) {
+      const aiAnswer = aiSelections.join(', ');
+      answers.push({ question: "Is AI integrated into your uniform program? (Select all that apply)", answer: aiAnswer });
+      
+      if (aiSelections.includes('no') || aiSelections.includes('dont_know')) {
+        totalScore += 0;
+      } else {
+        if (aiSelections.includes('size_recommend')) totalScore += 3;
+        if (aiSelections.includes('forecast_stock')) totalScore += 3;
+      }
+    }
+
+    // Set the score and answers
+    setScore(totalScore);
+    setUserAnswers(answers);
+
+    // Generate feedback based on score
+    let newFeedback = "";
+    if (totalScore >= 60) {
+      newFeedback = "Excellent! Your school is a sustainability champion. You're already implementing many best practices and are well-positioned to make a significant positive impact.";
+    } else if (totalScore >= 40) {
+      newFeedback = "Good progress! Your school is on the right track with sustainability initiatives. There are opportunities to enhance your impact further.";
+    } else if (totalScore >= 20) {
+      newFeedback = "Getting started! Your school has some sustainability measures in place. There's significant potential to increase your positive impact.";
+    } else {
+      newFeedback = "Opportunity ahead! There's tremendous potential to transform your school's sustainability profile and create meaningful change.";
+    }
+    
+    setScoreDescription(newFeedback);
+  };
+
   const handleNext = () => {
     const currentQ = questions[currentSlide];
     
@@ -230,6 +336,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     if (!isAnswered) {
       alert('Please select an answer to proceed.');
       return;
+    }
+    
+    // Calculate score after the last scored question (ai_usage at index 14)
+    if (currentQ.id === 'ai_usage') {
+      calculateScore();
     }
     
     // Check if this is the sustainability question and "Not important" was selected
@@ -254,230 +365,26 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   const processResults = () => {
-    console.log('🔍 Starting form validation and processing...');
-    console.log('📊 Form element:', formRef.current);
+    // Add remaining answers for non-scored questions
+    const remainingAnswers: Array<{question: string, answer: string}> = [];
 
-    let totalScore = 0;
-    const answers: Array<{question: string, answer: string}> = [];
-    const missingQuestions: string[] = [];
+    // Add remaining answers to userAnswers
+    setUserAnswers(prev => [...prev, ...remainingAnswers]);
 
-    // Materials question
-    console.log('📝 Processing materials question...');
-    const materialSelections = formAnswers.materials as string[] || [];
-    console.log('🎯 Materials selections:', materialSelections);
-    
-    if (materialSelections.length === 0) {
-      console.log('❌ Materials question NOT answered');
-      missingQuestions.push('Materials question');
-    } else {
-      console.log('✅ Materials question answered');
-      const materialsAnswer = materialSelections.join(', ');
-      answers.push({ question: "What materials are your uniforms including PE kits made from? (Select all that apply)", answer: materialsAnswer });
-      
-      if (materialSelections.includes('dont_know')) {
-        totalScore += 0;
-      } else {
-        if (!materialSelections.includes('virgin_synth')) totalScore += 10;
-        if (!materialSelections.includes('conventional_cotton')) totalScore += 8;
-        if (materialSelections.includes('organic_cotton')) totalScore += 9;
-        if (materialSelections.includes('recycled_poly')) totalScore += 9;
-      }
-    }
-
-    // Packaging question
-    console.log('📝 Processing packaging question...');
-    const packagingSelections = formAnswers.packaging as string[] || [];
-    console.log('🎯 Packaging selections:', packagingSelections);
-    
-    if (packagingSelections.length === 0) {
-      console.log('❌ Packaging question NOT answered');
-      missingQuestions.push('Packaging question');
-    } else {
-      console.log('✅ Packaging question answered');
-      const packagingAnswer = packagingSelections.join(', ');
-      answers.push({ question: "What materials are your uniforms packaged in? (Select all that apply)", answer: packagingAnswer });
-      
-      if (packagingSelections.includes('dont_know')) {
-        totalScore += 0;
-      } else {
-        if (!packagingSelections.includes('plastic')) totalScore += 2;
-        if (packagingSelections.includes('recycled_plastic')) totalScore += 2;
-        if (packagingSelections.includes('paper')) totalScore += 2;
-      }
-    }
-
-    // Single radio questions
-    const radioQuestions = ['q3', 'q4', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q19', 'q20', 'education'];
-    const questionWeights = [5, 4, 5, 7, 8, 7, 6, 3, 5, 5, 5];
-    
-    radioQuestions.forEach((qId, index) => {
-      console.log(`📝 Processing question ${qId}...`);
-      const selectedValue = formAnswers[qId] as string;
-      console.log(`🎯 Question ${qId} selected:`, selectedValue);
-      
-      if (selectedValue) {
-        console.log(`✅ Question ${qId} answered`);
-        // Score: Yes=1 gets full points, No=0 and Don't Know=2 both get 0 points
-        const scoreValue = selectedValue === '1' ? 1 : 0;
-        totalScore += questionWeights[index] * scoreValue;
-        
-        const questionObj = questions.find(q => q.id === qId);
-        let answerText = 'Not Answered';
-        if (selectedValue === '1') answerText = 'Yes';
-        else if (selectedValue === '0') answerText = 'No';
-        else if (selectedValue === '2') answerText = 'Don\'t Know';
-        
-        answers.push({ question: questionObj?.text || '', answer: answerText });
-      } else {
-        console.log(`❌ Question ${qId} NOT answered`);
-        const questionObj = questions.find(q => q.id === qId);
-        missingQuestions.push(questionObj?.text || qId);
-      }
-    });
-
-    // Distribution question
-    console.log('📝 Processing distribution question...');
-    const distSelections = formAnswers.distribution as string[] || [];
-    console.log('🎯 Distribution selections:', distSelections);
-    
-    if (distSelections.length === 0) {
-      console.log('❌ Distribution question NOT answered');
-      missingQuestions.push('Distribution question');
-    } else {
-      console.log('✅ Distribution question answered');
-      const distAnswer = distSelections.join(', ');
-      answers.push({ question: "How are uniforms distributed/ordered? (Select all that apply)", answer: distAnswer });
-      
-      if (distSelections.includes('dont_know')) {
-        totalScore += 0;
-      } else {
-        if (distSelections.includes('school_shop')) totalScore += 4;
-        if (!distSelections.includes('supplier_shop')) totalScore += 3;
-        if (distSelections.includes('online_ordering')) totalScore += 4;
-        if (distSelections.includes('pickup_school')) totalScore += 4;
-        if (distSelections.includes('popup_events')) totalScore += 4;
-      }
-    }
-
-    // AI question
-    console.log('📝 Processing AI question...');
-    const aiSelections = formAnswers.ai_usage as string[] || [];
-    console.log('🎯 AI selections:', aiSelections);
-    
-    if (aiSelections.length === 0) {
-      console.log('❌ AI question NOT answered');
-      missingQuestions.push('AI usage question');
-    } else {
-      console.log('✅ AI question answered');
-      const aiAnswer = aiSelections.join(', ');
-      answers.push({ question: "Is AI integrated into your uniform program? (Select all that apply)", answer: aiAnswer });
-      
-      if (aiSelections.includes('no') || aiSelections.includes('dont_know')) {
-        totalScore += 0;
-      } else {
-        if (aiSelections.includes('size_recommend')) totalScore += 3;
-        if (aiSelections.includes('forecast_stock')) totalScore += 3;
-      }
-    }
-
-    console.log('📊 Validation Summary:');
-    console.log('✅ Questions answered:', 15 - missingQuestions.length);
-    console.log('❌ Missing questions:', missingQuestions.length);
-    console.log('📋 Missing questions list:', missingQuestions);
-
-    if (missingQuestions.length > 0) {
-      alert(`Please answer the following questions:\n\n${missingQuestions.join('\n')}`);
-      return;
+    // Check if sustainability is not important
+    if (formAnswers['extra3'] === 'Not important') {
+      setLowSustainability(true);
     }
 
     // Process extra questions (non-scored)
     const extra1Answer = formAnswers.extra1 as string || 'Not Answered';
-    answers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
+    remainingAnswers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
 
     const extra2Answer = formAnswers.extra2 as string || 'Not Answered';
-    answers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer });
+    remainingAnswers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer });
 
     const extra3Answer = formAnswers.extra3 as string || 'Not Answered';
-    answers.push({ question: "How important is sustainability within your school?", answer: extra3Answer });
-
-    const percentage = Math.round((totalScore / maxScore) * 100);
-    setScore(percentage);
-
-    // Build customized bodyText based on answers
-    let baseText = '';
-    let customFeedback: string[] = [];
-
-    if (percentage >= 67) {
-      baseText = 'Your high score reflects strong practices.';
-    } else if (percentage >= 33) {
-      baseText = 'Your medium score shows some positive steps but room for improvement.';
-    } else {
-      baseText = 'Your low score indicates opportunities for significant enhancements.';
-    }
-
-    // Analyze specific areas and add custom feedback
-    // Materials
-    if (materialSelections.includes('virgin_synth') || materialSelections.includes('conventional_cotton')) {
-      customFeedback.push('Consider switching to more sustainable materials like organic cotton or recycled polyester to reduce environmental impact.');
-    } else if (materialSelections.includes('dont_know')) {
-      customFeedback.push('Gaining visibility into your uniform materials could help identify sustainable alternatives.');
-    }
-
-    // Carbon offsetting and environmental impact
-    if (formAnswers['q4'] === '0' || formAnswers['q4'] === '2') {
-      customFeedback.push('Implementing verified carbon offset projects could help mitigate the emissions from uniform production.');
-    }
-    if (formAnswers['q3'] === '0' || formAnswers['q3'] === '2') {
-      customFeedback.push('Tracking water, energy, and carbon usage in production would improve your environmental awareness.');
-    }
-
-    // Packaging
-    if (packagingSelections.includes('plastic') && !packagingSelections.includes('recycled_plastic')) {
-      customFeedback.push('Opt for biodegradable or recycled packaging to minimize waste.');
-    }
-
-    // Ethical supply chain
-    if (formAnswers['q10'] === '0' || formAnswers['q10'] === '2' || formAnswers['q11'] === '0' || formAnswers['q11'] === '2' || formAnswers['q12'] === '0' || formAnswers['q12'] === '2') {
-      customFeedback.push('Strengthen your supply chain by requiring ethical audits, living wage policies, and third-party certifications.');
-    }
-
-    // Distribution
-    if (distSelections.includes('supplier_shop') || !distSelections.includes('online_ordering') || !distSelections.includes('popup_events')) {
-      customFeedback.push('Enhance distribution with online ordering, pop-up events, or school pickups to reduce carbon footprints from travel.');
-    }
-
-    // AI usage
-    if (aiSelections.includes('no') || aiSelections.includes('dont_know')) {
-      customFeedback.push('Incorporating AI for size recommendations or stock forecasting could optimize your program and reduce returns/waste.');
-    }
-
-    // Takeback and education
-    if (formAnswers['q13'] === '0' || formAnswers['q13'] === '2') {
-      customFeedback.push('Adding a uniform collection and resale program would promote circularity.');
-    }
-    if (formAnswers['education'] === '0' || formAnswers['education'] === '2') {
-      customFeedback.push('Educating students on fashion impacts could foster greater sustainability engagement.');
-    }
-
-    // Transparency
-    if (formAnswers['q20'] === '0' || formAnswers['q20'] === '2') {
-      customFeedback.push('Increasing supply chain transparency for parents and students would build trust.');
-    }
-
-    // Combine into final description
-    let bodyText = baseText;
-    if (customFeedback.length > 0) {
-      bodyText += ' Specific areas to focus on: ' + customFeedback.join(' ');
-    } else {
-      bodyText += ' Keep building on transparency, technology, and sustainable practices.';
-    }
-
-    setScoreDescription(bodyText);
-    setUserAnswers(answers);
-
-    console.log('🎯 Total score:', totalScore);
-    console.log('🎉 Form successfully processed!');
-    console.log(`📊 Final score: ${percentage}%`);
+    remainingAnswers.push({ question: "How important is sustainability within your school?", answer: extra3Answer });
 
     setShowQuiz(false);
     // Check for qualification
@@ -490,7 +397,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     } else if (willingToImprove === 'No') {
       setNoImprovement(true);
       setShowResults(true);
-    } else if (percentage < 67) {
+    } else if (score < 67) {
       setShowFeatures(true);
     } else {
       setShowResults(true);
