@@ -116,6 +116,13 @@ const ImpactPartnershipPage = () => {
       description: "Additional costs passed to parents",
       kapes: "No hidden costs - Transparent pricing",
       traditional: "Commission fees increase parent costs"
+    },
+    {
+      icon: "🎓",
+      feature: "Educational Resources",
+      description: "Sustainability curriculum and teaching materials",
+      kapes: "Full curriculum support & factory visit programs",
+      traditional: "No educational resources provided"
     }
   ];
   
