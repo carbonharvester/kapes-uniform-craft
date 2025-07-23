@@ -1,10 +1,85 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Users, Settings, Truck, BarChart3 } from "lucide-react";
+import { CheckCircle, ArrowRight, Users, Settings, Truck, BarChart3, Calendar } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const OurProcess = () => {
+  const phases = [
+    {
+      phase: "Phase 1",
+      title: "Discovery & Planning",
+      duration: "2-4 weeks",
+      activities: [
+        "Initial consultation and needs assessment",
+        "School values and requirements workshop",
+        "Stakeholder interviews (staff, students, parents)",
+        "Current uniform audit and sizing analysis",
+        "Sustainability goals alignment"
+      ]
+    },
+    {
+      phase: "Phase 2",
+      title: "Design & Development",
+      duration: "4-6 weeks",
+      activities: [
+        "Custom uniform design creation",
+        "Material selection and sustainability verification",
+        "Sample production and testing",
+        "Student and parent feedback collection",
+        "Final design refinement and approval"
+      ]
+    },
+    {
+      phase: "Phase 3",
+      title: "Sampling & Manufacturing",
+      duration: "10-12 weeks",
+      activities: [
+        "Sample production and testing",
+        "Manufacturing setup and quality assurance",
+        "Bulk production scheduling",
+        "Quality control checkpoints",
+        "Pre-delivery inspections"
+      ]
+    },
+    {
+      phase: "Phase 4",
+      title: "Testing & Training",
+      duration: "2-3 weeks",
+      activities: [
+        "System testing and quality assurance",
+        "Staff training sessions",
+        "Parent information packs creation",
+        "Soft launch with select families",
+        "Feedback collection and adjustments"
+      ]
+    },
+    {
+      phase: "Phase 5",
+      title: "Launch & Rollout",
+      duration: "2-4 weeks",
+      activities: [
+        "Full school rollout announcement",
+        "Parent information sessions",
+        "Student sizing and ordering",
+        "First delivery batch coordination",
+        "Customer support activation"
+      ]
+    },
+    {
+      phase: "Phase 6",
+      title: "Optimization & Growth",
+      duration: "Ongoing",
+      activities: [
+        "Performance monitoring and reporting",
+        "Impact tracking and dashboard updates",
+        "Regular review meetings",
+        "Continuous improvement implementation",
+        "Additional service rollouts"
+      ]
+    }
+  ];
+
   const steps = [
     {
       icon: Users,
@@ -146,43 +221,82 @@ const OurProcess = () => {
             </div>
           </section>
 
-          {/* Timeline Overview */}
-          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
+          {/* Detailed Implementation Timeline */}
+          <section className="py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Typical Timeline</h2>
-              <p className="text-muted-foreground text-lg">From initial contact to full implementation</p>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Detailed Implementation Timeline</h2>
+              <p className="text-muted-foreground text-lg">Your journey from consultation to launch — typically 3 to 5 months from start to finish</p>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-8">
-              <Card className="border-0 shadow-glass text-center">
-                <CardContent className="p-8">
-                  <div className="text-3xl font-light text-primary mb-2">2-3</div>
-                  <p className="text-sm text-muted-foreground">weeks</p>
-                  <h3 className="font-medium mt-4">Discovery & Design</h3>
+            <div className="space-y-12">
+              {phases.map((phase, index) => (
+                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                  <CardHeader className="p-8">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-4 mb-4">
+                          <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-4 py-2">
+                            {phase.phase}
+                          </Badge>
+                          <div className="flex items-center gap-2 text-muted-foreground">
+                            <Calendar className="h-5 w-5" />
+                            <span className="text-lg">{phase.duration}</span>
+                          </div>
+                        </div>
+                        <CardTitle className="text-2xl font-semibold leading-none tracking-tight">{phase.title}</CardTitle>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="px-8 pb-8">
+                    <ul className="space-y-3">
+                      {phase.activities.map((activity, activityIndex) => (
+                        <li key={activityIndex} className="flex items-start gap-3">
+                          <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-muted-foreground leading-relaxed">{activity}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Key Milestones */}
+          <section className="bg-gradient-warm-section py-16 -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Key Milestones</h2>
+              <p className="text-muted-foreground text-lg">Critical checkpoints in your implementation journey</p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-3">
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader className="p-8">
+                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Design Approval</CardTitle>
+                  <CardDescription className="text-lg text-muted-foreground">End of Phase 2</CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="text-muted-foreground leading-relaxed">Final uniform designs approved by school leadership and student representatives.</p>
                 </CardContent>
               </Card>
               
-              <Card className="border-0 shadow-glass text-center">
-                <CardContent className="p-8">
-                  <div className="text-3xl font-light text-primary mb-2">3-4</div>
-                  <p className="text-sm text-muted-foreground">weeks</p>
-                  <h3 className="font-medium mt-4">Setup & Configuration</h3>
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader className="p-8">
+                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Manufacturing Complete</CardTitle>
+                  <CardDescription className="text-lg text-muted-foreground">End of Phase 3</CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="text-muted-foreground leading-relaxed">Uniforms manufactured and quality checked, ready for delivery.</p>
                 </CardContent>
               </Card>
               
-              <Card className="border-0 shadow-glass text-center">
-                <CardContent className="p-8">
-                  <div className="text-3xl font-light text-primary mb-2">1-2</div>
-                  <p className="text-sm text-muted-foreground">weeks</p>
-                  <h3 className="font-medium mt-4">Launch & Delivery</h3>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-glass text-center">
-                <CardContent className="p-8">
-                  <div className="text-3xl font-light text-primary mb-2">∞</div>
-                  <p className="text-sm text-muted-foreground">ongoing</p>
-                  <h3 className="font-medium mt-4">Monitor & Optimize</h3>
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader className="p-8">
+                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Full Launch</CardTitle>
+                  <CardDescription className="text-lg text-muted-foreground">End of Phase 5</CardDescription>
+                </CardHeader>
+                <CardContent className="px-8 pb-8">
+                  <p className="text-muted-foreground leading-relaxed">Complete rollout to all students with full support systems active.</p>
                 </CardContent>
               </Card>
             </div>
