@@ -5,6 +5,22 @@ import { Card, CardContent } from "@/components/ui/card";
 export const KapesComparison = () => {
   const comparisonData = [
     {
+      icon: "🧵",
+      feature: "Materials",
+      kapes: "100% Sustainable",
+      kapesPositive: true,
+      traditional: "Virgin Synthetics",
+      traditionalPositive: false,
+    },
+    {
+      icon: "⚖️",
+      feature: "Ethical Manufacturing",
+      kapes: "100% Audited & Certified",
+      kapesPositive: true,
+      traditional: "Limited Oversight",
+      traditionalPositive: false,
+    },
+    {
       icon: "🌱",
       feature: "Carbon Neutral Uniforms",
       kapes: "Yes",
@@ -34,22 +50,6 @@ export const KapesComparison = () => {
       kapes: "Fully Managed",
       kapesPositive: true,
       traditional: "Not Offered",
-      traditionalPositive: false,
-    },
-    {
-      icon: "🧵",
-      feature: "Materials",
-      kapes: "100% Sustainable",
-      kapesPositive: true,
-      traditional: "Virgin Synthetics",
-      traditionalPositive: false,
-    },
-    {
-      icon: "⚖️",
-      feature: "Ethical Manufacturing",
-      kapes: "100% Audited & Certified",
-      kapesPositive: true,
-      traditional: "Limited Oversight",
       traditionalPositive: false,
     },
   ];
