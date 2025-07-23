@@ -346,6 +346,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     // Check if this is the sustainability question and "Not important" was selected
     if (currentQ.id === 'extra3' && formAnswers['extra3'] === 'Not important') {
       setLowSustainability(true);
+      
+      // Generate detailed recommendations even for "not important" users
+      const { recommendations, strengths } = generateDetailedRecommendations(formAnswers, score);
+      const detailedFeedback = `**Your Sustainability Assessment Results**\n\n**Current Score: ${score}/100**\n\n${strengths.length > 0 ? `**What you're doing well:**\n${strengths.join('\n')}\n\n` : ''}**Opportunities for improvement:**\n${recommendations.join('\n\n')}\n\nWhile sustainability may not be your current priority, implementing these changes could reduce costs and improve your school's reputation.`;
+      
+      setScoreDescription(detailedFeedback);
       setShowQuiz(false);
       setShowResults(true);
       return;
@@ -362,6 +368,68 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     if (currentSlide > 0) {
       setCurrentSlide(prev => prev - 1);
     }
+  };
+
+  const generateDetailedRecommendations = (answers: any, score: number) => {
+    const recommendations = [];
+    const strengths = [];
+    
+    // Materials analysis
+    const materialsAnswers = answers['materials'] || [];
+    if (materialsAnswers.includes('Organic cotton')) {
+      strengths.push("✅ Using organic cotton reduces environmental impact");
+    } else {
+      recommendations.push("🌱 **Materials**: Consider switching to organic cotton for reduced environmental impact");
+    }
+    
+    if (materialsAnswers.includes('Recycled materials')) {
+      strengths.push("✅ Using recycled materials supports circular economy");
+    } else {
+      recommendations.push("♻️ **Recycled Content**: Incorporate recycled materials to reduce waste");
+    }
+    
+    // Packaging analysis
+    const packagingAnswers = answers['packaging'] || [];
+    if (packagingAnswers.includes('Minimal packaging')) {
+      strengths.push("✅ Minimal packaging reduces waste");
+    } else {
+      recommendations.push("📦 **Packaging**: Minimize packaging materials and use recyclable options");
+    }
+    
+    // Distribution analysis
+    const distributionAnswers = answers['distribution'] || [];
+    if (distributionAnswers.includes('Local suppliers')) {
+      strengths.push("✅ Local suppliers reduce carbon footprint");
+    } else {
+      recommendations.push("🚛 **Distribution**: Source from local suppliers to reduce transportation emissions");
+    }
+    
+    // End-of-life analysis
+    const endOfLifeAnswer = answers['end_of_life'];
+    if (endOfLifeAnswer === 'Yes') {
+      strengths.push("✅ Take-back program supports circular economy");
+    } else {
+      recommendations.push("🔄 **Take-back Program**: Implement a uniform collection and recycling program");
+    }
+    
+    // Durability analysis
+    const durabilityAnswer = answers['durability'];
+    if (durabilityAnswer === 'Excellent' || durabilityAnswer === 'Good') {
+      strengths.push("✅ Good durability reduces replacement frequency");
+    } else {
+      recommendations.push("💪 **Durability**: Invest in higher-quality uniforms that last longer");
+    }
+    
+    // Score-based recommendations
+    if (score < 30) {
+      recommendations.unshift("🎯 **Priority**: Your sustainability score indicates significant opportunity for improvement. Focus on materials and packaging first.");
+    } else if (score < 60) {
+      recommendations.unshift("📈 **Progress**: You're on the right track. Focus on optimizing your strongest areas.");
+    } else {
+      recommendations.unshift("🌟 **Excellence**: Strong sustainability foundation. Fine-tune remaining areas for maximum impact.");
+    }
+    
+    return { recommendations, strengths };
   };
 
   const processResults = () => {
@@ -916,9 +984,26 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 <div className="text-lg text-muted-foreground">Overall Sustainability Rating</div>
               </div>
               
-              <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                {scoreDescription}
-              </p>
+              <div className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+                {lowSustainability ? (
+                  <div className="text-left space-y-4">
+                    {scoreDescription.split('\n').map((line, index) => {
+                      if (line.startsWith('**') && line.endsWith('**')) {
+                        return <h3 key={index} className="font-bold text-lg text-foreground">{line.replace(/\*\*/g, '')}</h3>;
+                      } else if (line.startsWith('✅')) {
+                        return <p key={index} className="text-green-600 font-medium">{line}</p>;
+                      } else if (line.match(/^[🌱♻️📦🚛🔄💪🎯📈🌟]/)) {
+                        return <p key={index} className="text-foreground font-medium">{line}</p>;
+                      } else if (line.trim()) {
+                        return <p key={index}>{line}</p>;
+                      }
+                      return null;
+                    })}
+                  </div>
+                ) : (
+                  <p>{scoreDescription}</p>
+                )}
+              </div>
               
               {noImprovement && (
                 <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
