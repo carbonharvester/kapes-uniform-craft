@@ -11,9 +11,7 @@ export const Hero = () => {
       <div className="relative z-20 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Subtle scorecard header */}
-          <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">
-            Free 5-Minute Sustainability Assessment Available
-          </div>
+          <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">FREE 3-MINUTE SUSTAINABILITY ASSESSMENT AVAILABLE</div>
           
           {/* Main headline with consistent typography */}
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4">
