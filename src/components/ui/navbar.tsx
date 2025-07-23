@@ -114,28 +114,18 @@ const Navbar = ({
       url: "/our-process"
     }]
   }, {
-    title: "Partnerships",
+    title: "Partnership",
     url: "#",
     items: [{
-      title: "Partnership Tiers",
-      description: "Choose the right partnership level",
+      title: "Impact Partnership",
+      description: "Comprehensive sustainability solutions for maximum impact",
+      icon: <Award className="size-5 shrink-0" />,
+      url: "/impact-partnership"
+    }, {
+      title: "Partner With Us",
+      description: "Discover how we can transform your uniform program",
       icon: <Users className="size-5 shrink-0" />,
-      url: "/partnership-tiers"
-    }, {
-      title: "EcoLaunch",
-      description: "Basic sustainable uniform solutions",
-      icon: <Package className="size-5 shrink-0" />,
-      url: "/ecolaunch-tier"
-    }, {
-      title: "SustainPro",
-      description: "Enhanced sustainability features",
-      icon: <Trees className="size-5 shrink-0" />,
-      url: "/sustainpro-tier"
-    }, {
-      title: "LegacyImpact",
-      description: "Full flagship sustainability program",
-      icon: <Zap className="size-5 shrink-0" />,
-      url: "/legacyimpact-tier"
+      url: "/partner-with-us"
     }]
   }, {
     title: "Resources",
