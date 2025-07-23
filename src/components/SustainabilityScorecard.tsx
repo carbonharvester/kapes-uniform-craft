@@ -232,6 +232,14 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       return;
     }
     
+    // Check if this is the sustainability question and "Not important" was selected
+    if (currentQ.id === 'extra3' && formAnswers['extra3'] === 'Not important') {
+      setLowSustainability(true);
+      setShowQuiz(false);
+      setShowResults(true);
+      return;
+    }
+    
     if (currentSlide === questions.length - 1) {
       processResults();
     } else {
