@@ -123,6 +123,13 @@ const ImpactPartnershipPage = () => {
       description: "Sustainability curriculum and teaching materials",
       kapes: "Full curriculum support & factory visit programs",
       traditional: "No educational resources provided"
+    },
+    {
+      icon: "📦",
+      feature: "Packaging",
+      description: "Environmental impact of product packaging",
+      kapes: "100% plastic-free, biodegradable packaging",
+      traditional: "Standard plastic packaging"
     }
   ];
   
