@@ -1,8 +1,10 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, Leaf, Heart, Users, Cog } from "lucide-react";
+import { CheckCircle, ArrowRight, Leaf, Heart, Users, Cog, Check, X } from "lucide-react";
 import { Footer } from "@/components/Footer";
+
 const ImpactPartnershipPage = () => {
   const allFeatures = [{
     category: "Environmental Excellence",
@@ -29,6 +31,66 @@ const ImpactPartnershipPage = () => {
     bgColor: "bg-purple-50",
     features: ["Fully Managed Online Shop - We build, maintain, and support", "AI-Powered Sizing Technology - Perfect fit, fewer returns", "Multiple Delivery Options - Home, school, or smart lockers", "Dedicated Account Manager - Your personal impact strategist", "Custom PR & CSR Toolkit - Showcase your leadership"]
   }];
+
+  const comparisonData = [
+    {
+      icon: "🌱",
+      feature: "Carbon Neutral Uniforms",
+      description: "Offsetting all emissions from production to delivery",
+      kapes: "Yes - Certified Carbon Neutral",
+      traditional: "No - Standard manufacturing"
+    },
+    {
+      icon: "🍽️",
+      feature: "Free Meals for Children",
+      description: "Every uniform purchase funds meals for children in need",
+      kapes: "Yes - 1 uniform = 5 meals",
+      traditional: "No impact programs"
+    },
+    {
+      icon: "👕",
+      feature: "Free Uniforms to Kids in Need",
+      description: "Donated uniforms to children across Africa",
+      kapes: "Yes - Global donation program",
+      traditional: "No donation programs"
+    },
+    {
+      icon: "♻️",
+      feature: "Takeback & Recycling Scheme",
+      description: "End-of-life uniform collection and recycling",
+      kapes: "Fully Managed - We collect & recycle",
+      traditional: "Not offered"
+    },
+    {
+      icon: "🏫",
+      feature: "Admin Burden on School",
+      description: "Time spent managing uniform program",
+      kapes: "< 1 Hour per term",
+      traditional: "High - Ongoing management"
+    },
+    {
+      icon: "🌍",
+      feature: "Supply Chain Transparency",
+      description: "Full visibility into manufacturing processes",
+      kapes: "100% Transparent - Factory visits welcome",
+      traditional: "Limited or no transparency"
+    },
+    {
+      icon: "📊",
+      feature: "Impact Tracking & Reporting",
+      description: "Real-time sustainability metrics",
+      kapes: "KapesImpact™ Dashboard included",
+      traditional: "No impact reporting"
+    },
+    {
+      icon: "💰",
+      feature: "Hidden Costs & Commission",
+      description: "Additional costs passed to parents",
+      kapes: "No hidden costs - Transparent pricing",
+      traditional: "Commission fees increase parent costs"
+    }
+  ];
+  
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -100,6 +162,75 @@ const ImpactPartnershipPage = () => {
                     </ul>
                   </CardContent>
                 </Card>)}
+            </div>
+          </section>
+
+          {/* Detailed Comparison Table */}
+          <section className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
+                Why Schools Are Switching to Kapes
+              </h2>
+              <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+                We focus on impact, not revenue. See how we compare to traditional uniform suppliers who prioritize profit over purpose.
+              </p>
+            </div>
+            
+            <Card className="border-0 shadow-lg overflow-hidden bg-white">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gray-50/80 border-b">
+                        <th className="text-left font-semibold py-6 px-8 text-gray-700">Feature</th>
+                        <th className="text-center font-semibold py-6 px-8 text-gray-700">Kapes</th>
+                        <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonData.map((row, index) => (
+                        <tr 
+                          key={index} 
+                          className="border-b border-gray-100 hover:bg-gray-50/30 transition-all duration-300 animate-fade-in hover:scale-[1.01] hover:shadow-sm"
+                          style={{ animationDelay: `${index * 100}ms` }}
+                        >
+                          <td className="py-6 px-8">
+                            <div className="flex flex-col gap-2">
+                              <div className="flex items-center gap-3">
+                                <span className="text-2xl">{row.icon}</span>
+                                <span className="font-medium text-gray-900">{row.feature}</span>
+                              </div>
+                              <p className="text-sm text-gray-600 ml-11">{row.description}</p>
+                            </div>
+                          </td>
+                          <td className="py-6 px-8 text-center">
+                            <div className="flex items-center justify-center gap-2">
+                              <Check className="h-5 w-5 text-green-500 transition-colors duration-200" />
+                              <span className="font-medium text-green-600 transition-colors duration-200">{row.kapes}</span>
+                            </div>
+                          </td>
+                          <td className="py-6 px-8 text-center">
+                            <div className="flex items-center justify-center gap-2">
+                              <X className="h-5 w-5 text-red-500 transition-colors duration-200" />
+                              <span className="font-medium text-red-600 transition-colors duration-200">{row.traditional}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <div className="mt-10 text-center">
+              <Button 
+                size="lg" 
+                className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Ready to Switch? Partner With Kapes
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </section>
 
