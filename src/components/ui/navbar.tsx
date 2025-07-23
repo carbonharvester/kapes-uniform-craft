@@ -76,7 +76,7 @@ const Navbar = ({
       url: "/factory-visits"
     }]
   }, {
-    title: "Solutions",
+    title: "Sustainability as a Service",
     url: "#",
     items: [{
       title: "Uniform Solutions",
