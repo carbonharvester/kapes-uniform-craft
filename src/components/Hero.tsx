@@ -19,7 +19,7 @@ export const Hero = () => {
           </h1>
           
           {/* Subtitle with perfect spacing */}
-          <p className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">The world's only partner making school uniforms eco-friendly, ethical, circular, and carbon neutral—while feeding and clothing children in need, and turning your school's sustainability into a story worth sharing.</p>
+          <p className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">The world's <span className="font-bold">only</span> partner making school uniforms eco-friendly, ethical, circular, and carbon neutral—while feeding and clothing children in need, and turning your school's sustainability into a story worth sharing.</p>
           
           {/* CTA buttons */}
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
