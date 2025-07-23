@@ -17,7 +17,6 @@ interface SustainabilityScorecardProps {
 const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) => {
   const [showEntryForm, setShowEntryForm] = useState(!initialData);
   const [showQuiz, setShowQuiz] = useState(!!initialData);
-  const [showImprove, setShowImprove] = useState(false);
   const [showFeatures, setShowFeatures] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -34,7 +33,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   });
   
   const [userAnswers, setUserAnswers] = useState<Array<{question: string, answer: string}>>([]);
-  const [userImprove, setUserImprove] = useState<string | null>(null);
   const [userFeatures, setUserFeatures] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [scoreDescription, setScoreDescription] = useState('');
@@ -43,6 +41,19 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [formAnswers, setFormAnswers] = useState<Record<string, string | string[]>>({});
 
   const formRef = useRef<HTMLDivElement>(null);
+
+  const countries = [
+    'Afghanistan', 'Albania', 'Algeria', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan',
+    'Bahrain', 'Bangladesh', 'Belarus', 'Belgium', 'Bolivia', 'Brazil', 'Bulgaria',
+    'Cambodia', 'Canada', 'Chile', 'China', 'Colombia', 'Croatia', 'Czech Republic',
+    'Denmark', 'Ecuador', 'Egypt', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Ghana', 'Greece',
+    'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy',
+    'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Latvia', 'Lebanon', 'Lithuania', 'Luxembourg',
+    'Malaysia', 'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Nigeria', 'Norway',
+    'Oman', 'Pakistan', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia',
+    'Saudi Arabia', 'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'Sweden', 'Switzerland',
+    'Thailand', 'Turkey', 'UAE', 'Ukraine', 'United Kingdom', 'United States', 'Vietnam'
+  ];
 
   const questions = [
     { id: 'materials', text: 'What materials are your uniforms including PE kits made from? (Select all that apply)', type: 'checkbox' },
@@ -65,7 +76,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' }
   ];
 
-  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions, updated for distribution (19) and added education (5)
+  const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions
   const maxScore = 127;
 
   const columnNames: Record<string, string> = {
@@ -87,7 +98,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'How would you rate your current uniform program out of 10?': 'Program Rating',
     'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Improvement Consideration',
     'How important is sustainability within your school?': 'Sustainability Importance',
-    'Do you want to improve the sustainability of your school uniforms?': 'Wants to Improve',
     'Selected features:': 'Selected Features'
   };
 
@@ -281,9 +291,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       
       if (selectedValue) {
         console.log(`✅ Question ${qId} answered`);
-        totalScore += questionWeights[index] * parseInt(selectedValue);
+        // Score: Yes=1 gets full points, No=0 and Don't Know=2 both get 0 points
+        const scoreValue = selectedValue === '1' ? 1 : 0;
+        totalScore += questionWeights[index] * scoreValue;
+        
         const questionObj = questions.find(q => q.id === qId);
-        const answerText = selectedValue === '1' ? 'Yes' : selectedValue === '0' ? 'No/Don\'t Know' : selectedValue;
+        let answerText = 'Not Answered';
+        if (selectedValue === '1') answerText = 'Yes';
+        else if (selectedValue === '0') answerText = 'No';
+        else if (selectedValue === '2') answerText = 'Don\'t Know';
+        
         answers.push({ question: questionObj?.text || '', answer: answerText });
       } else {
         console.log(`❌ Question ${qId} NOT answered`);
@@ -381,10 +398,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Carbon offsetting and environmental impact
-    if (formAnswers['q4'] === '0') {
+    if (formAnswers['q4'] === '0' || formAnswers['q4'] === '2') {
       customFeedback.push('Implementing verified carbon offset projects could help mitigate the emissions from uniform production.');
     }
-    if (formAnswers['q3'] === '0') {
+    if (formAnswers['q3'] === '0' || formAnswers['q3'] === '2') {
       customFeedback.push('Tracking water, energy, and carbon usage in production would improve your environmental awareness.');
     }
 
@@ -394,7 +411,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Ethical supply chain
-    if (formAnswers['q10'] === '0' || formAnswers['q11'] === '0' || formAnswers['q12'] === '0') {
+    if (formAnswers['q10'] === '0' || formAnswers['q10'] === '2' || formAnswers['q11'] === '0' || formAnswers['q11'] === '2' || formAnswers['q12'] === '0' || formAnswers['q12'] === '2') {
       customFeedback.push('Strengthen your supply chain by requiring ethical audits, living wage policies, and third-party certifications.');
     }
 
@@ -409,15 +426,15 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
 
     // Takeback and education
-    if (formAnswers['q13'] === '0') {
+    if (formAnswers['q13'] === '0' || formAnswers['q13'] === '2') {
       customFeedback.push('Adding a uniform collection and resale program would promote circularity.');
     }
-    if (formAnswers['education'] === '0') {
+    if (formAnswers['education'] === '0' || formAnswers['education'] === '2') {
       customFeedback.push('Educating students on fashion impacts could foster greater sustainability engagement.');
     }
 
     // Transparency
-    if (formAnswers['q20'] === '0') {
+    if (formAnswers['q20'] === '0' || formAnswers['q20'] === '2') {
       customFeedback.push('Increasing supply chain transparency for parents and students would build trust.');
     }
 
@@ -438,25 +455,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
     setShowQuiz(false);
     if (percentage < 67) {
-      setShowImprove(true);
-    } else {
-      setShowResults(true);
-    }
-  };
-
-  const handleImproveSubmit = () => {
-    const formElement = formRef.current;
-    if (!formElement) return;
-    
-    const selected = formElement.querySelector('input[name="improve"]:checked') as HTMLInputElement;
-    if (!selected) {
-      alert('Please select an option.');
-      return;
-    }
-    setUserImprove(selected.value);
-    userAnswers.push({ question: 'Do you want to improve the sustainability of your school uniforms?', answer: selected.value });
-    setShowImprove(false);
-    if (selected.value === 'yes') {
       setShowFeatures(true);
     } else {
       setShowResults(true);
@@ -746,9 +744,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           <input 
             type="radio" 
             name={questionId} 
-            value="0" 
+            value="2" 
             className="w-4 h-4 text-primary focus:ring-primary border-border"
-            checked={formAnswers[questionId] === '0'}
+            checked={formAnswers[questionId] === '2'}
             onChange={(e) => handleAnswerChange(questionId, e.target.value)}
           />
           <span className="text-sm font-medium">Don't Know</span>
@@ -831,14 +829,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                 required
               />
-              <input
-                type="text"
-                placeholder="Country"
+              <select
                 value={userData.country}
                 onChange={(e) => setUserData({...userData, country: e.target.value})}
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                 required
-              />
+              >
+                <option value="">Select Country</option>
+                {countries.map(country => (
+                  <option key={country} value={country}>{country}</option>
+                ))}
+              </select>
               <input
                 type="number"
                 placeholder="Number of Students"
@@ -924,33 +925,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           </Card>
         )}
 
-        {showImprove && (
-          <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
-            <CardHeader>
-              <CardTitle className="text-2xl md:text-3xl font-bold text-heading text-center">Improve Your Sustainability</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">Do you want to improve the sustainability of your school uniforms?</h2>
-              <div className="space-y-4 mb-6 md:mb-8">
-                <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
-                  <input type="radio" name="improve" value="yes" className="w-4 h-4 text-primary focus:ring-primary border-border" />
-                  <span className="text-sm font-medium">Yes</span>
-                </label>
-                <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
-                  <input type="radio" name="improve" value="no" className="w-4 h-4 text-primary focus:ring-primary border-border" />
-                  <span className="text-sm font-medium">No</span>
-                </label>
-              </div>
-              <Button 
-                onClick={handleImproveSubmit}
-                className="w-full py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]"
-              >
-                Submit
-              </Button>
-            </CardContent>
-          </Card>
-        )}
-
         {showFeatures && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader>
@@ -990,31 +964,31 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         )}
 
         {showResults && (
-          <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <Card className="shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl md:text-4xl font-bold text-heading text-center">Your Results</CardTitle>
+              <CardTitle className="text-3xl font-bold text-center">Your Sustainability Score</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <div className="mb-6 md:mb-8">
-                <div className={`text-4xl md:text-6xl font-bold ${getScoreColor(score)} mb-3 md:mb-4`}>
+              <div className="mb-8">
+                <div className={`text-6xl font-bold ${getScoreColor(score)} mb-4`}>
                   {score}%
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground">Sustainability Score</div>
+                <div className="text-lg text-muted-foreground">Overall Sustainability Rating</div>
               </div>
               
-              <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
                 {scoreDescription}
               </p>
               
               {userFeatures.length > 0 && (
-                <div className="mb-6 md:mb-8 p-4 md:p-6 bg-background/50 rounded-xl border border-border/50">
-                  <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">You Qualify for a Free Consultation!</h3>
-                  <p className="text-sm md:text-base text-muted-foreground">Based on your interests, we're excited to help. Book now to discuss tailored solutions with Kapes.</p>
+                <div className="mb-8 p-6 bg-muted/30 rounded-lg border">
+                  <h3 className="text-xl font-bold mb-3">🎉 You Qualify for a Free Consultation!</h3>
+                  <p className="text-muted-foreground">Based on your interests in sustainable solutions, our team is excited to help you improve your uniform program.</p>
                 </div>
               )}
               
-              <Button asChild className="w-full py-3 md:py-4 text-base md:text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg transition-all transform hover:scale-[1.02]">
-                <a href="/consultation">
+              <Button asChild className="px-8 py-3 text-lg font-semibold">
+                <a href="/contact">
                   Book Your Free Consultation
                 </a>
               </Button>
