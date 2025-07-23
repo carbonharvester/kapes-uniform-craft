@@ -45,7 +45,7 @@ const ImpactPartnershipPage = () => {
       feature: "Materials",
       description: "Quality and sustainability of fabric materials",
       kapes: "100% Sustainable - Organic & recycled materials only",
-      traditional: "Standard materials - Limited sustainability"
+      traditional: "Virgin synthetic fibres and conventional cotton"
     },
     {
       icon: "🤖",
