@@ -396,28 +396,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const percentage = Math.round((totalScore / maxScore) * 100);
     setScore(percentage);
 
-    // Check if they qualify for consultation
-    const willToImprove = formAnswers.extra2 as string;
-    const sustainabilityImportance = formAnswers.extra3 as string;
-
-    // Check disqualifying conditions first
-    if (willToImprove === 'No') {
-      setScoreDescription('Thank you for completing our scorecard. We would love to speak to you at a time when you are considering improving your uniform program.');
-      setShowQuiz(false);
-      setShowResults(true);
-      setUserAnswers(answers);
-      return;
-    }
-
-    if (sustainabilityImportance === 'Not important') {
-      setScoreDescription('Thank you for completing our scorecard. We are currently only consulting with schools that value sustainability.');
-      setShowQuiz(false);
-      setShowResults(true);
-      setUserAnswers(answers);
-      return;
-    }
-
-    // Build customized bodyText based on answers for qualifying respondents
+    // Build customized bodyText based on answers
     let baseText = '';
     let customFeedback: string[] = [];
 
@@ -690,7 +669,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
           onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
         />
-        <span className="text-sm font-medium">Pop-up events</span>
+        <span className="text-sm font-medium">Pop-up events (these events usually happen once or twice a year at the school premises)</span>
       </label>
       <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
@@ -811,7 +790,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   const renderExtraRadioQuestion = (questionId: string) => {
     const options = questionId === 'extra2' 
-      ? ['Yes', 'No']
+      ? ['Yes', 'No', 'Maybe']
       : ['Very important', 'Important', 'Somewhat important', 'Not important'];
     
     return (
@@ -834,7 +813,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="bg-background">
+    <div className="min-h-screen bg-background">
       <div className="w-full max-w-4xl mx-auto p-3 md:p-6" ref={formRef}>
         
         {showEntryForm && (
@@ -915,6 +894,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         {showQuiz && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader className="pb-4 md:pb-6">
+              <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4 text-center">
+                Sustainability Scorecard for School Uniforms
+              </CardTitle>
               <div className="mb-4 md:mb-6">
                 <Progress 
                   value={((currentSlide + 1) / questions.length) * 100} 
@@ -1001,7 +983,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         )}
 
         {showResults && (
-          <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+          <Card className="shadow-lg">
             <CardHeader>
               <CardTitle className="text-3xl font-bold text-center">Your Sustainability Score</CardTitle>
             </CardHeader>
