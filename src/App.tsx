@@ -23,11 +23,11 @@ import SocialImpactAfrica from "./pages/SocialImpactAfrica";
 import EducationalResources from "./pages/EducationalResources";
 import StudentLeadership from "./pages/StudentLeadership";
 import FactoryVisits from "./pages/FactoryVisits";
-import UniformSolutions from "./pages/UniformSolutions";
+import { UniformSolutions } from "./pages/UniformSolutions";
 import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
 import KapesImpactPlatform from "./pages/KapesImpactPlatform";
-import SchoolShopsLockers from "./pages/SchoolShopsLockers";
-import DeliveryPackaging from "./pages/DeliveryPackaging";
+import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
+import { DeliveryPackaging } from "./pages/DeliveryPackaging";
 import OurProcess from "./pages/OurProcess";
 import Resources from "./pages/Resources";
 
