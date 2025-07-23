@@ -177,6 +177,103 @@ const ImpactPartnershipPage = () => {
             </div>
           </section>
 
+          {/* Detailed Comparison */}
+          <section className="space-y-12">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
+                Why Schools Are Switching to Kapes
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Most uniform suppliers focus on revenue. We focus on impact. Here's how Kapes compares to traditional models—point for point.
+              </p>
+            </div>
+            
+            <Card className="border-0 shadow-glass overflow-hidden">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b bg-muted/30">
+                        <th className="text-left font-semibold py-4 px-6 min-w-[200px]">Feature</th>
+                        <th className="text-left font-semibold py-4 px-6 min-w-[300px]">Kapes</th>
+                        <th className="text-left font-semibold py-4 px-6 min-w-[300px]">Traditional Supplier</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🌿 Sustainable Materials</td>
+                        <td className="py-4 px-6 text-sm">Organic, low-impact fabrics that reduce pollution</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Often synthetic, petroleum-based fabrics</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🧵 Ethical Manufacturing</td>
+                        <td className="py-4 px-6 text-sm">Certified ethical factories with fair wages</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Commonly lowest-cost factories with no transparency</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🌱 Carbon Neutral</td>
+                        <td className="py-4 px-6 text-sm">Full lifecycle impact calculated and offset</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">No tracking, no offsets</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">♻️ Takeback Scheme</td>
+                        <td className="py-4 px-6 text-sm">Free, fully managed program to return & recycle uniforms</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Not offered</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🍽️ Free School Meals</td>
+                        <td className="py-4 px-6 text-sm">1 meal donated for every item returned</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">No contribution</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">👕 Free Uniforms to Children in Need</td>
+                        <td className="py-4 px-6 text-sm">Included in every partnership, co-branded with the school</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Not offered</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">📊 Impact Dashboard</td>
+                        <td className="py-4 px-6 text-sm">Real-time data showing carbon saved, meals donated, uniforms provided</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">No data or tracking available</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🛍️ On-Campus Shops & Lockers</td>
+                        <td className="py-4 px-6 text-sm">Managed by Kapes, branded for your school</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Requires school staff or third parties</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🧠 Educational Programs</td>
+                        <td className="py-4 px-6 text-sm">Factory visits, workshops, student board</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Not part of the offer</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">🔧 Setup & Admin</td>
+                        <td className="py-4 px-6 text-sm">Zero stock risk, minimal staff time required</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">School handles ordering, storage, complaints</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-4 px-6 font-medium">💰 Revenue Share</td>
+                        <td className="py-4 px-6 text-sm">No — value is returned through impact</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">Usually 10–15% cut to the school</td>
+                      </tr>
+                      <tr>
+                        <td className="py-4 px-6 font-medium">📢 PR & Marketing Support</td>
+                        <td className="py-4 px-6 text-sm">Custom content, case studies, press features</td>
+                        <td className="py-4 px-6 text-sm text-muted-foreground">None</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <div className="text-center">
+              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth">
+                Ready to Switch? Partner With Kapes
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </section>
+
           {/* Perfect For */}
           <section>
             <div className="text-center mb-12">

@@ -4,6 +4,7 @@ import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { ValueCalculator } from "@/components/ValueCalculator";
+import { KapesComparison } from "@/components/KapesComparison";
 import { ImpactPartnership } from "@/components/ImpactPartnership";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
@@ -26,6 +27,7 @@ const Index = () => {
         <WhatMakesKapesDifferent />
       </div>
       <ValueCalculator />
+      <KapesComparison />
       <SchoolLogos />
       <ImpactPartnership />
       <Testimonials />
