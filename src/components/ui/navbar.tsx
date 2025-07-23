@@ -112,11 +112,6 @@ const Navbar = ({
       description: "Step-by-step guide to working with Kapes",
       icon: <Zap className="size-5 shrink-0" />,
       url: "/our-process"
-    }, {
-      title: "Implementation Timeline",
-      description: "From onboarding to full implementation",
-      icon: <Sunset className="size-5 shrink-0" />,
-      url: "/implementation-timeline"
     }]
   }, {
     title: "Partnerships",
