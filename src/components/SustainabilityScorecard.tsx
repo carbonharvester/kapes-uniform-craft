@@ -150,7 +150,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   useEffect(() => {
     if (showResults && !sent) {
       console.log('🚀 Sending data to Google Sheets...');
-      const sheetURL = 'https://script.google.com/macros/s/AKfycby04jakWLvP36uUWd74KSQb2Q0hQnWBGj6dctj51w4NHzTApetxZ4B2tbOjuARpMu6J/exec';
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbzpBqnrvqN_UEoKkw75FcUh6O-HFyC9fv0RvouSW1KFdHBrDgx2-Vo6_Sp2gUCGmKb3/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
         'Last Name': userData.surname,
