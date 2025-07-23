@@ -150,8 +150,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   useEffect(() => {
     if (showResults && !sent) {
       console.log('🚀 Sending data to Google Sheets...');
-      const sheetURL = 'https://script.google.com/macros/s/AKfycbzucWXHFxEcVBtJZcyho7BdoLbri80K8G5rI77UQN4DAa95ms337eThKeDl05dRwuo/exec';
-      const formData: Record<string, any> = {
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbzAbgnZI_u0wVs1BVfYTER1oMPuVFLj3D-JqI7OJZTp_7-yQGTVPi7fSLU6ntGvcB74/exec';
+      const payload: Record<string, any> = {
         'First Name': userData.firstName,
         'Last Name': userData.surname,
         'Email': userData.email,
@@ -168,8 +168,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         console.log(`🔍 Question: "${question}"`);
         console.log(`📝 Column mapping: "${col}"`);
         if (col) {
-          formData[col] = answer;
-          console.log(`✅ Added to formData: ${col} = ${answer}`);
+          payload[col] = answer;
+          console.log(`✅ Added to payload: ${col} = ${answer}`);
         } else {
           console.log(`❌ No column mapping found for: "${question}"`);
         }
@@ -177,30 +177,28 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
       // Add selected features if available
       if (userFeatures.length > 0) {
-        formData['Selected Features'] = userFeatures.join(', ');
+        payload['Selected Features'] = userFeatures.join(', ');
         console.log(`✅ Added Selected Features: ${userFeatures.join(', ')}`);
       }
 
-      console.log('📤 Final form data being sent:', formData);
+      console.log('📤 Final payload being sent:', payload);
 
       fetch(sheetURL, {
         method: 'POST',
+        body: 'data=' + encodeURIComponent(JSON.stringify(payload)),
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(formData),
-      }).then(response => {
-        console.log('✅ Response received:', response.status);
-        return response.text();
-      }).then(data => {
-        console.log('✅ Data sent to Google Sheet successfully:', data);
+        mode: 'no-cors',
+      }).then(() => {
+        console.log('✅ Data sent to Google Sheet (no-cors mode, response not readable)');
       }).catch(error => {
         console.error('❌ Error sending data to Google Sheet:', error);
       });
 
       setSent(true);
     }
-  }, [showResults, sent, userData, score, userAnswers]);
+  }, [showResults, sent, userData, score, userAnswers, userFeatures]);
 
   const handleStart = () => {
     if (!userData.firstName || !userData.surname || !userData.school || !userData.country || !userData.students || !userData.email) {
