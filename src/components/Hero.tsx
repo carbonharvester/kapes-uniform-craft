@@ -17,9 +17,9 @@ export const Hero = () => {
           
           {/* Main headline with consistent typography */}
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4">
-            School Uniforms That{" "}
+            The Only School Uniform Partner That{" "}
             <span className="font-academy-hero font-extrabold text-white drop-shadow-lg">
-              Make the World Better
+              Captures Carbon, Feeds Children, and Tells Your School's Sustainability Story
             </span>
           </h1>
           
