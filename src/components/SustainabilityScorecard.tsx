@@ -7,7 +7,7 @@ import { CheckCircle, ArrowRight, ArrowLeft, Trophy, Target, Lightbulb } from 'l
 interface SustainabilityScorecardProps {
   initialData?: {
     firstName: string;
-    surname: string;
+    surname: string; // Updated to match lastName in payload
     school: string;
     students: string;
     email: string;
@@ -25,7 +25,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   const [userData, setUserData] = useState({
     firstName: initialData?.firstName || '',
-    surname: initialData?.surname || '',
+    lastName: initialData?.surname || '', // Changed from surname to lastName
     school: initialData?.school || '',
     country: '',
     students: initialData?.students || '',
@@ -112,7 +112,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const storedUserData = localStorage.getItem('scorecardUserData');
     if (storedUserData) {
       const parsedData = JSON.parse(storedUserData);
-      setUserData(parsedData);
+      setUserData({
+        ...parsedData,
+        lastName: parsedData.surname || '' // Map surname to lastName if present
+      });
       setShowEntryForm(false);
       setShowQuiz(true);
       localStorage.removeItem('scorecardUserData'); // Clean up
@@ -153,7 +156,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       const sheetURL = 'https://script.google.com/macros/s/AKfycbzpBqnrvqN_UEoKkw75FcUh6O-HFyC9fv0RvouSW1KFdHBrDgx2-Vo6_Sp2gUCGmKb3/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
-        'Last Name': userData.surname,
+        'Last Name': userData.lastName, // Using lastName from state
         'Email': userData.email,
         'School': userData.school,
         'Country': userData.country,
@@ -198,7 +201,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   }, [showResults, sent, userData, score, userAnswers, userFeatures]);
 
   const handleStart = () => {
-    if (!userData.firstName || !userData.surname || !userData.school || !userData.country || !userData.students || !userData.email) {
+    if (!userData.firstName || !userData.lastName || !userData.school || !userData.country || !userData.students || !userData.email) {
       setEntryError(true);
       return;
     }
@@ -831,9 +834,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               />
               <input
                 type="text"
-                placeholder="Surname"
-                value={userData.surname}
-                onChange={(e) => setUserData({...userData, surname: e.target.value})}
+                placeholder="Last Name" // Updated label to match state
+                value={userData.lastName}
+                onChange={(e) => { console.log('Last Name changed to:', e.target.value); setUserData({...userData, lastName: e.target.value}); }} // Updated handler
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                 required
               />
