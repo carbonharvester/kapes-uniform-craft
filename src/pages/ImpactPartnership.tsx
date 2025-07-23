@@ -228,7 +228,7 @@ const ImpactPartnershipPage = () => {
                                 <span className="text-2xl">{row.icon}</span>
                                 <span className="font-medium text-gray-900">{row.feature}</span>
                               </div>
-                              <p className="text-sm text-gray-600 ml-11">{row.description}</p>
+                              <p className="text-sm text-gray-600 ml-10">{row.description}</p>
                             </div>
                           </td>
                           <td className="py-6 px-8 text-center">
