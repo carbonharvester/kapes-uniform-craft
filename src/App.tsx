@@ -1,37 +1,21 @@
-
-import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
-import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
-import OurProcess from "./pages/OurProcess";
-
+import SustainabilityScorecard from "./pages/SustainabilityScorecard";
+import ImpactPartnershipPage from "./pages/ImpactPartnership";
 import EcoLaunchTier from "./pages/EcoLaunchTier";
 import SustainProTier from "./pages/SustainProTier";
 import LegacyImpactTier from "./pages/LegacyImpactTier";
-import EducationalResources from "./pages/EducationalResources";
-import OurMission from "./pages/OurMission";
 import PartnershipTiers from "./pages/PartnershipTiers";
-import FactoryVisits from "./pages/FactoryVisits";
-import StudentLeadership from "./pages/StudentLeadership";
-import { UniformSolutions } from "./pages/UniformSolutions";
-import { SchoolShopsLockers } from "./pages/SchoolShopsLockers";
-import KapesImpactPlatform from "./pages/KapesImpactPlatform";
-import { DeliveryPackaging } from "./pages/DeliveryPackaging";
-import SustainabilityEthics from "./pages/SustainabilityEthics";
-import CircularEconomyTakeback from "./pages/CircularEconomyTakeback";
-import SocialImpactAfrica from "./pages/SocialImpactAfrica";
-import SustainabilityScorecardPage from "./pages/SustainabilityScorecard";
-import Affiliate from "./pages/Affiliate";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import { Header } from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -42,44 +26,23 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/affiliate" element={<Affiliate />} />
-          
-          {/* Blog Routes */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          
-          {/* Process & Timeline Routes */}
-          <Route path="/our-process" element={<OurProcess />} />
-          
-          
-          {/* Partnership Tier Routes */}
-          <Route path="/partnership-tiers" element={<PartnershipTiers />} />
-          <Route path="/ecolaunch-tier" element={<EcoLaunchTier />} />
-          <Route path="/sustainpro-tier" element={<SustainProTier />} />
-          <Route path="/legacyimpact-tier" element={<LegacyImpactTier />} />
-          
-          {/* Resource Routes */}
-          <Route path="/educational-resources" element={<EducationalResources />} />
-          <Route path="/factory-visits" element={<FactoryVisits />} />
-          <Route path="/student-leadership" element={<StudentLeadership />} />
-          <Route path="/our-mission" element={<OurMission />} />
-          <Route path="/uniform-solutions" element={<UniformSolutions />} />
-          <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
-           <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
-          <Route path="/delivery-packaging" element={<DeliveryPackaging />} />
-          <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
-          <Route path="/circular-economy-takeback" element={<CircularEconomyTakeback />} />
-          <Route path="/social-impact-africa" element={<SocialImpactAfrica />} />
-          <Route path="/sustainability-scorecard" element={<SustainabilityScorecardPage />} />
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="min-h-screen bg-background">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/sustainability-scorecard" element={<SustainabilityScorecard />} />
+            <Route path="/impact-partnership" element={<ImpactPartnershipPage />} />
+            {/* Redirect old tier URLs to new impact partnership page */}
+            <Route path="/ecolaunch-tier" element={<ImpactPartnershipPage />} />
+            <Route path="/sustainpro-tier" element={<ImpactPartnershipPage />} />
+            <Route path="/legacyimpact-tier" element={<ImpactPartnershipPage />} />
+            <Route path="/partnership-tiers" element={<ImpactPartnershipPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

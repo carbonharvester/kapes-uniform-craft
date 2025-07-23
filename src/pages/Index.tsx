@@ -4,14 +4,13 @@ import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { ValueCalculator } from "@/components/ValueCalculator";
-import { PartnershipTiers } from "@/components/PartnershipTiers";
+import { ImpactPartnership } from "@/components/ImpactPartnership";
 import { Testimonials } from "@/components/Testimonials";
 import { Footer } from "@/components/Footer";
 import { SchoolLogos } from "@/components/SchoolLogos";
-
 import { BlogSection } from "@/components/BlogSection";
 import { FloatingGetStarted } from "@/components/FloatingGetStarted";
-import { TierQuizModal } from "@/components/TierQuizModal";
+import { ImpactAssessmentModal } from "@/components/ImpactAssessmentModal";
 
 const Index = () => {
   return (
@@ -28,13 +27,12 @@ const Index = () => {
       </div>
       <ValueCalculator />
       <SchoolLogos />
-      <PartnershipTiers />
+      <ImpactPartnership />
       <Testimonials />
-      
       <BlogSection />
       <Footer />
       <FloatingGetStarted />
-      <TierQuizModal />
+      <ImpactAssessmentModal />
     </div>
   );
 };
