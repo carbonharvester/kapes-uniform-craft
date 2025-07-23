@@ -690,7 +690,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
           onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
         />
-        <span className="text-sm font-medium">Pop-up events (these events usually happen once or twice a year at the school premises)</span>
+        <span className="text-sm font-medium">Pop-up events</span>
       </label>
       <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
@@ -1001,7 +1001,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         )}
 
         {showResults && (
-          <Card className="shadow-lg">
+          <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader>
               <CardTitle className="text-3xl font-bold text-center">Your Sustainability Score</CardTitle>
             </CardHeader>
