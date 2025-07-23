@@ -96,7 +96,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
     'Is AI integrated into your uniform program? (Select all that apply)': 'AI Usage',
     'How would you rate your current uniform program out of 10?': 'Program Rating',
-    'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Improvement Consideration',
+    'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Willing to improve?',
     'How important is sustainability within your school?': 'Sustainability Importance',
     'Selected features:': 'Selected Features'
   };
@@ -149,23 +149,39 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   useEffect(() => {
     if (showResults && !sent) {
+      console.log('🚀 Sending data to Google Sheets...');
       const sheetURL = 'https://script.google.com/macros/s/AKfycbxpWh9rxKt3mBM-ENSgSwiHVhF5uP7YaHUqYo_viblyXVb32dSRwMyx4t6EfEHMKWe3/exec';
       const formData: Record<string, any> = {
-        first_name: userData.firstName,
-        last_name: userData.surname,
-        email: userData.email,
-        school: userData.school,
-        country: userData.country,
-        students: userData.students,
-        score: score,
+        'First Name': userData.firstName,
+        'Last Name': userData.surname,
+        'Email': userData.email,
+        'School': userData.school,
+        'Country': userData.country,
+        'Students': userData.students,
+        'Score': score,
+        'Timestamp': new Date().toISOString(),
       };
 
+      console.log('📊 Processing answers:', userAnswers);
       userAnswers.forEach(({ question, answer }) => {
         const col = columnNames[question];
+        console.log(`🔍 Question: "${question}"`);
+        console.log(`📝 Column mapping: "${col}"`);
         if (col) {
-          formData[col.replace(/ /g, '_')] = answer;
+          formData[col] = answer;
+          console.log(`✅ Added to formData: ${col} = ${answer}`);
+        } else {
+          console.log(`❌ No column mapping found for: "${question}"`);
         }
       });
+
+      // Add selected features if available
+      if (userFeatures.length > 0) {
+        formData['Selected Features'] = userFeatures.join(', ');
+        console.log(`✅ Added Selected Features: ${userFeatures.join(', ')}`);
+      }
+
+      console.log('📤 Final form data being sent:', formData);
 
       fetch(sheetURL, {
         method: 'POST',
