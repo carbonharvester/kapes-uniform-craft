@@ -7,7 +7,7 @@ import { CheckCircle, ArrowRight, ArrowLeft, Trophy, Target, Lightbulb } from 'l
 interface SustainabilityScorecardProps {
   initialData?: {
     firstName: string;
-    surname: string; // Updated to match lastName in payload
+    lastName: string;
     school: string;
     students: string;
     email: string;
@@ -22,10 +22,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [entryError, setEntryError] = useState(false);
   const [sent, setSent] = useState(false);
+  const [noImprovement, setNoImprovement] = useState(false);
+  const [lowSustainability, setLowSustainability] = useState(false);
 
   const [userData, setUserData] = useState({
     firstName: initialData?.firstName || '',
-    lastName: initialData?.surname || '', // Changed from surname to lastName
+    lastName: initialData?.lastName || '',
     school: initialData?.school || '',
     country: '',
     students: initialData?.students || '',
@@ -112,10 +114,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     const storedUserData = localStorage.getItem('scorecardUserData');
     if (storedUserData) {
       const parsedData = JSON.parse(storedUserData);
-      setUserData({
-        ...parsedData,
-        lastName: parsedData.surname || '' // Map surname to lastName if present
-      });
+      setUserData(parsedData);
       setShowEntryForm(false);
       setShowQuiz(true);
       localStorage.removeItem('scorecardUserData'); // Clean up
@@ -156,7 +155,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       const sheetURL = 'https://script.google.com/macros/s/AKfycbzpBqnrvqN_UEoKkw75FcUh6O-HFyC9fv0RvouSW1KFdHBrDgx2-Vo6_Sp2gUCGmKb3/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
-        'Last Name': userData.lastName, // Using lastName from state
+        'Last Name': userData.lastName,
         'Email': userData.email,
         'School': userData.school,
         'Country': userData.country,
@@ -473,7 +472,17 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     console.log(`📊 Final score: ${percentage}%`);
 
     setShowQuiz(false);
-    if (percentage < 67) {
+    // Check for qualification
+    const sustainabilityImportance = formAnswers.extra3;
+    const willingToImprove = formAnswers.extra2;
+
+    if (sustainabilityImportance !== 'Very important') {
+      setLowSustainability(true);
+      setShowResults(true);
+    } else if (willingToImprove === 'No') {
+      setNoImprovement(true);
+      setShowResults(true);
+    } else if (percentage < 67) {
       setShowFeatures(true);
     } else {
       setShowResults(true);
@@ -669,7 +678,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
           checked={(formAnswers.distribution as string[] || []).includes('popup_events')}
           onChange={(e) => handleCheckboxChange('distribution', 'popup_events', e.target.checked)}
         />
-        <span className="text-sm font-medium">Pop-up events (these events usually happen once or twice a year at the school premises)</span>
+        <span className="text-sm font-medium">Pop-up events</span>
       </label>
       <label className="flex items-center space-x-3 p-3 rounded-lg border border-border hover:bg-muted/50 transition-colors cursor-pointer">
         <input 
@@ -790,7 +799,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
 
   const renderExtraRadioQuestion = (questionId: string) => {
     const options = questionId === 'extra2' 
-      ? ['Yes', 'No', 'Maybe']
+      ? ['Yes', 'No'] // Removed 'Maybe'
       : ['Very important', 'Important', 'Somewhat important', 'Not important'];
     
     return (
@@ -834,9 +843,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               />
               <input
                 type="text"
-                placeholder="Last Name" // Updated label to match state
+                placeholder="Last Name"
                 value={userData.lastName}
-                onChange={(e) => { console.log('Last Name changed to:', e.target.value); setUserData({...userData, lastName: e.target.value}); }} // Updated handler
+                onChange={(e) => setUserData({...userData, lastName: e.target.value})}
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                 required
               />
@@ -894,9 +903,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         {showQuiz && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader className="pb-4 md:pb-6">
-              <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4 text-center">
-                Sustainability Scorecard for School Uniforms
-              </CardTitle>
               <div className="mb-4 md:mb-6">
                 <Progress 
                   value={((currentSlide + 1) / questions.length) * 100} 
@@ -999,18 +1005,32 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 {scoreDescription}
               </p>
               
-              {userFeatures.length > 0 && (
+              {noImprovement && (
+                <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+                  Thanks, we would love to speak to you at a time when you are considering improving your uniform program.
+                </p>
+              )}
+
+              {lowSustainability && (
+                <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+                  Thanks, but we are only consulting with schools that value sustainability.
+                </p>
+              )}
+              
+              {!noImprovement && !lowSustainability && userFeatures.length > 0 && (
                 <div className="mb-8 p-6 bg-muted/30 rounded-lg border">
                   <h3 className="text-xl font-bold mb-3">🎉 You Qualify for a Free Consultation!</h3>
                   <p className="text-muted-foreground">Based on your interests in sustainable solutions, our team is excited to help you improve your uniform program.</p>
                 </div>
               )}
               
-              <Button asChild className="px-8 py-3 text-lg font-semibold">
-                <a href="/contact">
-                  Book Your Free Consultation
-                </a>
-              </Button>
+              {!noImprovement && !lowSustainability && (
+                <Button asChild className="px-8 py-3 text-lg font-semibold">
+                  <a href="/contact">
+                    Book Your Free Consultation
+                  </a>
+                </Button>
+              )}
             </CardContent>
           </Card>
         )}
