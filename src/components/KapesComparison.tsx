@@ -37,11 +37,11 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "🧾",
-      feature: "Admin Burden on School",
-      kapes: "< 1 Hour/Term",
+      icon: "🧵",
+      feature: "Materials",
+      kapes: "100% Sustainable",
       kapesPositive: true,
-      traditional: "High",
+      traditional: "Virgin Synthetics",
       traditionalPositive: false,
     },
   ];
