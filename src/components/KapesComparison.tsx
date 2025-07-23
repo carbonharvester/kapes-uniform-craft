@@ -52,6 +52,14 @@ export const KapesComparison = () => {
       traditional: "Not Offered",
       traditionalPositive: false,
     },
+    {
+      icon: "🌍",
+      feature: "School Trips",
+      kapes: "Farm & Factory Visits, Carbon Offset Projects",
+      kapesPositive: true,
+      traditional: "Not Offered",
+      traditionalPositive: false,
+    },
   ];
 
   return (
