@@ -173,7 +173,7 @@ const BlogPost = () => {
             </div>
 
             <div className="space-y-6">
-              <h1 className="text-2xl md:text-3xl font-light leading-tight tracking-tight">
+              <h1 className="text-2xl md:text-3xl font-light leading-tight tracking-tight text-black">
                 {post.title}
               </h1>
               
@@ -204,7 +204,7 @@ const BlogPost = () => {
           {/* Related Posts */}
           {filteredRelatedPosts.length > 0 && (
             <section className="mt-16 pt-16 border-t border-border/50">
-              <h2 className="text-xl font-light mb-8 tracking-tight">Related Posts</h2>
+              <h2 className="text-xl font-light mb-8 tracking-tight text-black">Related Posts</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredRelatedPosts.map(relatedPost => (
                   <BlogCard key={relatedPost.slug} post={relatedPost} />
