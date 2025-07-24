@@ -18,6 +18,7 @@ const UniformPolicyMaker = () => {
     firstName: '',
     lastName: '',
     school: '',
+    students: '',
     country: '',
     email: ''
   });
@@ -78,6 +79,7 @@ const UniformPolicyMaker = () => {
         'Last Name': userData.lastName,
         'Email': userData.email,
         'School': userData.school,
+        'Students': userData.students,
         'Country': userData.country,
         'Timestamp': new Date().toISOString(),
       };
@@ -126,7 +128,7 @@ const UniformPolicyMaker = () => {
   }, [showResults, sent, userData, userAnswers, policyText]);
 
   const handleStart = () => {
-    if (!userData.firstName || !userData.lastName || !userData.school || !userData.country || !userData.email) {
+    if (!userData.firstName || !userData.lastName || !userData.school || !userData.students || !userData.country || !userData.email) {
       setEntryError(true);
       return;
     }
@@ -310,6 +312,14 @@ const UniformPolicyMaker = () => {
                 placeholder="School Name"
                 value={userData.school}
                 onChange={(e) => setUserData({...userData, school: e.target.value})}
+                className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Number of Students"
+                value={userData.students}
+                onChange={(e) => setUserData({...userData, students: e.target.value})}
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
                 required
               />
