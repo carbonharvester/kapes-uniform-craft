@@ -14,7 +14,108 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      calculator_submissions: {
+        Row: {
+          calculated_values: Json
+          created_at: string
+          id: string
+          location: string
+          student_count: number
+        }
+        Insert: {
+          calculated_values: Json
+          created_at?: string
+          id?: string
+          location: string
+          student_count: number
+        }
+        Update: {
+          calculated_values?: Json
+          created_at?: string
+          id?: string
+          location?: string
+          student_count?: number
+        }
+        Relationships: []
+      }
+      contact_submissions: {
+        Row: {
+          contact_name: string
+          created_at: string
+          email: string
+          form_type: string
+          id: string
+          message: string | null
+          phone: string | null
+          school_name: string
+          updated_at: string
+        }
+        Insert: {
+          contact_name: string
+          created_at?: string
+          email: string
+          form_type?: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          school_name: string
+          updated_at?: string
+        }
+        Update: {
+          contact_name?: string
+          created_at?: string
+          email?: string
+          form_type?: string
+          id?: string
+          message?: string | null
+          phone?: string | null
+          school_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      scorecard_submissions: {
+        Row: {
+          assessment_data: Json | null
+          contact_name: string
+          country: string
+          created_at: string
+          email: string
+          id: string
+          recommendations: string[] | null
+          school_name: string
+          score: number | null
+          student_count: number | null
+          updated_at: string
+        }
+        Insert: {
+          assessment_data?: Json | null
+          contact_name: string
+          country: string
+          created_at?: string
+          email: string
+          id?: string
+          recommendations?: string[] | null
+          school_name: string
+          score?: number | null
+          student_count?: number | null
+          updated_at?: string
+        }
+        Update: {
+          assessment_data?: Json | null
+          contact_name?: string
+          country?: string
+          created_at?: string
+          email?: string
+          id?: string
+          recommendations?: string[] | null
+          school_name?: string
+          score?: number | null
+          student_count?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
