@@ -93,15 +93,6 @@ const SustainabilityScorecardPage = () => {
                   </div>
                   <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Download className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm sm:text-base">Downloadable Custom Report</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm">PDF report with your score, answers, and bespoke recommendations for leadership</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
                     <div>
