@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { ValueCalculator } from "@/components/ValueCalculator";
-import { TierQuiz } from "@/components/TierQuiz";
+import { ImpactAssessment } from "@/components/ImpactAssessment";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { BookOpen, Download, FileText } from "lucide-react";
 import { Footer } from "@/components/Footer";
@@ -177,7 +177,7 @@ const Resources = () => {
           <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
             <Card className="border-0 shadow-glass max-w-4xl mx-auto">
               <CardContent className="p-8 md:p-12">
-                <TierQuiz />
+                <ImpactAssessment />
               </CardContent>
             </Card>
           </section>
