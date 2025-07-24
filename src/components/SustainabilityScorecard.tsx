@@ -487,10 +487,16 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         
         narrative += " for a more sustainable future.";
       } else {
+        // For high-scoring users, still provide improvement opportunities
         narrative += `To achieve even greater impact, consider ${improvements.join(', ')}.`;
       }
     } else if (score >= 60) {
-      narrative += "You have established a strong foundation and are well-positioned to lead by example in sustainable uniform programs.";
+      // High-scoring users still get improvement recommendations if they exist
+      if (improvements.length > 0) {
+        narrative += `You have established a strong foundation and are well-positioned to lead by example. To achieve even greater impact, consider ${improvements.join(', ')}.`;
+      } else {
+        narrative += "You have established a strong foundation and are well-positioned to lead by example in sustainable uniform programs.";
+      }
     }
     
     return { narrative };
