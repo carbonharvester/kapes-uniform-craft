@@ -46,7 +46,7 @@ const SustainabilityScorecardPage = () => {
                 <span className="text-xs sm:text-sm text-muted-foreground text-center">Rated 4.9/5 by school administrators</span>
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light tracking-tight leading-tight mb-4 px-2">
-                Discover Your School's Sustainability Score in 5 Minutes
+                Discover Your School's Sustainability Score in 3 Minutes
               </h1>
               <p className="text-muted-foreground mb-6 text-base md:text-lg max-w-3xl mx-auto px-2">
                 If your school values sustainability but does not currently have sustainable uniforms yet, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations
@@ -97,7 +97,7 @@ const SustainabilityScorecardPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-sm sm:text-base">Zero Cost, High Reward</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Just 5 minutes for insights that save money, reduce waste, and enhance reputation</p>
+                      <p className="text-muted-foreground text-xs sm:text-sm">Just 3 minutes for insights that save money, reduce waste, and enhance reputation</p>
                     </div>
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const SustainabilityScorecardPage = () => {
                     <div className="space-y-2 md:space-y-4 mb-4 md:mb-6">
                       <div className="flex items-center justify-center gap-2 text-xs md:text-sm text-muted-foreground">
                         <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 flex-shrink-0" />
-                        <span>Takes only 5 minutes</span>
+                        <span>Takes only 3 minutes</span>
                       </div>
                       <div className="flex items-center justify-center gap-2 text-xs md:text-sm text-muted-foreground">
                         <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-600 flex-shrink-0" />
