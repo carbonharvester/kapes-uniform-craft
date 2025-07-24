@@ -6,6 +6,7 @@ import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { TierQuiz } from "@/components/TierQuiz";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
+import UniformPolicyMaker from "@/components/UniformPolicyMaker";
 import { BookOpen, Download } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
@@ -109,6 +110,9 @@ const Resources = () => {
           <ValueCalculator />
 
           <FreeAuditTool />
+
+          {/* Uniform Policy Maker */}
+          <UniformPolicyMaker />
 
           {/* Partnership Tier Quiz */}
           <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
