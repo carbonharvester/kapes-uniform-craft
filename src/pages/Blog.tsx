@@ -142,7 +142,7 @@ const Blog = () => {
                 <section className="mb-16">
                   <div className="text-center mb-8">
                     <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Latest</Badge>
-                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">Featured Article</h2>
+                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black">Featured Article</h2>
                   </div>
                   
                   <Link to={`/blog/${featuredPost.slug}`} className="block group">
@@ -170,7 +170,7 @@ const Blog = () => {
                             </div>
                             
                             {/* Title */}
-                            <h3 className="text-2xl lg:text-3xl font-semibold leading-tight text-heading group-hover:text-primary transition-colors duration-300">
+                            <h3 className="text-2xl lg:text-3xl font-semibold leading-tight text-black group-hover:text-primary transition-colors duration-300">
                               {featuredPost.title}
                             </h3>
                             
@@ -198,7 +198,7 @@ const Blog = () => {
               {otherPosts.length > 0 && (
                 <section>
                   <div className="flex items-center justify-between mb-8">
-                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-heading">More Articles</h2>
+                    <h2 className="text-2xl md:text-3xl font-light tracking-tight text-black">More Articles</h2>
                     <div className="text-sm text-muted-foreground">
                       {otherPosts.length} article{otherPosts.length !== 1 ? 's' : ''}
                     </div>
@@ -215,7 +215,7 @@ const Blog = () => {
               {filteredPosts.length === 0 && !isLoading && (
                 <div className="text-center py-16">
                   <div className="max-w-md mx-auto">
-                    <h3 className="text-xl font-semibold text-heading mb-4">No posts found</h3>
+                    <h3 className="text-xl font-semibold text-black mb-4">No posts found</h3>
                     <p className="text-muted-foreground mb-6">
                       {searchTerm ? "Try adjusting your search criteria to find what you're looking for." : "Check back soon for new content and insights."}
                     </p>
