@@ -286,7 +286,7 @@ export const SchoolShopsLockers = () => {
 
           {/* CTA Section */}
           <section className="text-center py-16" style={{ backgroundColor: '#cfeaff' }}>
-            <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-6 py-2 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-2 mb-6">
               <Store className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Get Started Today</span>
             </div>
