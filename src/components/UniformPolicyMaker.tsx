@@ -45,7 +45,7 @@ const UniformPolicyMaker = () => {
     { id: 'restrictedSubstances', text: 'Would you like to ban harmful chemicals in uniforms in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'policyReview', text: 'How often would you like the policy to be reviewed?', type: 'select', options: ['Annually (recommended for best practice)', 'Every 2 years', 'Every 3 years', 'Every 5 years'] },
     { id: 'materialsPreferences', text: 'What materials would you like to prefer for uniforms in your policy? (Select all that apply)', type: 'checkbox', options: ['Organic cotton (eco-friendly, pesticide-free)', 'Recycled polyester (from recycled plastic bottles)', 'Standard cotton', 'Synthetic fibers like polyester'] },
-    { id: 'distributionMethods', text: 'How would you like uniforms to be sold or distributed in your policy? (Select all that apply)', type: 'checkbox', options: ['Online ordering (convenient, low carbon)', 'School store on campus', 'From a supplier's shop', 'Pickup at school', 'Pop-up events at school'] },
+    { id: 'distributionMethods', text: 'How would you like uniforms to be sold or distributed in your policy? (Select all that apply)', type: 'checkbox', options: ['Online ordering (convenient, low carbon)', 'School store on campus', 'From a supplier\'s shop', 'Pickup at school', 'Pop-up events at school'] },
     { id: 'transparencyRequirements', text: 'Would you like the supply chain to be transparent in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'carbonOffsetting', text: 'Would you like to include offsetting carbon emissions in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'impactCalculation', text: 'Would you like to include measuring environmental impact in your policy?', type: 'radio', options: ['Yes', 'No'] },
@@ -88,7 +88,7 @@ const UniformPolicyMaker = () => {
 
       // Map implementation timeline to months for Commitment
       let commitmentMonths = '';
-      const timeline = userAnswers['implementationTimeline'] || '';
+      const timeline = userAnswers['implementationTimeline'] as string || '';
       const match = timeline.match(/(\d+)/);
       if (match) {
         commitmentMonths = match[1];
