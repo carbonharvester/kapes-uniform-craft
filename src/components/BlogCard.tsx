@@ -36,7 +36,7 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
           </CardTitle>
           <CardDescription className="text-sm text-muted-foreground font-inter flex-1 overflow-hidden" style={{
             display: '-webkit-box',
-            WebkitLineClamp: 4,
+            WebkitLineClamp: 6,
             WebkitBoxOrient: 'vertical',
             wordBreak: 'break-word',
             textOverflow: 'ellipsis'
