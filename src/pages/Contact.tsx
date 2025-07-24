@@ -8,9 +8,7 @@ const Contact = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
-              Get In Touch
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-6">Ready to transform your school's uniform program? We're here to help you every step of the way. If you are a customer and have a product or order related query please email support@kapesuniforms.com. </h1>
             <p className="text-lg text-muted-foreground">Ready to transform your school's uniform program? We're here to help you every step of the way. If you are a customer and have a product or order related query please email support@kapesuniforms.com </p>
           </div>
 
