@@ -45,13 +45,14 @@ const UniformPolicyMaker = () => {
     { id: 'restrictedSubstances', text: 'Would you like to ban harmful chemicals in uniforms in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'policyReview', text: 'How often would you like the policy to be reviewed?', type: 'select', options: ['Annually (recommended for best practice)', 'Every 2 years', 'Every 3 years', 'Every 5 years'] },
     { id: 'materialsPreferences', text: 'What materials would you like to prefer for uniforms in your policy? (Select all that apply)', type: 'checkbox', options: ['Organic cotton (eco-friendly, pesticide-free)', 'Recycled polyester (from recycled plastic bottles)', 'Standard cotton', 'Synthetic fibers like polyester'] },
-    { id: 'distributionMethods', text: 'How would you like uniforms to be sold or distributed in your policy? (Select all that apply)', type: 'checkbox', options: ['Online ordering (convenient, low carbon)', 'School store on campus', 'From a supplier\'s shop', 'Pickup at school', 'Pop-up events at school'] },
+    { id: 'distributionMethods', text: 'How would you like uniforms to be sold or distributed in your policy? (Select all that apply)', type: 'checkbox', options: ['Online ordering (convenient, low carbon)', 'School store on campus', 'From a supplier's shop', 'Pickup at school', 'Pop-up events at school'] },
     { id: 'transparencyRequirements', text: 'Would you like the supply chain to be transparent in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'carbonOffsetting', text: 'Would you like to include offsetting carbon emissions in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'impactCalculation', text: 'Would you like to include measuring environmental impact in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'endOfLife', text: 'What options for old uniforms would you like in your policy? (Select all that apply)', type: 'checkbox', options: ['School collection for resale/giveaway', 'Recycling program', 'Donate to charity'] },
     { id: 'studentGovernance', text: 'Would you like students involved in uniform decisions in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'studentEducation', text: 'Would you like to educate students about the impacts of fashion, related to their uniforms, in your policy?', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'farmFactoryVisits', text: 'Would you like to include farm and factory visits for students in your policy?', type: 'radio', options: ['Yes', 'No'] },
     { id: 'implementationTimeline', text: 'When do you pledge to implement this policy?', type: 'select', options: ['Within 12 months', 'Within 24 months', 'Within 36 months'] }
   ];
 
@@ -67,13 +68,14 @@ const UniformPolicyMaker = () => {
     'What options for old uniforms would you like in your policy? (Select all that apply)': 'End of Life',
     'Would you like students involved in uniform decisions in your policy?': 'Student Governance',
     'Would you like to educate students about the impacts of fashion, related to their uniforms, in your policy?': 'Student Education',
+    'Would you like to include farm and factory visits for students in your policy?': 'Farm Factory Visits',
     'When do you pledge to implement this policy?': 'Implementation Timeline'
   };
 
   useEffect(() => {
     if (showResults && !sent) {
       generatePolicy();
-      const sheetURL = 'https://script.google.com/macros/s/AKfycby1ZFGgIUIINIgaOKeSBx-yC5QIjquNyfgQRtp8EKUB_C3EeGksYUEgvlwb7cdg88qVpw/exec';
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbzg6AGNI0Fd_QZg2Y0e_GZ4IBB6ub-MvkwO3GH62VRCx3aPgtEwx76tTw-3PoU_vgC8uQ/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
         'Last Name': userData.lastName,
@@ -84,17 +86,14 @@ const UniformPolicyMaker = () => {
         'Timestamp': new Date().toISOString(),
       };
 
-      // Map implementation timeline to years for Commitment
-      let commitmentYears = '';
+      // Map implementation timeline to months for Commitment
+      let commitmentMonths = '';
       const timeline = userAnswers['implementationTimeline'] || '';
-      if (timeline.includes('12')) {
-        commitmentYears = '1';
-      } else if (timeline.includes('24')) {
-        commitmentYears = '2';
-      } else if (timeline.includes('36')) {
-        commitmentYears = '3';
+      const match = timeline.match(/(\d+)/);
+      if (match) {
+        commitmentMonths = match[1];
       }
-      payload['Commitment'] = commitmentYears;
+      payload['Commitment'] = commitmentMonths;
 
       Object.entries(userAnswers).forEach(([questionId, answer]) => {
         const question = questions.find(q => q.id === questionId)?.text || questionId;
@@ -181,25 +180,25 @@ const UniformPolicyMaker = () => {
     let policy = '';
 
     // Header
-    policy += `## **Sustainable and Ethical Uniform Policy**\n\n**Institution: ${userData.school}**\n**Policy Creation Date: ${currentDate}**\n**Objective:** To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions. This policy outlines desired practices and a pledge to implement them within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}.\n\n---\n\n`;
+    policy += `## **Sustainable and Ethical Uniform Policy**\n\n**Institution: ${userData.school}**\n**Policy Creation Date: ${currentDate}**\n**Objective:** To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions. This policy serves as a pledge, signed by school leadership, to implement changes within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}, and the school will be added to the list of pledged institutions.\n\n---\n\n`;
 
     // Policy Overview
     policy += `### **1. Policy Overview**\n\nThis Uniform Policy for ${userData.school} represents a pledge to responsible procurement, emphasizing environmental stewardship, ethical labor practices, and social accountability. It addresses common challenges in school uniform management, such as inconsistent policies during leadership changes, by providing a comprehensive framework that prioritizes sustainability and ethics. The policy serves as a binding commitment, to be signed by school leadership, and includes a timeline for implementation to facilitate gradual, achievable progress. By adopting this policy, ${userData.school} joins a growing list of institutions dedicated to sustainable uniforms, contributing to broader environmental and social benefits.\n\n---\n\n`;
 
     // Materials and Sustainability
-    policy += `### **2. Materials and Environmental Sustainability**\n\n${userData.school} commits to sourcing uniforms from materials that minimize environmental harm, with preferred materials including organic cotton, which is eco-friendly and pesticide-free, reducing water usage and chemical pollution, and recycled polyester, made from recycled plastic bottles to divert waste from landfills. The school pledges to prioritize these options in all future procurements.\n\nCarbon emissions from production and shipping will be offset through verifiable projects, such as local tree planting initiatives.\n\nEnvironmental impact, including water use, energy consumption, and pollution, will be measured using simple tools or expert consultations.\n\nFor end-of-life management, the school will introduce options such as school collection for resale or giveaway, recycling programs, and donating unused items to charity, to reduce waste.\n\nThe school also commits to educating students about the impacts of fashion, related to their uniforms, integrating this into the curriculum to foster awareness and responsibility.\n\nThese commitments will be implemented within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}.\n\n---\n\n`;
+    policy += `### **2. Materials and Environmental Sustainability**\n\n${userData.school} commits to sourcing uniforms from materials that minimize environmental harm, with preferred materials including ${(userAnswers.materialsPreferences as string[] || []).join(', ')}. The school pledges to prioritize these options in all future procurements.\n\n${userAnswers.carbonOffsetting === 'Yes' ? 'Carbon emissions from production and shipping will be offset through verifiable projects, such as local tree planting initiatives.\n\n' : ''}${userAnswers.impactCalculation === 'Yes' ? 'Environmental impact, including water use, energy consumption, and pollution, will be measured using simple tools or expert consultations.\n\n' : ''}For end-of-life management, the school will introduce options such as ${(userAnswers.endOfLife as string[] || []).join(', ')}, to reduce waste.\n\n${userAnswers.studentEducation === 'Yes' ? 'The school also commits to educating students about the impacts of fashion, related to their uniforms, integrating this into the curriculum to foster awareness and responsibility.\n\n' : ''}These commitments will be implemented within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}.\n\n---\n\n`;
 
     // Ethical Manufacturing
-    policy += `### **3. Ethical Manufacturing and Labour Standards**\n\nTo uphold human rights and fair labor, ${userData.school} requires all suppliers to meet rigorous ethical standards. This includes fair labor audits to verify compliance, guarantees of wages above poverty levels, certifications for safe and fair working conditions, and strict prohibitions on child labor with safe environments for workers.\n\nThis ethical framework protects workers throughout the supply chain and aligns with international labor conventions, fostering long-term partnerships with responsible manufacturers. Non-compliance will result in immediate contract review and potential termination, ensuring accountability at every level.\n\n---\n\n`;
+    policy += `### **3. Ethical Manufacturing and Labour Standards**\n\nTo uphold human rights and fair labor, ${userData.school} requires all suppliers to meet rigorous ethical standards. This includes ${(userAnswers.ethicalStandards as string[] || []).join(', ')}.\n\nThis ethical framework protects workers throughout the supply chain and aligns with international labor conventions, fostering long-term partnerships with responsible manufacturers. Non-compliance will result in immediate contract review and potential termination, ensuring accountability at every level.\n\n---\n\n`;
 
     // Distribution and Sales
-    policy += `### **4. Distribution and Sales Channels**\n\n${userData.school} will distribute uniforms through methods that prioritize convenience, accessibility, and low environmental impact. Preferred channels include online ordering for its convenience and reduced carbon footprint, a school store on campus for direct access, supplier shops for variety, pickup at school to minimize shipping, and pop-up events for seasonal needs. These options will be optimized to reduce emissions from transportation, making uniforms affordable and easy to obtain for families.\n\n---\n\n`;
+    policy += `### **4. Distribution and Sales Channels**\n\n${userData.school} will distribute uniforms through methods that prioritize convenience, accessibility, and low environmental impact. Preferred channels include ${(userAnswers.distributionMethods as string[] || []).join(', ')}. These options will be optimized to reduce emissions from transportation, making uniforms affordable and easy to obtain for families.\n\n---\n\n`;
 
     // Transparency
-    policy += `### **5. Supply Chain Transparency**\n\nTransparency is essential to building trust and accountability in the uniform supply chain. ${userData.school} requires full end-to-end visibility, where suppliers disclose factory locations, materials origins, transport methods and emissions, and all certifications. This information will be shared with parents, staff, and students through annual reports or a dedicated online portal.\n\nSuch transparency not only empowers the school community but also encourages continuous improvement among suppliers, aligning with global best practices for ethical sourcing.\n\n---\n\n`;
+    policy += `### **5. Supply Chain Transparency**\n\n${userAnswers.transparencyRequirements === 'Yes' ? `Transparency is essential to building trust and accountability in the uniform supply chain. ${userData.school} requires full end-to-end visibility, where suppliers disclose factory locations, materials origins, transport methods and emissions, and all certifications. This information will be shared with parents, staff, and students through annual reports or a dedicated online portal.\n\nSuch transparency not only empowers the school community but also encourages continuous improvement among suppliers, aligning with global best practices for ethical sourcing.` : `${userData.school} recognizes the importance of supply chain transparency and will work toward improving visibility where possible.`}\n\n---\n\n`;
 
     // Enforcement and Review
-    policy += `### **6. Enforcement and Review**\n\nTo safeguard student health and the environment, ${userData.school} prohibits harmful chemicals in uniforms, including toxic phthalates (endocrine disruptors), cancer-causing amines from azo dyes, nonylphenol ethoxylates (NPEs, toxic to aquatic life), and nonylphenol (NP), as highlighted in Greenpeace's Toxic Threads report and similar benchmarks. Suppliers must certify compliance, with testing required for all batches.\n\nStudent involvement in uniform decisions is required, with a student committee providing feedback on comfort, design, and sustainability, reviewed annually.\n\nThe policy will be formally reviewed ${userAnswers.policyReview || 'every 3 years'} by the Sustainability Committee to incorporate new best practices and address any gaps. During leadership transitions, the school board must reaffirm the policy annually to prevent disruptions.\n\n**Sustainable Uniform Pledge**\n${userData.school} pledges to implement this policy within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}. This pledge is part of a broader commitment to sustainability, and the school will be listed among pledged institutions.\n\n**Signed:** ______________________________ (School Leader)\n**Date:** ______________________________\n\n`;
+    policy += `### **6. Enforcement and Review**\n\n${userAnswers.restrictedSubstances === 'Yes' ? `To safeguard student health and the environment, ${userData.school} prohibits harmful chemicals in uniforms, including toxic phthalates (endocrine disruptors), cancer-causing amines from azo dyes, nonylphenol ethoxylates (NPEs, toxic to aquatic life), and nonylphenol (NP), as highlighted in Greenpeace's Toxic Threads report and similar benchmarks. Suppliers must certify compliance, with testing required for all batches.\n\n` : ''}${userAnswers.studentGovernance === 'Yes' ? 'Student involvement in uniform decisions is required, with a student committee providing feedback on comfort, design, and sustainability, reviewed annually.\n\n' : ''}The policy will be formally reviewed ${userAnswers.policyReview || 'every 3 years'} by the Sustainability Committee to incorporate new best practices and address any gaps. During leadership transitions, the school board must reaffirm the policy annually to prevent disruptions.\n\n**Sustainable Uniform Pledge**\n${userData.school} pledges to implement this policy within ${userAnswers.implementationTimeline || 'a reasonable timeframe'}. This pledge is part of a broader commitment to sustainability, and the school will be listed among pledged institutions.\n\n**Signed:** ______________________________ (School Leader)\n**Date:** ______________________________\n\n`;
 
     setPolicyText(policy);
   };
@@ -305,7 +304,7 @@ const UniformPolicyMaker = () => {
                 value={userData.lastName}
                 onChange={(e) => setUserData({...userData, lastName: e.target.value})}
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
-                required
+               required
               />
               <input
                 type="text"
@@ -316,11 +315,12 @@ const UniformPolicyMaker = () => {
                 required
               />
               <input
-                type="text"
+                type="number"
                 placeholder="Number of Students"
                 value={userData.students}
                 onChange={(e) => setUserData({...userData, students: e.target.value})}
                 className="w-full p-3 md:p-4 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-base"
+                min="1"
                 required
               />
               <select
@@ -404,124 +404,149 @@ const UniformPolicyMaker = () => {
         )}
 
         {showResults && (
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-center">Your Uniform Policy</CardTitle>
+          <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
+            <CardHeader className="text-center pb-6">
+              <CardTitle className="text-3xl md:text-4xl font-bold text-heading mb-4">
+                Your Uniform Policy
+              </CardTitle>
+              <p className="text-muted-foreground text-lg">
+                Custom policy generated for {userData.school}
+              </p>
             </CardHeader>
-            <CardContent className="text-left">
-              <div className="prose prose-lg max-w-none mb-8">
-                <div className="text-center mb-8">
-                  <h1 className="text-3xl font-bold text-heading mb-4">Sustainable and Ethical Uniform Policy</h1>
-                  <div className="space-y-2 text-lg">
-                    <p><strong>Institution:</strong> {userData.school}</p>
-                    <p><strong>Policy Creation Date:</strong> July 24, 2025</p>
-                    <p><strong>Objective:</strong> To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions. This policy outlines desired practices and a pledge to implement them within {userAnswers.implementationTimeline || 'a reasonable timeframe'}.</p>
-                  </div>
-                </div>
+            <CardContent className="space-y-8">
+              <div className="bg-background rounded-xl p-6 border border-border">
+                <div className="prose prose-sm max-w-none text-foreground">
+                  <div className="space-y-6">
+                    <div>
+                      <h2 className="text-2xl font-bold text-primary mb-4">Sustainable and Ethical Uniform Policy</h2>
+                      <div className="grid md:grid-cols-2 gap-4 mb-6">
+                        <div>
+                          <p><strong>Institution:</strong> {userData.school}</p>
+                          <p><strong>Policy Creation Date:</strong> July 24, 2025</p>
+                        </div>
+                        <div>
+                          <p><strong>Students:</strong> {userData.students}</p>
+                          <p><strong>Country:</strong> {userData.country}</p>
+                        </div>
+                      </div>
+                      <div className="bg-gradient-light-warm-section p-4 rounded-lg border border-border/50">
+                        <p className="text-sm leading-relaxed">
+                          <strong>Objective:</strong> To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions. This policy serves as a pledge, signed by school leadership, to implement changes within {userAnswers.implementationTimeline || 'a reasonable timeframe'}, and the school will be added to the list of pledged institutions.
+                        </p>
+                      </div>
+                    </div>
 
-                <div className="space-y-8">
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">1. Policy Overview</h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                      This Uniform Policy for {userData.school} represents a pledge to responsible procurement, emphasizing environmental stewardship, ethical labor practices, and social accountability. It addresses common challenges in school uniform management, such as inconsistent policies during leadership changes, by providing a comprehensive framework that prioritizes sustainability and ethics. The policy serves as a binding commitment, to be signed by school leadership, and includes a timeline for implementation to facilitate gradual, achievable progress. By adopting this policy, {userData.school} joins a growing list of institutions dedicated to sustainable uniforms, contributing to broader environmental and social benefits.
-                    </p>
-                  </section>
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">1. Policy Overview</h3>
+                      <p className="text-sm leading-relaxed">
+                        This Uniform Policy for {userData.school} represents a pledge to responsible procurement, emphasizing environmental stewardship, ethical labor practices, and social accountability. It addresses common challenges in school uniform management, such as inconsistent policies during leadership changes, by providing a comprehensive framework that prioritizes sustainability and ethics. The policy serves as a binding commitment, to be signed by school leadership, and includes a timeline for implementation to facilitate gradual, achievable progress. By adopting this policy, {userData.school} joins a growing list of institutions dedicated to sustainable uniforms, contributing to broader environmental and social benefits.
+                      </p>
+                    </div>
 
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">2. Materials and Environmental Sustainability</h2>
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
-                      <p>
-                        {userData.school} commits to sourcing uniforms from materials that minimize environmental harm, with preferred materials including organic cotton, which is eco-friendly and pesticide-free, reducing water usage and chemical pollution, and recycled polyester, made from recycled plastic bottles to divert waste from landfills. The school pledges to prioritize these options in all future procurements.
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">2. Materials and Environmental Sustainability</h3>
+                      <p className="text-sm leading-relaxed">
+                        {userData.school} commits to sourcing uniforms from materials that minimize environmental harm, with preferred materials including {(userAnswers.materialsPreferences as string[] || []).join(', ')}. The school pledges to prioritize these options in all future procurements.
                       </p>
-                      <p>
-                        Carbon emissions from production and shipping will be offset through verifiable projects, such as local tree planting initiatives.
+                      {userAnswers.carbonOffsetting === 'Yes' && (
+                        <p className="text-sm leading-relaxed">
+                          Carbon emissions from production and shipping will be offset through verifiable projects, such as local tree planting initiatives.
+                        </p>
+                      )}
+                      {userAnswers.impactCalculation === 'Yes' && (
+                        <p className="text-sm leading-relaxed">
+                          Environmental impact, including water use, energy consumption, and pollution, will be measured using simple tools or expert consultations.
+                        </p>
+                      )}
+                      <p className="text-sm leading-relaxed">
+                        For end-of-life management, the school will introduce options such as {(userAnswers.endOfLife as string[] || []).join(', ')}, to reduce waste.
                       </p>
-                      <p>
-                        Environmental impact, including water use, energy consumption, and pollution, will be measured using simple tools or expert consultations.
-                      </p>
-                      <p>
-                        For end-of-life management, the school will introduce options such as school collection for resale or giveaway, recycling programs, and donating unused items to charity, to reduce waste.
-                      </p>
-                      <p>
-                        The school also commits to educating students about the impacts of fashion, related to their uniforms, integrating this into the curriculum to foster awareness and responsibility.
-                      </p>
-                      <p>
+                      {userAnswers.studentEducation === 'Yes' && (
+                        <p className="text-sm leading-relaxed">
+                          The school also commits to educating students about the impacts of fashion, related to their uniforms, integrating this into the curriculum to foster awareness and responsibility.
+                        </p>
+                      )}
+                      <p className="text-sm leading-relaxed font-medium">
                         These commitments will be implemented within {userAnswers.implementationTimeline || 'a reasonable timeframe'}.
                       </p>
                     </div>
-                  </section>
 
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">3. Ethical Manufacturing and Labour Standards</h2>
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
-                      <p>
-                        To uphold human rights and fair labor, {userData.school} requires all suppliers to meet rigorous ethical standards. This includes fair labor audits to verify compliance, guarantees of wages above poverty levels, certifications for safe and fair working conditions, and strict prohibitions on child labor with safe environments for workers.
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">3. Ethical Manufacturing and Labour Standards</h3>
+                      <p className="text-sm leading-relaxed">
+                        To uphold human rights and fair labor, {userData.school} requires all suppliers to meet rigorous ethical standards. This includes {(userAnswers.ethicalStandards as string[] || []).join(', ')}.
                       </p>
-                      <p>
+                      <p className="text-sm leading-relaxed">
                         This ethical framework protects workers throughout the supply chain and aligns with international labor conventions, fostering long-term partnerships with responsible manufacturers. Non-compliance will result in immediate contract review and potential termination, ensuring accountability at every level.
                       </p>
                     </div>
-                  </section>
 
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">4. Distribution and Sales Channels</h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {userData.school} will distribute uniforms through methods that prioritize convenience, accessibility, and low environmental impact. Preferred channels include online ordering for its convenience and reduced carbon footprint, a school store on campus for direct access, supplier shops for variety, pickup at school to minimize shipping, and pop-up events for seasonal needs. These options will be optimized to reduce emissions from transportation, making uniforms affordable and easy to obtain for families.
-                    </p>
-                  </section>
-
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">5. Supply Chain Transparency</h2>
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
-                      <p>
-                        Transparency is essential to building trust and accountability in the uniform supply chain. {userData.school} requires full end-to-end visibility, where suppliers disclose factory locations, materials origins, transport methods and emissions, and all certifications. This information will be shared with parents, staff, and students through annual reports or a dedicated online portal.
-                      </p>
-                      <p>
-                        Such transparency not only empowers the school community but also encourages continuous improvement among suppliers, aligning with global best practices for ethical sourcing.
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">4. Distribution and Sales Channels</h3>
+                      <p className="text-sm leading-relaxed">
+                        {userData.school} will distribute uniforms through methods that prioritize convenience, accessibility, and low environmental impact. Preferred channels include {(userAnswers.distributionMethods as string[] || []).join(', ')}. These options will be optimized to reduce emissions from transportation, making uniforms affordable and easy to obtain for families.
                       </p>
                     </div>
-                  </section>
 
-                  <section>
-                    <h2 className="text-2xl font-bold text-heading mb-4">6. Enforcement and Review</h2>
-                    <div className="space-y-4 text-muted-foreground leading-relaxed">
-                      <p>
-                        To safeguard student health and the environment, {userData.school} prohibits harmful chemicals in uniforms, including toxic phthalates (endocrine disruptors), cancer-causing amines from azo dyes, nonylphenol ethoxylates (NPEs, toxic to aquatic life), and nonylphenol (NP), as highlighted in Greenpeace's Toxic Threads report and similar benchmarks. Suppliers must certify compliance, with testing required for all batches.
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">5. Supply Chain Transparency</h3>
+                      <p className="text-sm leading-relaxed">
+                        {userAnswers.transparencyRequirements === 'Yes' ? 
+                          `Transparency is essential to building trust and accountability in the uniform supply chain. ${userData.school} requires full end-to-end visibility, where suppliers disclose factory locations, materials origins, transport methods and emissions, and all certifications. This information will be shared with parents, staff, and students through annual reports or a dedicated online portal. Such transparency not only empowers the school community but also encourages continuous improvement among suppliers, aligning with global best practices for ethical sourcing.` : 
+                          `${userData.school} recognizes the importance of supply chain transparency and will work toward improving visibility where possible.`
+                        }
                       </p>
-                      <p>
-                        Student involvement in uniform decisions is {userAnswers.studentGovernance === 'Yes' ? 'required' : 'optional'}, with a student committee providing feedback on comfort, design, and sustainability, reviewed annually.
-                      </p>
-                      <p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold text-primary">6. Enforcement and Review</h3>
+                      {userAnswers.restrictedSubstances === 'Yes' && (
+                        <p className="text-sm leading-relaxed">
+                          To safeguard student health and the environment, {userData.school} prohibits harmful chemicals in uniforms, including toxic phthalates (endocrine disruptors), cancer-causing amines from azo dyes, nonylphenol ethoxylates (NPEs, toxic to aquatic life), and nonylphenol (NP), as highlighted in Greenpeace's Toxic Threads report and similar benchmarks. Suppliers must certify compliance, with testing required for all batches.
+                        </p>
+                      )}
+                      {userAnswers.studentGovernance === 'Yes' && (
+                        <p className="text-sm leading-relaxed">
+                          Student involvement in uniform decisions is required, with a student committee providing feedback on comfort, design, and sustainability, reviewed annually.
+                        </p>
+                      )}
+                      <p className="text-sm leading-relaxed">
                         The policy will be formally reviewed {userAnswers.policyReview || 'every 3 years'} by the Sustainability Committee to incorporate new best practices and address any gaps. During leadership transitions, the school board must reaffirm the policy annually to prevent disruptions.
                       </p>
-                    </div>
-                  </section>
-
-                  <section className="bg-muted p-6 rounded-lg">
-                    <h3 className="text-xl font-bold text-heading mb-4">Sustainable Uniform Pledge</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
-                      {userData.school} pledges to implement this policy within {userAnswers.implementationTimeline || 'a reasonable timeframe'}. This pledge is part of a broader commitment to sustainability, and the school will be listed among pledged institutions.
-                    </p>
-                    <div className="space-y-4 mt-6">
-                      <div className="flex justify-between items-center border-b border-border pb-2">
-                        <span className="font-medium">Signed:</span>
-                        <span className="text-muted-foreground">______________________________ (School Leader)</span>
+                      
+                      <div className="bg-gradient-light-warm-section p-4 rounded-lg border border-border/50">
+                        <h4 className="font-semibold text-primary mb-2">Sustainable Uniform Pledge</h4>
+                        <p className="text-sm leading-relaxed mb-4">
+                          {userData.school} pledges to implement this policy within {userAnswers.implementationTimeline || 'a reasonable timeframe'}. This pledge is part of a broader commitment to sustainability, and the school will be listed among pledged institutions.
+                        </p>
+                        <div className="space-y-2">
+                          <div className="flex justify-between border-b border-border/30 pb-2">
+                            <span className="font-medium">Signed:</span>
+                            <span className="border-b border-border w-48 text-center">______________________________ (School Leader)</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="font-medium">Date:</span>
+                            <span className="border-b border-border w-48 text-center">______________________________</span>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium">Date:</span>
-                        <span className="text-muted-foreground">______________________________</span>
-                      </div>
                     </div>
-                  </section>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex gap-4">
-                <Button onClick={downloadPolicy}>
-                  Download PDF
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button onClick={downloadPolicy} size="lg" className="flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4" />
+                  Download PDF Policy
                 </Button>
               </div>
-              <p className="text-muted-foreground mt-4">A copy has been sent to your email: {userData.email}</p>
+              
+              <div className="text-center">
+                <p className="text-muted-foreground">
+                  A copy has been sent to your email: <span className="font-medium">{userData.email}</span>
+                </p>
+              </div>
             </CardContent>
           </Card>
         )}
