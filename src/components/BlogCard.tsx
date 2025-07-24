@@ -22,7 +22,7 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
 
   return (
     <Link to={`/blog/${post.slug}`} className="block">
-      <Card className={`overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer h-[450px] flex flex-col hover:scale-105 ${className}`}>
+      <Card className={`overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer h-[550px] flex flex-col hover:scale-105 ${className}`}>
         <div className="aspect-video relative overflow-hidden bg-muted/50">
           <img 
             src={post.featuredImage.url} 
