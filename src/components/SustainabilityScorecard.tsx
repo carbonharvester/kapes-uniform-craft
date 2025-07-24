@@ -440,10 +440,8 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       improvements.push("educating students about the environmental impacts of fashion");
     }
     
-    // Generate structured narrative response
-    let narrative = `**Your Personalised Sustainability Overview**\n\n`;
-    
-    narrative += `Your Sustainability Score stands at ${score}%, reflecting `;
+    // Generate narrative response
+    let narrative = `Your Sustainability Score stands at ${score}%, reflecting `;
     
     if (score < 30) {
       narrative += "a modest starting point on your sustainability journey";
@@ -453,40 +451,46 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       narrative += "strong commitment to sustainability";
     }
     
-    narrative += ".\n\n";
+    narrative += ". ";
     
-    // Add strengths section
+    // Add strengths
     if (strengths.length > 0) {
-      narrative += "**🌟 Your Sustainability Strengths:**\n";
-      strengths.forEach(strength => {
-        narrative += `• ${strength.charAt(0).toUpperCase() + strength.slice(1)}\n`;
-      });
-      narrative += "\n";
+      if (strengths.length === 1) {
+        narrative += `You're doing well by ${strengths[0]}. `;
+      } else if (strengths.length === 2) {
+        narrative += `You're doing well by ${strengths[0]} and ${strengths[1]}. `;
+      } else {
+        const lastStrength = strengths.pop();
+        narrative += `You're doing well by ${strengths.join(', ')}, and ${lastStrength}. `;
+      }
     }
     
-    // Add improvement opportunities section
+    // Add improvement opportunities
     if (improvements.length > 0) {
-      narrative += "**🎯 Priority Areas for Enhancement:**\n";
-      improvements.forEach(improvement => {
-        narrative += `• ${improvement.charAt(0).toUpperCase() + improvement.slice(1)}\n`;
-      });
-      narrative += "\n";
-    }
-    
-    // Add next steps
-    narrative += "**📈 Recommended Next Steps:**\n";
-    if (score >= 60) {
-      narrative += "• Continue leading by example in sustainable practices\n";
-      narrative += "• Share your success stories to inspire other schools\n";
-      narrative += "• Explore advanced sustainability initiatives like carbon neutrality\n";
-    } else if (score >= 30) {
-      narrative += "• Focus on the priority areas identified above\n";
-      narrative += "• Develop a sustainability roadmap with measurable goals\n";
-      narrative += "• Engage students and staff in sustainability education\n";
-    } else {
-      narrative += "• Start with materials - the foundation of sustainable uniforms\n";
-      narrative += "• Implement supply chain transparency measures\n";
-      narrative += "• Consider partnering with sustainable uniform providers\n";
+      if (score < 60) {
+        narrative += "However, there are significant opportunities for improvement to elevate your score. ";
+        
+        if (score < 30) {
+          narrative += "Prioritizing efforts in materials and supply chain transparency could yield the most impact. ";
+        }
+        
+        narrative += "Consider ";
+        
+        if (improvements.length === 1) {
+          narrative += `${improvements[0]}`;
+        } else if (improvements.length === 2) {
+          narrative += `${improvements[0]} and ${improvements[1]}`;
+        } else {
+          const lastImprovement = improvements.pop();
+          narrative += `${improvements.join(', ')}, and ${lastImprovement}`;
+        }
+        
+        narrative += " for a more sustainable future.";
+      } else {
+        narrative += `To achieve even greater impact, consider ${improvements.join(', ')}.`;
+      }
+    } else if (score >= 60) {
+      narrative += "You have established a strong foundation and are well-positioned to lead by example in sustainable uniform programs.";
     }
     
     return { narrative };
@@ -1060,20 +1064,24 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               )}
 
               <div className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                <div className="text-left space-y-4">
-                  {scoreDescription.split('\n').map((line, index) => {
-                    if (line.startsWith('**') && line.endsWith('**')) {
-                      return <h3 key={index} className="font-bold text-lg text-foreground">{line.replace(/\*\*/g, '')}</h3>;
-                    } else if (line.startsWith('✅')) {
-                      return <p key={index} className="text-green-600 font-medium">{line}</p>;
-                    } else if (line.match(/^[🌱♻️📦🚛🔄💪🎯📈🌟]/)) {
-                      return <p key={index} className="text-foreground font-medium">{line}</p>;
-                    } else if (line.trim()) {
-                      return <p key={index}>{line}</p>;
-                    }
-                    return null;
-                  })}
-                </div>
+                {lowSustainability ? (
+                  <div className="text-left space-y-4">
+                    {scoreDescription.split('\n').map((line, index) => {
+                      if (line.startsWith('**') && line.endsWith('**')) {
+                        return <h3 key={index} className="font-bold text-lg text-foreground">{line.replace(/\*\*/g, '')}</h3>;
+                      } else if (line.startsWith('✅')) {
+                        return <p key={index} className="text-green-600 font-medium">{line}</p>;
+                      } else if (line.match(/^[🌱♻️📦🚛🔄💪🎯📈🌟]/)) {
+                        return <p key={index} className="text-foreground font-medium">{line}</p>;
+                      } else if (line.trim()) {
+                        return <p key={index}>{line}</p>;
+                      }
+                      return null;
+                    })}
+                  </div>
+                ) : (
+                  <p>{scoreDescription}</p>
+                )}
               </div>
               
               {noImprovement && (
