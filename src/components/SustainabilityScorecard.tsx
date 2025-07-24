@@ -1047,6 +1047,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 <div className="text-lg text-muted-foreground">Overall Sustainability Rating</div>
               </div>
               
+              {lowSustainability && (
+                <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+                  Thank you for taking the time to complete the scorecard. However, we are currently focusing our consultations on schools that prioritise sustainability as a core value. Please find your personalised recommendations below:
+                </p>
+              )}
+
               <div className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
                 {lowSustainability ? (
                   <div className="text-left space-y-4">
@@ -1071,12 +1077,6 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               {noImprovement && (
                 <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
                   Thanks, we would love to speak to you at a time when you are considering improving your uniform program.
-                </p>
-              )}
-
-              {lowSustainability && (
-                <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Thank you for taking the time to complete the scorecard. However, we are currently focusing our consultations on schools that prioritise sustainability as a core value.
                 </p>
               )}
               
