@@ -1,4 +1,5 @@
 
+import * as React from 'react';
 import { Hero } from "@/components/Hero";
 import { SchoolCodeEntry } from "@/components/SchoolCodeEntry";
 import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
