@@ -30,19 +30,20 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <CardHeader className="flex-1 flex flex-col">
-          <CardTitle className="text-lg font-semibold text-black group-hover:text-primary transition-colors mb-3">
-            {post.title}
-          </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground font-inter overflow-hidden flex-1" style={{
-            display: '-webkit-box',
-            WebkitLineClamp: 8,
-            WebkitBoxOrient: 'vertical',
-            textOverflow: 'ellipsis',
-            minHeight: '8rem'
-          }}>
-            {post.excerpt}
-          </CardDescription>
+        <CardHeader className="flex-1 flex flex-col justify-between">
+          <div>
+            <CardTitle className="text-lg font-semibold text-black group-hover:text-primary transition-colors mb-3">
+              {post.title}
+            </CardTitle>
+            <CardDescription className="text-sm text-muted-foreground font-inter overflow-hidden" style={{
+              display: '-webkit-box',
+              WebkitLineClamp: 6,
+              WebkitBoxOrient: 'vertical',
+              textOverflow: 'ellipsis'
+            }}>
+              {post.excerpt}
+            </CardDescription>
+          </div>
         </CardHeader>
         <CardContent className="pt-0 mt-auto">
           <div className="flex items-center justify-between">
