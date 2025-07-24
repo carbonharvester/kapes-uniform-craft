@@ -69,7 +69,7 @@ export const ImageContentSection: React.FC<ImageContentSectionProps> = ({
   const decorativeRight = imagePosition === 'left' ? '-right-4' : '-left-4';
 
   return (
-    <section className={`py-20 lg:py-32 ${className}`}>
+    <section className={`py-20 lg:py-32 bg-gradient-light-warm-section ${className}`}>
       <div className="container mx-auto max-w-7xl px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
