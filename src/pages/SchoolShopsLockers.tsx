@@ -136,52 +136,93 @@ export const SchoolShopsLockers = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
           {/* E-Commerce Lockers Section */}
-          <section>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">E-Commerce Lockers</h2>
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-6 py-2 mb-6">
-                <Package className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">Smart Pickup Solution</span>
+          <section className="py-20 lg:py-32">
+            <div className="container mx-auto max-w-7xl px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+                  E-Commerce Lockers
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Secure, convenient, and available 24/7—the future of uniform collection. Smart pickup solution for busy families.
+                </p>
               </div>
-              <p className="text-muted-foreground text-lg">Secure, convenient, and available 24/7—the future of uniform collection</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Shield className="h-6 w-6 text-purple-500" />
-                  </div>
-                  <h3 className="text-xl font-medium mb-4">Secure & Strategic</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.
-                  </p>
-                </CardContent>
-              </Card>
+              
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Content Section */}
+                <div className="space-y-8">
+                  <div className="grid gap-8">
+                    <div className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <Shield className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          Secure & Strategic
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Secure, self-service lockers placed strategically on campus for maximum convenience and accessibility.
+                        </p>
+                      </div>
+                    </div>
 
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="h-6 w-6 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-medium mb-4">24/7 Convenience</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.
-                  </p>
-                </CardContent>
-              </Card>
+                    <div className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <Clock className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          24/7 Convenience
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Parents order online and collect at their convenience—no more delivery uncertainty or missed parcels.
+                        </p>
+                      </div>
+                    </div>
 
-              <Card className="border-0 shadow-glass hover:shadow-xl transition-all duration-300 group">
-                <CardContent className="p-8 h-full">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Zap className="h-6 w-6 text-blue-500" />
+                    <div className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <Zap className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          Zero Admin Burden
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-medium mb-4">Zero Admin Burden</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
-                  </p>
-                </CardContent>
-              </Card>
+                  
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      A modern, flexible solution designed for today's busy families—one more way Kapes makes uniforms effortless for everyone involved.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Image Section */}
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/src/assets/smart-locker.jpg" 
+                      alt="E-commerce lockers - smart pickup solution" 
+                      className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                  </div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+                </div>
+              </div>
             </div>
           </section>
 
