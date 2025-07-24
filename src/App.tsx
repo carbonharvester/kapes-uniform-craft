@@ -28,6 +28,7 @@ import SustainProTier from "@/pages/SustainProTier";
 import SustainabilityEthics from "@/pages/SustainabilityEthics";
 import SustainabilityScorecard from "@/pages/SustainabilityScorecard";
 import { UniformSolutions } from "@/pages/UniformSolutions";
+import UniformPolicyMakerPage from "@/pages/UniformPolicyMaker";
 import Affiliate from "@/pages/Affiliate";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Header } from "@/components/Header";
@@ -72,6 +73,7 @@ const App = () => {
               <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
               <Route path="/sustainability-scorecard" element={<SustainabilityScorecard />} />
               <Route path="/uniform-solutions" element={<UniformSolutions />} />
+              <Route path="/uniform-policy-maker" element={<UniformPolicyMakerPage />} />
               <Route path="/affiliate" element={<Affiliate />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

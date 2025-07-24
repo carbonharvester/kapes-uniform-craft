@@ -6,8 +6,7 @@ import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { ValueCalculator } from "@/components/ValueCalculator";
 import { TierQuiz } from "@/components/TierQuiz";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
-import UniformPolicyMaker from "@/components/UniformPolicyMaker";
-import { BookOpen, Download } from "lucide-react";
+import { BookOpen, Download, FileText } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const Resources = () => {
@@ -112,7 +111,67 @@ const Resources = () => {
           <FreeAuditTool />
 
           {/* Uniform Policy Maker */}
-          <UniformPolicyMaker />
+          <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-primary/10 text-primary">
+                <FileText className="w-4 h-4 mr-2" />
+                Policy Generator
+              </Badge>
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+                Uniform Policy Maker
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Create comprehensive, sustainable uniform policies tailored to your school's specific needs and goals
+              </p>
+            </div>
+
+            <Card className="border-0 shadow-glass max-w-4xl mx-auto">
+              <CardHeader className="text-center pb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <CardTitle className="text-2xl font-medium">Build Custom Policies</CardTitle>
+              </CardHeader>
+              <CardContent className="p-8 text-center space-y-6">
+                <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+                  Generate professional uniform policies that align with your sustainability goals, budget constraints, and educational objectives.
+                </p>
+                <div className="grid md:grid-cols-3 gap-6 mt-8">
+                  <div className="space-y-2">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl mx-auto flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-medium">Custom Templates</h3>
+                    <p className="text-sm text-muted-foreground">Tailored to your school type and goals</p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl mx-auto flex items-center justify-center">
+                      <Download className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-medium">Ready to Use</h3>
+                    <p className="text-sm text-muted-foreground">Download as PDF for immediate implementation</p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl mx-auto flex items-center justify-center">
+                      <BookOpen className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="font-medium">Best Practices</h3>
+                    <p className="text-sm text-muted-foreground">Based on sustainability standards</p>
+                  </div>
+                </div>
+                <div className="pt-6">
+                  <Button 
+                    size="lg" 
+                    className="rounded-xl px-8 hover:scale-105 transition-smooth"
+                    onClick={() => window.location.href = '/uniform-policy-maker'}
+                  >
+                    <FileText className="w-5 h-5 mr-2" />
+                    Create Your Policy
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
 
           {/* Partnership Tier Quiz */}
           <section className="py-16 bg-gradient-warm-section -mx-4 px-4 rounded-3xl">
