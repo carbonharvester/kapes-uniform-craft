@@ -64,7 +64,7 @@ const SustainabilityScorecardPage = () => {
               <div className="order-2 lg:order-1">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-medium mb-4 md:mb-6 text-center lg:text-left">What You'll Receive:</h2>
                 <div className="space-y-3 md:space-y-4">
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-white">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Target className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
