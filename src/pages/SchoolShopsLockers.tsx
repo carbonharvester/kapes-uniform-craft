@@ -136,7 +136,7 @@ export const SchoolShopsLockers = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
           {/* E-Commerce Lockers Section */}
-          <section className="py-20 lg:py-32">
+          <section className="pt-8 pb-20 lg:pt-12 lg:pb-32">
             <div className="container mx-auto max-w-7xl px-4">
               <div className="text-center mb-16">
                 <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
