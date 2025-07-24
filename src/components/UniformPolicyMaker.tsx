@@ -5,13 +5,6 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import jsPDF from 'jspdf';
 
-const countries = [
-  'United Kingdom', 'United States', 'Canada', 'Australia', 'New Zealand', 'Ireland',
-  'South Africa', 'Germany', 'France', 'Spain', 'Italy', 'Netherlands', 'Belgium',
-  'Switzerland', 'Austria', 'Sweden', 'Norway', 'Denmark', 'Finland', 'Portugal',
-  'Luxembourg', 'Greece', 'Cyprus', 'Malta', 'Other'
-];
-
 const UniformPolicyMaker = () => {
   const [showEntryForm, setShowEntryForm] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
@@ -33,38 +26,53 @@ const UniformPolicyMaker = () => {
 
   const formRef = useRef<HTMLDivElement>(null);
 
+  const countries = [
+    'Afghanistan', 'Albania', 'Algeria', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan',
+    'Bahrain', 'Bangladesh', 'Belarus', 'Belgium', 'Bolivia', 'Brazil', 'Bulgaria',
+    'Cambodia', 'Canada', 'Chile', 'China', 'Colombia', 'Croatia', 'Czech Republic',
+    'Denmark', 'Ecuador', 'Egypt', 'Estonia', 'Finland', 'France', 'Georgia', 'Germany', 'Ghana', 'Greece',
+    'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy',
+    'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Latvia', 'Lebanon', 'Lithuania', 'Luxembourg',
+    'Malaysia', 'Mexico', 'Morocco', 'Netherlands', 'New Zealand', 'Nigeria', 'Norway',
+    'Oman', 'Pakistan', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia',
+    'Saudi Arabia', 'Singapore', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'Sweden', 'Switzerland',
+    'Thailand', 'Turkey', 'UAE', 'Ukraine', 'United Kingdom', 'United States', 'Vietnam'
+  ];
+
   const questions = [
-    { id: 'ethicalStandards', text: 'What ethical standards do you want for suppliers? (Select all that apply). These are basic requirements to ensure workers are treated fairly and safely.', type: 'checkbox', options: ['Regular checks (audits) on factories', 'Guarantee of fair wages', 'Certifications for safe working conditions', 'Good working conditions (no child labor, safe environment)', "Don't know/I want recommendations"] },
-    { id: 'restrictedSubstances', text: 'Do you want a restricted substances list in your policy? This lists harmful chemicals that cannot be used in uniforms, like those that can cause health issues.', type: 'radio', options: ['Yes', 'No'] },
-    { id: 'restrictedDetails', text: 'Any specific details or additions for the restricted substances list? (e.g., additional chemicals to ban)', type: 'textarea' },
-    { id: 'policyReview', text: 'How often should the policy be reviewed to keep it up to date?', type: 'select', options: ['Annually', 'Every 2 years', 'Every 3 years', 'Every 5 years'] },
-    { id: 'materialsPreferences', text: 'Preferred materials for uniforms? (Select all that apply). Sustainable options like organic cotton use less water and chemicals.', type: 'checkbox', options: ['Organic cotton (better for the environment)', 'Recycled polyester (made from recycled plastic)', 'Conventional cotton', 'Synthetic fibers (like polyester)', "Don't know/I want recommendations"] },
-    { id: 'sustainabilityFocus', text: 'What level of sustainability focus do you want in the policy? This could include using eco-friendly materials and reducing waste.', type: 'radio', options: ['High (strong emphasis on green practices)', 'Medium (balanced approach)', 'Low (basic requirements)'] },
-    { id: 'distributionMethods', text: 'Preferred ways to distribute uniforms? (Select all that apply). Options like online ordering can reduce travel emissions.', type: 'checkbox', options: ['Online ordering', 'School shop', 'Supplier shop', 'Pickup at school', 'Pop-up events', "Don't know/I want recommendations"] },
-    { id: 'supplyChainTransparency', text: 'Do you want to require supply chain transparency? This means parents and staff can see where uniforms come from and how they are made.', type: 'radio', options: ['Yes', 'No'] },
-    { id: 'carbonOffsetting', text: 'Do you want to include carbon offsetting in the policy? This means balancing out emissions from making uniforms by supporting green projects.', type: 'radio', options: ['Yes', 'No'] },
-    { id: 'carbonDetails', text: 'Any specific details for carbon offsetting? (e.g., types of projects to support)', type: 'textarea' },
-    { id: 'impactCalculation', text: 'Do you want to require calculating environmental impact? This tracks things like water use and carbon emissions from uniforms.', type: 'radio', options: ['Yes', 'No'] },
-    { id: 'impactDetails', text: 'How should impact be calculated? (e.g., tools or methods)', type: 'textarea' },
-    { id: 'endOfLife', text: 'Do you want end-of-life plans for uniforms? This covers recycling, resale, or giveaway programs when uniforms are no longer used.', type: 'radio', options: ['Yes', 'No'] },
-    { id: 'endOfLifeDetails', text: 'Any specific details for end-of-life plans? (e.g., collection programs)', type: 'textarea' }
+    { id: 'ethicalStandards', text: 'What ethical standards do you want for suppliers? (Select all that apply). Ethical standards ensure workers are treated fairly, with safe conditions and fair pay.', type: 'checkbox', options: ['Fair labor checks on factories', 'Guarantee of fair wages above poverty levels', 'Certifications for safe and fair working conditions', 'No child labor and safe environments', "Don't know - suggest best practices"] },
+    { id: 'restrictedSubstances', text: 'Do you want to ban harmful chemicals in uniforms? This helps protect students\' health and the environment.', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'restrictedDetails', text: 'Any additional chemicals or details to restrict beyond basics like phthalates (hormone disruptors), azo dyes (cancer risks), and nonylphenol ethoxylates (toxic to water life)?', type: 'textarea' },
+    { id: 'policyReview', text: 'How often should the policy be reviewed to keep it current?', type: 'select', options: ['Annually (recommended for best practice)', 'Every 2 years', 'Every 3 years', 'Every 5 years'] },
+    { id: 'materialsPreferences', text: 'What materials do you prefer for uniforms? (Select all that apply). Sustainable choices like organic cotton use less water and chemicals.', type: 'checkbox', options: ['Organic cotton (eco-friendly, pesticide-free)', 'Recycled polyester (from recycled plastic bottles)', 'Standard cotton', 'Synthetic fibers like polyester', "Don't know - suggest sustainable options"] },
+    { id: 'sustainabilityFocus', text: 'How much emphasis on sustainability? This includes eco-friendly materials and reducing waste.', type: 'radio', options: ['High (make it a priority)', 'Medium (balance with costs)', 'Low (basic only)'] },
+    { id: 'distributionMethods', text: 'How should uniforms be sold or distributed? (Select all that apply). Options like online ordering reduce travel and emissions.', type: 'checkbox', options: ['Online ordering (convenient, low carbon)', 'School store on campus', 'From a supplier\'s shop', 'Pickup at school', 'Pop-up events at school', "Don't know - suggest efficient methods"] },
+    { id: 'transparencyRequirements', text: 'Should the supply chain be transparent? This means sharing where materials come from and how uniforms are made.', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'carbonOffsetting', text: 'Do you want to offset carbon emissions? This balances out pollution from making and shipping uniforms by supporting green projects like tree planting.', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'carbonDetails', text: 'Any specific projects for carbon offsetting (e.g., local tree planting)?', type: 'textarea' },
+    { id: 'impactCalculation', text: 'Do you want to measure the environmental impact? This tracks water use, energy, and pollution from uniforms.', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'impactDetails', text: 'How to measure impact (e.g., use simple tools or hire experts)?', type: 'textarea' },
+    { id: 'endOfLife', text: 'What to do with old uniforms? (Select all that apply). This reduces waste through reuse or recycling.', type: 'checkbox', options: ['School collection for resale/giveaway', 'Recycling program', 'Donate to charity', "Don't know - suggest options"] },
+    { id: 'studentGovernance', text: 'Do you want students involved in uniform decisions? This could include a student committee for feedback.', type: 'radio', options: ['Yes', 'No'] },
+    { id: 'studentGovernanceDetails', text: 'Details for student involvement (e.g., student board reviews policy yearly)?', type: 'textarea' }
   ];
 
   const columnNames: Record<string, string> = {
-    'What ethical standards do you want for suppliers? (Select all that apply). These are basic requirements to ensure workers are treated fairly and safely.': 'Ethical Standards',
-    'Do you want a restricted substances list in your policy? This lists harmful chemicals that cannot be used in uniforms, like those that can cause health issues.': 'Restricted Substances List',
-    'Any specific details or additions for the restricted substances list? (e.g., additional chemicals to ban)': 'Restricted Substances Details',
-    'How often should the policy be reviewed to keep it up to date?': 'Policy Review Frequency',
-    'Preferred materials for uniforms? (Select all that apply). Sustainable options like organic cotton use less water and chemicals.': 'Materials Preferences',
-    'What level of sustainability focus do you want in the policy? This could include using eco-friendly materials and reducing waste.': 'Sustainability Focus',
-    'Preferred ways to distribute uniforms? (Select all that apply). Options like online ordering can reduce travel emissions.': 'Distribution Methods',
-    'Do you want to require supply chain transparency? This means parents and staff can see where uniforms come from and how they are made.': 'Supply Chain Transparency',
-    'Do you want to include carbon offsetting in the policy? This means balancing out emissions from making uniforms by supporting green projects.': 'Carbon Offsetting',
-    'Any specific details for carbon offsetting? (e.g., types of projects to support)': 'Carbon Offsetting Details',
-    'Do you want to require calculating environmental impact? This tracks things like water use and carbon emissions from uniforms.': 'Impact Calculation',
-    'How should impact be calculated? (e.g., tools or methods)': 'Impact Calculation Details',
-    'Do you want end-of-life plans for uniforms? This covers recycling, resale, or giveaway programs when uniforms are no longer used.': 'End of Life Plans',
-    'Any specific details for end-of-life plans? (e.g., collection programs)': 'End of Life Details'
+    'What ethical standards do you want for suppliers? (Select all that apply). Ethical standards ensure workers are treated fairly, with safe conditions and fair pay.': 'Ethical Standards',
+    'Do you want to ban harmful chemicals in uniforms? This helps protect students\' health and the environment.': 'Restricted Substances',
+    'Any additional chemicals or details to restrict beyond basics like phthalates (hormone disruptors), azo dyes (cancer risks), and nonylphenol ethoxylates (toxic to water life)?': 'Restricted Details',
+    'How often should the policy be reviewed to keep it current?': 'Policy Review',
+    'What materials do you prefer for uniforms? (Select all that apply). Sustainable choices like organic cotton use less water and chemicals.': 'Materials Preferences',
+    'How much emphasis on sustainability? This includes eco-friendly materials and reducing waste.': 'Sustainability Focus',
+    'How should uniforms be sold or distributed? (Select all that apply). Options like online ordering reduce travel and emissions.': 'Distribution Methods',
+    'Should the supply chain be transparent? This means sharing where materials come from and how uniforms are made.': 'Transparency',
+    'Do you want to offset carbon emissions? This balances out pollution from making and shipping uniforms by supporting green projects like tree planting.': 'Carbon Offsetting',
+    'Any specific projects for carbon offsetting (e.g., local tree planting)?': 'Carbon Details',
+    'Do you want to measure the environmental impact? This tracks water use, energy, and pollution from uniforms.': 'Impact Calculation',
+    'How to measure impact (e.g., use simple tools or hire experts)?': 'Impact Details',
+    'What to do with old uniforms? (Select all that apply). This reduces waste through reuse or recycling.': 'End of Life',
+    'Do you want students involved in uniform decisions? This could include a student committee for feedback.': 'Student Governance',
+    'Details for student involvement (e.g., student board reviews policy yearly)?': 'Student Governance Details'
   };
 
   useEffect(() => {
@@ -86,8 +94,6 @@ const UniformPolicyMaker = () => {
         payload[col] = Array.isArray(answer) ? answer.join(', ') : answer;
       });
 
-      console.log('📤 Final payload being sent:', payload);
-
       fetch(sheetURL, {
         method: 'POST',
         body: 'data=' + encodeURIComponent(JSON.stringify(payload)),
@@ -95,10 +101,10 @@ const UniformPolicyMaker = () => {
       }).then(() => {
         console.log('✅ Data sent to Google Sheet');
       }).catch(error => {
-        console.error('❌ Error sending data:', error);
+        console.error('❌ Error sending data to Google Sheet:', error);
       });
 
-      // Send email with policy (assume backend handles email sending)
+      // Send email with policy
       fetch('https://script.google.com/macros/s/[your-email-script-id]/exec', {
         method: 'POST',
         body: 'data=' + encodeURIComponent(JSON.stringify({...payload, policy: policyText})),
@@ -166,22 +172,25 @@ const UniformPolicyMaker = () => {
     let policy = '';
 
     // Introduction
-    policy += `Introduction\n\nThis Uniform Policy for ${userData.school} is designed to promote ethical practices, sustainability, and continuity. It ensures that uniforms are sourced responsibly, minimizing harm to people and the planet, and provides a framework that withstands changes in school leadership.\n\n`;
+    policy += `## **Sustainable and Ethical Uniform Policy**\n\n**Institution: ${userData.school}**\n**Objective:** To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions.\n\n---\n\n`;
+
+    // Introduction
+    policy += `### **1. Policy Overview**\n\nThis Uniform Policy articulates ${userData.school}'s commitment to environmental sustainability, ethical manufacturing, and socially responsible procurement. It ensures that the school's uniform supply chain actively contributes to global climate goals, respects human rights, and maintains policy continuity independent of school leadership changes.\n\n---\n\n`;
 
     // Materials and Sustainability
-    policy += `Materials and Sustainability\n\nPreferred materials: ${userAnswers.materialsPreferences ? (userAnswers.materialsPreferences as string[]).join(', ') : 'None specified'}.\nSustainability focus: ${userAnswers.sustainabilityFocus || 'Not specified'}.\nCarbon offsetting: ${userAnswers.carbonOffsetting || 'No'}.\nDetails: ${userAnswers.carbonDetails || 'None'}.\nImpact calculation: ${userAnswers.impactCalculation || 'No'}.\nDetails: ${userAnswers.impactDetails || 'None'}.\nEnd of life plans: ${userAnswers.endOfLife || 'No'}.\nDetails: ${userAnswers.endOfLifeDetails || 'None'}.\n\n`;
+    policy += `### **2. Materials and Environmental Sustainability**\n\n**Preferred Materials**\n* ${userAnswers.materialsPreferences ? (userAnswers.materialsPreferences as string[]).map(opt => opt + (opt.includes("Don't know") ? '' : ': Low-impact, eco-friendly choice')).join('\n* ') : 'None specified'}\n\n**Sustainability Focus**\n* The school maintains a **${userAnswers.sustainabilityFocus || 'balanced'}** commitment to sustainable sourcing across all uniform items, with a focus on life cycle impact.\n\n**Carbon Offsetting**\n* ${userAnswers.carbonOffsetting === 'Yes' ? 'All carbon emissions from production and shipping must be measured and offset via verifiable projects' : 'Carbon offsetting not required'}.\n* Details: ${userAnswers.carbonDetails || 'None provided'}.\n\n**Environmental Impact Calculation**\n* ${userAnswers.impactCalculation === 'Yes' ? 'Suppliers must provide quantitative assessments using tools to track carbon footprint, water usage, and material lifecycle' : 'Impact calculation not required'}.\n* Details: ${userAnswers.impactDetails || 'None provided'}.\n\n**End-of-Life Management**\n* ${userAnswers.endOfLife ? (userAnswers.endOfLife as string[]).map(opt => opt + (opt.includes("Don't know") ? '' : ': Structured program for reuse/recycling')).join('\n* ') : 'None specified'}.\n\n---\n\n`;
 
     // Ethical Manufacturing
-    policy += `Ethical Manufacturing\n\nEthical standards for suppliers: ${userAnswers.ethicalStandards ? (userAnswers.ethicalStandards as string[]).join(', ') : 'None specified'}.\n\n`;
+    policy += `### **3. Ethical Manufacturing and Labour Standards**\n\n**Supplier Requirements**\nAll manufacturers and suppliers must comply with the following standards:\n* ${userAnswers.ethicalStandards ? (userAnswers.ethicalStandards as string[]).map(opt => opt + (opt.includes("Don't know") ? '' : ': Ensures fair treatment')).join('\n* ') : 'None specified'}.\n\n---\n\n`;
 
     // Distribution and Sales
-    policy += `Distribution and Sales\n\nPreferred methods: ${userAnswers.distributionMethods ? (userAnswers.distributionMethods as string[]).join(', ') : 'None specified'}.\n\n`;
+    policy += `### **4. Distribution and Sales Channels**\n\nTo ensure accessibility and convenience for families while minimizing environmental impact, the following distribution models are preferred:\n* ${userAnswers.distributionMethods ? (userAnswers.distributionMethods as string[]).map(opt => opt + (opt.includes("Don't know") ? '' : ': Efficient and low-emission option')).join('\n* ') : 'None specified'}.\n\n---\n\n`;
 
     // Transparency
-    policy += `Transparency\n\nSupply chain transparency required: ${userAnswers.supplyChainTransparency || 'No'}.\n\n`;
+    policy += `### **5. Supply Chain Transparency**\n\nFull **end-to-end supply chain visibility** is ${userAnswers.transparencyRequirements === 'Yes' ? 'mandatory' : 'not required'}. Suppliers must disclose:\n* Factory locations\n* Materials origin\n* Transport methods and emissions\n* Certifications\n\n---\n\n`;
 
     // Enforcement and Review
-    policy += `Enforcement and Review\n\nRestricted substances list: ${userAnswers.restrictedSubstances || 'No'}.\nDetails: The policy prohibits harmful chemicals such as phthalates, azo dyes (which can release cancer-causing amines), nonylphenol ethoxylates (NPEs), and other toxins identified in reports like Toxic Threads by Greenpeace. Additional details: ${userAnswers.restrictedDetails || 'None'}.\nPolicy review frequency: ${userAnswers.policyReview || 'Not specified'}.\nTo ensure continuity during leadership changes, the policy must be reviewed and approved by the school board annually.\n\n`;
+    policy += `### **6. Enforcement and Review**\n\n**Restricted Substances Policy (RSL)**\nUniforms must not contain harmful chemicals such as:\n* Toxic phthalates (endocrine disruptors)\n* Cancer-causing amines from azo dyes\n* Nonylphenol ethoxylates (NPEs, toxic to aquatic life)\n* Nonylphenol (NP)\n(Based on Greenpeace's Toxic Threads report and other benchmarks).\n* Additional restrictions: ${userAnswers.restrictedDetails || 'None provided'}.\n\n**Student Governance**\n* Student involvement: ${userAnswers.studentGovernance === 'Yes' ? 'Required, e.g., student committee for feedback' : 'Not required'}.\n* Details: ${userAnswers.studentGovernanceDetails || 'None provided'}.\n\n**Review Cycle**\n* Formal review: ${userAnswers.policyReview || 'Every 3 years'} by the Sustainability Committee.\n* Annual reaffirmation by school board during leadership transitions.\n\n**Non-Compliance**\n* Violation leads to contract termination.\n\n`;
 
     setPolicyText(policy);
   };
