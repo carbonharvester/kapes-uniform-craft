@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator, Factory, Leaf } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator, Factory, Leaf, FileText } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from "@/components/ui/navigation-menu";
@@ -132,6 +132,11 @@ const Navbar = ({
       description: "Assess your school's uniform sustainability",
       icon: <Calculator className="size-5 shrink-0" />,
       url: "/sustainability-scorecard"
+    }, {
+      title: "Uniform Policy Maker",
+      description: "Create custom sustainable uniform policies",
+      icon: <FileText className="size-5 shrink-0" />,
+      url: "/uniform-policy-maker"
     }, {
       title: "Resources & Tools",
       description: "Guides, calculators, and assessment tools",
