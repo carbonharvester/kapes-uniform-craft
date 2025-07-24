@@ -1,5 +1,5 @@
 export const Hero = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm pt-20 md:pt-24">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm pt-16 md:pt-20">
       {/* Hero background image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
       backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)'
