@@ -34,11 +34,12 @@ export const BlogCard = ({ post, className }: BlogCardProps) => {
           <CardTitle className="text-lg font-semibold text-black group-hover:text-primary transition-colors mb-3">
             {post.title}
           </CardTitle>
-          <CardDescription className="text-sm text-muted-foreground font-inter flex-1 overflow-hidden text-ellipsis" style={{
+          <CardDescription className="text-sm text-muted-foreground font-inter flex-1 overflow-hidden" style={{
             display: '-webkit-box',
             WebkitLineClamp: 4,
             WebkitBoxOrient: 'vertical',
-            wordBreak: 'break-word'
+            wordBreak: 'break-word',
+            textOverflow: 'ellipsis'
           }}>
             {post.excerpt}
           </CardDescription>
