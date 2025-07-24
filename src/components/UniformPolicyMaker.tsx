@@ -409,12 +409,118 @@ const UniformPolicyMaker = () => {
               <CardTitle className="text-3xl font-bold text-center">Your Uniform Policy</CardTitle>
             </CardHeader>
             <CardContent className="text-left">
-              <pre className="whitespace-pre-wrap text-muted-foreground mb-8 leading-relaxed">
-                {policyText}
-              </pre>
-              <Button onClick={downloadPolicy} className="mr-4">
-                Download PDF
-              </Button>
+              <div className="prose prose-lg max-w-none mb-8">
+                <div className="text-center mb-8">
+                  <h1 className="text-3xl font-bold text-heading mb-4">Sustainable and Ethical Uniform Policy</h1>
+                  <div className="space-y-2 text-lg">
+                    <p><strong>Institution:</strong> {userData.school}</p>
+                    <p><strong>Policy Creation Date:</strong> July 24, 2025</p>
+                    <p><strong>Objective:</strong> To establish a long-term, transparent, and accountable uniform procurement and management policy that promotes sustainability, ethical sourcing, and operational continuity across leadership transitions. This policy outlines desired practices and a pledge to implement them within {userAnswers.implementationTimeline || 'a reasonable timeframe'}.</p>
+                  </div>
+                </div>
+
+                <div className="space-y-8">
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">1. Policy Overview</h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      This Uniform Policy for {userData.school} represents a pledge to responsible procurement, emphasizing environmental stewardship, ethical labor practices, and social accountability. It addresses common challenges in school uniform management, such as inconsistent policies during leadership changes, by providing a comprehensive framework that prioritizes sustainability and ethics. The policy serves as a binding commitment, to be signed by school leadership, and includes a timeline for implementation to facilitate gradual, achievable progress. By adopting this policy, {userData.school} joins a growing list of institutions dedicated to sustainable uniforms, contributing to broader environmental and social benefits.
+                    </p>
+                  </section>
+
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">2. Materials and Environmental Sustainability</h2>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      <p>
+                        {userData.school} commits to sourcing uniforms from materials that minimize environmental harm, with preferred materials including organic cotton, which is eco-friendly and pesticide-free, reducing water usage and chemical pollution, and recycled polyester, made from recycled plastic bottles to divert waste from landfills. The school pledges to prioritize these options in all future procurements.
+                      </p>
+                      <p>
+                        Carbon emissions from production and shipping will be offset through verifiable projects, such as local tree planting initiatives.
+                      </p>
+                      <p>
+                        Environmental impact, including water use, energy consumption, and pollution, will be measured using simple tools or expert consultations.
+                      </p>
+                      <p>
+                        For end-of-life management, the school will introduce options such as school collection for resale or giveaway, recycling programs, and donating unused items to charity, to reduce waste.
+                      </p>
+                      <p>
+                        The school also commits to educating students about the impacts of fashion, related to their uniforms, integrating this into the curriculum to foster awareness and responsibility.
+                      </p>
+                      <p>
+                        These commitments will be implemented within {userAnswers.implementationTimeline || 'a reasonable timeframe'}.
+                      </p>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">3. Ethical Manufacturing and Labour Standards</h2>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      <p>
+                        To uphold human rights and fair labor, {userData.school} requires all suppliers to meet rigorous ethical standards. This includes fair labor audits to verify compliance, guarantees of wages above poverty levels, certifications for safe and fair working conditions, and strict prohibitions on child labor with safe environments for workers.
+                      </p>
+                      <p>
+                        This ethical framework protects workers throughout the supply chain and aligns with international labor conventions, fostering long-term partnerships with responsible manufacturers. Non-compliance will result in immediate contract review and potential termination, ensuring accountability at every level.
+                      </p>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">4. Distribution and Sales Channels</h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {userData.school} will distribute uniforms through methods that prioritize convenience, accessibility, and low environmental impact. Preferred channels include online ordering for its convenience and reduced carbon footprint, a school store on campus for direct access, supplier shops for variety, pickup at school to minimize shipping, and pop-up events for seasonal needs. These options will be optimized to reduce emissions from transportation, making uniforms affordable and easy to obtain for families.
+                    </p>
+                  </section>
+
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">5. Supply Chain Transparency</h2>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      <p>
+                        Transparency is essential to building trust and accountability in the uniform supply chain. {userData.school} requires full end-to-end visibility, where suppliers disclose factory locations, materials origins, transport methods and emissions, and all certifications. This information will be shared with parents, staff, and students through annual reports or a dedicated online portal.
+                      </p>
+                      <p>
+                        Such transparency not only empowers the school community but also encourages continuous improvement among suppliers, aligning with global best practices for ethical sourcing.
+                      </p>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h2 className="text-2xl font-bold text-heading mb-4">6. Enforcement and Review</h2>
+                    <div className="space-y-4 text-muted-foreground leading-relaxed">
+                      <p>
+                        To safeguard student health and the environment, {userData.school} prohibits harmful chemicals in uniforms, including toxic phthalates (endocrine disruptors), cancer-causing amines from azo dyes, nonylphenol ethoxylates (NPEs, toxic to aquatic life), and nonylphenol (NP), as highlighted in Greenpeace's Toxic Threads report and similar benchmarks. Suppliers must certify compliance, with testing required for all batches.
+                      </p>
+                      <p>
+                        Student involvement in uniform decisions is {userAnswers.studentGovernance === 'Yes' ? 'required' : 'optional'}, with a student committee providing feedback on comfort, design, and sustainability, reviewed annually.
+                      </p>
+                      <p>
+                        The policy will be formally reviewed {userAnswers.policyReview || 'every 3 years'} by the Sustainability Committee to incorporate new best practices and address any gaps. During leadership transitions, the school board must reaffirm the policy annually to prevent disruptions.
+                      </p>
+                    </div>
+                  </section>
+
+                  <section className="bg-muted p-6 rounded-lg">
+                    <h3 className="text-xl font-bold text-heading mb-4">Sustainable Uniform Pledge</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-4">
+                      {userData.school} pledges to implement this policy within {userAnswers.implementationTimeline || 'a reasonable timeframe'}. This pledge is part of a broader commitment to sustainability, and the school will be listed among pledged institutions.
+                    </p>
+                    <div className="space-y-4 mt-6">
+                      <div className="flex justify-between items-center border-b border-border pb-2">
+                        <span className="font-medium">Signed:</span>
+                        <span className="text-muted-foreground">______________________________ (School Leader)</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">Date:</span>
+                        <span className="text-muted-foreground">______________________________</span>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              
+              <div className="flex gap-4">
+                <Button onClick={downloadPolicy}>
+                  Download PDF
+                </Button>
+              </div>
               <p className="text-muted-foreground mt-4">A copy has been sent to your email: {userData.email}</p>
             </CardContent>
           </Card>
