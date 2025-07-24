@@ -73,7 +73,7 @@ const SustainabilityScorecardPage = () => {
                       <p className="text-muted-foreground text-xs sm:text-sm">Get an instant score revealing how eco-friendly your uniforms really are</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-white">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <FileText className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
@@ -82,7 +82,7 @@ const SustainabilityScorecardPage = () => {
                       <p className="text-muted-foreground text-xs sm:text-sm">Tailored feedback explaining your score with simple steps to boost it</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-white">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Users className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
@@ -91,7 +91,7 @@ const SustainabilityScorecardPage = () => {
                       <p className="text-muted-foreground text-xs sm:text-sm">Qualify for a one-on-one session with Kapes experts to implement changes</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 p-3 rounded-lg bg-background/30">
+                  <div className="flex items-start gap-3 p-3 rounded-lg bg-white">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
