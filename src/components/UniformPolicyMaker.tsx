@@ -72,7 +72,7 @@ const UniformPolicyMaker = () => {
   useEffect(() => {
     if (showResults && !sent) {
       generatePolicy();
-      const sheetURL = 'https://script.google.com/macros/s/AKfycbzpBqnrvqN_UEoKkw75FcUh6O-HFyC9fv0RvouSW1KFdHBrDgx2-Vo6_Sp2gUCGmKb3/exec';
+      const sheetURL = 'https://script.google.com/macros/s/AKfycby1ZFGgIUIINIgaOKeSBx-yC5QIjquNyfgQRtp8EKUB_C3EeGksYUEgvlwb7cdg88qVpw/exec';
       const payload: Record<string, any> = {
         'First Name': userData.firstName,
         'Last Name': userData.lastName,
@@ -81,6 +81,18 @@ const UniformPolicyMaker = () => {
         'Country': userData.country,
         'Timestamp': new Date().toISOString(),
       };
+
+      // Map implementation timeline to years for Commitment
+      let commitmentYears = '';
+      const timeline = userAnswers['implementationTimeline'] || '';
+      if (timeline.includes('12')) {
+        commitmentYears = '1';
+      } else if (timeline.includes('24')) {
+        commitmentYears = '2';
+      } else if (timeline.includes('36')) {
+        commitmentYears = '3';
+      }
+      payload['Commitment'] = commitmentYears;
 
       Object.entries(userAnswers).forEach(([questionId, answer]) => {
         const question = questions.find(q => q.id === questionId)?.text || questionId;
