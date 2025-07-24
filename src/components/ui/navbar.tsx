@@ -118,11 +118,6 @@ const Navbar = ({
       description: "Comprehensive sustainability solutions for maximum impact",
       icon: <Award className="size-5 shrink-0" />,
       url: "/impact-partnership"
-    }, {
-      title: "Partner With Us",
-      description: "Discover how we can transform your uniform program",
-      icon: <Users className="size-5 shrink-0" />,
-      url: "/partner-with-us"
     }]
   }, {
     title: "Resources",
