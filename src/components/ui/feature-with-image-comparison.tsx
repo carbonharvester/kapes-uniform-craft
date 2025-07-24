@@ -46,7 +46,7 @@ function Feature() {
               <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753009981/Untitled_design_3_zz8vdo.jpg" alt="Modern uniform solution" className="absolute left-0 top-0 z-10 w-full h-full object-cover aspect-video rounded-2xl select-none border" style={{
               clipPath: "inset(0 0 0 " + inset + "%)"
             }} />
-              <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753038512/WhatsApp_Image_2025-07-20_at_20.04.16_ssfyrw.jpg" alt="Traditional uniform distribution" className="absolute left-0 top-0 w-full h-full object-cover aspect-video rounded-2xl select-none border" />
+              <img src="/lovable-uploads/7408b65b-41ab-4942-9f7c-c04f25cb5b13.png" alt="Traditional uniform distribution" className="absolute left-0 top-0 w-full h-full object-cover aspect-video rounded-2xl select-none border" />
             </div>
           </div>
         </div>
