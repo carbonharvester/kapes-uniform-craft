@@ -32,13 +32,13 @@ const BlogPost = () => {
         <p className="mb-6 text-base leading-relaxed text-content font-light">{children}</p>
       ),
       [BLOCKS.HEADING_1]: (node: any, children: any) => (
-        <h1 className="text-2xl font-light mb-8 mt-12 tracking-tight">{children}</h1>
+        <h1 className="text-2xl font-light mb-8 mt-12 tracking-tight text-black">{children}</h1>
       ),
       [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <h2 className="text-xl font-light mb-6 mt-10 tracking-tight">{children}</h2>
+        <h2 className="text-xl font-light mb-6 mt-10 tracking-tight text-black">{children}</h2>
       ),
       [BLOCKS.HEADING_3]: (node: any, children: any) => (
-        <h3 className="text-lg font-normal mb-4 mt-8">{children}</h3>
+        <h3 className="text-lg font-normal mb-4 mt-8 text-black">{children}</h3>
       ),
       [BLOCKS.UL_LIST]: (node: any, children: any) => (
         <ul className="list-disc list-outside mb-6 space-y-2 text-base pl-6">{children}</ul>
