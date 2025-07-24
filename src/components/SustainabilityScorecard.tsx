@@ -75,7 +75,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     { id: 'ai_usage', text: 'Is AI integrated into your uniform program? (Select all that apply)', type: 'checkbox' },
     { id: 'extra3', text: 'How important is sustainability within your school?', type: 'radio' },
     { id: 'extra1', text: 'How would you rate your current uniform program out of 10?', type: 'select' },
-    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by switching to a more sustainable program?', type: 'radio' }
+    { id: 'extra2', text: 'Would you consider improving this in the next 12 months by adopting more sustainable and ethical practices?', type: 'radio' }
   ];
 
   const weights = [36, 5, 4, 6, 5, 7, 8, 7, 6, 3, 19, 5, 5, 5, 6]; // 15 scored questions
@@ -98,7 +98,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     'Do you educate your students about the impacts of fashion, related to their uniforms?': 'Education on Fashion Impacts',
     'Is AI integrated into your uniform program? (Select all that apply)': 'AI Usage',
     'How would you rate your current uniform program out of 10?': 'Program Rating',
-    'Would you consider improving this in the next 12 months by switching to a more sustainable program?': 'Willing to improve?',
+    'Would you consider improving this in the next 12 months by adopting more sustainable and ethical practices?': 'Willing to improve?',
     'How important is sustainability within your school?': 'Sustainability Importance',
     'Selected features:': 'Selected Features'
   };
@@ -281,11 +281,12 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
       if (distSelections.includes('dont_know')) {
         totalScore += 0;
       } else {
-        if (distSelections.includes('school_shop')) totalScore += 4;
-        if (!distSelections.includes('supplier_shop')) totalScore += 3;
+        // Enhanced distribution scoring with nuanced approach
+        if (distSelections.includes('school_shop')) totalScore += 5; // School shop preferred over supplier shop
+        if (distSelections.includes('supplier_shop') && !distSelections.includes('school_shop')) totalScore += 2; // Supplier shop only if no school shop
         if (distSelections.includes('online_ordering')) totalScore += 4;
-        if (distSelections.includes('pickup_school')) totalScore += 4;
-        if (distSelections.includes('popup_events')) totalScore += 4;
+        if (distSelections.includes('pickup_school')) totalScore += 5; // School pickup is optimal for convenience
+        if (distSelections.includes('popup_events')) totalScore += 3;
       }
     }
 
@@ -499,39 +500,41 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     // Add remaining answers for non-scored questions
     const remainingAnswers: Array<{question: string, answer: string}> = [];
 
-    // Add remaining answers to userAnswers
-    setUserAnswers(prev => [...prev, ...remainingAnswers]);
-
-    // Check if sustainability is not important
-    if (formAnswers['extra3'] === 'Not important') {
-      setLowSustainability(true);
-    }
-
     // Process extra questions (non-scored)
     const extra1Answer = formAnswers.extra1 as string || 'Not Answered';
     remainingAnswers.push({ question: "How would you rate your current uniform program out of 10?", answer: extra1Answer });
 
     const extra2Answer = formAnswers.extra2 as string || 'Not Answered';
-    remainingAnswers.push({ question: "Would you consider improving this in the next 12 months by switching to a more sustainable program?", answer: extra2Answer });
+    remainingAnswers.push({ question: "Would you consider improving this in the next 12 months by adopting more sustainable and ethical practices?", answer: extra2Answer });
 
     const extra3Answer = formAnswers.extra3 as string || 'Not Answered';
     remainingAnswers.push({ question: "How important is sustainability within your school?", answer: extra3Answer });
 
+    // Add remaining answers to userAnswers
+    setUserAnswers(prev => [...prev, ...remainingAnswers]);
+
     setShowQuiz(false);
-    // Check for qualification
+    
+    // Check for qualification flags
     const sustainabilityImportance = formAnswers.extra3;
     const willingToImprove = formAnswers.extra2;
 
     if (sustainabilityImportance === 'Not important') {
       setLowSustainability(true);
+      // Generate detailed recommendations for all users
+      const { narrative } = generateDetailedRecommendations(formAnswers, score);
+      const detailedFeedback = `${narrative}\n\nWhile sustainability may not be your current priority, implementing these changes could reduce costs and improve your school's reputation.`;
+      setScoreDescription(detailedFeedback);
       setShowResults(true);
     } else if (willingToImprove === 'No') {
       setNoImprovement(true);
+      // Generate detailed recommendations for all users
+      const { narrative } = generateDetailedRecommendations(formAnswers, score);
+      setScoreDescription(narrative);
       setShowResults(true);
-    } else if (score < 67) {
-      setShowFeatures(true);
     } else {
-      setShowResults(true);
+      // Show features selection for ALL users who value sustainability AND are willing to improve
+      setShowFeatures(true);
     }
   };
 
@@ -547,6 +550,11 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
     }
     setUserFeatures(selectedFeatures);
     userAnswers.push({ question: 'Selected features:', answer: selectedFeatures.join(', ') });
+    
+    // Generate detailed recommendations for all users
+    const { narrative } = generateDetailedRecommendations(formAnswers, score);
+    setScoreDescription(narrative);
+    
     setShowFeatures(false);
     setShowResults(true);
   };
@@ -868,7 +876,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="w-full max-w-4xl mx-auto p-3 md:p-6" ref={formRef}>
         
         {showEntryForm && (
@@ -1002,7 +1010,9 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
               <CardTitle className="text-2xl md:text-3xl font-bold text-heading text-center">Select Priorities</CardTitle>
             </CardHeader>
             <CardContent>
-              <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">Select what's important to you:</h2>
+              <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">
+                {score >= 67 ? "Select areas you'd like to excel in even further:" : "Select priority areas for improvement:"}
+              </h2>
               <ul className="features-list list-none p-0 space-y-3 md:space-y-4 mb-6 md:mb-8">
                 {[
                   'Natural, Sustainable Materials',
@@ -1080,10 +1090,10 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
                 </p>
               )}
               
-              {!noImprovement && !lowSustainability && userFeatures.length > 0 && (
+              {!noImprovement && !lowSustainability && (
                 <div className="mb-8 p-6 bg-muted/30 rounded-lg border">
                   <h3 className="text-xl font-bold mb-3">🎉 You Qualify for a Free Consultation!</h3>
-                  <p className="text-muted-foreground">Based on your interests in sustainable solutions, our team is excited to help you improve your uniform program.</p>
+                  <p className="text-muted-foreground">Based on your commitment to sustainability and willingness to improve, our team is excited to help you enhance your uniform program.</p>
                 </div>
               )}
               
