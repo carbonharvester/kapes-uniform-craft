@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator, Factory, Leaf } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -159,7 +160,7 @@ const Navbar = ({
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-8">
-            <a href={logo.url} className="flex items-center gap-2 group transition-all duration-300">
+            <Link to={logo.url} className="flex items-center gap-2 group transition-all duration-300">
               {logo.src ? <img src={logo.src} className="h-8 w-auto object-contain group-hover:scale-110 transition-transform duration-300" alt={logo.alt} onLoad={() => console.log('Logo loaded successfully')} onError={e => {
               console.error('Logo failed to load:', (e.target as HTMLImageElement).src);
               (e.target as HTMLImageElement).style.display = 'none';
@@ -168,7 +169,7 @@ const Navbar = ({
               maxWidth: '200px'
             }} /> : null}
               {logo.title && <span className="text-xl font-semibold tracking-tight text-heading">{logo.title}</span>}
-            </a>
+            </Link>
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList className="gap-2">
@@ -179,17 +180,17 @@ const Navbar = ({
           </div>
           <div className="flex gap-3">
             <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
-              <a href="/shop">Shop</a>
+              <Link to="/shop">Shop</Link>
             </Button>
             <Button asChild size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
-              <a href="/sustainability-scorecard">Start Here</a>
+              <Link to="/sustainability-scorecard">Start Here</Link>
             </Button>
           </div>
         </nav>
 
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
+            <Link to={logo.url} className="flex items-center gap-2">
               {logo.src ? <img src={logo.src} className="h-8 w-auto object-contain" alt={logo.alt} onLoad={() => console.log('Mobile logo loaded successfully')} onError={e => {
               console.error('Mobile logo failed to load:', (e.target as HTMLImageElement).src);
               (e.target as HTMLImageElement).style.display = 'none';
@@ -198,7 +199,7 @@ const Navbar = ({
               maxWidth: '160px'
             }} /> : null}
               {logo.title && <span className="text-lg font-semibold text-heading">{logo.title}</span>}
-            </a>
+            </Link>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -208,12 +209,12 @@ const Navbar = ({
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
+                    <Link to={logo.url} className="flex items-center gap-2">
                       {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
                       {logo.title && <span className="text-lg font-semibold">
                           {logo.title}
                         </span>}
-                    </a>
+                    </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="my-6 flex flex-col gap-6">
@@ -222,17 +223,17 @@ const Navbar = ({
                   </Accordion>
                   <div className="border-t py-4">
                     <div className="grid grid-cols-2 justify-start">
-                      {mobileExtraLinks.map((link, idx) => <a key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" href={link.url}>
+                      {mobileExtraLinks.map((link, idx) => <Link key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" to={link.url}>
                           {link.name}
-                        </a>)}
+                        </Link>)}
                     </div>
                   </div>
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.text}</a>
+                      <Link to={auth.login.url}>{auth.login.text}</Link>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.text}</a>
+                      <Link to={auth.signup.url}>{auth.signup.text}</Link>
                     </Button>
                   </div>
                 </div>
@@ -253,7 +254,7 @@ const renderMenuItem = (item: MenuItem) => {
           <ul className="w-96 p-4 glass border border-border/50 rounded-2xl shadow-glass bg-popover/25 backdrop-blur-md">
             {item.items.map(subItem => <li key={subItem.title}>
                 <NavigationMenuLink asChild>
-                  <a className="flex select-none gap-4 rounded-xl p-4 leading-none no-underline outline-none transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground group" href={subItem.url}>
+                  <Link className="flex select-none gap-4 rounded-xl p-4 leading-none no-underline outline-none transition-all duration-300 hover:bg-accent/50 hover:text-accent-foreground group" to={subItem.url}>
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       {subItem.icon}
                     </div>
@@ -265,16 +266,16 @@ const renderMenuItem = (item: MenuItem) => {
                           {subItem.description}
                         </p>}
                     </div>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>)}
           </ul>
         </NavigationMenuContent>
       </NavigationMenuItem>;
   }
-  return <a key={item.title} className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-foreground transition-all duration-300 hover:bg-accent/50 hover:text-primary" href={item.url}>
+  return <Link key={item.title} className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-foreground transition-all duration-300 hover:bg-accent/50 hover:text-primary" to={item.url}>
       {item.title}
-    </a>;
+    </Link>;
 };
 const renderMobileMenuItem = (item: MenuItem) => {
   if (item.items) {
@@ -283,7 +284,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
           {item.title}
         </AccordionTrigger>
         <AccordionContent className="mt-2">
-          {item.items.map(subItem => <a key={subItem.title} className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground" href={subItem.url}>
+          {item.items.map(subItem => <Link key={subItem.title} className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground" to={subItem.url}>
               {subItem.icon}
               <div>
                 <div className="text-sm font-semibold">{subItem.title}</div>
@@ -291,12 +292,12 @@ const renderMobileMenuItem = (item: MenuItem) => {
                     {subItem.description}
                   </p>}
               </div>
-            </a>)}
+            </Link>)}
         </AccordionContent>
       </AccordionItem>;
   }
-  return <a key={item.title} href={item.url} className="font-semibold">
+  return <Link key={item.title} to={item.url} className="font-semibold">
       {item.title}
-    </a>;
+    </Link>;
 };
 export { Navbar };
