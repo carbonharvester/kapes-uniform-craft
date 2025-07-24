@@ -268,22 +268,31 @@ const UniformPolicyMaker = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-primary/5 to-secondary/5 py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h1 className="text-3xl md:text-5xl font-bold text-heading mb-6">
+            Uniform Policy Maker
+          </h1>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Create a comprehensive sustainable uniform policy for your school - whether you're a <strong>student activist</strong> pushing for change, a <strong>teacher</strong> advocating for better practices, a <strong>school leader</strong> planning improvements, or a <strong>sustainability coordinator</strong> implementing green initiatives.
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              This tool generates a professional policy document that serves as your school's guiding commitment to sustainable uniforms - regardless of where you're starting from. Perfect for schools ready to pledge meaningful change with clear timelines and accountability measures.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="w-full max-w-4xl mx-auto p-3 md:p-6" ref={formRef}>
         
         {showEntryForm && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader className="text-center pb-4 md:pb-6">
-              <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4">
-                Uniform Policy Maker
+              <CardTitle className="text-xl md:text-2xl font-bold text-heading mb-3 md:mb-4">
+                Get Started
               </CardTitle>
-              <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Create a comprehensive sustainable uniform policy for your school - whether you're a <strong>student activist</strong> pushing for change, a <strong>teacher</strong> advocating for better practices, a <strong>school leader</strong> planning improvements, or a <strong>sustainability coordinator</strong> implementing green initiatives.
-                </p>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  This tool generates a professional policy document that serves as your school's guiding commitment to sustainable uniforms - regardless of where you're starting from. Perfect for schools ready to pledge meaningful change with clear timelines and accountability measures.
-                </p>
-              </div>
             </CardHeader>
             <CardContent className="space-y-4 md:space-y-6">
               <input
