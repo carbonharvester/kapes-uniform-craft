@@ -7,6 +7,28 @@ import { ThemeProvider } from "next-themes";
 import Index from "@/pages/Index";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/NotFound";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+import CircularEconomyTakeback from "@/pages/CircularEconomyTakeback";
+import { DeliveryPackaging } from "@/pages/DeliveryPackaging";
+import EcoLaunchTier from "@/pages/EcoLaunchTier";
+import EducationalResources from "@/pages/EducationalResources";
+import FactoryVisits from "@/pages/FactoryVisits";
+import ImpactPartnership from "@/pages/ImpactPartnership";
+import KapesImpactPlatform from "@/pages/KapesImpactPlatform";
+import LegacyImpactTier from "@/pages/LegacyImpactTier";
+import OurMission from "@/pages/OurMission";
+import OurProcess from "@/pages/OurProcess";
+import PartnershipTiers from "@/pages/PartnershipTiers";
+import Resources from "@/pages/Resources";
+import { SchoolShopsLockers } from "@/pages/SchoolShopsLockers";
+import SocialImpactAfrica from "@/pages/SocialImpactAfrica";
+import StudentLeadership from "@/pages/StudentLeadership";
+import SustainProTier from "@/pages/SustainProTier";
+import SustainabilityEthics from "@/pages/SustainabilityEthics";
+import SustainabilityScorecard from "@/pages/SustainabilityScorecard";
+import { UniformSolutions } from "@/pages/UniformSolutions";
+import Affiliate from "@/pages/Affiliate";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Header } from "@/components/Header";
 
@@ -29,6 +51,28 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/circular-economy-takeback" element={<CircularEconomyTakeback />} />
+              <Route path="/delivery-packaging" element={<DeliveryPackaging />} />
+              <Route path="/eco-launch-tier" element={<EcoLaunchTier />} />
+              <Route path="/educational-resources" element={<EducationalResources />} />
+              <Route path="/factory-visits" element={<FactoryVisits />} />
+              <Route path="/impact-partnership" element={<ImpactPartnership />} />
+              <Route path="/kapes-impact-platform" element={<KapesImpactPlatform />} />
+              <Route path="/legacy-impact-tier" element={<LegacyImpactTier />} />
+              <Route path="/our-mission" element={<OurMission />} />
+              <Route path="/our-process" element={<OurProcess />} />
+              <Route path="/partnership-tiers" element={<PartnershipTiers />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/school-shops-lockers" element={<SchoolShopsLockers />} />
+              <Route path="/social-impact-africa" element={<SocialImpactAfrica />} />
+              <Route path="/student-leadership" element={<StudentLeadership />} />
+              <Route path="/sustain-pro-tier" element={<SustainProTier />} />
+              <Route path="/sustainability-ethics" element={<SustainabilityEthics />} />
+              <Route path="/sustainability-scorecard" element={<SustainabilityScorecard />} />
+              <Route path="/uniform-solutions" element={<UniformSolutions />} />
+              <Route path="/affiliate" element={<Affiliate />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Toaster />
