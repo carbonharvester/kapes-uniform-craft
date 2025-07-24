@@ -155,7 +155,7 @@ const Navbar = ({
     }
   }
 }: NavbarProps) => {
-  return <header className="py-4 md:py-6 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
+  return <header className="pt-4 md:pt-6 pb-0 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
       <div className="container">
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-8">
