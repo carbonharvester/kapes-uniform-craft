@@ -36,7 +36,7 @@ export function PartnershipSection({
               userSelect: 'none'
             }}
           >
-            Find Your Perfect Tier
+            Discover Your Impact Potential
           </Button>
         </div>
       </div>
