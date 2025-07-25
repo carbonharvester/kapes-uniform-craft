@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Play, Factory, Users, Download, Eye } from "lucide-react";
+import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const EducationalResources = () => {
@@ -15,17 +15,6 @@ const EducationalResources = () => {
         "The impact of fashion on people and planet", 
         "The future of materials and circular design",
         "Real stories from the factories and communities we work with"
-      ]
-    },
-    {
-      icon: Play,
-      title: "Short Films & Video Clips",
-      description: "Perfect for assemblies, classroom sessions, or parent events",
-      topics: [
-        "How our uniforms are made",
-        "What ethical manufacturing looks like",
-        "Stories from children receiving free uniforms in Africa",
-        "Behind-the-scenes at Kapes"
       ]
     },
     {
@@ -122,13 +111,86 @@ const EducationalResources = () => {
 
       {/* Plug and Play Section */}
       <section className="bg-gradient-warm-section relative py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
           <div className="text-center mb-12">
-            <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              We know teachers are busy. That's why we make it easy:
+            <p className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
+              Based on research and best practices for climate education, our resources are designed to:
             </p>
           </div>
+          
+          {/* Framework Overview */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-12">
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-6">
+                <Lightbulb className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Inquiry-Based Learning</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm mb-3">Questions, problems, and challenges that students work together to address</p>
+                <div className="text-xs text-primary font-medium">
+                  Research Slides: 1, 2
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-6">
+                <GraduationCap className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Climate Action Framework</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm mb-3">Addresses emotions and encourages hopeful, actionable solutions</p>
+                <div className="text-xs text-primary font-medium">
+                  Research Slides: 3, 4
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-6">
+                <Target className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Transferable Skills</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm mb-3">Critical thinking, creativity, collaboration, and global citizenship</p>
+                <div className="text-xs text-primary font-medium">
+                  Research Slides: 5, 6
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
+              <CardContent className="p-6">
+                <Globe className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Global Standards</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm mb-3">Connected to UN SDGs, GreenComp, and UNESCO frameworks</p>
+                <div className="text-xs text-primary font-medium">
+                  Research Slides: 7, 8, 9, 10
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Detailed Framework Information */}
+          <div className="bg-background/50 rounded-xl p-8 mb-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Research-Based Framework</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-medium mb-4">Key Statistics (UNESCO):</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 95% of teachers feel climate education is important</li>
+                  <li>• Only 30% feel prepared to teach the subject</li>
+                  <li>• 70% of young people cannot explain climate change</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-4">Our Approach Includes:</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Action competencies development</li>
+                  <li>• Futures literacy empowerment</li>
+                  <li>• Critical action learning integration</li>
+                  <li>• Positive climate action focus</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Implementation Tools */}
           <div className="grid gap-8 md:grid-cols-4">
             <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
               <CardContent className="p-8">

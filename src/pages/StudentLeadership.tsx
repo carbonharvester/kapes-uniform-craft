@@ -107,7 +107,7 @@ const StudentLeadership = () => {
               Real Leadership, Not Just Symbolism
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Every LegacyImpact Tier school is invited to nominate one student to join the Kapes Young Leaders Council — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
+              Every partner school is invited to nominate one student to join the Kapes Young Leaders Council — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
             </p>
           </section>
 
@@ -151,7 +151,7 @@ const StudentLeadership = () => {
                         <Award className="h-4 w-4 text-accent" />
                         <span className="font-medium text-sm">Eligibility:</span>
                       </div>
-                      <p className="text-sm text-muted-foreground">Open to LegacyImpact schools (1 student per school)</p>
+                      <p className="text-sm text-muted-foreground">1 student from each school we work with is eligible</p>
                     </div>
                   </div>
                 </CardContent>
@@ -184,44 +184,87 @@ const StudentLeadership = () => {
             </div>
           </section>
 
-          {/* Impact Areas */}
-          <section>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Student Impact Areas</h2>
-              <p className="text-muted-foreground text-lg">How students shape our mission</p>
-            </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              {impactAreas.map((area, index) => (
-                <Card key={index} className="border-0 shadow-glass text-center hover-lift transition-smooth">
-                  <CardHeader>
-                    <div className={`w-16 h-16 ${area.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                      <area.icon className="h-8 w-8" />
-                    </div>
-                    <CardTitle className="text-xl font-medium">{area.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+          {/* Student Impact Areas */}
+          <section className="py-20 lg:py-32">
+            <div className="container mx-auto max-w-7xl px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+                  Student Impact Areas
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  How students shape our mission
+                </p>
+              </div>
+              
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Content Section */}
+                <div className="space-y-8">
+                  <div className="grid gap-8">
+                    {impactAreas.map((area, index) => {
+                      const IconComponent = area.icon;
+                      return (
+                        <div key={index} className="flex gap-4 items-start group">
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                              <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                            </div>
+                          </div>
+                          <div className="space-y-1">
+                            <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                              {area.title}
+                            </h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {area.description}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      Empowering the next generation of sustainability leaders.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Image Section */}
+                <div className="relative">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg" 
+                      alt="Student leadership and impact" 
+                      className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                  </div>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+                </div>
+              </div>
             </div>
           </section>
 
           {/* Why It Matters */}
-          <section className="bg-gradient-warm-section py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why It Matters</h2>
-              <p className="text-muted-foreground text-lg">The impact of student leadership</p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
-                  <CardContent className="p-6">
-                    <h3 className="font-medium mb-2 text-lg">{benefit.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+          <section className="w-full bg-gradient-warm-section py-16">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why It Matters</h2>
+                <p className="text-muted-foreground text-lg">The impact of student leadership</p>
+              </div>
+              <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+                {benefits.map((benefit, index) => (
+                  <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                    <CardContent className="p-6">
+                      <h3 className="font-medium mb-2 text-lg">{benefit.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -247,11 +290,8 @@ const StudentLeadership = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="rounded-2xl px-8 py-6 text-lg hover:scale-105 transition-smooth">
-                Nominate a Young Leaders Council Member
+                Create Your Sustainable Uniform Policy
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-2xl px-8 py-6 text-lg hover:scale-105 transition-smooth">
-                See Our Student-Led Campaigns
               </Button>
             </div>
           </section>

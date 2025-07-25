@@ -122,7 +122,7 @@ const SustainabilityEthics = () => {
             const IconComponent = material.icon;
             return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <img src={material.image} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                    <img src={material.image.replace('/src/', '/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
                   <CardHeader>
@@ -141,18 +141,18 @@ const SustainabilityEthics = () => {
           </div>
 
           {/* No Toxic Chemicals Banner */}
-          <div className="bg-gradient-to-r from-red-50 via-red-25 to-orange-50 dark:from-red-900/10 dark:via-red-900/5 dark:to-orange-900/10 border border-red-100 dark:border-red-900/20 rounded-xl p-8 mb-8 shadow-sm">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-red-50 via-red-25 to-orange-50 dark:from-red-900/10 dark:via-red-900/5 dark:to-orange-900/10 border border-red-100 dark:border-red-900/20 rounded-xl p-6 mb-8 shadow-sm">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4 max-w-3xl mx-auto">
               <div className="flex-shrink-0">
-                <div className="p-4 bg-red-100 dark:bg-red-900/30 rounded-xl shadow-sm">
-                  <Ban className="w-12 h-12 text-red-600 dark:text-red-400" />
+                <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-xl shadow-sm">
+                  <Ban className="w-8 h-8 text-red-600 dark:text-red-400" />
                 </div>
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-red-900 dark:text-red-100">
+                <h3 className="text-xl md:text-2xl font-semibold mb-2 text-red-900 dark:text-red-100">
                   {noToxicChemicals.title}
                 </h3>
-                <p className="text-lg leading-relaxed text-red-800 dark:text-red-200">
+                <p className="text-base leading-relaxed text-red-800 dark:text-red-200">
                   {noToxicChemicals.description}
                 </p>
               </div>
@@ -171,7 +171,7 @@ const SustainabilityEthics = () => {
       <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Ethical Manufacturing
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -232,69 +232,123 @@ const SustainabilityEthics = () => {
       </section>
 
       {/* Measurable Sustainability Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+      <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Sustainability That's Measurable
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Kapes goes beyond claims — we give schools data-backed sustainability
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {sustainabilityFeatures.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center dark:bg-purple-900/20">
-                      <IconComponent className="w-6 h-6 text-purple-600" />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Content Section */}
+            <div className="space-y-8">
+              <div className="grid gap-8">
+                {sustainabilityFeatures.map((feature, index) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-xl flex items-center justify-center group-hover:bg-purple-100 dark:group-hover:bg-purple-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
-          </div>
-          
-          <div className="text-center">
-            <p className="text-lg font-medium text-foreground">
-              Transparency is how we build trust — and move the industry forward.
-            </p>
+                  );
+                })}
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Transparency is how we build trust — and move the industry forward.
+                </p>
+              </div>
+            </div>
+            
+            {/* Image Section */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781502/Filip-C-Agoo-Everland-Marketing-Kenya-9235-WEB-low-resolution-1_mzuiwl.jpg" 
+                  alt="Sustainability tracking and dashboard" 
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Sustainable Logistics Section */}
-      <section className="bg-gradient-light-warm-section py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+      <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
+        <div className="container mx-auto max-w-7xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Sustainable Logistics, Too
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Even our delivery and packaging is considered
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {logisticsFeatures.map((feature, index) => {
-            const IconComponent = feature.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow text-center">
-                  <CardHeader>
-                    <div className="mx-auto mb-4 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center dark:bg-orange-900/20">
-                      <IconComponent className="w-6 h-6 text-orange-600" />
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Image Section */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg" 
+                  alt="Sustainable logistics and packaging" 
+                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+            </div>
+            
+            {/* Content Section */}
+            <div className="space-y-8">
+              <div className="grid gap-8">
+                {logisticsFeatures.map((feature, index) => {
+                  const IconComponent = feature.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-xl flex items-center justify-center group-hover:bg-orange-100 dark:group-hover:bg-orange-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-orange-600 dark:text-orange-400" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {feature.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </section>

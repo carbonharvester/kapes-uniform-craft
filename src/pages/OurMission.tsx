@@ -248,7 +248,7 @@ const OurMission = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16">
+          <section className="text-center py-16" style={{ backgroundColor: '#cfeaff' }}>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Join the Movement
             </h2>
