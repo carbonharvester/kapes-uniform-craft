@@ -49,7 +49,7 @@ const ImpactPartnershipPage = () => {
       feature: "AI Size Recommendations",
       description: "AI-powered sizing and fit technology",
       kapes: "Fewer returns",
-      traditional: "Standard size charts = Higher return rates"
+      traditional: "Higher returns"
     },
     {
       feature: "Free Meals for Children",
