@@ -98,15 +98,15 @@ export const ContactForm = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle>Send us a message</CardTitle>
+                <CardTitle className="text-xl md:text-2xl">Send us a message</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">First Name</label>
                       <Input 
@@ -180,7 +180,7 @@ export const ContactForm = () => {
                     />
                     {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                   </div>
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  <Button type="submit" className="w-full min-h-[48px] text-base" size="touch" disabled={isSubmitting}>
                     {isSubmitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </form>
@@ -246,13 +246,13 @@ export const ContactForm = () => {
                   <CardTitle>Quick Actions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <Button variant="outline" className="w-full justify-start">
+                  <Button variant="outline" className="w-full justify-start min-h-[44px]" size="default">
                     Download Our Brochure
                   </Button>
-                  <Button variant="outline" className="w-full justify-start">
+                  <Button variant="outline" className="w-full justify-start min-h-[44px]" size="default">
                     Schedule a Demo Call
                   </Button>
-                  <Button variant="outline" className="w-full justify-start">
+                  <Button variant="outline" className="w-full justify-start min-h-[44px]" size="default">
                     Request a Proposal
                   </Button>
                 </CardContent>

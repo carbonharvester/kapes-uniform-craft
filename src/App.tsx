@@ -47,9 +47,11 @@ const App = () => {
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <TooltipProvider>
           <BrowserRouter>
-            <ScrollToTop />
-            <Header />
-            <Routes>
+            <div className="min-h-screen w-full no-horizontal-scroll">
+              <ScrollToTop />
+              <Header />
+              <main className="w-full">
+                <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/blog" element={<Blog />} />
@@ -76,8 +78,10 @@ const App = () => {
               <Route path="/uniform-policy-maker" element={<UniformPolicyMakerPage />} />
               <Route path="/affiliate" element={<Affiliate />} />
               <Route path="*" element={<NotFound />} />
-            </Routes>
-            <Toaster />
+                </Routes>
+              </main>
+              <Toaster />
+            </div>
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>

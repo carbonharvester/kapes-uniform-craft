@@ -1,10 +1,8 @@
-import { Check, X, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { MobileOptimizedTable } from "@/components/MobileOptimizedTable";
 
 export const KapesComparison = () => {
-  const isMobile = useIsMobile();
   const comparisonData = [
     {
       feature: "Materials",
@@ -58,99 +56,23 @@ export const KapesComparison = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
             How Kapes Compares to Traditional Uniform Suppliers
           </h2>
-          <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
             We don't just supply uniforms. We help schools reduce their carbon footprint, 
             support children in need, and tell a story their community can be proud of.
           </p>
           
-          {isMobile ? (
-            // Mobile table layout
-            <Card className="border border-gray-200 shadow-sm bg-white rounded-lg overflow-hidden">
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-gray-50 border-b-2 border-gray-200">
-                        <th className="text-left font-semibold py-4 px-4 text-gray-700 text-sm border-r border-gray-200">Feature</th>
-                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm border-r border-gray-200">Kapes</th>
-                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm">Traditional</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonData.map((row, index) => (
-                        <tr key={index} className="border-b border-gray-200 last:border-b-0">
-                          <td className="py-4 px-4 text-left border-r border-gray-200">
-                            <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
-                          </td>
-                          <td className="py-4 px-3 text-center border-r border-gray-200">
-                            <div className="flex flex-col items-center gap-1">
-                              <Check className="h-4 w-4 text-green-500" />
-                              <span className="font-medium text-green-600 text-xs leading-tight text-center">{row.kapes}</span>
-                            </div>
-                          </td>
-                          <td className="py-4 px-3 text-center">
-                            <div className="flex flex-col items-center gap-1">
-                              <X className="h-4 w-4 text-red-500" />
-                              <span className="font-medium text-red-600 text-xs leading-tight text-center">{row.traditional}</span>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-          ) : (
-            // Desktop table layout
-            <Card className="border-0 shadow-lg overflow-hidden bg-white">
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-gray-50/80 border-b-2 border-gray-200">
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
-                        <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
-                        <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonData.map((row, index) => (
-                        <tr key={index} className="border-b border-gray-200 hover:bg-gray-50/30 transition-colors">
-                          <td className="py-6 px-8 border-r border-gray-200">
-                            <span className="font-medium text-gray-900">{row.feature}</span>
-                          </td>
-                          <td className="py-6 px-8 text-center border-r border-gray-200">
-                            <div className="flex items-center justify-center gap-2">
-                              <Check className="h-5 w-5 text-green-500" />
-                              <span className="font-medium text-green-600">{row.kapes}</span>
-                            </div>
-                          </td>
-                          <td className="py-6 px-8 text-center">
-                            <div className="flex items-center justify-center gap-2">
-                              <X className="h-5 w-5 text-red-500" />
-                              <span className="font-medium text-red-600">{row.traditional}</span>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
-          )}
+          <MobileOptimizedTable data={comparisonData} />
           
-          <div className="mt-10">
+          <div className="mt-8 md:mt-10">
             <Button 
-              size="lg" 
-              className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth shadow-lg"
+              size="touch" 
+              className="rounded-xl font-medium px-6 md:px-8 py-3 md:py-4 text-base md:text-lg hover:scale-105 transition-smooth shadow-lg w-full sm:w-auto"
               onClick={() => window.location.href = '/impact-partnership'}
             >
               See Full Comparison
