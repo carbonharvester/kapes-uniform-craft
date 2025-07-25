@@ -205,48 +205,37 @@ const ImpactPartnershipPage = () => {
             </div>
             
             
-            {/* Desktop Table */}
-            <Card className="border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
-              <CardContent className="p-0">
-                <table className="w-full">
-                  <thead>
-                    <tr className="bg-gradient-to-r from-gray-100 via-blue-50/50 to-gray-100 border-b-2 border-gray-200">
-                      <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
-                      <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
-                      <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional</th>
+            {/* Compact Table for All Screen Sizes */}
+            <div className="bg-white rounded-lg shadow-sm">
+              <table className="w-full border-collapse border border-gray-300 text-xs">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
+                    <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes</th>
+                    <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, index) => (
+                    <tr key={index} className="hover:bg-gray-50">
+                      <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">{row.feature}</td>
+                      <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                        <div className="flex flex-col items-center gap-1">
+                          <Check className="h-5 w-5 text-green-600" />
+                          <span className="text-green-600 font-medium">{row.kapes}</span>
+                        </div>
+                      </td>
+                      <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                        <div className="flex flex-col items-center gap-1">
+                          <X className="h-5 w-5 text-red-600" />
+                          <span className="text-red-600 font-medium">{row.traditional}</span>
+                        </div>
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {comparisonData.map((row, index) => (
-                      <tr 
-                        key={index} 
-                        className="border-b border-gray-200 hover:bg-gradient-to-r hover:from-blue-50/20 hover:via-green-50/20 hover:to-blue-50/20 transition-all duration-300"
-                      >
-                        <td className="py-6 px-8 border-r border-gray-200">
-                          <span className="font-medium text-gray-900">{row.feature}</span>
-                        </td>
-                        <td className="py-6 px-8 text-center border-r border-gray-200">
-                          <div className="flex flex-col items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
-                              <Check className="h-4 w-4 text-white" />
-                            </div>
-                            <span className="font-medium text-green-700 text-sm text-center">{row.kapes}</span>
-                          </div>
-                        </td>
-                        <td className="py-6 px-8 text-center">
-                          <div className="flex flex-col items-center gap-2">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
-                              <X className="h-4 w-4 text-white" />
-                            </div>
-                            <span className="font-medium text-red-700 text-sm text-center">{row.traditional}</span>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </CardContent>
-            </Card>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
             
             <div className="mt-10 text-center">
