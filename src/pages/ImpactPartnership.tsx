@@ -207,12 +207,12 @@ const ImpactPartnershipPage = () => {
             <Card className="border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
               <CardContent className="p-0">
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full min-w-full">
                     <thead>
                       <tr className="bg-gradient-to-r from-gray-100 via-blue-50/50 to-gray-100 border-b-2 border-gray-200">
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
-                        <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
-                        <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
+                        <th className="text-left font-semibold py-3 md:py-6 px-3 md:px-8 text-gray-700 border-r border-gray-200 text-sm md:text-base">Feature</th>
+                        <th className="text-center font-semibold py-3 md:py-6 px-2 md:px-8 text-gray-700 border-r border-gray-200 text-sm md:text-base">Kapes</th>
+                        <th className="text-center font-semibold py-3 md:py-6 px-2 md:px-8 text-gray-700 text-sm md:text-base">Traditional</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -222,23 +222,23 @@ const ImpactPartnershipPage = () => {
                           className="border-b border-gray-200 hover:bg-gradient-to-r hover:from-blue-50/20 hover:via-green-50/20 hover:to-blue-50/20 transition-all duration-300 animate-fade-in hover:scale-[1.01] hover:shadow-md"
                           style={{ animationDelay: `${index * 50}ms` }}
                         >
-                          <td className="py-6 px-8 border-r border-gray-200">
-                            <span className="font-medium text-gray-900">{row.feature}</span>
+                          <td className="py-3 md:py-6 px-3 md:px-8 border-r border-gray-200">
+                            <span className="font-medium text-gray-900 text-sm md:text-base leading-tight">{row.feature}</span>
                           </td>
-                          <td className="py-6 px-8 text-center border-r border-gray-200">
-                            <div className="flex flex-col items-center gap-2">
-                              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
-                                <Check className="h-4 w-4 text-white" />
+                          <td className="py-3 md:py-6 px-2 md:px-8 text-center border-r border-gray-200">
+                            <div className="flex flex-col items-center gap-1 md:gap-2">
+                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                                <Check className="h-3 w-3 md:h-4 md:w-4 text-white" />
                               </div>
-                              <span className="font-medium text-green-700 text-sm text-center leading-tight">{row.kapes}</span>
+                              <span className="font-medium text-green-700 text-xs md:text-sm text-center leading-tight px-1">{row.kapes}</span>
                             </div>
                           </td>
-                          <td className="py-6 px-8 text-center">
-                            <div className="flex flex-col items-center gap-2">
-                              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
-                                <X className="h-4 w-4 text-white" />
+                          <td className="py-3 md:py-6 px-2 md:px-8 text-center">
+                            <div className="flex flex-col items-center gap-1 md:gap-2">
+                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
+                                <X className="h-3 w-3 md:h-4 md:w-4 text-white" />
                               </div>
-                              <span className="font-medium text-red-700 text-sm text-center leading-tight">{row.traditional}</span>
+                              <span className="font-medium text-red-700 text-xs md:text-sm text-center leading-tight px-1">{row.traditional}</span>
                             </div>
                           </td>
                         </tr>
