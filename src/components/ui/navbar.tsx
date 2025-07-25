@@ -156,89 +156,99 @@ const Navbar = ({
     }
   }
 }: NavbarProps) => {
-  return <header className="py-4 md:py-6 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
-      <div className="container">
+  return <header className="py-3 md:py-4 lg:py-6 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
+      <div className="container px-3 md:px-4 lg:px-6">
         <nav className="hidden justify-between lg:flex">
-          <div className="flex items-center gap-8">
-            <Link to={logo.url} className="flex items-center gap-2 group transition-all duration-300">
-              {logo.src ? <img src={logo.src} className="h-8 w-auto object-contain group-hover:scale-110 transition-transform duration-300" alt={logo.alt} onLoad={() => console.log('Logo loaded successfully')} onError={e => {
+          <div className="flex items-center gap-6 xl:gap-8">
+            <Link to={logo.url} className="flex items-center gap-2 group transition-all duration-300 flex-shrink-0">
+              {logo.src ? <img src={logo.src} className="h-7 xl:h-8 w-auto object-contain group-hover:scale-110 transition-transform duration-300" alt={logo.alt} onLoad={() => console.log('Logo loaded successfully')} onError={e => {
               console.error('Logo failed to load:', (e.target as HTMLImageElement).src);
               (e.target as HTMLImageElement).style.display = 'none';
             }} style={{
-              minWidth: '32px',
-              maxWidth: '200px'
+              minWidth: '28px',
+              maxWidth: '180px'
             }} /> : null}
-              {logo.title && <span className="text-xl font-semibold tracking-tight text-heading">{logo.title}</span>}
+              {logo.title && <span className="text-lg xl:text-xl font-semibold tracking-tight text-heading whitespace-nowrap">{logo.title}</span>}
             </Link>
             <div className="flex items-center">
               <NavigationMenu>
-                <NavigationMenuList className="gap-2">
+                <NavigationMenuList className="gap-1 xl:gap-2">
                   {menu.map(item => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-3">
-            <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
+          <div className="flex gap-2 xl:gap-3 flex-shrink-0">
+            <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-4 xl:px-6 transition-all duration-300 hover:scale-105 whitespace-nowrap">
               <Link to="/shop">Shop</Link>
             </Button>
-            <Button asChild size="sm" className="rounded-xl font-medium px-6 transition-all duration-300 hover:scale-105">
+            <Button asChild size="sm" className="rounded-xl font-medium px-4 xl:px-6 transition-all duration-300 hover:scale-105 whitespace-nowrap">
               <Link to="/sustainability-scorecard">Start Here</Link>
             </Button>
           </div>
         </nav>
 
         <div className="block lg:hidden">
-          <div className="flex items-center justify-between">
-            <Link to={logo.url} className="flex items-center gap-2">
-              {logo.src ? <img src={logo.src} className="h-8 w-auto object-contain" alt={logo.alt} onLoad={() => console.log('Mobile logo loaded successfully')} onError={e => {
+          <div className="flex items-center justify-between gap-3">
+            <Link to={logo.url} className="flex items-center gap-2 flex-shrink-0 min-w-0">
+              {logo.src ? <img src={logo.src} className="h-6 sm:h-7 md:h-8 w-auto object-contain flex-shrink-0" alt={logo.alt} onLoad={() => console.log('Mobile logo loaded successfully')} onError={e => {
               console.error('Mobile logo failed to load:', (e.target as HTMLImageElement).src);
               (e.target as HTMLImageElement).style.display = 'none';
             }} style={{
-              minWidth: '32px',
-              maxWidth: '160px'
+              minWidth: '24px',
+              maxWidth: '140px'
             }} /> : null}
-              {logo.title && <span className="text-lg font-semibold text-heading">{logo.title}</span>}
+              {logo.title && <span className="text-sm sm:text-base md:text-lg font-semibold text-heading whitespace-nowrap truncate">{logo.title}</span>}
             </Link>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="size-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="overflow-y-auto">
-                <SheetHeader>
-                  <SheetTitle>
-                    <Link to={logo.url} className="flex items-center gap-2">
-                      {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
-                      {logo.title && <span className="text-lg font-semibold">
-                          {logo.title}
-                        </span>}
-                    </Link>
-                  </SheetTitle>
-                </SheetHeader>
-                <div className="my-6 flex flex-col gap-6">
-                  <Accordion type="single" collapsible className="flex w-full flex-col gap-4">
-                    {menu.map(item => renderMobileMenuItem(item))}
-                  </Accordion>
-                  <div className="border-t py-4">
-                    <div className="grid grid-cols-2 justify-start">
-                      {mobileExtraLinks.map((link, idx) => <Link key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" to={link.url}>
-                          {link.name}
-                        </Link>)}
+            
+            {/* Mobile action buttons - responsive sizing */}
+            <div className="flex items-center gap-2 flex-shrink-0">
+              <Button asChild variant="outline" size="sm" className="rounded-lg font-medium px-2 sm:px-3 md:px-4 text-xs sm:text-sm transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                <Link to="/shop">Shop</Link>
+              </Button>
+              <Button asChild size="sm" className="rounded-lg font-medium px-2 sm:px-3 md:px-4 text-xs sm:text-sm transition-all duration-300 hover:scale-105 whitespace-nowrap">
+                <Link to="/sustainability-scorecard">Start</Link>
+              </Button>
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="sm" className="p-2 flex-shrink-0">
+                    <Menu className="size-4" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="overflow-y-auto w-[85vw] sm:w-[400px]">
+                  <SheetHeader>
+                    <SheetTitle>
+                      <Link to={logo.url} className="flex items-center gap-2">
+                        {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
+                        {logo.title && <span className="text-lg font-semibold">
+                            {logo.title}
+                          </span>}
+                      </Link>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <div className="my-6 flex flex-col gap-6">
+                    <Accordion type="single" collapsible className="flex w-full flex-col gap-4">
+                      {menu.map(item => renderMobileMenuItem(item))}
+                    </Accordion>
+                    <div className="border-t py-4">
+                      <div className="grid grid-cols-2 justify-start">
+                        {mobileExtraLinks.map((link, idx) => <Link key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" to={link.url}>
+                            {link.name}
+                          </Link>)}
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <Button asChild variant="outline">
+                        <Link to={auth.login.url}>{auth.login.text}</Link>
+                      </Button>
+                      <Button asChild>
+                        <Link to={auth.signup.url}>{auth.signup.text}</Link>
+                      </Button>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-3">
-                    <Button asChild variant="outline">
-                      <Link to={auth.login.url}>{auth.login.text}</Link>
-                    </Button>
-                    <Button asChild>
-                      <Link to={auth.signup.url}>{auth.signup.text}</Link>
-                    </Button>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </div>
@@ -247,7 +257,7 @@ const Navbar = ({
 const renderMenuItem = (item: MenuItem) => {
   if (item.items) {
     return <NavigationMenuItem key={item.title} className="relative">
-        <NavigationMenuTrigger className="text-foreground font-medium hover:text-primary transition-colors duration-300 rounded-xl">
+        <NavigationMenuTrigger className="text-foreground font-medium hover:text-primary transition-colors duration-300 rounded-xl whitespace-nowrap text-sm lg:text-base">
           {item.title}
         </NavigationMenuTrigger>
         <NavigationMenuContent className="absolute left-0 top-full mt-2">
@@ -273,7 +283,7 @@ const renderMenuItem = (item: MenuItem) => {
         </NavigationMenuContent>
       </NavigationMenuItem>;
   }
-  return <Link key={item.title} className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-4 py-2 font-medium text-foreground transition-all duration-300 hover:bg-accent/50 hover:text-primary" to={item.url}>
+  return <Link key={item.title} className="group inline-flex h-10 w-max items-center justify-center rounded-xl px-3 lg:px-4 py-2 font-medium text-foreground transition-all duration-300 hover:bg-accent/50 hover:text-primary whitespace-nowrap text-sm lg:text-base" to={item.url}>
       {item.title}
     </Link>;
 };
