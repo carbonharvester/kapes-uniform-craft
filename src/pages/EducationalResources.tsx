@@ -286,7 +286,7 @@ const EducationalResources = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 px-4">
+      <section className="relative py-20 px-4" style={{ backgroundColor: '#cfeaff' }}>
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Transform Your Uniforms Into Teaching Tools
