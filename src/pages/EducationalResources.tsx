@@ -268,14 +268,6 @@ const EducationalResources = () => {
         </div>
       </section>
 
-      {/* Quote */}
-      <section className="bg-gradient-light-warm-section relative py-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <blockquote className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-            "Education doesn't stop at the classroom. With Kapes, every uniform is a learning opportunity."
-          </blockquote>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="relative py-20 px-4" style={{
