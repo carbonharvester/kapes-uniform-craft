@@ -115,6 +115,11 @@ const EducationalResources = () => {
           {/* Challenge Statistics */}
           <div className="mb-16">
             <h4 className="text-xl font-medium text-center mb-8">The Challenge (UNESCO):</h4>
+            <div className="text-center mb-8">
+              <p className="text-xl text-muted-foreground font-light leading-relaxed">
+                Based on research and best practices for climate education, our resources are designed to address key challenges:
+              </p>
+            </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6">
                 <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
@@ -129,12 +134,6 @@ const EducationalResources = () => {
                 <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
               </div>
             </div>
-          </div>
-          
-          <div className="text-center mb-12">
-            <p className="text-xl text-muted-foreground font-light leading-relaxed">
-              Based on research and best practices for climate education, our resources are designed to address key challenges:
-            </p>
           </div>
             
           <div className="bg-background/50 rounded-xl p-8">
