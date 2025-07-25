@@ -206,7 +206,41 @@ const ImpactPartnershipPage = () => {
             
             <Card className="border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm mx-4 sm:mx-0">
               <CardContent className="p-0">
-                <div className="overflow-x-auto">
+                {/* Mobile View - Card Layout */}
+                <div className="block sm:hidden">
+                  <div className="space-y-4 p-4">
+                    {comparisonData.map((row, index) => (
+                      <Card key={index} className="border border-gray-200 bg-white">
+                        <CardContent className="p-4">
+                          <h4 className="font-semibold text-gray-900 mb-3 text-sm">{row.feature}</h4>
+                          <div className="grid grid-cols-2 gap-4">
+                            <div className="text-center">
+                              <div className="text-xs text-gray-600 mb-2 font-medium">Kapes</div>
+                              <div className="flex flex-col items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                                  <Check className="h-3 w-3 text-white" />
+                                </div>
+                                <span className="font-medium text-green-700 text-xs text-center leading-tight">{row.kapes}</span>
+                              </div>
+                            </div>
+                            <div className="text-center">
+                              <div className="text-xs text-gray-600 mb-2 font-medium">Traditional</div>
+                              <div className="flex flex-col items-center gap-2">
+                                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
+                                  <X className="h-3 w-3 text-white" />
+                                </div>
+                                <span className="font-medium text-red-700 text-xs text-center leading-tight">{row.traditional}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Desktop View - Table Layout */}
+                <div className="hidden sm:block overflow-x-auto">
                   <table className="w-full min-w-[600px]">
                     <thead>
                       <tr className="bg-gradient-to-r from-gray-100 via-blue-50/50 to-gray-100 border-b-2 border-gray-200">
