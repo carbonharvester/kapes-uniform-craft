@@ -1,8 +1,147 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle } from "lucide-react";
+import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 export const UniformSolutions = () => {
+  const [openDialog, setOpenDialog] = useState<string | null>(null);
+
+  const materials = [
+    {
+      id: "organic-cotton",
+      title: "Regenerative Organic Cotton",
+      subtitle: "Carbon negative process that heals the earth.",
+      tagline: "Kind to skin. Kinder to Earth.",
+      description: "Naturally soft, breathable, and grown sustainably",
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
+      icon: <Leaf className="w-6 h-6" />,
+      details: {
+        title: "Regenerative Organic Cotton",
+        content: "Our organic cotton doesn't just avoid harm—it actively heals the earth. Grown using regenerative farming practices that improve soil health, increase biodiversity, and sequester carbon from the atmosphere. This naturally soft and breathable fabric is GOTS-certified, ensuring the highest environmental and social standards throughout the supply chain. From seed to shirt, every step is designed to restore the planet while creating the most comfortable uniforms for your students.",
+        features: [
+          "GOTS-certified organic cotton",
+          "Carbon negative farming practices",
+          "Improved soil health and biodiversity",
+          "Chemical-free growing process",
+          "Fair trade certified supply chain"
+        ]
+      }
+    },
+    {
+      id: "biodegradable-tech",
+      title: "Biodegradable Tech Fabrics",
+      subtitle: "Advanced performance that returns to nature.",
+      tagline: "High-tech. Zero waste.",
+      description: "Innovation meets sustainability",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop",
+      icon: <Recycle className="w-6 h-6" />,
+      details: {
+        title: "Biodegradable Tech Fabrics",
+        content: "Revolutionary fabrics that perform like high-tech synthetics but safely biodegrade at end of life. These innovative materials offer moisture-wicking, stain resistance, and durability while being completely natural and compostable. Made from advanced plant-based fibers and natural treatments, they represent the future of sustainable textiles—proving you don't need to choose between performance and planet.",
+        features: [
+          "100% biodegradable materials",
+          "Moisture-wicking technology",
+          "Natural stain resistance",
+          "Anti-microbial properties",
+          "Compostable at end of life"
+        ]
+      }
+    },
+    {
+      id: "recycled-fabrics",
+      title: "Recycled Fabrics",
+      subtitle: "Giving new life to waste materials.",
+      tagline: "Waste to wonder.",
+      description: "70% less carbon footprint",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=600&fit=crop",
+      icon: <ShieldCheck className="w-6 h-6" />,
+      details: {
+        title: "Recycled Fabrics",
+        content: "Durable materials crafted from recycled plastic bottles, textile waste, and other post-consumer materials. Each uniform diverts waste from landfills while reducing carbon emissions by up to 70% compared to virgin materials. Through innovative processing techniques, we transform waste into high-quality fabrics that are stronger, more durable, and better performing than traditional alternatives.",
+        features: [
+          "70% lower carbon footprint",
+          "Made from recycled plastic bottles",
+          "Diverts waste from landfills",
+          "Enhanced durability and strength",
+          "Fully traceable recycled content"
+        ]
+      }
+    }
+  ];
+
+  const uniformSolutions = [
+    {
+      id: "everyday-wear",
+      title: "Everyday Schoolwear",
+      subtitle: "Complete wardrobe solutions for daily learning.",
+      tagline: "Comfort meets durability.",
+      description: "Shirts, trousers, skirts, dresses, and blazers",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=600&fit=crop",
+      icon: <Shirt className="w-6 h-6" />,
+      details: {
+        title: "Complete Everyday Schoolwear",
+        content: "From polo shirts to formal blazers, our complete range covers every aspect of your school's uniform policy. Each piece is designed with comfort, durability, and ease of care in mind. Stain-resistant treatments ensure uniforms look fresh longer, while our comfort-first approach means students can focus on learning, not adjusting their clothes. Available in a full range of sizes and fits to ensure every student feels confident and comfortable.",
+        features: [
+          "Stain-resistant treatments",
+          "Easy-care fabrics",
+          "Comfort-first design",
+          "Full size range available",
+          "Durable construction",
+          "School-specific customization"
+        ]
+      }
+    },
+    {
+      id: "sports-kits",
+      title: "Sports & PE Kits",
+      subtitle: "High-performance gear for active learning.",
+      tagline: "Move better. Play better.",
+      description: "Breathable, sustainable performance wear",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
+      icon: <Zap className="w-6 h-6" />,
+      details: {
+        title: "High-Performance Sports & PE Kits",
+        content: "Our sports uniforms combine cutting-edge performance technology with sustainable materials. Made from natural fibers and biodegradable tech fabrics, they offer superior moisture-wicking, breathability, and anti-microbial properties. Designed to withstand intense activity while maintaining comfort and shape, these kits prove that sustainable doesn't mean compromising on performance.",
+        features: [
+          "Moisture-wicking technology",
+          "Anti-microbial properties",
+          "Durable construction",
+          "Natural fiber blend",
+          "Temperature regulation",
+          "Quick-dry capabilities"
+        ]
+      }
+    },
+    {
+      id: "accessories",
+      title: "Accessories & Essentials",
+      subtitle: "Complete your uniform program sustainably.",
+      tagline: "Every detail matters.",
+      description: "Hats, bags, ties, and socks",
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=600&fit=crop",
+      icon: <Users className="w-6 h-6" />,
+      details: {
+        title: "Sustainable Accessories & Essentials",
+        content: "Complete your uniform program with our range of sustainable accessories. From recycled polyester ties to organic cotton socks, every accessory is crafted with the same attention to sustainability and quality as our main uniform pieces. These finishing touches ensure a cohesive, professional appearance while maintaining your school's commitment to environmental responsibility.",
+        features: [
+          "Matching brand aesthetics",
+          "Sustainable materials",
+          "Quality craftsmanship",
+          "Durable design",
+          "Easy care instructions",
+          "Complete uniform coordination"
+        ]
+      }
+    }
+  ];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
@@ -34,7 +173,7 @@ export const UniformSolutions = () => {
       }}></div>
       </section>
 
-      {/* Enhanced Materials Section */}
+      {/* Materials Carousel Section */}
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
@@ -44,75 +183,109 @@ export const UniformSolutions = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <div className="group hover-lift transition-smooth animate-fade-in">
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <Leaf className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">
-                  Regenerative Organic Cotton
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Naturally soft, breathable, and grown sustainably to improve soil and biodiversity. Our cotton doesn't just avoid harm—it actively heals the earth.
-                </p>
-                <div className="mt-6 flex items-center justify-center text-primary">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">Carbon Negative Process</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{
-            animationDelay: '0.1s'
-          }}>
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-accent/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <Recycle className="w-8 h-8 text-accent" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">
-                  Biodegradable Tech Fabrics
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Advanced technology meets nature. These innovative fabrics perform like high-tech synthetics but safely biodegrade, leaving zero waste behind.
-                </p>
-                <div className="mt-6 flex items-center justify-center text-accent">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">100% Biodegradable</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full text-center">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <ShieldCheck className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4">
-                  Recycled Fabrics
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Durable materials crafted from recycled fibers, giving new life to plastic waste while reducing carbon footprint by up to 70%.
-                </p>
-                <div className="mt-6 flex items-center justify-center text-primary">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">70% Less Carbon</span>
-                </div>
-              </div>
-            </div>
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4 py-4">
+                {materials.map((material) => (
+                  <CarouselItem key={material.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <Dialog open={openDialog === material.id} onOpenChange={(open) => setOpenDialog(open ? material.id : null)}>
+                      <DialogTrigger asChild>
+                        <Card className="group cursor-pointer border-0 shadow-glass hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
+                          <div className="relative">
+                            <div 
+                              className="h-48 bg-cover bg-center relative"
+                              style={{ backgroundImage: `url(${material.image})` }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                              <div className="absolute top-4 left-4">
+                                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                                  {material.icon}
+                                </div>
+                              </div>
+                              <div className="absolute bottom-4 left-4 right-4">
+                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-1">
+                                  {material.tagline}
+                                </div>
+                                <h3 className="text-white font-semibold text-lg leading-tight">
+                                  {material.title}
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                          <CardContent className="p-6">
+                            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                              {material.subtitle}
+                            </p>
+                            <p className="text-foreground font-medium text-sm mb-4">
+                              {material.description}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs text-muted-foreground uppercase tracking-wide font-medium">
+                                Learn More
+                              </span>
+                              <div className="bg-primary/10 rounded-full p-2 group-hover:bg-primary/20 transition-colors">
+                                <Plus className="w-3 h-3 text-primary" />
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                        <div className="space-y-6">
+                          <div 
+                            className="h-64 bg-cover bg-center rounded-lg relative"
+                            style={{ backgroundImage: `url(${material.image})` }}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-lg"></div>
+                            <div className="absolute bottom-6 left-6">
+                              <div className="text-white/80 text-sm font-medium uppercase tracking-wide mb-2">
+                                {material.tagline}
+                              </div>
+                              <h2 className="text-3xl font-bold text-white leading-tight">
+                                {material.details.title}
+                              </h2>
+                            </div>
+                          </div>
+                          
+                          <div className="px-2">
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                              {material.details.content}
+                            </p>
+                            
+                            {material.details.features.length > 0 && (
+                              <div>
+                                <h3 className="font-semibold text-lg mb-4">Key Features</h3>
+                                <div className="grid gap-3">
+                                  {material.details.features.map((feature, index) => (
+                                    <div key={index} className="flex items-start gap-3">
+                                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                                      <span className="text-muted-foreground">{feature}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Uniform Types Section */}
+      {/* Uniform Solutions Carousel Section */}
       <section className="bg-gradient-warm-section py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="container mx-auto px-4 relative">
@@ -123,94 +296,104 @@ export const UniformSolutions = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            <div className="group hover-lift transition-smooth animate-fade-in">
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <Shirt className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-center">Everyday Schoolwear</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-center">
-                  Complete wardrobe solutions including shirts, trousers, skirts, dresses, shorts, and blazers.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Stain-resistant treatments</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Easy-care fabrics</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Comfort-first design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{
-            animationDelay: '0.1s'
-          }}>
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-accent/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <Zap className="w-8 h-8 text-accent" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-center">Sports & PE Kits</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-center">
-                  High-performance, breathable kits made from natural fibers and sustainable tech-fabrics.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-accent flex-shrink-0" />
-                    <span>Moisture-wicking technology</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-accent flex-shrink-0" />
-                    <span>Anti-microbial properties</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-accent flex-shrink-0" />
-                    <span>Durable construction</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="group hover-lift transition-smooth animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
-              <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 h-full">
-                <div className="flex justify-center mb-6">
-                  <div className="bg-primary/10 rounded-2xl p-4 group-hover:scale-110 transition-smooth">
-                    <Users className="w-8 h-8 text-primary" />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-center">Accessories & Essentials</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-center">
-                  Complete your uniform program with sustainable hats, bags, ties, and socks.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Matching brand aesthetics</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Sustainable materials</span>
-                  </div>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 mr-3 text-primary flex-shrink-0" />
-                    <span>Quality craftsmanship</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="relative">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4 py-4">
+                {uniformSolutions.map((solution) => (
+                  <CarouselItem key={solution.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <Dialog open={openDialog === solution.id} onOpenChange={(open) => setOpenDialog(open ? solution.id : null)}>
+                      <DialogTrigger asChild>
+                        <Card className="group cursor-pointer border-0 shadow-glass hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
+                          <div className="relative">
+                            <div 
+                              className="h-48 bg-cover bg-center relative"
+                              style={{ backgroundImage: `url(${solution.image})` }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                              <div className="absolute top-4 left-4">
+                                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                                  {solution.icon}
+                                </div>
+                              </div>
+                              <div className="absolute bottom-4 left-4 right-4">
+                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-1">
+                                  {solution.tagline}
+                                </div>
+                                <h3 className="text-white font-semibold text-lg leading-tight">
+                                  {solution.title}
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                          <CardContent className="p-6">
+                            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                              {solution.subtitle}
+                            </p>
+                            <p className="text-foreground font-medium text-sm mb-4">
+                              {solution.description}
+                            </p>
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs text-muted-foreground uppercase tracking-wide font-medium">
+                                Learn More
+                              </span>
+                              <div className="bg-primary/10 rounded-full p-2 group-hover:bg-primary/20 transition-colors">
+                                <Plus className="w-3 h-3 text-primary" />
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                        <div className="space-y-6">
+                          <div 
+                            className="h-64 bg-cover bg-center rounded-lg relative"
+                            style={{ backgroundImage: `url(${solution.image})` }}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent rounded-lg"></div>
+                            <div className="absolute bottom-6 left-6">
+                              <div className="text-white/80 text-sm font-medium uppercase tracking-wide mb-2">
+                                {solution.tagline}
+                              </div>
+                              <h2 className="text-3xl font-bold text-white leading-tight">
+                                {solution.details.title}
+                              </h2>
+                            </div>
+                          </div>
+                          
+                          <div className="px-2">
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                              {solution.details.content}
+                            </p>
+                            
+                            {solution.details.features.length > 0 && (
+                              <div>
+                                <h3 className="font-semibold text-lg mb-4">Key Features</h3>
+                                <div className="grid gap-3">
+                                  {solution.details.features.map((feature, index) => (
+                                    <div key={index} className="flex items-start gap-3">
+                                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                                      <span className="text-muted-foreground">{feature}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4" />
+              <CarouselNext className="right-4" />
+            </Carousel>
           </div>
         </div>
       </section>
