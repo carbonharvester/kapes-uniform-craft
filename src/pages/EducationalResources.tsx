@@ -80,7 +80,7 @@ const EducationalResources = () => {
       {/* Resources Grid */}
       <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">What's Included</h2>
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Turning Textiles into Learning Materials</h2>
           <div className="grid gap-8 md:grid-cols-2">
             {resources.map((resource, index) => (
               <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
