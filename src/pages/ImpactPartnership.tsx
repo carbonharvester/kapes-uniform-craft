@@ -79,7 +79,7 @@ const ImpactPartnershipPage = () => {
       feature: "Ethical Supply Chain",
       description: "Fair wages, safe working conditions, and ethical practices",
       kapes: "100% Ethical - Audited & certified supply chain",
-      traditional: "Limited oversight - Unverified practices"
+      traditional: "None or Limited oversight"
     },
     {
       feature: "Delivery Options",
