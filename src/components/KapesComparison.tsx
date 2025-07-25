@@ -76,19 +76,19 @@ export const KapesComparison = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-gray-50 border-b border-gray-200">
-                        <th className="text-left font-semibold py-4 px-4 text-gray-700 text-sm">Feature</th>
-                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm">Kapes</th>
+                      <tr className="bg-gray-50 border-b-2 border-gray-200">
+                        <th className="text-left font-semibold py-4 px-4 text-gray-700 text-sm border-r border-gray-200">Feature</th>
+                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm border-r border-gray-200">Kapes</th>
                         <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm">Traditional</th>
                       </tr>
                     </thead>
                     <tbody>
                       {comparisonData.map((row, index) => (
-                        <tr key={index} className="border-b border-gray-100 last:border-b-0">
-                          <td className="py-4 px-4 text-left">
+                        <tr key={index} className="border-b border-gray-200 last:border-b-0">
+                          <td className="py-4 px-4 text-left border-r border-gray-200">
                             <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
                           </td>
-                          <td className="py-4 px-3 text-center">
+                          <td className="py-4 px-3 text-center border-r border-gray-200">
                             <div className="flex flex-col items-center gap-1">
                               <Check className="h-4 w-4 text-green-500" />
                               <span className="font-medium text-green-600 text-xs leading-tight text-center">{row.kapes}</span>
@@ -114,19 +114,19 @@ export const KapesComparison = () => {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-gray-50/80 border-b">
-                        <th className="text-left font-semibold py-6 px-8 text-gray-700">Feature</th>
-                        <th className="text-center font-semibold py-6 px-8 text-gray-700">Kapes</th>
+                      <tr className="bg-gray-50/80 border-b-2 border-gray-200">
+                        <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
+                        <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
                         <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
                       </tr>
                     </thead>
                     <tbody>
                       {comparisonData.map((row, index) => (
-                        <tr key={index} className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
-                          <td className="py-6 px-8">
+                        <tr key={index} className="border-b border-gray-200 hover:bg-gray-50/30 transition-colors">
+                          <td className="py-6 px-8 border-r border-gray-200">
                             <span className="font-medium text-gray-900">{row.feature}</span>
                           </td>
-                          <td className="py-6 px-8 text-center">
+                          <td className="py-6 px-8 text-center border-r border-gray-200">
                             <div className="flex items-center justify-center gap-2">
                               <Check className="h-5 w-5 text-green-500" />
                               <span className="font-medium text-green-600">{row.kapes}</span>
