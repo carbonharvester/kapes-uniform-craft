@@ -44,7 +44,7 @@ const ImpactPartnershipPage = () => {
       feature: "Sustainable Materials",
       description: "Quality and sustainability of fabric materials",
       kapes: "100% Sustainable",
-      traditional: "Virgin synthetic fibres and conventional cotton"
+      traditional: "Synthetic fibres and conventional cotton"
     },
     {
       feature: "AI Size Recommendations",
