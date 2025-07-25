@@ -222,16 +222,16 @@ const ImpactPartnershipPage = () => {
                           <td className="h-20 px-2 text-left border-r border-gray-200 w-1/3 align-middle">
                             <span className="font-medium text-gray-900 text-xs leading-tight">{row.feature}</span>
                           </td>
-                          <td className="h-20 px-2 text-center border-r border-gray-200 w-1/3 align-middle">
-                            <div className="flex flex-col items-center justify-center gap-1 h-full">
+                          <td className="py-3 px-2 text-center border-r border-gray-200 w-1/3 align-top">
+                            <div className="flex flex-col items-center gap-1">
                               <div className="h-4 w-4 flex items-center justify-center flex-shrink-0">
                                 <Check className="h-3 w-3 text-green-500" />
                               </div>
                               <span className="font-medium text-green-600 text-xs leading-tight text-center">{row.kapes}</span>
                             </div>
                           </td>
-                          <td className="h-20 px-2 text-center w-1/3 align-middle">
-                            <div className="flex flex-col items-center justify-center gap-1 h-full">
+                          <td className="py-3 px-2 text-center w-1/3 align-top">
+                            <div className="flex flex-col items-center gap-1">
                               <div className="h-4 w-4 flex items-center justify-center flex-shrink-0">
                                 <X className="h-3 w-3 text-red-500" />
                               </div>
