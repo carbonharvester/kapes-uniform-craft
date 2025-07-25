@@ -120,7 +120,11 @@ const FactoryVisits = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
                         <h3 className="text-xl font-semibold text-white mb-1">Production Process</h3>
-                        <p className="text-white/90 text-sm">From cutting to stitching to quality checks — see the ethical production process firsthand</p>
+                        <p className="text-white/90 text-sm mb-2">From cutting to stitching to quality checks — see the ethical production process firsthand</p>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-white/80" />
+                          <span className="text-white/80 text-xs">India & Kenya</span>
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -135,7 +139,13 @@ const FactoryVisits = () => {
                       />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-light mb-4">Production Process</h2>
+                      <div className="flex items-center gap-3 mb-4">
+                        <h2 className="text-3xl font-light">Production Process</h2>
+                        <div className="flex items-center gap-1 px-3 py-1 bg-primary/10 rounded-full">
+                          <MapPin className="w-4 h-4 text-primary" />
+                          <span className="text-sm font-medium text-primary">India & Kenya</span>
+                        </div>
+                      </div>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         From cutting to stitching to quality checks — see the ethical production process firsthand. 
                         Our guided tours take you through every step of creating a school uniform, from the initial 
@@ -207,7 +217,11 @@ const FactoryVisits = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
                         <h3 className="text-xl font-semibold text-white mb-1">Sustainable Materials</h3>
-                        <p className="text-white/90 text-sm">Experience recycled fibers, biodegradable fabrics, and low-waste systems in action</p>
+                        <p className="text-white/90 text-sm mb-2">Experience recycled fibers, biodegradable fabrics, and low-waste systems in action</p>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-white/80" />
+                          <span className="text-white/80 text-xs">India</span>
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -222,7 +236,13 @@ const FactoryVisits = () => {
                       />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-light mb-4">Sustainable Materials</h2>
+                      <div className="flex items-center gap-3 mb-4">
+                        <h2 className="text-3xl font-light">Sustainable Materials</h2>
+                        <div className="flex items-center gap-1 px-3 py-1 bg-green-500/10 rounded-full">
+                          <MapPin className="w-4 h-4 text-green-600" />
+                          <span className="text-sm font-medium text-green-600">India</span>
+                        </div>
+                      </div>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         Experience recycled fibers, biodegradable fabrics, and low-waste systems in action. 
                         Our material selection process prioritizes environmental responsibility without compromising 
@@ -294,7 +314,11 @@ const FactoryVisits = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
                         <h3 className="text-xl font-semibold text-white mb-1">Distribution Systems</h3>
-                        <p className="text-white/90 text-sm">Explore sustainable logistics and efficient distribution networks that minimize environmental impact</p>
+                        <p className="text-white/90 text-sm mb-2">Explore sustainable logistics and efficient distribution networks that minimize environmental impact</p>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3 h-3 text-white/80" />
+                          <span className="text-white/80 text-xs">Dubai</span>
+                        </div>
                       </div>
                     </div>
                   </Card>
@@ -309,7 +333,13 @@ const FactoryVisits = () => {
                       />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-light mb-4">Distribution Systems</h2>
+                      <div className="flex items-center gap-3 mb-4">
+                        <h2 className="text-3xl font-light">Distribution Systems</h2>
+                        <div className="flex items-center gap-1 px-3 py-1 bg-blue-500/10 rounded-full">
+                          <MapPin className="w-4 h-4 text-blue-600" />
+                          <span className="text-sm font-medium text-blue-600">Dubai</span>
+                        </div>
+                      </div>
                       <p className="text-muted-foreground leading-relaxed mb-6">
                         Explore sustainable logistics and efficient distribution networks that minimize environmental impact. 
                         Our distribution model prioritizes efficiency while maintaining our commitment to environmental responsibility.
