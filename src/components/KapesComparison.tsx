@@ -48,6 +48,7 @@ export const KapesComparison = () => {
     },
   ];
 
+  console.log("KapesComparison component rendering with icons:", { CheckCircle2, XCircle });
   return (
     <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
