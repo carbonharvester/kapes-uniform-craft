@@ -269,7 +269,7 @@ const EducationalResources = () => {
           <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">Engage your students with meaningful content that connects their daily uniform to global impact. Complete our Sustainability Audit Tool to receive a free lesson from our Life Cycle of a School Uniform unit. </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
-              Download a Sample Lesson
+              Take Free Assessment
             </Button>
             <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Book a Demo of Our Resources
