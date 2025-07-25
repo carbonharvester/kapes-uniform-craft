@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe, Truck } from "lucide-react";
+import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe, Truck, Plus } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const FactoryVisits = () => {
 
@@ -98,98 +103,265 @@ const FactoryVisits = () => {
             </div>
             
             <div className="grid gap-8 md:grid-cols-3">
-              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg"
-                    alt="Ethical production process"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Users className="w-5 h-5 text-primary" />
+              {/* Production Process Card */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
+                    <div className="relative">
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img 
+                          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg"
+                          alt="Production Process"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                        <Plus className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
+                        <h3 className="text-xl font-semibold text-white mb-1">Production Process</h3>
+                        <p className="text-white/90 text-sm">From cutting to stitching to quality checks — see the ethical production process firsthand</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold">Production Process</h3>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <div className="space-y-6">
+                    <div className="aspect-[16/9] overflow-hidden rounded-lg">
+                      <img 
+                        src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg"
+                        alt="Production Process"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-light mb-4">Production Process</h2>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        From cutting to stitching to quality checks — see the ethical production process firsthand. 
+                        Our guided tours take you through every step of creating a school uniform, from the initial 
+                        fabric preparation through to the final quality inspections.
+                      </p>
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">What You'll See</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Behind-the-scenes factory tours</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Quality control demonstrations</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Fabric cutting and pattern-making</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Skilled seamstress workstations</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">Educational Value</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Understanding manufacturing processes</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Appreciating skilled craftsmanship</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Learning about quality standards</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Seeing ethical practices in action</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    From cutting to stitching to quality checks — see the ethical production process firsthand
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Behind-the-scenes factory tours</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Quality control demonstrations</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                </DialogContent>
+              </Dialog>
 
-              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg"
-                    alt="Sustainable materials in action"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
-                      <Plane className="w-5 h-5 text-green-600" />
+              {/* Sustainable Materials Card */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
+                    <div className="relative">
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img 
+                          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg"
+                          alt="Sustainable Materials"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                        <Plus className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
+                        <h3 className="text-xl font-semibold text-white mb-1">Sustainable Materials</h3>
+                        <p className="text-white/90 text-sm">Experience recycled fibers, biodegradable fabrics, and low-waste systems in action</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold">Sustainable Materials</h3>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <div className="space-y-6">
+                    <div className="aspect-[16/9] overflow-hidden rounded-lg">
+                      <img 
+                        src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg"
+                        alt="Sustainable Materials"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-light mb-4">Sustainable Materials</h2>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        Experience recycled fibers, biodegradable fabrics, and low-waste systems in action. 
+                        Our material selection process prioritizes environmental responsibility without compromising 
+                        on quality, comfort, or durability.
+                      </p>
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">Material Types</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Organic cotton processing</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Recycled fiber demonstration</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Biodegradable fabric options</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Low-impact dye processes</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">Environmental Impact</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Reduced water consumption</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Lower carbon footprint</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Waste reduction systems</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Chemical-free processing</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Experience recycled fibers, biodegradable fabrics, and low-waste systems in action
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Organic cotton processing</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Recycled fiber demonstration</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                </DialogContent>
+              </Dialog>
 
-              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Distribution and logistics"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
-                      <Truck className="w-5 h-5 text-blue-600" />
+              {/* Distribution Systems Card */}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
+                    <div className="relative">
+                      <div className="aspect-[4/3] overflow-hidden">
+                        <img 
+                          src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                          alt="Distribution Systems"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                        <Plus className="w-4 h-4 text-white" />
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
+                        <h3 className="text-xl font-semibold text-white mb-1">Distribution Systems</h3>
+                        <p className="text-white/90 text-sm">Explore sustainable logistics and efficient distribution networks that minimize environmental impact</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold">Distribution Systems</h3>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <div className="space-y-6">
+                    <div className="aspect-[16/9] overflow-hidden rounded-lg">
+                      <img 
+                        src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        alt="Distribution Systems"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-3xl font-light mb-4">Distribution Systems</h2>
+                      <p className="text-muted-foreground leading-relaxed mb-6">
+                        Explore sustainable logistics and efficient distribution networks that minimize environmental impact. 
+                        Our distribution model prioritizes efficiency while maintaining our commitment to environmental responsibility.
+                      </p>
+                      <div className="grid gap-4 md:grid-cols-2">
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">Sustainable Solutions</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Sustainable packaging solutions</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Carbon-neutral delivery systems</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Optimized delivery routes</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Recyclable packaging materials</span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className="space-y-3">
+                          <h3 className="font-semibold">Logistics Innovation</h3>
+                          <ul className="space-y-2 text-sm text-muted-foreground">
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Smart locker collection points</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Consolidated delivery schedules</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Real-time tracking systems</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                              <span>Efficient return processes</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Explore sustainable logistics and efficient distribution networks that minimize environmental impact
-                  </p>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Sustainable packaging solutions</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Carbon-neutral delivery systems</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+                </DialogContent>
+              </Dialog>
             </div>
           </section>
 
