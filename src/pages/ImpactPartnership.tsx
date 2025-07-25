@@ -204,48 +204,71 @@ const ImpactPartnershipPage = () => {
               </p>
             </div>
             
-            <Card className="border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
+            {/* Mobile Layout */}
+            <div className="md:hidden space-y-4">
+              {comparisonData.map((row, index) => (
+                <Card key={index} className="border border-gray-200/50 shadow-sm bg-white">
+                  <CardContent className="p-4">
+                    <h3 className="font-medium text-gray-900 mb-3 text-sm">{row.feature}</h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="flex flex-col items-center gap-2 p-3 bg-green-50 rounded-lg">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                          <Check className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="font-medium text-green-700 text-xs text-center leading-tight">{row.kapes}</span>
+                      </div>
+                      <div className="flex flex-col items-center gap-2 p-3 bg-red-50 rounded-lg">
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
+                          <X className="h-3 w-3 text-white" />
+                        </div>
+                        <span className="font-medium text-red-700 text-xs text-center leading-tight">{row.traditional}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* Desktop Table */}
+            <Card className="hidden md:block border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
               <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-full">
-                    <thead>
-                      <tr className="bg-gradient-to-r from-gray-100 via-blue-50/50 to-gray-100 border-b-2 border-gray-200">
-                        <th className="text-left font-semibold py-3 md:py-6 px-3 md:px-8 text-gray-700 border-r border-gray-200 text-sm md:text-base">Feature</th>
-                        <th className="text-center font-semibold py-3 md:py-6 px-2 md:px-8 text-gray-700 border-r border-gray-200 text-sm md:text-base">Kapes</th>
-                        <th className="text-center font-semibold py-3 md:py-6 px-2 md:px-8 text-gray-700 text-sm md:text-base">Traditional</th>
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-gray-100 via-blue-50/50 to-gray-100 border-b-2 border-gray-200">
+                      <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
+                      <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
+                      <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonData.map((row, index) => (
+                      <tr 
+                        key={index} 
+                        className="border-b border-gray-200 hover:bg-gradient-to-r hover:from-blue-50/20 hover:via-green-50/20 hover:to-blue-50/20 transition-all duration-300"
+                      >
+                        <td className="py-6 px-8 border-r border-gray-200">
+                          <span className="font-medium text-gray-900">{row.feature}</span>
+                        </td>
+                        <td className="py-6 px-8 text-center border-r border-gray-200">
+                          <div className="flex flex-col items-center gap-2">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                              <Check className="h-4 w-4 text-white" />
+                            </div>
+                            <span className="font-medium text-green-700 text-sm text-center">{row.kapes}</span>
+                          </div>
+                        </td>
+                        <td className="py-6 px-8 text-center">
+                          <div className="flex flex-col items-center gap-2">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
+                              <X className="h-4 w-4 text-white" />
+                            </div>
+                            <span className="font-medium text-red-700 text-sm text-center">{row.traditional}</span>
+                          </div>
+                        </td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonData.map((row, index) => (
-                        <tr 
-                          key={index} 
-                          className="border-b border-gray-200 hover:bg-gradient-to-r hover:from-blue-50/20 hover:via-green-50/20 hover:to-blue-50/20 transition-all duration-300 animate-fade-in hover:scale-[1.01] hover:shadow-md"
-                          style={{ animationDelay: `${index * 50}ms` }}
-                        >
-                          <td className="py-3 md:py-6 px-3 md:px-8 border-r border-gray-200">
-                            <span className="font-medium text-gray-900 text-sm md:text-base leading-tight">{row.feature}</span>
-                          </td>
-                          <td className="py-3 md:py-6 px-2 md:px-8 text-center border-r border-gray-200">
-                            <div className="flex flex-col items-center gap-2 h-full justify-start">
-                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg flex-shrink-0">
-                                <Check className="h-3 w-3 md:h-4 md:w-4 text-white" />
-                              </div>
-                              <span className="font-medium text-green-700 text-xs md:text-sm text-center leading-tight px-1">{row.kapes}</span>
-                            </div>
-                          </td>
-                          <td className="py-3 md:py-6 px-2 md:px-8 text-center">
-                            <div className="flex flex-col items-center gap-2 h-full justify-start">
-                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg flex-shrink-0">
-                                <X className="h-3 w-3 md:h-4 md:w-4 text-white" />
-                              </div>
-                              <span className="font-medium text-red-700 text-xs md:text-sm text-center leading-tight px-1">{row.traditional}</span>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
+                    ))}
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
             
