@@ -28,7 +28,7 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      feature: "Free Meals for Children", 
+      feature: "Free Meals for Students", 
       kapes: "Yes",
       kapesPositive: true,
       traditional: "No",
