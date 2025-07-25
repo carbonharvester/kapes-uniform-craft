@@ -166,10 +166,39 @@ const EducationalResources = () => {
             </Card>
           </div>
 
+          {/* Research Foundation */}
+          <div className="text-center mb-8">
+            <p className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
+              Based on research and best practices for climate education, our resources are designed to address key challenges:
+            </p>
+          </div>
+          
+          <div className="bg-background/50 rounded-xl p-8 mb-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-medium mb-4">The Challenge (UNESCO):</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 95% of teachers feel climate education is important</li>
+                  <li>• Only 30% feel prepared to teach the subject</li>
+                  <li>• 70% of young people cannot explain climate change</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium mb-4">Our Solution:</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Ready-to-use, research-backed resources</li>
+                  <li>• Action-focused, hope-building content</li>
+                  <li>• Real-world connections through uniforms</li>
+                  <li>• No preparation required</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* Simple Implementation Message */}
           <div className="text-center mb-12">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Everything you need to bring sustainability education to life in your classroom — no preparation required.
+              Everything you need to bring sustainability education to life in your classroom.
             </p>
           </div>
 
