@@ -48,7 +48,7 @@ const ImpactPartnershipPage = () => {
     {
       feature: "AI Technology",
       description: "AI-powered sizing and fit technology",
-      kapes: "AI-Powered Sizing - Fewer returns",
+      kapes: "AI-Powered Sizing = Fewer returns",
       traditional: "Standard size charts - Higher return rates"
     },
     {
