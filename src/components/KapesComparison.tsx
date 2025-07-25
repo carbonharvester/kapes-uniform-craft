@@ -77,41 +77,46 @@ export const KapesComparison = () => {
           </p>
           
           {isMobile ? (
-            // Mobile card layout
-            <div className="space-y-3">
-              {comparisonData.map((row, index) => (
-                <Card key={index} className="border border-gray-200 shadow-sm bg-white rounded-xl overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 py-3 border-b border-gray-200">
-                      <div className="flex items-center gap-3">
-                        <span className="text-2xl">{row.icon}</span>
-                        <h3 className="font-semibold text-gray-900 text-base">{row.feature}</h3>
-                      </div>
-                    </div>
-                    
-                    <div className="p-4">
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between bg-green-50 rounded-lg p-3 border border-green-200">
-                          <div className="flex-1">
-                            <p className="text-xs font-medium text-green-800 mb-1">✓ Kapes</p>
-                            <span className="text-sm font-medium text-green-700 leading-tight">{row.kapes}</span>
-                          </div>
-                          <Check className="h-5 w-5 text-green-500 flex-shrink-0 ml-2" />
-                        </div>
-                        
-                        <div className="flex items-center justify-between bg-red-50 rounded-lg p-3 border border-red-200">
-                          <div className="flex-1">
-                            <p className="text-xs font-medium text-red-800 mb-1">✗ Traditional</p>
-                            <span className="text-sm font-medium text-red-700 leading-tight">{row.traditional}</span>
-                          </div>
-                          <X className="h-5 w-5 text-red-500 flex-shrink-0 ml-2" />
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            // Mobile table layout
+            <Card className="border border-gray-200 shadow-sm bg-white rounded-lg overflow-hidden">
+              <CardContent className="p-0">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gray-50 border-b border-gray-200">
+                        <th className="text-left font-semibold py-4 px-4 text-gray-700 text-sm">Feature</th>
+                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm">Kapes</th>
+                        <th className="text-center font-semibold py-4 px-3 text-gray-700 text-sm">Traditional</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonData.map((row, index) => (
+                        <tr key={index} className="border-b border-gray-100 last:border-b-0">
+                          <td className="py-4 px-4">
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg">{row.icon}</span>
+                              <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
+                            </div>
+                          </td>
+                          <td className="py-4 px-3 text-center">
+                            <div className="flex flex-col items-center gap-1">
+                              <Check className="h-4 w-4 text-green-500" />
+                              <span className="font-medium text-green-600 text-xs leading-tight text-center">{row.kapes}</span>
+                            </div>
+                          </td>
+                          <td className="py-4 px-3 text-center">
+                            <div className="flex flex-col items-center gap-1">
+                              <X className="h-4 w-4 text-red-500" />
+                              <span className="font-medium text-red-600 text-xs leading-tight text-center">{row.traditional}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
           ) : (
             // Desktop table layout
             <Card className="border-0 shadow-lg overflow-hidden bg-white">
