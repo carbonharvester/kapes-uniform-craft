@@ -109,6 +109,66 @@ const EducationalResources = () => {
         </div>
       </section>
 
+      {/* Challenge Section */}
+      <section className="relative py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8">
+            <p className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
+              Based on research and best practices for climate education, our resources are designed to address key challenges:
+            </p>
+          </div>
+          
+          {/* Challenge Statistics */}
+          <div className="mb-12">
+            <h4 className="text-xl font-medium text-center mb-8">The Challenge (UNESCO):</h4>
+            <div className="grid md:grid-cols-3 gap-6 mb-8">
+              <Card className="border-0 shadow-glass text-center p-6">
+                <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
+                <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
+              </Card>
+              <Card className="border-0 shadow-glass text-center p-6">
+                <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
+                <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
+              </Card>
+              <Card className="border-0 shadow-glass text-center p-6">
+                <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
+                <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
+              </Card>
+            </div>
+            
+            <div className="bg-background/50 rounded-xl p-8">
+              <h4 className="font-medium text-center mb-6">Our Solution:</h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-sm">✓</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Ready-to-use, research-backed resources</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-sm">✓</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Action-focused, hope-building content</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-sm">✓</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Real-world connections through uniforms</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-white text-sm">✓</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">No preparation required</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Plug and Play Section */}
       <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -166,61 +226,6 @@ const EducationalResources = () => {
             </Card>
           </div>
 
-          {/* Research Foundation */}
-          <div className="text-center mb-8">
-            <p className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
-              Based on research and best practices for climate education, our resources are designed to address key challenges:
-            </p>
-          </div>
-          
-          {/* Challenge Statistics */}
-          <div className="mb-12">
-            <h4 className="text-xl font-medium text-center mb-8">The Challenge (UNESCO):</h4>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="border-0 shadow-glass text-center p-6">
-                <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
-                <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
-              </Card>
-              <Card className="border-0 shadow-glass text-center p-6">
-                <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
-                <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
-              </Card>
-              <Card className="border-0 shadow-glass text-center p-6">
-                <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
-                <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
-              </Card>
-            </div>
-            
-            <div className="bg-background/50 rounded-xl p-8">
-              <h4 className="font-medium text-center mb-6">Our Solution:</h4>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Ready-to-use, research-backed resources</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Action-focused, hope-building content</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Real-world connections through uniforms</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">No preparation required</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Simple Implementation Message */}
           <div className="text-center mb-12">
