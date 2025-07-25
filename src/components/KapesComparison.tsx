@@ -65,7 +65,7 @@ export const KapesComparison = () => {
             <table className="w-full border-collapse border border-gray-300 text-xs">
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="border border-gray-300 px-1 py-2 text-left font-semibold text-gray-700">Feature</th>
+                  <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
                   <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes</th>
                   <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
                 </tr>
@@ -73,7 +73,7 @@ export const KapesComparison = () => {
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-left align-top">{row.feature}</td>
+                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-top">{row.feature}</td>
                     <td className="border border-gray-300 px-1 py-2 text-center align-top">
                       <div className="flex flex-col items-center gap-1">
                         <CheckCircle2 className="h-5 w-5 text-green-600" />
