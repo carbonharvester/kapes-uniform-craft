@@ -197,6 +197,62 @@ const StudentLeadership = () => {
             </div>
           </section>
 
+          {/* Meet the Team */}
+          <section className="py-20">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+                Meet the Young Leaders
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Current members of the Kapes Young Leaders Council making real change in their schools and communities.
+              </p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+              {[
+                {
+                  name: "Sarah Chen",
+                  school: "Greenfield Academy",
+                  role: "Council Chair",
+                  quote: "Leading sustainability initiatives has taught me that students can drive real change.",
+                  image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  name: "Marcus Thompson",
+                  school: "Riverside High",
+                  role: "Innovation Lead",
+                  quote: "Being part of this council opened my eyes to the power of ethical fashion.",
+                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                },
+                {
+                  name: "Aisha Patel",
+                  school: "St. Mary's College",
+                  role: "Community Outreach",
+                  quote: "I love how we're creating a more sustainable future through our uniform choices.",
+                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                }
+              ].map((member, index) => (
+                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth text-center">
+                  <CardContent className="p-6">
+                    <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
+                    <p className="text-primary font-medium mb-2">{member.role}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{member.school}</p>
+                    <blockquote className="text-sm italic text-muted-foreground leading-relaxed">
+                      "{member.quote}"
+                    </blockquote>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
           {/* Why It Matters */}
           <section className="w-full bg-gradient-warm-section py-16">
             <div className="container mx-auto px-4">
