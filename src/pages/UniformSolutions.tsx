@@ -205,7 +205,7 @@ export const UniformSolutions = () => {
                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                               
                               {/* Plus icon in top right */}
-                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
                                 <Plus className="w-4 h-4 text-white" />
                               </div>
                               
@@ -217,7 +217,7 @@ export const UniformSolutions = () => {
                                 <h3 className="text-white font-semibold text-xl leading-tight mb-2">
                                   {material.title}
                                 </h3>
-                                <p className="text-white/80 text-sm leading-relaxed mb-3">
+                                <p className="text-white/80 text-sm leading-relaxed mb-3 line-clamp-1">
                                   {material.subtitle}
                                 </p>
                                 <p className="text-white font-medium text-sm">
@@ -310,7 +310,7 @@ export const UniformSolutions = () => {
                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                               
                               {/* Plus icon in top right */}
-                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
                                 <Plus className="w-4 h-4 text-white" />
                               </div>
                               
@@ -322,7 +322,7 @@ export const UniformSolutions = () => {
                                 <h3 className="text-white font-semibold text-xl leading-tight mb-2">
                                   {solution.title}
                                 </h3>
-                                <p className="text-white/80 text-sm leading-relaxed mb-3">
+                                <p className="text-white/80 text-sm leading-relaxed mb-3 line-clamp-1">
                                   {solution.subtitle}
                                 </p>
                                 <p className="text-white font-medium text-sm">
