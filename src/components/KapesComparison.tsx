@@ -42,7 +42,7 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      feature: "Takeback & Recycling Scheme",
+      feature: "Takeback Scheme",
       kapes: "Fully Managed",
       kapesPositive: true,
       traditional: "Not Offered",
