@@ -271,9 +271,7 @@ const EducationalResources = () => {
             <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Take Free Assessment
             </Button>
-            <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
-              Book a Demo of Our Resources
-            </Button>
+            
           </div>
         </div>
       </section>
