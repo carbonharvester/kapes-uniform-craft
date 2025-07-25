@@ -61,7 +61,7 @@ const ImpactPartnershipPage = () => {
       feature: "Free Uniforms to Kids in Need",
       description: "Donated uniforms to children across Africa",
       kapes: "Yes - Global donation program",
-      traditional: "No donation programs"
+      traditional: "No impact programs"
     },
     {
       feature: "Takeback & Recycling Scheme",
