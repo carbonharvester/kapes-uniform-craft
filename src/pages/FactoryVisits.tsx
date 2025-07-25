@@ -314,7 +314,7 @@ const FactoryVisits = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent p-6">
                         <h3 className="text-xl font-semibold text-white mb-1">Distribution Systems</h3>
-                        <p className="text-white/90 text-sm mb-2">Explore sustainable logistics and efficient distribution networks that minimize environmental impact</p>
+                        <p className="text-white/90 text-sm mb-2">Explore logistics and efficient distribution networks that minimize environmental impact</p>
                         <div className="flex items-center gap-2">
                           <MapPin className="w-3 h-3 text-white/80" />
                           <span className="text-white/80 text-xs">Dubai</span>
