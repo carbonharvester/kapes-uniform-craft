@@ -254,7 +254,7 @@ const ImpactPartnershipPage = () => {
                 size="lg" 
                 className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                Ready to Switch? Partner With Kapes
+                Ready to Switch?
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
