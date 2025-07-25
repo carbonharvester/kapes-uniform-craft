@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MobileOptimizedTable } from "@/components/MobileOptimizedTable";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const KapesComparison = () => {
   const comparisonData = [
@@ -67,7 +67,42 @@ export const KapesComparison = () => {
             support children in need, and tell a story their community can be proud of.
           </p>
           
-          <MobileOptimizedTable data={comparisonData} />
+          <Card className="border-0 shadow-lg overflow-hidden bg-white">
+            <CardContent className="p-0">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gray-50/80 border-b-2 border-gray-200">
+                      <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
+                      <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
+                      <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonData.map((row, index) => (
+                      <tr key={index} className="border-b border-gray-200 hover:bg-gray-50/30 transition-colors">
+                        <td className="py-6 px-8 border-r border-gray-200">
+                          <span className="font-medium text-gray-900">{row.feature}</span>
+                        </td>
+                        <td className="py-6 px-8 text-center border-r border-gray-200">
+                          <div className="flex items-center justify-center gap-2">
+                            <Check className="h-5 w-5 text-green-500" />
+                            <span className="font-medium text-green-600">{row.kapes}</span>
+                          </div>
+                        </td>
+                        <td className="py-6 px-8 text-center">
+                          <div className="flex items-center justify-center gap-2">
+                            <X className="h-5 w-5 text-red-500" />
+                            <span className="font-medium text-red-600">{row.traditional}</span>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </CardContent>
+          </Card>
           
           <div className="mt-8 md:mt-10">
             <Button 
