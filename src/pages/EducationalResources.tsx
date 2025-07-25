@@ -3,56 +3,31 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe } from "lucide-react";
 import { Footer } from "@/components/Footer";
-
 const EducationalResources = () => {
-  const resources = [
-    {
-      icon: BookOpen,
-      title: "Lesson Plans & Activities",
-      description: "Engaging, curriculum-aligned content for students across year groups",
-      topics: [
-        "The journey of a uniform: from field to factory to family",
-        "The impact of fashion on people and planet", 
-        "The future of materials and circular design",
-        "Real stories from the factories and communities we work with"
-      ]
-    },
-    {
-      icon: Factory,
-      title: "Factory Tours (Virtual or In-Person)",
-      description: "Impact Tier schools gain access to guided factory visits",
-      topics: [
-        "See how sustainable uniforms are really made",
-        "Meet the people behind the process",
-        "Ask questions and reflect on global supply chains",
-        "Perfect for geography, business, DT, or global citizenship"
-      ]
-    },
-    {
-      icon: Users,
-      title: "Student Voice & Leadership Tools",
-      description: "For Impact Tier schools, students can take the lead",
-      topics: [
-        "Nominate a Kapes Young Leaders Council Member for youth governance",
-        "Lead takeback drives and sustainability campaigns",
-        "Contribute to school-wide reporting via KapesImpact™",
-        "Drive uniform redesign projects"
-      ]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const resources = [{
+    icon: BookOpen,
+    title: "Lesson Plans & Activities",
+    description: "Engaging, curriculum-aligned content for students across year groups",
+    topics: ["The journey of a uniform: from field to factory to family", "The impact of fashion on people and planet", "The future of materials and circular design", "Real stories from the factories and communities we work with"]
+  }, {
+    icon: Factory,
+    title: "Factory Tours (Virtual or In-Person)",
+    description: "Impact Tier schools gain access to guided factory visits",
+    topics: ["See how sustainable uniforms are really made", "Meet the people behind the process", "Ask questions and reflect on global supply chains", "Perfect for geography, business, DT, or global citizenship"]
+  }, {
+    icon: Users,
+    title: "Student Voice & Leadership Tools",
+    description: "For Impact Tier schools, students can take the lead",
+    topics: ["Nominate a Kapes Young Leaders Council Member for youth governance", "Lead takeback drives and sustainability campaigns", "Contribute to school-wide reporting via KapesImpact™", "Drive uniform redesign projects"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871034/2_20_s_ifqazy.jpg')",
-            backgroundPosition: "center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871034/2_20_s_ifqazy.jpg')",
+        backgroundPosition: "center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -74,7 +49,9 @@ const EducationalResources = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* Resources Grid */}
@@ -82,8 +59,7 @@ const EducationalResources = () => {
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Turning Textiles into Learning Materials</h2>
           <div className="grid gap-8 md:grid-cols-2">
-            {resources.map((resource, index) => (
-              <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+            {resources.map((resource, index) => <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -95,16 +71,13 @@ const EducationalResources = () => {
                 </CardHeader>
                 <CardContent className="px-8 pb-8">
                   <ul className="space-y-3">
-                    {resource.topics.map((topic, topicIndex) => (
-                      <li key={topicIndex} className="flex items-start gap-3">
+                    {resource.topics.map((topic, topicIndex) => <li key={topicIndex} className="flex items-start gap-3">
                         <span className="text-primary font-bold text-lg">•</span>
                         <span className="text-muted-foreground leading-relaxed">{topic}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -286,14 +259,14 @@ const EducationalResources = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 px-4" style={{ backgroundColor: '#cfeaff' }}>
+      <section className="relative py-20 px-4" style={{
+      backgroundColor: '#cfeaff'
+    }}>
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
             Transform Your Uniforms Into Teaching Tools
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">
-            Engage your students with meaningful content that connects their daily uniform to global impact.
-          </p>
+          <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">Engage your students with meaningful content that connects their daily uniform to global impact. Complete our Sustainability Audit Tool to receive a free lesson from our Life Cycle of a School Uniform unit. </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
               Download a Sample Lesson
@@ -305,8 +278,6 @@ const EducationalResources = () => {
         </div>
       </section>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default EducationalResources;
