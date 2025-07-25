@@ -261,35 +261,44 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Impact Numbers */}
-          <section className="bg-gradient-warm-section py-8 md:py-16 rounded-3xl">
-            <div className="mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
-                Real Impact, Real Numbers
-              </h2>
-              <p className="text-muted-foreground text-base md:text-lg">
-                Together, we're transforming education and communities worldwide
-              </p>
+        </div>
+      </div>
+
+      {/* Impact Numbers - Full Width Background */}
+      <section className="bg-gradient-warm-section py-8 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
+              Real Impact, Real Numbers
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg">
+              Together, we're transforming education and communities worldwide
+            </p>
+          </div>
+          
+          <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-2xl md:text-4xl font-light text-primary mb-2">12,000+</div>
+              <div className="text-muted-foreground text-xs md:text-sm">School meals funded</div>
             </div>
-            
-            <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto">
-              <div className="text-center">
-                <div className="text-2xl md:text-4xl font-light text-primary mb-2">12,000+</div>
-                <div className="text-muted-foreground text-xs md:text-sm">School meals funded</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-4xl font-light text-primary mb-2">85%</div>
-                <div className="text-muted-foreground text-xs md:text-sm">Reduction in uniform waste</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-4xl font-light text-primary mb-2">500+</div>
-                <div className="text-muted-foreground text-xs md:text-sm">Free uniforms donated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-4xl font-light text-primary mb-2">100%</div>
-                <div className="text-muted-foreground text-xs md:text-sm">Sustainable materials</div>
-              </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-4xl font-light text-primary mb-2">85%</div>
+              <div className="text-muted-foreground text-xs md:text-sm">Reduction in uniform waste</div>
             </div>
-          </section>
+            <div className="text-center">
+              <div className="text-2xl md:text-4xl font-light text-primary mb-2">500+</div>
+              <div className="text-muted-foreground text-xs md:text-sm">Free uniforms donated</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-4xl font-light text-primary mb-2">100%</div>
+              <div className="text-muted-foreground text-xs md:text-sm">Sustainable materials</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-8 md:py-16">
+        <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
 
           {/* Perfect For */}
           <section>
