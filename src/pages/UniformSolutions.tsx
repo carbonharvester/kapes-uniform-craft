@@ -196,44 +196,36 @@ export const UniformSolutions = () => {
                   <CarouselItem key={material.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                     <Dialog open={openDialog === material.id} onOpenChange={(open) => setOpenDialog(open ? material.id : null)}>
                       <DialogTrigger asChild>
-                        <Card className="group cursor-pointer border-0 hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
-                          <div className="relative">
+                        <Card className="group cursor-pointer border-0 transition-all duration-300 h-full overflow-hidden hover-lift">
+                          <div className="relative h-80">
                             <div 
-                              className="h-64 bg-cover bg-center relative"
+                              className="h-full bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${material.image})` }}
                             >
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                              <div className="absolute top-4 left-4">
-                                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                                  {material.icon}
-                                </div>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                              
+                              {/* Plus icon in top right */}
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <Plus className="w-4 h-4 text-white" />
                               </div>
-                              <div className="absolute bottom-4 left-4 right-4">
-                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-1">
+                              
+                              {/* Content overlay */}
+                              <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-2">
                                   {material.tagline}
                                 </div>
-                                <h3 className="text-white font-semibold text-lg leading-tight">
+                                <h3 className="text-white font-semibold text-xl leading-tight mb-2">
                                   {material.title}
                                 </h3>
+                                <p className="text-white/80 text-sm leading-relaxed mb-3">
+                                  {material.subtitle}
+                                </p>
+                                <p className="text-white font-medium text-sm">
+                                  {material.description}
+                                </p>
                               </div>
                             </div>
                           </div>
-                          <CardContent className="p-6">
-                            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
-                              {material.subtitle}
-                            </p>
-                            <p className="text-foreground font-medium text-sm mb-4">
-                              {material.description}
-                            </p>
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-muted-foreground uppercase tracking-wide font-medium">
-                                Learn More
-                              </span>
-                              <div className="bg-primary/10 rounded-full p-2 group-hover:bg-primary/20 transition-colors">
-                                <Plus className="w-3 h-3 text-primary" />
-                              </div>
-                            </div>
-                          </CardContent>
                         </Card>
                       </DialogTrigger>
                       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -310,43 +302,35 @@ export const UniformSolutions = () => {
                     <Dialog open={openDialog === solution.id} onOpenChange={(open) => setOpenDialog(open ? solution.id : null)}>
                       <DialogTrigger asChild>
                         <Card className="group cursor-pointer border-0 transition-all duration-300 h-full overflow-hidden hover-lift">
-                          <div className="relative">
+                          <div className="relative h-80">
                             <div 
-                              className="h-64 bg-cover bg-center relative"
+                              className="h-full bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${solution.image})` }}
                             >
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                              <div className="absolute top-4 left-4">
-                                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
-                                  {solution.icon}
-                                </div>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                              
+                              {/* Plus icon in top right */}
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <Plus className="w-4 h-4 text-white" />
                               </div>
-                              <div className="absolute bottom-4 left-4 right-4">
-                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-1">
+                              
+                              {/* Content overlay */}
+                              <div className="absolute bottom-0 left-0 right-0 p-6">
+                                <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-2">
                                   {solution.tagline}
                                 </div>
-                                <h3 className="text-white font-semibold text-lg leading-tight">
+                                <h3 className="text-white font-semibold text-xl leading-tight mb-2">
                                   {solution.title}
                                 </h3>
+                                <p className="text-white/80 text-sm leading-relaxed mb-3">
+                                  {solution.subtitle}
+                                </p>
+                                <p className="text-white font-medium text-sm">
+                                  {solution.description}
+                                </p>
                               </div>
                             </div>
                           </div>
-                          <CardContent className="p-6">
-                            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
-                              {solution.subtitle}
-                            </p>
-                            <p className="text-foreground font-medium text-sm mb-4">
-                              {solution.description}
-                            </p>
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-muted-foreground uppercase tracking-wide font-medium">
-                                Learn More
-                              </span>
-                              <div className="bg-primary/10 rounded-full p-2 group-hover:bg-primary/20 transition-colors">
-                                <Plus className="w-3 h-3 text-primary" />
-                              </div>
-                            </div>
-                          </CardContent>
                         </Card>
                       </DialogTrigger>
                       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
