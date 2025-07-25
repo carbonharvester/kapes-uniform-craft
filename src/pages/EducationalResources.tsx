@@ -122,18 +122,18 @@ const EducationalResources = () => {
           <div className="mb-12">
             <h4 className="text-xl font-medium text-center mb-8">The Challenge (UNESCO):</h4>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card className="border-0 shadow-glass text-center p-6">
+              <div className="text-center p-6">
                 <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
                 <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
-              </Card>
-              <Card className="border-0 shadow-glass text-center p-6">
+              </div>
+              <div className="text-center p-6">
                 <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
                 <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
-              </Card>
-              <Card className="border-0 shadow-glass text-center p-6">
+              </div>
+              <div className="text-center p-6">
                 <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
                 <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
-              </Card>
+              </div>
             </div>
             
             <div className="bg-background/50 rounded-xl p-8">
