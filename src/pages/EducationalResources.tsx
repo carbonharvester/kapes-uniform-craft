@@ -214,20 +214,6 @@ const EducationalResources = () => {
                 title="Educational Research Foundation"
               />
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Interactive presentation covering inquiry-based learning, climate action frameworks, transferable skills, and global standards
-              </p>
-              <a 
-                href="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?utm_content=DAGuAbHC1Ms&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7fad91c8e1#12"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-              >
-                <Eye className="w-4 h-4" />
-                View Full Presentation
-              </a>
-            </div>
           </div>
         </div>
       </section>
