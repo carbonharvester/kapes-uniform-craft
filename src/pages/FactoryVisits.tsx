@@ -304,7 +304,7 @@ const FactoryVisits = () => {
                     <div className="relative">
                       <div className="aspect-[4/3] overflow-hidden">
                         <img 
-                          src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753469437/IQF_7-scaled_rc3djw.jpg"
                           alt="Distribution Systems"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
@@ -327,7 +327,7 @@ const FactoryVisits = () => {
                   <div className="space-y-6">
                     <div className="aspect-[16/9] overflow-hidden rounded-lg">
                       <img 
-                        src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                        src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753469437/IQF_7-scaled_rc3djw.jpg"
                         alt="Distribution Systems"
                         className="w-full h-full object-cover"
                       />
