@@ -26,7 +26,7 @@ const Resources = () => {
     answer: "Our partnerships are based on 3-year minimum agreements with flexible terms and upgrade options."
   }, {
     question: "How do the different tiers work?",
-    answer: "We offer three tiers - EcoLaunch, SustainPro, and LegacyImpact - each with increasing levels of support and features."
+    answer: "We offer a comprehensive partnership program that includes sustainable uniforms, impact tracking, and full support for your school community."
   }, {
     question: "How is impact measured?",
     answer: "Through our KapesImpact™ dashboard, which tracks carbon savings, recycling rates, meals donated, and more in real-time."

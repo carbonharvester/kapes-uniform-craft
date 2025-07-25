@@ -14,7 +14,7 @@ export const Footer = () => {
         title: "Solutions",
         links: [
           { name: "Uniform Solutions", href: "/uniform-solutions" },
-          { name: "Partnership Tiers", href: "/partnership-tiers" },
+          { name: "Partnership Program", href: "/partner-with-us" },
           { name: "Impact Dashboard", href: "/kapes-impact-platform" },
           { name: "School Shop Lockers", href: "/school-shops-lockers" },
         ],

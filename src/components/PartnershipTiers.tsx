@@ -5,79 +5,36 @@ import { PartnershipTier } from "@/components/ui/partnership-tier-card";
 import { Rocket, TreePine, Crown, Settings } from "lucide-react";
 
 export const PartnershipTiers = () => {
-  const tiers: PartnershipTier[] = [
-    {
-      name: "ECOLAUNCH",
-      features: [
-        "100% Sustainable Uniforms",
-        "Ethical Manufacturing",
-        "Custom Design & Sampling",
-        "Fully Managed Online Shop",
-        "Full Delivery Options",
-        "Plastic-Free Packaging"
-      ],
-      description: "For schools who want sustainable, ethical uniforms without the complexity",
-      cta: "Learn More",
-      href: "/ecolaunch-tier",
-      popular: false,
-      icon: "rocket"
-    },
-    {
-      name: "SUSTAINPRO",
-      features: [
-        "Everything in EcoLaunch",
-        "Fully Managed Takeback Scheme",
-        "KapesImpact™ Dashboard",
-        "Free Meals & Uniforms Donated",
-        "Factory Visits & Teaching Materials"
-      ],
-      description: "For schools who want to create positive change with impact tracking",
-      cta: "Learn More",
-      href: "/sustainpro-tier",
-      popular: false,
-      icon: "tree"
-    },
-    {
-      name: "LEGACYIMPACT",
-      features: [
-        "Everything in SustainPro",
-        "QR Codes on Every Garment",
-        "Student Leadership Opportunity",
-        "Custom PR & CSR Toolkit",
-        "Dedicated Account Manager",
-        "Buy Now Pay Later Option"
-      ],
-      description: "Our highest level of partnership for values-driven schools",
-      cta: "Learn More",
-      href: "/legacyimpact-tier",
-      popular: false,
-      icon: "crown"
-    },
-    {
-      name: "CUSTOM",
-      features: [
-        "Bespoke Partnership Design",
-        "Multi-Location Support", 
-        "Advanced Impact Reporting",
-        "Executive Advisory Sessions",
-        "Priority Development Access"
-      ],
-      description: "Tailored partnerships combining elements from all tiers for unique requirements",
-      cta: "Contact Us",
-      href: "/contact",
-      highlighted: true,
-      icon: "settings"
-    }
-  ];
+  const tier: PartnershipTier = {
+    name: "PARTNERSHIP",
+    description: "Comprehensive sustainable uniform program with full impact tracking and student engagement",
+    features: [
+      "100% Sustainable Materials (GOTS Certified Organic Cotton)",
+      "Ethical Manufacturing with Full Transparency",
+      "Fully Managed Takeback Scheme",
+      "KapesImpact™ Dashboard & Analytics",
+      "Free Meals & Uniforms Donated (1:1 matching)",
+      "Factory Visits & Educational Materials",
+      "QR Codes on Every Garment",
+      "Student Leadership Opportunity",
+      "Custom PR & CSR Toolkit",
+      "Dedicated Account Manager"
+    ],
+    icon: "rocket",
+    href: "/partner-with-us",
+    cta: "Start Partnership",
+    popular: true,
+    highlighted: true
+  };
 
   return (
     <div className="relative">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
-      <PartnershipSection 
-        title="Partnership Tiers"
-        subtitle="Choose the level of impact that's right for your school. All tiers include sustainable, ethical uniforms and dedicated support."
-        tiers={tiers}
+      <PartnershipSection
+        title="Partnership Program"
+        subtitle="A comprehensive sustainable uniform program designed to create lasting impact for your school community."
+        tiers={[tier]}
       />
     </div>
   );

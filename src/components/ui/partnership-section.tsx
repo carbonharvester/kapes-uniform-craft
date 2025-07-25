@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { Button } from "@/components/ui/button"
-import { TierQuizModal } from "@/components/TierQuizModal"
+import { PartnershipQuizModal } from "@/components/PartnershipQuizModal"
 import { PartnershipTierCard, type PartnershipTier } from "@/components/ui/partnership-tier-card"
 
 interface PartnershipSectionProps {
@@ -27,7 +27,7 @@ export function PartnershipSection({
         <div className="relative z-10">
           <Button 
             onClick={() => {
-              document.dispatchEvent(new CustomEvent('openTierQuiz'));
+              document.dispatchEvent(new CustomEvent('openPartnershipQuiz'));
             }}
             className="rounded-xl px-6 py-3 font-medium transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer relative z-10"
             style={{ 
@@ -41,14 +41,21 @@ export function PartnershipSection({
         </div>
       </div>
 
-      <div className="grid w-full max-w-7xl gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-8">
-        {tiers.map((tier) => (
-          <PartnershipTierCard
-            key={tier.name}
-            tier={tier}
-          />
-        ))}
-      </div>
+      {tiers.length > 1 ? (
+        <div className="grid w-full max-w-7xl gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-4 md:px-8">
+          {tiers.map((tier) => (
+            <PartnershipTierCard
+              key={tier.name}
+              tier={tier}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="max-w-md mx-auto px-4">
+          <PartnershipTierCard tier={tiers[0]} />
+        </div>
+      )}
+      <PartnershipQuizModal />
     </section>
   )
 }

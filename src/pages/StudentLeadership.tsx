@@ -121,7 +121,7 @@ const StudentLeadership = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Beyond the Young Leaders Council, LegacyImpact schools can engage students in meaningful ways.
+                    Beyond the Young Leaders Council, partner schools can engage students in meaningful ways.
                   </p>
                   <p className="mb-6 font-medium">Students can also:</p>
                   <ul className="space-y-3">

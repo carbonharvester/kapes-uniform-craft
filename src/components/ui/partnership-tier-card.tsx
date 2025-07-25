@@ -29,7 +29,7 @@ export function PartnershipTierCard({
   const isHighlighted = tier.highlighted;
   const isPopular = tier.popular;
   const isCustom = tier.name === "CUSTOM";
-  const isLegacyImpact = tier.name === "LEGACYIMPACT";
+  const isPartnership = tier.name === "PARTNERSHIP";
   
   const getIcon = () => {
     switch (tier.icon) {
@@ -53,7 +53,7 @@ export function PartnershipTierCard({
     isCustom ? "bg-[#030063] text-white border-[#030063]" : 
     isHighlighted ? "bg-primary text-primary-foreground border-primary" : 
     "bg-background text-foreground",
-    (isPopular || isLegacyImpact) && "ring-2 ring-primary"
+    (isPopular || isPartnership) && "ring-2 ring-primary"
   )}>
       {isHighlighted && !isCustom && <HighlightedBackground />}
       {isPopular && <PopularBackground />}

@@ -174,7 +174,7 @@ export const DeliveryPackaging = () => {
                     <div className="w-12 h-12 bg-gray-500/10 rounded-xl flex items-center justify-center">
                       <Package className="h-6 w-6 text-gray-500" />
                     </div>
-                    <Badge variant="secondary" className="text-xs">EcoLaunch Tier</Badge>
+                    
                   </div>
                   <h3 className="text-2xl font-medium mb-4">Standard Packaging</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
@@ -199,7 +199,7 @@ export const DeliveryPackaging = () => {
                     <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center">
                       <Recycle className="h-6 w-6 text-blue-500" />
                     </div>
-                    <Badge className="text-xs bg-blue-100 text-blue-600 dark:bg-blue-800 dark:text-blue-300">SustainPro Tier</Badge>
+                    
                   </div>
                   <h3 className="text-2xl font-medium mb-4">Recycled Plastic Packaging</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
@@ -229,7 +229,7 @@ export const DeliveryPackaging = () => {
                       <Leaf className="h-6 w-6 text-green-500" />
                     </div>
                     <div className="relative">
-                      <Badge className="text-xs bg-green-100 text-green-600 dark:bg-green-800 dark:text-green-300">LegacyImpact Tier</Badge>
+                      
                       <Sparkles className="w-4 h-4 text-yellow-500 absolute -top-2 -right-2" />
                     </div>
                   </div>
