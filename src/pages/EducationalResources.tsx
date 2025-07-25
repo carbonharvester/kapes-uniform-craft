@@ -197,7 +197,7 @@ const EducationalResources = () => {
       <section className="relative py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
               Example Lesson Plan
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
