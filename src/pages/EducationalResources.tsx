@@ -10,16 +10,6 @@ const EducationalResources = () => {
     title: "Lesson Plans & Activities",
     description: "Engaging, curriculum-aligned content for students across year groups",
     topics: ["The journey of a uniform: from field to factory to family", "The impact of fashion on people and planet", "The future of materials and circular design", "Real stories from the factories and communities we work with"]
-  }, {
-    icon: Factory,
-    title: "Factory Tours (Virtual or In-Person)",
-    description: "Impact Tier schools gain access to guided factory visits",
-    topics: ["See how sustainable uniforms are really made", "Meet the people behind the process", "Ask questions and reflect on global supply chains", "Perfect for geography, business, DT, or global citizenship"]
-  }, {
-    icon: Users,
-    title: "Student Voice & Leadership Tools",
-    description: "For Impact Tier schools, students can take the lead",
-    topics: ["Nominate a Kapes Young Leaders Council Member for youth governance", "Lead takeback drives and sustainability campaigns", "Contribute to school-wide reporting via KapesImpact™", "Drive uniform redesign projects"]
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
