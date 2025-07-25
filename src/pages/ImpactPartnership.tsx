@@ -96,7 +96,7 @@ const ImpactPartnershipPage = () => {
     {
       feature: "Impact Tracking & Reporting",
       description: "Real-time sustainability metrics",
-      kapes: "KapesImpact™ Dashboard included",
+      kapes: "KapesImpact™ Dashboard",
       traditional: "No impact reporting"
     },
     {
