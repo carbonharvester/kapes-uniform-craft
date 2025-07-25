@@ -112,7 +112,7 @@ const ImpactPartnershipPage = () => {
       traditional: "No educational resources provided"
     },
     {
-      feature: "Packaging",
+      feature: "Sustainable Packaging",
       description: "Environmental impact of product packaging",
       kapes: "100% plastic-free, biodegradable packaging",
       traditional: "Standard plastic packaging"
