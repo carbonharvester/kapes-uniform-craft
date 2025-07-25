@@ -160,7 +160,7 @@ export const UniformSolutions = () => {
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
               Uniform Solutions
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Sustainable. Ethical. Durable.</h1>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">Sustainable. Ethical. Future-proof.</h1>
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl">
               At Kapes, we create school uniforms that reflect your school's values and commitment to sustainability—without sacrificing quality or comfort.
             </p>
