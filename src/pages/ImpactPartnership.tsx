@@ -46,7 +46,7 @@ const ImpactPartnershipPage = () => {
       traditional: "Virgin synthetic fibres and conventional cotton"
     },
     {
-      feature: "AI Technology",
+      feature: "AI Size Recommendations",
       description: "AI-powered sizing and fit technology",
       kapes: "AI-Powered Sizing = Fewer returns",
       traditional: "Standard size charts = Higher return rates"
