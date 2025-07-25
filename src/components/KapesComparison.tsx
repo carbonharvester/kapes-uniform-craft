@@ -72,14 +72,14 @@ export const KapesComparison = () => {
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900">{row.feature}</td>
-                    <td className="border border-gray-300 px-1 py-2 text-center">
+                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-left align-top">{row.feature}</td>
+                    <td className="border border-gray-300 px-1 py-2 text-center align-top">
                       <div className="flex flex-col items-center gap-1">
                         <Check className="h-3 w-3 text-green-600" />
                         <span className="text-green-600 font-medium">{row.kapes}</span>
                       </div>
                     </td>
-                    <td className="border border-gray-300 px-1 py-2 text-center">
+                    <td className="border border-gray-300 px-1 py-2 text-center align-top">
                       <div className="flex flex-col items-center gap-1">
                         <X className="h-3 w-3 text-red-600" />
                         <span className="text-red-600 font-medium">{row.traditional}</span>
