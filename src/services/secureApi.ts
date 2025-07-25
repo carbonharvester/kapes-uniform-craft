@@ -8,9 +8,8 @@ export const secureApi = {
   // Blog content - now uses secure edge function
   async getBlogPosts(limit?: number): Promise<BlogPost[]> {
     try {
-      const { data, error } = await supabase.functions.invoke('blog-content', {
-        body: limit ? { limit } : {}
-      });
+      const url = limit ? `?limit=${limit}` : '';
+      const { data, error } = await supabase.functions.invoke('blog-content' + url);
 
       if (error) throw error;
       return data || [];
@@ -22,9 +21,7 @@ export const secureApi = {
 
   async getBlogPost(slug: string): Promise<BlogPost | null> {
     try {
-      const { data, error } = await supabase.functions.invoke('blog-content', {
-        body: { slug }
-      });
+      const { data, error } = await supabase.functions.invoke(`blog-content?slug=${slug}`);
 
       if (error) throw error;
       return data || null;
