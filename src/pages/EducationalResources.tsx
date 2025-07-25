@@ -166,28 +166,11 @@ const EducationalResources = () => {
             </Card>
           </div>
 
-          {/* Detailed Framework Information */}
-          <div className="bg-background/50 rounded-xl p-8 mb-8">
-            <h3 className="text-2xl font-semibold mb-6 text-center">Research-Based Framework</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-medium mb-4">Key Statistics (UNESCO):</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• 95% of teachers feel climate education is important</li>
-                  <li>• Only 30% feel prepared to teach the subject</li>
-                  <li>• 70% of young people cannot explain climate change</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium mb-4">Our Approach Includes:</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>• Action competencies development</li>
-                  <li>• Futures literacy empowerment</li>
-                  <li>• Critical action learning integration</li>
-                  <li>• Positive climate action focus</li>
-                </ul>
-              </div>
-            </div>
+          {/* Simple Implementation Message */}
+          <div className="text-center mb-12">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Everything you need to bring sustainability education to life in your classroom — no preparation required.
+            </p>
           </div>
 
           {/* Implementation Tools */}
