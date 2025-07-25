@@ -223,10 +223,7 @@ const ImpactPartnershipPage = () => {
                           style={{ animationDelay: `${index * 50}ms` }}
                         >
                           <td className="py-6 px-8 border-r border-gray-200">
-                            <div className="flex flex-col gap-2">
-                              <span className="font-medium text-gray-900">{row.feature}</span>
-                              <p className="text-sm text-gray-600">{row.description}</p>
-                            </div>
+                            <span className="font-medium text-gray-900">{row.feature}</span>
                           </td>
                           <td className="py-6 px-8 text-center border-r border-gray-200">
                             <div className="flex flex-col items-center gap-2">
