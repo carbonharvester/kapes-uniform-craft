@@ -7,7 +7,6 @@ export const KapesComparison = () => {
   const isMobile = useIsMobile();
   const comparisonData = [
     {
-      icon: "🧵",
       feature: "Materials",
       kapes: "100% Sustainable",
       kapesPositive: true,
@@ -15,7 +14,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "⚖️",
       feature: "Ethical Manufacturing",
       kapes: "100% Audited & Certified",
       kapesPositive: true,
@@ -23,7 +21,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "📋",
       feature: "Buy-back Clauses",
       kapes: "No Restrictive Clauses",
       kapesPositive: true,
@@ -31,7 +28,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "🍽️",
       feature: "Free Meals for Children", 
       kapes: "Yes",
       kapesPositive: true,
@@ -39,7 +35,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "👕",
       feature: "Free Uniforms to Kids in Need",
       kapes: "Yes",
       kapesPositive: true,
@@ -47,7 +42,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "♻️",
       feature: "Takeback & Recycling Scheme",
       kapes: "Fully Managed",
       kapesPositive: true,
@@ -55,7 +49,6 @@ export const KapesComparison = () => {
       traditionalPositive: false,
     },
     {
-      icon: "🌍",
       feature: "School Trips",
       kapes: "Farm & Factory Visits, Carbon Offset Projects",
       kapesPositive: true,
@@ -93,10 +86,7 @@ export const KapesComparison = () => {
                       {comparisonData.map((row, index) => (
                         <tr key={index} className="border-b border-gray-100 last:border-b-0">
                           <td className="py-4 px-4">
-                            <div className="flex items-center gap-2">
-                              <span className="text-lg">{row.icon}</span>
-                              <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
-                            </div>
+                            <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
                           </td>
                           <td className="py-4 px-3 text-center">
                             <div className="flex flex-col items-center gap-1">
@@ -134,10 +124,7 @@ export const KapesComparison = () => {
                       {comparisonData.map((row, index) => (
                         <tr key={index} className="border-b border-gray-100 hover:bg-gray-50/30 transition-colors">
                           <td className="py-6 px-8">
-                            <div className="flex items-center gap-3">
-                              <span className="text-2xl">{row.icon}</span>
-                              <span className="font-medium text-gray-900">{row.feature}</span>
-                            </div>
+                            <span className="font-medium text-gray-900">{row.feature}</span>
                           </td>
                           <td className="py-6 px-8 text-center">
                             <div className="flex items-center justify-center gap-2">
