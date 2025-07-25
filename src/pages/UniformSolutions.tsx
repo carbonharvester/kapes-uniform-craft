@@ -389,22 +389,22 @@ export const UniformSolutions = () => {
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">1</span>
                   </div>
-                  <h4 className="font-semibold mb-2">Upload Photo</h4>
-                  <p className="text-sm text-muted-foreground">Simple body measurements from a photo</p>
+                  <h4 className="font-semibold mb-2">Enter Your Details</h4>
+                  <p className="text-sm text-muted-foreground">Gender, height, weight, and age</p>
                 </div>
                 <div className="text-center">
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">2</span>
                   </div>
-                  <h4 className="font-semibold mb-2">AI Analysis</h4>
-                  <p className="text-sm text-muted-foreground">Advanced algorithms determine perfect fit</p>
+                  <h4 className="font-semibold mb-2">Choose Your Reference</h4>
+                  <p className="text-sm text-muted-foreground">Select your favourite brand and perfect size</p>
                 </div>
                 <div className="text-center">
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">3</span>
                   </div>
-                  <h4 className="font-semibold mb-2">Perfect Fit</h4>
-                  <p className="text-sm text-muted-foreground">Guaranteed size recommendations</p>
+                  <h4 className="font-semibold mb-2">Perfect Kapes Fit</h4>
+                  <p className="text-sm text-muted-foreground">AI recommends your ideal Kapes uniform size</p>
                 </div>
               </div>
             </div>
