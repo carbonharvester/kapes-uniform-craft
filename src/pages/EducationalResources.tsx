@@ -198,7 +198,7 @@ const EducationalResources = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
-              Research Foundation
+              Example Lesson Plan
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               Explore the educational research and pedagogical frameworks that inform our climate education approach.
