@@ -50,7 +50,7 @@ export const KapesComparison = () => {
     },
     {
       feature: "Student Learning",
-      kapes: "Farm & Factory Visits, Carbon Offset Projects",
+      kapes: "Education Programs & Trips",
       kapesPositive: true,
       traditional: "Not Offered",
       traditionalPositive: false,
