@@ -73,7 +73,7 @@ export const KapesComparison = () => {
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-top">{row.feature}</td>
+                    <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">{row.feature}</td>
                     <td className="border border-gray-300 px-1 py-2 text-center align-top">
                       <div className="flex flex-col items-center gap-1">
                         <CheckCircle2 className="h-5 w-5 text-green-600" />
