@@ -45,12 +45,14 @@ const EducationalResources = () => {
       }}></div>
       </section>
 
-      {/* Resources Grid */}
+      {/* Resources Section */}
       <section className="relative py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Turning Textiles into Learning Materials</h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {resources.map((resource, index) => <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+          
+          <div className="max-w-2xl mx-auto">
+            {resources.map((resource, index) => (
+              <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader className="p-8">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -62,13 +64,16 @@ const EducationalResources = () => {
                 </CardHeader>
                 <CardContent className="px-8 pb-8">
                   <ul className="space-y-3">
-                    {resource.topics.map((topic, topicIndex) => <li key={topicIndex} className="flex items-start gap-3">
+                    {resource.topics.map((topic, topicIndex) => (
+                      <li key={topicIndex} className="flex items-start gap-3">
                         <span className="text-primary font-bold text-lg">•</span>
                         <span className="text-muted-foreground leading-relaxed">{topic}</span>
-                      </li>)}
+                      </li>
+                    ))}
                   </ul>
                 </CardContent>
-              </Card>)}
+              </Card>
+            ))}
           </div>
         </div>
       </section>
