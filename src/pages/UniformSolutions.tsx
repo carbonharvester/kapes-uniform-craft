@@ -196,10 +196,10 @@ export const UniformSolutions = () => {
                   <CarouselItem key={material.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                     <Dialog open={openDialog === material.id} onOpenChange={(open) => setOpenDialog(open ? material.id : null)}>
                       <DialogTrigger asChild>
-                        <Card className="group cursor-pointer border-0 shadow-glass hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
+                        <Card className="group cursor-pointer border-0 hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
                           <div className="relative">
                             <div 
-                              className="h-48 bg-cover bg-center relative"
+                              className="h-64 bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${material.image})` }}
                             >
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -309,10 +309,10 @@ export const UniformSolutions = () => {
                   <CarouselItem key={solution.id} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
                     <Dialog open={openDialog === solution.id} onOpenChange={(open) => setOpenDialog(open ? solution.id : null)}>
                       <DialogTrigger asChild>
-                        <Card className="group cursor-pointer border-0 shadow-glass hover:shadow-lg transition-all duration-300 h-full overflow-hidden hover-lift">
+                        <Card className="group cursor-pointer border-0 transition-all duration-300 h-full overflow-hidden hover-lift">
                           <div className="relative">
                             <div 
-                              className="h-48 bg-cover bg-center relative"
+                              className="h-64 bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${solution.image})` }}
                             >
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
