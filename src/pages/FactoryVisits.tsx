@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe } from "lucide-react";
+import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe, Truck } from "lucide-react";
 import { Footer } from "@/components/Footer";
 
 const FactoryVisits = () => {
@@ -163,29 +163,29 @@ const FactoryVisits = () => {
               <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                    alt="Meet the makers"
+                    src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Distribution and logistics"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
-                      <Globe className="w-5 h-5 text-blue-600" />
+                      <Truck className="w-5 h-5 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold">Meet the Makers</h3>
+                    <h3 className="text-xl font-semibold">Distribution Systems</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    Connect with workers and factory managers to understand the human story behind each uniform
+                    Explore sustainable logistics and efficient distribution networks that minimize environmental impact
                   </p>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Worker conversations</span>
+                      <span>Sustainable packaging solutions</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Management discussions</span>
+                      <span>Carbon-neutral delivery systems</span>
                     </li>
                   </ul>
                 </div>
