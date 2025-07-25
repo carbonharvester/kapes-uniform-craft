@@ -13,6 +13,8 @@ export const BlogSection = () => {
   const { data: blogPosts, isLoading, error } = useQuery({
     queryKey: ['latestBlogPosts'],
     queryFn: () => getLatestBlogPosts(3),
+    retry: 2,
+    retryDelay: 1000,
   });
 
   const formatDate = (dateString: string) => {

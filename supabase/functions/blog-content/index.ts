@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
-import { createClient } from "https://esm.sh/@contentful/content-management@10.46.4"
+import { createClient } from "https://esm.sh/contentful@10.6.21"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -35,11 +35,18 @@ serve(async (req) => {
     const spaceId = Deno.env.get('CONTENTFUL_SPACE_ID');
     const accessToken = Deno.env.get('CONTENTFUL_ACCESS_TOKEN');
     
+    console.log('Contentful credentials check:', { 
+      hasSpaceId: !!spaceId, 
+      hasAccessToken: !!accessToken,
+      spaceId: spaceId?.substring(0, 5) + '...' // Log partial for debugging
+    });
+    
     if (!spaceId || !accessToken) {
+      console.error('Missing Contentful credentials:', { spaceId: !!spaceId, accessToken: !!accessToken });
       throw new Error('Contentful credentials not configured');
     }
 
-    // Create Contentful client using the management API
+    // Create Contentful client using the delivery API
     const contentfulClient = createClient({
       space: spaceId,
       accessToken: accessToken,
