@@ -5,11 +5,6 @@ import { MapPin, Users, BookOpen, Plane, ArrowRight, Globe } from "lucide-react"
 import { Footer } from "@/components/Footer";
 
 const FactoryVisits = () => {
-  const locations = [
-    { country: "India", city: "Chennai", type: "Ethical Cotton Processing" },
-    { country: "Kenya", city: "Nairobi", type: "Sustainable Garment Production" },
-    { country: "UAE", city: "Dubai", type: "Quality Control & Distribution" }
-  ];
 
   const curriculumAreas = [
     {
@@ -93,56 +88,108 @@ const FactoryVisits = () => {
           
           {/* Visit Types */}
           <section>
-            <div className="max-w-4xl mx-auto">
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Users className="h-6 w-6 text-primary" />
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+                In-Person Factory Visits
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Immersive educational experiences that bring ethics and sustainability to life for your students
+              </p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg"
+                    alt="Ethical production process"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Users className="w-5 h-5 text-primary" />
                     </div>
-                    <CardTitle className="text-2xl font-medium">In-Person Factory Visits</CardTitle>
+                    <h3 className="text-xl font-semibold">Production Process</h3>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Immersive educational experiences for schools
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    From cutting to stitching to quality checks — see the ethical production process firsthand
                   </p>
-                  <p className="mb-6 font-medium">These immersive visits give your students and staff direct access to:</p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">The ethical production process — from cutting to stitching to quality checks</span>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Behind-the-scenes factory tours</span>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">Sustainable materials in action — recycled fibers, biodegradable fabrics, low-waste systems</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">Conversations with workers and factory managers</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">Behind-the-scenes tours led by our team and local factory partners</span>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Quality control demonstrations</span>
                     </li>
                   </ul>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-primary" />
-                      <span className="text-sm font-medium">Locations:</span>
+                </div>
+              </div>
+
+              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg"
+                    alt="Sustainable materials in action"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center">
+                      <Plane className="w-5 h-5 text-green-600" />
                     </div>
-                    <div className="grid gap-2">
-                      {locations.map((location, index) => (
-                        <div key={index} className="bg-primary/5 p-3 rounded-xl border border-primary/10">
-                          <div className="font-medium">{location.country} - {location.city}</div>
-                          <div className="text-sm text-muted-foreground">{location.type}</div>
-                        </div>
-                      ))}
-                    </div>
+                    <h3 className="text-xl font-semibold">Sustainable Materials</h3>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Experience recycled fibers, biodegradable fabrics, and low-waste systems in action
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Organic cotton processing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Recycled fiber demonstration</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-glass hover-lift transition-smooth border border-gray-100/50">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Meet the makers"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center">
+                      <Globe className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Meet the Makers</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Connect with workers and factory managers to understand the human story behind each uniform
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Worker conversations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Management discussions</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
 
