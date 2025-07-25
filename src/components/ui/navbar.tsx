@@ -179,9 +179,6 @@ const Navbar = ({
             </div>
           </div>
           <div className="flex gap-2 xl:gap-3 flex-shrink-0">
-            <Button asChild variant="outline" size="sm" className="rounded-xl font-medium px-4 xl:px-6 transition-all duration-300 hover:scale-105 whitespace-nowrap">
-              <Link to="/shop">Shop</Link>
-            </Button>
             <Button asChild size="sm" className="rounded-xl font-medium px-4 xl:px-6 transition-all duration-300 hover:scale-105 whitespace-nowrap">
               <Link to="/sustainability-scorecard">Start Here</Link>
             </Button>
@@ -232,9 +229,6 @@ const Navbar = ({
                       </div>
                     </div>
                     <div className="flex flex-col gap-3">
-                      <Button asChild variant="outline">
-                        <Link to={auth.login.url}>{auth.login.text}</Link>
-                      </Button>
                       <Button asChild>
                         <Link to={auth.signup.url}>{auth.signup.text}</Link>
                       </Button>
