@@ -22,13 +22,13 @@ export const Hero = () => {
           <p className="text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">The world's <span className="font-bold">only</span> partner making school uniforms eco-friendly, ethical, circular, and carbon neutral—while feeding and clothing children in need, and turning your school's sustainability into a story worth sharing.</p>
           
           {/* CTA buttons */}
-          <div className="pt-4 flex flex-col gap-4 justify-center items-center px-4 max-w-md mx-auto">
+          <div className="pt-6 flex flex-col gap-4 justify-center items-center px-4 max-w-sm mx-auto">
             <button onClick={() => document.getElementById('parent-section')?.scrollIntoView({
             behavior: 'smooth'
-          })} className="group w-full inline-flex items-center justify-between px-6 py-4 bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20">
+          })} className="group w-full inline-flex items-center justify-between px-6 py-5 bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-2xl backdrop-blur-sm border border-white/20 hover:border-white/40">
               <div className="flex flex-col items-start">
-                <span className="text-lg font-semibold">I'm a Parent</span>
-                <span className="text-sm opacity-90 font-normal">Shop Now</span>
+                <span className="text-lg font-bold">I'm a Parent</span>
+                <span className="text-sm opacity-95 font-medium">Shop Now</span>
               </div>
               <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -36,10 +36,10 @@ export const Hero = () => {
             </button>
             <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
             behavior: 'smooth'
-          })} className="group w-full inline-flex items-center justify-between px-6 py-4 bg-white/15 text-white border border-white/30 rounded-2xl font-medium text-lg transition-all duration-300 hover:bg-white/25 hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-md">
+          })} className="group w-full inline-flex items-center justify-between px-6 py-5 bg-gradient-to-r from-primary/90 to-primary text-white border border-primary/50 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-2xl backdrop-blur-md hover:from-primary hover:to-primary/90">
               <div className="flex flex-col items-start">
-                <span className="text-lg font-semibold">I'm a School</span>
-                <span className="text-sm opacity-90 font-normal">See How It Works</span>
+                <span className="text-lg font-bold">I'm a School</span>
+                <span className="text-sm opacity-95 font-medium">See How It Works</span>
               </div>
               <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
