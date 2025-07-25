@@ -54,7 +54,7 @@ const ImpactPartnershipPage = () => {
     {
       feature: "Free Meals for Children",
       description: "Every uniform purchase funds meals for children in need",
-      kapes: "Yes - 1 uniform = 1 meal",
+      kapes: "Yes - 1 uniform returned = 1 meal",
       traditional: "No impact programs"
     },
     {
