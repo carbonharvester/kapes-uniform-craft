@@ -208,7 +208,7 @@ const StudentLeadership = () => {
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
               {[
                 {
                   name: "Sarah Chen",
@@ -223,13 +223,6 @@ const StudentLeadership = () => {
                   role: "Innovation Lead",
                   quote: "Being part of this council opened my eyes to the power of ethical fashion.",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                },
-                {
-                  name: "Aisha Patel",
-                  school: "St. Mary's College",
-                  role: "Community Outreach",
-                  quote: "I love how we're creating a more sustainable future through our uniform choices.",
-                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                 }
               ].map((member, index) => (
                 <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth text-center">
