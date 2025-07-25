@@ -91,15 +91,15 @@ const EducationalResources = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="text-center p-6">
-              <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
+              <div className="text-4xl font-academy font-extrabold text-red-500 mb-2">95%</div>
               <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
             </div>
             <div className="text-center p-6">
-              <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
+              <div className="text-4xl font-academy font-extrabold text-orange-500 mb-2">30%</div>
               <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
             </div>
             <div className="text-center p-6">
-              <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
+              <div className="text-4xl font-academy font-extrabold text-red-500 mb-2">70%</div>
               <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
             </div>
           </div>
