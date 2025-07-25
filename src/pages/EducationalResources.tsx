@@ -135,36 +135,6 @@ const EducationalResources = () => {
               </div>
             </div>
           </div>
-            
-          <div className="bg-background/50 rounded-xl p-8">
-            <h4 className="font-medium text-center mb-6">Our Solution:</h4>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="text-center">
-                <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Ready-to-use, research-backed resources</p>
-              </div>
-              <div className="text-center">
-                <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Action-focused, hope-building content</p>
-              </div>
-              <div className="text-center">
-                <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-sm text-muted-foreground">Real-world connections through uniforms</p>
-              </div>
-              <div className="text-center">
-                <div className="w-8 h-8 bg-green-500 rounded-full mx-auto mb-2 flex items-center justify-center">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-sm text-muted-foreground">No preparation required</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
