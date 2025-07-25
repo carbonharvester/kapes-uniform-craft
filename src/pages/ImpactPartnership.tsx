@@ -37,7 +37,7 @@ const ImpactPartnershipPage = () => {
       feature: "Carbon Neutral Uniforms",
       description: "Offsetting all emissions from production to delivery",
       kapes: "Yes - Carbon offsetting",
-      traditional: "No impact calculating or carbon offsetting"
+      traditional: "No carbon offsetting"
     },
     {
       feature: "Sustainable Materials",
