@@ -83,43 +83,30 @@ const EducationalResources = () => {
         </div>
       </section>
 
-      {/* Challenge Section */}
-      <section className="relative py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          {/* Challenge Statistics */}
-          <div className="mb-16">
-            <h4 className="text-xl font-medium text-center mb-8">The Challenge</h4>
-            <div className="text-center mb-8">
-              <p className="text-xl text-muted-foreground font-light leading-relaxed">
-                Based on research and best practices for climate education, our resources are designed to address key challenges:
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center p-6">
-                <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
-                <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
-              </div>
-              <div className="text-center p-6">
-                <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
-                <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
-              </div>
-              <div className="text-center p-6">
-                <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
-                <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Plug and Play Section */}
       <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
-          <div className="text-center mb-12">
-            <p className="text-xl text-muted-foreground font-light leading-relaxed mb-8">
-              Based on research and best practices for climate education, our resources are designed to:
+          
+          <div className="text-center mb-8">
+            <p className="text-xl text-muted-foreground font-light leading-relaxed">
+              Based on research and best practices for climate education, our resources are designed to address key challenges:
             </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="text-center p-6">
+              <div className="text-4xl font-bold text-red-500 mb-2">95%</div>
+              <p className="text-sm text-muted-foreground">of teachers feel climate education is important</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-4xl font-bold text-orange-500 mb-2">30%</div>
+              <p className="text-sm text-muted-foreground">feel prepared to teach the subject</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="text-4xl font-bold text-red-500 mb-2">70%</div>
+              <p className="text-sm text-muted-foreground">of young people cannot explain climate change</p>
+            </div>
           </div>
           
           {/* Framework Overview */}
