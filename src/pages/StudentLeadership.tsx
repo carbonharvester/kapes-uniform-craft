@@ -135,6 +135,80 @@ const StudentLeadership = () => {
             </div>
           </section>
 
+          {/* Volunteering Opportunities */}
+          <section className="py-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+                Volunteering Opportunities
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Beyond formal leadership roles, we provide students with hands-on opportunities to get involved in our mission.
+              </p>
+            </div>
+            
+            <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <Calendar className="h-6 w-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl font-medium">Pop-up Events</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    Students can volunteer at pop-up events in their communities, helping with uniform collection drives, sustainability workshops, and educational outreach programs.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Community uniform collection drives</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Sustainability awareness workshops</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Educational outreach programs</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                      <Users className="h-6 w-6 text-accent" />
+                    </div>
+                    <CardTitle className="text-xl font-medium">Ongoing Involvement</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    We continue to create new opportunities for students to engage with our mission throughout the year, from digital campaigns to local initiatives.
+                  </p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Social media campaign support</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Peer education initiatives</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Community impact projects</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
           {/* Student Impact Areas */}
           <section className="py-20 lg:py-32">
             <div className="container mx-auto max-w-7xl px-4">
