@@ -236,7 +236,7 @@ const StudentLeadership = () => {
                     </div>
                     <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                     <p className="text-primary font-medium mb-2">{member.role}</p>
-                    <p className="text-sm text-muted-foreground mb-4">{member.school}</p>
+                    <p className="text-sm text-muted-foreground mb-4">The British International School of Jeddah</p>
                     <blockquote className="text-sm italic text-muted-foreground leading-relaxed">
                       "{member.quote}"
                     </blockquote>
