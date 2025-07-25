@@ -121,7 +121,7 @@ const ImpactPartnershipPage = () => {
   
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
         backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg')",
         backgroundPosition: "center"
@@ -131,61 +131,61 @@ const ImpactPartnershipPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-black/15"></div>
         
         <div className="relative z-10 container mx-auto px-4 text-left">
-          <div className="max-w-3xl space-y-8">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">Impact Partnership</Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-white">
+          <div className="max-w-3xl space-y-4 md:space-y-8">
+            <Badge className="mb-2 md:mb-4 bg-white/20 text-white border-white/30 text-xs md:text-sm">Impact Partnership</Badge>
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-light tracking-tight text-white leading-tight">
               One Partnership.{" "}
               <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
                 Maximum Impact.
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
+            <p className="text-lg md:text-2xl text-white/90 leading-relaxed">
               Join THE impact-first uniform provider. Every school gets every feature—because making a difference shouldn't depend on your budget.
             </p>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto space-y-20">
+      <div className="container mx-auto px-4 py-8 md:py-16">
+        <div className="max-w-6xl mx-auto space-y-12 md:space-y-20">
           
           {/* Introduction */}
           <section className="text-center">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Why Choose Impact Over Cash?</h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light tracking-tight leading-tight mb-4 md:mb-6">Why Choose Impact Over Cash?</h2>
+            <p className="text-base md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8">
               We believe every school deserves access to the full power of ethical, sustainable uniforms. 
               That's why we've eliminated revenue shares that only increase costs for parents and created one comprehensive partnership that gives every school everything they need to lead positive change.
             </p>
           </section>
 
           {/* All Features Included */}
-          <section className="space-y-12">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
+          <section className="space-y-8 md:space-y-12">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Everything Included. Always.
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl">
+              <p className="text-muted-foreground text-base md:text-lg max-w-2xl">
                 No hidden features. No premium upgrades. No compromises.
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-2">
+            <div className="grid gap-6 md:gap-8 md:grid-cols-2">
               {allFeatures.map((category, index) => <Card key={index} className="border-0 shadow-glass overflow-hidden">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${category.bgColor}`}>
-                        <category.icon className={`h-6 w-6 ${category.color}`} />
+                  <CardHeader className="pb-3 md:pb-4">
+                    <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                      <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center ${category.bgColor}`}>
+                        <category.icon className={`h-5 w-5 md:h-6 md:w-6 ${category.color}`} />
                       </div>
-                      <CardTitle className={`text-xl font-semibold ${category.color}`}>
+                      <CardTitle className={`text-lg md:text-xl font-semibold ${category.color}`}>
                         {category.category}
                       </CardTitle>
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
-                      {category.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start gap-3">
-                          <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-sm leading-relaxed">{feature}</span>
+                  <CardContent className="px-4 md:px-6">
+                    <ul className="space-y-2 md:space-y-3">
+                      {category.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start gap-2 md:gap-3">
+                          <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-xs md:text-sm leading-relaxed">{feature}</span>
                         </li>)}
                     </ul>
                   </CardContent>
@@ -194,57 +194,42 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Detailed Comparison Table */}
-          <section className="space-y-12">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
+          <section className="space-y-8 md:space-y-12">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
                 Why Schools Are Switching to Kapes
               </h2>
-              <p className="text-xl text-muted-foreground mb-12 max-w-3xl leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl leading-relaxed">
                 We focus on impact, not revenue. See how we compare to traditional uniform suppliers who prioritize profit over purpose.
               </p>
             </div>
             
-            {/* Mobile Table - Optimized for screen width */}
-            <Card className="md:hidden border border-gray-200/50 shadow-sm bg-white rounded-lg overflow-hidden">
-              <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <table className="w-full min-w-full">
-                    <thead>
-                      <tr className="bg-gray-50 border-b-2 border-gray-200">
-                        <th className="text-left font-semibold py-3 px-2 text-gray-700 text-xs border-r border-gray-200 w-1/3">Feature</th>
-                        <th className="text-center font-semibold py-3 px-2 text-gray-700 text-xs border-r border-gray-200 w-1/3">Kapes</th>
-                        <th className="text-center font-semibold py-3 px-2 text-gray-700 text-xs w-1/3">Traditional</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {comparisonData.map((row, index) => (
-                        <tr key={index} className="border-b border-gray-200 last:border-b-0">
-                          <td className="h-20 px-2 text-left border-r border-gray-200 w-1/3 align-middle">
-                            <span className="font-medium text-gray-900 text-xs leading-tight">{row.feature}</span>
-                          </td>
-                          <td className="py-3 px-2 text-center border-r border-gray-200 w-1/3 align-top">
-                            <div className="flex flex-col items-center gap-1">
-                              <div className="h-4 w-4 flex items-center justify-center flex-shrink-0">
-                                <Check className="h-3 w-3 text-green-500" />
-                              </div>
-                              <span className="font-medium text-green-600 text-xs leading-tight text-center">{row.kapes}</span>
-                            </div>
-                          </td>
-                          <td className="py-3 px-2 text-center w-1/3 align-top">
-                            <div className="flex flex-col items-center gap-1">
-                              <div className="h-4 w-4 flex items-center justify-center flex-shrink-0">
-                                <X className="h-3 w-3 text-red-500" />
-                              </div>
-                              <span className="font-medium text-red-600 text-xs leading-tight text-center">{row.traditional}</span>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </CardContent>
-            </Card>
+            {/* Mobile Card Layout - No horizontal scrolling */}
+            <div className="md:hidden space-y-4">
+              {comparisonData.map((row, index) => (
+                <Card key={index} className="border border-gray-200/50 shadow-sm bg-white rounded-lg overflow-hidden">
+                  <CardContent className="p-4">
+                    <h4 className="font-semibold text-gray-900 text-sm mb-3 text-center">{row.feature}</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="text-center">
+                        <div className="flex items-center justify-center gap-1 mb-1">
+                          <Check className="h-4 w-4 text-green-600" />
+                          <span className="text-xs font-medium text-gray-700">Kapes</span>
+                        </div>
+                        <p className="text-xs text-green-600 font-medium">{row.kapes}</p>
+                      </div>
+                      <div className="text-center">
+                        <div className="flex items-center justify-center gap-1 mb-1">
+                          <X className="h-4 w-4 text-red-600" />
+                          <span className="text-xs font-medium text-gray-700">Traditional</span>
+                        </div>
+                        <p className="text-xs text-red-600 font-medium">{row.traditional}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
             {/* Desktop Table */}
             <Card className="hidden md:block border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
@@ -301,32 +286,32 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Impact Numbers */}
-          <section className="bg-gradient-warm-section py-16 rounded-3xl">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
+          <section className="bg-gradient-warm-section py-8 md:py-16 rounded-3xl">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Real Impact, Real Numbers
               </h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-base md:text-lg">
                 Together, we're transforming education and communities worldwide
               </p>
             </div>
             
-            <div className="grid gap-8 md:grid-cols-4 max-w-4xl mx-auto">
+            <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto">
               <div className="text-center">
-                <div className="text-4xl font-light text-primary mb-2">12,000+</div>
-                <div className="text-muted-foreground">School meals funded</div>
+                <div className="text-2xl md:text-4xl font-light text-primary mb-2">12,000+</div>
+                <div className="text-muted-foreground text-xs md:text-sm">School meals funded</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-primary mb-2">85%</div>
-                <div className="text-muted-foreground">Reduction in uniform waste</div>
+                <div className="text-2xl md:text-4xl font-light text-primary mb-2">85%</div>
+                <div className="text-muted-foreground text-xs md:text-sm">Reduction in uniform waste</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-primary mb-2">500+</div>
-                <div className="text-muted-foreground">Free uniforms donated</div>
+                <div className="text-2xl md:text-4xl font-light text-primary mb-2">500+</div>
+                <div className="text-muted-foreground text-xs md:text-sm">Free uniforms donated</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-light text-primary mb-2">100%</div>
-                <div className="text-muted-foreground">Sustainable materials</div>
+                <div className="text-2xl md:text-4xl font-light text-primary mb-2">100%</div>
+                <div className="text-muted-foreground text-xs md:text-sm">Sustainable materials</div>
               </div>
             </div>
           </section>
