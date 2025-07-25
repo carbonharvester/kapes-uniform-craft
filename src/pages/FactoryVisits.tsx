@@ -234,17 +234,6 @@ const FactoryVisits = () => {
             </div>
           </section>
 
-          {/* Student Quote */}
-          <section className="bg-gradient-light-warm-section py-16">
-            <Card className="border-0 shadow-glass max-w-4xl mx-auto text-center">
-              <CardContent className="p-8 md:p-12">
-                <blockquote className="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-                  "Seeing where my uniform was made helped me understand how important ethical fashion is — and made me feel proud to wear it."
-                </blockquote>
-                <cite className="text-muted-foreground">— Year 9 Student, Kapes Partner School</cite>
-              </CardContent>
-            </Card>
-          </section>
 
           {/* CTA Section */}
           <section className="py-16 text-center" style={{ backgroundColor: '#cfeaff' }}>
