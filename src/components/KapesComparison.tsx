@@ -60,29 +60,55 @@ export const KapesComparison = () => {
             support children in need, and tell a story their community can be proud of.
           </p>
           
-          <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
-            <table className="w-full border-collapse border border-gray-300 min-w-[600px]">
+          {/* Mobile Card Layout */}
+          <div className="md:hidden space-y-4">
+            {comparisonData.map((row, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+                <h4 className="font-semibold text-gray-900 mb-3 text-center">{row.feature}</h4>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-1 mb-1">
+                      <Check className="h-4 w-4 text-green-600" />
+                      <span className="text-sm font-medium text-gray-700">Kapes</span>
+                    </div>
+                    <p className="text-xs text-green-600 font-medium">{row.kapes}</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-1 mb-1">
+                      <X className="h-4 w-4 text-red-600" />
+                      <span className="text-sm font-medium text-gray-700">Traditional</span>
+                    </div>
+                    <p className="text-xs text-red-600 font-medium">{row.traditional}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Table Layout */}
+          <div className="hidden md:block bg-white rounded-lg shadow-sm">
+            <table className="w-full border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 text-left font-semibold text-gray-700 text-sm md:text-base">Feature</th>
-                  <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 text-center font-semibold text-gray-700 text-sm md:text-base">Kapes</th>
-                  <th className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 text-center font-semibold text-gray-700 text-sm md:text-base">Traditional</th>
+                  <th className="border border-gray-300 px-6 py-4 text-left font-semibold text-gray-700">Feature</th>
+                  <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-700">Kapes</th>
+                  <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-700">Traditional</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
                   <tr key={index} className="hover:bg-gray-50">
-                    <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 font-medium text-gray-900 text-xs sm:text-sm md:text-base">{row.feature}</td>
-                    <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 text-center">
-                      <div className="flex items-center justify-center gap-1 sm:gap-2">
-                        <Check className="h-3 w-3 sm:h-4 sm:w-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-600 font-medium text-xs sm:text-sm md:text-base">{row.kapes}</span>
+                    <td className="border border-gray-300 px-6 py-4 font-medium text-gray-900">{row.feature}</td>
+                    <td className="border border-gray-300 px-6 py-4 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-green-600 font-medium">{row.kapes}</span>
                       </div>
                     </td>
-                    <td className="border border-gray-300 px-2 sm:px-4 md:px-6 py-3 md:py-4 text-center">
-                      <div className="flex items-center justify-center gap-1 sm:gap-2">
-                        <X className="h-3 w-3 sm:h-4 sm:w-4 text-red-600 flex-shrink-0" />
-                        <span className="text-red-600 font-medium text-xs sm:text-sm md:text-base">{row.traditional}</span>
+                    <td className="border border-gray-300 px-6 py-4 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <X className="h-4 w-4 text-red-600" />
+                        <span className="text-red-600 font-medium">{row.traditional}</span>
                       </div>
                     </td>
                   </tr>
