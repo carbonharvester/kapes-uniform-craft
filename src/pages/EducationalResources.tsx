@@ -165,7 +165,7 @@ const EducationalResources = () => {
           </div>
 
           {/* Implementation Tools */}
-          <div className="grid gap-8 md:grid-cols-4">
+          <div className="grid gap-8 md:grid-cols-3">
             <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
               <CardContent className="p-8">
                 <Download className="h-10 w-10 text-primary mx-auto mb-4" />
@@ -187,14 +187,6 @@ const EducationalResources = () => {
                 <Eye className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Interactive Tools</h3>
                 <p className="text-muted-foreground leading-relaxed">Engaging digital experiences</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-glass text-center hover-lift transition-smooth">
-              <CardContent className="p-8">
-                <Factory className="h-10 w-10 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold text-lg mb-2">QR-Linked Experiences</h3>
-                <p className="text-muted-foreground leading-relaxed">Tied to real garment data</p>
               </CardContent>
             </Card>
           </div>
