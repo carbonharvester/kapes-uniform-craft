@@ -1,8 +1,10 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const FloatingGetStarted = () => {
+  const isMobile = useIsMobile();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export const FloatingGetStarted = () => {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || isMobile) return null;
 
   return (
     <Button
