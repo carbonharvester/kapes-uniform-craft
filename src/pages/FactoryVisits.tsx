@@ -108,7 +108,7 @@ const FactoryVisits = () => {
                 <DialogTrigger asChild>
                   <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
                     <div className="relative">
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="aspect-[3/4] overflow-hidden">
                         <img 
                           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg"
                           alt="Production Process"
@@ -205,7 +205,7 @@ const FactoryVisits = () => {
                 <DialogTrigger asChild>
                   <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
                     <div className="relative">
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="aspect-[3/4] overflow-hidden">
                         <img 
                           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg"
                           alt="Sustainable Materials"
@@ -302,7 +302,7 @@ const FactoryVisits = () => {
                 <DialogTrigger asChild>
                   <Card className="group relative overflow-hidden border-0 bg-white rounded-3xl shadow-glass hover-lift transition-smooth cursor-pointer">
                     <div className="relative">
-                      <div className="aspect-[4/3] overflow-hidden">
+                      <div className="aspect-[3/4] overflow-hidden">
                         <img 
                           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753469437/IQF_7-scaled_rc3djw.jpg"
                           alt="Distribution Systems"
