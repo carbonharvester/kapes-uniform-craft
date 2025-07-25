@@ -226,16 +226,16 @@ const ImpactPartnershipPage = () => {
                             <span className="font-medium text-gray-900 text-sm md:text-base leading-tight">{row.feature}</span>
                           </td>
                           <td className="py-3 md:py-6 px-2 md:px-8 text-center border-r border-gray-200">
-                            <div className="flex flex-col items-center gap-1 md:gap-2">
-                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg">
+                            <div className="flex flex-col items-center gap-2 h-full justify-start">
+                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center shadow-lg flex-shrink-0">
                                 <Check className="h-3 w-3 md:h-4 md:w-4 text-white" />
                               </div>
                               <span className="font-medium text-green-700 text-xs md:text-sm text-center leading-tight px-1">{row.kapes}</span>
                             </div>
                           </td>
                           <td className="py-3 md:py-6 px-2 md:px-8 text-center">
-                            <div className="flex flex-col items-center gap-1 md:gap-2">
-                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg">
+                            <div className="flex flex-col items-center gap-2 h-full justify-start">
+                              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center shadow-lg flex-shrink-0">
                                 <X className="h-3 w-3 md:h-4 md:w-4 text-white" />
                               </div>
                               <span className="font-medium text-red-700 text-xs md:text-sm text-center leading-tight px-1">{row.traditional}</span>
