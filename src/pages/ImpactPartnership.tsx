@@ -34,98 +34,84 @@ const ImpactPartnershipPage = () => {
 
   const comparisonData = [
     {
-      icon: "🌱",
       feature: "Carbon Neutral Uniforms",
       description: "Offsetting all emissions from production to delivery",
       kapes: "Yes - Certified Carbon Neutral",
       traditional: "No impact calculating or carbon offsetting"
     },
     {
-      icon: "🧵",
       feature: "Materials",
       description: "Quality and sustainability of fabric materials",
       kapes: "100% Sustainable - Organic & recycled materials only",
       traditional: "Virgin synthetic fibres and conventional cotton"
     },
     {
-      icon: "🤖",
       feature: "AI Technology",
       description: "AI-powered sizing and fit technology",
       kapes: "AI-Powered Sizing - Fewer returns",
       traditional: "Standard size charts - Higher return rates"
     },
     {
-      icon: "🍽️",
       feature: "Free Meals for Children",
       description: "Every uniform purchase funds meals for children in need",
       kapes: "Yes - 1 uniform = 1 meal",
       traditional: "No impact programs"
     },
     {
-      icon: "👕",
       feature: "Free Uniforms to Kids in Need",
       description: "Donated uniforms to children across Africa",
       kapes: "Yes - Global donation program",
       traditional: "No donation programs"
     },
     {
-      icon: "♻️",
       feature: "Takeback & Recycling Scheme",
       description: "End-of-life uniform collection and recycling",
       kapes: "Fully Managed - We collect & recycle",
       traditional: "Not offered"
     },
     {
-      icon: "📋",
       feature: "Buy-back Clauses",
       description: "Contractual terms for switching suppliers",
       kapes: "No restrictive clauses - Switch anytime",
       traditional: "Restrictive buy-back clauses"
     },
     {
-      icon: "⚖️",
       feature: "Ethical Supply Chain",
       description: "Fair wages, safe working conditions, and ethical practices",
       kapes: "100% Ethical - Audited & certified supply chain",
       traditional: "Limited oversight - Unverified practices"
     },
     {
-      icon: "🚚",
       feature: "Delivery Options",
       description: "Flexible delivery and collection options",
       kapes: "Home, school & smart lockers available",
       traditional: "Physical store only - No school collection"
     },
     {
-      icon: "🌍",
       feature: "Supply Chain Transparency",
       description: "Full visibility into manufacturing processes",
       kapes: "100% Transparent - Factory visits welcome",
       traditional: "Limited or no transparency"
     },
     {
-      icon: "📊",
       feature: "Impact Tracking & Reporting",
       description: "Real-time sustainability metrics",
       kapes: "KapesImpact™ Dashboard included",
       traditional: "No impact reporting"
     },
     {
-      icon: "💰",
       feature: "Hidden Costs & Commission",
       description: "Additional costs passed to parents",
       kapes: "No hidden costs - Transparent pricing",
       traditional: "Commission fees increase parent costs"
     },
     {
-      icon: "🎓",
       feature: "Educational Resources",
       description: "Sustainability curriculum and teaching materials",
       kapes: "Full curriculum support & factory visit programs",
       traditional: "No educational resources provided"
     },
     {
-      icon: "📦",
       feature: "Packaging",
       description: "Environmental impact of product packaging",
       kapes: "100% plastic-free, biodegradable packaging",
@@ -238,13 +224,8 @@ const ImpactPartnershipPage = () => {
                         >
                           <td className="py-6 px-8 border-r border-gray-200">
                             <div className="flex flex-col gap-2">
-                              <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center shadow-sm">
-                                  <span className="text-lg">{row.icon}</span>
-                                </div>
-                                <span className="font-medium text-gray-900">{row.feature}</span>
-                              </div>
-                              <p className="text-sm text-gray-600 ml-11">{row.description}</p>
+                              <span className="font-medium text-gray-900">{row.feature}</span>
+                              <p className="text-sm text-gray-600">{row.description}</p>
                             </div>
                           </td>
                           <td className="py-6 px-8 text-center border-r border-gray-200">
