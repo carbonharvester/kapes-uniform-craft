@@ -214,12 +214,9 @@ export const UniformSolutions = () => {
                                 <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-2">
                                   {material.tagline}
                                 </div>
-                                <h3 className="text-white font-semibold text-xl leading-tight mb-3">
+                                <h3 className="text-white font-semibold text-xl leading-tight">
                                   {material.title}
                                 </h3>
-                                <p className="text-white font-medium text-sm">
-                                  {material.description}
-                                </p>
                               </div>
                             </div>
                           </div>
@@ -316,12 +313,9 @@ export const UniformSolutions = () => {
                                 <div className="text-white/80 text-xs font-medium uppercase tracking-wide mb-2">
                                   {solution.tagline}
                                 </div>
-                                <h3 className="text-white font-semibold text-xl leading-tight mb-3">
+                                <h3 className="text-white font-semibold text-xl leading-tight">
                                   {solution.title}
                                 </h3>
-                                <p className="text-white font-medium text-sm">
-                                  {solution.description}
-                                </p>
                               </div>
                             </div>
                           </div>
