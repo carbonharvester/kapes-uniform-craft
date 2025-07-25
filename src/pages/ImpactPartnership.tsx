@@ -6,6 +6,7 @@ import { CheckCircle, ArrowRight, Leaf, Heart, Users, Cog, Check, X } from "luci
 import { Footer } from "@/components/Footer";
 
 const ImpactPartnershipPage = () => {
+  console.log("ImpactPartnership component rendering - icons available:", { Check, X });
   const allFeatures = [{
     category: "Environmental Excellence",
     icon: Leaf,
