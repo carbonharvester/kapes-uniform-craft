@@ -204,35 +204,9 @@ const ImpactPartnershipPage = () => {
               </p>
             </div>
             
-            {/* Mobile Card Layout - No horizontal scrolling */}
-            <div className="md:hidden space-y-4">
-              {comparisonData.map((row, index) => (
-                <Card key={index} className="border border-gray-200/50 shadow-sm bg-white rounded-lg overflow-hidden">
-                  <CardContent className="p-4">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-3 text-center">{row.feature}</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-1 mb-1">
-                          <Check className="h-4 w-4 text-green-600" />
-                          <span className="text-xs font-medium text-gray-700">Kapes</span>
-                        </div>
-                        <p className="text-xs text-green-600 font-medium">{row.kapes}</p>
-                      </div>
-                      <div className="text-center">
-                        <div className="flex items-center justify-center gap-1 mb-1">
-                          <X className="h-4 w-4 text-red-600" />
-                          <span className="text-xs font-medium text-gray-700">Traditional</span>
-                        </div>
-                        <p className="text-xs text-red-600 font-medium">{row.traditional}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
+            
             {/* Desktop Table */}
-            <Card className="hidden md:block border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
+            <Card className="border border-gray-200/50 shadow-xl overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white backdrop-blur-sm">
               <CardContent className="p-0">
                 <table className="w-full">
                   <thead>
@@ -273,6 +247,7 @@ const ImpactPartnershipPage = () => {
                 </table>
               </CardContent>
             </Card>
+
             
             <div className="mt-10 text-center">
               <Button 
@@ -359,21 +334,19 @@ const ImpactPartnershipPage = () => {
           </section>
 
           {/* Call to Action */}
-          <section className="text-center py-16 rounded-3xl" style={{
-          backgroundColor: '#cfeaff'
-        }}>
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
+          <section className="text-center py-8 md:py-16 px-4 rounded-2xl md:rounded-3xl bg-blue-50">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
               Ready to Lead the Impact Revolution?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               Join the schools that are transforming education through ethical, sustainable uniforms that make a real difference in the world.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth">
+            <div className="flex flex-col gap-4 justify-center max-w-2xl mx-auto">
+              <Button size="touch" className="rounded-xl font-medium px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg hover:scale-105 transition-smooth w-full">
                 Book Your Impact Partnership Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="rounded-xl font-medium px-8 py-4 text-lg hover:scale-105 transition-smooth">
+              <Button variant="outline" size="touch" className="rounded-xl font-medium px-4 md:px-8 py-3 md:py-4 text-sm md:text-lg hover:scale-105 transition-smooth w-full">
                 Take the Impact Readiness Assessment
               </Button>
             </div>
