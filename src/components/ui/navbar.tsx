@@ -201,14 +201,8 @@ const Navbar = ({
               {logo.title && <span className="text-sm sm:text-base md:text-lg font-semibold text-heading whitespace-nowrap truncate">{logo.title}</span>}
             </Link>
             
-            {/* Mobile action buttons - responsive sizing */}
+            {/* Mobile hamburger menu */}
             <div className="flex items-center gap-2 flex-shrink-0">
-              <Button asChild variant="outline" size="sm" className="rounded-lg font-medium px-2 sm:px-3 md:px-4 text-xs sm:text-sm transition-all duration-300 hover:scale-105 whitespace-nowrap">
-                <Link to="/shop">Shop</Link>
-              </Button>
-              <Button asChild size="sm" className="rounded-lg font-medium px-2 sm:px-3 md:px-4 text-xs sm:text-sm transition-all duration-300 hover:scale-105 whitespace-nowrap">
-                <Link to="/sustainability-scorecard">Start</Link>
-              </Button>
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="sm" className="p-2 flex-shrink-0">
