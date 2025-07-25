@@ -88,7 +88,7 @@ const EducationalResources = () => {
         <div className="container mx-auto max-w-6xl">
           {/* Challenge Statistics */}
           <div className="mb-16">
-            <h4 className="text-xl font-medium text-center mb-8">The Challenge (UNESCO):</h4>
+            <h4 className="text-xl font-medium text-center mb-8">The Challenge</h4>
             <div className="text-center mb-8">
               <p className="text-xl text-muted-foreground font-light leading-relaxed">
                 Based on research and best practices for climate education, our resources are designed to address key challenges:
