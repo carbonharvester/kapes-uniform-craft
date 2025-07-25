@@ -1,77 +1,48 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Globe, Award, Calendar, BookOpen, Megaphone, ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
-
 const StudentLeadership = () => {
-  const boardActivities = [
-    "Represent their school's voice in quarterly virtual meetings",
-    "Contribute ideas on sustainability, ethics, and uniform design",
-    "Co-create campaigns, educational materials, or social media content",
-    "Learn about ethical fashion, circular economy, and social entrepreneurship",
-    "Develop leadership, presentation, and collaboration skills",
-    "Receive a certificate of participation and personal letter of recognition"
-  ];
-
-  const schoolActivities = [
-    "Lead takeback drives or recycling awareness campaigns",
-    "Present uniform impact data from the KapesImpact™ dashboard", 
-    "Contribute feedback to future uniform designs",
-    "Share their experiences in school newsletters or assemblies",
-    "Participate in factory visits or Kapes Adventures trips"
-  ];
-
-  const impactAreas = [
-    {
-      icon: Megaphone,
-      title: "Advocacy",
-      description: "Representing student voices in policy and program decisions",
-      color: "bg-blue-500/10 text-blue-600"
-    },
-    {
-      icon: Users,
-      title: "Innovation", 
-      description: "Contributing fresh ideas for sustainable fashion and education",
-      color: "bg-green-500/10 text-green-600"
-    },
-    {
-      icon: Award,
-      title: "Leadership",
-      description: "Developing skills for future sustainability and social leadership", 
-      color: "bg-purple-500/10 text-purple-600"
-    }
-  ];
-
-  const benefits = [
-    {
-      title: "Fosters Ownership",
-      description: "Develops empathy, agency, and personal investment in outcomes"
-    },
-    {
-      title: "Embeds Culture", 
-      description: "Integrates sustainability into everyday school culture and values"
-    },
-    {
-      title: "Builds Leadership",
-      description: "Creates real-world leadership experience and transferable skills"
-    },
-    {
-      title: "Aligns with SDGs",
-      description: "Supports UN SDG 4.7 (Education for Sustainable Development)"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const boardActivities = ["Represent their school's voice in quarterly virtual meetings", "Contribute ideas on sustainability, ethics, and uniform design", "Co-create campaigns, educational materials, or social media content", "Learn about ethical fashion, circular economy, and social entrepreneurship", "Develop leadership, presentation, and collaboration skills", "Receive a certificate of participation and personal letter of recognition"];
+  const schoolActivities = ["Lead takeback drives or recycling awareness campaigns", "Present uniform impact data from the KapesImpact™ dashboard", "Contribute feedback to future uniform designs", "Share their experiences in school newsletters or assemblies", "Participate in factory visits or Kapes Adventures trips"];
+  const impactAreas = [{
+    icon: Megaphone,
+    title: "Advocacy",
+    description: "Representing student voices in policy and program decisions",
+    color: "bg-blue-500/10 text-blue-600"
+  }, {
+    icon: Users,
+    title: "Innovation",
+    description: "Contributing fresh ideas for sustainable fashion and education",
+    color: "bg-green-500/10 text-green-600"
+  }, {
+    icon: Award,
+    title: "Leadership",
+    description: "Developing skills for future sustainability and social leadership",
+    color: "bg-purple-500/10 text-purple-600"
+  }];
+  const benefits = [{
+    title: "Fosters Ownership",
+    description: "Develops empathy, agency, and personal investment in outcomes"
+  }, {
+    title: "Embeds Culture",
+    description: "Integrates sustainability into everyday school culture and values"
+  }, {
+    title: "Builds Leadership",
+    description: "Creates real-world leadership experience and transferable skills"
+  }, {
+    title: "Aligns with SDGs",
+    description: "Supports UN SDG 4.7 (Education for Sustainable Development)"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
-          backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg')",
-          backgroundPosition: "center"
-        }}></div>
+        backgroundImage: "url('https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg')",
+        backgroundPosition: "center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -94,8 +65,8 @@ const StudentLeadership = () => {
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       <div className="container mx-auto px-4 py-16">
@@ -129,31 +100,13 @@ const StudentLeadership = () => {
                   </p>
                   <p className="mb-6 font-medium">As a board member, they will:</p>
                   <ul className="space-y-3 mb-8">
-                    {boardActivities.map((activity, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {boardActivities.map((activity, index) => <li key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-muted-foreground leading-relaxed">{activity}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   
-                  <div className="grid gap-4 md:grid-cols-2">
-                    <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        <span className="font-medium text-sm">Meetings:</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">Once per term (virtually)</p>
-                    </div>
-                    
-                    <div className="bg-accent/5 p-4 rounded-xl border border-accent/10">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Award className="h-4 w-4 text-accent" />
-                        <span className="font-medium text-sm">Eligibility:</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">1 student from each school we work with is eligible</p>
-                    </div>
-                  </div>
+                  
                 </CardContent>
               </Card>
 
@@ -172,12 +125,10 @@ const StudentLeadership = () => {
                   </p>
                   <p className="mb-6 font-medium">Students can also:</p>
                   <ul className="space-y-3">
-                    {schoolActivities.map((activity, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {schoolActivities.map((activity, index) => <li key={index} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-muted-foreground leading-relaxed">{activity}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </CardContent>
               </Card>
@@ -188,7 +139,9 @@ const StudentLeadership = () => {
           <section className="py-20 lg:py-32">
             <div className="container mx-auto max-w-7xl px-4">
               <div className="text-center mb-16">
-                <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+                <h2 className="text-5xl font-light tracking-tight mb-6" style={{
+                color: '#030063'
+              }}>
                   Student Impact Areas
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -201,25 +154,25 @@ const StudentLeadership = () => {
                 <div className="space-y-8">
                   <div className="grid gap-8">
                     {impactAreas.map((area, index) => {
-                      const IconComponent = area.icon;
-                      return (
-                        <div key={index} className="flex gap-4 items-start group">
+                    const IconComponent = area.icon;
+                    return <div key={index} className="flex gap-4 items-start group">
                           <div className="flex-shrink-0 mt-1">
                             <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
                               <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                             </div>
                           </div>
                           <div className="space-y-1">
-                            <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                            <h3 className="text-lg font-semibold" style={{
+                          color: '#030063'
+                        }}>
                               {area.title}
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
                               {area.description}
                             </p>
                           </div>
-                        </div>
-                      );
-                    })}
+                        </div>;
+                  })}
                   </div>
                   
                   <div className="pt-4 border-t border-border/50">
@@ -232,11 +185,7 @@ const StudentLeadership = () => {
                 {/* Image Section */}
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                    <img 
-                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg" 
-                      alt="Student leadership and impact" 
-                      className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
-                    />
+                    <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752921383/leaners-leaders-3_x4afkc.jpg" alt="Student leadership and impact" className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
                   </div>
                   
@@ -256,14 +205,12 @@ const StudentLeadership = () => {
                 <p className="text-muted-foreground text-lg">The impact of student leadership</p>
               </div>
               <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-                {benefits.map((benefit, index) => (
-                  <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                {benefits.map((benefit, index) => <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
                     <CardContent className="p-6">
                       <h3 className="font-medium mb-2 text-lg">{benefit.title}</h3>
                       <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </section>
@@ -281,7 +228,9 @@ const StudentLeadership = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="py-16 text-center" style={{ backgroundColor: '#cfeaff' }}>
+          <section className="py-16 text-center" style={{
+          backgroundColor: '#cfeaff'
+        }}>
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
               Empower Your Students to Shape the Future
             </h2>
@@ -298,8 +247,6 @@ const StudentLeadership = () => {
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default StudentLeadership;
