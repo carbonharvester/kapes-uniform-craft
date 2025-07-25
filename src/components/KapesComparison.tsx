@@ -85,7 +85,7 @@ export const KapesComparison = () => {
                     <tbody>
                       {comparisonData.map((row, index) => (
                         <tr key={index} className="border-b border-gray-100 last:border-b-0">
-                          <td className="py-4 px-4">
+                          <td className="py-4 px-4 text-left">
                             <span className="font-medium text-gray-900 text-sm leading-tight">{row.feature}</span>
                           </td>
                           <td className="py-4 px-3 text-center">
