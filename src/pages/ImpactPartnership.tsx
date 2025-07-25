@@ -60,7 +60,7 @@ const ImpactPartnershipPage = () => {
     {
       feature: "Free Uniforms to Kids in Need",
       description: "Donated uniforms to children across Africa",
-      kapes: "Yes - Global donation program",
+      kapes: "Yes - 1 student = 1 uniform",
       traditional: "No impact programs"
     },
     {
