@@ -5,52 +5,45 @@ import { Card, CardContent } from "@/components/ui/card";
 export const KapesComparison = () => {
   const comparisonData = [
     {
-      feature: "Materials",
+      feature: "Carbon Neutral Uniforms",
+      kapes: "Yes - Carbon offsetting",
+      kapesPositive: true,
+      traditional: "No carbon offsetting",
+      traditionalPositive: false,
+    },
+    {
+      feature: "Sustainable Materials",
       kapes: "100% Sustainable",
       kapesPositive: true,
-      traditional: "Virgin Synthetics",
+      traditional: "Virgin synthetic fibres and conventional cotton",
       traditionalPositive: false,
     },
     {
-      feature: "Ethical Manufacturing",
-      kapes: "100% Audited & Certified",
+      feature: "AI Size Recommendations",
+      kapes: "Fewer returns",
       kapesPositive: true,
-      traditional: "Limited Oversight",
+      traditional: "Higher returns",
       traditionalPositive: false,
     },
     {
-      feature: "Buy-back Clauses",
-      kapes: "No Restrictive Clauses",
+      feature: "Free Meals for Children", 
+      kapes: "Yes - 1 uniform returned = 1 meal",
       kapesPositive: true,
-      traditional: "Restrictive Terms",
+      traditional: "No impact programs",
       traditionalPositive: false,
     },
     {
-      feature: "Free Meals for Students", 
-      kapes: "Yes",
+      feature: "Free Uniforms to Kids in Need",
+      kapes: "Yes - 1 student = 1 uniform",
       kapesPositive: true,
-      traditional: "No",
+      traditional: "No impact programs",
       traditionalPositive: false,
     },
     {
-      feature: "Free Uniforms for Students",
-      kapes: "Yes",
+      feature: "Takeback & Recycling Scheme",
+      kapes: "Fully Managed - We collect & recycle",
       kapesPositive: true,
-      traditional: "No",
-      traditionalPositive: false,
-    },
-    {
-      feature: "Takeback Scheme",
-      kapes: "Fully Managed",
-      kapesPositive: true,
-      traditional: "Not Offered",
-      traditionalPositive: false,
-    },
-    {
-      feature: "Student Learning",
-      kapes: "Education Programs & Trips",
-      kapesPositive: true,
-      traditional: "Not Offered",
+      traditional: "Not offered",
       traditionalPositive: false,
     },
   ];
@@ -67,26 +60,30 @@ export const KapesComparison = () => {
             support children in need, and tell a story their community can be proud of.
           </p>
           
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr>
-                  <th className="border border-gray-300 px-4 py-2 text-left">Feature</th>
-                  <th className="border border-gray-300 px-4 py-2">Kapes</th>
-                  <th className="border border-gray-300 px-4 py-2">Traditional Suppliers</th>
+                <tr className="bg-gray-50">
+                  <th className="border border-gray-300 px-6 py-4 text-left font-semibold text-gray-700">Feature</th>
+                  <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-700">Kapes</th>
+                  <th className="border border-gray-300 px-6 py-4 text-center font-semibold text-gray-700">Traditional</th>
                 </tr>
               </thead>
               <tbody>
                 {comparisonData.map((row, index) => (
-                  <tr key={index}>
-                    <td className="border border-gray-300 px-4 py-2">{row.feature}</td>
-                    <td className="border border-gray-300 px-4 py-2 text-center">
-                      <Check className="h-4 w-4 text-green-500 inline mr-1" />
-                      {row.kapes}
+                  <tr key={index} className="hover:bg-gray-50">
+                    <td className="border border-gray-300 px-6 py-4 font-medium text-gray-900">{row.feature}</td>
+                    <td className="border border-gray-300 px-6 py-4 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <Check className="h-4 w-4 text-green-600" />
+                        <span className="text-green-600 font-medium">{row.kapes}</span>
+                      </div>
                     </td>
-                    <td className="border border-gray-300 px-4 py-2 text-center">
-                      <X className="h-4 w-4 text-red-500 inline mr-1" />
-                      {row.traditional}
+                    <td className="border border-gray-300 px-6 py-4 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <X className="h-4 w-4 text-red-600" />
+                        <span className="text-red-600 font-medium">{row.traditional}</span>
+                      </div>
                     </td>
                   </tr>
                 ))}
