@@ -273,7 +273,6 @@ export const UniformSolutions = () => {
 
       {/* Uniform Solutions Carousel Section */}
       <section className="bg-gradient-warm-section py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Complete Uniform Solutions</h2>
