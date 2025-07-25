@@ -447,7 +447,7 @@ const FactoryVisits = () => {
             </p>
             <div className="flex justify-center">
               <Button size="lg" className="rounded-2xl px-8 py-6 text-lg hover:scale-105 transition-smooth">
-                Apply for an In-Person Visit
+                Generate Policy
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
