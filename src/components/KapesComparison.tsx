@@ -78,29 +78,33 @@ export const KapesComparison = () => {
           
           {isMobile ? (
             // Mobile card layout
-            <div className="space-y-4">
+            <div className="space-y-3">
               {comparisonData.map((row, index) => (
-                <Card key={index} className="border shadow-sm bg-white">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-xl">{row.icon}</span>
-                      <h3 className="font-medium text-gray-900 text-sm">{row.feature}</h3>
+                <Card key={index} className="border border-gray-200 shadow-sm bg-white rounded-xl overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 py-3 border-b border-gray-200">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{row.icon}</span>
+                        <h3 className="font-semibold text-gray-900 text-base">{row.feature}</h3>
+                      </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="bg-green-50 rounded-lg p-3">
-                        <p className="text-xs font-medium text-green-800 mb-1">Kapes</p>
-                        <div className="flex items-center gap-1">
-                          <Check className="h-3 w-3 text-green-500 flex-shrink-0" />
-                          <span className="text-xs font-medium text-green-600 leading-tight">{row.kapes}</span>
+                    <div className="p-4">
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between bg-green-50 rounded-lg p-3 border border-green-200">
+                          <div className="flex-1">
+                            <p className="text-xs font-medium text-green-800 mb-1">✓ Kapes</p>
+                            <span className="text-sm font-medium text-green-700 leading-tight">{row.kapes}</span>
+                          </div>
+                          <Check className="h-5 w-5 text-green-500 flex-shrink-0 ml-2" />
                         </div>
-                      </div>
-                      
-                      <div className="bg-red-50 rounded-lg p-3">
-                        <p className="text-xs font-medium text-red-800 mb-1">Traditional</p>
-                        <div className="flex items-center gap-1">
-                          <X className="h-3 w-3 text-red-500 flex-shrink-0" />
-                          <span className="text-xs font-medium text-red-600 leading-tight">{row.traditional}</span>
+                        
+                        <div className="flex items-center justify-between bg-red-50 rounded-lg p-3 border border-red-200">
+                          <div className="flex-1">
+                            <p className="text-xs font-medium text-red-800 mb-1">✗ Traditional</p>
+                            <span className="text-sm font-medium text-red-700 leading-tight">{row.traditional}</span>
+                          </div>
+                          <X className="h-5 w-5 text-red-500 flex-shrink-0 ml-2" />
                         </div>
                       </div>
                     </div>
