@@ -613,20 +613,20 @@ const UniformPolicyMaker = () => {
         )}
 
         {showResults && (
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-center">Your Uniform Policy</CardTitle>
-            </CardHeader>
-            <CardContent className="text-left">
-              {renderPolicyHTML()}
-              <div className="mt-8 pt-6 border-t border-border">
-                <Button onClick={downloadPolicy} className="mr-4">
-                  Download PDF
-                </Button>
-                <p className="text-muted-foreground mt-4">A copy has been sent to your email: {userData.email}</p>
-              </div>
-            </CardContent>
-          </Card>
+          <div>
+            <h3 className="text-3xl font-bold text-center mb-8">Your Uniform Policy</h3>
+            <Card className="shadow-lg">
+              <CardContent className="text-left p-8">
+                {renderPolicyHTML()}
+                <div className="mt-8 pt-6 border-t border-border">
+                  <Button onClick={downloadPolicy} className="mr-4">
+                    Download PDF
+                  </Button>
+                  <p className="text-muted-foreground mt-4">A copy has been sent to your email: {userData.email}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
       </div>
     </div>
