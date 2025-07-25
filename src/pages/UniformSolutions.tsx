@@ -205,7 +205,7 @@ export const UniformSolutions = () => {
                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                               
                               {/* Plus icon in top right */}
-                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-pointer">
                                 <Plus className="w-4 h-4 text-white" />
                               </div>
                               
@@ -304,7 +304,7 @@ export const UniformSolutions = () => {
                               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                               
                               {/* Plus icon in top right */}
-                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
+                              <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-pointer">
                                 <Plus className="w-4 h-4 text-white" />
                               </div>
                               
