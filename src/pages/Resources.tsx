@@ -71,7 +71,7 @@ const Resources = () => {
           {/* Blog Section */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Guides</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Guides</h2>
               <p className="text-muted-foreground text-lg">Insights and guidance for sustainable education</p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -102,7 +102,7 @@ const Resources = () => {
                 <FileText className="w-4 h-4 mr-2" />
                 Policy Generator
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
                 Uniform Policy Maker
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -166,7 +166,7 @@ const Resources = () => {
           {/* FAQ Section */}
           <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Frequently Asked Questions</h2>
               <p className="text-muted-foreground text-lg">Quick answers to common questions</p>
             </div>
             <div className="flex justify-center">

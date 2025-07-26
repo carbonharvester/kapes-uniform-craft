@@ -86,7 +86,7 @@ const UniformPolicyMakerPage = () => {
           {/* Features Section */}
           <section className="py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
                 Why Use Our Policy Maker?
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -118,7 +118,7 @@ const UniformPolicyMakerPage = () => {
                 <Lightbulb className="w-4 h-4 mr-2" />
                 Build Your Policy
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
                 Create Your Custom Policy
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -132,7 +132,7 @@ const UniformPolicyMakerPage = () => {
           {/* Benefits Section */}
           <section className="py-16 bg-gradient-light-warm-section -mx-4 px-4 rounded-3xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
                 What's Included
               </h2>
               <p className="text-muted-foreground text-lg">

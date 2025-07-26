@@ -74,7 +74,7 @@ const StudentLeadership = () => {
           
           {/* Key Message */}
           <section className="text-center">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Real Leadership, Not Just Symbolism
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
@@ -178,7 +178,7 @@ const StudentLeadership = () => {
           <section className="py-20 lg:py-32">
             <div className="container mx-auto max-w-7xl px-4">
               <div className="text-center mb-16">
-                <h2 className="text-5xl font-light tracking-tight mb-6" style={{
+                <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{
                 color: '#030063'
               }}>
                   Student Impact Areas
@@ -239,7 +239,7 @@ const StudentLeadership = () => {
           {/* Meet the Team */}
           <section className="py-20">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
                 Meet the Young Leaders
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -289,7 +289,7 @@ const StudentLeadership = () => {
           <section className="w-full bg-gradient-warm-section py-16">
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why It Matters</h2>
+                <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Why It Matters</h2>
                 <p className="text-muted-foreground text-lg">The impact of student leadership</p>
               </div>
               <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
@@ -319,7 +319,7 @@ const StudentLeadership = () => {
           <section className="py-16 text-center" style={{
           backgroundColor: '#cfeaff'
         }}>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Empower Your Students to Shape the Future
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

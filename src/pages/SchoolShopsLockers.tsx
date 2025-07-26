@@ -49,7 +49,7 @@ export const SchoolShopsLockers = () => {
       <section className="bg-gradient-warm-section py-16 w-full">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">On-Campus School Shops</h2>
             <p className="text-muted-foreground text-lg">Beautiful, fully-managed retail spaces that bring the uniform experience directly to your school</p>
           </div>
           
@@ -139,7 +139,7 @@ export const SchoolShopsLockers = () => {
           <section className="pt-8 pb-20 lg:pt-12 lg:pb-32">
             <div className="container mx-auto max-w-7xl px-4">
               <div className="text-center mb-16">
-                <h2 className="text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+                <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
                   E-Commerce Lockers
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -229,7 +229,7 @@ export const SchoolShopsLockers = () => {
           {/* Benefits Section */}
           <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Benefits to Schools</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Benefits to Schools</h2>
               <p className="text-muted-foreground text-lg">Transform your uniform program into a seamless, sustainable service that enhances your school's reputation</p>
             </div>
             

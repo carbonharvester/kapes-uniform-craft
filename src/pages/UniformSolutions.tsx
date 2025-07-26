@@ -177,7 +177,7 @@ export const UniformSolutions = () => {
       <section className="py-24 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Materials that Matter</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">Materials that Matter</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Every fiber tells a story of sustainability, innovation, and care for our planet
             </p>
@@ -275,7 +275,7 @@ export const UniformSolutions = () => {
       <section className="bg-gradient-warm-section py-24 relative overflow-hidden">
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">Complete Uniform Solutions</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">Complete Uniform Solutions</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               From everyday essentials to specialized sportswear, we've got every uniform need covered
             </p>

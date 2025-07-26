@@ -79,7 +79,7 @@ const KapesImpactPlatform = () => {
               <QrCode className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-primary">Impact Tier Exclusive</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               QR Codes for Instant Transparency
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -142,7 +142,7 @@ const KapesImpactPlatform = () => {
               <Users className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-primary">For Your Community</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Built for Everyone
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -184,7 +184,7 @@ const KapesImpactPlatform = () => {
               <FileText className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-primary">Professional Reporting</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Reporting Made Easy
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -257,7 +257,7 @@ const KapesImpactPlatform = () => {
               color: '#030063'
             }}>Transform Your Impact Story</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Ready to Lead the Future of Sustainable Education?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{

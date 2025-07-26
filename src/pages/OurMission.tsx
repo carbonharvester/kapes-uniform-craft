@@ -95,7 +95,7 @@ const OurMission = () => {
           {/* Our Values */}
           <section>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Values</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our Values</h2>
               <p className="text-muted-foreground text-lg">The principles that guide everything we do</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -120,7 +120,7 @@ const OurMission = () => {
           {/* The Challenge */}
           <section>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">The Challenge We're Solving</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">The Challenge We're Solving</h2>
               <p className="text-muted-foreground text-lg">Why the world needs better school uniforms</p>
             </div>
             
@@ -160,7 +160,7 @@ const OurMission = () => {
           {/* Our Solution */}
           <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Solution</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our Solution</h2>
               <p className="text-muted-foreground text-lg">How we're creating positive change</p>
             </div>
             

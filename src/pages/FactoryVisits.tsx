@@ -94,7 +94,7 @@ const FactoryVisits = () => {
           {/* Visit Types */}
           <section>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
                 In-Person Factory Visits
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">

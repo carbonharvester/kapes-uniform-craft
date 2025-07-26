@@ -62,7 +62,7 @@ const Affiliate = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-heading mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-heading mb-6">
               Here's What You Get
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

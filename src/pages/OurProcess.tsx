@@ -169,7 +169,7 @@ const OurProcess = () => {
       {/* Process Steps */}
       <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Our Four-Step Journey</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our Four-Step Journey</h2>
               <p className="text-muted-foreground text-lg">A seamless pathway to sustainable uniforms</p>
             </div>
             
@@ -224,7 +224,7 @@ const OurProcess = () => {
           {/* Detailed Implementation Timeline */}
           <section className="py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Detailed Implementation Timeline</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Detailed Implementation Timeline</h2>
               <p className="text-muted-foreground text-lg">Your journey from consultation to launch — typically 3 to 5 months from start to finish</p>
             </div>
             
@@ -265,7 +265,7 @@ const OurProcess = () => {
           {/* Key Milestones */}
           <section className="bg-gradient-warm-section py-16 -mx-4 px-4 rounded-3xl">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Key Milestones</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Key Milestones</h2>
               <p className="text-muted-foreground text-lg">Critical checkpoints in your implementation journey</p>
             </div>
             
@@ -305,7 +305,7 @@ const OurProcess = () => {
           {/* What Sets Us Apart */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">What Sets Us Apart</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">What Sets Us Apart</h2>
               <p className="text-muted-foreground text-lg">Why schools choose our process</p>
             </div>
             
