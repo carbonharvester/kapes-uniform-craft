@@ -317,8 +317,8 @@ const CircularEconomyTakeback = () => {
           </div>
           
           <div className="text-center">
-            <div className="bg-green-100/50 dark:bg-green-900/20 rounded-xl p-6 border border-green-200/50 dark:border-green-800/50">
-              <p className="text-lg font-medium text-green-900 dark:text-green-100">
+            <div className="rounded-xl p-6">
+              <p className="text-lg font-medium">
                 Schools on the Core and Impact tiers automatically receive takeback integration and impact reporting.
               </p>
             </div>
