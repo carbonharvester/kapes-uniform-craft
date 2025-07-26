@@ -36,26 +36,6 @@ export const UniformSolutions = () => {
       }
     },
     {
-      id: "biodegradable-tech",
-      title: "Biodegradable Tech Fabrics",
-      subtitle: "Advanced performance that returns to nature.",
-      tagline: "High-tech. Zero waste.",
-      description: "Innovation meets sustainability",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop",
-      icon: <Recycle className="w-6 h-6" />,
-      details: {
-        title: "Biodegradable Tech Fabrics",
-        content: "Revolutionary fabrics that perform like high-tech synthetics but safely biodegrade at end of life. These innovative materials offer moisture-wicking, stain resistance, and durability while being completely natural and compostable. Made from advanced plant-based fibers and natural treatments, they represent the future of sustainable textiles—proving you don't need to choose between performance and planet.",
-        features: [
-          "100% biodegradable materials",
-          "Moisture-wicking technology",
-          "Natural stain resistance",
-          "Anti-microbial properties",
-          "Compostable at end of life"
-        ]
-      }
-    },
-    {
       id: "recycled-fabrics",
       title: "Recycled Fabrics",
       subtitle: "Giving new life to waste materials.",
@@ -72,6 +52,27 @@ export const UniformSolutions = () => {
           "Diverts waste from landfills",
           "Enhanced durability and strength",
           "Fully traceable recycled content"
+        ]
+      }
+    },
+    {
+      id: "lyocell",
+      title: "Lyocell",
+      subtitle: "Silky smooth fiber from sustainable wood.",
+      tagline: "Nature's silk alternative.",
+      description: "Luxuriously soft and moisture-wicking",
+      image: "https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=400&h=600&fit=crop",
+      icon: <Sparkles className="w-6 h-6" />,
+      details: {
+        title: "Lyocell",
+        content: "Made from sustainably sourced eucalyptus wood, lyocell offers the luxurious feel of silk with exceptional moisture-wicking properties. This innovative fiber is produced using a closed-loop process that recycles 99% of the chemicals used, making it one of the most eco-friendly textiles available. Naturally antibacterial and hypoallergenic, lyocell uniforms stay fresh longer and are gentle on sensitive skin.",
+        features: [
+          "Made from sustainable eucalyptus wood",
+          "Closed-loop production process",
+          "Naturally antibacterial and hypoallergenic",
+          "Superior moisture-wicking properties",
+          "Biodegradable and compostable",
+          "Luxuriously soft texture"
         ]
       }
     }
@@ -215,8 +216,8 @@ export const UniformSolutions = () => {
                                   {material.tagline}
                                 </div>
                                 <h3 className="text-white font-semibold text-xl leading-tight">
-                                  Organic Cotton
-                                </h3>
+                                   {material.title}
+                                 </h3>
                               </div>
                             </div>
                           </div>
