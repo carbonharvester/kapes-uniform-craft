@@ -7,7 +7,7 @@ export const Partnership = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6">
+            <h2 className="text-2xl md:text-4xl font-light tracking-tight mb-6">
               Join the waiting list to partner with <span className="text-primary">Kapes</span>
             </h2>
           </div>

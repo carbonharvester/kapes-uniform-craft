@@ -1013,7 +1013,7 @@ const SustainabilityScorecard = ({ initialData }: SustainabilityScorecardProps) 
         {showFeatures && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl md:text-3xl font-bold text-heading text-center">Select Priorities</CardTitle>
+              <CardTitle className="text-2xl md:text-4xl font-bold text-heading text-center">Select Priorities</CardTitle>
             </CardHeader>
             <CardContent>
               <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">

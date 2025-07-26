@@ -13,7 +13,7 @@ export const FreeAuditTool = () => {
               </div>
               <span className="text-sm text-muted-foreground">Rated 4.9/5 by school administrators</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
+            <h2 className="text-2xl md:text-4xl font-light tracking-tight leading-tight mb-4">
               Discover Your School's Sustainability Score in 5 Minutes
             </h2>
             <p className="text-muted-foreground mb-4">If your schools values sustainability but does not currently have sustainable uniforms yet, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>
@@ -29,7 +29,7 @@ export const FreeAuditTool = () => {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl md:text-3xl font-medium mb-6">What You'll Receive:</h3>
+              <h3 className="text-2xl md:text-4xl font-medium mb-6">What You'll Receive:</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">

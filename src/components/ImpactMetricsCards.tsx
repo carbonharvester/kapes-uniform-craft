@@ -154,7 +154,7 @@ export const ImpactMetricsCards = () => {
             <TrendingUp className="w-5 h-5 text-primary" />
             <span className="text-sm font-medium text-primary">Real-Time Metrics</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
+          <h2 className="text-2xl md:text-4xl font-light tracking-tight leading-tight mb-6">
             What KapesImpact™ Tracks
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

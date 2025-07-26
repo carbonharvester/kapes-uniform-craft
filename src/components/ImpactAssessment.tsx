@@ -89,7 +89,7 @@ export const ImpactAssessment = ({ onComplete }: ImpactAssessmentProps) => {
   return (
     <div className="space-y-8">
       <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-medium mb-4">Discover Your Impact Readiness</h3>
+        <h3 className="text-2xl md:text-4xl font-medium mb-4">Discover Your Impact Readiness</h3>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
           Rate the importance of each value on a scale from 1 (Not Important) to 5 (Extremely Important) to discover how ready your school is to lead the impact revolution.
         </p>

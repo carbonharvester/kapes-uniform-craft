@@ -5,12 +5,12 @@ export const WhyKapes = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-16">
           <div className="text-center">
-            <h1 className="text-2xl md:text-3xl font-light tracking-tight mb-8">Why Kapes?</h1>
+            <h1 className="text-2xl md:text-4xl font-light tracking-tight mb-8">Why Kapes?</h1>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">Our Mission</h2>
+              <h2 className="text-2xl md:text-4xl font-medium mb-6">Our Mission</h2>
             </div>
             <div className="relative">
               <img 
@@ -30,13 +30,13 @@ export const WhyKapes = () => {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">Sustainability & Ethics</h2>
+              <h2 className="text-2xl md:text-4xl font-medium mb-6">Sustainability & Ethics</h2>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">Circular Economy & Takeback</h2>
+              <h2 className="text-2xl md:text-4xl font-medium mb-6">Circular Economy & Takeback</h2>
             </div>
             <div className="relative">
               <img 
@@ -56,13 +56,13 @@ export const WhyKapes = () => {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">Social Impact in Africa</h2>
+              <h2 className="text-2xl md:text-4xl font-medium mb-6">Social Impact in Africa</h2>
             </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-2xl md:text-3xl font-medium mb-6">Testimonials & Case Studies</h2>
+              <h2 className="text-2xl md:text-4xl font-medium mb-6">Testimonials & Case Studies</h2>
             </div>
             <div className="relative">
               <img 
