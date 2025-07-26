@@ -487,7 +487,7 @@ const CircularEconomyTakeback = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Because impact shouldn't require effort — just better systems.
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: '#030063' }}>

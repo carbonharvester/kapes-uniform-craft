@@ -5,7 +5,7 @@ export const Superpowers = () => {
   return (
     <section className="py-32 bg-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
+        <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-8">
           Uniforms With <span className="text-primary">Superpowers</span>
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 font-medium">

@@ -92,7 +92,7 @@ export const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">Let's Start the Conversation</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">Let's Start the Conversation</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Ready to transform your school's uniform program? Get in touch with our education specialists.
             </p>

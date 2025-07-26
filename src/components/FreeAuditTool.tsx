@@ -13,7 +13,7 @@ export const FreeAuditTool = () => {
               </div>
               <span className="text-sm text-muted-foreground">Rated 4.9/5 by school administrators</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
               Discover Your School's Sustainability Score in 5 Minutes
             </h2>
             <p className="text-muted-foreground mb-4">If your schools values sustainability but does not currently have sustainable uniforms yet, take our scorecard to get a comprehensive analysis of your current uniform program with actionable recommendations</p>

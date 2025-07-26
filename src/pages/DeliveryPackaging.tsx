@@ -48,7 +48,7 @@ export const DeliveryPackaging = () => {
           {/* Next-Day Delivery Section */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Next-Day Home Delivery</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Next-Day Home Delivery</h2>
               <p className="text-muted-foreground text-lg">Lightning-fast delivery that puts parent convenience first</p>
             </div>
             
@@ -108,7 +108,7 @@ export const DeliveryPackaging = () => {
           {/* Flexible Pickup Options Section */}
           <section>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Flexible Pickup Options</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Flexible Pickup Options</h2>
               <p className="text-muted-foreground text-lg">Choose what works best for your family's schedule and lifestyle</p>
             </div>
             
@@ -163,7 +163,7 @@ export const DeliveryPackaging = () => {
           {/* Sustainable Packaging Section */}
           <section className="bg-gradient-light-warm-section py-16">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Sustainable Packaging Options</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Sustainable Packaging Options</h2>
               <p className="text-muted-foreground text-lg">Every tier includes sustainable packaging that reflects your school's commitment to the environment</p>
             </div>
             
@@ -281,7 +281,7 @@ export const DeliveryPackaging = () => {
                 <ShieldCheck className="w-4 h-4 text-accent" />
                 <span className="text-sm font-medium text-accent">Hassle-Free Guarantee</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-8">Returns & Exchanges—Handled for You</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-8">Returns & Exchanges—Handled for You</h2>
               
               <Card className="border-0 shadow-glass max-w-4xl mx-auto">
                 <CardContent className="p-12">

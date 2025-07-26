@@ -15,7 +15,7 @@ export const ScorecardTeaser = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
               Schools Are Discovering Their{" "}
               <span className="font-medium text-primary">Hidden Sustainability Impact</span>
             </h2>

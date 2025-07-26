@@ -48,7 +48,7 @@ const EducationalResources = () => {
       {/* Resources Section */}
       <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Turning Textiles into Learning Materials</h2>
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight text-center mb-12">Turning Textiles into Learning Materials</h2>
           
           <div className="max-w-2xl mx-auto">
             {resources.map((resource, index) => (
@@ -82,7 +82,7 @@ const EducationalResources = () => {
       {/* Plug and Play Section */}
       <section className="bg-gradient-warm-section relative py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight text-center mb-12">Plug-and-Play Resources for Teachers</h2>
           
           <div className="text-center mb-8">
             <p className="text-xl text-muted-foreground font-light leading-relaxed">

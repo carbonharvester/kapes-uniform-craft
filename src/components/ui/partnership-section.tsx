@@ -20,7 +20,7 @@ export function PartnershipSection({
     <section className="flex flex-col items-center gap-10 py-10" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
       <div className="space-y-7 text-center">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-light tracking-tight leading-tight">{title}</h1>
+          <h1 className="text-2xl md:text-3xl font-light tracking-tight leading-tight">{title}</h1>
           <p className="text-muted-foreground">{subtitle}</p>
         </div>
         
