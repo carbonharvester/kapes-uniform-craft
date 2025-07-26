@@ -109,7 +109,7 @@ const SustainabilityEthics = () => {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
               Sustainable Materials
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -171,7 +171,7 @@ const SustainabilityEthics = () => {
       <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Ethical Manufacturing
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -235,7 +235,7 @@ const SustainabilityEthics = () => {
       <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Sustainability That's Measurable
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -299,7 +299,7 @@ const SustainabilityEthics = () => {
       <section className="py-20 lg:py-32 rounded-b-2xl overflow-hidden" style={{ background: 'linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-warm)) 20%, hsl(var(--background-warm)) 80%, hsl(var(--background)) 100%)' }}>
         <div className="container mx-auto max-w-7xl px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{ color: '#030063' }}>
               Sustainable Logistics, Too
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
