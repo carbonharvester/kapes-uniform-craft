@@ -385,13 +385,11 @@ export const UniformSolutions = () => {
             <div className="border-0 shadow-glass rounded-3xl p-8 md:p-12 mb-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="mb-4 rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0007_ococxs.jpg" 
-                      alt="Enter your details" 
-                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
-                    />
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0007_ococxs.jpg" 
+                    alt="Enter your details" 
+                    className="w-full h-64 object-contain bg-gray-50 rounded-lg mb-4"
+                  />
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">1</span>
                   </div>
@@ -399,13 +397,11 @@ export const UniformSolutions = () => {
                   <p className="text-sm text-muted-foreground">Gender, height, weight, and age</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-4 rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0006_qxvevj.jpg" 
-                      alt="Choose your reference brand" 
-                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
-                    />
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0006_qxvevj.jpg" 
+                    alt="Choose your reference brand" 
+                    className="w-full h-64 object-contain bg-gray-50 rounded-lg mb-4"
+                  />
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">2</span>
                   </div>
@@ -413,13 +409,11 @@ export const UniformSolutions = () => {
                   <p className="text-sm text-muted-foreground">Select your favourite brand and perfect size</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-4 rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0005_wkku2x.jpg" 
-                      alt="Choose fit preference" 
-                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
-                    />
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0005_wkku2x.jpg" 
+                    alt="Choose fit preference" 
+                    className="w-full h-64 object-contain bg-gray-50 rounded-lg mb-4"
+                  />
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">3</span>
                   </div>
@@ -427,13 +421,11 @@ export const UniformSolutions = () => {
                   <p className="text-sm text-muted-foreground">Select your preferred fit style</p>
                 </div>
                 <div className="text-center">
-                  <div className="mb-4 rounded-2xl overflow-hidden shadow-lg">
-                    <img 
-                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0004_ppbcov.jpg" 
-                      alt="Perfect Kapes fit recommendation" 
-                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
-                    />
-                  </div>
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0004_ppbcov.jpg" 
+                    alt="Perfect Kapes fit recommendation" 
+                    className="w-full h-64 object-contain bg-gray-50 rounded-lg mb-4"
+                  />
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl font-bold text-primary">4</span>
                   </div>
