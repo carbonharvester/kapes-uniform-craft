@@ -197,7 +197,7 @@ export const UniformSolutions = () => {
                     <Dialog open={openDialog === material.id} onOpenChange={(open) => setOpenDialog(open ? material.id : null)}>
                       <DialogTrigger asChild>
                         <Card className="group cursor-pointer border-0 transition-all duration-300 h-full overflow-hidden hover-lift">
-                          <div className="relative h-80">
+                           <div className="relative h-[28rem]">
                             <div 
                               className="h-full bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${material.image})` }}
@@ -295,7 +295,7 @@ export const UniformSolutions = () => {
                     <Dialog open={openDialog === solution.id} onOpenChange={(open) => setOpenDialog(open ? solution.id : null)}>
                       <DialogTrigger asChild>
                         <Card className="group cursor-pointer border-0 transition-all duration-300 h-full overflow-hidden hover-lift">
-                          <div className="relative h-80">
+                          <div className="relative h-[28rem]">
                             <div 
                               className="h-full bg-cover bg-center relative"
                               style={{ backgroundImage: `url(${solution.image})` }}
