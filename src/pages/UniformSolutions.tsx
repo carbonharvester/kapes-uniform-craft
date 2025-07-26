@@ -389,7 +389,7 @@ export const UniformSolutions = () => {
                     <img 
                       src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0007_ococxs.jpg" 
                       alt="Enter your details" 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
                     />
                   </div>
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
@@ -403,7 +403,7 @@ export const UniformSolutions = () => {
                     <img 
                       src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0006_qxvevj.jpg" 
                       alt="Choose your reference brand" 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
                     />
                   </div>
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
@@ -417,7 +417,7 @@ export const UniformSolutions = () => {
                     <img 
                       src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533310/IMG-20250726-WA0005_wkku2x.jpg" 
                       alt="Choose fit preference" 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
                     />
                   </div>
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
@@ -431,7 +431,7 @@ export const UniformSolutions = () => {
                     <img 
                       src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753533311/IMG-20250726-WA0004_ppbcov.jpg" 
                       alt="Perfect Kapes fit recommendation" 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-64 object-contain bg-gray-50 rounded-lg"
                     />
                   </div>
                   <div className="bg-primary/10 rounded-2xl w-12 h-12 flex items-center justify-center mx-auto mb-3">
