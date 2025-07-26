@@ -215,7 +215,7 @@ export const UniformSolutions = () => {
                                   {material.tagline}
                                 </div>
                                 <h3 className="text-white font-semibold text-xl leading-tight">
-                                  {material.title}
+                                  Organic Cotton
                                 </h3>
                               </div>
                             </div>
