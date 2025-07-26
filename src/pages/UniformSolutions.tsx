@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle, Plus } from "lucide-react";
+import { Leaf, Recycle, ShieldCheck, Shirt, Zap, Users, Sparkles, CheckCircle, Plus, Globe } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,35 +36,15 @@ export const UniformSolutions = () => {
       }
     },
     {
-      id: "biodegradable-tech",
-      title: "Biodegradable Tech Fabrics",
-      subtitle: "Advanced performance that returns to nature.",
-      tagline: "High-tech. Zero waste.",
-      description: "Innovation meets sustainability",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=600&fit=crop",
-      icon: <Recycle className="w-6 h-6" />,
-      details: {
-        title: "Biodegradable Tech Fabrics",
-        content: "Revolutionary fabrics that perform like high-tech synthetics but safely biodegrade at end of life. These innovative materials offer moisture-wicking, stain resistance, and durability while being completely natural and compostable. Made from advanced plant-based fibers and natural treatments, they represent the future of sustainable textiles—proving you don't need to choose between performance and planet.",
-        features: [
-          "100% biodegradable materials",
-          "Moisture-wicking technology",
-          "Natural stain resistance",
-          "Anti-microbial properties",
-          "Compostable at end of life"
-        ]
-      }
-    },
-    {
       id: "recycled-fabrics",
-      title: "Recycled Fabrics",
+      title: "Recycled Materials",
       subtitle: "Giving new life to waste materials.",
       tagline: "Waste to wonder.",
       description: "70% less carbon footprint",
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=600&fit=crop",
-      icon: <ShieldCheck className="w-6 h-6" />,
+      icon: <Recycle className="w-6 h-6" />,
       details: {
-        title: "Recycled Fabrics",
+        title: "Recycled Materials",
         content: "Durable materials crafted from recycled plastic bottles, textile waste, and other post-consumer materials. Each uniform diverts waste from landfills while reducing carbon emissions by up to 70% compared to virgin materials. Through innovative processing techniques, we transform waste into high-quality fabrics that are stronger, more durable, and better performing than traditional alternatives.",
         features: [
           "70% lower carbon footprint",
@@ -72,6 +52,26 @@ export const UniformSolutions = () => {
           "Diverts waste from landfills",
           "Enhanced durability and strength",
           "Fully traceable recycled content"
+        ]
+      }
+    },
+    {
+      id: "lyocell",
+      title: "Lyocell",
+      subtitle: "Sustainably sourced eucalyptus innovation.",
+      tagline: "Nature's performance fabric.",
+      description: "Excellent breathability and moisture management",
+      image: "/src/assets/zero-waste.jpg",
+      icon: <Globe className="w-6 h-6" />,
+      details: {
+        title: "Lyocell",
+        content: "Made from sustainably sourced eucalyptus wood pulp, Lyocell represents the perfect marriage of sustainability and performance. This innovative fiber offers exceptional breathability, moisture management, and natural antibacterial properties. The closed-loop production process recycles 99% of chemicals and water, making it one of the most environmentally responsible fabrics available. Soft as silk yet durable as cotton, Lyocell uniforms keep students comfortable all day while supporting forest conservation.",
+        features: [
+          "Made from sustainable eucalyptus",
+          "99% chemical and water recycling",
+          "Natural antibacterial properties",
+          "Superior moisture management",
+          "Biodegradable and compostable"
         ]
       }
     }
