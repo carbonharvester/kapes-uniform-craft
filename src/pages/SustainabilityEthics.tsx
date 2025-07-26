@@ -361,7 +361,7 @@ const SustainabilityEthics = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative">
           <div className="animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6 text-[#030063]">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6 text-[#030063]">
               Kapes makes it easy for schools to align their uniforms with their values — without compromise.
             </h2>
             <p style={{

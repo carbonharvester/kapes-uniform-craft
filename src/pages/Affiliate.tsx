@@ -346,7 +346,7 @@ const Affiliate = () => {
       {/* Final CTA */}
       <section className="py-20 px-4 bg-gradient-hero-to-warm">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-heading">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-heading">
             Ready to Start Your
             <br />
             <span className="text-primary">Affiliate Journey?</span>

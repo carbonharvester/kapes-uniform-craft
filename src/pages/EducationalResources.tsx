@@ -216,7 +216,7 @@ const EducationalResources = () => {
       {/* Why It Matters */}
       <section className="relative py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight text-center mb-12">Why It Matters</h2>
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight text-center mb-12">Why It Matters</h2>
           <div className="grid gap-8 md:grid-cols-2">
             <Card className="border-0 shadow-glass hover-lift transition-smooth">
               <CardContent className="p-8">
@@ -255,7 +255,7 @@ const EducationalResources = () => {
       backgroundColor: '#cfeaff'
     }}>
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+          <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
             Transform Your Uniforms Into Teaching Tools
           </h2>
           <p className="text-xl text-muted-foreground mb-8 font-light leading-relaxed">Engage your students with meaningful content that connects their daily uniform to global impact. Complete our Sustainability Audit Tool to receive a free lesson from our Life Cycle of a School Uniform unit. </p>

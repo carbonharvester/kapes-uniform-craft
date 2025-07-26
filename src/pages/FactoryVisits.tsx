@@ -398,7 +398,7 @@ const FactoryVisits = () => {
           {/* Curriculum Connections */}
           <section>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Curriculum Connections</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Curriculum Connections</h2>
               <p className="text-muted-foreground text-lg">Learning opportunities across subjects</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -421,7 +421,7 @@ const FactoryVisits = () => {
           {/* Why It Matters */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-4">Why Farm & Factory Visits Matter</h2>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Why Farm & Factory Visits Matter</h2>
               <p className="text-muted-foreground text-lg">The educational impact</p>
             </div>
             <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
@@ -439,7 +439,7 @@ const FactoryVisits = () => {
 
           {/* CTA Section */}
           <section className="py-16 text-center" style={{ backgroundColor: '#cfeaff' }}>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
               Experience the Full Story
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

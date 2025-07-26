@@ -377,7 +377,7 @@ export const UniformSolutions = () => {
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary">Powered by AI</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-light tracking-tight leading-tight mb-6">AI-Driven Sizing Made Easy</h2>
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">AI-Driven Sizing Made Easy</h2>
             <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
               No more confusion or wasted time. Our AI-powered sizing tool ensures every parent gets the right fit, every time—reducing returns by 85%.
             </p>
