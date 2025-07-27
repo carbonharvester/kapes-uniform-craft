@@ -55,7 +55,7 @@ export const FreeAuditTool = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold">Free Expert Consultation</h4>
-                    <p className="text-muted-foreground text-sm">Qualify for a one-on-one session with Kapes experts to implement changes</p>
+                    <p className="text-muted-foreground text-sm">Qualify for a one-on-one session with Kapes Founder, Matthew Benjamin, to implement changes</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
