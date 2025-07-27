@@ -109,7 +109,7 @@ export const Footer7 = ({
               ))}
             </ul>
           </div>
-          <div className="grid w-full gap-8 md:grid-cols-3 lg:gap-24">
+          <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
                 <h3 className="mb-4 font-bold text-white whitespace-nowrap">{section.title}</h3>
