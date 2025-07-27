@@ -46,7 +46,7 @@ const differences: DifferenceCard[] = [
     image: sustainableMaterialsImage,
     icon: <Leaf className="w-6 h-6" />,
     details: {
-      title: "Natural, Sustainable Materials",
+      title: "Earth-First Fabrics",
       content: "We craft every uniform with the health of your students and the future of the planet in mind. Using only the highest quality natural and recycled materials, we ensure our garments are safe, breathable, and durable — without compromising on sustainability. From GOTS-certified organic cotton to recycled polyester and biodegradable fibers, every fabric we use is chosen for its low environmental impact and high performance in the classroom and beyond. Our materials are always free from harmful chemicals and dyes, and fully traceable through an ethical, transparent supply chain. This means your school can offer families uniforms they can feel proud of — comfortable for their children, and responsible for the world they'll grow up in.",
       features: []
     }
@@ -60,7 +60,7 @@ const differences: DifferenceCard[] = [
     image: ethicalManufacturingImage,
     icon: <Factory className="w-6 h-6" />,
     details: {
-      title: "Ethical Manufacturing",
+      title: "People-First Production",
       content: "We take pride in knowing exactly who makes our uniforms — and how they're treated. Our manufacturing partners are carefully chosen not just for their craftsmanship, but for their commitment to people. Every factory we work with is Fair Trade certified or meets equivalent ethical standards, ensuring all workers receive a living wage, operate in safe and healthy environments, and are treated with dignity and respect. We maintain full visibility into their practices through regular third-party audits and uphold a strict zero-tolerance policy for child labour. When your school partners with Kapes, you're not just choosing better uniforms — you're supporting a global supply chain that values humanity as much as quality.",
       features: []
     }
@@ -74,7 +74,7 @@ const differences: DifferenceCard[] = [
     image: uniformProgramImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
-      title: "Free School Uniforms in Africa",
+      title: "One For All Promise",
       content: "Every uniform your school purchases helps open the door to education for a child who needs it most. Through our 1:1 donation program, we provide a free, high-quality school uniform to a child in Africa for every one sold — ensuring no student is kept out of the classroom simply because they don't have the right clothes. These uniforms are made locally through our ethical manufacturing partners, supporting regional job creation and reducing environmental impact. Beyond the garment itself, we engage directly with schools and communities to understand their needs and remove barriers to education with dignity and respect. When your families choose Kapes, they're not just buying a uniform — they're giving one too.",
       features: []
     }
@@ -88,7 +88,7 @@ const differences: DifferenceCard[] = [
     image: takebackSchemeImage,
     icon: <Recycle className="w-6 h-6" />,
     details: {
-      title: "Fully Managed Takeback Scheme",
+      title: "Circular Life Guarantee",
       content: "Our takeback program ensures that no uniform ever becomes waste — closing the loop and turning every garment into a force for good. At the end of its life, each Kapes uniform is collected, professionally cleaned and refurbished where possible, or responsibly recycled into new materials. Many items are donated to families in need, extending their use and impact even further. The entire process is fully managed by us — from free collections to lifecycle tracking — so your school doesn't need to lift a finger. It's a simple, powerful way to reduce environmental impact, support communities, and model circular thinking for your students and families.",
       features: []
     }
@@ -102,7 +102,7 @@ const differences: DifferenceCard[] = [
     image: freeUniformsMealsImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
-      title: "Free Uniforms & School Meals in Africa",
+      title: "Uniforms that Feed",
       content: "Our takeback scheme doesn't just reduce waste — it puts food on the table for children who need it most.\n\nFor every item of school uniform returned through our circular program, we provide a free school meal to a child who would otherwise go hungry. In Kenya, 1 in 3 children suffers from stunted growth due to chronic undernourishment. And while a subsidised meal can cost as little as 12 cents, far too many children still go without — sitting in classrooms with empty stomachs, unable to focus, learn, or thrive.\n\nBy encouraging families to return used uniforms, we close the loop and break down a devastating barrier to education. A small act — dropping a uniform into a return bag — becomes a lifeline.\n\nLess waste for the planet. More nourishment for children. That's what impact looks like.",
       features: [
         "1:1 uniform donation program",
@@ -122,7 +122,7 @@ const differences: DifferenceCard[] = [
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=600&fit=crop",
     icon: <BarChart3 className="w-6 h-6" />,
     details: {
-      title: "Real-Time Sustainability Dashboard",
+      title: "KapesImpact Dashboard",
       content: "With Kapes, your school can measure its environmental and social impact — not just talk about it. Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
       features: []
     }
@@ -136,7 +136,7 @@ const differences: DifferenceCard[] = [
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
     icon: <Leaf className="w-6 h-6" />,
     details: {
-      title: "Carbon Offsetting & Climate Action",
+      title: "Planet Positive Pledge",
       content: "We go beyond reducing emissions — we actively work to remove carbon from the atmosphere. Every Kapes uniform is manufactured with a commitment to climate neutrality, backed by verified carbon offset programs that support reforestation, renewable energy, and sustainable agriculture projects worldwide. Our comprehensive carbon accounting tracks emissions throughout the entire lifecycle — from raw material production to transportation and end-of-life processing. Through partnerships with Gold Standard certified projects, we ensure that every uniform sold contributes to measurable, additional climate impact. This means your school's uniform program doesn't just minimize harm — it actively helps heal the planet.",
       features: [
         "Verified carbon offset programs",
@@ -157,7 +157,7 @@ const differences: DifferenceCard[] = [
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752999752/490294314_1221791753286267_8865515835930643023_n_cue5wc.jpg",
     icon: <GraduationCap className="w-6 h-6" />,
     details: {
-      title: "Educational Programs",
+      title: "Kapes Online Academy",
       content: "Transform your uniform program into a powerful educational tool that brings sustainability to life in the classroom. Our comprehensive educational programs engage students at every level, from interactive workshops about textile production and environmental impact to hands-on projects that demonstrate circular economy principles. Students learn where their uniforms come from, how they're made, and what happens when they're returned through our takeback scheme. Through curriculum support, guest speakers, and immersive experiences, we help schools turn everyday uniforms into meaningful learning opportunities that inspire the next generation of sustainability leaders.",
       features: [
         "Interactive sustainability workshops",
@@ -180,7 +180,7 @@ const differences: DifferenceCard[] = [
     image: factoryVisitsImage,
     icon: <MapPin className="w-6 h-6" />,
     details: {
-      title: "Farm & Factory Visits",
+      title: "Behind-the-Scenes Tours",
       content: "Through guided visits to our partner farms and factories, your school community can witness exactly how and where your uniforms are made. From the organic cotton fields to the cutting tables and sewing machines, these immersive experiences offer a powerful look at sustainable practices in action.\n\nStudents meet the skilled people behind their clothing, learn about ethical production, and gain a deeper appreciation for the impact of conscious choices. For educators, it's a chance to bring sustainability and global citizenship to life beyond the classroom.\n\nIt's not just a field trip — it's a window into the values your school stands for.",
       features: [
         "Guided farm and factory tours",
@@ -235,7 +235,7 @@ const differences: DifferenceCard[] = [
     image: "/src/assets/uniform-hubs.jpg",
     icon: <Store className="w-6 h-6" />,
     details: {
-      title: "On-Campus School Shops",
+      title: "Uniform Hubs",
       content: "Designed and built by Kapes, these dedicated retail spaces provide schools with a fully branded, professionally fitted shop right on-site. Parents benefit from convenient, face-to-face service where they can see, feel, and try uniforms before buying — with immediate access to essential items during the school year.\n\nBut these shops are more than just a point of sale. They also create hands-on learning opportunities for students, who can assist with stock management, customer service, and basic retail operations as part of a structured program. It's a chance to gain practical skills in a real business environment — right inside the school gates.\n\nWhether as a standalone shop or alongside our locker and delivery options, it's a seamless way to bring the uniform experience closer to your community.",
       features: [
         "Dedicated on-site retail spaces",
@@ -255,7 +255,7 @@ const differences: DifferenceCard[] = [
     image: eCommerceLockerImage,
     icon: <Package className="w-6 h-6" />,
     details: {
-      title: "E-Commerce Lockers",
+      title: "SmartCollect Lockers",
       content: "Installed at your school, the locker provides 24/7 access so parents can pick up orders whenever it suits them — before drop-off, after pick-up, or even during the weekend. As soon as their order is ready, they receive an instant SMS and email notification with a secure access code. The system also supports easy returns and exchanges, making it just as simple to send something back.\n\nIt's a modern, flexible solution designed for today's busy families — and one more way Kapes makes uniforms effortless for everyone involved.",
       features: [
         "24/7 access to secure lockers",
