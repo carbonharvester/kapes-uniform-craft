@@ -66,7 +66,7 @@ export function ImpactPartnershipSection({
             Real Impact, Real Numbers
           </h2>
           <p className="text-muted-foreground text-lg">
-            See the difference we're making together
+            Join the Kapes mission: by 2030 we aim to transform school uniforms worldwide into a force for positive change
           </p>
         </div>
         
