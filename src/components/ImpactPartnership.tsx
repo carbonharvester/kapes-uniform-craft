@@ -66,7 +66,7 @@ export const ImpactPartnership = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
       <ImpactPartnershipSection 
         title="One Partnership, Maximum Impact"
-        subtitle="Join THE impact-first uniform provider. Every school gets every feature—because making a difference shouldn't depend on your budget."
+        subtitle="Join THE impact-first uniform provider. Every school gets every feature—because real change happens when impact comes before profit."
         features={impactFeatures}
       />
     </div>
