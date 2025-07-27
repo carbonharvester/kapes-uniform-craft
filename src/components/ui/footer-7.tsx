@@ -81,53 +81,89 @@ export const Footer7 = ({
   legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
-    <section className="py-32 bg-gradient-to-footer text-white">
-      <div className="container mx-auto">
-        <div className="flex w-full flex-col justify-between gap-10 lg:flex-row lg:items-start lg:text-left">
-          <div className="flex w-full flex-col justify-between gap-6 lg:items-start">
-            {/* Logo */}
-            <div className="flex items-center gap-2 lg:justify-start">
-              <a href={logo.url}>
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  title={logo.title}
-                  className="h-8"
-                />
-              </a>
-            </div>
-            <p className="max-w-[70%] text-sm text-white/80">
-              {description}
-            </p>
-            <ul className="flex items-center space-x-6 text-white">
-              {socialLinks.map((social, idx) => (
-                <li key={idx} className="font-medium hover:text-white/80">
-                  <a href={social.href} aria-label={social.label}>
-                    {social.icon}
+    <footer className="bg-gradient-to-footer text-white">
+      {/* Main Footer Content */}
+      <div className="py-16 lg:py-20">
+        <div className="container mx-auto">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* Logo and Description Section */}
+            <div className="lg:col-span-4">
+              <div className="flex flex-col gap-6">
+                <div className="flex items-center gap-2">
+                  <a href={logo.url}>
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      title={logo.title}
+                      className="h-8"
+                    />
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-16">
-            {sections.map((section, sectionIdx) => (
-              <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold text-white whitespace-nowrap">{section.title}</h3>
-                <ul className="space-y-3 text-xs text-white/80">
-                  {section.links.map((link, linkIdx) => (
-                    <li
-                      key={linkIdx}
-                      className="font-medium hover:text-white whitespace-nowrap"
+                </div>
+                <p className="text-sm text-white/80 leading-relaxed max-w-sm">
+                  {description}
+                </p>
+                <div className="flex items-center gap-4">
+                  {socialLinks.map((social, idx) => (
+                    <a
+                      key={idx}
+                      href={social.href}
+                      aria-label={social.label}
+                      className="text-white/80 hover:text-white transition-colors duration-200"
                     >
-                      <a href={link.href}>{link.name}</a>
-                    </li>
+                      {social.icon}
+                    </a>
                   ))}
-                </ul>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Navigation Sections */}
+            <div className="lg:col-span-8">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                {sections.map((section, sectionIdx) => (
+                  <div key={sectionIdx}>
+                    <h3 className="mb-4 font-semibold text-white text-sm tracking-wide">
+                      {section.title}
+                    </h3>
+                    <ul className="space-y-3">
+                      {section.links.map((link, linkIdx) => (
+                        <li key={linkIdx}>
+                          <a
+                            href={link.href}
+                            className="text-sm text-white/80 hover:text-white transition-colors duration-200 block"
+                          >
+                            {link.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Bottom Section */}
+      <div className="border-t border-white/10">
+        <div className="container mx-auto py-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-white/80">{copyright}</p>
+            <div className="flex gap-6">
+              {legalLinks.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.href}
+                  className="text-sm text-white/80 hover:text-white transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
