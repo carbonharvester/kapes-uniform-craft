@@ -69,7 +69,7 @@ const SustainabilityScorecardPage = () => {
                       <Target className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-sm sm:text-base">Hidden Sustainability Score</h3>
+                      <h3 className="font-semibold text-sm sm:text-base">Your Sustainability Score</h3>
                       <p className="text-muted-foreground text-xs sm:text-sm">Get an instant score revealing how eco-friendly your uniforms really are</p>
                     </div>
                   </div>
