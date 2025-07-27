@@ -14,7 +14,7 @@ export const Hero = () => {
           <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">FREE 3-MINUTE SUSTAINABILITY ASSESSMENT AVAILABLE</div>
           
           {/* Main headline with mobile-optimized typography */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
             School Uniforms That Create Change
           </h1>
           
