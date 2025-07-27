@@ -141,7 +141,7 @@ const ImpactPartnershipPage = () => {
               </span>
             </h1>
             <p className="text-lg md:text-2xl text-white/90 leading-relaxed">
-              Join THE impact-first uniform provider. Every school gets every feature—because real change happens when impact comes before profit.
+              Join the impact-first uniform provider. Every school gets every feature—because real change happens when impact comes before profit.
             </p>
           </div>
         </div>
