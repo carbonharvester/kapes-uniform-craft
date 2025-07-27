@@ -25,23 +25,23 @@ export const Hero = () => {
           <div className="pt-6 flex flex-col gap-4 justify-center items-center px-4 max-w-sm mx-auto">
             <button onClick={() => document.getElementById('parent-section')?.scrollIntoView({
             behavior: 'smooth'
-          })} className="group w-full inline-flex items-center justify-between px-6 py-6 min-h-[56px] bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-2xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation">
+          })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation">
               <div className="flex flex-col items-start">
-                <span className="text-2xl md:text-4xl font-bold">I'm a Parent</span>
-                <span className="text-sm opacity-95 font-medium">Shop Now</span>
+                <span className="text-lg font-bold">I'm a Parent</span>
+                <span className="text-xs opacity-95 font-medium">Shop Now</span>
               </div>
-              <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
             <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
             behavior: 'smooth'
-          })} className="group w-full inline-flex items-center justify-between px-6 py-6 min-h-[56px] bg-gradient-to-r from-primary/90 to-primary text-white border border-primary/50 rounded-2xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-xl hover:shadow-2xl backdrop-blur-md hover:from-primary hover:to-primary/90 touch-manipulation">
+          })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-primary/90 to-primary text-white border border-primary/50 rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-md hover:from-primary hover:to-primary/90 touch-manipulation">
               <div className="flex flex-col items-start">
                 <span className="text-lg font-bold">I'm a School</span>
-                <span className="text-sm opacity-95 font-medium">See How It Works</span>
+                <span className="text-xs opacity-95 font-medium">See How It Works</span>
               </div>
-              <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
