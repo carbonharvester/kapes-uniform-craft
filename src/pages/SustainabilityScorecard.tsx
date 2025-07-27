@@ -88,7 +88,7 @@ const SustainabilityScorecardPage = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-sm sm:text-base">Free Expert Consultation</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Qualify for a one-on-one session with Kapes experts to implement changes</p>
+                      <p className="text-muted-foreground text-xs sm:text-sm">Qualify for a one-on-one session with Kapes Founder, Matthew Benjamin, to implement changes</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3 p-3 rounded-lg bg-white">
