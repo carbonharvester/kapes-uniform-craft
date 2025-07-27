@@ -22,7 +22,7 @@ export const Footer = () => {
         ],
       },
       {
-        title: "Sustainability as a Service",
+        title: "Sustainability",
         links: [
           { name: "Uniform Solutions", href: "/uniform-solutions" },
           { name: "Circular Economy & Takeback", href: "/circular-economy-takeback" },
@@ -32,7 +32,7 @@ export const Footer = () => {
         ],
       },
       {
-        title: "Partner with us",
+        title: "Partnership",
         links: [
           { name: "Our Process", href: "/our-process" },
           { name: "Impact Partnership", href: "/impact-partnership" },
