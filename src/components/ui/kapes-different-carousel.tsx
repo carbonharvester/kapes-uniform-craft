@@ -322,23 +322,23 @@ export const KapesDifferentCarousel = () => {
                             <Plus className="w-5 h-5 text-black" />
                          </button>
                        </DialogTrigger>
-                       <DialogContent className="w-[95vw] max-w-[500px] max-h-[85vh] overflow-y-auto p-0 border-0 shadow-2xl bg-white rounded-2xl mx-2 sm:mx-auto my-4 sm:my-8">
-                         <div className="p-6 sm:p-8">
-                           <div className="flex items-center space-x-4 mb-6">
-                             <div className="p-3 rounded-xl bg-primary">
-                               {React.cloneElement(difference.icon as React.ReactElement, {
-                                 className: "w-6 h-6 text-white"
-                               })}
-                             </div>
-                             <h4 className="text-xl font-semibold">
-                               {difference.details.title}
-                             </h4>
-                           </div>
-                           
-                            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-                              {difference.details.content}
-                            </p>
-                         </div>
+                        <DialogContent className="w-[95vw] max-w-[500px] max-h-[85vh] overflow-y-auto p-0 border-0 shadow-2xl bg-white rounded-2xl mx-2 sm:mx-auto my-4 sm:my-8 [&>button]:absolute [&>button]:right-3 [&>button]:top-3 [&>button]:w-8 [&>button]:h-8 [&>button]:rounded-full [&>button]:bg-gray-100 [&>button]:hover:bg-gray-200 [&>button]:flex [&>button]:items-center [&>button]:justify-center [&>button]:transition-colors [&>button]:border-0 [&>button]:shadow-sm">
+                          <div className="p-6 sm:p-8">
+                            <div className="flex items-center space-x-4 mb-6">
+                              <div className="p-3 rounded-xl bg-primary">
+                                {React.cloneElement(difference.icon as React.ReactElement, {
+                                  className: "w-6 h-6 text-white"
+                                })}
+                              </div>
+                              <h4 className="text-xl font-semibold">
+                                {difference.details.title}
+                              </h4>
+                            </div>
+                            
+                             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                               {difference.details.content}
+                             </p>
+                          </div>
                        </DialogContent>
                      </Dialog>
                    </div>
