@@ -312,30 +312,30 @@ export const KapesDifferentCarousel = () => {
                        onOpenChange={(open) => setOpenDialog(open ? difference.id : null)}
                      >
                        <DialogTrigger asChild>
-                         <button
-                            className="w-8 h-8 rounded-full bg-white border border-black/20 flex items-center justify-center md:hover:bg-gray-100 transition-all duration-200 md:hover:scale-110 touch-manipulation"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setOpenDialog(openDialog === difference.id ? null : difference.id);
-                            }}
-                          >
-                            <Plus className="w-4 h-4 text-black" />
+                          <button
+                             className="w-10 h-10 rounded-full bg-white border border-black/20 flex items-center justify-center md:hover:bg-gray-100 transition-all duration-200 md:hover:scale-110 touch-manipulation shadow-sm"
+                             onClick={(e) => {
+                               e.stopPropagation();
+                               setOpenDialog(openDialog === difference.id ? null : difference.id);
+                             }}
+                           >
+                            <Plus className="w-5 h-5 text-black" />
                          </button>
                        </DialogTrigger>
-                       <DialogContent className="w-[95vw] max-w-[480px] max-h-[80vh] overflow-y-auto p-0 border-0 shadow-2xl bg-white/95 backdrop-blur-sm mx-4 sm:mx-auto">
-                         <div className="p-4 sm:p-6 md:p-8">
-                           <div className="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                       <DialogContent className="w-[95vw] max-w-[500px] max-h-[85vh] overflow-y-auto p-0 border-0 shadow-2xl bg-white rounded-2xl mx-2 sm:mx-auto my-4 sm:my-8">
+                         <div className="p-6 sm:p-8">
+                           <div className="flex items-center space-x-4 mb-6">
                              <div className="p-3 rounded-xl bg-primary">
                                {React.cloneElement(difference.icon as React.ReactElement, {
                                  className: "w-6 h-6 text-white"
                                })}
                              </div>
-                             <h4 className="text-lg sm:text-xl font-semibold">
+                             <h4 className="text-xl font-semibold">
                                {difference.details.title}
                              </h4>
                            </div>
                            
-                            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
+                            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                               {difference.details.content}
                             </p>
                          </div>
