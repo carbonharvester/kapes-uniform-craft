@@ -112,12 +112,12 @@ export const Footer7 = ({
           <div className="grid w-full gap-6 md:grid-cols-3 lg:gap-20">
             {sections.map((section, sectionIdx) => (
               <div key={sectionIdx}>
-                <h3 className="mb-4 font-bold text-white">{section.title}</h3>
+                <h3 className="mb-4 font-bold text-white whitespace-nowrap">{section.title}</h3>
                 <ul className="space-y-3 text-xs text-white/80">
                   {section.links.map((link, linkIdx) => (
                     <li
                       key={linkIdx}
-                      className="font-medium hover:text-white"
+                      className="font-medium hover:text-white whitespace-nowrap"
                     >
                       <a href={link.href}>{link.name}</a>
                     </li>
