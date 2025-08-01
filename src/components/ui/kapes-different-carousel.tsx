@@ -19,6 +19,7 @@ import uniformProgramImage from "@/assets/uniform-program.png";
 import eCommerceLockerImage from "@/assets/smart-locker.jpg";
 import studentBoardImage from "@/assets/student-board.jpg";
 import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
+import uniformHubsImage from "@/assets/uniform-hubs.png";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -232,7 +233,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Convenient access to quality uniforms.",
     tagline: "Try. Buy. Learn. Earn.",
     description: "Physical retail presence at schools",
-    image: "/src/assets/uniform-hubs.jpg",
+    image: uniformHubsImage,
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "Uniform Hubs",
