@@ -144,20 +144,43 @@ const SocialImpactAfrica = () => {
               </div>
             </div>
             
-            {/* Image Section */}
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
-                  alt="Free school uniforms program - children in school" 
-                  className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+            {/* Video Section */}
+            <div className="space-y-8">
+              {/* Jacob's Testimonial Video */}
+              <div className="relative">
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                  <iframe 
+                    title="Jacob from Kirigu Primary School - Free Uniform Testimonial" 
+                    src="https://player.vimeo.com/video/812944686?h=9df738afb7" 
+                    width="100%" 
+                    height="100%" 
+                    className="w-full h-full"
+                    frameBorder="0" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground mt-3 text-center">
+                  Jacob from Kirigu Primary School in Kenya shares his story about receiving a free school uniform
+                </p>
               </div>
               
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+              {/* Additional Image */}
+              <div className="relative">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
+                    alt="Free school uniforms program - children in school" 
+                    className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
+              </div>
             </div>
           </div>
         </div>
