@@ -146,6 +146,26 @@ const SocialImpactAfrica = () => {
             
             {/* Video Section */}
             <div className="space-y-8">
+              {/* Free Uniform Program Overview Video */}
+              <div className="relative">
+                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                  <iframe 
+                    title="Free Uniform Program Overview" 
+                    src="https://player.vimeo.com/video/718334030?h=08f724cf5c" 
+                    width="100%" 
+                    height="100%" 
+                    className="w-full h-full"
+                    frameBorder="0" 
+                    referrerPolicy="strict-origin-when-cross-origin" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
+                    allowFullScreen
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground mt-3 text-center">
+                  Learn about our free uniform program and its impact
+                </p>
+              </div>
+
               {/* Jacob's Testimonial Video */}
               <div className="relative">
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
