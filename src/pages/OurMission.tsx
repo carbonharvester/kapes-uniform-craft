@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,53 +5,40 @@ import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-re
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import ourMissionHero from "@/assets/our-mission-hero.jpg";
-
 const OurMission = () => {
-  const values = [
-    {
-      icon: Heart,
-      title: "Ethical First",
-      description: "Every decision we make puts people and planet before profit"
-    },
-    {
-      icon: Globe,
-      title: "Global Impact", 
-      description: "Creating positive change that reaches communities worldwide"
-    },
-    {
-      icon: Users,
-      title: "Student Voice",
-      description: "Empowering young people to be co-creators of their future"
-    },
-    {
-      icon: TreePine,
-      title: "Regenerative",
-      description: "Going beyond sustainability to actively heal our planet"
-    },
-    {
-      icon: Recycle,
-      title: "Circular",
-      description: "Designing out waste through innovative takeback programs"
-    },
-    {
-      icon: GraduationCap,
-      title: "Educational",
-      description: "Every uniform becomes a tool for learning and empowerment"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const values = [{
+    icon: Heart,
+    title: "Ethical First",
+    description: "Every decision we make puts people and planet before profit"
+  }, {
+    icon: Globe,
+    title: "Global Impact",
+    description: "Creating positive change that reaches communities worldwide"
+  }, {
+    icon: Users,
+    title: "Student Voice",
+    description: "Empowering young people to be co-creators of their future"
+  }, {
+    icon: TreePine,
+    title: "Regenerative",
+    description: "Going beyond sustainability to actively heal our planet"
+  }, {
+    icon: Recycle,
+    title: "Circular",
+    description: "Designing out waste through innovative takeback programs"
+  }, {
+    icon: GraduationCap,
+    title: "Educational",
+    description: "Every uniform becomes a tool for learning and empowerment"
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url(${ourMissionHero})`,
-            backgroundPosition: "center"
-          }}
-        ></div>
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
+        backgroundImage: `url(${ourMissionHero})`,
+        backgroundPosition: "center"
+      }}></div>
         
         {/* Overlay and Gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/35 to-transparent"></div>
@@ -74,7 +60,9 @@ const OurMission = () => {
         </div>
         
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       <div className="container mx-auto px-4 py-16">
@@ -99,8 +87,7 @@ const OurMission = () => {
               <p className="text-muted-foreground text-lg">The principles that guide everything we do</p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {values.map((value, index) => (
-                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+              {values.map((value, index) => <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
                   <CardHeader>
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
@@ -112,8 +99,7 @@ const OurMission = () => {
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </section>
 
@@ -248,7 +234,9 @@ const OurMission = () => {
           </section>
 
           {/* CTA Section */}
-          <section className="text-center py-16" style={{ backgroundColor: '#cfeaff' }}>
+          <section className="text-center py-16" style={{
+          backgroundColor: '#cfeaff'
+        }}>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Join the Movement
             </h2>
@@ -260,7 +248,7 @@ const OurMission = () => {
                 Start Your Journey
               </Button>
               <Button variant="outline" size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth" asChild>
-                <Link to="/social-impact-africa">Learn About Our Impact</Link>
+                <Link to="/social-impact-africa">Learn About Our Social Impact</Link>
               </Button>
             </div>
           </section>
@@ -268,8 +256,6 @@ const OurMission = () => {
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default OurMission;
