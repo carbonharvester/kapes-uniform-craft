@@ -111,10 +111,41 @@ const SocialImpactAfrica = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Content Section */}
-            <div className="space-y-8">
-              <div className="grid gap-8">
+        {/* Hero Video Section - Program Overview */}
+        <div className="mb-16">
+          <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 rounded-3xl p-8 lg:p-12">
+            <div className="absolute top-4 left-4">
+              <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                Program Overview
+              </div>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-white/80 dark:bg-black/20 backdrop-blur-sm">
+                <iframe 
+                  title="Free Uniform Program Overview" 
+                  src="https://player.vimeo.com/video/718334030?h=08f724cf5c" 
+                  width="100%" 
+                  height="100%" 
+                  className="w-full h-full"
+                  frameBorder="0" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
+                  allowFullScreen
+                />
+              </div>
+              <p className="text-lg text-muted-foreground mt-6 text-center max-w-2xl mx-auto">
+                Discover how our free uniform program is transforming education across Africa by removing barriers to learning
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+          {/* Content Section */}
+          <div className="lg:col-span-1 space-y-8">
+            <div className="space-y-6">
+              <div className="space-y-4">
                 {uniformImpact.map((impact, index) => {
                   const IconComponent = impact.icon;
                   return (
@@ -143,32 +174,19 @@ const SocialImpactAfrica = () => {
                 </p>
               </div>
             </div>
-            
-            {/* Video Section */}
-            <div className="space-y-8">
-              {/* Free Uniform Program Overview Video */}
-              <div className="relative">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                  <iframe 
-                    title="Free Uniform Program Overview" 
-                    src="https://player.vimeo.com/video/718334030?h=08f724cf5c" 
-                    width="100%" 
-                    height="100%" 
-                    className="w-full h-full"
-                    frameBorder="0" 
-                    referrerPolicy="strict-origin-when-cross-origin" 
-                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
-                    allowFullScreen
-                  />
+          </div>
+          
+          {/* Testimonial Video Section */}
+          <div className="lg:col-span-1">
+            <div className="relative bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/50 dark:to-emerald-950/50 rounded-2xl p-6">
+              <div className="absolute top-4 left-4">
+                <div className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  Student Story
                 </div>
-                <p className="text-sm text-muted-foreground mt-3 text-center">
-                  Learn about our free uniform program and its impact
-                </p>
               </div>
-
-              {/* Jacob's Testimonial Video */}
-              <div className="relative">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <div className="pt-8">
+                <div className="aspect-video rounded-xl overflow-hidden shadow-xl">
                   <iframe 
                     title="Jacob from Kirigu Primary School - Free Uniform Testimonial" 
                     src="https://player.vimeo.com/video/812944686?h=9df738afb7" 
@@ -181,21 +199,34 @@ const SocialImpactAfrica = () => {
                     allowFullScreen
                   />
                 </div>
-                <p className="text-sm text-muted-foreground mt-3 text-center">
-                  Jacob from Kirigu Primary School in Kenya shares his story about receiving a free school uniform
-                </p>
-              </div>
-              
-              {/* Additional Image */}
-              <div className="relative">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
-                    alt="Free school uniforms program - children in school" 
-                    className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                <div className="mt-4 space-y-2">
+                  <h4 className="font-semibold text-green-800 dark:text-green-200">Jacob's Story</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Meet Jacob from Kirigu Primary School in Kenya, who shares how receiving a free school uniform changed his educational journey.
+                  </p>
                 </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Supporting Image Section */}
+          <div className="lg:col-span-1">
+            <div className="relative group">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
+                  alt="Free school uniforms program - children in school" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-lg p-4">
+                  <p className="text-sm font-medium text-foreground">
+                    Students across Africa benefit from free uniforms, enabling them to focus on their education
+                  </p>
+                </div>
+              </div>
                 
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
