@@ -211,7 +211,7 @@ export const SchoolShopsLockers = () => {
                 <div className="relative">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                     <img 
-                      src="/src/assets/smart-locker.jpg" 
+                      src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752871034/2_20_s_ifqazy.jpg" 
                       alt="E-commerce lockers - smart pickup solution" 
                       className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                     />

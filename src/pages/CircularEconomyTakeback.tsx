@@ -7,9 +7,7 @@ import { Recycle, ArrowRight, School, Users, BarChart3, Package, Heart, Globe, R
 import { Footer } from "@/components/Footer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useState, useEffect } from "react";
-import circularSystemImg from "@/assets/circular-system.jpg";
-import mealsProgramImg from "@/assets/meals-program.jpg";
-import zeroWasteImg from "@/assets/zero-waste.jpg";
+// Using Cloudinary URLs instead of local imports
 
 const CircularEconomyTakeback = () => {
   const isMobile = useIsMobile();
@@ -230,21 +228,21 @@ const CircularEconomyTakeback = () => {
             step: 'Impact 1',
             title: '100% Circular System',
             content: 'Every uniform returned enters our closed-loop system, ensuring nothing goes to waste and creating continuous value for communities.',
-            image: circularSystemImg,
+            image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg",
             icon: Recycle
           },
           { 
             step: 'Impact 2',
             title: '1:1 Meals per Uniform', 
             content: 'For every uniform item returned, we fund one nutritious school meal for a child in need across African communities.',
-            image: mealsProgramImg,
+            image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752991030/thumb_4_mzgf4h.jpg",
             icon: Heart
           },
           { 
             step: 'Impact 3',
             title: 'Zero Landfill Waste',
             content: 'Through our comprehensive takeback scheme, no uniform ends up in landfill - creating a truly sustainable textile lifecycle.',
-            image: zeroWasteImg,
+            image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg",
             icon: Target
           }
         ]}

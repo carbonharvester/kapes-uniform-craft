@@ -10,7 +10,7 @@ import { getAllBlogPosts } from "@/services/contentful";
 import { BlogPost } from "@/types/blog";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
-import newBlogHeroImage from "@/assets/new-blog-hero.jpg";
+// Using Cloudinary URL instead of local import
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -61,7 +61,7 @@ const Blog = () => {
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={newBlogHeroImage} 
+            src="https://res.cloudinary.com/dng12bd0a/image/upload/v1753009981/Untitled_design_3_zz8vdo.jpg" 
             alt="Blog hero" 
             className="w-full h-full object-cover"
           />
