@@ -114,11 +114,6 @@ const SocialImpactAfrica = () => {
         {/* Hero Video Section - Program Overview */}
         <div className="mb-16">
           <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/50 dark:to-indigo-950/50 rounded-3xl p-8 lg:p-12">
-            <div className="absolute top-4 left-4">
-              <div className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                Program Overview
-              </div>
-            </div>
             <div className="max-w-4xl mx-auto">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl bg-white/80 dark:bg-black/20 backdrop-blur-sm">
                 <iframe 
@@ -179,12 +174,6 @@ const SocialImpactAfrica = () => {
           {/* Testimonial Video Section */}
           <div className="lg:col-span-1">
             <div className="relative bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/50 dark:to-emerald-950/50 rounded-2xl p-6">
-              <div className="absolute top-4 left-4">
-                <div className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                  Student Story
-                </div>
-              </div>
               <div className="pt-8">
                 <div className="aspect-video rounded-xl overflow-hidden shadow-xl">
                   <iframe 
