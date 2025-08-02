@@ -8,7 +8,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Plus, Leaf, Factory, BarChart3, Recycle, Users, Heart, Store, Package, Truck, MapPin, Brain, MessageCircle, GraduationCap } from "lucide-react";
-// Using Cloudinary URLs instead of local imports
+import factoryVisitsImage from "@/assets/factory-visits.jpg";
+import organicCottonImage from "@/assets/organic-cotton.jpg";
+import sustainableMaterialsImage from "@/assets/sustainable-materials.jpg";
+import ethicalManufacturingImage from "@/assets/ethical-manufacturing.jpg";
+import takebackSchemeImage from "@/assets/circular-life-guarantee.jpg";
+import freeUniformsMealsImage from "@/assets/free-uniforms-meals.jpg";
+import freeSchoolUniformsImage from "@/assets/free-school-uniforms.png";
+import uniformProgramImage from "@/assets/uniform-program.png";
+import eCommerceLockerImage from "@/assets/smart-locker.jpg";
+import studentBoardImage from "@/assets/student-board.jpg";
+import nextDayDeliveryImage from "@/assets/next-day-delivery.jpg";
+import uniformHubsImage from "@/assets/uniform-hubs.png";
 import { cn } from "@/lib/utils";
 
 interface DifferenceCard {
@@ -33,7 +44,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Every thread matters for our planet's future.",
     tagline: "Kind to skin. Kinder to Earth.",
     description: "100% organic and recycled fabrics",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1753009981/Untitled_design_3_zz8vdo.jpg",
+    image: sustainableMaterialsImage,
     icon: <Leaf className="w-6 h-6" />,
     details: {
       title: "Earth-First Fabrics",
@@ -47,7 +58,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Fair wages and safe working conditions.",
     tagline: "Made with pride. Made with purpose.",
     description: "Responsible production practices",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752904778/Filip-C-Agoo-Everland-Marketing-Kenya-8679-WEB-low-resolution_fwb4kw.jpg",
+    image: ethicalManufacturingImage,
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "People-First Production",
@@ -61,7 +72,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Providing dignity through education access.",
     tagline: "Buy one. Give one. Change lives.",
     description: "Breaking barriers to learning",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png",
+    image: uniformProgramImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "One For All Promise",
@@ -75,7 +86,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Complete circular lifecycle management.",
     tagline: "Wear. Return. Repeat.",
     description: "End-to-end uniform recycling",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752871032/2_30_s_is9zcc.jpg",
+    image: takebackSchemeImage,
     icon: <Recycle className="w-6 h-6" />,
     details: {
       title: "Circular Life Guarantee",
@@ -89,7 +100,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Creating global educational equity.",
     tagline: "Return uniforms. Feed children.",
     description: "Supporting education worldwide",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752991030/thumb_4_mzgf4h.jpg",
+    image: freeUniformsMealsImage,
     icon: <Heart className="w-6 h-6" />,
     details: {
       title: "Uniforms that Feed",
@@ -167,7 +178,7 @@ const differences: DifferenceCard[] = [
     subtitle: "See sustainability in action firsthand.",
     tagline: "From field to school. Transparency tells.",
     description: "Transparent supply chain access",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752781424/Filip-C-Agoo-Everland-Marketing-Kenya-9271-WEB-low-resolution-1_x3pigc.jpg",
+    image: factoryVisitsImage,
     icon: <MapPin className="w-6 h-6" />,
     details: {
       title: "Behind-the-Scenes Tours",
@@ -187,7 +198,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Empowering students to lead change.",
     tagline: "Young voices. Big changes.",
     description: "Student-led sustainability initiatives",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752999752/490294314_1221791753286267_8865515835930643023_n_cue5wc.jpg",
+    image: studentBoardImage,
     icon: <Users className="w-6 h-6" />,
     details: {
       title: "Kapes Young Leaders Council",
@@ -222,7 +233,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Convenient access to quality uniforms.",
     tagline: "Try. Buy. Learn. Earn.",
     description: "Physical retail presence at schools",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg",
+    image: uniformHubsImage,
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "Uniform Hubs",
@@ -242,7 +253,7 @@ const differences: DifferenceCard[] = [
     subtitle: "Smart collection points for busy families.",
     tagline: "Order online. Collect anytime.",
     description: "Automated pickup and delivery",
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752871034/2_20_s_ifqazy.jpg",
+    image: eCommerceLockerImage,
     icon: <Package className="w-6 h-6" />,
     details: {
       title: "SmartCollect Lockers",

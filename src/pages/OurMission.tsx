@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
-// Using Cloudinary URL instead of local import
+import ourMissionHero from "@/assets/our-mission-hero.jpg";
 
 const OurMission = () => {
   const values = [
@@ -49,7 +49,7 @@ const OurMission = () => {
         <div 
           className="absolute inset-0 bg-cover bg-no-repeat"
           style={{
-            backgroundImage: `url(https://res.cloudinary.com/dng12bd0a/image/upload/v1753009981/Untitled_design_3_zz8vdo.jpg)`,
+            backgroundImage: `url(${ourMissionHero})`,
             backgroundPosition: "center"
           }}
         ></div>
