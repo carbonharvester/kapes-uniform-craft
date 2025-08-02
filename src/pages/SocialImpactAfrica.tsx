@@ -220,13 +220,6 @@ const SocialImpactAfrica = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
               </div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-white/90 dark:bg-black/80 backdrop-blur-sm rounded-lg p-4">
-                  <p className="text-sm font-medium text-foreground">
-                    Students across Africa benefit from free uniforms, enabling them to focus on their education
-                  </p>
-                </div>
-              </div>
                 
                 {/* Decorative elements */}
                 <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
