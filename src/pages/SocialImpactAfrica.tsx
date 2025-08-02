@@ -141,7 +141,7 @@ const SocialImpactAfrica = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Content Section */}
           <div className="lg:col-span-1 space-y-8">
             <div className="space-y-6">
@@ -209,24 +209,7 @@ const SocialImpactAfrica = () => {
             </div>
           </div>
           
-          {/* Supporting Image Section */}
-          <div className="lg:col-span-1">
-            <div className="relative group">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1750536183/Screen_Shot_2022-06-07_at_7.22.23_PM_i4veeu.png" 
-                  alt="Free school uniforms program - children in school" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-              </div>
-                
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/10 rounded-full blur-xl"></div>
-              </div>
-            </div>
-          </div>
+        </div>
         </div>
       </section>
 
