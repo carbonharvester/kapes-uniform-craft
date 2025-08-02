@@ -174,7 +174,7 @@ const SocialImpactAfrica = () => {
           {/* Testimonial Video Section */}
           <div className="lg:col-span-1">
             <div className="relative bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/50 dark:to-emerald-950/50 rounded-2xl p-6">
-              <div className="pt-8">
+              <div className="pt-2">
                 <div className="aspect-video rounded-xl overflow-hidden shadow-xl">
                   <iframe 
                     title="Jacob from Kirigu Primary School - Free Uniform Testimonial" 
