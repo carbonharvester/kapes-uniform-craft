@@ -139,36 +139,34 @@ const SocialImpactAfrica = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Content Section */}
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950/50 dark:to-blue-950/50 rounded-2xl p-6 h-fit">
-              <div className="space-y-6">
-                <div className="space-y-4">
-                  {uniformImpact.map((impact, index) => {
-                    const IconComponent = impact.icon;
-                    return (
-                      <div key={index} className="flex gap-4 items-start group">
-                        <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                            <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                          </div>
-                        </div>
-                        <div className="space-y-1">
-                          <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
-                            {impact.title}
-                          </h3>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {impact.description}
-                          </p>
+            <div className="space-y-6">
+              <div className="space-y-4">
+                {uniformImpact.map((impact, index) => {
+                  const IconComponent = impact.icon;
+                  return (
+                    <div key={index} className="flex gap-4 items-start group">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
+                          <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
-                
-                <div className="pt-4 border-t border-border/50">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
-                  </p>
-                </div>
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold" style={{ color: '#030063' }}>
+                          {impact.title}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {impact.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              <div className="pt-4 border-t border-border/50">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Your students wear sustainable uniforms — and make it possible for others to wear theirs, too.
+                </p>
               </div>
             </div>
           </div>
