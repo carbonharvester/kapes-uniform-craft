@@ -153,6 +153,7 @@ const EducationalResources = () => {
               <iframe
                 src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
                 allowFullScreen
+                allow="fullscreen"
                 className="w-full h-full border-0"
                 title="Educational Research Foundation"
               />
