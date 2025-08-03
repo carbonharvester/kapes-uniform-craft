@@ -88,8 +88,8 @@ const StudentLeadership = () => {
               <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <Globe className="h-6 w-6 text-primary" />
+                    <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Globe className="h-7 w-7 text-primary" />
                     </div>
                     <CardTitle className="text-2xl font-medium">The Kapes Young Leaders Council</CardTitle>
                   </div>
@@ -113,8 +113,8 @@ const StudentLeadership = () => {
               <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                      <BookOpen className="h-6 w-6 text-accent" />
+                    <div className="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="h-7 w-7 text-emerald-600" />
                     </div>
                     <CardTitle className="text-2xl font-medium">School-Level Engagement</CardTitle>
                   </div>
@@ -126,7 +126,7 @@ const StudentLeadership = () => {
                   <p className="mb-6 font-medium">Students can also:</p>
                   <ul className="space-y-3">
                     {schoolActivities.map((activity, index) => <li key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-emerald-600 rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-muted-foreground leading-relaxed">{activity}</span>
                       </li>)}
                   </ul>
@@ -136,8 +136,8 @@ const StudentLeadership = () => {
               <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
-                      <Calendar className="h-6 w-6 text-secondary" />
+                    <div className="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Calendar className="h-7 w-7 text-blue-600" />
                     </div>
                     <CardTitle className="text-2xl font-medium">Volunteering Opportunities</CardTitle>
                   </div>
@@ -149,23 +149,23 @@ const StudentLeadership = () => {
                   <p className="mb-6 font-medium">Students can volunteer for:</p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Pop-up uniform collection drives</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Sustainability awareness workshops</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Educational outreach programs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Social media campaign support</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Community impact projects</span>
                     </li>
                   </ul>
