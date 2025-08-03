@@ -140,16 +140,16 @@ const EducationalResources = () => {
           </div>
 
           {/* Example Lesson Plan */}
-          <div className="bg-white rounded-3xl shadow-glass p-8 hover-lift transition-smooth mb-12">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
+          <div className="bg-white rounded-3xl shadow-glass p-4 md:p-8 hover-lift transition-smooth mb-12">
+            <div className="text-center mb-6 md:mb-8">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-tight mb-3 md:mb-4">
                 Example Lesson Plan
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-2">
                 See how our educational resources can be applied in your classroom setting.
               </p>
             </div>
-            <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl">
+            <div className="aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-xl md:rounded-2xl">
               <iframe
                 src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
                 allowFullScreen
