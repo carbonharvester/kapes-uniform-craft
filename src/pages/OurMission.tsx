@@ -80,6 +80,30 @@ const OurMission = () => {
             </div>
           </section>
 
+          {/* Who Are We Video Section */}
+          <section className="bg-gradient-warm-section py-16">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Who Are We</h2>
+              <p className="text-muted-foreground text-lg">Meet the team behind the movement</p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-glass">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Who Are We - Kapes Story"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="text-center mt-8">
+                <p className="text-lg text-muted-foreground">
+                  Discover the passion and purpose driving our mission to transform school uniforms into a force for positive change.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Our Values */}
           <section>
             <div className="text-center mb-12">
