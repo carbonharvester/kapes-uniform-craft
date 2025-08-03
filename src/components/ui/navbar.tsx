@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Book, Menu, Sunset, Trees, Zap, GraduationCap, Building, Users, Package, Phone, Recycle, Heart, Award, Calculator, Factory, Leaf, FileText } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -156,6 +156,9 @@ const Navbar = ({
     }
   }
 }: NavbarProps) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
   return <header className="py-3 md:py-4 lg:py-6 fixed top-0 left-0 right-0 z-50 glass border-b border-border/50 backdrop-blur-md bg-background/95 supports-[backdrop-filter]:bg-background/60 w-full">
       <div className="container px-3 md:px-4 lg:px-6">
         <nav className="hidden justify-between lg:flex">
@@ -200,7 +203,7 @@ const Navbar = ({
             
             {/* Mobile hamburger menu */}
             <div className="flex items-center gap-2 flex-shrink-0">
-              <Sheet>
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="sm" className="p-2 flex-shrink-0">
                     <Menu className="size-4" />
@@ -209,7 +212,7 @@ const Navbar = ({
                 <SheetContent className="overflow-y-auto w-[85vw] sm:w-[400px]">
                   <SheetHeader>
                     <SheetTitle>
-                      <Link to={logo.url} className="flex items-center gap-2">
+                      <Link to={logo.url} className="flex items-center gap-2" onClick={closeMobileMenu}>
                         {logo.src && <img src={logo.src} className="h-8" alt={logo.alt} />}
                         {logo.title && <span className="text-lg font-semibold">
                             {logo.title}
@@ -219,18 +222,18 @@ const Navbar = ({
                   </SheetHeader>
                   <div className="my-6 flex flex-col gap-6">
                     <Accordion type="single" collapsible className="flex w-full flex-col gap-4">
-                      {menu.map(item => renderMobileMenuItem(item))}
+                      {menu.map(item => renderMobileMenuItem(item, closeMobileMenu))}
                     </Accordion>
                     <div className="border-t py-4">
                       <div className="grid grid-cols-2 justify-start">
-                        {mobileExtraLinks.map((link, idx) => <Link key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" to={link.url}>
+                        {mobileExtraLinks.map((link, idx) => <Link key={idx} className="inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground" to={link.url} onClick={closeMobileMenu}>
                             {link.name}
                           </Link>)}
                       </div>
                     </div>
                     <div className="flex flex-col gap-3">
                       <Button asChild>
-                        <Link to={auth.signup.url}>{auth.signup.text}</Link>
+                        <Link to={auth.signup.url} onClick={closeMobileMenu}>{auth.signup.text}</Link>
                       </Button>
                     </div>
                   </div>
@@ -275,14 +278,14 @@ const renderMenuItem = (item: MenuItem) => {
       {item.title}
     </Link>;
 };
-const renderMobileMenuItem = (item: MenuItem) => {
+const renderMobileMenuItem = (item: MenuItem, closeMobileMenu: () => void) => {
   if (item.items) {
     return <AccordionItem key={item.title} value={item.title} className="border-b-0">
         <AccordionTrigger className="py-0 font-semibold hover:no-underline">
           {item.title}
         </AccordionTrigger>
         <AccordionContent className="mt-2">
-          {item.items.map(subItem => <Link key={subItem.title} className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground" to={subItem.url}>
+          {item.items.map(subItem => <Link key={subItem.title} className="flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-muted hover:text-accent-foreground" to={subItem.url} onClick={closeMobileMenu}>
               {subItem.icon}
               <div>
                 <div className="text-sm font-semibold">{subItem.title}</div>
@@ -294,7 +297,7 @@ const renderMobileMenuItem = (item: MenuItem) => {
         </AccordionContent>
       </AccordionItem>;
   }
-  return <Link key={item.title} to={item.url} className="font-semibold">
+  return <Link key={item.title} to={item.url} className="font-semibold" onClick={closeMobileMenu}>
       {item.title}
     </Link>;
 };
