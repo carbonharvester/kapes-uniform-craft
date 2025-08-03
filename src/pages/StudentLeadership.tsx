@@ -175,9 +175,9 @@ const StudentLeadership = () => {
           </section>
 
           {/* Student Impact Areas */}
-          <section className="py-20 lg:py-32">
-            <div className="container mx-auto max-w-7xl px-4">
-              <div className="text-center mb-16">
+          <section className="py-16">
+            <div className="container mx-auto max-w-4xl px-4">
+              <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6 text-primary">
                   Student Impact Areas
                 </h2>
