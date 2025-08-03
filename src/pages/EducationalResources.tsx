@@ -139,6 +139,25 @@ const EducationalResources = () => {
             </Card>
           </div>
 
+          {/* Example Lesson Plan */}
+          <div className="bg-white rounded-3xl shadow-glass p-8 hover-lift transition-smooth mb-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">
+                Example Lesson Plan
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                See how our educational resources can be applied in your classroom setting.
+              </p>
+            </div>
+            <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl">
+              <iframe
+                src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
+                allowFullScreen
+                className="w-full h-full border-0"
+                title="Educational Research Foundation"
+              />
+            </div>
+          </div>
 
           {/* Simple Implementation Message */}
           <div className="text-center mb-12">
@@ -176,30 +195,6 @@ const EducationalResources = () => {
         </div>
       </section>
 
-      {/* Research Foundation Slideshow */}
-      <section className="relative py-16 px-4 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-6">
-              Example Lesson Plan
-            </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              See how our educational resources can be applied in your classroom setting.
-            </p>
-          </div>
-          
-          <div className="bg-white rounded-3xl shadow-glass p-8 hover-lift transition-smooth">
-            <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl">
-              <iframe
-                src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
-                allowFullScreen
-                className="w-full h-full border-0"
-                title="Educational Research Foundation"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Why It Matters */}
       <section className="relative py-16 px-4">
