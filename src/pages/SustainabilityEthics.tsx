@@ -46,7 +46,7 @@ const SustainabilityEthics = () => {
   }];
   const sustainabilityFeatures = [{
     title: "KapesImpact™ Dashboard",
-    description: "Every Core and Impact school receives access to track their sustainability metrics",
+    description: "Every partner school receives access to track their sustainability metrics",
     icon: BarChart3
   }, {
     title: "Real-Time Impact Tracking",
@@ -54,16 +54,16 @@ const SustainabilityEthics = () => {
     icon: BarChart3
   }, {
     title: "QR Code Transparency",
-    description: "Impact tier uniforms come with QR codes showing real-time garment impact",
+    description: "Uniforms come with QR codes showing real-time garment impact data",
     icon: QrCode
   }];
   const logisticsFeatures = [{
-    title: "Glassine Paper Packaging",
-    description: "Impact tier gets fully plastic-free experience",
+    title: "Plastic-Free Packaging",
+    description: "Sustainable glassine paper packaging for an eco-friendly experience",
     icon: Package
   }, {
-    title: "Recycled Polybags",
-    description: "Core tier protection with purpose",
+    title: "Recycled Materials",
+    description: "When protection is needed, we use recycled polybags with purpose",
     icon: Recycle
   }, {
     title: "Smart Lockers",
@@ -369,11 +369,11 @@ const SustainabilityEthics = () => {
           }} className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed text-white">
               Because doing the right thing should be the simplest option.
             </p>
-            <Link to="/partnership-tiers">
+            <Link to="/contact">
               <Button size="lg" variant="secondary" className="rounded-2xl px-8 py-6 text-lg hover-scale transition-smooth text-white" style={{
               backgroundColor: '#f97769'
             }}>
-                Learn About Our Partnership Tiers
+                Start Your Sustainable Journey
               </Button>
             </Link>
           </div>
