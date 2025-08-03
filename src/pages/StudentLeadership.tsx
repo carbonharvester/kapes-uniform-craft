@@ -136,8 +136,8 @@ const StudentLeadership = () => {
               <Card className="border-0 shadow-glass hover-lift transition-smooth">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center">
-                      <Calendar className="h-6 w-6 text-green-600" />
+                    <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
+                      <Calendar className="h-6 w-6 text-secondary" />
                     </div>
                     <CardTitle className="text-2xl font-medium">Volunteering Opportunities</CardTitle>
                   </div>
@@ -149,23 +149,23 @@ const StudentLeadership = () => {
                   <p className="mb-6 font-medium">Students can volunteer for:</p>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Pop-up uniform collection drives</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Sustainability awareness workshops</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Educational outreach programs</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Social media campaign support</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm text-muted-foreground leading-relaxed">Community impact projects</span>
                     </li>
                   </ul>
@@ -178,9 +178,7 @@ const StudentLeadership = () => {
           <section className="py-20 lg:py-32">
             <div className="container mx-auto max-w-7xl px-4">
               <div className="text-center mb-16">
-                <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6" style={{
-                color: '#030063'
-              }}>
+                <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-6 text-primary">
                   Student Impact Areas
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -196,14 +194,12 @@ const StudentLeadership = () => {
                     const IconComponent = area.icon;
                     return <div key={index} className="flex gap-4 items-start group">
                           <div className="flex-shrink-0 mt-1">
-                            <div className="w-10 h-10 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl flex items-center justify-center group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 transition-colors">
-                              <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                            <div className="w-10 h-10 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                              <IconComponent className="w-5 h-5 text-primary" />
                             </div>
                           </div>
                           <div className="space-y-1">
-                            <h3 className="text-lg font-semibold" style={{
-                          color: '#030063'
-                        }}>
+                            <h3 className="text-lg font-semibold text-foreground">
                               {area.title}
                             </h3>
                             <p className="text-muted-foreground leading-relaxed">
