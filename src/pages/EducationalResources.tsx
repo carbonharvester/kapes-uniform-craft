@@ -111,9 +111,6 @@ const EducationalResources = () => {
                 <Lightbulb className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Inquiry-Based Learning</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm mb-3">Questions, problems, and challenges that students work together to address</p>
-                <div className="text-xs text-primary font-medium">
-                  Research Slides: 1, 2
-                </div>
               </CardContent>
             </Card>
             
@@ -122,9 +119,6 @@ const EducationalResources = () => {
                 <GraduationCap className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Climate Action Framework</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm mb-3">Addresses emotions and encourages hopeful, actionable solutions</p>
-                <div className="text-xs text-primary font-medium">
-                  Research Slides: 3, 4
-                </div>
               </CardContent>
             </Card>
             
@@ -133,9 +127,6 @@ const EducationalResources = () => {
                 <Target className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Transferable Skills</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm mb-3">Critical thinking, creativity, collaboration, and global citizenship</p>
-                <div className="text-xs text-primary font-medium">
-                  Research Slides: 5, 6
-                </div>
               </CardContent>
             </Card>
             
@@ -144,9 +135,6 @@ const EducationalResources = () => {
                 <Globe className="h-10 w-10 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Global Standards</h3>
                 <p className="text-muted-foreground leading-relaxed text-sm mb-3">Connected to UN SDGs, GreenComp, and UNESCO frameworks</p>
-                <div className="text-xs text-primary font-medium">
-                  Research Slides: 7, 8, 9, 10
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -196,7 +184,7 @@ const EducationalResources = () => {
               Example Lesson Plan
             </h2>
             <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Explore the educational research and pedagogical frameworks that inform our climate education approach.
+              See how our educational resources can be applied in your classroom setting.
             </p>
           </div>
           
