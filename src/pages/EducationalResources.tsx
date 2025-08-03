@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe, Maximize, X } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const EducationalResources = () => {
+  const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
+  
   const resources = [{
     icon: BookOpen,
     title: "Lesson Plans & Activities",
@@ -152,8 +156,9 @@ const EducationalResources = () => {
                 variant="outline" 
                 size="sm"
                 className="md:hidden mb-4"
-                onClick={() => window.open('https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed', '_blank')}
+                onClick={() => setIsFullscreenOpen(true)}
               >
+                <Maximize className="w-4 h-4 mr-2" />
                 View Full Screen
               </Button>
             </div>
@@ -169,12 +174,38 @@ const EducationalResources = () => {
                 variant="outline" 
                 size="sm"
                 className="hidden md:block absolute top-4 right-4 bg-white/90 hover:bg-white"
-                onClick={() => window.open('https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed', '_blank')}
+                onClick={() => setIsFullscreenOpen(true)}
               >
+                <Maximize className="w-4 h-4 mr-2" />
                 View Full Screen
               </Button>
             </div>
           </div>
+
+          {/* Fullscreen Modal */}
+          <Dialog open={isFullscreenOpen} onOpenChange={setIsFullscreenOpen}>
+            <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 gap-0">
+              <DialogHeader className="absolute top-4 right-4 z-50">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsFullscreenOpen(false)}
+                  className="bg-white/90 hover:bg-white"
+                >
+                  <X className="w-4 h-4" />
+                </Button>
+              </DialogHeader>
+              <div className="w-full h-full">
+                <iframe
+                  src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
+                  allowFullScreen
+                  allow="fullscreen"
+                  className="w-full h-full border-0 rounded-lg"
+                  title="Educational Research Foundation - Full Screen"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
 
           {/* Simple Implementation Message */}
           <div className="text-center mb-12">
