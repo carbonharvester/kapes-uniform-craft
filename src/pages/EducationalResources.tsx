@@ -149,20 +149,8 @@ const EducationalResources = () => {
               <h3 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-tight mb-3 md:mb-4">
                 Example Lesson Plan
               </h3>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto px-2 mb-4">
-                See how our educational resources can be applied in your classroom setting.
-              </p>
-              <Button 
-                variant="outline" 
-                size="sm"
-                className="md:hidden mb-4"
-                onClick={() => setIsFullscreenOpen(true)}
-              >
-                <Maximize className="w-4 h-4 mr-2" />
-                View Full Screen
-              </Button>
             </div>
-            <div className="aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-xl md:rounded-2xl relative">
+            <div className="aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-xl md:rounded-2xl relative group">
               <iframe
                 src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
                 allowFullScreen
@@ -173,11 +161,10 @@ const EducationalResources = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="hidden md:block absolute top-4 right-4 bg-white/90 hover:bg-white"
+                className="absolute top-4 right-4 bg-white/90 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
                 onClick={() => setIsFullscreenOpen(true)}
               >
-                <Maximize className="w-4 h-4 mr-2" />
-                View Full Screen
+                <Maximize className="w-4 h-4" />
               </Button>
             </div>
           </div>
@@ -185,17 +172,7 @@ const EducationalResources = () => {
           {/* Fullscreen Modal */}
           <Dialog open={isFullscreenOpen} onOpenChange={setIsFullscreenOpen}>
             <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 gap-0">
-              <DialogHeader className="absolute top-4 right-4 z-50">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setIsFullscreenOpen(false)}
-                  className="bg-white/90 hover:bg-white"
-                >
-                  <X className="w-4 h-4" />
-                </Button>
-              </DialogHeader>
-              <div className="w-full h-full">
+              <div className="relative w-full h-full">
                 <iframe
                   src="https://www.canva.com/design/DAGuAbHC1Ms/QVKVo4tnLzpWj9ghBpy-XQ/view?embed"
                   allowFullScreen
@@ -203,6 +180,14 @@ const EducationalResources = () => {
                   className="w-full h-full border-0 rounded-lg"
                   title="Educational Research Foundation - Full Screen"
                 />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setIsFullscreenOpen(false)}
+                  className="absolute top-4 right-4 bg-white/90 hover:bg-white z-10"
+                >
+                  <X className="w-4 h-4" />
+                </Button>
               </div>
             </DialogContent>
           </Dialog>
