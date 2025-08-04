@@ -268,19 +268,19 @@ const ImpactPartnershipPage = () => {
           
           <div className="grid gap-6 md:gap-8 grid-cols-2 md:grid-cols-4 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-2xl md:text-4xl font-light text-primary mb-2">12,000+</div>
+              <div className="text-2xl md:text-4xl font-academy font-bold text-primary mb-2">12,000+</div>
               <div className="text-muted-foreground text-xs md:text-sm">School meals funded</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-4xl font-light text-primary mb-2">85%</div>
+              <div className="text-2xl md:text-4xl font-academy font-bold text-primary mb-2">85%</div>
               <div className="text-muted-foreground text-xs md:text-sm">Reduction in uniform waste</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-4xl font-light text-primary mb-2">500+</div>
+              <div className="text-2xl md:text-4xl font-academy font-bold text-primary mb-2">500+</div>
               <div className="text-muted-foreground text-xs md:text-sm">Free uniforms donated</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-4xl font-light text-primary mb-2">100%</div>
+              <div className="text-2xl md:text-4xl font-academy font-bold text-primary mb-2">100%</div>
               <div className="text-muted-foreground text-xs md:text-sm">Sustainable materials</div>
             </div>
           </div>
