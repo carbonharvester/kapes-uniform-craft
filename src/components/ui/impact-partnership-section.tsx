@@ -1,32 +1,29 @@
+"use client";
 
-"use client"
-
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { ImpactAssessmentModal } from "@/components/ImpactAssessmentModal"
-import { ImpactFeatureCard } from "@/components/ui/impact-feature-card"
-
+import * as React from "react";
+import { Button } from "@/components/ui/button";
+import { ImpactAssessmentModal } from "@/components/ImpactAssessmentModal";
+import { ImpactFeatureCard } from "@/components/ui/impact-feature-card";
 export interface ImpactFeature {
-  category: string
-  features: string[]
-  description: string
-  icon: string
-  color: string
+  category: string;
+  features: string[];
+  description: string;
+  icon: string;
+  color: string;
 }
-
 interface ImpactPartnershipSectionProps {
-  title: string
-  subtitle: string
-  features: ImpactFeature[]
+  title: string;
+  subtitle: string;
+  features: ImpactFeature[];
 }
-
 export function ImpactPartnershipSection({
   title,
   subtitle,
-  features,
+  features
 }: ImpactPartnershipSectionProps) {
-  return (
-    <section className="flex flex-col items-center gap-10 py-10" style={{ backgroundColor: 'hsl(var(--background-light-warm))' }}>
+  return <section className="flex flex-col items-center gap-10 py-10" style={{
+    backgroundColor: 'hsl(var(--background-light-warm))'
+  }}>
       <div className="space-y-7 text-center">
         <div className="space-y-4">
           <h1 className="text-2xl md:text-3xl font-light tracking-tight leading-tight">{title}</h1>
@@ -34,29 +31,20 @@ export function ImpactPartnershipSection({
         </div>
         
         <div className="relative z-10">
-          <Button 
-            onClick={() => {
-              document.dispatchEvent(new CustomEvent('openImpactAssessment'));
-            }}
-            className="rounded-xl px-6 py-3 font-medium transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer relative z-10"
-            style={{ 
-              WebkitTapHighlightColor: 'transparent',
-              pointerEvents: 'auto',
-              userSelect: 'none'
-            }}
-          >
+          <Button onClick={() => {
+          document.dispatchEvent(new CustomEvent('openImpactAssessment'));
+        }} className="rounded-xl px-6 py-3 font-medium transition-smooth bg-primary text-primary-foreground hover:bg-primary/90 touch-manipulation cursor-pointer relative z-10" style={{
+          WebkitTapHighlightColor: 'transparent',
+          pointerEvents: 'auto',
+          userSelect: 'none'
+        }}>
             Discover Your Impact Potential
           </Button>
         </div>
       </div>
 
       <div className="grid w-full max-w-7xl gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 px-4 md:px-8">
-        {features.map((feature) => (
-          <ImpactFeatureCard
-            key={feature.category}
-            feature={feature}
-          />
-        ))}
+        {features.map(feature => <ImpactFeatureCard key={feature.category} feature={feature} />)}
       </div>
 
       {/* Impact Stats */}
@@ -80,11 +68,10 @@ export function ImpactPartnershipSection({
             <div className="text-muted-foreground">Reduction in uniform waste</div>
           </div>
           <div className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
-            <div className="text-4xl font-academy font-bold text-primary mb-2">500+</div>
+            <div className="text-4xl font-academy font-bold text-primary mb-2">16,000</div>
             <div className="text-muted-foreground">Free uniforms donated</div>
           </div>
         </div>
       </div>
-    </section>
-  )
+    </section>;
 }
