@@ -77,7 +77,7 @@ const MetricCard = ({ icon: Icon, title, value, unit, description, trend, colorS
         {/* Metric Value */}
         <div className="mb-4">
           <div className="flex items-baseline gap-2 mb-2">
-            <span className={`text-4xl font-bold ${colors.text} tabular-nums`}>
+            <span className={`text-4xl font-academy font-bold ${colors.text} tabular-nums`}>
               {animatedValue.toLocaleString()}
             </span>
             <span className={`text-lg font-medium ${colors.accent}`}>
