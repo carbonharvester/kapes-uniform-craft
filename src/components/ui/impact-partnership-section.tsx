@@ -64,7 +64,7 @@ export function ImpactPartnershipSection({
             <div className="text-muted-foreground">School meals funded</div>
           </div>
           <div className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
-            <div className="text-4xl font-academy font-bold text-primary mb-2">85%</div>
+            <div className="text-4xl font-academy font-bold text-primary mb-2">100%</div>
             <div className="text-muted-foreground">Reduction in uniform waste</div>
           </div>
           <div className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
