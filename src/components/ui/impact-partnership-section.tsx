@@ -60,7 +60,7 @@ export function ImpactPartnershipSection({
         
         <div className="grid gap-8 md:grid-cols-3">
           <div className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
-            <div className="text-4xl font-academy font-bold text-primary mb-2">12,000+</div>
+            <div className="text-4xl font-academy font-bold text-primary mb-2">55,000</div>
             <div className="text-muted-foreground">School meals funded</div>
           </div>
           <div className="text-center p-8 rounded-2xl bg-white/50 backdrop-blur-sm border border-white/20">
