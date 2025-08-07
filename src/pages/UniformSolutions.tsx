@@ -307,13 +307,13 @@ export const UniformSolutions = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
+              
+              {/* Navigation buttons positioned below and centered */}
+              <div className="flex justify-center items-center gap-4 mt-8">
+                <CarouselPrevious className="relative left-0 top-0 translate-x-0 translate-y-0" />
+                <CarouselNext className="relative right-0 top-0 translate-x-0 translate-y-0" />
+              </div>
             </Carousel>
-            
-            {/* Centered Navigation Arrows Below */}
-            <div className="flex justify-center items-center gap-4 mt-8">
-              <CarouselPrevious className="relative left-0 top-0" />
-              <CarouselNext className="relative right-0 top-0" />
-            </div>
           </div>
         </div>
       </section>
