@@ -17,7 +17,7 @@ export const UniformSolutions = () => {
   const materials = [
     {
       id: "organic-cotton",
-      title: "Regenerative Organic Cotton",
+      title: "Organic Cotton",
       subtitle: "Carbon negative process that heals the earth.",
       tagline: "Kind to skin. Kinder to Earth.",
       description: "Naturally soft, breathable, and grown sustainably",
