@@ -37,7 +37,7 @@ export const UniformSolutions = () => {
     },
     {
       id: "recycled-fabrics",
-      title: "Recycled Fabrics",
+      title: "Recycled Polyester",
       subtitle: "Giving new life to waste materials.",
       tagline: "Waste to wonder.",
       description: "70% less carbon footprint",
