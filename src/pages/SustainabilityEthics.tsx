@@ -15,7 +15,7 @@ const SustainabilityEthics = () => {
     title: "Recycled Polyester", 
     description: "Reduces reliance on virgin resources and cuts plastic waste",
     icon: Recycle,
-    image: "/src/assets/recycled-materials.png"
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1754550530/ChatGPT_Image_Jul_22_2025_11_25_26_AM_jsibnm.png"
   }, {
     title: "Lyocell",
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
