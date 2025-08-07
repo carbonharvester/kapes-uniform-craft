@@ -127,7 +127,7 @@ export const UniformSolutions = () => {
       subtitle: "Complete wardrobe solutions for daily learning.",
       tagline: "Comfort meets durability.",
       description: "Shirts, trousers, skirts, dresses, and blazers",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=600&fit=crop",
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1752921380/leaners-leaders-2_a9g4bk.jpg",
       icon: <Shirt className="w-6 h-6" />,
       details: {
         title: "Complete Everyday Schoolwear",
