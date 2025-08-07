@@ -12,7 +12,7 @@ const SustainabilityEthics = () => {
     icon: Leaf,
     image: "/src/assets/organic-cotton.jpg"
   }, {
-    title: "Recycled Materials", 
+    title: "Recycled Polyester", 
     description: "Reduces reliance on virgin resources and cuts plastic waste",
     icon: Recycle,
     image: "/src/assets/recycled-materials.png"
@@ -21,6 +21,16 @@ const SustainabilityEthics = () => {
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
     icon: Globe,
     image: "/src/assets/zero-waste.jpg"
+  }, {
+    title: "Coconut Shell Fiber",
+    description: "Natural fiber from coconut waste with antimicrobial properties and exceptional durability",
+    icon: Recycle,
+    image: "/src/assets/sustainable-materials.jpg"
+  }, {
+    title: "Kapok",
+    description: "Ultra-lightweight natural fiber from rainforest trees, naturally buoyant and hypoallergenic",
+    icon: Leaf,
+    image: "/src/assets/organic-cotton.jpg"
   }];
   const noToxicChemicals = {
     title: "No Toxic Chemical Treatments",
@@ -117,7 +127,7 @@ const SustainabilityEthics = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {sustainableMaterials.map((material, index) => {
             const IconComponent = material.icon;
             return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">

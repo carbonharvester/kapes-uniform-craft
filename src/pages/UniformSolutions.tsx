@@ -96,6 +96,27 @@ export const UniformSolutions = () => {
           "Diverts waste from landfills"
         ]
       }
+    },
+    {
+      id: "kapok",
+      title: "Kapok",
+      subtitle: "Ultra-lightweight natural fiber from rainforest trees.",
+      tagline: "Light as air, strong as nature.",
+      description: "Naturally buoyant and hypoallergenic",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=600&fit=crop",
+      icon: <Leaf className="w-6 h-6" />,
+      details: {
+        title: "Kapok",
+        content: "Harvested from the seed pods of kapok trees in tropical rainforests, this ultra-lightweight fiber is naturally buoyant, hypoallergenic, and moisture-resistant. Kapok cultivation supports forest conservation and provides sustainable income for local communities. This remarkably soft and breathable fiber offers natural insulation properties while being completely biodegradable.",
+        features: [
+          "Ultra-lightweight and buoyant",
+          "Naturally hypoallergenic",
+          "Moisture and mildew resistant",
+          "Supports rainforest conservation",
+          "Provides sustainable community income",
+          "Completely biodegradable"
+        ]
+      }
     }
   ];
 
