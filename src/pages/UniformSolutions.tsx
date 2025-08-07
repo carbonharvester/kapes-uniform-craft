@@ -75,6 +75,27 @@ export const UniformSolutions = () => {
           "Luxuriously soft texture"
         ]
       }
+    },
+    {
+      id: "coconut-shell",
+      title: "Coconut Shell Fiber",
+      subtitle: "Natural fiber from coconut waste.",
+      tagline: "From waste to wonder.",
+      description: "Strong, durable, and naturally antimicrobial",
+      image: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&h=600&fit=crop",
+      icon: <Recycle className="w-6 h-6" />,
+      details: {
+        title: "Coconut Shell Fiber",
+        content: "Transformed from agricultural waste, coconut shell fiber offers exceptional durability and natural antimicrobial properties. This innovative material diverts coconut waste from landfills while creating strong, resilient textiles. The natural structure of coconut fibers provides excellent moisture-wicking and odor resistance, making it perfect for activewear and everyday uniforms that need to perform.",
+        features: [
+          "Made from coconut agricultural waste",
+          "Naturally antimicrobial and odor-resistant",
+          "Exceptional durability and strength",
+          "Moisture-wicking properties",
+          "Biodegradable and renewable",
+          "Diverts waste from landfills"
+        ]
+      }
     }
   ];
 
