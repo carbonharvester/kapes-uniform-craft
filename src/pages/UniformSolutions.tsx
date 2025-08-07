@@ -148,7 +148,7 @@ export const UniformSolutions = () => {
       subtitle: "High-performance gear for active learning.",
       tagline: "Move better. Play better.",
       description: "Breathable, sustainable performance wear",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=600&fit=crop",
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1754550212/BEN_5354_u3v8xc.jpg",
       icon: <Zap className="w-6 h-6" />,
       details: {
         title: "High-Performance Sports & PE Kits",
