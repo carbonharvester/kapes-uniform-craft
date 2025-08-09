@@ -6,6 +6,7 @@ import { GraduationCap } from "lucide-react";
 import { fetchSchoolCode } from "@/services/schoolCodes";
 import { useToast } from "@/components/ui/use-toast";
 import { saveSchoolSelection } from "@/utils/schoolCodeStorage";
+import { goToExternal } from "@/utils/redirect";
 
 export const SchoolCodeEntry = () => {
   const [schoolCode, setSchoolCode] = useState("");
@@ -53,7 +54,7 @@ export const SchoolCodeEntry = () => {
       });
 
       // Redirect to the Shopify collection URL stored for this school code
-      window.location.href = match.redirect_url;
+      goToExternal(match.redirect_url);
     } catch (err) {
       console.error("[SchoolCodeEntry] Error validating code:", err);
       setShowAlert("Something went wrong while checking the code. Please try again.");

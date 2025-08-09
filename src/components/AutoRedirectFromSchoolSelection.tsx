@@ -1,6 +1,7 @@
 
 import { useEffect } from "react";
 import { getSchoolSelection } from "@/utils/schoolCodeStorage";
+import { goToExternal } from "@/utils/redirect";
 
 export const AutoRedirectFromSchoolSelection = () => {
   useEffect(() => {
@@ -11,7 +12,7 @@ export const AutoRedirectFromSchoolSelection = () => {
     if (!selection) return;
 
     console.log("[AutoRedirect] Found saved selection, redirecting:", selection);
-    window.location.href = selection.redirect_url;
+    goToExternal(selection.redirect_url);
   }, []);
 
   return null;
