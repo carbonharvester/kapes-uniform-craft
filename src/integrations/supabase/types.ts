@@ -74,6 +74,36 @@ export type Database = {
         }
         Relationships: []
       }
+      school_codes: {
+        Row: {
+          active: boolean
+          code: string
+          created_at: string
+          id: string
+          redirect_url: string
+          school_name: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          code: string
+          created_at?: string
+          id?: string
+          redirect_url: string
+          school_name?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          code?: string
+          created_at?: string
+          id?: string
+          redirect_url?: string
+          school_name?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       scorecard_submissions: {
         Row: {
           assessment_data: Json | null
