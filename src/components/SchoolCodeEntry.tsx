@@ -1,18 +1,34 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GraduationCap } from "lucide-react";
 import { fetchSchoolCode } from "@/services/schoolCodes";
 import { useToast } from "@/components/ui/use-toast";
-import { saveSchoolSelection } from "@/utils/schoolCodeStorage";
+import { saveSchoolSelection, getSchoolSelection, clearSchoolSelection } from "@/utils/schoolCodeStorage";
+import type { SchoolSelection } from "@/utils/schoolCodeStorage";
 import { goToExternal } from "@/utils/redirect";
 
 export const SchoolCodeEntry = () => {
   const [schoolCode, setSchoolCode] = useState("");
   const [showAlert, setShowAlert] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [selection, setSelection] = useState<SchoolSelection | null>(null);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const sel = getSchoolSelection();
+    if (sel) setSelection(sel);
+  }, []);
+
+  const handleClear = () => {
+    clearSchoolSelection();
+    setSelection(null);
+    toast({
+      title: "Selection cleared",
+      description: "Please enter your school code.",
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,31 +123,60 @@ export const SchoolCodeEntry = () => {
               {/* Decorative elements */}
               <div className="absolute -top-2 -right-2 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl"></div>
 
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">School Code</label>
-                  <Input
-                    type="text"
-                    placeholder="Enter your school code"
-                    value={schoolCode}
-                    onChange={(e) => setSchoolCode(e.target.value)}
-                    className="h-10 md:h-12 text-base md:text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                    autoComplete="one-time-code"
-                    inputMode="text"
-                    aria-label="School code"
-                  />
+              {selection ? (
+                <div className="space-y-4 md:space-y-6">
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">Welcome back</p>
+                    <h3 className="text-xl md:text-2xl font-medium">
+                      {selection.school_name || "Your school store"}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      Code: <span className="font-medium">{selection.code}</span>
+                    </p>
+                  </div>
+                  <Button
+                    type="button"
+                    className="w-full h-10 md:h-12 text-base md:text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
+                    onClick={() => goToExternal(selection.redirect_url)}
+                  >
+                    Shop now
+                  </Button>
+                  <button
+                    type="button"
+                    onClick={handleClear}
+                    className="text-sm text-muted-foreground hover:underline"
+                    aria-label="Clear saved school selection"
+                  >
+                    Not your school? Enter a different code
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-muted-foreground">School Code</label>
+                    <Input
+                      type="text"
+                      placeholder="Enter your school code"
+                      value={schoolCode}
+                      onChange={(e) => setSchoolCode(e.target.value)}
+                      className="h-10 md:h-12 text-base md:text-lg border-border/50 rounded-xl focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                      autoComplete="one-time-code"
+                      inputMode="text"
+                      aria-label="School code"
+                    />
+                  </div>
 
-                <Button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full h-10 md:h-12 text-base md:text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg disabled:opacity-70"
-                >
-                  {submitting ? "Finding your store..." : "Enter Store"}
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full h-10 md:h-12 text-base md:text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg disabled:opacity-70"
+                  >
+                    {submitting ? "Finding your store..." : "Enter Store"}
+                  </Button>
+                </form>
+              )}
 
-              {showAlert && (
+              {!selection && showAlert && (
                 <div className="mt-4 p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
                   <p className="text-sm text-destructive">{showAlert}</p>
                 </div>

@@ -29,7 +29,7 @@ import UniformPolicyMakerPage from "@/pages/UniformPolicyMaker";
 import Affiliate from "@/pages/Affiliate";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Header } from "@/components/Header";
-import { AutoRedirectFromSchoolSelection } from "@/components/AutoRedirectFromSchoolSelection";
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -48,7 +48,7 @@ const App = () => {
             <div className="min-h-screen w-full no-horizontal-scroll">
               <ScrollToTop />
               <Header />
-              <AutoRedirectFromSchoolSelection />
+              
               <main className="w-full">
                 <Routes>
               <Route path="/" element={<Index />} />
