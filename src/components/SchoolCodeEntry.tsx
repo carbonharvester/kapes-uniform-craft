@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { GraduationCap } from "lucide-react";
 import { fetchSchoolCode } from "@/services/schoolCodes";
 import { useToast } from "@/components/ui/use-toast";
+import { saveSchoolSelection } from "@/utils/schoolCodeStorage";
 
 export const SchoolCodeEntry = () => {
   const [schoolCode, setSchoolCode] = useState("");
@@ -42,6 +43,9 @@ export const SchoolCodeEntry = () => {
         });
         return;
       }
+
+      // Persist the user's selection for future visits
+      saveSchoolSelection(code, match.redirect_url, match.school_name);
 
       toast({
         title: "Success",
