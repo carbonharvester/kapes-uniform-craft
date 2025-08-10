@@ -5,6 +5,24 @@ import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-re
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import ourMissionHero from "@/assets/our-mission-hero.jpg";
+import NumberFlow from "@number-flow/react";
+import { useEffect, useState } from "react";
+
+const AnimatedStat = ({ value, className = "" }: { value: number; className?: string }) => {
+  const [display, setDisplay] = useState(0);
+  useEffect(() => {
+    const t = setTimeout(() => setDisplay(value), 200);
+    return () => clearTimeout(t);
+  }, [value]);
+  return (
+    <NumberFlow
+      value={display}
+      format={{ notation: "compact", maximumFractionDigits: 1 }}
+      className={className}
+    />
+  );
+};
+
 const OurMission = () => {
   const values = [{
     icon: Heart,
@@ -137,7 +155,7 @@ const OurMission = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <Card className="border-0 shadow-glass text-center">
                 <CardContent className="p-8">
-                  <div className="text-4xl font-light text-primary mb-4">2.8B</div>
+                  <div className="text-4xl font-light text-primary mb-4"><AnimatedStat value={2800000000} /></div>
                   <h3 className="text-xl font-medium mb-4">Students Worldwide</h3>
                   <p className="text-muted-foreground">
                     Millions of students wear uniforms made in poor conditions with environmental harm
@@ -147,7 +165,7 @@ const OurMission = () => {
               
               <Card className="border-0 shadow-glass text-center">
                 <CardContent className="p-8">
-                  <div className="text-4xl font-light text-primary mb-4">92M</div>
+                  <div className="text-4xl font-light text-primary mb-4"><AnimatedStat value={92000000} /></div>
                   <h3 className="text-xl font-medium mb-4">Tons of Textile Waste</h3>
                   <p className="text-muted-foreground">
                     Annual fashion waste, much from fast fashion and disposable clothing
@@ -157,7 +175,7 @@ const OurMission = () => {
               
               <Card className="border-0 shadow-glass text-center">
                 <CardContent className="p-8">
-                  <div className="text-4xl font-light text-primary mb-4">75M</div>
+                  <div className="text-4xl font-light text-primary mb-4"><AnimatedStat value={75000000} /></div>
                   <h3 className="text-xl font-medium mb-4">Garment Workers</h3>
                   <p className="text-muted-foreground">
                     Many working in unsafe conditions without fair wages or representation
