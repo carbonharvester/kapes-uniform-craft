@@ -124,25 +124,65 @@ serve(async (req) => {
 
       responseData = transformBlogPost(data.items[0], data.includes?.Asset || []);
     } else {
-      // Get all blog posts
-      const queryLimit = limit ? parseInt(limit) : 10;
-      const queryParams = new URLSearchParams({
-        'access_token': accessToken,
-        'content_type': CONTENT_TYPE_ID,
-        'order': '-fields.date',
-        'include': '2',
-        'limit': queryLimit.toString()
-      });
+      // Get blog posts - if limit provided, use it; otherwise fetch all via pagination
+      if (limit) {
+        const queryLimit = parseInt(limit);
+        const queryParams = new URLSearchParams({
+          'access_token': accessToken,
+          'content_type': CONTENT_TYPE_ID,
+          'order': '-fields.date',
+          'include': '2',
+          'limit': queryLimit.toString()
+        });
 
-      const response = await fetch(`${baseUrl}?${queryParams}`);
-      
-      if (!response.ok) {
-        console.error('Contentful API error:', response.status, response.statusText);
-        throw new Error(`Contentful API error: ${response.status}`);
+        const response = await fetch(`${baseUrl}?${queryParams}`);
+        
+        if (!response.ok) {
+          console.error('Contentful API error:', response.status, response.statusText);
+          throw new Error(`Contentful API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        responseData = data.items.map((item: any) => transformBlogPost(item, data.includes?.Asset || []));
+      } else {
+        // No limit specified: fetch all posts using pagination
+        const PAGE_SIZE = 100;
+        let skip = 0;
+        let total = 0;
+        const allPosts: BlogPost[] = [];
+
+        while (true) {
+          const queryParams = new URLSearchParams({
+            'access_token': accessToken,
+            'content_type': CONTENT_TYPE_ID,
+            'order': '-fields.date',
+            'include': '2',
+            'limit': PAGE_SIZE.toString(),
+            'skip': skip.toString()
+          });
+
+          const response = await fetch(`${baseUrl}?${queryParams}`);
+
+          if (!response.ok) {
+            console.error('Contentful API error:', response.status, response.statusText);
+            throw new Error(`Contentful API error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          const items: any[] = data.items || [];
+          const pagePosts = items.map((item: any) =>
+            transformBlogPost(item, data.includes?.Asset || [])
+          );
+          allPosts.push(...pagePosts);
+
+          total = typeof data.total === 'number' ? data.total : allPosts.length;
+          skip += items.length;
+
+          if (items.length === 0 || skip >= total) break;
+        }
+
+        responseData = allPosts;
       }
-
-      const data = await response.json();
-      responseData = data.items.map((item: any) => transformBlogPost(item, data.includes?.Asset || []));
     }
 
     console.log('Successfully fetched blog content:', responseData?.length || 'single post');
