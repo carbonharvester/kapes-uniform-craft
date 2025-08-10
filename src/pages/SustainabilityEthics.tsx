@@ -156,8 +156,10 @@ const SustainabilityEthics = () => {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <div className="mt-6 flex justify-center gap-3">
+                <CarouselPrevious className="!static !translate-y-0" />
+                <CarouselNext className="!static !translate-y-0" />
+              </div>
             </Carousel>
           </div>
 
