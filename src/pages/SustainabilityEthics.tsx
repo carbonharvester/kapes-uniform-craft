@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe, Ban } from "lucide-react";
 import { Footer } from "@/components/Footer";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
@@ -127,27 +128,37 @@ const SustainabilityEthics = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {sustainableMaterials.map((material, index) => {
-            const IconComponent = material.icon;
-            return <Card key={index} className="hover:shadow-lg transition-shadow overflow-hidden">
-                  <div className="aspect-[4/3] relative overflow-hidden">
-                    <img src={material.image.replace('/src/', '/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                  </div>
-                  <CardHeader>
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-green-100 rounded-lg dark:bg-green-900/20">
-                        <IconComponent className="w-6 h-6 text-green-600" />
-                      </div>
-                      <CardTitle className="text-lg">{material.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{material.description}</p>
-                  </CardContent>
-                </Card>;
-          })}
+          <div className="relative mb-8">
+            <Carousel opts={{ align: "start", loop: true }}>
+              <CarouselContent className="-ml-4">
+                {sustainableMaterials.map((material, index) => {
+                  const IconComponent = material.icon;
+                  return (
+                    <CarouselItem key={index} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
+                      <Card className="hover:shadow-lg transition-shadow overflow-hidden">
+                        <div className="aspect-[4/3] relative overflow-hidden">
+                          <img src={material.image.replace('/src/', '/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        <CardHeader>
+                          <div className="flex items-center gap-3">
+                            <div className="p-2 bg-green-100 rounded-lg dark:bg-green-900/20">
+                              <IconComponent className="w-6 h-6 text-green-600" />
+                            </div>
+                            <CardTitle className="text-lg">{material.title}</CardTitle>
+                          </div>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-muted-foreground">{material.description}</p>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
 
           {/* No Toxic Chemicals Banner */}
