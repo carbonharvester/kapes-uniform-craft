@@ -1,42 +1,11 @@
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Globe, Users, TreePine, Recycle, GraduationCap, Play } from "lucide-react";
+import { Heart, Globe, Users, TreePine, Recycle, GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { WhatMakesKapesDifferent } from "@/components/WhatMakesKapesDifferent";
-import { ImpactPartnership } from "@/components/ImpactPartnership";
-import { ImpactMetricsCards } from "@/components/ImpactMetricsCards";
-import { Feature as ImageComparison } from "@/components/ui/feature-with-image-comparison";
-import { FloatingScorecardCTA } from "@/components/FloatingScorecardCTA";
-import { ScorecardTeaser } from "@/components/ScorecardTeaser";
-import { Testimonials } from "@/components/Testimonials";
 import ourMissionHero from "@/assets/our-mission-hero.jpg";
 const OurMission = () => {
-  useEffect(() => {
-    document.title = "Our Mission | Sustainable School Uniforms | Kapes";
-    const metaDesc = "Discover Kapes’ sustainability mission: ethical manufacturing, circular uniforms, and measurable social impact.";
-    let descTag = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!descTag) {
-      descTag = document.createElement('meta');
-      descTag.name = "description";
-      document.head.appendChild(descTag);
-    }
-    descTag.content = metaDesc;
-
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonical) {
-      canonical = document.createElement('link');
-      canonical.rel = "canonical";
-      document.head.appendChild(canonical);
-    }
-    canonical.href = window.location.href;
-  }, []);
-
-  const [videoOpen, setVideoOpen] = useState(false);
-
   const values = [{
     icon: Heart,
     title: "Ethical First",
@@ -64,7 +33,7 @@ const OurMission = () => {
   }];
   return <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section id="school-section" className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-cover bg-no-repeat" style={{
         backgroundImage: `url(${ourMissionHero})`,
@@ -111,8 +80,6 @@ const OurMission = () => {
             </div>
           </section>
 
-          <ScorecardTeaser />
-
           {/* Who Are We Video Section */}
           <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
@@ -120,35 +87,15 @@ const OurMission = () => {
               <p className="text-muted-foreground text-lg">Meet the team behind the movement</p>
             </div>
             <div className="max-w-4xl mx-auto">
-              <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-                <DialogTrigger asChild>
-                  <button aria-label="Play Who Are We video" className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-glass group">
-                    <img
-                      src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg"
-                      alt="Who Are We video thumbnail"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-all duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <Play className="w-8 h-8 text-primary ml-1" />
-                      </div>
-                    </div>
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="max-w-5xl p-0 overflow-hidden">
-                  <div className="relative w-full aspect-video">
-                    <iframe
-                      src={`https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=${videoOpen ? 1 : 0}`}
-                      title="Who Are We - Kapes Story"
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              <div className="aspect-video rounded-2xl overflow-hidden shadow-glass">
+                <iframe
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Who Are We - Kapes Story"
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
               <div className="text-center mt-8">
                 <p className="text-lg text-muted-foreground">
                   Discover the passion and purpose driving our mission to transform school uniforms into a force for positive change.
@@ -179,9 +126,6 @@ const OurMission = () => {
                 </Card>)}
             </div>
           </section>
-
-          <ImpactMetricsCards />
-          <WhatMakesKapesDifferent />
 
           {/* The Challenge */}
           <section>
@@ -313,12 +257,10 @@ const OurMission = () => {
             </div>
           </section>
 
-          <ImageComparison />
-          <ImpactPartnership />
-          <Testimonials />
-
           {/* CTA Section */}
-          <section id="audit-section" className="text-center py-16 bg-gradient-to-b from-primary/5 to-accent/5">
+          <section className="text-center py-16" style={{
+          backgroundColor: '#cfeaff'
+        }}>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Join the Movement
             </h2>
@@ -337,7 +279,6 @@ const OurMission = () => {
           
         </div>
       </div>
-      <FloatingScorecardCTA />
       <Footer />
     </div>;
 };
