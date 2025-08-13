@@ -200,7 +200,7 @@ const ImpactPartnershipPage = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
                 Why Schools Are Switching to Kapes
               </h2>
-              <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl leading-relaxed">
+              <p className="text-base md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl leading-relaxed text-center mx-auto">
                 We focus on impact, not revenue. See how we compare to traditional uniform suppliers who prioritize profit over purpose.
               </p>
             </div>
