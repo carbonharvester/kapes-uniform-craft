@@ -152,7 +152,7 @@ const ImpactPartnershipPage = () => {
           
           {/* Introduction */}
           <section className="text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light tracking-tight leading-tight mb-4 md:mb-6">Why Choose Impact Over Cash?</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light tracking-tight leading-tight mb-4 md:mb-6 text-center">Why Choose Impact Over Cash?</h2>
             <p className="text-base md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6 md:mb-8">
               We believe every school deserves access to the full power of ethical, sustainable uniforms. 
               That's why we've eliminated revenue shares that only increase costs for parents and created one comprehensive partnership that gives every school everything they need to lead positive change.
@@ -161,7 +161,7 @@ const ImpactPartnershipPage = () => {
 
           {/* All Features Included */}
           <section className="space-y-8 md:space-y-12">
-            <div className="mb-8 md:mb-12">
+            <div className="mb-8 md:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Everything Included. Always.
               </h2>
@@ -196,7 +196,7 @@ const ImpactPartnershipPage = () => {
 
           {/* Detailed Comparison Table */}
           <section className="space-y-8 md:space-y-12">
-            <div className="mb-8 md:mb-12">
+            <div className="mb-8 md:mb-12 text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
                 Why Schools Are Switching to Kapes
               </h2>
@@ -257,7 +257,7 @@ const ImpactPartnershipPage = () => {
       {/* Impact Numbers - Full Width Background */}
       <section className="bg-gradient-warm-section py-8 md:py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-8 md:mb-12">
+          <div className="mb-8 md:mb-12 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
               Real Impact, Real Numbers
             </h2>
@@ -292,7 +292,7 @@ const ImpactPartnershipPage = () => {
 
           {/* Perfect For */}
           <section>
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4">
                 Perfect For Every School
               </h2>
