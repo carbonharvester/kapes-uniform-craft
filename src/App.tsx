@@ -12,6 +12,10 @@ import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import CircularEconomyTakeback from "@/pages/CircularEconomyTakeback";
 import { DeliveryPackaging } from "@/pages/DeliveryPackaging";
+import MiddleEastSchools from "@/pages/MiddleEastSchools";
+import UKSchools from "@/pages/UKSchools";
+import AustraliaSchools from "@/pages/AustraliaSchools";
+import USASchools from "@/pages/USASchools";
 import EducationalResources from "@/pages/EducationalResources";
 import FactoryVisits from "@/pages/FactoryVisits";
 import ImpactPartnership from "@/pages/ImpactPartnership";
@@ -73,6 +77,10 @@ const App = () => {
               <Route path="/uniform-solutions" element={<UniformSolutions />} />
               <Route path="/uniform-policy-maker" element={<UniformPolicyMakerPage />} />
               <Route path="/affiliate" element={<Affiliate />} />
+              <Route path="/middle-east-schools" element={<MiddleEastSchools />} />
+              <Route path="/uk-schools" element={<UKSchools />} />
+              <Route path="/australia-schools" element={<AustraliaSchools />} />
+              <Route path="/usa-schools" element={<USASchools />} />
               <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
