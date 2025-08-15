@@ -43,17 +43,17 @@ export default function USASchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-light tracking-tight mb-6">
-              Sustainable School Uniforms for <span className="text-primary">American Schools</span>
+              Expanding to <span className="text-primary">American Schools</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Empowering American educators and students with sustainable, affordable uniforms that support learning and environmental stewardship from coast to coast.
+              We're preparing to bring our sustainable uniform solutions to schools across America. Join our pilot program to help shape the future of school uniforms.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="px-8 py-3">
-                Schedule District Meeting
+                Join Pilot Program
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-3">
-                View US Impact Study
+                Learn About Our Mission
               </Button>
             </div>
           </div>
@@ -108,68 +108,107 @@ export default function USASchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-12">
-              Transforming American Education
+              Our Vision for American Schools
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">500+</div>
-                <div className="text-muted-foreground">US Schools Partnered</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">50</div>
+                <div className="text-muted-foreground">States to Serve</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">1M+</div>
-                <div className="text-muted-foreground">Students Served</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">100%</div>
+                <div className="text-muted-foreground">Sustainable Materials</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">$10M+</div>
-                <div className="text-muted-foreground">Saved for US Families</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">Zero</div>
+                <div className="text-muted-foreground">Waste to Landfill</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-center mb-12">
+              How Kapes Compares to Leading US Suppliers
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-background rounded-lg shadow-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 font-medium">Feature</th>
+                    <th className="text-center p-4 font-medium text-primary">Kapes</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Lands' End</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">French Toast</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Dennis Uniform</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="p-4">100% Sustainable Materials</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Carbon Neutral Shipping</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Take-Back Program</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Made in USA</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">Partial</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">District Pricing</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4">Free Uniforms for Low-Income</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </section>
 
       {/* Federal Alignment */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-8">
               Supporting Federal Education Goals
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our sustainable uniform programs align with Department of Education initiatives and support schools in meeting federal sustainability targets.
+              Our sustainable uniform programs will align with Department of Education initiatives and support schools in meeting federal sustainability targets.
             </p>
             <Button size="lg" variant="outline">
               View Federal Compliance Guide
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* State Programs */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-center mb-12">
-              Active in All 50 States
-            </h2>
-            <div className="grid md:grid-cols-4 gap-6 text-center">
-              <div className="p-4">
-                <div className="text-2xl font-light text-primary mb-2">California</div>
-                <div className="text-sm text-muted-foreground">150+ Schools</div>
-              </div>
-              <div className="p-4">
-                <div className="text-2xl font-light text-primary mb-2">Texas</div>
-                <div className="text-sm text-muted-foreground">120+ Schools</div>
-              </div>
-              <div className="p-4">
-                <div className="text-2xl font-light text-primary mb-2">Florida</div>
-                <div className="text-sm text-muted-foreground">80+ Schools</div>
-              </div>
-              <div className="p-4">
-                <div className="text-2xl font-light text-primary mb-2">New York</div>
-                <div className="text-sm text-muted-foreground">60+ Schools</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -180,10 +219,10 @@ export default function USASchools() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
-                Join America's Sustainability Movement
+                Be a Pioneer in Sustainable Education
               </h2>
               <p className="text-muted-foreground">
-                Partner with Kapes to lead sustainability in your district.
+                Join our pilot program and help us bring sustainable uniforms to American schools.
               </p>
             </div>
             <ContactForm />

@@ -128,6 +128,74 @@ export default function UKSchools() {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-center mb-12">
+              How Kapes Will Compare to UK Suppliers
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-background rounded-lg shadow-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 font-medium">Feature</th>
+                    <th className="text-center p-4 font-medium text-primary">Kapes</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Stevensons</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Brigade</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Price & Buckland</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="p-4">100% Sustainable Materials</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">Partial</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Net Zero by 2050 Aligned</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Circular Economy Model</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">UK Weather Optimized</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Online Ordering</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4">Free Uniforms for Disadvantaged</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Government Alignment */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -136,7 +204,7 @@ export default function UKSchools() {
               Aligned with UK Government Initiatives
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our uniform solutions support the UK's Net Zero by 2050 commitment and align with DfE sustainability guidance for schools.
+              Our uniform solutions will support the UK's Net Zero by 2050 commitment and align with DfE sustainability guidance for schools.
             </p>
             <Button size="lg" variant="outline">
               View Compliance Documentation

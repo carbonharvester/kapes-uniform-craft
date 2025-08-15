@@ -43,17 +43,17 @@ export default function AustraliaSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-light tracking-tight mb-6">
-              Sustainable School Uniforms for <span className="text-primary">Australian Schools</span>
+              Expanding to <span className="text-primary">Australia</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Protecting Australian students and the environment with uniforms designed for our unique climate, from the Outback to the coast.
+              We're planning to bring our sustainable uniform solutions to Australian schools. Express your interest to be part of our expansion journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="px-8 py-3">
-                Request School Partnership
+                Express Interest
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-3">
-                Download Australia Report
+                Learn About Our Mission
               </Button>
             </div>
           </div>
@@ -108,21 +108,89 @@ export default function AustraliaSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-12">
-              Leading Change Across Australia
+              Our Vision for Australia
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">150+</div>
-                <div className="text-muted-foreground">Australian Schools</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">All</div>
+                <div className="text-muted-foreground">States & Territories</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">300K+</div>
-                <div className="text-muted-foreground">Students Protected</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">Ocean</div>
+                <div className="text-muted-foreground">Plastic Recovery</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">50 Tonnes</div>
-                <div className="text-muted-foreground">Ocean Plastic Recycled</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">Carbon</div>
+                <div className="text-muted-foreground">Neutral Operations</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-center mb-12">
+              How Kapes Will Compare to Australian Suppliers
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-background rounded-lg shadow-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 font-medium">Feature</th>
+                    <th className="text-center p-4 font-medium text-primary">Kapes</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Beleza</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Lowes</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Stuarts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="p-4">100% Sustainable Materials</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Ocean Plastic Recycling</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Carbon Neutral Shipping</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">SPF 50+ Protection</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">Partial</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Online Ordering</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4">Indigenous Design Collaboration</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -136,7 +204,7 @@ export default function AustraliaSchools() {
               Supporting Australia's Climate Goals
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our uniforms help Australian schools achieve their sustainability targets while protecting students from our unique environmental challenges.
+              Our uniforms will help Australian schools achieve their sustainability targets while protecting students from unique environmental challenges.
             </p>
             <Button size="lg" variant="outline">
               View Climate Impact Data
@@ -151,10 +219,10 @@ export default function AustraliaSchools() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
-                Ready to Make a Difference?
+                Join Our Australia Expansion
               </h2>
               <p className="text-muted-foreground">
-                Connect with our Australian team to discuss your school's sustainability journey.
+                Be among the first Australian schools to partner with us when we launch.
               </p>
             </div>
             <ContactForm />

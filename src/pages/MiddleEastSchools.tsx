@@ -128,16 +128,84 @@ export default function MiddleEastSchools() {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight text-center mb-12">
+              How Kapes Compares to Regional Suppliers
+            </h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse bg-background rounded-lg shadow-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-4 font-medium">Feature</th>
+                    <th className="text-center p-4 font-medium text-primary">Kapes</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Al Bassam</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Gulf Uniform</th>
+                    <th className="text-center p-4 font-medium text-muted-foreground">Mashriq</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border">
+                    <td className="p-4">100% Sustainable Materials</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Climate-Appropriate Fabrics</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Modest Design Options</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Community Investment Programs</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-4">Take-Back & Recycling</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                    <td className="p-4 text-center text-muted-foreground">✗</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4">Regional Distribution</td>
+                    <td className="p-4 text-center text-primary">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                    <td className="p-4 text-center text-green-500">✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
-                Ready to Transform Your School's Impact?
+                Partner with Kapes
               </h2>
               <p className="text-muted-foreground">
-                Connect with our Middle East team to discuss your school's sustainability goals.
+                Ready to discuss your school's sustainability goals? Contact us today.
               </p>
             </div>
             <ContactForm />
