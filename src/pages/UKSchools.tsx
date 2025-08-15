@@ -43,17 +43,17 @@ export default function UKSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-3xl md:text-5xl font-light tracking-tight mb-6">
-              Sustainable School Uniforms for <span className="text-primary">UK Schools</span>
+              Coming Soon to <span className="text-primary">UK Schools</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Supporting British schools in achieving their sustainability targets while providing high-quality, affordable uniforms that withstand the UK climate.
+              We're expanding to support British schools in achieving their sustainability targets. Register your interest to be among the first to partner with us.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="px-8 py-3">
-                Book a School Consultation
+                Register Interest
               </Button>
               <Button variant="outline" size="lg" className="px-8 py-3">
-                View UK Impact Report
+                Learn About Our Impact
               </Button>
             </div>
           </div>
@@ -108,20 +108,20 @@ export default function UKSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-12">
-              Transforming UK Education
+              Our Goals for UK Education
             </h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">200+</div>
-                <div className="text-muted-foreground">UK Schools Partnered</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">2050</div>
+                <div className="text-muted-foreground">Net Zero Target</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">500K+</div>
-                <div className="text-muted-foreground">Students Equipped</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">100%</div>
+                <div className="text-muted-foreground">Circular Materials</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-light text-primary mb-2">£2M+</div>
-                <div className="text-muted-foreground">Saved for UK Families</div>
+                <div className="text-3xl md:text-4xl font-light text-primary mb-2">Local</div>
+                <div className="text-muted-foreground">UK Manufacturing</div>
               </div>
             </div>
           </div>
@@ -151,10 +151,10 @@ export default function UKSchools() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
-                Join Leading UK Schools
+                Be Among the First UK Schools
               </h2>
               <p className="text-muted-foreground">
-                Schedule a consultation with our UK education team today.
+                Register your interest to join our UK expansion program.
               </p>
             </div>
             <ContactForm />
