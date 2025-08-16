@@ -46,7 +46,7 @@ export default function MiddleEastSchools() {
   }];
   const solutionBenefits = [{
     group: "Parents",
-    benefits: ["50% cost savings vs premium suppliers", "Next-day delivery to smart lockers", "24/7 AI-powered support in Arabic", "Size exchanges handled automatically"]
+    benefits: ["50% cost savings vs premium suppliers", "Next-day delivery to smart lockers", "24/7 AI-powered support in Arabic", "AI-powered size recommendations"]
   }, {
     group: "Schools",
     benefits: ["Zero inventory management required", "On-campus uniform shops available", "Real-time analytics dashboard", "Dedicated account manager"]
