@@ -400,7 +400,7 @@ export default function MiddleEastSchools() {
               }}
               className="w-full max-w-5xl mx-auto"
             >
-              <CarouselContent className="-ml-2 md:-ml-4">
+              <CarouselContent className="-ml-2 md:-ml-4 pt-6">
                 {processSteps.map((step, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                     <Card className="relative border-border/50 h-full min-h-[280px]">
