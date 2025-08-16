@@ -142,7 +142,7 @@ export default function MiddleEastSchools() {
               })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation" style={{ backgroundColor: '#f97769' }}>
                 <div className="flex flex-col items-start">
                   <span className="text-lg font-bold">Apply for a Consultation</span>
-                  <span className="text-xs opacity-95 font-medium">Start Your Application</span>
+                  <span className="text-xs opacity-95 font-medium">Start with an Audit</span>
                 </div>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
