@@ -15,7 +15,7 @@ import sustainableFabricsImage from "@/assets/sustainable-materials.jpg";
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
-import kapesModelImage from "@/assets/kapes-model-image.jpg";
+import kapesModelImage from "@/assets/kapes-model-middle-east.jpg";
 export default function MiddleEastSchools() {
   const problemPoints = [{
     icon: <TrendingUp className="w-6 h-6 text-destructive" />,
