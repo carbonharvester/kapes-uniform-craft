@@ -137,9 +137,11 @@ export default function MiddleEastSchools() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <Badge className="mb-6 px-4 py-2 text-sm">
-                  🌟 Now Accepting Partnership Applications for Middle East Expansion
-                </Badge>
+                <div className="text-center">
+                  <Badge className="mb-6 px-4 py-2 text-sm">
+                    🌟 Now Accepting Partnership Applications for Middle East Expansion
+                  </Badge>
+                </div>
                 <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
                   The Traditional Uniform Model is <span className="text-primary">Broken.</span><br/>
                   We're Here to Fix It.
