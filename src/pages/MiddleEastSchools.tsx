@@ -35,8 +35,12 @@ export default function MiddleEastSchools() {
     description: "No transparency into manufacturing conditions or worker treatment in the supply chain."
   }, {
     icon: <Heart className="w-6 h-6 text-destructive" />,
-    title: "Buy-Back Clauses and Revenue Shares",
-    description: "Schools locked into unfavorable contracts with mandatory buy-back commitments and revenue sharing requirements."
+    title: "Buy-Back Clauses",
+    description: "Schools locked into unfavorable contracts with mandatory buy-back commitments that create financial risk."
+  }, {
+    icon: <Clock className="w-6 h-6 text-destructive" />,
+    title: "Revenue Shares",
+    description: "Suppliers demanding percentage cuts of school revenue, reducing funds available for education."
   }];
   const solutionBenefits = [{
     group: "Parents",
