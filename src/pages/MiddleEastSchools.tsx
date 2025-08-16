@@ -126,7 +126,7 @@ export default function MiddleEastSchools() {
             
             {/* Main headline with mobile-optimized typography */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
-              The Traditional Uniform Model is <span className="text-coral-400">Broken.</span><br />
+              The Uniform Model in the Middle East is <span className="text-coral-400">Broken.</span><br />
               We're Here to Fix It.
             </h1>
             
