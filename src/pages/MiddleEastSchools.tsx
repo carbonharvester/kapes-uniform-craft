@@ -157,7 +157,7 @@ export default function MiddleEastSchools() {
                   </Button>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  ✅ No setup fees  ✅ Risk-free trial  ✅ Cancel anytime
+                  ✅ Guaranteed environmental savings  ✅ No buy-back clauses
                 </div>
               </div>
               <div className="relative max-w-lg mx-auto lg:max-w-none">
