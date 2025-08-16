@@ -417,7 +417,7 @@ export default function MiddleEastSchools() {
                 <div>
                   <Target className="w-6 h-6 text-primary mx-auto mb-2" />
                   <div className="font-semibold">Guaranteed Impact</div>
-                  <div className="text-sm text-muted-foreground">Measurable results or money back</div>
+                  <div className="text-sm text-muted-foreground">Measurable results or cancel anytime</div>
                 </div>
                 <div>
                   <Heart className="w-6 h-6 text-primary mx-auto mb-2" />
@@ -432,9 +432,7 @@ export default function MiddleEastSchools() {
                 </Button>
               </div>
               
-              <p className="text-sm text-muted-foreground mt-4">
-                ⚡ Limited partnerships available for 2024 launch  🔒 No long-term contracts  ✅ Cancel anytime
-              </p>
+              <p className="text-sm text-muted-foreground mt-4">⚡ Limited partnerships available for 2026/27 launch 🔒 No buy-back clauses  ✅ Cancel anytime</p>
             </div>
             
             <p className="text-muted-foreground">
