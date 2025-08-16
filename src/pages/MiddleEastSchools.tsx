@@ -166,7 +166,7 @@ export default function MiddleEastSchools() {
             <div className="pt-6 flex justify-center items-center px-4 max-w-sm mx-auto">
               <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
                 behavior: 'smooth'
-              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation">
+              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation" style={{ backgroundColor: '#f97769' }}>
                 <div className="flex flex-col items-start">
                   <span className="text-lg font-bold">Apply for Partnership</span>
                   <span className="text-xs opacity-95 font-medium">Start Your Application</span>
