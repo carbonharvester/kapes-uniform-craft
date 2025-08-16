@@ -214,15 +214,142 @@ export default function MiddleEastSchools() {
             <Card className="border-primary/30 bg-background/80 backdrop-blur">
               <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold mb-2">Complete Partnership Includes:</h3>
-                  <p className="text-muted-foreground">Everything your school needs for a successful sustainable uniform program</p>
+                  <h3 className="text-2xl font-semibold mb-2">Kapes vs Traditional Suppliers</h3>
+                  <p className="text-muted-foreground">See the difference our partnership makes for your school</p>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-4 mb-8">
-                  {partnershipIncludes.map((item, index) => <div key={index} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </div>)}
+                <div className="overflow-x-auto mb-8">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b border-border/50">
+                        <th className="text-left py-4 px-4 font-semibold">Feature</th>
+                        <th className="text-center py-4 px-4 font-semibold text-primary">Kapes</th>
+                        <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Traditional Suppliers</th>
+                      </tr>
+                    </thead>
+                    <tbody className="space-y-2">
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Materials</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          GOTS Certified Organic Cotton
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Synthetic fabrics
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Climate Suitability</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Desert-appropriate fabrics
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ One-size-fits-all materials
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Cultural Design</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Modest designs respecting values
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Generic western designs
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Delivery</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Smart lockers + next-day
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Delayed, unreliable shipping
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Support</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          24/7 AI support in Arabic
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Limited language support
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Recycling</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Full takeback & recycling
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ No end-of-life solution
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Social Impact</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          1:1 uniforms + meals to Africa
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ No social giving program
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Impact Tracking</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Real-time dashboard
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ No impact measurement
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Student Programs</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Leadership & educational visits
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ No student engagement
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Supply Chain</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Halal-certified transparency
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Hidden supply chains
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border/20">
+                        <td className="py-3 px-4 text-sm">Contract Terms</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          No buy-back clauses
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Buy-back requirements
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-sm">Account Management</td>
+                        <td className="py-3 px-4 text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Dedicated regional manager
+                        </td>
+                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                          ❌ Generic support teams
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 
                 <div className="text-center space-y-4">
