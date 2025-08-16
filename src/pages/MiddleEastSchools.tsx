@@ -13,7 +13,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 // Import images
 import heroImage from "@/assets/our-mission-hero.jpg";
 import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
-import sustainableFabricsImage from "@/assets/sustainable-fabrics-middle-east.jpg";
+
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
@@ -442,7 +442,7 @@ export default function MiddleEastSchools() {
                 Every uniform creates a ripple of positive change across three continents.
               </p>
               <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-2xl">
-                <img src={sustainableFabricsImage} alt="Sustainable fabrics and materials for Middle East school uniforms" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg" alt="Sustainable fabrics and materials for Middle East school uniforms" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
             
