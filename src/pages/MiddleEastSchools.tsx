@@ -137,8 +137,8 @@ export default function MiddleEastSchools() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <div className="text-center">
-                  <Badge className="mb-6 px-4 py-2 text-sm">
+                <div className="flex justify-center mb-6">
+                  <Badge className="px-4 py-2 text-sm">
                     🌟 Now Accepting Partnership Applications for Middle East Expansion
                   </Badge>
                 </div>
