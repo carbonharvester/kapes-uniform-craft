@@ -33,6 +33,10 @@ export default function MiddleEastSchools() {
     icon: <Shield className="w-6 h-6 text-destructive" />,
     title: "Invisible Supply Chains with Unfair Labor",
     description: "No transparency into manufacturing conditions or worker treatment in the supply chain."
+  }, {
+    icon: <Heart className="w-6 h-6 text-destructive" />,
+    title: "Buy-Back Clauses and Revenue Shares",
+    description: "Schools locked into unfavorable contracts with mandatory buy-back commitments and revenue sharing requirements."
   }];
   const solutionBenefits = [{
     group: "Parents",
