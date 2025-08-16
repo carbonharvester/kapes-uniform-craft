@@ -162,8 +162,8 @@ export default function MiddleEastSchools() {
               Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. <span className="font-bold">Sustainable materials, ethical manufacturing, and social impact</span> that honour tradition while protecting our planet.
             </p>
             
-            {/* CTA buttons - mobile optimized with better touch targets */}
-            <div className="pt-6 flex flex-col gap-4 justify-center items-center px-4 max-w-sm mx-auto">
+            {/* CTA button - mobile optimized with better touch targets */}
+            <div className="pt-6 flex justify-center items-center px-4 max-w-sm mx-auto">
               <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
                 behavior: 'smooth'
               })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation">
@@ -173,17 +173,6 @@ export default function MiddleEastSchools() {
                 </div>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-              <button onClick={() => document.getElementById('partnership-section')?.scrollIntoView({
-                behavior: 'smooth'
-              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-primary/90 to-primary text-white border border-primary/50 rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-md hover:from-primary hover:to-primary/90 touch-manipulation">
-                <div className="flex flex-col items-start">
-                  <span className="text-lg font-bold">Download Partnership Guide</span>
-                  <span className="text-xs opacity-95 font-medium">Learn More</span>
-                </div>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </button>
             </div>
