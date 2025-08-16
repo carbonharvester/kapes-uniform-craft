@@ -316,25 +316,7 @@ export default function MiddleEastSchools() {
               </Card>
             </div>
             
-            <Card className="bg-gradient-to-r from-primary/10 to-background border-primary/20 mb-12">
-              <CardContent className="p-8">
-                <div className="grid lg:grid-cols-2 gap-8 items-center">
-                  <div className="text-center lg:text-left">
-                    <Heart className="w-8 h-8 text-primary mx-auto lg:mx-0 mb-4" />
-                    <h3 className="text-xl font-semibold mb-4">Global Impact: Every Uniform = 1 Uniform + 1 Meal Donated</h3>
-                    <p className="text-muted-foreground">
-                      For every uniform sold, we donate one uniform and fund one meal for children in Africa. 
-                      Your school's uniform program directly supports education and nutrition for those who need it most.
-                    </p>
-                  </div>
-                  <div>
-                    <div className="aspect-[16/10] rounded-lg overflow-hidden shadow-lg">
-                      <img src={globalImpactImage} alt="Global impact connection between Middle East and African students" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            
           </div>
         </div>
       </section>
