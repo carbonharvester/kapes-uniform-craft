@@ -58,15 +58,6 @@ export const FreeAuditTool = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Download className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Downloadable Custom Report</h4>
-                    <p className="text-muted-foreground text-sm">PDF report with your score, answers, and bespoke recommendations for leadership</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Zap className="h-4 w-4 text-primary" />
                   </div>
                   <div>
