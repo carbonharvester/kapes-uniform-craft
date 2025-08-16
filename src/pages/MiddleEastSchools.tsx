@@ -6,6 +6,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield } from "lucide-react";
 
+// Import images
+import heroImage from "@/assets/middle-east-hero.jpg";
+import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
+import sustainableFabricsImage from "@/assets/sustainable-fabrics-middle-east.jpg";
+import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
+import globalImpactImage from "@/assets/global-impact-connection.jpg";
+import smartDeliveryImage from "@/assets/smart-delivery-middle-east.jpg";
+
 export default function MiddleEastSchools() {
   const problemPoints = [
     {
@@ -125,28 +133,40 @@ export default function MiddleEastSchools() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto text-center">
-            <Badge className="mb-6 px-4 py-2 text-sm">
-              🌟 Now Accepting Partnership Applications for Middle East Expansion
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
-              The Traditional Uniform Model is <span className="text-primary">Broken.</span><br/>
-              We're Here to Fix It.
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-              Kapes transforms the school uniform experience for schools, parents, and students across the UAE, Saudi Arabia, Qatar, and beyond. 
-              Sustainable materials, ethical manufacturing, and 1:1 impact donations that honor tradition while protecting our planet.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="px-10 py-4 text-lg">
-                Book a Consultation <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="px-10 py-4 text-lg">
-                Download Our Impact Guide
-              </Button>
-            </div>
-            <div className="text-sm text-muted-foreground">
-              ✅ No setup fees  ✅ Risk-free trial  ✅ Cancel anytime
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <Badge className="mb-6 px-4 py-2 text-sm">
+                  🌟 Now Accepting Partnership Applications for Middle East Expansion
+                </Badge>
+                <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
+                  The Traditional Uniform Model is <span className="text-primary">Broken.</span><br/>
+                  We're Here to Fix It.
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
+                  Kapes transforms the school uniform experience for schools, parents, and students across the UAE, Saudi Arabia, Qatar, and beyond. 
+                  Sustainable materials, ethical manufacturing, and 1:1 impact donations that honor tradition while protecting our planet.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                  <Button size="lg" className="px-10 py-4 text-lg">
+                    Book a Consultation <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                  <Button variant="outline" size="lg" className="px-10 py-4 text-lg">
+                    Download Our Impact Guide
+                  </Button>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  ✅ No setup fees  ✅ Risk-free trial  ✅ Cancel anytime
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src={heroImage} 
+                  alt="Middle Eastern students in sustainable school uniforms" 
+                  className="rounded-2xl shadow-2xl w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -155,30 +175,37 @@ export default function MiddleEastSchools() {
       {/* The Problem */}
       <section className="py-16 bg-destructive/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-              The Problems Every School Faces
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {problemPoints.map((problem, index) => (
-              <Card key={index} className="border-destructive/20 bg-background">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 p-3 rounded-lg bg-destructive/10">
-                      {problem.icon}
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                The Problems Every School Faces
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
+              </p>
+              <img 
+                src={problemsSolutionImage} 
+                alt="Traditional uniform problems vs Kapes solutions comparison" 
+                className="rounded-xl shadow-lg mx-auto mb-8 max-w-4xl w-full"
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {problemPoints.map((problem, index) => (
+                <Card key={index} className="border-destructive/20 bg-background">
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 p-3 rounded-lg bg-destructive/10">
+                        {problem.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-3 text-destructive">{problem.title}</h3>
+                        <p className="text-muted-foreground">{problem.description}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-3 text-destructive">{problem.title}</h3>
-                      <p className="text-muted-foreground">{problem.description}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -191,9 +218,14 @@ export default function MiddleEastSchools() {
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 The Kapes Model: One Solution for Everyone
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Instead of band-aid solutions, we've built a complete system that works for everyone in your school community.
               </p>
+              <img 
+                src={smartDeliveryImage} 
+                alt="Smart delivery system for school uniforms in Middle East" 
+                className="rounded-xl shadow-lg mx-auto mb-12 max-w-4xl w-full"
+              />
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -349,9 +381,14 @@ export default function MiddleEastSchools() {
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 Real Sustainability, Real Impact
               </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Every uniform creates a ripple of positive change across three continents.
               </p>
+              <img 
+                src={sustainableFabricsImage} 
+                alt="Sustainable fabrics and materials for Middle East school uniforms" 
+                className="rounded-xl shadow-lg mx-auto mb-12 max-w-4xl w-full"
+              />
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -380,15 +417,24 @@ export default function MiddleEastSchools() {
               </Card>
             </div>
             
-            <Card className="bg-gradient-to-r from-primary/10 to-background border-primary/20">
+            <Card className="bg-gradient-to-r from-primary/10 to-background border-primary/20 mb-12">
               <CardContent className="p-8">
-                <div className="text-center">
-                  <Heart className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-4">Global Impact: Every Uniform = 1 Uniform + 1 Meal Donated</h3>
-                  <p className="text-muted-foreground max-w-2xl mx-auto">
-                    For every uniform sold, we donate one uniform and fund one meal for children in Africa. 
-                    Your school's uniform program directly supports education and nutrition for those who need it most.
-                  </p>
+                <div className="grid lg:grid-cols-2 gap-8 items-center">
+                  <div className="text-center lg:text-left">
+                    <Heart className="w-8 h-8 text-primary mx-auto lg:mx-0 mb-4" />
+                    <h3 className="text-xl font-semibold mb-4">Global Impact: Every Uniform = 1 Uniform + 1 Meal Donated</h3>
+                    <p className="text-muted-foreground">
+                      For every uniform sold, we donate one uniform and fund one meal for children in Africa. 
+                      Your school's uniform program directly supports education and nutrition for those who need it most.
+                    </p>
+                  </div>
+                  <div>
+                    <img 
+                      src={globalImpactImage} 
+                      alt="Global impact connection between Middle East and African students" 
+                      className="rounded-lg shadow-lg w-full"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -449,39 +495,45 @@ export default function MiddleEastSchools() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                Students Lead the Change
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Our program empowers students to become sustainability leaders in their school and community.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="border-border/50">
-                <CardContent className="p-6 text-center">
-                  <Users className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Sustainability Committees</h3>
-                  <p className="text-sm text-muted-foreground">Students join committees to guide sustainability initiatives and track school-wide impact.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-border/50">
-                <CardContent className="p-6 text-center">
-                  <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Impact Reviews</h3>
-                  <p className="text-sm text-muted-foreground">Regular sessions where students analyze their school's environmental and social impact data.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-border/50">
-                <CardContent className="p-6 text-center">
-                  <Globe className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Factory & Farm Visits</h3>
-                  <p className="text-sm text-muted-foreground">Educational trips to see sustainable manufacturing and organic cotton farming in action.</p>
-                </CardContent>
-              </Card>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                  Students Lead the Change
+                </h2>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Our program empowers students to become sustainability leaders in their school and community.
+                </p>
+                <img 
+                  src={studentCommitteeImage} 
+                  alt="Middle Eastern students in sustainability committee meeting" 
+                  className="rounded-xl shadow-lg w-full"
+                />
+              </div>
+              <div className="grid gap-6">
+                <Card className="border-border/50">
+                  <CardContent className="p-6 text-center">
+                    <Users className="w-8 h-8 text-primary mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-3">Sustainability Committees</h3>
+                    <p className="text-sm text-muted-foreground">Students join committees to guide sustainability initiatives and track school-wide impact.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-6 text-center">
+                    <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-3">Impact Reviews</h3>
+                    <p className="text-sm text-muted-foreground">Regular sessions where students analyze their school's environmental and social impact data.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="border-border/50">
+                  <CardContent className="p-6 text-center">
+                    <Globe className="w-8 h-8 text-primary mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold mb-3">Factory & Farm Visits</h3>
+                    <p className="text-sm text-muted-foreground">Educational trips to see sustainable manufacturing and organic cotton farming in action.</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
