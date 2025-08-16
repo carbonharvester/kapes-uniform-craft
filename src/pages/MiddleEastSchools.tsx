@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
 import { FreeAuditTool } from "@/components/FreeAuditTool";
+import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -370,52 +371,8 @@ export default function MiddleEastSchools() {
         </div>
       </section>
 
-      {/* Case Study / Testimonials */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                Schools Trust Kapes
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Leading educational institutions choose our sustainable approach.
-              </p>
-            </div>
-            
-            <Card className="border-primary/20 bg-background">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <div className="flex justify-center mb-4">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />)}
-                  </div>
-                  <blockquote className="text-lg italic text-muted-foreground mb-4">
-                    "Kapes has transformed our approach to school uniforms. The sustainability impact aligns perfectly with our values, 
-                    and parents love the convenience and quality. Our students are proud to wear uniforms that make a difference."
-                  </blockquote>
-                  <div className="font-semibold">Sarah Al-Rashid</div>
-                  <div className="text-sm text-muted-foreground">Head of Sustainability, Arbor School Dubai</div>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <div className="text-2xl font-light text-primary mb-1">40%</div>
-                    <div className="text-sm text-muted-foreground">Cost Reduction</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-light text-primary mb-1">95%</div>
-                    <div className="text-sm text-muted-foreground">Parent Satisfaction</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-light text-primary mb-1">2,500+</div>
-                    <div className="text-sm text-muted-foreground">Meals Funded</div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* School Testimonials */}
+      <Testimonials />
 
       {/* Student Involvement */}
       <section className="py-16">
