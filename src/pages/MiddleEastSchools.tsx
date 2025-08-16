@@ -160,12 +160,14 @@ export default function MiddleEastSchools() {
                 </div>
               </div>
               <div className="relative max-w-lg mx-auto lg:max-w-none">
-                <img 
-                  src={heroImage} 
-                  alt="Middle Eastern students in sustainable school uniforms" 
-                  className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 lg:h-96 object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={heroImage} 
+                    alt="Middle Eastern students in sustainable school uniforms" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -183,11 +185,13 @@ export default function MiddleEastSchools() {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
               </p>
-              <img 
-                src={problemsSolutionImage} 
-                alt="Traditional uniform problems vs Kapes solutions comparison" 
-                className="rounded-xl shadow-lg mx-auto mb-8 max-w-2xl w-full h-48 sm:h-64 object-cover"
-              />
+              <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mx-auto mb-8 max-w-2xl">
+                <img 
+                  src={problemsSolutionImage} 
+                  alt="Traditional uniform problems vs Kapes solutions comparison" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {problemPoints.map((problem, index) => (
@@ -221,11 +225,13 @@ export default function MiddleEastSchools() {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Instead of band-aid solutions, we've built a complete system that works for everyone in your school community.
               </p>
-              <img 
-                src={smartDeliveryImage} 
-                alt="Smart delivery system for school uniforms in Middle East" 
-                className="rounded-xl shadow-lg mx-auto mb-12 max-w-xl w-full h-48 sm:h-56 object-cover"
-              />
+              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-xl">
+                <img 
+                  src={smartDeliveryImage} 
+                  alt="Smart delivery system for school uniforms in Middle East" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -384,11 +390,13 @@ export default function MiddleEastSchools() {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Every uniform creates a ripple of positive change across three continents.
               </p>
-              <img 
-                src={sustainableFabricsImage} 
-                alt="Sustainable fabrics and materials for Middle East school uniforms" 
-                className="rounded-xl shadow-lg mx-auto mb-12 max-w-2xl w-full h-48 sm:h-64 object-cover"
-              />
+              <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-2xl">
+                <img 
+                  src={sustainableFabricsImage} 
+                  alt="Sustainable fabrics and materials for Middle East school uniforms" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -429,11 +437,13 @@ export default function MiddleEastSchools() {
                     </p>
                   </div>
                   <div>
-                    <img 
-                      src={globalImpactImage} 
-                      alt="Global impact connection between Middle East and African students" 
-                      className="rounded-lg shadow-lg w-full h-40 object-cover"
-                    />
+                    <div className="aspect-[16/10] rounded-lg overflow-hidden shadow-lg">
+                      <img 
+                        src={globalImpactImage} 
+                        alt="Global impact connection between Middle East and African students" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -503,11 +513,13 @@ export default function MiddleEastSchools() {
                 <p className="text-xl text-muted-foreground mb-8">
                   Our program empowers students to become sustainability leaders in their school and community.
                 </p>
-                <img 
-                  src={studentCommitteeImage} 
-                  alt="Middle Eastern students in sustainability committee meeting" 
-                  className="rounded-xl shadow-lg w-full h-56 object-cover"
-                />
+                <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src={studentCommitteeImage} 
+                    alt="Middle Eastern students in sustainability committee meeting" 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
               </div>
               <div className="grid gap-6">
                 <Card className="border-border/50">
