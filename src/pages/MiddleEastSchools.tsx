@@ -221,7 +221,7 @@ export default function MiddleEastSchools() {
                 <div className="text-center space-y-4">
                   <div className="flex justify-center">
                     <Button size="lg" className="px-10 py-4 text-lg">
-                      Start Your Partnership
+                      Apply for Partnership
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground">
