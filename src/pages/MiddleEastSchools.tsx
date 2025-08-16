@@ -371,7 +371,7 @@ export default function MiddleEastSchools() {
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    💰 Cost savings from day one  🚀 Launch in 8 weeks  📈 Guaranteed impact results
+                    🌱 Environmental Savings from day 1  🚀 Launch in 8 weeks  📈 Guaranteed impact results
                   </p>
                 </div>
               </CardContent>
