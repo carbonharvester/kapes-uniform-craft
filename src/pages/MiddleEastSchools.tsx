@@ -135,13 +135,14 @@ export default function MiddleEastSchools() {
       <section className="pt-20 pb-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
+            {/* Centered badge outside responsive text container */}
+            <div className="text-center mb-6">
+              <Badge className="px-4 py-2 text-sm">
+                🌟 Now Accepting Partnership Applications for Middle East Expansion
+              </Badge>
+            </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-center lg:text-left">
-                <div className="flex justify-center mb-6">
-                  <Badge className="px-4 py-2 text-sm">
-                    🌟 Now Accepting Partnership Applications for Middle East Expansion
-                  </Badge>
-                </div>
                 <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
                   The Traditional Uniform Model is <span className="text-primary">Broken.</span><br/>
                   We're Here to Fix It.
