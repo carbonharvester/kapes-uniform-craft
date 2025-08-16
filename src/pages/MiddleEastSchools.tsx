@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
+import { ScorecardTeaser } from "@/components/ScorecardTeaser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -573,6 +574,9 @@ export default function MiddleEastSchools() {
           </div>
         </div>
       </section>
+
+      {/* Scorecard Section */}
+      <ScorecardTeaser />
 
       {/* Final Call to Action */}
       <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
