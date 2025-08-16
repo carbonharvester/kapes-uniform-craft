@@ -201,7 +201,7 @@ export default function MiddleEastSchools() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4 px-4 py-2 bg-primary text-primary-foreground">
-                Our Only Tier
+                Join Our Mission
               </Badge>
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 One Impact Partnership
