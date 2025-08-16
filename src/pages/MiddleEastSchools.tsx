@@ -125,13 +125,13 @@ export default function MiddleEastSchools() {
             
             
             {/* Main headline with mobile-optimized typography */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
               The Uniform Model in the Middle East is <span className="text-coral-400">Broken.</span><br />
               We're Here to Fix It.
             </h1>
             
             {/* Subtitle with mobile-optimized spacing and readability */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
               Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. Sustainable materials, ethical manufacturing, and social impact that honour tradition while protecting people and planet.
             </p>
             
