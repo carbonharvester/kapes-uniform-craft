@@ -64,16 +64,26 @@ export default function MiddleEastSchools() {
     timeline: "Week 1-2"
   }, {
     step: "02",
-    title: "Setup",
-    description: "Custom uniform design, supply chain setup, and parent communication systems.",
-    timeline: "Week 3-6"
+    title: "Signed Agreement",
+    description: "Finalize partnership terms, pricing, and implementation timeline.",
+    timeline: "Week 3"
   }, {
     step: "03",
-    title: "Launch",
-    description: "Soft launch with pilot families, feedback integration, and full rollout.",
-    timeline: "Week 7-8"
+    title: "Design & Sampling",
+    description: "Custom uniform design, fabric selection, and sample approvals.",
+    timeline: "Week 4-6"
   }, {
     step: "04",
+    title: "Manufacturing",
+    description: "Ethical production of your custom uniforms with quality control.",
+    timeline: "Week 7-10"
+  }, {
+    step: "05",
+    title: "Launch",
+    description: "Soft launch with pilot families, feedback integration, and full rollout.",
+    timeline: "Week 11-12"
+  }, {
+    step: "06",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and community engagement.",
     timeline: "Ongoing"
@@ -378,7 +388,7 @@ export default function MiddleEastSchools() {
                 How It Works: From Partnership to Impact
               </h2>
               <p className="text-xl text-muted-foreground">
-                Our proven 4-step process gets your school from decision to full impact in just 8 weeks.
+                Our proven 6-step process gets your school from decision to full impact in just 16-20 weeks.
               </p>
             </div>
             
