@@ -428,7 +428,7 @@ export default function MiddleEastSchools() {
               
               <div className="flex justify-center">
                 <Button size="lg" className="px-12 py-4 text-lg">
-                  Apply for Partnership Today <ArrowRight className="ml-2 w-5 h-5" />
+                  Apply for a Consultation Today <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
               
