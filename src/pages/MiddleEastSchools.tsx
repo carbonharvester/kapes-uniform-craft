@@ -132,7 +132,7 @@ export default function MiddleEastSchools() {
             
             {/* Subtitle with mobile-optimized spacing and readability */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
-              Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. <span className="font-bold">Sustainable materials, ethical manufacturing, and social impact</span> that honour tradition while protecting our planet.
+              Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. Sustainable materials, ethical manufacturing, and social impact that honour tradition while protecting people and planet.
             </p>
             
             {/* CTA button - mobile optimized with better touch targets */}
