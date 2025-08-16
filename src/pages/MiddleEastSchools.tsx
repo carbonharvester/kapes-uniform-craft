@@ -17,7 +17,7 @@ import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
-import kapesModelImage from "@/assets/kapes-model-middle-east.jpg";
+import kapesModelImage from "@/assets/kapes-model-new.jpg";
 export default function MiddleEastSchools() {
   const problemPoints = [{
     icon: <Leaf className="w-6 h-6 text-destructive" />,
