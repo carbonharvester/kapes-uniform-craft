@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 // Import images
 import heroImage from "@/assets/our-mission-hero.jpg";
@@ -218,138 +219,138 @@ export default function MiddleEastSchools() {
                   <p className="text-muted-foreground">See the difference our partnership makes for your school</p>
                 </div>
                 
-                <div className="overflow-x-auto mb-8">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-border/50">
-                        <th className="text-left py-4 px-4 font-semibold">Feature</th>
-                        <th className="text-center py-4 px-4 font-semibold text-primary">Kapes</th>
-                        <th className="text-center py-4 px-4 font-semibold text-muted-foreground">Traditional Suppliers</th>
-                      </tr>
-                    </thead>
-                    <tbody className="space-y-2">
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Materials</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                <div className="border rounded-lg overflow-hidden">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead className="text-left font-semibold">Feature</TableHead>
+                        <TableHead className="text-center font-semibold text-primary">Kapes</TableHead>
+                        <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell className="text-sm">Materials</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           GOTS Certified Organic Cotton
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Synthetic fabrics
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Climate Suitability</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Climate Suitability</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Desert-appropriate fabrics
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ One-size-fits-all materials
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Cultural Design</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Cultural Design</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Modest designs respecting values
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Generic western designs
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Delivery</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Delivery</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Smart lockers + next-day
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Delayed, unreliable shipping
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Support</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Support</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           24/7 AI support in Arabic
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Limited language support
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Recycling</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Recycling</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Full takeback & recycling
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ No end-of-life solution
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Social Impact</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Social Impact</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           1:1 uniforms + meals to Africa
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ No social giving program
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Impact Tracking</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Impact Tracking</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Real-time dashboard
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ No impact measurement
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Student Programs</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Student Programs</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Leadership & educational visits
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ No student engagement
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Supply Chain</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Supply Chain</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Halal-certified transparency
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Hidden supply chains
-                        </td>
-                      </tr>
-                      <tr className="border-b border-border/20">
-                        <td className="py-3 px-4 text-sm">Contract Terms</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Contract Terms</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           No buy-back clauses
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Buy-back requirements
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 px-4 text-sm">Account Management</td>
-                        <td className="py-3 px-4 text-center text-sm">
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Account Management</TableCell>
+                        <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Dedicated regional manager
-                        </td>
-                        <td className="py-3 px-4 text-center text-sm text-muted-foreground">
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Generic support teams
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
                 </div>
                 
                 <div className="text-center space-y-4">
