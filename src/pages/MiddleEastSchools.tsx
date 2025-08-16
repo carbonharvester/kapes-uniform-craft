@@ -133,9 +133,7 @@ export default function MiddleEastSchools() {
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
               </p>
-              <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mx-auto mb-8 max-w-2xl">
-                <img src={problemsSolutionImage} alt="Traditional uniform problems vs Kapes solutions comparison" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
+              
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {problemPoints.map((problem, index) => <Card key={index} className="border-destructive/20 bg-background">
