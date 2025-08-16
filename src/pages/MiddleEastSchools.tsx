@@ -159,11 +159,11 @@ export default function MiddleEastSchools() {
                   ✅ No setup fees  ✅ Risk-free trial  ✅ Cancel anytime
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative max-w-lg mx-auto lg:max-w-none">
                 <img 
                   src={heroImage} 
                   alt="Middle Eastern students in sustainable school uniforms" 
-                  className="rounded-2xl shadow-2xl w-full h-auto"
+                  className="rounded-2xl shadow-2xl w-full h-64 sm:h-80 lg:h-96 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
               </div>
@@ -186,7 +186,7 @@ export default function MiddleEastSchools() {
               <img 
                 src={problemsSolutionImage} 
                 alt="Traditional uniform problems vs Kapes solutions comparison" 
-                className="rounded-xl shadow-lg mx-auto mb-8 max-w-4xl w-full"
+                className="rounded-xl shadow-lg mx-auto mb-8 max-w-2xl w-full h-48 sm:h-64 object-cover"
               />
             </div>
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -224,7 +224,7 @@ export default function MiddleEastSchools() {
               <img 
                 src={smartDeliveryImage} 
                 alt="Smart delivery system for school uniforms in Middle East" 
-                className="rounded-xl shadow-lg mx-auto mb-12 max-w-4xl w-full"
+                className="rounded-xl shadow-lg mx-auto mb-12 max-w-xl w-full h-48 sm:h-56 object-cover"
               />
             </div>
             
@@ -387,7 +387,7 @@ export default function MiddleEastSchools() {
               <img 
                 src={sustainableFabricsImage} 
                 alt="Sustainable fabrics and materials for Middle East school uniforms" 
-                className="rounded-xl shadow-lg mx-auto mb-12 max-w-4xl w-full"
+                className="rounded-xl shadow-lg mx-auto mb-12 max-w-2xl w-full h-48 sm:h-64 object-cover"
               />
             </div>
             
@@ -432,7 +432,7 @@ export default function MiddleEastSchools() {
                     <img 
                       src={globalImpactImage} 
                       alt="Global impact connection between Middle East and African students" 
-                      className="rounded-lg shadow-lg w-full"
+                      className="rounded-lg shadow-lg w-full h-40 object-cover"
                     />
                   </div>
                 </div>
@@ -506,7 +506,7 @@ export default function MiddleEastSchools() {
                 <img 
                   src={studentCommitteeImage} 
                   alt="Middle Eastern students in sustainability committee meeting" 
-                  className="rounded-xl shadow-lg w-full"
+                  className="rounded-xl shadow-lg w-full h-56 object-cover"
                 />
               </div>
               <div className="grid gap-6">
