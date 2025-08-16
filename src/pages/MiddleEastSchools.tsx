@@ -42,7 +42,7 @@ export default function MiddleEastSchools() {
   }, {
     icon: <Clock className="w-6 h-6 text-destructive" />,
     title: "Revenue Shares",
-    description: "Suppliers demanding percentage cuts of school revenue, reducing funds available for education."
+    description: "Suppliers typically add revenue shares that conflict with sustainability goals and add this cost to the retail price."
   }];
   const solutionBenefits = [{
     group: "Parents",
