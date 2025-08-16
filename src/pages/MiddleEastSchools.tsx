@@ -11,7 +11,7 @@ import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, Trend
 // Import images
 import heroImage from "@/assets/our-mission-hero.jpg";
 import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
-import sustainableFabricsImage from "@/assets/sustainable-materials.jpg";
+import sustainableFabricsImage from "@/assets/sustainable-fabrics-middle-east.jpg";
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
