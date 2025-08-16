@@ -191,7 +191,7 @@ export default function MiddleEastSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">The Problems Every School in the Middle East  Faces</h2>
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">The Problems Every School in the Middle East  Faces</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
               </p>
@@ -573,7 +573,7 @@ export default function MiddleEastSchools() {
                 </Button>
               </div>
               
-              <p className="text-sm text-muted-foreground mt-4">⚡ Limited partnerships available for 2026/27 launch 🔒 No buy-back clauses  ✅ Cancel anytime</p>
+              <p className="text-sm text-muted-foreground mt-4">⚡ Limited partnerships available for 2026/27 launch</p>
             </div>
             
             <p className="text-muted-foreground">
