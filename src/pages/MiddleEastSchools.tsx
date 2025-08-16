@@ -21,7 +21,7 @@ import kapesModelImage from "@/assets/kapes-model-middle-east.jpg";
 export default function MiddleEastSchools() {
   const problemPoints = [{
     icon: <TrendingUp className="w-6 h-6 text-destructive" />,
-    title: "High Costs & Poor Service for Parents",
+    title: "High Costs & Low Value for Parents",
     description: "Overpriced uniforms with inconsistent quality and delivery delays leaving families frustrated."
   }, {
     icon: <Target className="w-6 h-6 text-destructive" />,
