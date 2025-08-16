@@ -150,10 +150,7 @@ export default function MiddleEastSchools() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
                   <Button size="lg" className="px-10 py-4 text-lg">
-                    Book a Consultation <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                  <Button variant="outline" size="lg" className="px-10 py-4 text-lg">
-                    Download Our Impact Guide
+                    Apply for Partnership <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -289,12 +286,9 @@ export default function MiddleEastSchools() {
                 </div>
                 
                 <div className="text-center space-y-4">
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex justify-center">
                     <Button size="lg" className="px-10 py-4 text-lg">
                       Start Your Partnership
-                    </Button>
-                    <Button variant="outline" size="lg" className="px-10 py-4 text-lg">
-                      Download Partnership Guide
                     </Button>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -610,12 +604,9 @@ export default function MiddleEastSchools() {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button size="lg" className="px-12 py-4 text-lg">
-                  Book a Consultation Today <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button variant="outline" size="lg" className="px-12 py-4 text-lg">
-                  Download Partnership Guide
+                  Apply for Partnership Today <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
               
