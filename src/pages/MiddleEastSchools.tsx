@@ -116,8 +116,9 @@ export default function MiddleEastSchools() {
                     Apply for Partnership <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  ✅ Guaranteed environmental savings  ✅ No buy-back clauses
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <div>✅ Guaranteed environmental savings</div>
+                  <div>✅ No buy-back clauses</div>
                 </div>
               </div>
               <div className="relative max-w-lg mx-auto lg:max-w-none">
