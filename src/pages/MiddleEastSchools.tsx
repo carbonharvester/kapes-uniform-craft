@@ -282,7 +282,7 @@ export default function MiddleEastSchools() {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="p-8 text-center">
                   <Leaf className="w-8 h-8 text-primary mx-auto mb-4" />
@@ -304,6 +304,14 @@ export default function MiddleEastSchools() {
                   <Recycle className="w-8 h-8 text-primary mx-auto mb-4" />
                   <h3 className="text-lg font-semibold mb-3">Circular Economy</h3>
                   <p className="text-sm text-muted-foreground">Complete takeback program turns old uniforms into new ones, creating a truly circular system.</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-primary/20 bg-primary/5">
+                <CardContent className="p-8 text-center">
+                  <Globe className="w-8 h-8 text-primary mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold mb-3">Global Impact</h3>
+                  <p className="text-sm text-muted-foreground">Every uniform purchased funds education and meals for children in Africa through our 1:1 donation program.</p>
                 </CardContent>
               </Card>
             </div>
