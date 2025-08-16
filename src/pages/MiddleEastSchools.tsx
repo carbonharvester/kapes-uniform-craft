@@ -7,12 +7,12 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield } from "lucide-react";
 
 // Import images
-import heroImage from "@/assets/middle-east-hero.jpg";
+import heroImage from "@/assets/our-mission-hero.jpg";
 import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
-import sustainableFabricsImage from "@/assets/sustainable-fabrics-middle-east.jpg";
+import sustainableFabricsImage from "@/assets/sustainable-materials.jpg";
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
-import smartDeliveryImage from "@/assets/smart-delivery-middle-east.jpg";
+import smartDeliveryImage from "@/assets/smart-locker.jpg";
 
 export default function MiddleEastSchools() {
   const problemPoints = [
