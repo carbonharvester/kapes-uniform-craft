@@ -20,14 +20,6 @@ import smartDeliveryImage from "@/assets/smart-locker.jpg";
 import kapesModelImage from "@/assets/kapes-model-middle-east.jpg";
 export default function MiddleEastSchools() {
   const problemPoints = [{
-    icon: <TrendingUp className="w-6 h-6 text-destructive" />,
-    title: "High Costs & Low Value for Parents",
-    description: "Overpriced uniforms with inconsistent quality and delivery delays leaving families frustrated."
-  }, {
-    icon: <Target className="w-6 h-6 text-destructive" />,
-    title: "Stockouts & Supplier Headaches for Schools",
-    description: "Constant inventory issues, unreliable suppliers, and administrative burden managing multiple vendors."
-  }, {
     icon: <Leaf className="w-6 h-6 text-destructive" />,
     title: "Harmful Materials Damaging the Planet",
     description: "Synthetic fabrics and unsustainable production methods contributing to environmental degradation."
@@ -35,6 +27,14 @@ export default function MiddleEastSchools() {
     icon: <Shield className="w-6 h-6 text-destructive" />,
     title: "Invisible Supply Chains with Unfair Labor",
     description: "1 in 5 cotton garments in the world are tainted by child labour, and most schools don't know who makes their uniforms."
+  }, {
+    icon: <TrendingUp className="w-6 h-6 text-destructive" />,
+    title: "High Costs & Low Value for Parents",
+    description: "Overpriced uniforms with inconsistent quality and delivery delays leaving families frustrated."
+  }, {
+    icon: <Target className="w-6 h-6 text-destructive" />,
+    title: "Stockouts & Supplier Headaches for Schools",
+    description: "Constant inventory issues, unreliable suppliers, and administrative burden managing multiple vendors."
   }, {
     icon: <Heart className="w-6 h-6 text-destructive" />,
     title: "Buy-Back Clauses",
