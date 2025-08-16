@@ -55,7 +55,7 @@ export default function MiddleEastSchools() {
     benefits: ["Comfortable, climate-appropriate fabrics", "Leadership opportunities in sustainability", "QR codes showing their impact story", "Factory and farm visit programs"]
   }, {
     group: "Communities",
-    benefits: ["1:1 uniform donations to Africa", "1:1 meal donations for every uniform", "Local job creation in logistics", "Educational sustainability programs"]
+    benefits: ["1:1 uniform donations to Africa", "1:1 meal donations for every uniform", "Local job creation in logistics", "Sustainability lesson plans for teachers"]
   }];
   const partnershipIncludes = ["100% Sustainable Materials (GOTS Certified Organic Cotton)", "Climate-Appropriate Fabrics for Desert Conditions", "Modest Designs Respecting Cultural Values", "Smart Delivery (Lockers, Next-Day, On-Campus Shops)", "AI-Powered Parent Support in Arabic & English", "Fully Managed Takeback & Recycling Program", "1:1 Uniform Donations + Meals in Africa", "Real-Time Impact Tracking Dashboard", "Student Leadership & Educational Programs", "Factory Visits & Supply Chain Transparency", "Halal-Certified Supply Chain", "Dedicated Regional Account Manager"];
   const processSteps = [{
