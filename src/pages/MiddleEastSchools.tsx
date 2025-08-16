@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ContactForm } from "@/components/ContactForm";
-import { ScorecardTeaser } from "@/components/ScorecardTeaser";
+import { FreeAuditTool } from "@/components/FreeAuditTool";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -576,7 +576,9 @@ export default function MiddleEastSchools() {
       </section>
 
       {/* Scorecard Section */}
-      <ScorecardTeaser />
+      <div id="audit-section" className="scroll-mt-20">
+        <FreeAuditTool />
+      </div>
 
       {/* Final Call to Action */}
       <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
