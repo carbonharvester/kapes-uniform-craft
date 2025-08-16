@@ -110,7 +110,7 @@ export default function MiddleEastSchools() {
       <section className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm -mt-[1px]">
         {/* Hero background image */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
-          backgroundImage: `url(${heroImage})`
+          backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)'
         }}>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
