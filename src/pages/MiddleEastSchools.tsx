@@ -265,43 +265,6 @@ export default function MiddleEastSchools() {
         </div>
       </section>
 
-      {/* Implementation Timeline */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-12">
-              Implementation Timeline
-            </h2>
-            
-            <div className="space-y-8">
-              <div className="grid md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-light text-primary mb-2">Week 1-2</div>
-                  <div className="text-sm text-muted-foreground">Consultation and onboarding</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-light text-primary mb-2">Week 3-6</div>
-                  <div className="text-sm text-muted-foreground">Shop setup & communications</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-light text-primary mb-2">Week 7-8</div>
-                  <div className="text-sm text-muted-foreground">Launch & rollout</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-light text-primary mb-2">Ongoing</div>
-                  <div className="text-sm text-muted-foreground">Support & impact tracking</div>
-                </div>
-              </div>
-              
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <p className="text-lg text-center">
-                  <strong>Ready to launch in just 8 weeks</strong> with ongoing support and optimization to maximize your impact.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Sustainability & Social Impact */}
       <section className="py-16">
