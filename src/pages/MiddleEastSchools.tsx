@@ -495,23 +495,6 @@ export default function MiddleEastSchools() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight mb-4">
-                Start Your Partnership
-              </h2>
-              <p className="text-muted-foreground">
-                Get in touch today to discuss your school's sustainability transformation.
-              </p>
-            </div>
-            <ContactForm />
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>;
 }
