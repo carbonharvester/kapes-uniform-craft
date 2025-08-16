@@ -402,20 +402,18 @@ export default function MiddleEastSchools() {
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {processSteps.map((step, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3">
-                    <Card className="relative border-border/50 h-full">
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                    <Card className="relative border-border/50 h-full min-h-[280px]">
                       <CardContent className="p-6 text-center h-full flex flex-col">
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                           <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                             {step.step}
                           </div>
                         </div>
-                        <div className="mt-4 flex-1 flex flex-col justify-between">
-                          <div>
-                            <Badge variant="outline" className="mb-3">{step.timeline}</Badge>
-                            <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                          </div>
-                          <p className="text-sm text-muted-foreground">{step.description}</p>
+                        <div className="mt-6 space-y-4 flex-1">
+                          <Badge variant="outline">{step.timeline}</Badge>
+                          <h3 className="text-lg font-semibold">{step.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                         </div>
                       </CardContent>
                     </Card>
