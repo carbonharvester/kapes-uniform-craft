@@ -13,28 +13,27 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 // Import images
 import heroImage from "@/assets/our-mission-hero.jpg";
 import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
-
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
 import kapesModelImage from "@/assets/kapes-model-middle-east.jpg";
 export default function MiddleEastSchools() {
   const problemPoints = [{
+    icon: <TrendingUp className="w-6 h-6 text-destructive" />,
+    title: "High Costs & Poor Service for Parents",
+    description: "Overpriced uniforms with inconsistent quality and delivery delays leaving families frustrated."
+  }, {
+    icon: <Target className="w-6 h-6 text-destructive" />,
+    title: "Stockouts & Supplier Headaches for Schools",
+    description: "Constant inventory issues, unreliable suppliers, and administrative burden managing multiple vendors."
+  }, {
     icon: <Leaf className="w-6 h-6 text-destructive" />,
     title: "Harmful Materials Damaging the Planet",
     description: "Synthetic fabrics and unsustainable production methods contributing to environmental degradation."
   }, {
     icon: <Shield className="w-6 h-6 text-destructive" />,
     title: "Invisible Supply Chains with Unfair Labor",
-    description: "1 in 5 cotton garments in the world are tainted by child labour, and most schools don't know who makes their uniforms."
-  }, {
-    icon: <TrendingUp className="w-6 h-6 text-destructive" />,
-    title: "High Costs & Low Value for Parents",
-    description: "Overpriced uniforms with inconsistent quality and delivery delays leaving families frustrated."
-  }, {
-    icon: <Target className="w-6 h-6 text-destructive" />,
-    title: "Stockouts & Supplier Headaches for Schools",
-    description: "Constant inventory issues, unreliable suppliers, and administrative burden managing multiple vendors."
+    description: "No transparency into manufacturing conditions or worker treatment in the supply chain."
   }, {
     icon: <Heart className="w-6 h-6 text-destructive" />,
     title: "Buy-Back Clauses",
@@ -42,11 +41,11 @@ export default function MiddleEastSchools() {
   }, {
     icon: <Clock className="w-6 h-6 text-destructive" />,
     title: "Revenue Shares",
-    description: "Suppliers typically add revenue shares that conflict with sustainability goals and add this cost to the retail price."
+    description: "Suppliers demanding percentage cuts of school revenue, reducing funds available for education."
   }];
   const solutionBenefits = [{
     group: "Parents",
-    benefits: ["50% cost savings vs premium suppliers", "Next-day delivery to smart lockers", "24/7 AI-powered support in Arabic", "AI-powered size recommendations"]
+    benefits: ["50% cost savings vs premium suppliers", "Next-day delivery to smart lockers", "24/7 AI-powered support in Arabic", "Size exchanges handled automatically"]
   }, {
     group: "Schools",
     benefits: ["Zero inventory management required", "On-campus uniform shops available", "Real-time analytics dashboard", "Dedicated account manager"]
@@ -55,7 +54,7 @@ export default function MiddleEastSchools() {
     benefits: ["Comfortable, climate-appropriate fabrics", "Leadership opportunities in sustainability", "QR codes showing their impact story", "Factory and farm visit programs"]
   }, {
     group: "Communities",
-    benefits: ["1:1 uniform donations to Africa", "1:1 meal donations for every uniform", "Local job creation in logistics", "Sustainability lesson plans for teachers"]
+    benefits: ["1:1 uniform donations to Africa", "1:1 meal donations for every uniform", "Local job creation in logistics", "Educational sustainability programs"]
   }];
   const partnershipIncludes = ["100% Sustainable Materials (GOTS Certified Organic Cotton)", "Climate-Appropriate Fabrics for Desert Conditions", "Modest Designs Respecting Cultural Values", "Smart Delivery (Lockers, Next-Day, On-Campus Shops)", "AI-Powered Parent Support in Arabic & English", "Fully Managed Takeback & Recycling Program", "1:1 Uniform Donations + Meals in Africa", "Real-Time Impact Tracking Dashboard", "Student Leadership & Educational Programs", "Factory Visits & Supply Chain Transparency", "Halal-Certified Supply Chain", "Dedicated Regional Account Manager"];
   const processSteps = [{
@@ -107,83 +106,39 @@ export default function MiddleEastSchools() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm -mt-[1px]">
-        {/* Hero background image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
-          backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)'
-        }}>
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-20 container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* Subtle partnership header */}
-            <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">
-              🌟 Now Accepting Partnership Applications for Middle East Expansion
+      <section className="pt-20 pb-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Centered badge outside responsive text container */}
+            <div className="text-center mb-6">
+              <Badge className="px-4 py-2 text-sm">
+                🌟 Now Accepting Partnership Applications for Middle East Expansion
+              </Badge>
             </div>
-            
-            {/* Trust bar with checkmarks */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6 text-white/90">
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="text-center lg:text-left">
+                <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
+                  The Traditional Uniform Model is <span className="text-primary">Broken.</span><br />
+                  We're Here to Fix It.
+                </h1>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">Kapes transforms the school uniform experience for schools, parents, and students across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. Sustainable materials, ethical manufacturing, and social impact donations that honour tradition while protecting our planet.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+                  
                 </div>
-                <span className="text-sm font-medium">Halal Certified</span>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <div>✅ Guaranteed environmental savings</div>
+                  <div>✅ No buy-back clauses</div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+              <div className="relative max-w-lg mx-auto lg:max-w-none">
+                <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
+                  <img src={heroImage} alt="Middle Eastern students in sustainable school uniforms" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
                 </div>
-                <span className="text-sm font-medium">Cultural Compliance</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <span className="text-sm font-medium">Regional Support</span>
-              </div>
-            </div>
-            
-            {/* Main headline with mobile-optimized typography */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
-              The Traditional Uniform Model is <span className="text-coral-400">Broken.</span><br />
-              We're Here to Fix It.
-            </h1>
-            
-            {/* Subtitle with mobile-optimized spacing and readability */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
-              Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. <span className="font-bold">Sustainable materials, ethical manufacturing, and social impact</span> that honour tradition while protecting our planet.
-            </p>
-            
-            {/* CTA button - mobile optimized with better touch targets */}
-            <div className="pt-6 flex justify-center items-center px-4 max-w-sm mx-auto">
-              <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
-                behavior: 'smooth'
-              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation" style={{ backgroundColor: '#f97769' }}>
-                <div className="flex flex-col items-start">
-                  <span className="text-lg font-bold">Apply for Partnership</span>
-                  <span className="text-xs opacity-95 font-medium">Start Your Application</span>
-                </div>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
-        
-        {/* Floating elements for visual interest */}
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
       </section>
 
       {/* The Problem */}
@@ -191,7 +146,7 @@ export default function MiddleEastSchools() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">The Problems Every School in the Middle East  Faces</h2>
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">The Problems Every School in the Middle East  Faces</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Traditional uniform suppliers are failing schools, parents, and our planet. Here's what's really happening:
               </p>
@@ -435,38 +390,20 @@ export default function MiddleEastSchools() {
               </p>
             </div>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full max-w-5xl mx-auto"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4 pt-6">
-                {processSteps.map((step, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                    <Card className="relative border-border/50 h-full min-h-[280px]">
-                      <CardContent className="p-6 text-center h-full flex flex-col">
-                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                          <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                            {step.step}
-                          </div>
-                        </div>
-                        <div className="mt-6 space-y-4 flex-1">
-                          <Badge variant="outline">{step.timeline}</Badge>
-                          <h3 className="text-lg font-semibold">{step.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
-                <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-                <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-              </div>
-            </Carousel>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {processSteps.slice(0, 3).map((step, index) => <div key={index} className="text-center">
+                  <div className="relative mb-6">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                      {step.step.padStart(2, '0')}
+                    </div>
+                    <div className="text-sm font-medium text-muted-foreground mb-4">
+                      {step.timeline}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>)}
+            </div>
           </div>
         </div>
       </section>
@@ -573,7 +510,7 @@ export default function MiddleEastSchools() {
                 </Button>
               </div>
               
-              <p className="text-sm text-muted-foreground mt-4">⚡ Limited partnerships available for 2026/27 launch</p>
+              <p className="text-sm text-muted-foreground mt-4">⚡ Limited partnerships available for 2026/27 launch 🔒 No buy-back clauses  ✅ Cancel anytime</p>
             </div>
             
             <p className="text-muted-foreground">
