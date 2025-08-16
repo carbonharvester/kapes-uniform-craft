@@ -393,38 +393,22 @@ export default function MiddleEastSchools() {
               </p>
             </div>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full max-w-5xl mx-auto"
-            >
-              <CarouselContent className="-ml-2 md:-ml-4">
-                {processSteps.map((step, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                    <Card className="relative border-border/50 h-full min-h-[280px]">
-                      <CardContent className="p-6 text-center h-full flex flex-col">
-                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                          <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                            {step.step}
-                          </div>
-                        </div>
-                        <div className="mt-6 space-y-4 flex-1">
-                          <Badge variant="outline">{step.timeline}</Badge>
-                          <h3 className="text-lg font-semibold">{step.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-4 mt-8">
-                <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-                <CarouselNext className="relative right-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
-              </div>
-            </Carousel>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {processSteps.slice(0, 3).map((step, index) => (
+                <div key={index} className="text-center">
+                  <div className="relative mb-6">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
+                      {step.step.padStart(2, '0')}
+                    </div>
+                    <div className="text-sm font-medium text-muted-foreground mb-4">
+                      {step.timeline}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-4">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
