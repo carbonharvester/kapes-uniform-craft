@@ -353,7 +353,7 @@ export default function MiddleEastSchools() {
                   </Table>
                 </div>
                 
-                <div className="text-center space-y-4">
+                <div className="text-center space-y-4 mt-8">
                   <div className="flex justify-center">
                     <Button size="lg" className="px-10 py-4 text-lg">
                       Apply for Partnership
