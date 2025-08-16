@@ -107,41 +107,94 @@ export default function MiddleEastSchools() {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            {/* Centered badge outside responsive text container */}
-            <div className="text-center mb-6">
-              <Badge className="px-4 py-2 text-sm">
-                🌟 Now Accepting Partnership Applications for Middle East Expansion
-              </Badge>
+      <section className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm -mt-[1px]">
+        {/* Hero background image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
+          backgroundImage: `url(${heroImage})`
+        }}>
+          <div className="absolute inset-0 bg-black/40 z-10"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-20 container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Subtle partnership header */}
+            <div className="text-white/80 text-sm font-medium tracking-wide uppercase mb-4">
+              🌟 Now Accepting Partnership Applications for Middle East Expansion
             </div>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center lg:text-left">
-                <h1 className="text-4xl md:text-6xl font-light tracking-tight mb-6 leading-tight">
-                  The Traditional Uniform Model is <span className="text-primary">Broken.</span><br />
-                  We're Here to Fix It.
-                </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">Kapes transforms the school uniform experience for schools, parents, and students across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. Sustainable materials, ethical manufacturing, and social impact donations that honour tradition while protecting our planet.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                  <Button size="lg" className="px-10 py-4 text-lg">
-                    Apply for Partnership <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+            
+            {/* Trust bar with checkmarks */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-6 text-white/90">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
-                <div className="text-sm text-muted-foreground space-y-1">
-                  <div>✅ Guaranteed environmental savings</div>
-                  <div>✅ No buy-back clauses</div>
-                </div>
+                <span className="text-sm font-medium">Halal Certified</span>
               </div>
-              <div className="relative max-w-lg mx-auto lg:max-w-none">
-                <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
-                  <img src={heroImage} alt="Middle Eastern students in sustainable school uniforms" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
+                <span className="text-sm font-medium">Cultural Compliance</span>
               </div>
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span className="text-sm font-medium">Regional Support</span>
+              </div>
+            </div>
+            
+            {/* Main headline with mobile-optimized typography */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-academy-hero font-extrabold tracking-tight text-white drop-shadow-lg px-4 leading-tight">
+              The Traditional Uniform Model is <span className="text-coral-400">Broken.</span><br />
+              We're Here to Fix It.
+            </h1>
+            
+            {/* Subtitle with mobile-optimized spacing and readability */}
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
+              Kapes transforms the school uniform experience across the UAE, Saudi Arabia, Bahrain, Oman, and beyond. <span className="font-bold">Sustainable materials, ethical manufacturing, and social impact</span> that honour tradition while protecting our planet.
+            </p>
+            
+            {/* CTA buttons - mobile optimized with better touch targets */}
+            <div className="pt-6 flex flex-col gap-4 justify-center items-center px-4 max-w-sm mx-auto">
+              <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-coral-500 to-coral-400 text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation">
+                <div className="flex flex-col items-start">
+                  <span className="text-lg font-bold">Apply for Partnership</span>
+                  <span className="text-xs opacity-95 font-medium">Start Your Application</span>
+                </div>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              <button onClick={() => document.getElementById('partnership-section')?.scrollIntoView({
+                behavior: 'smooth'
+              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] bg-gradient-to-r from-primary/90 to-primary text-white border border-primary/50 rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-md hover:from-primary hover:to-primary/90 touch-manipulation">
+                <div className="flex flex-col items-start">
+                  <span className="text-lg font-bold">Download Partnership Guide</span>
+                  <span className="text-xs opacity-95 font-medium">Learn More</span>
+                </div>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
+        
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
+          animationDelay: '1s'
+        }}></div>
       </section>
 
       {/* The Problem */}
