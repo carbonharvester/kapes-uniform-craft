@@ -214,7 +214,7 @@ export default function USASchools() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                The Kapes Model: One Solution for Everyone
+                The Kapes Model: A Win-Win Solution for Everyone
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Instead of band-aid solutions, we've built a complete system that works for everyone in your American school community.
