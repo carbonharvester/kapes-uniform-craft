@@ -324,72 +324,7 @@ export default function MiddleEastSchools() {
       {/* School Testimonials */}
       <Testimonials />
 
-      {/* Student Involvement */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                  Students Lead the Change
-                </h2>
-                <p className="text-xl text-muted-foreground mb-8">
-                  Our program empowers students to become sustainability leaders in their school and community.
-                </p>
-                <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-                  <img src={studentCommitteeImage} alt="Middle Eastern students in sustainability committee meeting" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                </div>
-              </div>
-              <div className="grid gap-6">
-                <Card className="border-border/50">
-                  <CardContent className="p-6 text-center">
-                    <Users className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-3">Sustainability Committees</h3>
-                    <p className="text-sm text-muted-foreground">Students join committees to guide sustainability initiatives and track school-wide impact.</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-6 text-center">
-                    <TrendingUp className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-3">Impact Reviews</h3>
-                    <p className="text-sm text-muted-foreground">Regular sessions where students analyze their school's environmental and social impact data.</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="border-border/50">
-                  <CardContent className="p-6 text-center">
-                    <Globe className="w-8 h-8 text-primary mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold mb-3">Factory & Farm Visits</h3>
-                    <p className="text-sm text-muted-foreground">Educational trips to see sustainable manufacturing and organic cotton farming in action.</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Regional Impact Stats */}
-      <section className="py-16 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-12">
-              Ready to Make an Impact Across the Gulf
-            </h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              {impactStats.map((stat, index) => <div key={index} className={`${stat.highlight ? 'bg-primary text-primary-foreground rounded-lg p-6' : ''}`}>
-                  <div className={`text-3xl md:text-4xl font-light mb-2 ${stat.highlight ? '' : 'text-primary'}`}>
-                    {stat.value}
-                  </div>
-                  <div className={`text-sm ${stat.highlight ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
-                    {stat.label}
-                  </div>
-                </div>)}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Scorecard Section */}
       <div id="audit-section" className="scroll-mt-20">
