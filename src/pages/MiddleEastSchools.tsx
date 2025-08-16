@@ -34,7 +34,7 @@ export default function MiddleEastSchools() {
   }, {
     icon: <Shield className="w-6 h-6 text-destructive" />,
     title: "Invisible Supply Chains with Unfair Labor",
-    description: "No transparency into manufacturing conditions or worker treatment in the supply chain."
+    description: "1 in 5 cotton garments in the world are tainted by child labour, and most schools don't know who makes their uniforms."
   }, {
     icon: <Heart className="w-6 h-6 text-destructive" />,
     title: "Buy-Back Clauses",
