@@ -155,14 +155,34 @@ export default function MiddleEastSchools() {
         </div>
       </section>
 
-      {/* Kapes Model Image */}
+      {/* Our Solution */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="rounded-xl overflow-hidden shadow-lg mx-auto max-w-4xl">
-                <img src={kapesModelImage} alt="The Kapes Model - One Solution for Everyone" className="w-full h-auto object-cover" />
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
+                The Kapes Model: One Solution for Everyone
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+                Instead of band-aid solutions, we've built a complete system that works for everyone in your school community.
+              </p>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-xl">
+                <img src={kapesModelImage} alt="The Kapes Model - One Solution for Everyone" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {solutionBenefits.map((solution, index) => <Card key={index} className="border-primary/20 bg-primary/5">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold mb-4 text-primary">{solution.group}</h3>
+                    <ul className="space-y-2">
+                      {solution.benefits.map((benefit, idx) => <li key={idx} className="flex items-start gap-2 text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{benefit}</span>
+                        </li>)}
+                    </ul>
+                  </CardContent>
+                </Card>)}
             </div>
           </div>
         </div>
