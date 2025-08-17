@@ -555,7 +555,7 @@ export default function MiddleEastSchools() {
                 <div>
                   <Heart className="w-6 h-6 text-primary mx-auto mb-2" />
                   <div className="font-semibold">Free Meals & Free Uniforms</div>
-                  <div className="text-sm text-muted-foreground">Every uniform breaks down barriers to education double impact</div>
+                  <div className="text-sm text-muted-foreground">Every uniform breaks down barriers</div>
                 </div>
               </div>
               
