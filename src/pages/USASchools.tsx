@@ -58,13 +58,6 @@ export default function USASchools() {
       traditionalPositive: false
     },
     {
-      feature: "Factory & Farm Visits",
-      kapes: "Open door policy & guided tours",
-      kapesPositive: true,
-      traditional: "Closed facilities & no access",
-      traditionalPositive: false
-    },
-    {
       feature: "Educational Programs",
       kapes: "STEM partnerships & resources",
       kapesPositive: true,
@@ -83,6 +76,13 @@ export default function USASchools() {
       kapes: "Real-time dashboard",
       kapesPositive: true,
       traditional: "No impact measurement",
+      traditionalPositive: false
+    },
+    {
+      feature: "Factory & Farm Visits",
+      kapes: "Open door policy & guided tours",
+      kapesPositive: true,
+      traditional: "Closed facilities & no access",
       traditionalPositive: false
     }
   ];
