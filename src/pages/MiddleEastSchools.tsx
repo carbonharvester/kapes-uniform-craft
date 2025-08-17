@@ -76,7 +76,7 @@ export default function MiddleEastSchools() {
   }, {
     step: "04",
     title: "Design & Sampling",
-    description: "Custom uniform design, fabric selection, and sample approvals.",
+    description: "Once the proposal is signed, we will move onto uniform design, fabric selection, and sample approvals.",
     timeline: "Week 4-6"
   }, {
     step: "05",
