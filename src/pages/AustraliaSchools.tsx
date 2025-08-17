@@ -83,32 +83,32 @@ export default function AustraliaSchools() {
     step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, climate requirements, and sustainability goals.",
-    timeline: "Week 1-2"
+    timeline: "Week 1"
   }, {
     step: "03",
     title: "Proposal",
     description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
-    timeline: "Week 3"
+    timeline: "Week 2-3"
   }, {
     step: "04",
     title: "Design & Sampling",
     description: "Custom uniform design with UV protection, Indigenous collaboration options, and sample approvals.",
-    timeline: "Week 4-6"
+    timeline: "Week 4-8"
   }, {
     step: "05",
     title: "Signed Uniform Supply Agreement",
     description: "Finalize uniform supply agreement prior to manufacturing.",
-    timeline: "Week 7"
+    timeline: "Week 9-10"
   }, {
     step: "06",
     title: "Australian Manufacturing",
     description: "Local production with Australian suppliers, quality control, and SPF testing.",
-    timeline: "Week 8-11"
+    timeline: "Week 21-25"
   }, {
     step: "07",
     title: "Launch",
     description: "Full rollout of your sustainable uniform program to all families.",
-    timeline: "Week 12"
+    timeline: "Week 31"
   }, {
     step: "08",
     title: "Ongoing Partnership",

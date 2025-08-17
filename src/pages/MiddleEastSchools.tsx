@@ -67,32 +67,32 @@ export default function MiddleEastSchools() {
     step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, values, and sustainability goals.",
-    timeline: "Week 1-2"
+    timeline: "Week 1"
   }, {
     step: "03",
     title: "Proposal",
     description: "Based on the consultation, if your school is a good fit, we will present a proposal.",
-    timeline: "Week 3"
+    timeline: "Week 2-3"
   }, {
     step: "04",
     title: "Design & Sampling",
     description: "Once the proposal is signed, we will move onto uniform design, fabric selection, and sample approvals.",
-    timeline: "Week 4-6"
+    timeline: "Week 4-8"
   }, {
     step: "05",
     title: "Signed Agreement",
     description: "Finalise the full terms of the uniform supply agreement prior to manufacturing.",
-    timeline: "Week 1"
+    timeline: "Week 9-10"
   }, {
     step: "06",
     title: "Manufacturing",
     description: "Ethical production of your custom uniforms with quality control.",
-    timeline: "Week 8-11"
+    timeline: "Week 21-25"
   }, {
     step: "07",
     title: "Launch",
     description: "Full rollout of your sustainable uniform program to all families.",
-    timeline: "Week 12"
+    timeline: "Week 31"
   }, {
     step: "08",
     title: "Ongoing Partnership",
