@@ -325,7 +325,7 @@ export default function USASchools() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="text-sm">Sustainability</TableCell>
+                        <TableCell className="text-sm">Circularity</TableCell>
                         <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
                           Zero-waste manufacturing
@@ -352,6 +352,26 @@ export default function USASchools() {
                         </TableCell>
                         <TableCell className="text-center text-sm text-muted-foreground">
                           ❌ Synthetic fabrics & chemicals
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Carbon Offsetting</TableCell>
+                        <TableCell className="text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          100% carbon neutral operations
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
+                          ❌ No carbon offset programs
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell className="text-sm">Factory & Farm Visits</TableCell>
+                        <TableCell className="text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          Open door policy & guided tours
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
+                          ❌ Closed facilities & no access
                         </TableCell>
                       </TableRow>
                       <TableRow>
