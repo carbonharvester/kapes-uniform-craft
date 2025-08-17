@@ -16,7 +16,7 @@ import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
-import kapesModelImage from "@/assets/kapes-model-new.jpg";
+import kapesModelImage from "@/assets/kapes-model-uk.jpg";
 
 export default function UKSchools() {
   const problemPoints = [{
