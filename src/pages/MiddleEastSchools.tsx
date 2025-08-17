@@ -61,7 +61,7 @@ export default function MiddleEastSchools() {
   const processSteps = [{
     step: "01",
     title: "Complete Assessment",
-    description: "Take our free 3-minute sustainability assessment to qualify for consultation.",
+    description: "Take our free 3-minute sustainability assessment to qualify for a consultation.",
     timeline: "3 minutes"
   }, {
     step: "02",
