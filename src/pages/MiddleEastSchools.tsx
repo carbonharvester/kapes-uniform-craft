@@ -81,7 +81,7 @@ export default function MiddleEastSchools() {
   }, {
     step: "05",
     title: "Signed Agreement",
-    description: "Finalize uniform supply agreement prior to manufacturing.",
+    description: "Finalise the full terms of the uniform supply agreement prior to manufacturing.",
     timeline: "Week 7"
   }, {
     step: "06",
