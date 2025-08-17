@@ -345,6 +345,16 @@ export default function USASchools() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
+                        <TableCell className="text-sm">Materials</TableCell>
+                        <TableCell className="text-center text-sm">
+                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                          GOTS certified organic cotton
+                        </TableCell>
+                        <TableCell className="text-center text-sm text-muted-foreground">
+                          ❌ Synthetic fabrics & chemicals
+                        </TableCell>
+                      </TableRow>
+                      <TableRow>
                         <TableCell className="text-sm">Social Impact</TableCell>
                         <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
