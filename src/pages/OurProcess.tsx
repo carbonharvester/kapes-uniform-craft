@@ -80,52 +80,62 @@ const OurProcess = () => {
     }
   ];
 
-  const steps = [
-    {
-      icon: Users,
-      title: "Discovery & Design",
-      description: "Understanding your school's needs, values, and uniform requirements",
-      details: [
-        "Initial consultation and needs assessment",
-        "Custom design development", 
-        "Sample creation and feedback",
-        "Final design approval"
-      ]
-    },
-    {
-      icon: Settings,
-      title: "Setup & Configuration",
-      description: "Building your custom online shop and systems",
-      details: [
-        "Online shop development",
-        "Payment and delivery setup",
-        "Staff training and onboarding",
-        "System testing and optimization"
-      ]
-    },
-    {
-      icon: Truck,
-      title: "Launch & Delivery",
-      description: "Going live with full support and monitoring",
-      details: [
-        "Soft launch with select families",
-        "Full rollout to all students",
-        "Ongoing delivery management",
-        "Customer support setup"
-      ]
-    },
-    {
-      icon: BarChart3,
-      title: "Monitor & Optimize",
-      description: "Continuous improvement and impact tracking",
-      details: [
-        "Performance monitoring",
-        "Impact reporting and dashboards",
-        "Regular reviews and updates",
-        "Continuous optimization"
-      ]
-    }
-  ];
+  const processSteps = [{
+    step: "01",
+    title: "Complete Assessment",
+    description: "Take our free 3-minute sustainability assessment to qualify for consultation.",
+    timeline: "3 minutes"
+  }, {
+    step: "02",
+    title: "Consultation",
+    description: "Deep dive into your school's needs, requirements, and sustainability goals.",
+    timeline: "Week 1"
+  }, {
+    step: "03",
+    title: "Proposal",
+    description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
+    timeline: "Week 2-3"
+  }, {
+    step: "04",
+    title: "Design",
+    description: "Custom uniform design, climate optimization, and design approvals.",
+    timeline: "Week 4-8"
+  }, {
+    step: "05",
+    title: "Signed Agreement",
+    description: "Finalize uniform supply agreement prior to manufacturing.",
+    timeline: "Week 9-10"
+  }, {
+    step: "06",
+    title: "Material Production",
+    description: "Sourcing and production of sustainable materials.",
+    timeline: "Week 11-17"
+  }, {
+    step: "07",
+    title: "Sampling",
+    description: "Physical sample creation with testing and approvals.",
+    timeline: "Week 18-20"
+  }, {
+    step: "08",
+    title: "Manufacturing",
+    description: "Ethical production with quality control and certification.",
+    timeline: "Week 21-25"
+  }, {
+    step: "09",
+    title: "Shipping",
+    description: "Quality control, packaging, and carbon-neutral delivery.",
+    timeline: "Week 26-30"
+  }, {
+    step: "10",
+    title: "Launch",
+    description: "Full rollout of your sustainable uniform program to all families.",
+    timeline: "Week 31"
+  }, {
+    step: "11",
+    title: "Ongoing Partnership",
+    description: "Continuous optimization, impact reporting, and circular economy management.",
+    timeline: "Ongoing"
+  }];
 
   return (
     <div className="min-h-screen bg-background">
@@ -169,54 +179,33 @@ const OurProcess = () => {
       {/* Process Steps */}
       <section className="bg-gradient-warm-section py-16">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our Four-Step Journey</h2>
-              <p className="text-muted-foreground text-lg">A seamless pathway to sustainable uniforms</p>
+              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our 11-Step Process</h2>
+              <p className="text-muted-foreground text-lg">A detailed pathway from assessment to ongoing partnership</p>
             </div>
             
-            <div className="space-y-12">
-              {steps.map((step, index) => (
-                <div key={index} className="relative">
-                  <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                    <CardHeader>
-                      <div className="flex items-start gap-6">
-                        <div className="flex flex-col items-center gap-4">
-                          <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <step.icon className="h-8 w-8 text-primary" />
-                          </div>
-                          <Badge className="bg-primary/10 text-primary">
-                            Step {index + 1}
-                          </Badge>
-                        </div>
-                        <div className="flex-1">
-                          <CardTitle className="text-2xl md:text-3xl font-medium mb-2">
-                            {step.title}
-                          </CardTitle>
-                          <CardDescription className="text-lg">
-                            {step.description}
-                          </CardDescription>
-                        </div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {processSteps.map((step, index) => (
+                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
+                  <CardHeader className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-3 py-1 text-sm font-medium">
+                        {step.step}
+                      </Badge>
+                      <div className="flex items-center gap-2 text-muted-foreground">
+                        <Calendar className="h-4 w-4" />
+                        <span className="text-sm">{step.timeline}</span>
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="ml-22">
-                        <div className="grid md:grid-cols-2 gap-4">
-                          {step.details.map((detail, detailIndex) => (
-                            <div key={detailIndex} className="flex items-center gap-3">
-                              <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                              <span className="text-muted-foreground">{detail}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
-                  {index < steps.length - 1 && (
-                    <div className="flex justify-center my-8">
-                      <ArrowRight className="h-8 w-8 text-muted-foreground rotate-90" />
                     </div>
-                  )}
-                </div>
+                    <CardTitle className="text-xl font-semibold leading-tight">
+                      {step.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="px-6 pb-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </section>
