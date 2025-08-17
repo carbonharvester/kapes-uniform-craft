@@ -57,7 +57,7 @@ export default function UKSchools() {
     benefits: ["UK weather-appropriate fabrics", "Leadership opportunities in sustainability", "Educational factory visits", "Peer-to-peer impact mentoring"]
   }, {
     group: "Communities",
-    benefits: ["Free uniforms for disadvantaged students", "1:1 meal donations for every uniform", "Local job creation in logistics", "WRAP-certified circular economy model"]
+    benefits: ["Free uniforms for disadvantaged students", "1:1 meal donations for every uniform", "Educational programs and resources", "WRAP-certified circular economy model"]
   }];
 
   const partnershipIncludes = [
@@ -489,8 +489,8 @@ export default function UKSchools() {
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="p-8 text-center">
                   <Shield className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Local Manufacturing</h3>
-                  <p className="text-sm text-muted-foreground">UK manufacturing partnerships creating local jobs and reducing carbon footprint from international shipping.</p>
+                  <h3 className="text-lg font-semibold mb-3">Educational Programs</h3>
+                  <p className="text-sm text-muted-foreground">STEM partnerships and sustainability education resources helping schools integrate learning with uniform programs.</p>
                 </CardContent>
               </Card>
               

@@ -33,10 +33,6 @@ export default function AustraliaSchools() {
     title: "Inadequate Sun Protection",
     description: "Many uniforms lack proper SPF protection despite Australia's extreme UV conditions and skin cancer risks."
   }, {
-    icon: <Target className="w-6 h-6 text-destructive" />,
-    title: "Limited Local Manufacturing",
-    description: "Over-reliance on imports undermining Australian jobs and increasing carbon footprint from shipping."
-  }, {
     icon: <Heart className="w-6 h-6 text-destructive" />,
     title: "High Costs for Families",
     description: "Premium uniform suppliers charging excessive prices while families struggle with cost of living pressures."
@@ -51,20 +47,20 @@ export default function AustraliaSchools() {
     benefits: ["40% cost savings vs premium suppliers", "SPF 50+ sun protection built-in", "Free exchanges for growing kids", "Carbon-neutral delivery options"]
   }, {
     group: "Schools",
-    benefits: ["Local Australian manufacturing", "Zero inventory management required", "Compliance with state education guidelines", "Dedicated Australian account manager"]
+    benefits: ["Sustainable & ethical manufacturing", "Zero inventory management required", "Compliance with state education guidelines", "Dedicated Australian account manager"]
   }, {
     group: "Students",
     benefits: ["Climate-appropriate breathable fabrics", "Indigenous design collaboration opportunities", "UV protection for outdoor activities", "Ocean plastic recycling programs"]
   }, {
     group: "Communities",
-    benefits: ["1:1 uniform donations to Indigenous communities", "1:1 meal donations for every uniform", "Local job creation in manufacturing", "Marine conservation education programs"]
+    benefits: ["1:1 uniform donations to Indigenous communities", "1:1 meal donations for every uniform", "Educational programs and resources", "Marine conservation education programs"]
   }];
 
   const partnershipIncludes = [
     "100% Sustainable Materials (Organic Cotton + Recycled Ocean Plastic)",
     "SPF 50+ UV Protection Fabrics",
     "Climate-Optimized Breathable Designs",
-    "Australian-Made Manufacturing",
+    "Sustainable & ethical manufacturing",
     "Carbon-Neutral Delivery Network",
     "Fully Managed Takeback & Recycling Program",
     "1:1 Donations to Indigenous Communities + Meals",

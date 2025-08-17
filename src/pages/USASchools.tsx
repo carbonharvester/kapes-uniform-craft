@@ -57,13 +57,13 @@ export default function USASchools() {
     benefits: ["All-climate comfortable fabrics", "Leadership opportunities in sustainability", "STEM learning through supply chain", "Peer mentorship programs"]
   }, {
     group: "Communities",
-    benefits: ["American job creation in manufacturing", "1:1 meal donations for every uniform", "Local economic development", "Zero-waste educational programs"]
+    benefits: ["Educational programs and partnerships", "1:1 meal donations for every uniform", "Sustainable economic development", "Zero-waste educational programs"]
   }];
 
   const partnershipIncludes = [
     "100% Sustainable Materials (GOTS Certified Organic Cotton)",
     "All-Climate Fabric Options for Diverse US Regions",
-    "Made in America Manufacturing",
+    "Sustainable & ethical manufacturing",
     "Zero-Waste Production Processes",
     "Carbon-Neutral US Delivery Network",
     "Fully Managed Takeback & Recycling Program",
@@ -304,24 +304,24 @@ export default function USASchools() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      <TableRow>
+                       <TableRow>
                         <TableCell className="text-sm">Manufacturing</TableCell>
                         <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Made in America
+                          Ethical & sustainable production
                         </TableCell>
                         <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Overseas production
+                          ❌ Minimal transparency
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="text-sm">Climate Adaptability</TableCell>
+                        <TableCell className="text-sm">Educational Programs</TableCell>
                         <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          All-climate fabric options
+                          STEM partnerships & resources  
                         </TableCell>
                         <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ One-size-fits-all materials
+                          ❌ No educational offerings
                         </TableCell>
                       </TableRow>
                       <TableRow>
