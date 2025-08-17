@@ -338,7 +338,7 @@ export default function USASchools() {
         </div>
       </section>
 
-      {/* One Impact Partnership */}
+      {/* Kapes Impact Partnership */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -347,7 +347,7 @@ export default function USASchools() {
                 Join Our Mission
               </Badge>
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                One Impact Partnership
+                Kapes Impact Partnership
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 No confusing tiers or hidden costs. Every American school gets our complete sustainable uniform solution.
