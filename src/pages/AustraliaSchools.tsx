@@ -86,8 +86,8 @@ export default function AustraliaSchools() {
     timeline: "Week 1-2"
   }, {
     step: "03",
-    title: "Signed Agreement",
-    description: "Finalize partnership terms, local manufacturing plans, and implementation timeline.",
+    title: "Proposal",
+    description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
     timeline: "Week 3"
   }, {
     step: "04",
@@ -96,16 +96,21 @@ export default function AustraliaSchools() {
     timeline: "Week 4-6"
   }, {
     step: "05",
-    title: "Australian Manufacturing",
-    description: "Local production with Australian suppliers, quality control, and SPF testing.",
-    timeline: "Week 7-10"
+    title: "Signed Uniform Supply Agreement",
+    description: "Finalize uniform supply agreement prior to manufacturing.",
+    timeline: "Week 7"
   }, {
     step: "06",
-    title: "Launch",
-    description: "Soft launch with pilot families, climate testing, and full rollout across Australia.",
-    timeline: "Week 11-12"
+    title: "Australian Manufacturing",
+    description: "Local production with Australian suppliers, quality control, and SPF testing.",
+    timeline: "Week 8-11"
   }, {
     step: "07",
+    title: "Launch",
+    description: "Full rollout of your sustainable uniform program to all families.",
+    timeline: "Week 12"
+  }, {
+    step: "08",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and ocean conservation engagement.",
     timeline: "Ongoing"
@@ -391,9 +396,9 @@ export default function AustraliaSchools() {
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 How It Works: From Partnership to Impact
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Our proven 7-step process gets your Australian school from decision to full impact in just 16-20 weeks.
-              </p>
+               <p className="text-xl text-muted-foreground">
+                 Our proven 8-step process gets your Australian school from decision to full impact in just 16-20 weeks.
+               </p>
             </div>
             
             <Carousel

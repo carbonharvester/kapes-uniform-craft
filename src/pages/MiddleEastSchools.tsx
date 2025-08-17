@@ -70,8 +70,8 @@ export default function MiddleEastSchools() {
     timeline: "Week 1-2"
   }, {
     step: "03",
-    title: "Signed Agreement",
-    description: "Finalize partnership terms, pricing, and implementation timeline.",
+    title: "Proposal",
+    description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
     timeline: "Week 3"
   }, {
     step: "04",
@@ -80,16 +80,21 @@ export default function MiddleEastSchools() {
     timeline: "Week 4-6"
   }, {
     step: "05",
-    title: "Manufacturing",
-    description: "Ethical production of your custom uniforms with quality control.",
-    timeline: "Week 7-10"
+    title: "Signed Uniform Supply Agreement",
+    description: "Finalize uniform supply agreement prior to manufacturing.",
+    timeline: "Week 7"
   }, {
     step: "06",
-    title: "Launch",
-    description: "Soft launch with pilot families, feedback integration, and full rollout.",
-    timeline: "Week 11-12"
+    title: "Manufacturing",
+    description: "Ethical production of your custom uniforms with quality control.",
+    timeline: "Week 8-11"
   }, {
     step: "07",
+    title: "Launch",
+    description: "Full rollout of your sustainable uniform program to all families.",
+    timeline: "Week 12"
+  }, {
+    step: "08",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and community engagement.",
     timeline: "Ongoing"
@@ -408,9 +413,9 @@ export default function MiddleEastSchools() {
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 How It Works: From Partnership to Impact
               </h2>
-              <p className="text-xl text-muted-foreground">
-                Our proven 7-step process gets your school from decision to full impact in just 16-20 weeks.
-              </p>
+               <p className="text-xl text-muted-foreground">
+                 Our proven 8-step process gets your school from decision to full impact in just 16-20 weeks.
+               </p>
             </div>
             
             <Carousel
