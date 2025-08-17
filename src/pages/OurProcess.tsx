@@ -176,40 +176,6 @@ const OurProcess = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-6xl mx-auto space-y-20">
           
-      {/* Process Steps */}
-      <section className="bg-gradient-warm-section py-16">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Our 11-Step Process</h2>
-              <p className="text-muted-foreground text-lg">A detailed pathway from assessment to ongoing partnership</p>
-            </div>
-            
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {processSteps.map((step, index) => (
-                <Card key={index} className="border-0 shadow-glass hover-lift transition-smooth">
-                  <CardHeader className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-xl px-3 py-1 text-sm font-medium">
-                        {step.step}
-                      </Badge>
-                      <div className="flex items-center gap-2 text-muted-foreground">
-                        <Calendar className="h-4 w-4" />
-                        <span className="text-sm">{step.timeline}</span>
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl font-semibold leading-tight">
-                      {step.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="px-6 pb-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
           {/* Detailed Implementation Timeline */}
           <section className="py-16">
             <div className="text-center mb-12">
