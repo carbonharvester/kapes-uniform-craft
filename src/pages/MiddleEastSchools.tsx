@@ -70,7 +70,7 @@ export default function MiddleEastSchools() {
   }, {
     step: "03",
     title: "Proposal",
-    description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
+    description: "Based on consultation, if we see your school as a good fit, we will present a proposal.",
     timeline: "Week 2-3"
   }, {
     step: "04",
