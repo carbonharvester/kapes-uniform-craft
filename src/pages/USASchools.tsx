@@ -6,6 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { MobileOptimizedTable } from "@/components/MobileOptimizedTable";
 import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, Flag, GraduationCap, DollarSign } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -20,6 +21,72 @@ import kapesModelImage from "@/assets/kapes-model-usa-new.png";
 import usaHeroImage from "@/assets/usa-hero.png";
 
 export default function USASchools() {
+  const comparisonData = [
+    {
+      feature: "Materials",
+      kapes: "GOTS certified organic cotton",
+      kapesPositive: true,
+      traditional: "Synthetic fabrics & chemicals",
+      traditionalPositive: false
+    },
+    {
+      feature: "Manufacturing",
+      kapes: "Ethical & sustainable production",
+      kapesPositive: true,
+      traditional: "Minimal transparency",
+      traditionalPositive: false
+    },
+    {
+      feature: "Circularity",
+      kapes: "Zero-waste manufacturing",
+      kapesPositive: true,
+      traditional: "Linear production model",
+      traditionalPositive: false
+    },
+    {
+      feature: "Supply Chain",
+      kapes: "Full transparency & fair labor",
+      kapesPositive: true,
+      traditional: "Hidden supply chains",
+      traditionalPositive: false
+    },
+    {
+      feature: "Carbon Offsetting",
+      kapes: "100% carbon neutral operations",
+      kapesPositive: true,
+      traditional: "No carbon offset programs",
+      traditionalPositive: false
+    },
+    {
+      feature: "Factory & Farm Visits",
+      kapes: "Open door policy & guided tours",
+      kapesPositive: true,
+      traditional: "Closed facilities & no access",
+      traditionalPositive: false
+    },
+    {
+      feature: "Educational Programs",
+      kapes: "STEM partnerships & resources",
+      kapesPositive: true,
+      traditional: "No educational offerings",
+      traditionalPositive: false
+    },
+    {
+      feature: "Social Impact",
+      kapes: "1:1 meals + education funding",
+      kapesPositive: true,
+      traditional: "No social giving program",
+      traditionalPositive: false
+    },
+    {
+      feature: "Impact Tracking",
+      kapes: "Real-time dashboard",
+      kapesPositive: true,
+      traditional: "No impact measurement",
+      traditionalPositive: false
+    }
+  ];
+
   const problemPoints = [{
     icon: <Leaf className="w-6 h-6 text-destructive" />,
     title: "Fast Fashion Harming Student Health",
@@ -294,109 +361,10 @@ export default function USASchools() {
                   <p className="text-muted-foreground">See the difference our partnership makes for your American school</p>
                 </div>
                 
-                <div className="border rounded-lg overflow-hidden">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-left font-semibold">Feature</TableHead>
-                        <TableHead className="text-center font-semibold text-primary">Kapes Uniforms</TableHead>
-                        <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                     <TableBody>
-                       <TableRow>
-                         <TableCell className="text-sm">Materials</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           GOTS certified organic cotton
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ Synthetic fabrics & chemicals
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Manufacturing</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           Ethical & sustainable production
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ Minimal transparency
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Circularity</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           Zero-waste manufacturing
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ Linear production model
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Supply Chain</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           Full transparency & fair labor
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ Hidden supply chains
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Carbon Offsetting</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           100% carbon neutral operations
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ No carbon offset programs
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Factory & Farm Visits</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           Open door policy & guided tours
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ Closed facilities & no access
-                         </TableCell>
-                       </TableRow>
-                       <TableRow>
-                         <TableCell className="text-sm">Educational Programs</TableCell>
-                         <TableCell className="text-center text-sm">
-                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                           STEM partnerships & resources  
-                         </TableCell>
-                         <TableCell className="text-center text-sm text-muted-foreground">
-                           ❌ No educational offerings
-                         </TableCell>
-                       </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Social Impact</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          1:1 meals + education funding
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No social giving program
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Impact Tracking</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Real-time dashboard
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No impact measurement
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </div>
+                <MobileOptimizedTable 
+                  data={comparisonData}
+                  title="Kapes Uniforms vs Traditional American Suppliers"
+                />
                 
                 <div className="text-center space-y-4 mt-8">
                   <div className="flex justify-center">
