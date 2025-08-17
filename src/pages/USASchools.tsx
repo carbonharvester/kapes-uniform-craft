@@ -91,26 +91,41 @@ export default function USASchools() {
     timeline: "Week 2-3"
   }, {
     step: "04",
-    title: "Design & Sampling",
-    description: "Custom uniform design, climate optimization, and sample approvals.",
+    title: "Design",
+    description: "Custom uniform design, climate optimization, and design approvals.",
     timeline: "Week 4-8"
   }, {
     step: "05",
-    title: "Signed Uniform Supply Agreement",
+    title: "Signed Agreement",
     description: "Finalize uniform supply agreement prior to manufacturing.",
     timeline: "Week 9-10"
   }, {
     step: "06",
+    title: "Material Production",
+    description: "Sourcing and production of climate-appropriate sustainable materials.",
+    timeline: "Week 11-17"
+  }, {
+    step: "07",
+    title: "Sampling",
+    description: "Physical sample creation with climate testing and approvals.",
+    timeline: "Week 18-20"
+  }, {
+    step: "08",
     title: "American Manufacturing",
     description: "Domestic production with American suppliers, quality control, and fair labor practices.",
     timeline: "Week 21-25"
   }, {
-    step: "07",
+    step: "09",
+    title: "Shipping",
+    description: "Quality control, packaging, and carbon-neutral delivery across America.",
+    timeline: "Week 26-30"
+  }, {
+    step: "10",
     title: "Launch",
     description: "Full rollout of your sustainable uniform program to all families.",
     timeline: "Week 31"
   }, {
-    step: "08",
+    step: "11",
     title: "Ongoing Partnership",
     description: "Continuous optimization, STEM education programs, and impact reporting.",
     timeline: "Ongoing"

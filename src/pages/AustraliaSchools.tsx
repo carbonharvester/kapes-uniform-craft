@@ -91,26 +91,41 @@ export default function AustraliaSchools() {
     timeline: "Week 2-3"
   }, {
     step: "04",
-    title: "Design & Sampling",
-    description: "Custom uniform design with UV protection, Indigenous collaboration options, and sample approvals.",
+    title: "Design",
+    description: "Custom uniform design with UV protection, Indigenous collaboration options, and design approvals.",
     timeline: "Week 4-8"
   }, {
     step: "05",
-    title: "Signed Uniform Supply Agreement",
+    title: "Signed Agreement",
     description: "Finalize uniform supply agreement prior to manufacturing.",
     timeline: "Week 9-10"
   }, {
     step: "06",
+    title: "Material Production",
+    description: "Sourcing and production of sustainable materials with SPF protection.",
+    timeline: "Week 11-17"
+  }, {
+    step: "07",
+    title: "Sampling",
+    description: "Physical sample creation with UV testing and approvals.",
+    timeline: "Week 18-20"
+  }, {
+    step: "08",
     title: "Australian Manufacturing",
     description: "Local production with Australian suppliers, quality control, and SPF testing.",
     timeline: "Week 21-25"
   }, {
-    step: "07",
+    step: "09",
+    title: "Shipping",
+    description: "Quality control, packaging, and carbon-neutral delivery across Australia.",
+    timeline: "Week 26-30"
+  }, {
+    step: "10",
     title: "Launch",
     description: "Full rollout of your sustainable uniform program to all families.",
     timeline: "Week 31"
   }, {
-    step: "08",
+    step: "11",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and ocean conservation engagement.",
     timeline: "Ongoing"
