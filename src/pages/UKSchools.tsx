@@ -76,31 +76,36 @@ export default function UKSchools() {
 
   const processSteps = [{
     step: "01",
+    title: "Complete Assessment",
+    description: "Take our free 3-minute sustainability assessment to qualify for consultation.",
+    timeline: "3 minutes"
+  }, {
+    step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, Ofsted requirements, and sustainability goals.",
     timeline: "Week 1-2"
   }, {
-    step: "02",
+    step: "03",
     title: "Signed Agreement",
     description: "Finalize partnership terms, compliance requirements, and implementation timeline.",
     timeline: "Week 3"
   }, {
-    step: "03",
+    step: "04",
     title: "Design & Sampling",
     description: "Custom uniform design, UK weather optimization, and sample approvals.",
     timeline: "Week 4-6"
   }, {
-    step: "04",
+    step: "05",
     title: "UK Manufacturing",
     description: "Local production with UK suppliers, quality control, and WRAP certification.",
     timeline: "Week 7-10"
   }, {
-    step: "05",
+    step: "06",
     title: "Launch",
     description: "Soft launch with pilot families, feedback integration, and full UK rollout.",
     timeline: "Week 11-12"
   }, {
-    step: "06",
+    step: "07",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and circular economy management.",
     timeline: "Ongoing"
@@ -387,7 +392,7 @@ export default function UKSchools() {
                 How It Works: From Partnership to Impact
               </h2>
               <p className="text-xl text-muted-foreground">
-                Our proven 6-step process gets your UK school from decision to full impact in just 16-20 weeks.
+                Our proven 7-step process gets your UK school from decision to full impact in just 16-20 weeks.
               </p>
             </div>
             

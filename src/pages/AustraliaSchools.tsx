@@ -76,31 +76,36 @@ export default function AustraliaSchools() {
 
   const processSteps = [{
     step: "01",
+    title: "Complete Assessment",
+    description: "Take our free 3-minute sustainability assessment to qualify for consultation.",
+    timeline: "3 minutes"
+  }, {
+    step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, climate requirements, and sustainability goals.",
     timeline: "Week 1-2"
   }, {
-    step: "02",
+    step: "03",
     title: "Signed Agreement",
     description: "Finalize partnership terms, local manufacturing plans, and implementation timeline.",
     timeline: "Week 3"
   }, {
-    step: "03",
+    step: "04",
     title: "Design & Sampling",
     description: "Custom uniform design with UV protection, Indigenous collaboration options, and sample approvals.",
     timeline: "Week 4-6"
   }, {
-    step: "04",
+    step: "05",
     title: "Australian Manufacturing",
     description: "Local production with Australian suppliers, quality control, and SPF testing.",
     timeline: "Week 7-10"
   }, {
-    step: "05",
+    step: "06",
     title: "Launch",
     description: "Soft launch with pilot families, climate testing, and full rollout across Australia.",
     timeline: "Week 11-12"
   }, {
-    step: "06",
+    step: "07",
     title: "Ongoing Partnership",
     description: "Continuous optimization, impact reporting, and ocean conservation engagement.",
     timeline: "Ongoing"
@@ -387,7 +392,7 @@ export default function AustraliaSchools() {
                 How It Works: From Partnership to Impact
               </h2>
               <p className="text-xl text-muted-foreground">
-                Our proven 6-step process gets your Australian school from decision to full impact in just 16-20 weeks.
+                Our proven 7-step process gets your Australian school from decision to full impact in just 16-20 weeks.
               </p>
             </div>
             

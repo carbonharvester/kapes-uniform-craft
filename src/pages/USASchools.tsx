@@ -76,31 +76,36 @@ export default function USASchools() {
 
   const processSteps = [{
     step: "01",
+    title: "Complete Assessment",
+    description: "Take our free 3-minute sustainability assessment to qualify for consultation.",
+    timeline: "3 minutes"
+  }, {
+    step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, climate requirements, and educational goals.",
     timeline: "Week 1-2"
   }, {
-    step: "02",
+    step: "03",
     title: "Signed Agreement",
     description: "Finalize partnership terms, Title I discounts, and implementation timeline.",
     timeline: "Week 3"
   }, {
-    step: "03",
+    step: "04",
     title: "Design & Sampling",
     description: "Custom uniform design, climate optimization, and sample approvals.",
     timeline: "Week 4-6"
   }, {
-    step: "04",
+    step: "05",
     title: "American Manufacturing",
     description: "Domestic production with American suppliers, quality control, and fair labor practices.",
     timeline: "Week 7-10"
   }, {
-    step: "05",
+    step: "06",
     title: "Launch",
     description: "Soft launch with pilot families, climate testing, and full US rollout.",
     timeline: "Week 11-12"
   }, {
-    step: "06",
+    step: "07",
     title: "Ongoing Partnership",
     description: "Continuous optimization, STEM education programs, and impact reporting.",
     timeline: "Ongoing"
@@ -387,7 +392,7 @@ export default function USASchools() {
                 How It Works: From Partnership to Impact
               </h2>
               <p className="text-xl text-muted-foreground">
-                Our proven 6-step process gets your American school from decision to full impact in just 16-20 weeks.
+                Our proven 7-step process gets your American school from decision to full impact in just 16-20 weeks.
               </p>
             </div>
             
