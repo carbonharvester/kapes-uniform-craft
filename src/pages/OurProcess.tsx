@@ -7,75 +7,75 @@ import { Footer } from "@/components/Footer";
 const OurProcess = () => {
   const phases = [
     {
-      phase: "Phase 1",
-      title: "Discovery & Planning",
-      duration: "2-4 weeks",
+      phase: "Step 01-02",
+      title: "Assessment & Consultation",
+      duration: "3 minutes - Week 1",
       activities: [
+        "Complete free 3-minute sustainability assessment",
         "Initial consultation and needs assessment",
-        "School values and requirements workshop",
-        "Stakeholder interviews (staff, students, parents)",
-        "Current uniform audit and sizing analysis",
-        "Sustainability goals alignment"
+        "Deep dive into school's requirements and goals",
+        "Sustainability objectives alignment",
+        "Stakeholder identification and engagement"
       ]
     },
     {
-      phase: "Phase 2",
-      title: "Design & Development",
-      duration: "4-6 weeks",
+      phase: "Step 03-04",
+      title: "Proposal & Design",
+      duration: "Week 2-8",
       activities: [
+        "Present customized partnership proposal",
+        "School fit assessment and approval",
         "Custom uniform design creation",
-        "Material selection and sustainability verification",
-        "Sample production and testing",
-        "Student and parent feedback collection",
-        "Final design refinement and approval"
+        "Climate optimization and material selection",
+        "Design approvals from stakeholders"
       ]
     },
     {
-      phase: "Phase 3",
+      phase: "Step 05-06",
+      title: "Agreement & Material Production",
+      duration: "Week 9-17",
+      activities: [
+        "Finalize uniform supply agreement",
+        "Contract signing and legal completion",
+        "Sustainable material sourcing",
+        "Production planning and scheduling",
+        "Quality assurance setup"
+      ]
+    },
+    {
+      phase: "Step 07-08",
       title: "Sampling & Manufacturing",
-      duration: "10-12 weeks",
+      duration: "Week 18-25",
       activities: [
-        "Sample production and testing",
-        "Manufacturing setup and quality assurance",
-        "Bulk production scheduling",
-        "Quality control checkpoints",
-        "Pre-delivery inspections"
+        "Physical sample creation and testing",
+        "Sample approvals and refinements",
+        "Ethical manufacturing with quality control",
+        "Certification and compliance checks",
+        "Production monitoring and updates"
       ]
     },
     {
-      phase: "Phase 4",
-      title: "Testing & Training",
-      duration: "2-3 weeks",
+      phase: "Step 09-10",
+      title: "Shipping & Launch",
+      duration: "Week 26-31",
       activities: [
-        "System testing and quality assurance",
-        "Staff training sessions",
-        "Parent information packs creation",
-        "Soft launch with select families",
-        "Feedback collection and adjustments"
-      ]
-    },
-    {
-      phase: "Phase 5",
-      title: "Launch & Rollout",
-      duration: "2-4 weeks",
-      activities: [
-        "Full school rollout announcement",
-        "Parent information sessions",
-        "Student sizing and ordering",
-        "First delivery batch coordination",
+        "Quality control and packaging",
+        "Carbon-neutral delivery coordination",
+        "Full rollout to all families",
+        "Launch support and monitoring",
         "Customer support activation"
       ]
     },
     {
-      phase: "Phase 6",
-      title: "Optimization & Growth",
+      phase: "Step 11",
+      title: "Ongoing Partnership",
       duration: "Ongoing",
       activities: [
-        "Performance monitoring and reporting",
-        "Impact tracking and dashboard updates",
-        "Regular review meetings",
-        "Continuous improvement implementation",
-        "Additional service rollouts"
+        "Continuous optimization and improvements",
+        "Real-time impact reporting and dashboards",
+        "Regular partnership review meetings",
+        "Circular economy management",
+        "Additional service rollouts and expansion"
       ]
     }
   ];
@@ -214,7 +214,7 @@ const OurProcess = () => {
           <section className="py-16">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-4">Detailed Implementation Timeline</h2>
-              <p className="text-muted-foreground text-lg">Your journey from consultation to launch — typically 3 to 5 months from start to finish</p>
+              <p className="text-muted-foreground text-lg">Your journey from assessment to ongoing partnership — typically 31 weeks from start to launch</p>
             </div>
             
             <div className="space-y-12">
@@ -259,35 +259,35 @@ const OurProcess = () => {
             </div>
             
             <div className="grid gap-8 md:grid-cols-3">
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader className="p-8">
-                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Design Approval</CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground">End of Phase 2</CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="text-muted-foreground leading-relaxed">Final uniform designs approved by school leadership and student representatives.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader className="p-8">
-                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Manufacturing Complete</CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground">End of Phase 3</CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="text-muted-foreground leading-relaxed">Uniforms manufactured and quality checked, ready for delivery.</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="border-0 shadow-glass hover-lift transition-smooth">
-                <CardHeader className="p-8">
-                  <CardTitle className="text-xl font-semibold leading-none tracking-tight">Full Launch</CardTitle>
-                  <CardDescription className="text-lg text-muted-foreground">End of Phase 5</CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <p className="text-muted-foreground leading-relaxed">Complete rollout to all students with full support systems active.</p>
-                </CardContent>
-              </Card>
+               <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                 <CardHeader className="p-8">
+                   <CardTitle className="text-xl font-semibold leading-none tracking-tight">Agreement Signed</CardTitle>
+                   <CardDescription className="text-lg text-muted-foreground">Week 9-10</CardDescription>
+                 </CardHeader>
+                 <CardContent className="px-8 pb-8">
+                   <p className="text-muted-foreground leading-relaxed">Uniform supply agreement finalized and manufacturing can commence.</p>
+                 </CardContent>
+               </Card>
+               
+               <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                 <CardHeader className="p-8">
+                   <CardTitle className="text-xl font-semibold leading-none tracking-tight">Manufacturing Complete</CardTitle>
+                   <CardDescription className="text-lg text-muted-foreground">Week 25</CardDescription>
+                 </CardHeader>
+                 <CardContent className="px-8 pb-8">
+                   <p className="text-muted-foreground leading-relaxed">Uniforms manufactured ethically and quality checked, ready for delivery.</p>
+                 </CardContent>
+               </Card>
+               
+               <Card className="border-0 shadow-glass hover-lift transition-smooth">
+                 <CardHeader className="p-8">
+                   <CardTitle className="text-xl font-semibold leading-none tracking-tight">Full Launch</CardTitle>
+                   <CardDescription className="text-lg text-muted-foreground">Week 31</CardDescription>
+                 </CardHeader>
+                 <CardContent className="px-8 pb-8">
+                   <p className="text-muted-foreground leading-relaxed">Complete rollout to all students with ongoing partnership support active.</p>
+                 </CardContent>
+               </Card>
             </div>
           </section>
 
