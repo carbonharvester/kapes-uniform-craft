@@ -335,16 +335,6 @@ export default function USASchools() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="text-sm">Title I Support</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Dedicated discount programs
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Limited support programs
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
                         <TableCell className="text-sm">Sustainability</TableCell>
                         <TableCell className="text-center text-sm">
                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
