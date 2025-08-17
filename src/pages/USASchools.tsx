@@ -112,7 +112,7 @@ export default function USASchools() {
     timeline: "Week 18-20"
   }, {
     step: "08",
-    title: "American Manufacturing",
+    title: "Manufacturing",
     description: "Domestic production with American suppliers, quality control, and fair labor practices.",
     timeline: "Week 21-25"
   }, {
