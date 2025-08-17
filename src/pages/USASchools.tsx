@@ -372,9 +372,6 @@ export default function USASchools() {
                       Apply for Partnership
                     </Button>
                   </div>
-                  <p className="text-sm text-muted-foreground">
-                    🌱 Environmental Savings from day 1  🚀 Launch in 8 weeks  📈 Guaranteed impact results
-                  </p>
                 </div>
               </CardContent>
             </Card>
