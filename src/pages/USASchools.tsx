@@ -58,7 +58,7 @@ export default function USASchools() {
       traditionalPositive: false
     },
     {
-      feature: "Educational Programs",
+      feature: "Education Programs",
       kapes: "STEM partnerships & resources",
       kapesPositive: true,
       traditional: "No educational offerings",
