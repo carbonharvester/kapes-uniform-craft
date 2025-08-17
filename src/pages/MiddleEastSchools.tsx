@@ -544,7 +544,7 @@ export default function MiddleEastSchools() {
               <div className="grid md:grid-cols-3 gap-6 text-center mb-6">
                 <div>
                   <Clock className="w-6 h-6 text-primary mx-auto mb-2" />
-                  <div className="font-semibold">Launch in 16-20 Weeks</div>
+                  <div className="font-semibold">Launch in 30 Weeks</div>
                   <div className="text-sm text-muted-foreground">From partnership to full program</div>
                 </div>
                 <div>
