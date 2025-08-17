@@ -13,7 +13,6 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 // Import images
 import heroImage from "@/assets/our-mission-hero.jpg";
 import problemsSolutionImage from "@/assets/uniform-problems-solution.jpg";
-
 import studentCommitteeImage from "@/assets/student-sustainability-committee.jpg";
 import globalImpactImage from "@/assets/global-impact-connection.jpg";
 import smartDeliveryImage from "@/assets/smart-locker.jpg";
@@ -67,32 +66,32 @@ export default function MiddleEastSchools() {
     step: "02",
     title: "Consultation",
     description: "Deep dive into your school's needs, values, and sustainability goals.",
-    timeline: "Week 1"
+    timeline: "Week 1-2"
   }, {
     step: "03",
     title: "Proposal",
-    description: "Based on the consultation, if your school is a good fit, we will present a proposal.",
-    timeline: "Week 2-3"
+    description: "Based on consultation, if we see the school as a good fit, we will present a proposal.",
+    timeline: "Week 3"
   }, {
     step: "04",
     title: "Design & Sampling",
-    description: "Once the proposal is signed, we will move onto uniform design, fabric selection, and sample approvals.",
-    timeline: "Week 4-8"
+    description: "Custom uniform design, fabric selection, and sample approvals.",
+    timeline: "Week 4-6"
   }, {
     step: "05",
-    title: "Signed Agreement",
-    description: "Finalise the full terms of the uniform supply agreement prior to manufacturing.",
-    timeline: "Week 9-10"
+    title: "Signed Uniform Supply Agreement",
+    description: "Finalize uniform supply agreement prior to manufacturing.",
+    timeline: "Week 7"
   }, {
     step: "06",
     title: "Manufacturing",
     description: "Ethical production of your custom uniforms with quality control.",
-    timeline: "Week 21-25"
+    timeline: "Week 8-11"
   }, {
     step: "07",
     title: "Launch",
     description: "Full rollout of your sustainable uniform program to all families.",
-    timeline: "Week 31"
+    timeline: "Week 12"
   }, {
     step: "08",
     title: "Ongoing Partnership",
@@ -120,8 +119,8 @@ export default function MiddleEastSchools() {
       <section className="relative min-h-[100dvh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero-to-warm -mt-[1px]">
         {/* Hero background image */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style={{
-          backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)'
-        }}>
+        backgroundImage: 'url(/lovable-uploads/a2f28efa-df53-424f-95ae-677cf0fa1e80.png)'
+      }}>
           <div className="absolute inset-0 bg-black/40 z-10"></div>
         </div>
         
@@ -148,8 +147,10 @@ export default function MiddleEastSchools() {
             {/* CTA button - mobile optimized with better touch targets */}
             <div className="pt-6 flex justify-center items-center px-4 max-w-sm mx-auto">
               <button onClick={() => document.getElementById('audit-section')?.scrollIntoView({
-                behavior: 'smooth'
-              })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation" style={{ backgroundColor: '#f97769' }}>
+              behavior: 'smooth'
+            })} className="group w-full inline-flex items-center justify-between px-4 py-4 min-h-[48px] text-white rounded-xl font-medium text-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl backdrop-blur-sm border border-white/20 hover:border-white/40 touch-manipulation" style={{
+              backgroundColor: '#f97769'
+            }}>
                 <div className="flex flex-col items-start">
                   <span className="text-lg font-bold">Apply for a Consultation</span>
                   <span className="text-xs opacity-95 font-medium">Start with an Assessment</span>
@@ -165,8 +166,8 @@ export default function MiddleEastSchools() {
         {/* Floating elements for visual interest */}
         <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-48 h-48 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-pulse" style={{
-          animationDelay: '1s'
-        }}></div>
+        animationDelay: '1s'
+      }}></div>
       </section>
 
       {/* The Problem */}
@@ -413,21 +414,15 @@ export default function MiddleEastSchools() {
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
                 How It Works: From Partnership to Impact
               </h2>
-               <p className="text-xl text-muted-foreground">
-                 Our proven 8-step process gets your school from decision to full impact in just 16-20 weeks.
-               </p>
+               <p className="text-xl text-muted-foreground">Our proven 8-step process gets your school from decision to full impact in just 30 weeks.</p>
             </div>
             
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full max-w-5xl mx-auto"
-            >
+            <Carousel opts={{
+            align: "start",
+            loop: true
+          }} className="w-full max-w-5xl mx-auto">
               <CarouselContent className="-ml-2 md:-ml-4 pt-6">
-                {processSteps.map((step, index) => (
-                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                {processSteps.map((step, index) => <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                     <Card className="relative border-border/50 h-full min-h-[280px]">
                       <CardContent className="p-6 text-center h-full flex flex-col">
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -442,8 +437,7 @@ export default function MiddleEastSchools() {
                         </div>
                       </CardContent>
                     </Card>
-                  </CarouselItem>
-                ))}
+                  </CarouselItem>)}
               </CarouselContent>
               <div className="flex justify-center gap-4 mt-8">
                 <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 hover:bg-primary hover:text-primary-foreground" />
