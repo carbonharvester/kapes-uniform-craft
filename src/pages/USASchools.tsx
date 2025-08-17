@@ -469,10 +469,10 @@ export default function USASchools() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                Real Sustainability, Real Impact for America
+                American Schools Leading Global Impact
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Every uniform creates a ripple of positive change across American communities and supports educational excellence nationwide.
+                Every uniform purchased by American schools directly funds education and meals for children in Africa. Be part of a global movement where American schools set the standard for international social responsibility.
               </p>
               <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-2xl">
                 <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg" alt="Sustainable materials and American manufacturing for school uniforms" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
