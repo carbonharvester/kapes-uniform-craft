@@ -5,7 +5,7 @@ export const WhyKapes = () => {
       <div className="container mx-auto px-4">
         <div className="grid gap-16">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl font-light tracking-tight mb-8">Why Kapes?</h1>
+            <h1 className="text-2xl md:text-4xl font-light tracking-tight mb-8">Why Kapes Uniforms?</h1>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 items-center">

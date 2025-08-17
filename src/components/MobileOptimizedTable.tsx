@@ -32,7 +32,7 @@ export const MobileOptimizedTable = ({ data, title }: MobileOptimizedTableProps)
                 <div className="bg-green-50 rounded-lg p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <Check className="h-4 w-4 text-green-500 flex-shrink-0" />
-                    <span className="text-xs font-medium text-green-700">Kapes</span>
+                    <span className="text-xs font-medium text-green-700">Kapes Uniforms</span>
                   </div>
                   <p className="text-xs text-green-600 font-medium leading-tight">{row.kapes}</p>
                 </div>
@@ -59,7 +59,7 @@ export const MobileOptimizedTable = ({ data, title }: MobileOptimizedTableProps)
                 <thead>
                   <tr className="bg-gray-50/80 border-b-2 border-gray-200">
                     <th className="text-left font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Feature</th>
-                    <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes</th>
+                    <th className="text-center font-semibold py-6 px-8 text-gray-700 border-r border-gray-200">Kapes Uniforms</th>
                     <th className="text-center font-semibold py-6 px-8 text-gray-700">Traditional Suppliers</th>
                   </tr>
                 </thead>

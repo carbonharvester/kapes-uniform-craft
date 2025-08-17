@@ -54,7 +54,7 @@ export const KapesComparison = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-light tracking-tight leading-tight mb-4 md:mb-6">
-            How Kapes Compares to Traditional Uniform Suppliers
+            How Kapes Uniforms Compares to Traditional Uniform Suppliers
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
             We don't just supply uniforms. We help schools reduce their carbon footprint, 
@@ -66,7 +66,7 @@ export const KapesComparison = () => {
               <thead>
                 <tr className="bg-gray-50">
                   <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
-                  <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes</th>
+                  <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes Uniforms</th>
                   <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
                 </tr>
               </thead>

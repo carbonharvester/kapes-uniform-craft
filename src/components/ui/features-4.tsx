@@ -46,7 +46,7 @@ export function Features() {
         {
             icon: Store,
             title: "On-Campus School Shops",
-            description: "Beautifully designed, fully managed by Kapes"
+            description: "Beautifully designed, fully managed by Kapes Uniforms"
         },
         {
             icon: Package,
@@ -67,7 +67,7 @@ export function Features() {
                     {/* Header */}
                     <div className="text-center space-y-6">
                         <h2 className="text-4xl md:text-6xl font-light tracking-tight">
-                            What Makes Kapes{" "}
+                            What Makes Kapes Uniforms{" "}
                             <span className="font-medium bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                                 Different
                             </span>

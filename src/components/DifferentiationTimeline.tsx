@@ -18,7 +18,7 @@ export const DifferentiationTimeline = () => {
       color: "bg-yellow-100 text-yellow-800"
     },
     {
-      year: "Kapes",
+      year: "Kapes Uniforms",
       title: "Transformative Impact",
       description: "Regenerative materials, full lifecycle management, real-time impact tracking",
       impact: "Measurable positive impact on planet and communities",
@@ -33,7 +33,7 @@ export const DifferentiationTimeline = () => {
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-light tracking-tight mb-4">The Uniform Evolution</h2>
             <p className="text-muted-foreground">
-              See how Kapes is revolutionizing school uniforms with measurable impact
+              See how Kapes Uniforms is revolutionizing school uniforms with measurable impact
             </p>
           </div>
           

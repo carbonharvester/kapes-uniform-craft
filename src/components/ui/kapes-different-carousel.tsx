@@ -62,7 +62,7 @@ const differences: DifferenceCard[] = [
     icon: <Factory className="w-6 h-6" />,
     details: {
       title: "People-First Production",
-      content: "We take pride in knowing exactly who makes our uniforms — and how they're treated. Our manufacturing partners are carefully chosen not just for their craftsmanship, but for their commitment to people. Every factory we work with is Fair Trade certified or meets equivalent ethical standards, ensuring all workers receive a living wage, operate in safe and healthy environments, and are treated with dignity and respect. We maintain full visibility into their practices through regular third-party audits and uphold a strict zero-tolerance policy for child labour. When your school partners with Kapes, you're not just choosing better uniforms — you're supporting a global supply chain that values humanity as much as quality.",
+      content: "When your school partners with Kapes Uniforms, you're not just choosing better uniforms — you're supporting a global supply chain that values humanity as much as quality.",
       features: []
     }
   },
@@ -124,7 +124,7 @@ const differences: DifferenceCard[] = [
     icon: <BarChart3 className="w-6 h-6" />,
     details: {
       title: "KapesImpact Dashboard",
-      content: "With Kapes, your school can measure its environmental and social impact — not just talk about it. Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
+      content: "With Kapes Uniforms, your school can measure its environmental and social impact — not just talk about it. Our real-time dashboard gives you full visibility into the difference your uniform choices are making. From carbon footprint and water savings to waste reduction and social contributions, every metric is tracked live and presented in an easy-to-use format. You'll have access to data on how many garments have been returned through our takeback scheme, how many free meals or uniforms have been provided through your partnership, and how your choices are driving meaningful change. Custom reporting tools also make it simple to share your progress with parents, students, boards, or inspectors — turning your uniform program into a living, breathing example of sustainability in action.",
       features: []
     }
   },
@@ -237,7 +237,7 @@ const differences: DifferenceCard[] = [
     icon: <Store className="w-6 h-6" />,
     details: {
       title: "Uniform Hubs",
-      content: "Designed and built by Kapes, these dedicated retail spaces provide schools with a fully branded, professionally fitted shop right on-site. Parents benefit from convenient, face-to-face service where they can see, feel, and try uniforms before buying — with immediate access to essential items during the school year.\n\nBut these shops are more than just a point of sale. They also create hands-on learning opportunities for students, who can assist with stock management, customer service, and basic retail operations as part of a structured program. It's a chance to gain practical skills in a real business environment — right inside the school gates.\n\nWhether as a standalone shop or alongside our locker and delivery options, it's a seamless way to bring the uniform experience closer to your community.",
+      content: "Designed and built by Kapes Uniforms, these dedicated retail spaces provide schools with a fully branded, professionally fitted shop right on-site. Parents benefit from convenient, face-to-face service where they can see, feel, and try uniforms before buying — with immediate access to essential items during the school year.\n\nBut these shops are more than just a point of sale. They also create hands-on learning opportunities for students, who can assist with stock management, customer service, and basic retail operations as part of a structured program. It's a chance to gain practical skills in a real business environment — right inside the school gates.\n\nWhether as a standalone shop or alongside our locker and delivery options, it's a seamless way to bring the uniform experience closer to your community.",
       features: [
         "Dedicated on-site retail spaces",
         "Student employment opportunities",

@@ -217,7 +217,7 @@ const Affiliate = () => {
               {
                 step: "02",
                 title: "Refer Schools",
-                description: "Connect schools with Kapes using your referral code. We handle the rest.",
+                description: "Connect schools with Kapes Uniforms using your referral code. We handle the rest.",
                 reward: "$2,000 per successful enrollment"
               },
               {

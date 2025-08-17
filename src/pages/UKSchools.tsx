@@ -175,7 +175,7 @@ export default function UKSchools() {
             
             {/* Subtitle with mobile-optimized spacing and readability */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
-              Kapes transforms the school uniform experience across the United Kingdom. Net Zero 2050 aligned, circular economy model, and social impact that supports British families while protecting our planet.
+              Kapes Uniforms transforms the school uniform experience across the United Kingdom. Net Zero 2050 aligned, circular economy model, and social impact that supports British families while protecting our planet.
             </p>
             
             {/* CTA button - mobile optimized with better touch targets */}
@@ -239,13 +239,13 @@ export default function UKSchools() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-light tracking-tight mb-6">
-                The Kapes Model: One Solution for Everyone
+                The Kapes Uniforms Model: One Solution for Everyone
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
                 Instead of band-aid solutions, we've built a complete system that works for everyone in your British school community.
               </p>
               <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg mx-auto mb-12 max-w-xl">
-                <img src={kapesModelImage} alt="The Kapes Model - One Solution for Everyone in the UK" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={kapesModelImage} alt="The Kapes Uniforms Model - One Solution for Everyone in the UK" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
             
@@ -289,7 +289,7 @@ export default function UKSchools() {
             <Card className="border-primary/30 bg-background/80 backdrop-blur">
               <CardContent className="p-8 md:p-12">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-semibold mb-2">Kapes vs Traditional UK Suppliers</h3>
+                  <h3 className="text-2xl font-semibold mb-2">Kapes Uniforms vs Traditional UK Suppliers</h3>
                   <p className="text-muted-foreground">See the difference our partnership makes for your British school</p>
                 </div>
                 
@@ -298,7 +298,7 @@ export default function UKSchools() {
                     <TableHeader>
                       <TableRow>
                         <TableHead className="text-left font-semibold">Feature</TableHead>
-                        <TableHead className="text-center font-semibold text-primary">Kapes</TableHead>
+                        <TableHead className="text-center font-semibold text-primary">Kapes Uniforms</TableHead>
                         <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
                       </TableRow>
                     </TableHeader>

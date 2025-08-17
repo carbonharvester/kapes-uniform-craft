@@ -78,7 +78,7 @@ const StudentLeadership = () => {
               Real Leadership, Not Just Symbolism
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Every partner school is invited to nominate one student to join the Kapes Young Leaders Council — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
+              Every partner school is invited to nominate one student to join the Kapes Uniforms Young Leaders Council — a youth-led advisory group that shapes our programs, challenges our thinking, and helps steer the future of ethical school uniforms.
             </p>
           </section>
 
@@ -91,7 +91,7 @@ const StudentLeadership = () => {
                     <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Globe className="h-7 w-7 text-primary" />
                     </div>
-                    <CardTitle className="text-2xl font-medium">The Kapes Young Leaders Council</CardTitle>
+                    <CardTitle className="text-2xl font-medium">The Kapes Uniforms Young Leaders Council</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -227,7 +227,7 @@ const StudentLeadership = () => {
                 Meet the Young Leaders
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Current members of the Kapes Young Leaders Council making real change in their schools and communities.
+                Current members of the Kapes Uniforms Young Leaders Council making real change in their schools and communities.
               </p>
             </div>
             
@@ -292,7 +292,7 @@ const StudentLeadership = () => {
             <Card className="border-0 shadow-glass max-w-4xl mx-auto text-center">
               <CardContent className="p-8 md:p-12">
                 <blockquote className="text-2xl md:text-3xl font-medium mb-6 leading-relaxed">
-                  "Being on the Kapes Young Leaders Council made me realise I could actually change things — not just talk about them."
+                  "Being on the Kapes Uniforms Young Leaders Council made me realise I could actually change things — not just talk about them."
                 </blockquote>
                 <cite className="text-muted-foreground">— Young Leaders Council Member, 2024</cite>
               </CardContent>

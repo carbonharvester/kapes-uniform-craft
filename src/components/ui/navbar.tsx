@@ -110,7 +110,7 @@ const Navbar = ({
     url: "#",
     items: [{
       title: "Our Process",
-      description: "Step-by-step guide to working with Kapes",
+      description: "Step-by-step guide to working with Kapes Uniforms",
       icon: <Zap className="size-5 shrink-0" />,
       url: "/our-process"
     }, {

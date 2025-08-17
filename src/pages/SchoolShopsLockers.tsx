@@ -194,7 +194,7 @@ export const SchoolShopsLockers = () => {
                           Zero Admin Burden
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          Fully managed logistics by Kapes; zero extra work for your school—we handle everything.
+                          Fully managed logistics by Kapes Uniforms; zero extra work for your school—we handle everything.
                         </p>
                       </div>
                     </div>
@@ -202,7 +202,7 @@ export const SchoolShopsLockers = () => {
                   
                   <div className="pt-4 border-t border-border/50">
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      A modern, flexible solution designed for today's busy families—one more way Kapes makes uniforms effortless for everyone involved.
+                      A modern, flexible solution designed for today's busy families—one more way Kapes Uniforms makes uniforms effortless for everyone involved.
                     </p>
                   </div>
                 </div>

@@ -34,7 +34,7 @@ export const BonusesAndCTA = () => {
             Exclusive Partnership Bonuses
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Additional value when you join the Kapes family
+            Additional value when you join the Kapes Uniforms family
           </p>
         </div>
 

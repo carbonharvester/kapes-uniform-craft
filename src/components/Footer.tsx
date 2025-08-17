@@ -6,12 +6,12 @@ export const Footer = () => {
     logo: {
       url: "/",
       src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1753029943/03_Kapes_Small_Inline_White_4x_lqxjlh.png",
-      alt: "Kapes Logo",
-      title: "Kapes",
+      alt: "Kapes Uniforms Logo",
+      title: "Kapes Uniforms",
     },
     sections: [
       {
-        title: "Why Kapes",
+        title: "Why Kapes Uniforms",
         links: [
           { name: "Our Mission", href: "/our-mission" },
           { name: "Sustainability & Ethics", href: "/sustainability-ethics" },
@@ -56,7 +56,7 @@ export const Footer = () => {
       { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
       { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
     ],
-    copyright: "© 2024 Kapes. All rights reserved.",
+    copyright: "© 2024 Kapes Uniforms. All rights reserved.",
     legalLinks: [
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms of Service", href: "/terms-of-service" },
