@@ -48,7 +48,7 @@ export default function USASchools() {
 
   const solutionBenefits = [{
     group: "Parents",
-    benefits: ["40% cost savings vs premium suppliers", "Made in America quality guarantee", "Payment plans for larger families", "All-climate fabric options"]
+    benefits: ["40% cost savings vs premium suppliers", "Premium quality guarantee", "Payment plans for larger families", "All-climate fabric options"]
   }, {
     group: "Schools",
     benefits: ["Zero inventory management required", "Title I school discount programs", "STEM education partnerships", "Dedicated American account manager"]
@@ -113,7 +113,7 @@ export default function USASchools() {
   }, {
     step: "08",
     title: "Manufacturing",
-    description: "Domestic production with American suppliers, quality control, and fair labor practices.",
+    description: "Quality control, ethical production, and fair labor practices.",
     timeline: "Week 21-25"
   }, {
     step: "09",
@@ -176,7 +176,7 @@ export default function USASchools() {
             
             {/* Subtitle with mobile-optimized spacing and readability */}
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto font-light leading-relaxed drop-shadow-lg px-4">
-              Kapes Uniforms transforms the school uniform experience across the United States. Made in America, STEM education integration, and social impact that supports American families while advancing educational excellence.
+              Kapes Uniforms transforms the school uniform experience across the United States. Quality manufacturing, STEM education integration, and social impact that supports American families while advancing educational excellence.
             </p>
             
             {/* CTA button - mobile optimized with better touch targets */}
@@ -453,8 +453,8 @@ export default function USASchools() {
               <Card className="border-primary/20 bg-primary/5">
                 <CardContent className="p-8 text-center">
                   <Flag className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold mb-3">Made in America</h3>
-                  <p className="text-sm text-muted-foreground">Supporting American jobs with domestic manufacturing and fair labor practices throughout the supply chain.</p>
+                  <h3 className="text-lg font-semibold mb-3">Quality Manufacturing</h3>
+                   <p className="text-sm text-muted-foreground">Supporting ethical production with sustainable practices and fair labor throughout the supply chain.</p>
                 </CardContent>
               </Card>
               
