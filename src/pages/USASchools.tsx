@@ -303,77 +303,77 @@ export default function USASchools() {
                         <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
                       </TableRow>
                     </TableHeader>
-                    <TableBody>
+                     <TableBody>
                        <TableRow>
-                        <TableCell className="text-sm">Manufacturing</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Ethical & sustainable production
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Minimal transparency
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Educational Programs</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          STEM partnerships & resources  
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No educational offerings
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Circularity</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Zero-waste manufacturing
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Linear production model
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Supply Chain</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Full transparency & fair labor
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Hidden supply chains
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Materials</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          GOTS certified organic cotton
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Synthetic fabrics & chemicals
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Carbon Offsetting</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          100% carbon neutral operations
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No carbon offset programs
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Factory & Farm Visits</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Open door policy & guided tours
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Closed facilities & no access
-                        </TableCell>
-                      </TableRow>
+                         <TableCell className="text-sm">Materials</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           GOTS certified organic cotton
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ Synthetic fabrics & chemicals
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Manufacturing</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           Ethical & sustainable production
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ Minimal transparency
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Circularity</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           Zero-waste manufacturing
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ Linear production model
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Supply Chain</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           Full transparency & fair labor
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ Hidden supply chains
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Carbon Offsetting</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           100% carbon neutral operations
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ No carbon offset programs
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Factory & Farm Visits</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           Open door policy & guided tours
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ Closed facilities & no access
+                         </TableCell>
+                       </TableRow>
+                       <TableRow>
+                         <TableCell className="text-sm">Educational Programs</TableCell>
+                         <TableCell className="text-center text-sm">
+                           <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
+                           STEM partnerships & resources  
+                         </TableCell>
+                         <TableCell className="text-center text-sm text-muted-foreground">
+                           ❌ No educational offerings
+                         </TableCell>
+                       </TableRow>
                       <TableRow>
                         <TableCell className="text-sm">Social Impact</TableCell>
                         <TableCell className="text-center text-sm">
