@@ -335,7 +335,7 @@ const SustainabilityEthics = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                 <img 
-                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752871031/2_19_s_eyievk.jpg" 
+                  src="https://res.cloudinary.com/dng12bd0a/image/upload/v1752999066/3feef6f0-13c3-405e-9198-29cc1c349f8c_oyzxal.jpg" 
                   alt="Sustainable logistics and packaging" 
                   className="w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                 />
