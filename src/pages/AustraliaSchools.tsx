@@ -58,14 +58,11 @@ export default function AustraliaSchools() {
 
   const partnershipIncludes = [
     "100% Sustainable Materials (Organic Cotton + Recycled Ocean Plastic)",
-    "SPF 50+ UV Protection Fabrics",
-    "Climate-Optimized Breathable Designs",
     "Sustainable & ethical manufacturing",
     "Carbon-Neutral Delivery Network",
     "Fully Managed Takeback & Recycling Program",
     "1:1 Donations to Indigenous Communities + Meals",
     "Real-Time Impact Tracking Dashboard",
-    "Indigenous Design Collaboration Programs",
     "Ocean Conservation Educational Visits",
     "ACARA Sustainability Curriculum Support",
     "Dedicated Australian Regional Manager"
@@ -316,21 +313,6 @@ export default function AustraliaSchools() {
                         </td>
                       </tr>
                       <tr className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Sun Protection</td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <CheckCircle className="h-5 w-5 text-green-600" />
-                            <span className="text-green-600 font-medium">SPF 50+ built-in protection</span>
-                          </div>
-                        </td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <XCircle className="h-5 w-5 text-red-600" />
-                            <span className="text-red-600 font-medium">Limited UV protection</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
                         <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Manufacturing</td>
                         <td className="border border-gray-300 px-1 py-2 text-center align-top">
                           <div className="flex flex-col items-center gap-1">
@@ -387,36 +369,6 @@ export default function AustraliaSchools() {
                           <div className="flex flex-col items-center gap-1">
                             <XCircle className="h-5 w-5 text-red-600" />
                             <span className="text-red-600 font-medium">No social impact programs</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Cultural Collaboration</td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <CheckCircle className="h-5 w-5 text-green-600" />
-                            <span className="text-green-600 font-medium">Indigenous art partnerships</span>
-                          </div>
-                        </td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <XCircle className="h-5 w-5 text-red-600" />
-                            <span className="text-red-600 font-medium">No cultural initiatives</span>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-gray-50">
-                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Climate Optimization</td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <CheckCircle className="h-5 w-5 text-green-600" />
-                            <span className="text-green-600 font-medium">Designed for Australian climate</span>
-                          </div>
-                        </td>
-                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
-                          <div className="flex flex-col items-center gap-1">
-                            <XCircle className="h-5 w-5 text-red-600" />
-                            <span className="text-red-600 font-medium">Generic global designs</span>
                           </div>
                         </td>
                       </tr>
