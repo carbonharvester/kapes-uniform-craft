@@ -5,33 +5,36 @@ import { Link } from "react-router-dom";
 import { Leaf, Recycle, Shield, Users, BarChart3, QrCode, Package, Truck, CheckCircle, Heart, Globe, Ban } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import organicCottonImg from "@/assets/organic-cotton.jpg";
+import zeroWasteImg from "@/assets/zero-waste.jpg";
+import sustainableMaterialsImg from "@/assets/sustainable-materials.jpg";
 
 const SustainabilityEthics = () => {
   const sustainableMaterials = [{
     title: "Organic Cotton",
     description: "Improves soil health, biodiversity, and farmer livelihoods",
     icon: Leaf,
-    image: "/assets/organic-cotton.jpg"
+    image: organicCottonImg
   }, {
     title: "Recycled Polyester", 
     description: "Reduces reliance on virgin resources and cuts plastic waste",
     icon: Recycle,
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1754550530/ChatGPT_Image_Jul_22_2025_11_25_26_AM_jsibnm.png"
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1754550530/ChatGPT_Image_Jul_22_2025_26_AM_jsibnm.png"
   }, {
     title: "Lyocell",
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
     icon: Globe,
-    image: "/assets/zero-waste.jpg"
+    image: zeroWasteImg
   }, {
     title: "Coconut Shell Fiber",
     description: "Natural fiber from coconut waste with antimicrobial properties and exceptional durability",
     icon: Recycle,
-    image: "/assets/sustainable-materials.jpg"
+    image: sustainableMaterialsImg
   }, {
     title: "Kapok",
     description: "Ultra-lightweight natural fiber from rainforest trees, naturally buoyant and hypoallergenic",
     icon: Leaf,
-    image: "/assets/organic-cotton.jpg"
+    image: organicCottonImg
   }];
   const noToxicChemicals = {
     title: "No Toxic Chemical Treatments",
@@ -137,7 +140,7 @@ const SustainabilityEthics = () => {
                     <CarouselItem key={index} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
                       <Card className="hover:shadow-lg transition-shadow overflow-hidden">
                         <div className="aspect-[4/3] relative overflow-hidden">
-                          <img src={material.image.replace('/src/assets/', '/assets/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                          <img src={typeof material.image === 'string' && material.image.startsWith('http') ? material.image : material.image} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                         <CardHeader>
