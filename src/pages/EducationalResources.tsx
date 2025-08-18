@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe, Maximize, X } from "lucide-react";
+import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Target, Globe, Maximize, X, FileText } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import RestrictedSubstanceListCreator from "@/components/RestrictedSubstanceListCreator";
 const EducationalResources = () => {
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   
@@ -225,6 +226,55 @@ const EducationalResources = () => {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+
+      {/* Restricted Substance List Creator Section */}
+      <section className="relative py-16 px-4 bg-gradient-to-br from-background to-muted/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-light tracking-tight leading-tight mb-6">
+              Interactive Tools for Real-World Learning
+            </h2>
+            <p className="text-xl text-muted-foreground font-light leading-relaxed max-w-3xl mx-auto">
+              Help students understand the importance of ethical procurement with our Restricted Substance List Creator. 
+              Perfect for older students to explore chemical safety and supply chain responsibility.
+            </p>
+          </div>
+          
+          <div className="mb-8">
+            <Card className="border-0 shadow-glass hover-lift transition-smooth max-w-4xl mx-auto">
+              <CardHeader className="text-center p-8">
+                <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <FileText className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl font-semibold mb-4">Restricted Substance List Creator</CardTitle>
+                <CardDescription className="text-lg leading-relaxed">
+                  An interactive tool that guides students through creating a professional RSL document, 
+                  teaching them about chemical safety, environmental impact, and ethical manufacturing standards.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="p-8 pt-0">
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-2">Learn About Chemicals</h4>
+                    <p className="text-muted-foreground text-sm">Understand the impact of harmful substances in textiles</p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-2">Make Decisions</h4>
+                    <p className="text-muted-foreground text-sm">Choose which chemicals to ban based on evidence</p>
+                  </div>
+                  <div className="text-center">
+                    <h4 className="font-semibold text-lg mb-2">Create Policy</h4>
+                    <p className="text-muted-foreground text-sm">Generate a professional RSL document</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <RestrictedSubstanceListCreator />
         </div>
       </section>
 
