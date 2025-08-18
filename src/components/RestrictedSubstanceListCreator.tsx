@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Progress } from '@/components/ui/progress';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -11,6 +11,7 @@ const RestrictedSubstanceListCreator = () => {
   const [showResults, setShowResults] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [entryError, setEntryError] = useState(false);
+  const [sent, setSent] = useState(false);
   const [rslText, setRslText] = useState('');
 
   const [userData, setUserData] = useState({
@@ -39,12 +40,49 @@ const RestrictedSubstanceListCreator = () => {
   ];
 
   const chemicals = [
-    { id: 'phthalates', name: 'Phthalates', explanation: 'Phthalates are chemicals used to make plastics soft, like in printed designs on clothes. They can disrupt hormones and may cause health problems like allergies or developmental issues in children. Greenpeace found high levels in some clothing.' },
-    { id: 'azoDyes', name: 'Azo Dyes', explanation: 'Azo dyes are used to color fabrics but some can break down into cancer-causing substances called amines. They are banned in many countries because they can be absorbed through the skin. Greenpeace detected these in tested garments.' },
-    { id: 'npes', name: 'Nonylphenol Ethoxylates (NPEs)', explanation: 'NPEs are used in washing and dyeing clothes but break down into nonylphenol, which is toxic to fish and can build up in the environment and food chain. Greenpeace found NPEs in 89% of tested items from major brands.' },
-    { id: 'pfcs', name: 'Perfluorinated Chemicals (PFCs)', explanation: 'PFCs are used for water and stain resistance but are persistent pollutants that don\'t break down in the environment and can harm wildlife and human health. Some are linked to cancer and immune system issues.' },
-    { id: 'heavyMetals', name: 'Heavy Metals (e.g., Antimony in Polyester)', explanation: 'Heavy metals like antimony are used in making polyester fabrics and can be toxic, causing skin irritation or more serious health issues with long exposure. They also pollute water when clothes are washed.' }
+    { id: 'npes', name: 'NPEs (Nonylphenol Ethoxylates)', explanation: 'NPEs are chemicals used in washing and dyeing clothes. They break down into substances that can harm fish and build up in the environment. They are found in many clothes and can pollute water when washed.' },
+    { id: 'phthalates', name: 'Phthalates', explanation: 'Phthalates make plastics soft, like in printed designs on clothes. They can disrupt hormones in the body, causing health problems like allergies or issues with development in children. They are often found in clothing and can be absorbed through the skin.' },
+    { id: 'azoDyes', name: 'Azo Dyes', explanation: 'Azo dyes are used to color fabrics. Some can break down into chemicals that cause cancer. They are banned in many places because they can be harmful if absorbed through skin or released into water.' },
+    { id: 'formaldehyde', name: 'Formaldehyde', explanation: 'Formaldehyde is used to make clothes wrinkle-free or stiff. It can cause skin irritation, allergies, or even cancer with long exposure. It is often found in treated fabrics and can off-gas over time.' },
+    { id: 'flameRetardants', name: 'Flame Retardants', explanation: 'Flame retardants are chemicals added to make clothes less flammable. Many contain toxic substances that can harm the brain or reproductive system and pollute the environment. They are common in children\'s clothes.' },
+    { id: 'uvAbsorbers', name: 'UV Light Absorbers', explanation: 'UV absorbers protect fabrics from sun fading. Some can disrupt hormones or cause skin allergies. They are added to outdoor or colorful clothes but can leach out when washed.' },
+    { id: 'phenylenediamine', name: 'Phenylenediamine', explanation: 'Phenylenediamine is used in hair dyes and sometimes in textile dyes. It can cause severe skin allergies or irritation. It\'s found in dark-colored fabrics and can be harmful with direct contact.' },
+    { id: 'cremazoleDyes', name: 'Cremazole Dyes', explanation: 'Cremazole dyes (a type of reactive dye) are used for coloring fabrics. They can release harmful substances like azo compounds during breakdown, potentially causing allergies or environmental pollution.' },
+    { id: 'endocrineDisruptors', name: 'Endocrine Disrupting Chemicals', explanation: 'Endocrine disruptors are chemicals that mess with hormones in the body, affecting growth, mood, or reproduction. Many like phthalates or NPEs are in clothes and can enter the body through skin.' },
+    { id: 'benzidine', name: 'Benzidine', explanation: 'Benzidine is used in some dyes and can cause bladder cancer. It is banned in many countries but still found in some imported fabrics. It can be released from azo dyes in clothes.' }
   ];
+
+  useEffect(() => {
+    if (showResults && !sent) {
+      generateRSL();
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbzg6AGNI0Fd_QZg2Y0e_GZ4IBB6ub-MvkwO3GH62VRCx3aPgtEwx76tTw-3PoU_vgC8uQ/exec';
+      const payload: Record<string, any> = {
+        'First Name': userData.firstName,
+        'Last Name': userData.lastName,
+        'Email': userData.email,
+        'School': userData.school,
+        'Country': userData.country,
+        'Timestamp': new Date().toISOString(),
+      };
+
+      Object.entries(userAnswers).forEach(([chemicalId, answer]) => {
+        const chemical = chemicals.find(c => c.id === chemicalId)?.name || chemicalId;
+        payload[chemical] = answer;
+      });
+
+      fetch(sheetURL, {
+        method: 'POST',
+        body: 'data=' + encodeURIComponent(JSON.stringify(payload)),
+        mode: 'no-cors',
+      }).then(() => {
+        console.log('✅ Data sent to Google Sheet');
+      }).catch(error => {
+        console.error('❌ Error sending data to Google Sheet:', error);
+      });
+
+      setSent(true);
+    }
+  }, [showResults, sent, userData, userAnswers]);
 
   const handleStart = () => {
     if (!userData.firstName || !userData.lastName || !userData.school || !userData.country || !userData.email) {
@@ -67,7 +105,6 @@ const RestrictedSubstanceListCreator = () => {
     if (currentSlide < chemicals.length - 1) {
       setCurrentSlide(prev => prev + 1);
     } else {
-      generateRSL();
       setShowQuiz(false);
       setShowResults(true);
     }
@@ -143,7 +180,7 @@ const RestrictedSubstanceListCreator = () => {
         {showEntryForm && (
           <Card className="bg-gradient-to-br from-background to-muted border-0 shadow-xl">
             <CardHeader className="text-center pb-4 md:pb-6">
-              <CardTitle className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">
+              <CardTitle className="text-2xl md:text-4xl font-bold text-heading mb-3 md:mb-4">
                 Restricted Substance List Creator
               </CardTitle>
             </CardHeader>
@@ -221,7 +258,7 @@ const RestrictedSubstanceListCreator = () => {
             </CardHeader>
             <CardContent>
               <div className="mb-6 md:mb-8">
-                <CardTitle className="text-lg md:text-xl font-bold mb-4 md:mb-6 leading-relaxed">
+                <CardTitle className="text-lg md:text-xl font-bold text-heading mb-4 md:mb-6 leading-relaxed">
                   Should this chemical be banned?
                 </CardTitle>
                 {renderChemicalQuestion(chemicals[currentSlide])}
