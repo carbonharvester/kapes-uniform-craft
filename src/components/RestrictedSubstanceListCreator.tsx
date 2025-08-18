@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Progress } from '@/components/ui/progress';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -40,49 +40,18 @@ const RestrictedSubstanceListCreator = () => {
   ];
 
   const chemicals = [
-    { id: 'npes', name: 'NPEs (Nonylphenol Ethoxylates)', explanation: 'NPEs are chemicals used in washing and dyeing clothes. They break down into substances that can harm fish and build up in the environment. They are found in many clothes and can pollute water when washed.' },
-    { id: 'phthalates', name: 'Phthalates', explanation: 'Phthalates make plastics soft, like in printed designs on clothes. They can disrupt hormones in the body, causing health problems like allergies or issues with development in children. They are often found in clothing and can be absorbed through the skin.' },
-    { id: 'azoDyes', name: 'Azo Dyes', explanation: 'Azo dyes are used to color fabrics. Some can break down into chemicals that cause cancer. They are banned in many places because they can be harmful if absorbed through skin or released into water.' },
-    { id: 'formaldehyde', name: 'Formaldehyde', explanation: 'Formaldehyde is used to make clothes wrinkle-free or stiff. It can cause skin irritation, allergies, or even cancer with long exposure. It is often found in treated fabrics and can off-gas over time.' },
-    { id: 'flameRetardants', name: 'Flame Retardants', explanation: 'Flame retardants are chemicals added to make clothes less flammable. Many contain toxic substances that can harm the brain or reproductive system and pollute the environment. They are common in children\'s clothes.' },
-    { id: 'uvAbsorbers', name: 'UV Light Absorbers', explanation: 'UV absorbers protect fabrics from sun fading. Some can disrupt hormones or cause skin allergies. They are added to outdoor or colorful clothes but can leach out when washed.' },
-    { id: 'phenylenediamine', name: 'Phenylenediamine', explanation: 'Phenylenediamine is used in hair dyes and sometimes in textile dyes. It can cause severe skin allergies or irritation. It\'s found in dark-colored fabrics and can be harmful with direct contact.' },
-    { id: 'cremazoleDyes', name: 'Cremazole Dyes', explanation: 'Cremazole dyes (a type of reactive dye) are used for coloring fabrics. They can release harmful substances like azo compounds during breakdown, potentially causing allergies or environmental pollution.' },
-    { id: 'endocrineDisruptors', name: 'Endocrine Disrupting Chemicals', explanation: 'Endocrine disruptors are chemicals that mess with hormones in the body, affecting growth, mood, or reproduction. Many like phthalates or NPEs are in clothes and can enter the body through skin.' },
-    { id: 'benzidine', name: 'Benzidine', explanation: 'Benzidine is used in some dyes and can cause bladder cancer. It is banned in many countries but still found in some imported fabrics. It can be released from azo dyes in clothes.' }
+    { id: 'npes', name: 'NPEs (Nonylphenol Ethoxylates)', explanation: 'NPEs are used in washing and dyeing clothes. They can turn into harmful substances that hurt fish and wildlife when washed into water. For kids, they might cause skin irritation or allergies.' },
+    { id: 'phthalates', name: 'Phthalates', explanation: 'Phthalates make plastics soft, like in printed logos on uniforms. They can mess with hormones in children\'s bodies, potentially affecting growth or causing allergies. Kids are more sensitive because they\'re growing.' },
+    { id: 'azoDyes', name: 'Azo Dyes', explanation: 'Azo dyes give clothes color but some can release cancer-causing chemicals. These can be absorbed through kids\' skin during wear or play, raising health risks over time.' },
+    { id: 'formaldehyde', name: 'Formaldehyde', explanation: 'Formaldehyde makes clothes wrinkle-free. It can cause skin rashes, eye irritation, or breathing problems in children, especially if they have sensitive skin or allergies.' },
+    { id: 'flameRetardants', name: 'Flame Retardants', explanation: 'Flame retardants make fabrics less flammable but some are toxic, affecting children\'s brain development or hormones. They can build up in dust or be absorbed through skin.' },
+    { id: 'uvAbsorbers', name: 'UV Light Absorbers', explanation: 'UV absorbers protect fabrics from sun fading. Some can cause skin allergies or hormone issues in kids, and they don\'t break down easily in the environment.' },
+    { id: 'phenylenediamine', name: 'Phenylenediamine', explanation: 'Phenylenediamine is in some dyes for dark colors. It can cause severe skin allergies or irritation, especially for children with sensitive skin during daily wear.' },
+    { id: 'cremazoleDyes', name: 'Cremazole Dyes', explanation: 'Cremazole dyes are used for coloring. They can release harmful substances like azo compounds, causing allergies or environmental pollution when uniforms are washed.' },
+    { id: 'endocrineDisruptors', name: 'Endocrine Disrupting Chemicals', explanation: 'Endocrine disruptors mess with hormones, affecting growth and development in children. Common in fabrics, they can lead to long-term health issues like learning problems.' },
+    { id: 'benzidine', name: 'Benzidine', explanation: 'Benzidine is in some dyes and linked to bladder cancer. It can be released from fabrics, posing risks to children through skin contact or inhalation of dust.' },
+    { id: 'heavyMetals', name: 'Heavy Metals (e.g., Antimony in Polyester)', explanation: 'Heavy metals like antimony are in synthetic fabrics. They can cause skin irritation or more serious health issues with long exposure, and they\'re toxic if they get into water.' }
   ];
-
-  useEffect(() => {
-    if (showResults && !sent) {
-      generateRSL();
-      const sheetURL = 'https://script.google.com/macros/s/AKfycbzg6AGNI0Fd_QZg2Y0e_GZ4IBB6ub-MvkwO3GH62VRCx3aPgtEwx76tTw-3PoU_vgC8uQ/exec';
-      const payload: Record<string, any> = {
-        'First Name': userData.firstName,
-        'Last Name': userData.lastName,
-        'Email': userData.email,
-        'School': userData.school,
-        'Country': userData.country,
-        'Timestamp': new Date().toISOString(),
-      };
-
-      Object.entries(userAnswers).forEach(([chemicalId, answer]) => {
-        const chemical = chemicals.find(c => c.id === chemicalId)?.name || chemicalId;
-        payload[chemical] = answer;
-      });
-
-      fetch(sheetURL, {
-        method: 'POST',
-        body: 'data=' + encodeURIComponent(JSON.stringify(payload)),
-        mode: 'no-cors',
-      }).then(() => {
-        console.log('✅ Data sent to Google Sheet');
-      }).catch(error => {
-        console.error('❌ Error sending data to Google Sheet:', error);
-      });
-
-      setSent(true);
-    }
-  }, [showResults, sent, userData, userAnswers]);
 
   const handleStart = () => {
     if (!userData.firstName || !userData.lastName || !userData.school || !userData.country || !userData.email) {
@@ -105,6 +74,7 @@ const RestrictedSubstanceListCreator = () => {
     if (currentSlide < chemicals.length - 1) {
       setCurrentSlide(prev => prev + 1);
     } else {
+      generateRSL();
       setShowQuiz(false);
       setShowResults(true);
     }
@@ -118,17 +88,17 @@ const RestrictedSubstanceListCreator = () => {
 
   const generateRSL = () => {
     const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    let rsl = `## **Restricted Substance List for School Uniforms**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Prepared By: ${userData.firstName} ${userData.lastName}**\n\nThis Restricted Substance List (RSL) outlines the chemicals banned in your school's uniforms to ensure safety for students and the environment. It's based on your choices and references like Greenpeace's Toxic Threads report. Banned substances are those you selected to include.\n\n---\n\n`;
+    let rsl = `## **Restricted Substance List for School Uniforms**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Prepared By: ${userData.firstName} ${userData.lastName}**\n\nThis Restricted Substance List (RSL) outlines the chemicals banned in your school's uniforms to ensure safety for students and the environment. It's based on your choices and references like Greenpeace's Toxic Threads report. Banned substances are those you selected to include. Since this is for children's uniforms, we've focused on chemicals that could affect kids' health, like causing allergies or disrupting growth.\n\n---\n\n`;
 
     const selectedChemicals = chemicals.filter(c => userAnswers[c.id] === 'Yes');
 
     if (selectedChemicals.length > 0) {
       rsl += `### **Banned Substances**\n\nThe following chemicals are restricted in all school uniforms and related materials:\n\n`;
       selectedChemicals.forEach(chem => {
-        rsl += `#### **${chem.name}**\n\n${chem.explanation}\nThis chemical is banned to protect health and the environment. Suppliers must certify that uniforms are free from it, with testing required.\n\n`;
+        rsl += `#### **${chem.name}**\n\n${chem.explanation}\nThis chemical is banned to protect children's health and the environment. Suppliers must certify that uniforms are free from it, with testing required.\n\n`;
       });
     } else {
-      rsl += `### **No Substances Restricted**\n\nBased on your choices, no specific chemicals are banned. We recommend reviewing Greenpeace's Toxic Threads report for common risks and considering additions for safety.\n\n`;
+      rsl += `### **No Substances Restricted**\n\nBased on your choices, no specific chemicals are banned. We recommend reviewing Greenpeace's Toxic Threads report for common risks and considering additions for safety, especially since uniforms are worn by children daily.\n\n`;
     }
 
     rsl += `### **Enforcement**\n\nAll suppliers must provide certificates of compliance. Independent testing will be conducted on samples. Non-compliance will lead to supplier disqualification.\n\n**Signed:** ______________________________ (School Representative)\n**Date:** ______________________________\n\n`;
