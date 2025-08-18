@@ -50,7 +50,8 @@ const RestrictedSubstanceListCreator = () => {
     { id: 'cremazoleDyes', name: 'Cremazole Dyes', explanation: 'Cremazole dyes are used for coloring. They can release harmful substances like azo compounds, causing allergies or environmental pollution when uniforms are washed.' },
     { id: 'endocrineDisruptors', name: 'Endocrine Disrupting Chemicals', explanation: 'Endocrine disruptors mess with hormones, affecting growth and development in children. Common in fabrics, they can lead to long-term health issues like learning problems.' },
     { id: 'benzidine', name: 'Benzidine', explanation: 'Benzidine is in some dyes and linked to bladder cancer. It can be released from fabrics, posing risks to children through skin contact or inhalation of dust.' },
-    { id: 'heavyMetals', name: 'Heavy Metals (e.g., Antimony in Polyester)', explanation: 'Heavy metals like antimony are in synthetic fabrics. They can cause skin irritation or more serious health issues with long exposure, and they\'re toxic if they get into water.' }
+    { id: 'heavyMetals', name: 'Heavy Metals (e.g., Antimony in Polyester)', explanation: 'Heavy metals like antimony are in synthetic fabrics. They can cause skin irritation or more serious health issues with long exposure, and they\'re toxic if they get into water.' },
+    { id: 'pfas', name: 'PFAS (Per- and Polyfluoroalkyl Substances, "forever chemicals")', explanation: 'PFAS are used for water and stain resistance in fabrics. Called "forever chemicals" because they don\'t break down, they can cause immune system problems, cancer risks, or developmental issues in children. They build up in the body and environment over time.' }
   ];
 
   const handleStart = () => {
