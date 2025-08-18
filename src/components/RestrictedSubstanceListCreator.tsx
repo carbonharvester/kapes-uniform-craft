@@ -13,6 +13,9 @@ const RestrictedSubstanceListCreator = () => {
   const [entryError, setEntryError] = useState(false);
   const [sent, setSent] = useState(false);
   const [rslText, setRslText] = useState('');
+  const [signatureName, setSignatureName] = useState('');
+  const [signatureTitle, setSignatureTitle] = useState('');
+  const [signatureDate, setSignatureDate] = useState(new Date().toLocaleDateString());
 
   const [userData, setUserData] = useState({
     firstName: '',
@@ -109,7 +112,46 @@ const RestrictedSubstanceListCreator = () => {
 
   const downloadRSL = () => {
     const doc = new jsPDF();
-    doc.text(rslText, 10, 10, { maxWidth: 190 });
+    
+    // Build the PDF content including signature information
+    const selectedChemicals = chemicals.filter(c => userAnswers[c.id] === 'Yes');
+    const currentDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    
+    let pdfContent = `RESTRICTED SUBSTANCE LIST FOR SCHOOL UNIFORMS\n\n`;
+    pdfContent += `School: ${userData.school}\n`;
+    pdfContent += `Date Prepared: ${currentDate}\n`;
+    pdfContent += `Prepared By: ${userData.firstName} ${userData.lastName}\n`;
+    pdfContent += `Country: ${userData.country}\n\n`;
+    
+    pdfContent += `DOCUMENT PURPOSE\n`;
+    pdfContent += `This Restricted Substance List (RSL) outlines the chemicals banned in our school uniforms to ensure safety for students and the environment. This document addresses children's uniforms, and is focused on chemicals that could affect kids' health, including those causing allergies or disrupting growth and development.\n\n`;
+    
+    if (selectedChemicals.length > 0) {
+      pdfContent += `BANNED SUBSTANCES\n`;
+      pdfContent += `The following chemicals are restricted in all school uniforms and related materials:\n\n`;
+      selectedChemicals.forEach((chem, index) => {
+        pdfContent += `${index + 1}. ${chem.name}\n`;
+        pdfContent += `${chem.explanation}\n`;
+        pdfContent += `Status: This chemical is banned to protect children's health and the environment.\n\n`;
+      });
+    } else {
+      pdfContent += `SUBSTANCE RESTRICTIONS\n`;
+      pdfContent += `Based on your selections, no specific chemicals are currently banned under this RSL.\n\n`;
+    }
+    
+    pdfContent += `ENFORCEMENT AND COMPLIANCE\n`;
+    pdfContent += `• All suppliers must provide certificates of compliance\n`;
+    pdfContent += `• Independent testing will be conducted on uniform samples\n`;
+    pdfContent += `• Non-compliance will result in immediate supplier disqualification\n\n`;
+    
+    pdfContent += `AUTHORIZATION\n`;
+    pdfContent += `School Representative: ___________________________\n`;
+    pdfContent += `Print Name: ${signatureName || '___________________________'}\n`;
+    pdfContent += `Title/Position: ${signatureTitle || '___________________________'}\n`;
+    pdfContent += `Date of Authorization: ${signatureDate}\n\n`;
+    pdfContent += `This document becomes effective upon signature and supersedes any previous restricted substance policies.`;
+    
+    doc.text(pdfContent, 10, 10, { maxWidth: 190 });
     doc.save(`${userData.school}_Restricted_Substance_List.pdf`);
   };
 
@@ -353,18 +395,35 @@ const RestrictedSubstanceListCreator = () => {
                   <div className="border-b-2 border-gray-400 h-12 mb-2"></div>
                   <p className="text-sm text-gray-600">Signature</p>
                   <div className="mt-4">
-                    <div className="border-b border-gray-300 h-8 mb-1"></div>
+                    <input
+                      type="text"
+                      placeholder="Enter name"
+                      value={signatureName}
+                      onChange={(e) => setSignatureName(e.target.value)}
+                      className="w-full border-0 border-b border-gray-300 pb-1 text-black bg-transparent focus:border-gray-500 focus:ring-0 print:border-gray-300"
+                    />
                     <p className="text-sm text-gray-600">Print Name</p>
                   </div>
                   <div className="mt-4">
-                    <div className="border-b border-gray-300 h-8 mb-1"></div>
+                    <input
+                      type="text"
+                      placeholder="Enter title/position"
+                      value={signatureTitle}
+                      onChange={(e) => setSignatureTitle(e.target.value)}
+                      className="w-full border-0 border-b border-gray-300 pb-1 text-black bg-transparent focus:border-gray-500 focus:ring-0 print:border-gray-300"
+                    />
                     <p className="text-sm text-gray-600">Title/Position</p>
                   </div>
                 </div>
                 <div>
                   <p className="font-semibold mb-2">Date:</p>
-                  <div className="border-b-2 border-gray-400 h-12 mb-2 w-48"></div>
-                  <p className="text-sm text-gray-600">Date of Authorization</p>
+                  <input
+                    type="text"
+                    value={signatureDate}
+                    onChange={(e) => setSignatureDate(e.target.value)}
+                    className="w-48 border-0 border-b-2 border-gray-400 pb-2 text-black bg-transparent focus:border-gray-600 focus:ring-0 print:border-gray-400 h-12 text-lg"
+                  />
+                  <p className="text-sm text-gray-600 mt-2">Date of Authorization</p>
                   
                   <div className="mt-8 p-4 bg-gray-100 print:bg-transparent print:border print:border-gray-300 rounded">
                     <p className="text-xs text-gray-600 leading-tight">
