@@ -106,12 +106,11 @@ const OurMission = () => {
             </div>
             <div className="max-w-4xl mx-auto">
               <div className="aspect-video rounded-2xl overflow-hidden shadow-glass">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                <video
+                  src="https://res.cloudinary.com/dng12bd0a/video/upload/v1755486426/kapes_-_our_origins_720p_mvapoz.mp4"
                   title="Who Are We - Kapes Story"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                  className="w-full h-full object-cover"
+                  controls
                 />
               </div>
               <div className="text-center mt-8">
