@@ -256,87 +256,145 @@ const RestrictedSubstanceListCreator = () => {
         )}
 
         {showResults && (
-          <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-center">Your Restricted Substance List</CardTitle>
-            </CardHeader>
-            <CardContent className="text-left space-y-6">
-              <div className="bg-muted/30 p-6 rounded-lg border">
-                <h2 className="text-2xl font-bold text-heading mb-4">Restricted Substance List for School Uniforms</h2>
-                <div className="space-y-2 text-sm">
-                  <p><strong>School:</strong> {userData.school}</p>
-                  <p><strong>Date:</strong> {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                  <p><strong>Prepared By:</strong> {userData.firstName} {userData.lastName}</p>
+          <div className="bg-white text-black p-8 print:p-12 max-w-none print:shadow-none shadow-lg rounded-lg print:rounded-none">
+            {/* Document Header */}
+            <div className="text-center mb-8 pb-6 border-b-2 border-gray-300">
+              <h1 className="text-3xl font-bold mb-2 uppercase tracking-wide">Restricted Substance List</h1>
+              <h2 className="text-xl font-semibold text-gray-700">for School Uniforms</h2>
+            </div>
+
+            {/* Document Details */}
+            <div className="mb-8 bg-gray-50 p-6 print:bg-transparent print:border print:border-gray-300">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <p className="font-semibold">School Institution:</p>
+                  <p className="text-lg border-b border-gray-300 pb-1">{userData.school}</p>
                 </div>
-                <p className="text-muted-foreground mt-4 leading-relaxed">
-                  This Restricted Substance List (RSL) outlines the chemicals banned in your school's uniforms to ensure safety for students and the environment. 
-                  It's based on your choices and references like Greenpeace's Toxic Threads report. Banned substances are those you selected to include. 
-                  Since this is for children's uniforms, we've focused on chemicals that could affect kids' health, like causing allergies or disrupting growth.
-                </p>
-              </div>
-
-              {(() => {
-                const selectedChemicals = chemicals.filter(c => userAnswers[c.id] === 'Yes');
-                
-                if (selectedChemicals.length > 0) {
-                  return (
-                    <div>
-                      <h3 className="text-xl font-bold text-heading mb-4">Banned Substances</h3>
-                      <p className="text-muted-foreground mb-6">The following chemicals are restricted in all school uniforms and related materials:</p>
-                      <div className="space-y-4">
-                        {selectedChemicals.map(chem => (
-                          <div key={chem.id} className="bg-destructive/5 border border-destructive/20 p-4 rounded-lg">
-                            <h4 className="font-bold text-destructive mb-2">{chem.name}</h4>
-                            <p className="text-sm text-muted-foreground mb-2">{chem.explanation}</p>
-                            <p className="text-sm font-medium text-destructive">This chemical is banned to protect children's health and the environment. Suppliers must certify that uniforms are free from it, with testing required.</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  );
-                } else {
-                  return (
-                    <div>
-                      <h3 className="text-xl font-bold text-heading mb-4">No Substances Restricted</h3>
-                      <div className="bg-muted/30 p-4 rounded-lg border">
-                        <p className="text-muted-foreground">
-                          Based on your choices, no specific chemicals are banned. We recommend reviewing Greenpeace's Toxic Threads report for common risks and considering additions for safety, especially since uniforms are worn by children daily.
-                        </p>
-                      </div>
-                    </div>
-                  );
-                }
-              })()}
-
-              <div className="bg-primary/5 border border-primary/20 p-6 rounded-lg">
-                <h3 className="text-xl font-bold text-primary mb-4">Enforcement</h3>
-                <p className="text-muted-foreground mb-4">
-                  All suppliers must provide certificates of compliance. Independent testing will be conducted on samples. Non-compliance will lead to supplier disqualification.
-                </p>
-                <div className="space-y-3 pt-4 border-t">
-                  <div className="flex items-center gap-4">
-                    <span className="font-medium">Signed:</span>
-                    <div className="border-b-2 border-muted-foreground/30 flex-1 pb-1">
-                      <span className="text-muted-foreground text-sm">(School Representative)</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="font-medium">Date:</span>
-                    <div className="border-b-2 border-muted-foreground/30 w-48 pb-1"></div>
-                  </div>
+                <div>
+                  <p className="font-semibold">Date Prepared:</p>
+                  <p className="text-lg border-b border-gray-300 pb-1">{new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                </div>
+                <div>
+                  <p className="font-semibold">Prepared By:</p>
+                  <p className="text-lg border-b border-gray-300 pb-1">{userData.firstName} {userData.lastName}</p>
+                </div>
+                <div>
+                  <p className="font-semibold">Country:</p>
+                  <p className="text-lg border-b border-gray-300 pb-1">{userData.country}</p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button onClick={downloadRSL} className="flex-1 sm:flex-none">
-                  Download PDF
-                </Button>
-                <p className="text-muted-foreground text-sm flex items-center">
-                  A copy has been sent to your email: {userData.email}
-                </p>
+            {/* Document Purpose */}
+            <div className="mb-8">
+              <h3 className="text-lg font-bold mb-3 text-gray-800">Document Purpose</h3>
+              <p className="text-gray-700 leading-relaxed text-justify">
+                This Restricted Substance List (RSL) outlines the chemicals banned in your school's uniforms to ensure safety for students and the environment. 
+                It's based on your selections and references industry standards including Greenpeace's Toxic Threads report. Banned substances are those you selected to include. 
+                Since this document addresses children's uniforms, we've focused on chemicals that could affect kids' health, including those causing allergies or disrupting growth and development.
+              </p>
+            </div>
+
+            {/* Banned Substances Section */}
+            {(() => {
+              const selectedChemicals = chemicals.filter(c => userAnswers[c.id] === 'Yes');
+              
+              if (selectedChemicals.length > 0) {
+                return (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-bold mb-4 text-gray-800 border-b-2 border-red-200 pb-2">Banned Substances</h3>
+                    <p className="text-gray-700 mb-6 italic">The following chemicals are restricted in all school uniforms and related materials:</p>
+                    <div className="space-y-6">
+                      {selectedChemicals.map((chem, index) => (
+                        <div key={chem.id} className="border-l-4 border-red-400 pl-4 py-2">
+                          <h4 className="font-bold text-red-700 text-lg mb-2">{index + 1}. {chem.name}</h4>
+                          <p className="text-gray-700 mb-3 leading-relaxed text-justify">{chem.explanation}</p>
+                          <p className="text-red-600 font-medium text-sm bg-red-50 p-2 rounded print:bg-transparent print:border print:border-red-200">
+                            <strong>Status:</strong> This chemical is banned to protect children's health and the environment. Suppliers must certify that uniforms are free from this substance, with independent testing required for verification.
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="mb-8">
+                    <h3 className="text-lg font-bold mb-4 text-gray-800 border-b-2 border-gray-200 pb-2">Substance Restrictions</h3>
+                    <div className="bg-yellow-50 border border-yellow-200 p-6 rounded print:bg-transparent">
+                      <p className="text-gray-700 leading-relaxed">
+                        Based on your selections, no specific chemicals are currently banned under this RSL. However, we strongly recommend reviewing 
+                        Greenpeace's Toxic Threads report and other industry standards to identify common risks and consider adding restrictions for enhanced safety, 
+                        especially since these uniforms are worn daily by children.
+                      </p>
+                    </div>
+                  </div>
+                );
+              }
+            })()}
+
+            {/* Enforcement Section */}
+            <div className="mb-12 bg-blue-50 print:bg-transparent print:border print:border-blue-200 p-6 rounded">
+              <h3 className="text-lg font-bold text-blue-800 mb-4">Enforcement and Compliance</h3>
+              <div className="space-y-3 text-gray-700">
+                <p>• All suppliers must provide certificates of compliance for restricted substances</p>
+                <p>• Independent testing will be conducted on uniform samples to verify compliance</p>
+                <p>• Non-compliance will result in immediate supplier disqualification</p>
+                <p>• This policy applies to all uniform components including fabrics, dyes, treatments, and accessories</p>
+                <p>• Regular audits will be conducted to ensure ongoing compliance</p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Signature Section */}
+            <div className="border-t-2 border-gray-300 pt-8 mt-12">
+              <h3 className="text-lg font-bold mb-6 text-gray-800">Authorization</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <p className="font-semibold mb-2">School Representative:</p>
+                  <div className="border-b-2 border-gray-400 h-12 mb-2"></div>
+                  <p className="text-sm text-gray-600">Signature</p>
+                  <div className="mt-4">
+                    <div className="border-b border-gray-300 h-8 mb-1"></div>
+                    <p className="text-sm text-gray-600">Print Name</p>
+                  </div>
+                  <div className="mt-4">
+                    <div className="border-b border-gray-300 h-8 mb-1"></div>
+                    <p className="text-sm text-gray-600">Title/Position</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="font-semibold mb-2">Date:</p>
+                  <div className="border-b-2 border-gray-400 h-12 mb-2 w-48"></div>
+                  <p className="text-sm text-gray-600">Date of Authorization</p>
+                  
+                  <div className="mt-8 p-4 bg-gray-100 print:bg-transparent print:border print:border-gray-300 rounded">
+                    <p className="text-xs text-gray-600 leading-tight">
+                      This document becomes effective upon signature and supersedes any previous 
+                      restricted substance policies. Review and updates should be conducted annually 
+                      or as new chemical safety information becomes available.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons - Hidden when printing */}
+            <div className="print:hidden flex flex-col sm:flex-row gap-4 pt-8 mt-8 border-t border-gray-200">
+              <Button onClick={downloadRSL} className="flex-1 sm:flex-none bg-primary hover:bg-primary/90">
+                Download PDF
+              </Button>
+              <Button 
+                onClick={() => window.print()} 
+                variant="outline" 
+                className="flex-1 sm:flex-none"
+              >
+                Print Document
+              </Button>
+              <p className="text-muted-foreground text-sm flex items-center">
+                Document prepared for: {userData.email}
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </div>
