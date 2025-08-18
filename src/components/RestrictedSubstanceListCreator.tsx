@@ -289,9 +289,8 @@ const RestrictedSubstanceListCreator = () => {
             <div className="mb-8">
               <h3 className="text-lg font-bold mb-3 text-gray-800">Document Purpose</h3>
               <p className="text-gray-700 leading-relaxed text-justify">
-                This Restricted Substance List (RSL) outlines the chemicals banned in your school's uniforms to ensure safety for students and the environment. 
-                It's based on your selections and references industry standards including Greenpeace's Toxic Threads report. Banned substances are those you selected to include. 
-                Since this document addresses children's uniforms, we've focused on chemicals that could affect kids' health, including those causing allergies or disrupting growth and development.
+                This Restricted Substance List (RSL) outlines the chemicals banned in our school uniforms to ensure safety for students and the environment. 
+                This document addresses children's uniforms, and is focused on chemicals that could affect kids' health, including those causing allergies or disrupting growth and development.
               </p>
             </div>
 
