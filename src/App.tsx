@@ -30,6 +30,7 @@ import SustainabilityEthics from "@/pages/SustainabilityEthics";
 import SustainabilityScorecard from "@/pages/SustainabilityScorecard";
 import { UniformSolutions } from "@/pages/UniformSolutions";
 import UniformPolicyMakerPage from "@/pages/UniformPolicyMaker";
+import RestrictedSubstanceListCreatorPage from "@/pages/RestrictedSubstanceListCreator";
 import Affiliate from "@/pages/Affiliate";
 import ScrollToTop from "@/components/ScrollToTop";
 import { Header } from "@/components/Header";
@@ -76,6 +77,7 @@ const App = () => {
               <Route path="/sustainability-scorecard" element={<SustainabilityScorecard />} />
               <Route path="/uniform-solutions" element={<UniformSolutions />} />
               <Route path="/uniform-policy-maker" element={<UniformPolicyMakerPage />} />
+              <Route path="/restricted-substance-list-creator" element={<RestrictedSubstanceListCreatorPage />} />
               <Route path="/affiliate" element={<Affiliate />} />
               <Route path="/middle-east-schools" element={<MiddleEastSchools />} />
               <Route path="/uk-schools" element={<UKSchools />} />

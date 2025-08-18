@@ -6,7 +6,6 @@ import { BookOpen, Factory, Users, Download, Eye, GraduationCap, Lightbulb, Targ
 import { Footer } from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import RestrictedSubstanceListCreator from "@/components/RestrictedSubstanceListCreator";
 const EducationalResources = () => {
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   
@@ -274,8 +273,12 @@ const EducationalResources = () => {
             </Card>
           </div>
           
-          <div className="mt-8">
-            <RestrictedSubstanceListCreator />
+          <div className="text-center mt-8">
+            <Link to="/restricted-substance-list-creator">
+              <Button size="lg" className="rounded-2xl px-8 py-4 font-medium text-lg hover:scale-105 transition-smooth">
+                Try the RSL Creator
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
