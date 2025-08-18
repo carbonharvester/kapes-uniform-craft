@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MobileOptimizedTable } from "@/components/MobileOptimizedTable";
-import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, Flag, GraduationCap, DollarSign } from "lucide-react";
+import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, Flag, GraduationCap, DollarSign, XCircle } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -361,10 +361,36 @@ export default function USASchools() {
                   <p className="text-muted-foreground">See the difference our partnership makes for your American school</p>
                 </div>
                 
-                <MobileOptimizedTable 
-                  data={comparisonData}
-                  title="Kapes Uniforms vs Traditional American Suppliers"
-                />
+                <div className="bg-white rounded-lg shadow-sm">
+                  <table className="w-full border-collapse border border-gray-300 text-xs">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes Uniforms</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comparisonData.map((row, index) => (
+                        <tr key={index} className="hover:bg-gray-50">
+                          <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">{row.feature}</td>
+                          <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                            <div className="flex flex-col items-center gap-1">
+                              <CheckCircle className="h-5 w-5 text-green-600" />
+                              <span className="text-green-600 font-medium">{row.kapes}</span>
+                            </div>
+                          </td>
+                          <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                            <div className="flex flex-col items-center gap-1">
+                              <XCircle className="h-5 w-5 text-red-600" />
+                              <span className="text-red-600 font-medium">{row.traditional}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
                 
                 <div className="text-center space-y-4 mt-8">
                   <div className="flex justify-center">

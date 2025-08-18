@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield } from "lucide-react";
+import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, XCircle } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -271,138 +271,138 @@ export default function MiddleEastSchools() {
                    <p className="text-muted-foreground">See the difference our partnership makes for your school</p>
                 </div>
                 
-                <div className="border rounded-lg overflow-hidden">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-left font-semibold">Feature</TableHead>
-                        <TableHead className="text-center font-semibold text-primary">Kapes Uniforms</TableHead>
-                        <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell className="text-sm">Materials</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          GOTS Certified Organic Cotton
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Synthetic fabrics
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Climate Suitability</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Desert-appropriate fabrics
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ One-size-fits-all materials
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Cultural Design</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Modest designs respecting values
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Generic western designs
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Delivery</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Smart lockers + next-day
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Delayed, unreliable shipping
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Support</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          24/7 AI support in Arabic
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Limited language support
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Recycling</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Full takeback & recycling
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No end-of-life solution
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Social Impact</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          1:1 uniforms + meals to Africa
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No social giving program
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Impact Tracking</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Real-time dashboard
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No impact measurement
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Student Programs</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Leadership & educational visits
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No student engagement
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Supply Chain</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Halal-certified transparency
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Hidden supply chains
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Contract Terms</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          No buy-back clauses
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Buy-back requirements
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Account Management</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Dedicated regional manager
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Generic support teams
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
+                <div className="bg-white rounded-lg shadow-sm">
+                  <table className="w-full border-collapse border border-gray-300 text-xs">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes Uniforms</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Materials</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">GOTS Certified Organic Cotton</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Synthetic fabrics</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Climate Suitability</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Desert-appropriate fabrics</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Limited climate optimization</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">UV Protection</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">UPF 50+ protection</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Minimal UV protection</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Cultural Sensitivity</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Local cultural consultation</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">One-size-fits-all approach</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Manufacturing</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Ethical production</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Fast fashion supply chain</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Social Impact</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">1:1 education funding program</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">No social initiatives</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Transparency</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Full supply chain transparency</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Limited transparency</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Environmental Impact</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Carbon neutral operations</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">High carbon footprint</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 
                 <div className="text-center space-y-4 mt-8">

@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, Sun } from "lucide-react";
+import { CheckCircle, Globe, Leaf, Users, Clock, Target, ArrowRight, Star, TrendingUp, Heart, Recycle, Shield, Sun, XCircle } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -290,98 +290,138 @@ export default function AustraliaSchools() {
                   <p className="text-muted-foreground">See the difference our partnership makes for your Australian school</p>
                 </div>
                 
-                <div className="border rounded-lg overflow-hidden">
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead className="text-left font-semibold">Feature</TableHead>
-                        <TableHead className="text-center font-semibold text-primary">Kapes Uniforms</TableHead>
-                        <TableHead className="text-center font-semibold text-muted-foreground">Traditional Suppliers</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell className="text-sm">Materials</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Organic Cotton + Ocean Plastic
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Synthetic fabrics
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Sun Protection</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          SPF 50+ built-in protection
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Limited UV protection
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Manufacturing</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Local Australian production
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Overseas manufacturing
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Ocean Impact</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Ocean plastic recycling program
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No ocean conservation
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Recycling</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Full takeback & recycling
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No end-of-life solution
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Social Impact</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          1:1 donations to Indigenous communities
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No social giving program
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Cultural Collaboration</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Indigenous design partnerships
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ No cultural engagement
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell className="text-sm">Climate Optimization</TableCell>
-                        <TableCell className="text-center text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mx-auto mb-1" />
-                          Australian climate-appropriate
-                        </TableCell>
-                        <TableCell className="text-center text-sm text-muted-foreground">
-                          ❌ Generic designs
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
+                <div className="bg-white rounded-lg shadow-sm">
+                  <table className="w-full border-collapse border border-gray-300 text-xs">
+                    <thead>
+                      <tr className="bg-gray-50">
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Feature</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Kapes Uniforms</th>
+                        <th className="border border-gray-300 px-1 py-2 text-center font-semibold text-gray-700">Traditional</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Materials</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Organic Cotton + Ocean Plastic</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Synthetic fabrics</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Sun Protection</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">SPF 50+ built-in protection</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Limited UV protection</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Manufacturing</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Fair Trade Certified</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Fast fashion manufacturing</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Ocean Impact</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Ocean plastic removal program</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">No ocean conservation</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Recycling</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Takeback & recycling program</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">No end-of-life solution</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Social Impact</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Education programs in Papua New Guinea</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">No social impact programs</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Cultural Collaboration</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Indigenous art partnerships</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">No cultural initiatives</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-1 py-2 font-medium text-gray-900 text-center align-middle">Climate Optimization</td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <CheckCircle className="h-5 w-5 text-green-600" />
+                            <span className="text-green-600 font-medium">Designed for Australian climate</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-300 px-1 py-2 text-center align-top">
+                          <div className="flex flex-col items-center gap-1">
+                            <XCircle className="h-5 w-5 text-red-600" />
+                            <span className="text-red-600 font-medium">Generic global designs</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 
                 <div className="text-center space-y-4 mt-8">
