@@ -274,7 +274,9 @@ const EducationalResources = () => {
             </Card>
           </div>
           
-          <RestrictedSubstanceListCreator />
+          <div className="mt-8">
+            <RestrictedSubstanceListCreator />
+          </div>
         </div>
       </section>
 
