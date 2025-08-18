@@ -11,7 +11,7 @@ const SustainabilityEthics = () => {
     title: "Organic Cotton",
     description: "Improves soil health, biodiversity, and farmer livelihoods",
     icon: Leaf,
-    image: "/src/assets/organic-cotton.jpg"
+    image: "/assets/organic-cotton.jpg"
   }, {
     title: "Recycled Polyester", 
     description: "Reduces reliance on virgin resources and cuts plastic waste",
@@ -21,17 +21,17 @@ const SustainabilityEthics = () => {
     title: "Lyocell",
     description: "Made from sustainably sourced eucalyptus wood pulp, offering excellent breathability and moisture management",
     icon: Globe,
-    image: "/src/assets/zero-waste.jpg"
+    image: "/assets/zero-waste.jpg"
   }, {
     title: "Coconut Shell Fiber",
     description: "Natural fiber from coconut waste with antimicrobial properties and exceptional durability",
     icon: Recycle,
-    image: "/src/assets/sustainable-materials.jpg"
+    image: "/assets/sustainable-materials.jpg"
   }, {
     title: "Kapok",
     description: "Ultra-lightweight natural fiber from rainforest trees, naturally buoyant and hypoallergenic",
     icon: Leaf,
-    image: "/src/assets/organic-cotton.jpg"
+    image: "/assets/organic-cotton.jpg"
   }];
   const noToxicChemicals = {
     title: "No Toxic Chemical Treatments",
@@ -137,7 +137,7 @@ const SustainabilityEthics = () => {
                     <CarouselItem key={index} className="pl-4 basis-4/5 sm:basis-1/2 lg:basis-1/3">
                       <Card className="hover:shadow-lg transition-shadow overflow-hidden">
                         <div className="aspect-[4/3] relative overflow-hidden">
-                          <img src={material.image.replace('/src/', '/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                          <img src={material.image.replace('/src/assets/', '/assets/')} alt={material.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                         <CardHeader>
