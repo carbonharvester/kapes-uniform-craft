@@ -3,18 +3,24 @@ export function goToExternal(url: string, forceBypassShopifyRedirect: boolean = 
     // Ensure URL includes code parameter for cross-domain authentication
     const finalUrl = ensureCodeParameter(url);
     
-    // If we need to bypass Shopify theme redirects, use a delayed approach
+    // Enhanced bypass for collection page authentication
     if (forceBypassShopifyRedirect) {
-      // Set localStorage with authentication info before redirect
       const urlObj = new URL(finalUrl);
       const code = urlObj.searchParams.get('code');
       
       if (code) {
-        localStorage.setItem('kapes.pendingAuth', JSON.stringify({
+        // Store comprehensive auth data
+        const authData = {
           code,
           timestamp: Date.now(),
-          originalUrl: finalUrl
-        }));
+          originalUrl: finalUrl,
+          collection: extractCollectionHandle(finalUrl)
+        };
+        
+        localStorage.setItem('kapes.pendingAuth', JSON.stringify(authData));
+        
+        // Debug logging
+        console.log('[Kapes Redirect] Preparing redirect:', authData);
       }
     }
 
@@ -66,5 +72,15 @@ function ensureCodeParameter(url: string): string {
     return url;
   } catch {
     return url;
+  }
+}
+
+function extractCollectionHandle(url: string): string | null {
+  try {
+    const urlObj = new URL(url);
+    const collectionMatch = urlObj.pathname.match(/\/collections\/([^\/]+)/);
+    return collectionMatch ? collectionMatch[1] : null;
+  } catch {
+    return null;
   }
 }

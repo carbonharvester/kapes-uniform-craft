@@ -16,34 +16,59 @@ export function injectShopifyBypassScript() {
       return;
     }
 
-    // Create script to inject into Shopify theme
+    // Enhanced script to handle collection page authentication
     const bypassScript = `
       (function() {
-        // Override any existing schoolCode array or validation function
         if (typeof window !== 'undefined') {
-          // Store the original redirect data
           const kapesAuthData = ${JSON.stringify(authData)};
           
-          // Override common Shopify theme school code functions
+          // Enhanced authentication for collection pages
+          function authenticateForCollection() {
+            // Set authentication in localStorage for Shopify theme
+            localStorage.setItem('pwd', 'authenticated');
+            localStorage.setItem('school', kapesAuthData.code);
+            
+            // Extract collection handle from URL for better matching
+            const urlObj = new URL(kapesAuthData.originalUrl);
+            const collectionMatch = urlObj.pathname.match(/\/collections\/([^\/]+)/);
+            if (collectionMatch) {
+              localStorage.setItem('collection', collectionMatch[1]);
+            }
+            
+            console.log('[Kapes Auth] Collection authentication set:', {
+              code: kapesAuthData.code,
+              collection: collectionMatch ? collectionMatch[1] : 'unknown',
+              url: kapesAuthData.originalUrl
+            });
+          }
+          
+          // Run authentication immediately
+          authenticateForCollection();
+          
+          // Override common Shopify theme functions
           window.validateSchoolCode = function(code) {
             if (code === kapesAuthData.code) {
-              // Use our database URL instead of theme mapping
-              window.location.href = kapesAuthData.originalUrl;
+              authenticateForCollection();
+              if (window.location.href !== kapesAuthData.originalUrl) {
+                window.location.href = kapesAuthData.originalUrl;
+              }
               return true;
             }
             return false;
           };
           
-          // Override any schoolCode array
+          // Override schoolCode array mapping
           if (window.schoolCode) {
-            window.schoolCode['${authData.code}'] = '${authData.originalUrl.replace('https://shop.kapesuniforms.com', '')}';
+            const path = kapesAuthData.originalUrl.replace('https://shop.kapesuniforms.com', '');
+            window.schoolCode[kapesAuthData.code] = path;
           }
           
-          // Set authentication in localStorage for Shopify theme
-          localStorage.setItem('pwd', 'authenticated');
-          localStorage.setItem('school', kapesAuthData.code);
-          
-          console.log('[Kapes Auth] Shopify bypass script loaded for code:', kapesAuthData.code);
+          // Handle URL parameters on page load
+          const urlParams = new URLSearchParams(window.location.search);
+          const codeParam = urlParams.get('code');
+          if (codeParam === kapesAuthData.code) {
+            authenticateForCollection();
+          }
         }
       })();
     `;
@@ -53,8 +78,10 @@ export function injectShopifyBypassScript() {
     scriptEl.textContent = bypassScript;
     document.head.appendChild(scriptEl);
     
-    // Clean up
-    localStorage.removeItem('kapes.pendingAuth');
+    // Clean up after a delay to ensure it runs
+    setTimeout(() => {
+      localStorage.removeItem('kapes.pendingAuth');
+    }, 2000);
     
   } catch (error) {
     console.error('[Kapes Auth] Error injecting bypass script:', error);
@@ -72,23 +99,39 @@ export function createShopifyRedirectHandler(schoolCode: string, redirectUrl: st
   
   localStorage.setItem('kapes.pendingAuth', JSON.stringify(authData));
   
-  // Create a temporary script that will run on the Shopify domain
+  // Enhanced script for better collection page handling
   const script = document.createElement('script');
   script.textContent = `
-    // This script ensures proper authentication on the Shopify domain
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get('code') || '${schoolCode}';
       
       if (code) {
+        // Set comprehensive authentication
         localStorage.setItem('pwd', 'authenticated');
         localStorage.setItem('school', code);
         
-        // If we're on the wrong collection, redirect to the correct one
-        const currentPath = window.location.pathname;
-        const expectedPath = '${new URL(redirectUrl).pathname}';
+        // Extract and store collection info
+        const urlObj = new URL('${redirectUrl}');
+        const collectionMatch = urlObj.pathname.match(/\/collections\/([^\/]+)/);
+        if (collectionMatch) {
+          localStorage.setItem('collection', collectionMatch[1]);
+        }
         
-        if (currentPath !== expectedPath && !currentPath.includes('school-')) {
+        // Enhanced path checking for collection pages
+        const currentPath = window.location.pathname;
+        const expectedPath = urlObj.pathname;
+        
+        // Debug logging
+        console.log('[Kapes Auth] Collection redirect check:', {
+          current: currentPath,
+          expected: expectedPath,
+          code: code,
+          collection: collectionMatch ? collectionMatch[1] : 'none'
+        });
+        
+        // Redirect if paths don't match and we're not already on the right collection
+        if (currentPath !== expectedPath) {
           window.location.href = '${redirectUrl}';
         }
       }
@@ -97,10 +140,10 @@ export function createShopifyRedirectHandler(schoolCode: string, redirectUrl: st
   
   document.head.appendChild(script);
   
-  // Clean up script after a short delay
+  // Clean up script after ensuring it runs
   setTimeout(() => {
     if (script.parentNode) {
       script.parentNode.removeChild(script);
     }
-  }, 1000);
+  }, 2000);
 }
