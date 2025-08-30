@@ -691,7 +691,14 @@
 
     <!-- ENHANCED: Dynamic school code mapping for navigation links -->
     <script>
-      $(document).ready(function(){
+      function initializeNavigation() {
+        if (typeof $ === 'undefined') {
+          console.warn('[Theme] jQuery not loaded, retrying...');
+          setTimeout(initializeNavigation, 100);
+          return;
+        }
+        
+        try {
         console.log('[Theme] Initializing enhanced navigation links...');
         
         // Get current school from localStorage
@@ -794,53 +801,60 @@
 <div class="coll-metas hide hidden">
 {% assign collectionHandle = 'arbor-school' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign arbor_school = my_metafield.value %}
- {{ arbor_school }}
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign arbor_school = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'fairgreen-international' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign fairgree_school = my_metafield.value %}
- {{ fairgree_school }}
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign fairgree_school = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'nadeen-school' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign nadeed_school = my_metafield.value %}
- {{ nadeed_school }}
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign nadeed_school = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'cheltenham-muscat' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign cheltenham_muscat_school = my_metafield.value %}
- {{ cheltenham_muscat_school }}  
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign cheltenham_muscat_school = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'bisj' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign bisj_school = my_metafield.value %}
- {{ bisj_school }}   
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign bisj_school = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'school-b1sj47x9' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign school_b1sj47x9_code = my_metafield.value %}
- {{ school_b1sj47x9_code }}   
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign school_b1sj47x9_code = my_metafield.value %}
+  {% endif %}
 <!--  -->
 {% assign collectionHandle = 'najmara' %}      
   {% assign the_collection = collections[collectionHandle] %}
-  {% assign my_metafield = the_collection.metafields.custom.school_code %}
-  {% assign najmara_school = my_metafield.value %}
- {{ najmara_school }}   
+  {% if the_collection %}
+    {% assign my_metafield = the_collection.metafields.custom.school_code %}
+    {% assign najmara_school = my_metafield.value %}
+  {% endif %}
 <!--      -->
-<input class="hidden" id="arbor" value="{{ arbor_school }}">
-<input class="hidden" id="fairgreen" value="{{ fairgree_school }}">
-<input class="hidden" id="nadeed" value="{{ nadeed_school }}">
-<input class="hidden" id="cheltenham_muscat" value="{{ cheltenham_muscat_school }}">
-<input class="hidden" id="bisj" value="{{ bisj_school }}"> 
-<input class="hidden" id="school-b1sj47x9" value="{{ school_b1sj47x9_code }}">
-<input class="hidden" id="najmara" value="{{ najmara_school }}">   
+<input class="hidden" id="arbor" value="{{ arbor_school | default: '' }}">
+<input class="hidden" id="fairgreen" value="{{ fairgree_school | default: '' }}">
+<input class="hidden" id="nadeed" value="{{ nadeed_school | default: '' }}">
+<input class="hidden" id="cheltenham_muscat" value="{{ cheltenham_muscat_school | default: '' }}">
+<input class="hidden" id="bisj" value="{{ bisj_school | default: '' }}"> 
+<input class="hidden" id="school-b1sj47x9" value="{{ school_b1sj47x9_code | default: '' }}">
+<input class="hidden" id="najmara" value="{{ najmara_school | default: '' }}">   
 <input class="hidden" id="tests" value="">
 
   </div>
