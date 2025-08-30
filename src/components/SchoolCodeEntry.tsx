@@ -69,8 +69,12 @@ export const SchoolCodeEntry = () => {
         description: `Taking you to ${match.school_name || "your store"}...`,
       });
 
-      // Redirect to the Shopify collection URL stored for this school code
-      goToExternal(match.redirect_url);
+      // Set up Shopify bypass and redirect to the collection URL
+      const { createShopifyRedirectHandler } = await import("@/utils/shopifyBypass");
+      createShopifyRedirectHandler(code, match.redirect_url);
+      
+      // Redirect with bypass enabled to prevent theme conflicts
+      goToExternal(match.redirect_url, true);
     } catch (err) {
       console.error("[SchoolCodeEntry] Error validating code:", err);
       setShowAlert("Something went wrong while checking the code. Please try again.");
@@ -137,7 +141,11 @@ export const SchoolCodeEntry = () => {
                   <Button
                     type="button"
                     className="w-full h-10 md:h-12 text-base md:text-lg font-medium rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg"
-                    onClick={() => goToExternal(selection.redirect_url)}
+                    onClick={async () => {
+                      const { createShopifyRedirectHandler } = await import("@/utils/shopifyBypass");
+                      createShopifyRedirectHandler(selection.code, selection.redirect_url);
+                      goToExternal(selection.redirect_url, true);
+                    }}
                   >
                     Shop now
                   </Button>
