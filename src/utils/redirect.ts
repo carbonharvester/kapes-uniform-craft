@@ -3,7 +3,8 @@ export function goToExternal(url: string, forceBypassShopifyRedirect: boolean = 
     // Simple URL with code parameter
     const finalUrl = ensureCodeParameter(url);
     
-    console.log('[Kapes Redirect] Redirecting to:', finalUrl);
+    console.log('[Kapes Redirect] Starting redirect to:', finalUrl);
+    console.log('[Kapes Redirect] Current location:', window.location.href);
 
     const inIframe = window.self !== window.top;
 
