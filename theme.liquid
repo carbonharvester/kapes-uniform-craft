@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <!-- No authentication required - shop is now public -->
-
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -14,10 +11,9 @@
     <meta http-equiv="Expires" content="0">
     
 
-    <!-- Rest of your existing head content stays the same -->
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-    {% endif %}
+    {%- endif -%}
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
@@ -30,7 +26,46 @@
   <!-- Avada Size Chart Script -->
  {% include 'avada-sc-setting' %}
   <!-- /Avada Size Chart Script -->
- 
+<style>
+  /* Target the VAPI widget container more specifically */
+  vapi-widget,
+  vapi-widget > ,
+  [style="position: fixed"],
+  div[style="bottom"][style="right"] {
+  bottom: 85px !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+}
+vapi-widget::part(container) {
+  bottom: 85px !important;
+}
+</style>
+<vapi-widget
+  public-key="f79590a5-b347-483d-9e4a-ca062bb555bd"
+  assistant-id="8b87a0d9-d725-414f-b171-812285b92588"
+  mode="voice"
+  theme="dark"
+  base-bg-color="#115cb5"
+  accent-color="#ff746c"
+  cta-button-color="#115cb5"
+  cta-button-text-color="#ffffff"
+  border-radius="large"
+  size="full"
+  position="bottom-right"
+  title="TALK WITH US"
+  start-button-text="Start"
+  end-button-text="End Call"
+  chat-first-message="Hey, How can I help you today?"
+  chat-placeholder="Type your message..."
+  voice-show-transcript="false"
+  consent-required="true"
+  consent-title="Terms and conditions"
+  consent-content="By clicking "Agree," and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+  consent-storage-key="vapi_widget_consent"
+></vapi-widget>
+
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
+  
 <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -332,7 +367,23 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    <!-- Theme protection removed - shop is now public -->
+    {% unless customer %}
+    {% if request.path == '/collections' or request.path == '/collections/' or request.path contains '/collections/' %}
+      <script>
+        (function() {
+          const pwd = localStorage.getItem('pwd');
+          if (!pwd) {
+            window.location.replace('/');
+          }
+        })();
+      </script>
+      <noscript>
+        <meta http-equiv="refresh" content="0;url=/" />
+      </noscript>
+    {% endif %}
+  {% endunless %}
+
+
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
@@ -408,7 +459,40 @@
     {{ 'swiper.min.js' | asset_url | script_tag }}
     {{ 'custom.js' | asset_url | script_tag }}
 
-    <!-- Navigation initialization removed - no authentication required -->
+    <script>
+      var schoolCode = [];
+      {% for collection in collections %}
+       {%- if collection.metafields.custom.school_code -%}
+        schoolCode["{{ collection.metafields.custom.school_code }}"] = "{{ collection.url }}";         
+       {%- endif -%} 
+      {% endfor %}  
+
+      $(document).ready(function(){
+
+        if ( localStorage.getItem("school") != null ) {
+          $('#HeaderMenu-shop').attr('href', schoolCode[localStorage.getItem("school").toLowerCase()]);
+          $('#HeaderDrawer-shop').attr('href', schoolCode[localStorage.getItem("school").toLowerCase()]);          
+        }
+        $('.school-code').val(localStorage.getItem("school"));
+        
+        // $('#search-schools button').click(function(e){
+        // 	e.preventDefault();
+        //     if ( $('.school-code').val() == '' ) {
+        //       return;
+        //     }      
+        //     var school_code = $('.school-code').val().toLowerCase();
+        //     localStorage.setItem("school", school_code);
+                                          
+        //     if ( schoolCode[school_code] != '' ) {
+        //       window.location.replace(schoolCode[school_code]);        
+        //     }
+        // });
+      });
+    </script>      
+
+    
+    
+  
 
 {% if template.name == 'index' %}
 
@@ -420,8 +504,50 @@
   </div>
 </div>
 {% endif %}
-
-<!-- School code metadata removed - shop is now public -->
+<div class="coll-metas hide hidden">
+{% assign collectionHandle = 'arbor-school' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign arbor_school = my_metafield.value %}
+ {{ arbor_school }}
+<!--  -->
+{% assign collectionHandle = 'fairgreen-international' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign fairgree_school = my_metafield.value %}
+ {{ fairgree_school }}
+<!--  -->
+{% assign collectionHandle = 'nadeen-school' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign nadeed_school = my_metafield.value %}
+ {{ nadeed_school }}
+<!--  -->
+{% assign collectionHandle = 'cheltenham-muscat' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign cheltenham_muscat_school = my_metafield.value %}
+ {{ cheltenham_muscat_school }}  
+<!--  -->
+{% assign collectionHandle = 'bisj' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign bisj_school = my_metafield.value %}
+ {{ bisj_school }}   
+<!--  -->
+{% assign collectionHandle = 'najmara' %}      
+  {% assign the_collection = collections[collectionHandle] %}
+  {% assign my_metafield = the_collection.metafields.custom.school_code %}
+  {% assign najmara_school = my_metafield.value %}
+ {{ najmara_school }}   
+<!--      -->
+<input class="hidden" id="arbor" value="{{ arbor_school }}">
+<input class="hidden" id="fairgreen" value="{{ fairgree_school }}">
+<input class="hidden" id="nadeed" value="{{ nadeed_school }}">
+<input class="hidden" id="cheltenham_muscat" value="{{ cheltenham_muscat_school }}">
+<input class="hidden" id="bisj" value="{{ bisj_school }}"> 
+<input class="hidden" id="najmara" value="{{ najmara_school }}">   
+<input class="hidden" id="tests" value="">
 
   </div>
 {% include "scm-currency-switcher" %}
@@ -429,7 +555,39 @@
 {% render 'globo.preoder.custom' %}
 </body>
 
-<!-- Customer authentication scripts removed - shop is now public -->
+{% if customer %}
+<script>
+$(document).ready(function(){
+ if (localStorage.getItem("pwd") != null) {
+  //$("#home-2").hide();
+$("#home-2 ul.multicolumn-list li.item_2").hide();
+$("#home-2 ul.multicolumn-list li.item_2").addClass("hidden");
+const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#" user="login"><button type="button">Shop Now</button></a></div></li>';
+//$("#home-2").parent().append(shop_now);
+$("#home-2 ul.multicolumn-list li.item_2").parent().append(shop_now);
+$(".shop_now_sec").show();
+ }
+})
+</script>
+{% else %}
+<script>
+$(document).ready(function(){
+//  localStorage.removeItem('pwd');
+// $("#home-2").show();
+// $(".shop_now_sec").hide();
+// $("#home-2 ul.multicolumn-list li.item_2").removeClass("hidden");
+ if (localStorage.getItem("pwd") != null) {
+  //$("#home-2").hide();
+$("#home-2 ul.multicolumn-list li.item_2").hide();
+$("#home-2 ul.multicolumn-list li.item_2").addClass("hidden");
+const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#"><button type="button">Shop Now</button></a></div></li>';
+//$("#home-2").parent().append(shop_now);
+$("#home-2 ul.multicolumn-list li.item_2").parent().append(shop_now);
+$(".shop_now_sec").show();
+ }
+})
+</script>
+{% endif %}
 
 {% if template.name == 'collection' %} 
  {% if collection.handle == 'nadeen-school' %}
@@ -477,98 +635,46 @@ console.log("SAR");
 console.log("OMR");
   })
   </script> 
-
-   {% elsif collection.handle == 'school-b1sj47x9' %}
-  <script>
-  $(document).ready(function(){
-     console.log('[Currency] Setting SAR for BISJ collection (school-b1sj47x9)');
-     setTimeout(function(){ 
-       $("li.flag-SAR").trigger("click");
-       console.log("SAR - Enhanced BISJ Collection");
-     }, 1000);
-     
-      // Product visibility check removed - all products now public
-  })
-  </script>
-
-   {% elsif collection.handle == 'school-demo123' %}
-  <script>
-  $(document).ready(function(){
-     setTimeout(function(){ $("li.flag-AED").trigger("click");},1000);
-console.log("AED - Demo School");
-  })
-  </script>
-
-   {% elsif collection.handle == 'school-test001' %}
-  <script>
-  $(document).ready(function(){
-     setTimeout(function(){ $("li.flag-AED").trigger("click");},1000);
-console.log("AED - Test School");
-  })
-  </script>
    
   {% endif %}
 {% endif %}
-
-<!-- Enhanced currency handling with SAR suffix fix and error handling -->
 <script>
 $(document).ready(function(){
-  var currencyInterval;
   
-  function handleCurrencyConversion() {
-    try {
-      if (typeof $ === 'undefined') {
-        console.warn('[Currency] jQuery not available');
-        return;
-      }
-      
-      var currentCurrency = $('body').attr('data-current');
-      if (currentCurrency === 'SAR') {
+setInterval(function() {
+    if ($('body').attr('data-current') === 'SAR') {
         $("li.grid__item, .product__info-wrapper, quick-add-modal").each(function(){
-          try {
             var priceElement = $(this).find(".price__container .price-item.price-item--regular .money");
-            if (priceElement.length > 0) {
-              var price = priceElement.text().trim();
-              
-              if (price && price.length > 0) {
-                if (price.slice(-2) === "SR") {
-                  price = price.slice(0, -2) + "SAR";
-                  priceElement.text(price);
-                } else if (price.slice(-3) === "AED") {
-                  price = price.slice(0, -3) + "SAR";
-                  priceElement.text(price);
-                } else if (price.slice(-3) === "OMR") {
-                  price = price.slice(0, -3) + "SAR";
-                  priceElement.text(price);
-                }
-              }
+            var price = priceElement.text().trim(); // Trim whitespace
+
+            if (price.slice(-2) === "SR") {
+                price = price.slice(0, -2) + "SAR";
+            }else if(price.slice(-3) === "AED"){
+              price = price.slice(0, -3) + "SAR";
+            }else if(price.slice(-3) === "OMR"){
+              price = price.slice(0, -3) + "SAR";
             }
-          } catch (elementError) {
-            console.warn('[Currency] Error processing price element:', elementError);
-          }
+
+            priceElement.text(price); 
         });
-      }
-    } catch (error) {
-      console.error('[Currency] Error in currency conversion:', error);
-      if (currencyInterval) {
-        clearInterval(currencyInterval);
-        console.log('[Currency] Interval cleared due to error');
-      }
     }
-  }
-  
-  // Start interval with error handling
-  currencyInterval = setInterval(handleCurrencyConversion, 1000);
-  
-  // Clean up interval on page unload
-  $(window).on('beforeunload', function() {
-    if (currencyInterval) {
-      clearInterval(currencyInterval);
-    }
-  });
+}, 1000);
 });
 </script>
  
-<!-- Collection access protection removed - shop is now public -->
+{% if template contains 'collection' or template contains 'product'%}
+<script>
+$(document).ready(function() {
+    var pwd = localStorage.getItem("pwd");
+ 
+    if (pwd === null || pwd === "") {
+        // Redirect to the specified URL if password is not set or is blank
+        window.location.href = "https://www.kapesuniforms.com/";
+    } else {
+       // console.log("Password is set: " + pwd);
+    }
+});
+</script>
+{% endif %}    
   
 </html>
