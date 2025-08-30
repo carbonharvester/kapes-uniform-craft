@@ -510,28 +510,62 @@ console.log("AED - Test School");
   {% endif %}
 {% endif %}
 
-<!-- Enhanced currency handling with SAR suffix fix -->
+<!-- Enhanced currency handling with SAR suffix fix and error handling -->
 <script>
 $(document).ready(function(){
+  var currencyInterval;
   
-setInterval(function() {
-    if ($('body').attr('data-current') === 'SAR') {
+  function handleCurrencyConversion() {
+    try {
+      if (typeof $ === 'undefined') {
+        console.warn('[Currency] jQuery not available');
+        return;
+      }
+      
+      var currentCurrency = $('body').attr('data-current');
+      if (currentCurrency === 'SAR') {
         $("li.grid__item, .product__info-wrapper, quick-add-modal").each(function(){
+          try {
             var priceElement = $(this).find(".price__container .price-item.price-item--regular .money");
-            var price = priceElement.text().trim(); // Trim whitespace
-
-            if (price.slice(-2) === "SR") {
-                price = price.slice(0, -2) + "SAR";
-            }else if(price.slice(-3) === "AED"){
-              price = price.slice(0, -3) + "SAR";
-            }else if(price.slice(-3) === "OMR"){
-              price = price.slice(0, -3) + "SAR";
+            if (priceElement.length > 0) {
+              var price = priceElement.text().trim();
+              
+              if (price && price.length > 0) {
+                if (price.slice(-2) === "SR") {
+                  price = price.slice(0, -2) + "SAR";
+                  priceElement.text(price);
+                } else if (price.slice(-3) === "AED") {
+                  price = price.slice(0, -3) + "SAR";
+                  priceElement.text(price);
+                } else if (price.slice(-3) === "OMR") {
+                  price = price.slice(0, -3) + "SAR";
+                  priceElement.text(price);
+                }
+              }
             }
-
-            priceElement.text(price); 
+          } catch (elementError) {
+            console.warn('[Currency] Error processing price element:', elementError);
+          }
         });
+      }
+    } catch (error) {
+      console.error('[Currency] Error in currency conversion:', error);
+      if (currencyInterval) {
+        clearInterval(currencyInterval);
+        console.log('[Currency] Interval cleared due to error');
+      }
     }
-}, 1000);
+  }
+  
+  // Start interval with error handling
+  currencyInterval = setInterval(handleCurrencyConversion, 1000);
+  
+  // Clean up interval on page unload
+  $(window).on('beforeunload', function() {
+    if (currencyInterval) {
+      clearInterval(currencyInterval);
+    }
+  });
 });
 </script>
  
