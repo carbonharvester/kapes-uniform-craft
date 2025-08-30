@@ -776,11 +776,53 @@
             window.showProducts();
           }
           
-          // Update navigation
+          // Update navigation with safety checks
           if (event.detail.schoolData) {
             const collectionUrl = event.detail.schoolData.url;
-            $('#HeaderMenu-shop').attr('href', collectionUrl);
-            $('#HeaderDrawer-shop').attr('href', collectionUrl);
+            
+            // Safe jQuery usage with fallbacks
+            try {
+              if (typeof $ !== 'undefined' && $.fn) {
+                // Use jQuery if available
+                const headerMenuShop = $('#HeaderMenu-shop');
+                const headerDrawerShop = $('#HeaderDrawer-shop');
+                
+                if (headerMenuShop.length) {
+                  headerMenuShop.attr('href', collectionUrl);
+                }
+                if (headerDrawerShop.length) {
+                  headerDrawerShop.attr('href', collectionUrl);
+                }
+              } else {
+                // Fallback to vanilla JavaScript
+                const headerMenuShop = document.getElementById('HeaderMenu-shop');
+                const headerDrawerShop = document.getElementById('HeaderDrawer-shop');
+                
+                if (headerMenuShop) {
+                  headerMenuShop.setAttribute('href', collectionUrl);
+                }
+                if (headerDrawerShop) {
+                  headerDrawerShop.setAttribute('href', collectionUrl);
+                }
+              }
+            } catch (error) {
+              console.warn('[Theme] Error updating navigation links:', error);
+              
+              // Final fallback with vanilla JavaScript
+              try {
+                const headerMenuShop = document.getElementById('HeaderMenu-shop');
+                const headerDrawerShop = document.getElementById('HeaderDrawer-shop');
+                
+                if (headerMenuShop) {
+                  headerMenuShop.setAttribute('href', collectionUrl);
+                }
+                if (headerDrawerShop) {
+                  headerDrawerShop.setAttribute('href', collectionUrl);
+                }
+              } catch (fallbackError) {
+                console.error('[Theme] Failed to update navigation links:', fallbackError);
+              }
+            }
           }
         });
       });
