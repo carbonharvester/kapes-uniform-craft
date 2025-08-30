@@ -738,6 +738,9 @@
             }
           }
         }
+        } catch (error) {
+          console.warn('[Theme] Error in navigation initialization:', error);
+        }
         
         // Enhanced school code validation function
         window.validateAndRedirectSchoolCode = function(code) {
@@ -825,7 +828,14 @@
             }
           }
         });
-      });
+      }
+      
+      // Initialize navigation when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeNavigation);
+      } else {
+        initializeNavigation();
+      }
     </script>      
 
 {% if template.name == 'index' %}
