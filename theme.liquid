@@ -332,26 +332,7 @@
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
-    {% unless customer %}
-    {% if request.path == '/collections' or request.path == '/collections/' or request.path contains '/collections/' %}
-      <script>
-        (function() {
-          const pwd = localStorage.getItem('pwd');
-          const authenticated = localStorage.getItem('authenticated');
-          
-          if (!pwd || !authenticated) {
-            console.log('[Theme Protection] No authentication found, redirecting to homepage...');
-            window.location.replace('/');
-          } else {
-            console.log('[Theme Protection] Collection access authorized for:', pwd);
-          }
-        })();
-      </script>
-      <noscript>
-        <meta http-equiv="refresh" content="0;url=/" />
-      </noscript>
-    {% endif %}
-  {% endunless %}
+    <!-- Theme protection removed - shop is now public -->
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}
@@ -427,153 +408,7 @@
     {{ 'swiper.min.js' | asset_url | script_tag }}
     {{ 'custom.js' | asset_url | script_tag }}
 
-    <!-- ENHANCED: Dynamic school code mapping for navigation links -->
-    <script>
-      function initializeNavigation() {
-        if (typeof $ === 'undefined') {
-          console.warn('[Theme] jQuery not loaded, retrying...');
-          setTimeout(initializeNavigation, 100);
-          return;
-        }
-        
-        try {
-        console.log('[Theme] Initializing enhanced navigation links...');
-        
-        // Get current school from localStorage
-        const currentSchool = localStorage.getItem("school");
-        const authenticated = localStorage.getItem("authenticated");
-        
-        if (currentSchool && authenticated && window.KAPES_SCHOOL_DATABASE) {
-          const schoolData = window.KAPES_SCHOOL_DATABASE[currentSchool.toUpperCase()];
-          
-          if (schoolData) {
-            console.log('[Theme] Setting navigation for school:', schoolData.name);
-            
-            // Update navigation links to point to the correct collection
-            const collectionUrl = schoolData.url;
-            $('#HeaderMenu-shop').attr('href', collectionUrl);
-            $('#HeaderDrawer-shop').attr('href', collectionUrl);
-            
-            // Set school code in any form fields
-            $('.school-code').val(currentSchool);
-            
-            // Enhanced product visibility
-            if (typeof window.showProducts === 'function') {
-              window.showProducts();
-            }
-            
-            // Set preferred currency if available
-            const preferredCurrency = localStorage.getItem('preferredCurrency');
-            if (preferredCurrency) {
-              console.log('[Theme] Preferred currency:', preferredCurrency);
-              // Trigger currency change if needed
-              setTimeout(function() {
-                const currencyFlag = $(`li.flag-${preferredCurrency}`);
-                if (currencyFlag.length) {
-                  currencyFlag.trigger('click');
-                }
-              }, 1000);
-            }
-          }
-        }
-        } catch (error) {
-          console.warn('[Theme] Error in navigation initialization:', error);
-        }
-        
-        // Enhanced school code validation function
-        window.validateAndRedirectSchoolCode = function(code) {
-          if (!code) return false;
-          
-          const normalizedCode = code.toUpperCase();
-          const schoolData = window.KAPES_SCHOOL_DATABASE[normalizedCode];
-          
-          if (schoolData) {
-            console.log('[Theme] Validating and redirecting to:', schoolData.name);
-            
-            // Set comprehensive authentication
-            localStorage.setItem('pwd', normalizedCode);
-            localStorage.setItem('school', normalizedCode);
-            localStorage.setItem('schoolName', schoolData.name);
-            localStorage.setItem('preferredCurrency', schoolData.currency);
-            localStorage.setItem('authenticated', 'true');
-            localStorage.setItem('authTimestamp', Date.now().toString());
-            
-            // Redirect to school collection
-            window.location.href = schoolData.url + '?authenticated=true';
-            return true;
-          } else {
-            console.warn('[Theme] Invalid school code entered:', normalizedCode);
-            alert('Invalid school code. Please check your code and try again.');
-            return false;
-          }
-        };
-
-        // Listen for authentication events
-        window.addEventListener('kapes:authenticated', function(event) {
-          console.log('[Theme] Authentication event received:', event.detail);
-          
-          // Update UI based on authentication
-          if (typeof window.showProducts === 'function') {
-            window.showProducts();
-          }
-          
-          // Update navigation with safety checks
-          if (event.detail.schoolData) {
-            const collectionUrl = event.detail.schoolData.url;
-            
-            // Safe jQuery usage with fallbacks
-            try {
-              if (typeof $ !== 'undefined' && $.fn) {
-                // Use jQuery if available
-                const headerMenuShop = $('#HeaderMenu-shop');
-                const headerDrawerShop = $('#HeaderDrawer-shop');
-                
-                if (headerMenuShop.length) {
-                  headerMenuShop.attr('href', collectionUrl);
-                }
-                if (headerDrawerShop.length) {
-                  headerDrawerShop.attr('href', collectionUrl);
-                }
-              } else {
-                // Fallback to vanilla JavaScript
-                const headerMenuShop = document.getElementById('HeaderMenu-shop');
-                const headerDrawerShop = document.getElementById('HeaderDrawer-shop');
-                
-                if (headerMenuShop) {
-                  headerMenuShop.setAttribute('href', collectionUrl);
-                }
-                if (headerDrawerShop) {
-                  headerDrawerShop.setAttribute('href', collectionUrl);
-                }
-              }
-            } catch (error) {
-              console.warn('[Theme] Error updating navigation links:', error);
-              
-              // Final fallback with vanilla JavaScript
-              try {
-                const headerMenuShop = document.getElementById('HeaderMenu-shop');
-                const headerDrawerShop = document.getElementById('HeaderDrawer-shop');
-                
-                if (headerMenuShop) {
-                  headerMenuShop.setAttribute('href', collectionUrl);
-                }
-                if (headerDrawerShop) {
-                  headerDrawerShop.setAttribute('href', collectionUrl);
-                }
-              } catch (fallbackError) {
-                console.error('[Theme] Failed to update navigation links:', fallbackError);
-              }
-            }
-          }
-        });
-      
-      // Initialize navigation when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeNavigation);
-      } else {
-        initializeNavigation();
-      }
-    </script>      
+    <!-- Navigation initialization removed - no authentication required -->
 
 {% if template.name == 'index' %}
 
@@ -586,65 +421,7 @@
 </div>
 {% endif %}
 
-<!-- Enhanced school code metadata for debugging -->
-<div class="coll-metas hide hidden">
-{% assign collectionHandle = 'arbor-school' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign arbor_school = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'fairgreen-international' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign fairgree_school = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'nadeen-school' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign nadeed_school = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'cheltenham-muscat' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign cheltenham_muscat_school = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'bisj' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign bisj_school = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'school-b1sj47x9' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign school_b1sj47x9_code = my_metafield.value %}
-  {% endif %}
-<!--  -->
-{% assign collectionHandle = 'najmara' %}      
-  {% assign the_collection = collections[collectionHandle] %}
-  {% if the_collection %}
-    {% assign my_metafield = the_collection.metafields.custom.school_code %}
-    {% assign najmara_school = my_metafield.value %}
-  {% endif %}
-<!--      -->
-<input class="hidden" id="arbor" value="{{ arbor_school | default: '' }}">
-<input class="hidden" id="fairgreen" value="{{ fairgree_school | default: '' }}">
-<input class="hidden" id="nadeed" value="{{ nadeed_school | default: '' }}">
-<input class="hidden" id="cheltenham_muscat" value="{{ cheltenham_muscat_school | default: '' }}">
-<input class="hidden" id="bisj" value="{{ bisj_school | default: '' }}"> 
-<input class="hidden" id="school-b1sj47x9" value="{{ school_b1sj47x9_code | default: '' }}">
-<input class="hidden" id="najmara" value="{{ najmara_school | default: '' }}">   
-<input class="hidden" id="tests" value="">
+<!-- School code metadata removed - shop is now public -->
 
   </div>
 {% include "scm-currency-switcher" %}
@@ -652,49 +429,7 @@
 {% render 'globo.preoder.custom' %}
 </body>
 
-{% if customer %}
-<script>
-$(document).ready(function(){
- if (localStorage.getItem("pwd") != null && localStorage.getItem("authenticated") === "true") {
-  try {
-    const homeSection = $("#home-2");
-    if (homeSection.length) {
-      const items = $("#home-2 ul.multicolumn-list li.item_2");
-      if (items.length) {
-        items.hide().addClass("hidden");
-        const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#" user="login"><button type="button">Shop Now</button></a></div></li>';
-        items.parent().append(shop_now);
-        $(".shop_now_sec").show();
-      }
-    }
-  } catch (error) {
-    console.warn('[Theme] Error in customer section:', error);
-  }
- }
-})
-</script>
-{% else %}
-<script>
-$(document).ready(function(){
- if (localStorage.getItem("pwd") != null && localStorage.getItem("authenticated") === "true") {
-  try {
-    const homeSection = $("#home-2");
-    if (homeSection.length) {
-      const items = $("#home-2 ul.multicolumn-list li.item_2");
-      if (items.length) {
-        items.hide().addClass("hidden");
-        const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#"><button type="button">Shop Now</button></a></div></li>';
-        items.parent().append(shop_now);
-        $(".shop_now_sec").show();
-      }
-    }
-  } catch (error) {
-    console.warn('[Theme] Error in non-customer section:', error);
-  }
- }
-})
-</script>
-{% endif %}
+<!-- Customer authentication scripts removed - shop is now public -->
 
 {% if template.name == 'collection' %} 
  {% if collection.handle == 'nadeen-school' %}
@@ -752,18 +487,7 @@ console.log("OMR");
        console.log("SAR - Enhanced BISJ Collection");
      }, 1000);
      
-     // Enhanced product visibility for authenticated users
-     setTimeout(function() {
-       const authenticated = localStorage.getItem("authenticated");
-       const pwd = localStorage.getItem("pwd");
-       
-       if (authenticated === "true" && pwd) {
-         console.log('[Collection] Ensuring products are visible for authenticated user:', pwd);
-         if (typeof window.showProducts === 'function') {
-           window.showProducts();
-         }
-       }
-     }, 500);
+      // Product visibility check removed - all products now public
   })
   </script>
 
@@ -811,59 +535,6 @@ setInterval(function() {
 });
 </script>
  
-<!-- Enhanced collection access protection with better authentication -->
-{% if template contains 'collection' or template contains 'product'%}
-<script>
-$(document).ready(function() {
-    var pwd = localStorage.getItem("pwd");
-    var authenticated = localStorage.getItem("authenticated");
-    var authTimestamp = localStorage.getItem("authTimestamp");
- 
-    // Check if authentication is valid and not expired (24 hours)
-    var isAuthValid = pwd && authenticated === "true";
-    if (authTimestamp) {
-      var now = Date.now();
-      var authAge = now - parseInt(authTimestamp);
-      var maxAge = 24 * 60 * 60 * 1000; // 24 hours
-      
-      if (authAge > maxAge) {
-        console.log('[Theme] Authentication expired, clearing...');
-        localStorage.removeItem('pwd');
-        localStorage.removeItem('school');
-        localStorage.removeItem('schoolName');
-        localStorage.removeItem('authenticated');
-        localStorage.removeItem('authTimestamp');
-        isAuthValid = false;
-      }
-    }
- 
-    if (!isAuthValid) {
-        console.log('[Theme] No valid authentication found, redirecting to homepage...');
-        // Redirect to the specified URL if password is not set or is blank
-        window.location.href = "https://www.kapesuniforms.com/";
-    } else {
-        console.log('[Theme] Authenticated for school:', pwd);
-        
-        // Verify the school code is still valid
-        if (window.KAPES_SCHOOL_DATABASE && !window.KAPES_SCHOOL_DATABASE[pwd.toUpperCase()]) {
-          console.warn('[Theme] Invalid stored school code, clearing authentication...');
-          localStorage.removeItem('pwd');
-          localStorage.removeItem('school');
-          localStorage.removeItem('schoolName');
-          localStorage.removeItem('authenticated');
-          localStorage.removeItem('authTimestamp');
-          window.location.href = "https://www.kapesuniforms.com/";
-        } else {
-          // Ensure products are visible for authenticated users
-          setTimeout(function() {
-            if (typeof window.showProducts === 'function') {
-              window.showProducts();
-            }
-          }, 500);
-        }
-    }
-});
-</script>
-{% endif %}    
+<!-- Collection access protection removed - shop is now public -->
   
 </html>
