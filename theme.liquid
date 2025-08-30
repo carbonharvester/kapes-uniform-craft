@@ -867,31 +867,41 @@
 <script>
 $(document).ready(function(){
  if (localStorage.getItem("pwd") != null && localStorage.getItem("authenticated") === "true") {
-  //$("#home-2").hide();
-$("#home-2 ul.multicolumn-list li.item_2").hide();
-$("#home-2 ul.multicolumn-list li.item_2").addClass("hidden");
-const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#" user="login"><button type="button">Shop Now</button></a></div></li>';
-//$("#home-2").parent().append(shop_now);
-$("#home-2 ul.multicolumn-list li.item_2").parent().append(shop_now);
-$(".shop_now_sec").show();
+  try {
+    const homeSection = $("#home-2");
+    if (homeSection.length) {
+      const items = $("#home-2 ul.multicolumn-list li.item_2");
+      if (items.length) {
+        items.hide().addClass("hidden");
+        const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#" user="login"><button type="button">Shop Now</button></a></div></li>';
+        items.parent().append(shop_now);
+        $(".shop_now_sec").show();
+      }
+    }
+  } catch (error) {
+    console.warn('[Theme] Error in customer section:', error);
+  }
  }
 })
 </script>
 {% else %}
 <script>
 $(document).ready(function(){
-//  localStorage.removeItem('pwd');
-// $("#home-2").show();
-// $(".shop_now_sec").hide();
-// $("#home-2 ul.multicolumn-list li.item_2").removeClass("hidden");
  if (localStorage.getItem("pwd") != null && localStorage.getItem("authenticated") === "true") {
-  //$("#home-2").hide();
-$("#home-2 ul.multicolumn-list li.item_2").hide();
-$("#home-2 ul.multicolumn-list li.item_2").addClass("hidden");
-const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#"><button type="button">Shop Now</button></a></div></li>';
-//$("#home-2").parent().append(shop_now);
-$("#home-2 ul.multicolumn-list li.item_2").parent().append(shop_now);
-$(".shop_now_sec").show();
+  try {
+    const homeSection = $("#home-2");
+    if (homeSection.length) {
+      const items = $("#home-2 ul.multicolumn-list li.item_2");
+      if (items.length) {
+        items.hide().addClass("hidden");
+        const shop_now = '<li class="multicolumn-list__item grid__item multicolumn-list__item--empty scroll-trigger--offscreen"><div id="search-schools" class="shop_now_sec"><a href="#"><button type="button">Shop Now</button></a></div></li>';
+        items.parent().append(shop_now);
+        $(".shop_now_sec").show();
+      }
+    }
+  } catch (error) {
+    console.warn('[Theme] Error in non-customer section:', error);
+  }
  }
 })
 </script>
