@@ -1,28 +1,9 @@
 export function goToExternal(url: string, forceBypassShopifyRedirect: boolean = false) {
   try {
-    // Ensure URL includes code parameter for cross-domain authentication
+    // Simple URL with code parameter
     const finalUrl = ensureCodeParameter(url);
     
-    // Enhanced bypass for collection page authentication
-    if (forceBypassShopifyRedirect) {
-      const urlObj = new URL(finalUrl);
-      const code = urlObj.searchParams.get('code');
-      
-      if (code) {
-        // Store comprehensive auth data
-        const authData = {
-          code,
-          timestamp: Date.now(),
-          originalUrl: finalUrl,
-          collection: extractCollectionHandle(finalUrl)
-        };
-        
-        localStorage.setItem('kapes.pendingAuth', JSON.stringify(authData));
-        
-        // Debug logging
-        console.log('[Kapes Redirect] Preparing redirect:', authData);
-      }
-    }
+    console.log('[Kapes Redirect] Redirecting to:', finalUrl);
 
     const inIframe = window.self !== window.top;
 
