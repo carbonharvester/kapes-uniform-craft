@@ -13,12 +13,10 @@ import { SchoolLogos } from "@/components/SchoolLogos";
 import { BlogSection } from "@/components/BlogSection";
 import { FloatingGetStarted } from "@/components/FloatingGetStarted";
 import { ImpactAssessmentModal } from "@/components/ImpactAssessmentModal";
-import { AutoRedirectFromSchoolSelection } from "@/components/AutoRedirectFromSchoolSelection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <AutoRedirectFromSchoolSelection />
       <Hero />
       <div id="parent-section" className="scroll-mt-20">
         <SchoolCodeEntry />
